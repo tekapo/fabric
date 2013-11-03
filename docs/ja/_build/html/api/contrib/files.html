@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>File and Directory Management &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <link rel="next" title="Project Tools" href="project.html" />
+    <link rel="prev" title="Django Integration" href="django.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="project.html" title="Project Tools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="django.html" title="Django Integration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fabric.contrib.files">
+<span id="file-and-directory-management"></span><h1>File and Directory Management<a class="headerlink" href="#module-fabric.contrib.files" title="Permalink to this headline">¶</a></h1>
+<p>Module providing easy API for working with remote files and folders.</p>
+<dl class="function">
+<dt id="fabric.contrib.files.append">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">append</tt><big>(</big><em>filename</em>, <em>text</em>, <em>use_sudo=False</em>, <em>partial=False</em>, <em>escape=True</em>, <em>shell=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append string (or list of strings) <tt class="docutils literal"><span class="pre">text</span></tt> to <tt class="docutils literal"><span class="pre">filename</span></tt>.</p>
+<p>When a list is given, each string inside is handled independently (but in
+the order given.)</p>
+<p>If <tt class="docutils literal"><span class="pre">text</span></tt> is already found in <tt class="docutils literal"><span class="pre">filename</span></tt>, the append is not run, and
+None is returned immediately. Otherwise, the given text is appended to the
+end of the given <tt class="docutils literal"><span class="pre">filename</span></tt> via e.g. <tt class="docutils literal"><span class="pre">echo</span> <span class="pre">'$text'</span> <span class="pre">&gt;&gt;</span> <span class="pre">$filename</span></tt>.</p>
+<p>The test for whether <tt class="docutils literal"><span class="pre">text</span></tt> already exists defaults to a full line match,
+e.g. <tt class="docutils literal"><span class="pre">^&lt;text&gt;$</span></tt>, as this seems to be the most sensible approach for the
+&#8220;append lines to a file&#8221; use case. You may override this and force partial
+searching (e.g. <tt class="docutils literal"><span class="pre">^&lt;text&gt;</span></tt>) by specifying <tt class="docutils literal"><span class="pre">partial=True</span></tt>.</p>
+<p>Because <tt class="docutils literal"><span class="pre">text</span></tt> is single-quoted, single quotes will be transparently
+backslash-escaped. This can be disabled with <tt class="docutils literal"><span class="pre">escape=False</span></tt>.</p>
+<p>If <tt class="docutils literal"><span class="pre">use_sudo</span></tt> is True, will use <tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt> instead of <tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">shell</span></tt> argument will be eventually passed to <tt class="docutils literal"><span class="pre">run/sudo</span></tt>. See
+description of the same argumnet in <tt class="docutils literal"><span class="pre">~fabric.contrib.sed</span></tt> for details.</p>
+<div class="versionchanged">
+<p><span>Changed in version 0.9.1: </span>Added the <tt class="docutils literal"><span class="pre">partial</span></tt> keyword argument.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.0: </span>Swapped the order of the <tt class="docutils literal"><span class="pre">filename</span></tt> and <tt class="docutils literal"><span class="pre">text</span></tt> arguments to be
+consistent with other functions in this module.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.0: </span>Changed default value of <tt class="docutils literal"><span class="pre">partial</span></tt> kwarg to be <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.4: </span>Updated the regular expression related escaping to try and solve
+various corner cases.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.6: </span>Added the <tt class="docutils literal"><span class="pre">shell</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.comment">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">comment</tt><big>(</big><em>filename</em>, <em>regex</em>, <em>use_sudo=False</em>, <em>char='#'</em>, <em>backup='.bak'</em>, <em>shell=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to comment out all lines in <tt class="docutils literal"><span class="pre">filename</span></tt> matching <tt class="docutils literal"><span class="pre">regex</span></tt>.</p>
+<p>The default commenting character is <tt class="xref py py-obj docutils literal"><span class="pre">#</span></tt> and may be overridden by the
+<tt class="docutils literal"><span class="pre">char</span></tt> argument.</p>
+<p>This function uses the <a class="reference internal" href="#fabric.contrib.files.sed" title="fabric.contrib.files.sed"><tt class="xref py py-obj docutils literal"><span class="pre">sed</span></tt></a> function, and will accept the same
+<tt class="docutils literal"><span class="pre">use_sudo</span></tt>, <tt class="docutils literal"><span class="pre">shell</span></tt> and <tt class="docutils literal"><span class="pre">backup</span></tt> keyword arguments that <a class="reference internal" href="#fabric.contrib.files.sed" title="fabric.contrib.files.sed"><tt class="xref py py-obj docutils literal"><span class="pre">sed</span></tt></a> does.</p>
+<p><a class="reference internal" href="#fabric.contrib.files.comment" title="fabric.contrib.files.comment"><tt class="xref py py-obj docutils literal"><span class="pre">comment</span></tt></a> will prepend the comment character to the beginning of the line,
+so that lines end up looking like so:</p>
+<div class="highlight-python"><pre>this line is uncommented
+#this line is commented
+#   this line is indented and commented</pre>
+</div>
+<p>In other words, comment characters will not &#8220;follow&#8221; indentation as they
+sometimes do when inserted by hand. Neither will they have a trailing space
+unless you specify e.g. <tt class="docutils literal"><span class="pre">char='#</span> <span class="pre">'</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to preserve the line being commented out, this function will
+wrap your <tt class="docutils literal"><span class="pre">regex</span></tt> argument in parentheses, so you don&#8217;t need to. It
+will ensure that any preceding/trailing <tt class="docutils literal"><span class="pre">^</span></tt> or <tt class="docutils literal"><span class="pre">$</span></tt> characters are
+correctly moved outside the parentheses. For example, calling
+<tt class="docutils literal"><span class="pre">comment(filename,</span> <span class="pre">r'^foo$')</span></tt> will result in a <a class="reference internal" href="#fabric.contrib.files.sed" title="fabric.contrib.files.sed"><tt class="xref py py-obj docutils literal"><span class="pre">sed</span></tt></a> call with the
+&#8220;before&#8221; regex of <tt class="docutils literal"><span class="pre">r'^(foo)$'</span></tt> (and the &#8220;after&#8221; regex, naturally, of
+<tt class="docutils literal"><span class="pre">r'#\1'</span></tt>.)</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.5: </span>Added the <tt class="docutils literal"><span class="pre">shell</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.contains">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">contains</tt><big>(</big><em>filename</em>, <em>text</em>, <em>exact=False</em>, <em>use_sudo=False</em>, <em>escape=True</em>, <em>shell=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.contains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if <tt class="docutils literal"><span class="pre">filename</span></tt> contains <tt class="docutils literal"><span class="pre">text</span></tt> (which may be a regex.)</p>
+<p>By default, this function will consider a partial line match (i.e. where
+<tt class="docutils literal"><span class="pre">text</span></tt> only makes up part of the line it&#8217;s on). Specify <tt class="docutils literal"><span class="pre">exact=True</span></tt> to
+change this behavior so that only a line containing exactly <tt class="docutils literal"><span class="pre">text</span></tt>
+results in a True return value.</p>
+<p>This function leverages <tt class="docutils literal"><span class="pre">egrep</span></tt> on the remote end (so it may not follow
+Python regular expression syntax perfectly), and skips <tt class="docutils literal"><span class="pre">env.shell</span></tt>
+wrapper by default.</p>
+<p>If <tt class="docutils literal"><span class="pre">use_sudo</span></tt> is True, will use <tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt> instead of <tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt>.</p>
+<p>If <tt class="docutils literal"><span class="pre">escape</span></tt> is False, no extra regular expression related escaping is
+performed (this includes overriding <tt class="docutils literal"><span class="pre">exact</span></tt> so that no <tt class="docutils literal"><span class="pre">^</span></tt>/<tt class="docutils literal"><span class="pre">$</span></tt> is
+added.)</p>
+<p>The <tt class="docutils literal"><span class="pre">shell</span></tt> argument will be eventually passed to <tt class="docutils literal"><span class="pre">run/sudo</span></tt>. See
+description of the same argumnet in <tt class="docutils literal"><span class="pre">~fabric.contrib.sed</span></tt> for details.</p>
+<div class="versionchanged">
+<p><span>Changed in version 1.0: </span>Swapped the order of the <tt class="docutils literal"><span class="pre">filename</span></tt> and <tt class="docutils literal"><span class="pre">text</span></tt> arguments to be
+consistent with other functions in this module.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.4: </span>Updated the regular expression related escaping to try and solve
+various corner cases.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.4: </span>Added <tt class="docutils literal"><span class="pre">escape</span></tt> keyword argument.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.6: </span>Added the <tt class="docutils literal"><span class="pre">shell</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.exists">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">exists</tt><big>(</big><em>path</em>, <em>use_sudo=False</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if given path exists on the current remote host.</p>
+<p>If <tt class="docutils literal"><span class="pre">use_sudo</span></tt> is True, will use <tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt> instead of <tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt>.</p>
+<p><a class="reference internal" href="#fabric.contrib.files.exists" title="fabric.contrib.files.exists"><tt class="xref py py-obj docutils literal"><span class="pre">exists</span></tt></a> will, by default, hide all output (including the run line, stdout,
+stderr and any warning resulting from the file not existing) in order to
+avoid cluttering output. You may specify <tt class="docutils literal"><span class="pre">verbose=True</span></tt> to change this
+behavior.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.first">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">first</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.first" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given one or more file paths, returns first one found, or None if none
+exist. May specify <tt class="docutils literal"><span class="pre">use_sudo</span></tt> and <tt class="docutils literal"><span class="pre">verbose</span></tt> which are passed to <a class="reference internal" href="#fabric.contrib.files.exists" title="fabric.contrib.files.exists"><tt class="xref py py-obj docutils literal"><span class="pre">exists</span></tt></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.is_link">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">is_link</tt><big>(</big><em>path</em>, <em>use_sudo=False</em>, <em>verbose=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.is_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return True if the given path is a symlink on the current remote host.</p>
+<p>If <tt class="docutils literal"><span class="pre">use_sudo</span></tt> is True, will use <a class="reference internal" href="../core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a> instead of <a class="reference internal" href="../core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>.</p>
+<p><a class="reference internal" href="#fabric.contrib.files.is_link" title="fabric.contrib.files.is_link"><tt class="xref py py-obj docutils literal"><span class="pre">is_link</span></tt></a> will, by default, hide all output. Give <tt class="docutils literal"><span class="pre">verbose=True</span></tt> to change this.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.sed">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">sed</tt><big>(</big><em>filename</em>, <em>before</em>, <em>after</em>, <em>limit=''</em>, <em>use_sudo=False</em>, <em>backup='.bak'</em>, <em>flags=''</em>, <em>shell=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.sed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run a search-and-replace on <tt class="docutils literal"><span class="pre">filename</span></tt> with given regex patterns.</p>
+<p>Equivalent to <tt class="docutils literal"><span class="pre">sed</span> <span class="pre">-i&lt;backup&gt;</span> <span class="pre">-r</span> <span class="pre">-e</span> <span class="pre">&quot;/&lt;limit&gt;/</span> <span class="pre">s/&lt;before&gt;/&lt;after&gt;/&lt;flags&gt;g&quot;</span>
+<span class="pre">&lt;filename&gt;</span></tt>. Setting <tt class="docutils literal"><span class="pre">backup</span></tt> to an empty string will, disable backup
+file creation.</p>
+<p>For convenience, <tt class="docutils literal"><span class="pre">before</span></tt> and <tt class="docutils literal"><span class="pre">after</span></tt> will automatically escape forward
+slashes, single quotes and parentheses for you, so you don&#8217;t need to
+specify e.g.  <tt class="docutils literal"><span class="pre">http:\/\/foo\.com</span></tt>, instead just using <tt class="docutils literal"><span class="pre">http://foo\.com</span></tt>
+is fine.</p>
+<p>If <tt class="docutils literal"><span class="pre">use_sudo</span></tt> is True, will use <tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt> instead of <tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">shell</span></tt> argument will be eventually passed to <tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt>/<tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt>. It
+defaults to False in order to avoid problems with many nested levels of
+quotes and backslashes. However, setting it to True may help when using
+<tt class="docutils literal"><span class="pre">~fabric.operations.cd</span></tt> to wrap explicit or implicit <tt class="docutils literal"><span class="pre">sudo</span></tt> calls.
+(<tt class="docutils literal"><span class="pre">cd</span></tt> by it&#8217;s nature is a shell built-in, not a standalone command, so it
+should be called within a shell.)</p>
+<p>Other options may be specified with sed-compatible regex flags &#8211; for
+example, to make the search and replace case insensitive, specify
+<tt class="docutils literal"><span class="pre">flags=&quot;i&quot;</span></tt>. The <tt class="docutils literal"><span class="pre">g</span></tt> flag is always specified regardless, so you do not
+need to remember to include it when overriding this parameter.</p>
+<div class="versionadded">
+<p><span>New in version 1.1: </span>The <tt class="docutils literal"><span class="pre">flags</span></tt> parameter.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.6: </span>Added the <tt class="docutils literal"><span class="pre">shell</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.uncomment">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">uncomment</tt><big>(</big><em>filename</em>, <em>regex</em>, <em>use_sudo=False</em>, <em>char='#'</em>, <em>backup='.bak'</em>, <em>shell=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.uncomment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to uncomment all lines in <tt class="docutils literal"><span class="pre">filename</span></tt> matching <tt class="docutils literal"><span class="pre">regex</span></tt>.</p>
+<p>The default comment delimiter is <tt class="xref py py-obj docutils literal"><span class="pre">#</span></tt> and may be overridden by the <tt class="docutils literal"><span class="pre">char</span></tt>
+argument.</p>
+<p>This function uses the <a class="reference internal" href="#fabric.contrib.files.sed" title="fabric.contrib.files.sed"><tt class="xref py py-obj docutils literal"><span class="pre">sed</span></tt></a> function, and will accept the same
+<tt class="docutils literal"><span class="pre">use_sudo</span></tt>, <tt class="docutils literal"><span class="pre">shell</span></tt> and <tt class="docutils literal"><span class="pre">backup</span></tt> keyword arguments that <a class="reference internal" href="#fabric.contrib.files.sed" title="fabric.contrib.files.sed"><tt class="xref py py-obj docutils literal"><span class="pre">sed</span></tt></a> does.</p>
+<p><a class="reference internal" href="#fabric.contrib.files.uncomment" title="fabric.contrib.files.uncomment"><tt class="xref py py-obj docutils literal"><span class="pre">uncomment</span></tt></a> will remove a single whitespace character following the comment
+character, if it exists, but will preserve all preceding whitespace.  For
+example, <tt class="docutils literal"><span class="pre">#</span> <span class="pre">foo</span></tt> would become <tt class="docutils literal"><span class="pre">foo</span></tt> (the single space is stripped) but
+``    # foo`` would become ``    foo`` (the single space is still stripped,
+but the preceding 4 spaces are not.)</p>
+<div class="versionchanged">
+<p><span>Changed in version 1.6: </span>Added the <tt class="docutils literal"><span class="pre">shell</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.files.upload_template">
+<tt class="descclassname">fabric.contrib.files.</tt><tt class="descname">upload_template</tt><big>(</big><em>filename</em>, <em>destination</em>, <em>context=None</em>, <em>use_jinja=False</em>, <em>template_dir=None</em>, <em>use_sudo=False</em>, <em>backup=True</em>, <em>mirror_local_mode=False</em>, <em>mode=None</em><big>)</big><a class="headerlink" href="#fabric.contrib.files.upload_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render and upload a template text file to a remote host.</p>
+<p>Returns the result of the inner call to <a class="reference internal" href="../core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> &#8211; see its
+documentation for details.</p>
+<p><tt class="docutils literal"><span class="pre">filename</span></tt> should be the path to a text file, which may contain <a class="reference external" href="http://docs.python.org/library/stdtypes.html#string-formatting">Python
+string interpolation formatting</a> and will
+be rendered with the given context dictionary <tt class="docutils literal"><span class="pre">context</span></tt> (if given.)</p>
+<p>Alternately, if <tt class="docutils literal"><span class="pre">use_jinja</span></tt> is set to True and you have the Jinja2
+templating library available, Jinja will be used to render the template
+instead. Templates will be loaded from the invoking user&#8217;s current working
+directory by default, or from <tt class="docutils literal"><span class="pre">template_dir</span></tt> if given.</p>
+<p>The resulting rendered file will be uploaded to the remote file path
+<tt class="docutils literal"><span class="pre">destination</span></tt>.  If the destination file already exists, it will be
+renamed with a <tt class="docutils literal"><span class="pre">.bak</span></tt> extension unless <tt class="docutils literal"><span class="pre">backup=False</span></tt> is specified.</p>
+<p>By default, the file will be copied to <tt class="docutils literal"><span class="pre">destination</span></tt> as the logged-in
+user; specify <tt class="docutils literal"><span class="pre">use_sudo=True</span></tt> to use <tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt> instead.</p>
+<p>The <tt class="docutils literal"><span class="pre">mirror_local_mode</span></tt> and <tt class="docutils literal"><span class="pre">mode</span></tt> kwargs are passed directly to an
+internal <a class="reference internal" href="../core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> call; please see its documentation for
+details on these two options.</p>
+<div class="versionchanged">
+<p><span>Changed in version 1.1: </span>Added the <tt class="docutils literal"><span class="pre">backup</span></tt>, <tt class="docutils literal"><span class="pre">mirror_local_mode</span></tt> and <tt class="docutils literal"><span class="pre">mode</span></tt> kwargs.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="django.html"
+                        title="previous chapter">Django Integration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="project.html"
+                        title="next chapter">Project Tools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/contrib/files.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="project.html" title="Project Tools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="django.html" title="Django Integration"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

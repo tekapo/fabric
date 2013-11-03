@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation helpers &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <link rel="next" title="Network" href="network.html" />
+    <link rel="prev" title="Decorators" href="decorators.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="network.html" title="Network"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="decorators.html" title="Decorators"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fabric.docs">
+<span id="documentation-helpers"></span><h1>Documentation helpers<a class="headerlink" href="#module-fabric.docs" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="fabric.docs.unwrap_tasks">
+<tt class="descclassname">fabric.docs.</tt><tt class="descname">unwrap_tasks</tt><big>(</big><em>module</em>, <em>hide_nontasks=False</em><big>)</big><a class="headerlink" href="#fabric.docs.unwrap_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace task objects on <tt class="docutils literal"><span class="pre">module</span></tt> with their wrapped functions instead.</p>
+<p>Specifically, look for instances of <a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a> and
+replace them with their <tt class="docutils literal"><span class="pre">.wrapped</span></tt> attribute (the original decorated
+function.)</p>
+<p>This is intended for use with the Sphinx autodoc tool, to be run near the
+bottom of a project&#8217;s <tt class="docutils literal"><span class="pre">conf.py</span></tt>. It ensures that the autodoc extension
+will have full access to the &#8220;real&#8221; function, in terms of function
+signature and so forth. Without use of <tt class="docutils literal"><span class="pre">unwrap_tasks</span></tt>, autodoc is unable
+to access the function signature (though it is able to see e.g.
+<tt class="docutils literal"><span class="pre">__doc__</span></tt>.)</p>
+<p>For example, at the bottom of your <tt class="docutils literal"><span class="pre">conf.py</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.docs</span> <span class="kn">import</span> <span class="n">unwrap_tasks</span>
+<span class="kn">import</span> <span class="nn">my_package.my_fabfile</span>
+<span class="n">unwrap_tasks</span><span class="p">(</span><span class="n">my_package</span><span class="o">.</span><span class="n">my_fabfile</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can go above and beyond, and explicitly <strong>hide</strong> all non-task
+functions, by saying <tt class="docutils literal"><span class="pre">hide_nontasks=True</span></tt>. This renames all objects
+failing the &#8220;is it a task?&#8221; check so they appear to be private, which will
+then cause autodoc to skip over them.</p>
+<p><tt class="docutils literal"><span class="pre">hide_nontasks</span></tt> is thus useful when you have a fabfile mixing in
+subroutines with real tasks and want to document <em>just</em> the real tasks.</p>
+<p>If you run this within an actual Fabric-code-using session (instead of
+within a Sphinx <tt class="docutils literal"><span class="pre">conf.py</span></tt>), please seek immediate medical attention.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>, <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="decorators.html"
+                        title="previous chapter">Decorators</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="network.html"
+                        title="next chapter">Network</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/core/docs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="network.html" title="Network"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="decorators.html" title="Decorators"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

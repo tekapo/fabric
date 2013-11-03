@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Decorators &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <link rel="next" title="Documentation helpers" href="docs.html" />
+    <link rel="prev" title="Context Managers" href="context_managers.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="docs.html" title="Documentation helpers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="context_managers.html" title="Context Managers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fabric.decorators">
+<span id="decorators"></span><h1>Decorators<a class="headerlink" href="#module-fabric.decorators" title="Permalink to this headline">¶</a></h1>
+<p>Convenience decorators for use in fabfiles.</p>
+<dl class="function">
+<dt id="fabric.decorators.hosts">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">hosts</tt><big>(</big><em>*host_list</em><big>)</big><a class="headerlink" href="#fabric.decorators.hosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator defining which host or hosts to execute the wrapped function on.</p>
+<p>For example, the following will ensure that, barring an override on the
+command line, <tt class="docutils literal"><span class="pre">my_func</span></tt> will be run on <tt class="docutils literal"><span class="pre">host1</span></tt>, <tt class="docutils literal"><span class="pre">host2</span></tt> and
+<tt class="docutils literal"><span class="pre">host3</span></tt>, and with specific users on <tt class="docutils literal"><span class="pre">host1</span></tt> and <tt class="docutils literal"><span class="pre">host3</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@hosts</span><span class="p">(</span><span class="s">&#39;user1@host1&#39;</span><span class="p">,</span> <span class="s">&#39;host2&#39;</span><span class="p">,</span> <span class="s">&#39;user2@host3&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> may be invoked with either an argument list
+(<tt class="docutils literal"><span class="pre">&#64;hosts('host1')</span></tt>, <tt class="docutils literal"><span class="pre">&#64;hosts('host1',</span> <span class="pre">'host2')</span></tt>) or a single, iterable
+argument (<tt class="docutils literal"><span class="pre">&#64;hosts(['host1',</span> <span class="pre">'host2'])</span></tt>).</p>
+<p>Note that this decorator actually just sets the function&#8217;s <tt class="docutils literal"><span class="pre">.hosts</span></tt>
+attribute, which is then read prior to executing the function.</p>
+<div class="versionchanged">
+<p><span>Changed in version 0.9.2: </span>Allow a single, iterable argument (<tt class="docutils literal"><span class="pre">&#64;hosts(iterable)</span></tt>) to be used
+instead of requiring <tt class="docutils literal"><span class="pre">&#64;hosts(*iterable)</span></tt>.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.roles">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">roles</tt><big>(</big><em>*role_list</em><big>)</big><a class="headerlink" href="#fabric.decorators.roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator defining a list of role names, used to look up host lists.</p>
+<p>A role is simply defined as a key in <tt class="xref py py-obj docutils literal"><span class="pre">env</span></tt> whose value is a list of one or
+more host connection strings. For example, the following will ensure that,
+barring an override on the command line, <tt class="docutils literal"><span class="pre">my_func</span></tt> will be executed
+against the hosts listed in the <tt class="docutils literal"><span class="pre">webserver</span></tt> and <tt class="docutils literal"><span class="pre">dbserver</span></tt> roles:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s">&#39;webserver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;www1&#39;</span><span class="p">,</span> <span class="s">&#39;www2&#39;</span><span class="p">],</span>
+    <span class="s">&#39;dbserver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;db1&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="nd">@roles</span><span class="p">(</span><span class="s">&#39;webserver&#39;</span><span class="p">,</span> <span class="s">&#39;dbserver&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>As with <a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>, <a class="reference internal" href="#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a> may be
+invoked with either an argument list or a single, iterable argument.
+Similarly, this decorator uses the same mechanism as
+<a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> and simply sets <tt class="docutils literal"><span class="pre">&lt;function&gt;.roles</span></tt>.</p>
+<div class="versionchanged">
+<p><span>Changed in version 0.9.2: </span>Allow a single, iterable argument to be used (same as
+<a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>).</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.runs_once">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">runs_once</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#fabric.decorators.runs_once" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator preventing wrapped function from running more than once.</p>
+<p>By keeping internal state, this decorator allows you to mark a function
+such that it will only run once per Python interpreter session, which in
+typical use means &#8220;once per invocation of the <tt class="docutils literal"><span class="pre">fab</span></tt> program&#8221;.</p>
+<p>Any function wrapped with this decorator will silently fail to execute the
+2nd, 3rd, ..., Nth time it is called, and will return the value of the
+original run.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">runs_once</span></tt> does not work with parallel task execution.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.serial">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">serial</tt><big>(</big><em>func</em><big>)</big><a class="headerlink" href="#fabric.decorators.serial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forces the wrapped function to always run sequentially, never in parallel.</p>
+<p>This decorator takes precedence over the global value of <a class="reference internal" href="../../usage/env.html#env-parallel"><em>env.parallel</em></a>. However, if a task is decorated with both
+<a class="reference internal" href="#fabric.decorators.serial" title="fabric.decorators.serial"><tt class="xref py py-obj docutils literal"><span class="pre">serial</span></tt></a> <em>and</em> <a class="reference internal" href="#fabric.decorators.parallel" title="fabric.decorators.parallel"><tt class="xref py py-obj docutils literal"><span class="pre">parallel</span></tt></a>,
+<a class="reference internal" href="#fabric.decorators.parallel" title="fabric.decorators.parallel"><tt class="xref py py-obj docutils literal"><span class="pre">parallel</span></tt></a> wins.</p>
+<div class="versionadded">
+<p><span>New in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.parallel">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">parallel</tt><big>(</big><em>pool_size=None</em><big>)</big><a class="headerlink" href="#fabric.decorators.parallel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forces the wrapped function to run in parallel, instead of sequentially.</p>
+<p>This decorator takes precedence over the global value of <a class="reference internal" href="../../usage/env.html#env-parallel"><em>env.parallel</em></a>. It also takes precedence over <a class="reference internal" href="#fabric.decorators.serial" title="fabric.decorators.serial"><tt class="xref py py-obj docutils literal"><span class="pre">serial</span></tt></a>
+if a task is decorated with both.</p>
+<div class="versionadded">
+<p><span>New in version 1.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.task">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">task</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.decorators.task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator declaring the wrapped function to be a new-style task.</p>
+<p>May be invoked as a simple, argument-less decorator (i.e. <tt class="docutils literal"><span class="pre">&#64;task</span></tt>) or
+with arguments customizing its behavior (e.g. <tt class="docutils literal"><span class="pre">&#64;task(alias='myalias')</span></tt>).</p>
+<p>Please see the <a class="reference internal" href="../../usage/tasks.html#task-decorator"><em>new-style task</em></a> documentation for
+details on how to use this decorator.</p>
+<div class="versionchanged">
+<p><span>Changed in version 1.2: </span>Added the <tt class="docutils literal"><span class="pre">alias</span></tt>, <tt class="docutils literal"><span class="pre">aliases</span></tt>, <tt class="docutils literal"><span class="pre">task_class</span></tt> and <tt class="docutils literal"><span class="pre">default</span></tt>
+keyword arguments. See <a class="reference internal" href="../../usage/tasks.html#task-decorator-arguments"><em>Arguments</em></a> for details.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.5: </span>Added the <tt class="docutils literal"><span class="pre">name</span></tt> keyword argument.</p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="docs.html#fabric.docs.unwrap_tasks" title="fabric.docs.unwrap_tasks"><tt class="xref py py-obj docutils literal"><span class="pre">unwrap_tasks</span></tt></a>, <a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.decorators.with_settings">
+<tt class="descclassname">fabric.decorators.</tt><tt class="descname">with_settings</tt><big>(</big><em>*arg_settings</em>, <em>**kw_settings</em><big>)</big><a class="headerlink" href="#fabric.decorators.with_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator equivalent of <tt class="docutils literal"><span class="pre">fabric.context_managers.settings</span></tt>.</p>
+<p>Allows you to wrap an entire function as if it was called inside a block
+with the <tt class="docutils literal"><span class="pre">settings</span></tt> context manager. This may be useful if you know you
+want a given setting applied to an entire function body, or wish to
+retrofit old code without indenting everything.</p>
+<p>For example, to turn aborts into warnings for an entire task function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@with_settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a></p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.1.</span></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="context_managers.html"
+                        title="previous chapter">Context Managers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="docs.html"
+                        title="next chapter">Documentation helpers</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/core/decorators.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="docs.html" title="Documentation helpers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="context_managers.html" title="Context Managers"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

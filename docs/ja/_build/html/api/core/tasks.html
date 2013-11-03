@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tasks &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <link rel="next" title="Utils" href="utils.html" />
+    <link rel="prev" title="Operations" href="operations.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Utils"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="operations.html" title="Operations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fabric.tasks">
+<span id="tasks"></span><h1>Tasks<a class="headerlink" href="#module-fabric.tasks" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="fabric.tasks.Task">
+<em class="property">class </em><tt class="descclassname">fabric.tasks.</tt><tt class="descname">Task</tt><big>(</big><em>alias=None</em>, <em>aliases=None</em>, <em>default=False</em>, <em>name=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.tasks.Task" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract base class for objects wishing to be picked up as Fabric tasks.</p>
+<p>Instances of subclasses will be treated as valid tasks when present in
+fabfiles loaded by the <a class="reference internal" href="../../usage/fab.html"><em>fab</em></a> tool.</p>
+<p>For details on how to implement and use <a class="reference internal" href="#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclasses,
+please see the usage documentation on <a class="reference internal" href="../../usage/tasks.html#new-style-tasks"><em>new-style tasks</em></a>.</p>
+<div class="versionadded">
+<p><span>New in version 1.1.</span></p>
+</div>
+<dl class="method">
+<dt id="fabric.tasks.Task.get_hosts">
+<tt class="descname">get_hosts</tt><big>(</big><em>arg_hosts</em>, <em>arg_roles</em>, <em>arg_exclude_hosts</em>, <em>env=None</em><big>)</big><a class="headerlink" href="#fabric.tasks.Task.get_hosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the host list the given task should be using.</p>
+<p>See <a class="reference internal" href="../../usage/execution.html#host-lists"><em>How host lists are constructed</em></a> for detailed documentation on how host lists are
+set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fabric.tasks.WrappedCallableTask">
+<em class="property">class </em><tt class="descclassname">fabric.tasks.</tt><tt class="descname">WrappedCallableTask</tt><big>(</big><em>callable</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.tasks.WrappedCallableTask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps a given callable transparently, while marking it as a valid Task.</p>
+<p>Generally used via <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a> and not directly.</p>
+<div class="versionadded">
+<p><span>New in version 1.1.</span></p>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="docs.html#fabric.docs.unwrap_tasks" title="fabric.docs.unwrap_tasks"><tt class="xref py py-obj docutils literal"><span class="pre">unwrap_tasks</span></tt></a>, <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a></p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.tasks.execute">
+<tt class="descclassname">fabric.tasks.</tt><tt class="descname">execute</tt><big>(</big><em>task</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.tasks.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute <tt class="docutils literal"><span class="pre">task</span></tt> (callable or name), honoring host/role decorators, etc.</p>
+<p><tt class="docutils literal"><span class="pre">task</span></tt> may be an actual callable object, or it may be a registered task
+name, which is used to look up a callable just as if the name had been
+given on the command line (including <a class="reference internal" href="../../usage/tasks.html#namespaces"><em>namespaced tasks</em></a>,
+e.g. <tt class="docutils literal"><span class="pre">&quot;deploy.migrate&quot;</span></tt>.</p>
+<p>The task will then be executed once per host in its host list, which is
+(again) assembled in the same manner as CLI-specified tasks: drawing from
+<a class="reference internal" href="../../usage/fab.html#cmdoption-H"><em class="xref std std-option">-H</em></a>, <a class="reference internal" href="../../usage/env.html#hosts"><em>env.hosts</em></a>, the <a class="reference internal" href="decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> or
+<a class="reference internal" href="decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a> decorators, and so forth.</p>
+<p><tt class="docutils literal"><span class="pre">host</span></tt>, <tt class="docutils literal"><span class="pre">hosts</span></tt>, <tt class="docutils literal"><span class="pre">role</span></tt>, <tt class="docutils literal"><span class="pre">roles</span></tt> and <tt class="docutils literal"><span class="pre">exclude_hosts</span></tt> kwargs will
+be stripped out of the final call, and used to set the task&#8217;s host list, as
+if they had been specified on the command line like e.g. <tt class="docutils literal"><span class="pre">fab</span>
+<span class="pre">taskname:host=hostname</span></tt>.</p>
+<p>Any other arguments or keyword arguments will be passed verbatim into
+<tt class="docutils literal"><span class="pre">task</span></tt> (the function itself &#8211; not the <tt class="docutils literal"><span class="pre">&#64;task</span></tt> decorator wrapping your
+function!) when it is called, so <tt class="docutils literal"><span class="pre">execute(mytask,</span> <span class="pre">'arg1',</span>
+<span class="pre">kwarg1='value')</span></tt> will (once per host) invoke <tt class="docutils literal"><span class="pre">mytask('arg1',</span>
+<span class="pre">kwarg1='value')</span></tt>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">a dictionary mapping host strings to the given task&#8217;s return value for
+that host&#8217;s execution run. For example, <tt class="docutils literal"><span class="pre">execute(foo,</span> <span class="pre">hosts=['a',</span>
+<span class="pre">'b'])</span></tt> might return <tt class="docutils literal"><span class="pre">{'a':</span> <span class="pre">None,</span> <span class="pre">'b':</span> <span class="pre">'bar'}</span></tt> if <tt class="docutils literal"><span class="pre">foo</span></tt> returned
+nothing on host <tt class="xref py py-obj docutils literal"><span class="pre">a</span></tt> but returned <tt class="docutils literal"><span class="pre">'bar'</span></tt> on host <tt class="xref py py-obj docutils literal"><span class="pre">b</span></tt>.<p>In situations where a task execution fails for a given host but overall
+progress does not abort (such as when <a class="reference internal" href="../../usage/env.html#skip-bad-hosts"><em>env.skip_bad_hosts</em></a> is True) the return value for that host will be the
+error object or message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="../../usage/execution.html#execute"><em>The execute usage docs</em></a>, for an expanded explanation
+and some examples.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.3.</span></p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.4: </span>Added the return value mapping; previously this function had no defined
+return value.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="operations.html"
+                        title="previous chapter">Operations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">Utils</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/core/tasks.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="utils.html" title="Utils"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="operations.html" title="Operations"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Project Tools &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <link rel="prev" title="File and Directory Management" href="files.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="files.html" title="File and Directory Management"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-fabric.contrib.project">
+<span id="project-tools"></span><h1>Project Tools<a class="headerlink" href="#module-fabric.contrib.project" title="Permalink to this headline">¶</a></h1>
+<p>Useful non-core functionality, e.g. functions composing multiple operations.</p>
+<dl class="function">
+<dt id="fabric.contrib.project.rsync_project">
+<tt class="descclassname">fabric.contrib.project.</tt><tt class="descname">rsync_project</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.contrib.project.rsync_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize a remote directory with the current project directory via rsync.</p>
+<p>Where <tt class="docutils literal"><span class="pre">upload_project()</span></tt> makes use of <tt class="docutils literal"><span class="pre">scp</span></tt> to copy one&#8217;s entire
+project every time it is invoked, <tt class="docutils literal"><span class="pre">rsync_project()</span></tt> uses the <tt class="docutils literal"><span class="pre">rsync</span></tt>
+command-line utility, which only transfers files newer than those on the
+remote end.</p>
+<p><tt class="docutils literal"><span class="pre">rsync_project()</span></tt> is thus a simple wrapper around <tt class="docutils literal"><span class="pre">rsync</span></tt>; for
+details on how <tt class="docutils literal"><span class="pre">rsync</span></tt> works, please see its manpage. <tt class="docutils literal"><span class="pre">rsync</span></tt> must be
+installed on both your local and remote systems in order for this operation
+to work correctly.</p>
+<p>This function makes use of Fabric&#8217;s <tt class="docutils literal"><span class="pre">local()</span></tt> operation, and returns the
+output of that function call; thus it will return the stdout, if any, of
+the resultant <tt class="docutils literal"><span class="pre">rsync</span></tt> call.</p>
+<p><tt class="docutils literal"><span class="pre">rsync_project()</span></tt> takes the following parameters:</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">remote_dir</span></tt>: the only required parameter, this is the path to the
+directory on the remote server. Due to how <tt class="docutils literal"><span class="pre">rsync</span></tt> is implemented, the
+exact behavior depends on the value of <tt class="docutils literal"><span class="pre">local_dir</span></tt>:</p>
+<blockquote>
+<div><ul class="simple">
+<li>If <tt class="docutils literal"><span class="pre">local_dir</span></tt> ends with a trailing slash, the files will be
+dropped inside of <tt class="docutils literal"><span class="pre">remote_dir</span></tt>. E.g.
+<tt class="docutils literal"><span class="pre">rsync_project(&quot;/home/username/project&quot;,</span> <span class="pre">&quot;foldername/&quot;)</span></tt> will drop
+the contents of <tt class="docutils literal"><span class="pre">foldername</span></tt> inside of <tt class="docutils literal"><span class="pre">/home/username/project</span></tt>.</li>
+<li>If <tt class="docutils literal"><span class="pre">local_dir</span></tt> does <strong>not</strong> end with a trailing slash (and this
+includes the default scenario, when <tt class="docutils literal"><span class="pre">local_dir</span></tt> is not specified),
+<tt class="docutils literal"><span class="pre">remote_dir</span></tt> is effectively the &#8220;parent&#8221; directory, and a new
+directory named after <tt class="docutils literal"><span class="pre">local_dir</span></tt> will be created inside of it. So
+<tt class="docutils literal"><span class="pre">rsync_project(&quot;/home/username&quot;,</span> <span class="pre">&quot;foldername&quot;)</span></tt> would create a new
+directory <tt class="docutils literal"><span class="pre">/home/username/foldername</span></tt> (if needed) and place the
+files there.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">local_dir</span></tt>: by default, <tt class="docutils literal"><span class="pre">rsync_project</span></tt> uses your current working
+directory as the source directory. This may be overridden by specifying
+<tt class="docutils literal"><span class="pre">local_dir</span></tt>, which is a string passed verbatim to <tt class="docutils literal"><span class="pre">rsync</span></tt>, and thus
+may be a single directory (<tt class="docutils literal"><span class="pre">&quot;my_directory&quot;</span></tt>) or multiple directories
+(<tt class="docutils literal"><span class="pre">&quot;dir1</span> <span class="pre">dir2&quot;</span></tt>). See the <tt class="docutils literal"><span class="pre">rsync</span></tt> documentation for details.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">exclude</span></tt>: optional, may be a single string, or an iterable of strings,
+and is used to pass one or more <tt class="docutils literal"><span class="pre">--exclude</span></tt> options to <tt class="docutils literal"><span class="pre">rsync</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">delete</span></tt>: a boolean controlling whether <tt class="docutils literal"><span class="pre">rsync</span></tt>&#8216;s <tt class="docutils literal"><span class="pre">--delete</span></tt> option
+is used. If True, instructs <tt class="docutils literal"><span class="pre">rsync</span></tt> to remove remote files that no
+longer exist locally. Defaults to False.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">extra_opts</span></tt>: an optional, arbitrary string which you may use to pass
+custom arguments or options to <tt class="docutils literal"><span class="pre">rsync</span></tt>.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ssh_opts</span></tt>: Like <tt class="docutils literal"><span class="pre">extra_opts</span></tt> but specifically for the SSH options
+string (rsync&#8217;s <tt class="docutils literal"><span class="pre">--rsh</span></tt> flag.)</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">capture</span></tt>: Sent directly into an inner <a class="reference internal" href="../core/operations.html#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> call.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">upload</span></tt>: a boolean controlling whether file synchronization is
+performed up or downstream. Upstream by default.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">default_opts</span></tt>: the default rsync options <tt class="docutils literal"><span class="pre">-pthrvz</span></tt>, override if
+desired (e.g. to remove verbosity, etc).</p>
+</li>
+</ul>
+<p>Furthermore, this function transparently honors Fabric&#8217;s port and SSH key
+settings. Calling this function when the current host string contains a
+nonstandard port, or when <tt class="docutils literal"><span class="pre">env.key_filename</span></tt> is non-empty, will use the
+specified port and/or SSH key filename(s).</p>
+<p>For reference, the approximate <tt class="docutils literal"><span class="pre">rsync</span></tt> command-line call that is
+constructed by this function is the following:</p>
+<div class="highlight-python"><pre>rsync [--delete] [--exclude exclude[0][, --exclude[1][, ...]]] \
+    [default_opts] [extra_opts] &lt;local_dir&gt; &lt;host_string&gt;:&lt;remote_dir&gt;</pre>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.4.0: </span>The <tt class="docutils literal"><span class="pre">ssh_opts</span></tt> keyword argument.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.4.1: </span>The <tt class="docutils literal"><span class="pre">capture</span></tt> keyword argument.</p>
+</div>
+<div class="versionadded">
+<p><span>New in version 1.8.0: </span>The <tt class="docutils literal"><span class="pre">default_opts</span></tt> keyword argument.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="fabric.contrib.project.upload_project">
+<tt class="descclassname">fabric.contrib.project.</tt><tt class="descname">upload_project</tt><big>(</big><em>local_dir=None</em>, <em>remote_dir=''</em>, <em>use_sudo=False</em><big>)</big><a class="headerlink" href="#fabric.contrib.project.upload_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload the current project to a remote system via <tt class="docutils literal"><span class="pre">tar</span></tt>/<tt class="docutils literal"><span class="pre">gzip</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">local_dir</span></tt> specifies the local project directory to upload, and defaults
+to the current working directory.</p>
+<p><tt class="docutils literal"><span class="pre">remote_dir</span></tt> specifies the target directory to upload into (meaning that
+a copy of <tt class="docutils literal"><span class="pre">local_dir</span></tt> will appear as a subdirectory of <tt class="docutils literal"><span class="pre">remote_dir</span></tt>)
+and defaults to the remote user&#8217;s home directory.</p>
+<p><tt class="docutils literal"><span class="pre">use_sudo</span></tt> specifies which method should be used when executing commands
+remotely. <tt class="docutils literal"><span class="pre">sudo</span></tt> will be used if use_sudo is True, otherwise <tt class="docutils literal"><span class="pre">run</span></tt> will
+be used.</p>
+<p>This function makes use of the <tt class="docutils literal"><span class="pre">tar</span></tt> and <tt class="docutils literal"><span class="pre">gzip</span></tt> programs/libraries,
+thus it will not work too well on Win32 systems unless one is using Cygwin
+or something similar. It will attempt to clean up the local and remote
+tarfiles when it finishes executing, even in the event of a failure.</p>
+<div class="versionchanged">
+<p><span>Changed in version 1.1: </span>Added the <tt class="docutils literal"><span class="pre">local_dir</span></tt> and <tt class="docutils literal"><span class="pre">remote_dir</span></tt> kwargs.</p>
+</div>
+<div class="versionchanged">
+<p><span>Changed in version 1.7: </span>Added the <tt class="docutils literal"><span class="pre">use_sudo</span></tt> kwarg.</p>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="files.html"
+                        title="previous chapter">File and Directory Management</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/api/contrib/project.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="files.html" title="File and Directory Management"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>

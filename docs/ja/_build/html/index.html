@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Fabric &mdash; Fabric 1.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Fabric 1.8 documentation" href="#" />
+    <link rel="next" title="概要とチュートリアル" href="tutorial.html" />
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18486793-1']);
+  _gaq.push(['_setDomainName', '.fabfile.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="概要とチュートリアル"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fabric">
+<h1>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://travis-ci.org/fabric/fabric"><img alt="https://secure.travis-ci.org/fabric/fabric.png?branch=master" src="https://secure.travis-ci.org/fabric/fabric.png?branch=master" /></a>
+<p>Fabric は Python のライブラリで、アプリケーションのデプロイメントや
+システム管理タスクのための SSH の利用を合理化するためのコマンドライン
+ツールです。</p>
+<p>It provides a basic suite of operations for executing local or remote shell
+commands (normally or via <tt class="docutils literal"><span class="pre">sudo</span></tt>) and uploading/downloading files, as well as
+auxiliary functionality such as prompting the running user for input, or
+aborting execution.</p>
+<p>Typical use involves creating a Python module containing one or more functions,
+then executing them via the <tt class="docutils literal"><span class="pre">fab</span></tt> command-line tool. Below is a small but
+complete &#8220;fabfile&#8221; containing a single task:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
+
+<span class="k">def</span> <span class="nf">host_type</span><span class="p">():</span>
+    <span class="n">run</span><span class="p">(</span><span class="s">&#39;uname -s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once a task is defined, it may be run on one or more servers, like so:</p>
+<div class="highlight-python"><pre>$ fab -H localhost,linuxbox host_type
+[localhost] run: uname -s
+[localhost] out: Darwin
+[linuxbox] run: uname -s
+[linuxbox] out: Linux
+
+Done.
+Disconnecting from localhost... done.
+Disconnecting from linuxbox... done.</pre>
+</div>
+<p>In addition to use via the <tt class="docutils literal"><span class="pre">fab</span></tt> tool, Fabric&#8217;s components may be imported
+into other Python code, providing a Pythonic interface to the SSH protocol
+suite at a higher level than that provided by e.g. the <tt class="docutils literal"><span class="pre">Paramiko</span></tt> library
+(which Fabric itself uses.)</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Stable releases of Fabric are best installed via <tt class="docutils literal"><span class="pre">pip</span></tt> or <tt class="docutils literal"><span class="pre">easy_install</span></tt>;
+or you may download TGZ or ZIP source archives from a couple of official
+locations. Detailed instructions and links may be found on the
+<a class="reference internal" href="installation.html"><em>Installation</em></a> page.</p>
+<p>We recommend using the latest stable version of Fabric; releases are made often
+to prevent any large gaps in functionality between the latest stable release
+and the development version.</p>
+<p>However, if you want to live on the edge, you can pull down the source code
+from our Git repository, or fork us on Github. The <a class="reference internal" href="installation.html"><em>Installation</em></a> page has
+details for how to access the source code.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you install Fabric from Git, you will need to install its dependency
+Paramiko from Git as well. See <a class="reference internal" href="installation.html"><em>the installation docs</em></a>
+for details.</p>
+</div>
+</div>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p>Any hackers interested in improving Fabric (or even users interested in how
+Fabric is put together or released) please see the <a class="reference internal" href="development.html"><em>Development</em></a> page. It
+contains comprehensive info on contributing, repository layout, our release
+strategy, and more.</p>
+</div>
+<div class="section" id="documentation">
+<span id="documentation-index"></span><h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>Please note that all documentation is currently written with Python 2.5 users
+in mind, but with an eye for eventual Python 3.x compatibility. This leads to
+the following patterns that may throw off readers used to Python 2.4 or who
+have already upgraded to Python 2.6/2.7:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">from</span> <span class="pre">__future__</span> <span class="pre">import</span> <span class="pre">with_statement</span></tt>: a &#8220;future import&#8221; required to
+use the <tt class="docutils literal"><span class="pre">with</span></tt> statement in Python 2.5 &#8211; a feature you&#8217;ll be using
+frequently. Python 2.6+ users don&#8217;t need to do this.</li>
+<li><tt class="docutils literal"><span class="pre">&lt;true_value&gt;</span> <span class="pre">if</span> <span class="pre">&lt;expression&gt;</span> <span class="pre">else</span> <span class="pre">&lt;false_value&gt;</span></tt>: Python&#8217;s relatively new
+ternary statement, available in 2.5 and newer. Python 2.4 and older used to
+fake this with <tt class="docutils literal"><span class="pre">&lt;expression&gt;</span> <span class="pre">and</span> <span class="pre">&lt;true_value&gt;</span> <span class="pre">or</span> <span class="pre">&lt;false_value&gt;</span></tt> (which
+isn&#8217;t quite the same thing and has some logical loopholes.)</li>
+<li><tt class="docutils literal"><span class="pre">print(&lt;expression&gt;)</span></tt> instead of <tt class="docutils literal"><span class="pre">print</span> <span class="pre">&lt;expression&gt;</span></tt>: We use the
+<tt class="docutils literal"><span class="pre">print</span></tt> statement&#8217;s optional parentheses where possible, in order to be
+more compatible with Python 3.x (in which <tt class="docutils literal"><span class="pre">print</span></tt> becomes a function.)</li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="tutorial">
+<h3>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h3>
+<p>For new users, and/or for an overview of Fabric&#8217;s basic functionality, please
+see the <a class="reference internal" href="tutorial.html"><em>概要とチュートリアル</em></a>. The rest of the documentation will assume you&#8217;re
+at least passingly familiar with the material contained within.</p>
+</div>
+<div class="section" id="usage-documentation">
+<span id="usage-docs"></span><h3>Usage documentation<a class="headerlink" href="#usage-documentation" title="Permalink to this headline">¶</a></h3>
+<p>The following list contains all major sections of Fabric&#8217;s prose (non-API)
+documentation, which expands upon the concepts outlined in the
+<a class="reference internal" href="tutorial.html"><em>概要とチュートリアル</em></a> and also covers advanced topics.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage/env.html">The environment dictionary, <tt class="docutils literal"><span class="pre">env</span></tt></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/env.html#environment-as-configuration">Environment as configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/env.html#environment-as-shared-state">Environment as shared state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/env.html#other-considerations">Other considerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/env.html#full-list-of-env-vars">Full list of env vars</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/execution.html">Execution model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#execution-strategy">Execution strategy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#defining-tasks">Defining tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#defining-host-lists">Defining host lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#intelligently-executing-tasks-with-execute">Intelligently executing tasks with <tt class="docutils literal"><span class="pre">execute</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#failure-handling">Failure handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#connections">Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#password-management">Password management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/execution.html#leveraging-native-ssh-config-files">Leveraging native SSH config files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/fab.html"><tt class="docutils literal"><span class="pre">fab</span></tt> options and arguments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/fab.html#basic-use">Basic use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fab.html#arbitrary-remote-shell-commands">Arbitrary remote shell commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fab.html#command-line-options">Command-line options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fab.html#per-task-arguments">Per-task arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fab.html#settings-files">Settings files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/fabfiles.html">Fabfile construction and use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/fabfiles.html#fabfile-discovery">Fabfile discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fabfiles.html#importing-fabric">Importing Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/fabfiles.html#defining-tasks-and-importing-callables">Defining tasks and importing callables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/interactivity.html">Interaction with remote programs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/interactivity.html#combining-stdout-and-stderr">Combining stdout and stderr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/interactivity.html#pseudottys">Pseudo-terminals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/interactivity.html#combining-the-two">Combining the two</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/library.html">Library Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/library.html#connections">Connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/library.html#disconnecting">Disconnecting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/library.html#final-note">Final note</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/output_controls.html">Managing output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/output_controls.html#output-levels">Output levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/output_controls.html#hiding-and-or-showing-output-levels">Hiding and/or showing output levels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/parallel.html">Parallel execution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/parallel.html#what-it-does">What it does</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/parallel.html#how-to-use-it">How to use it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/parallel.html#bubble-size">Bubble size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/parallel.html#linewise-vs-bytewise-output">Linewise vs bytewise output</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/ssh.html">SSH behavior</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/ssh.html#unknown-hosts">Unknown hosts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/ssh.html#known-hosts-with-changed-keys">Known hosts with changed keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage/tasks.html">Defining tasks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/tasks.html#new-style-tasks">New-style tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage/tasks.html#classic-tasks">Classic tasks</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="faq">
+<span id="id1"></span><h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h3>
+<p>Some frequently encountered questions, coupled with answers/solutions/excuses,
+may be found on the <a class="reference internal" href="faq.html"><em>Frequently Asked Questions (FAQ)</em></a> page.</p>
+</div>
+<div class="section" id="troubleshooting">
+<h3>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>Before asking for help or filing a bug, make sure you&#8217;ve read our
+<a class="reference internal" href="troubleshooting.html"><em>document on troubleshooting</em></a>.</p>
+</div>
+<div class="section" id="api-documentation">
+<span id="api-docs"></span><h3>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h3>
+<p>Fabric maintains two sets of API documentation, autogenerated from the source
+code&#8217;s docstrings (which are typically very thorough.)</p>
+<div class="section" id="core-api">
+<span id="id2"></span><h4>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h4>
+<p>The <strong>core</strong> API is loosely defined as those functions, classes and methods
+which form the basic building blocks of Fabric (such as
+<a class="reference internal" href="api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> and <a class="reference internal" href="api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>) upon which everything
+else (the below &#8220;contrib&#8221; section, and user fabfiles) builds.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/core/colors.html">Color output functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/context_managers.html">Context Managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/docs.html">Documentation helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/network.html">Network</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/operations.html">Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/tasks.html">Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/core/utils.html">Utils</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="contrib-api">
+<span id="id3"></span><h4>Contrib API<a class="headerlink" href="#contrib-api" title="Permalink to this headline">¶</a></h4>
+<p>Fabric&#8217;s <strong>contrib</strong> package contains commonly useful tools (often merged in
+from user fabfiles) for tasks such as user I/O, modifying remote files, and so
+forth. While the core API is likely to remain small and relatively unchanged
+over time, this contrib section will grow and evolve (while trying to remain
+backwards-compatible) as more use-cases are solved and added.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/contrib/console.html">Console Output Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/contrib/django.html">Django Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/contrib/files.html">File and Directory Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/contrib/project.html">Project Tools</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="changelog">
+<h3>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h3>
+<p>Please see <a class="reference internal" href="changelog.html"><em>the changelog</em></a>.</p>
+</div>
+<div class="section" id="roadmap">
+<h3>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h3>
+<p>Please see <a class="reference internal" href="roadmap.html"><em>the roadmap</em></a>.</p>
+</div>
+</div>
+<div class="section" id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<p>If you&#8217;ve scoured the <a class="reference internal" href="#usage-docs"><em>prose</em></a> and <a class="reference internal" href="#api-docs"><em>API</em></a>
+documentation and still can&#8217;t find an answer to your question, below are
+various support resources that should help. We do request that you do at least
+skim the documentation before posting tickets or mailing list questions,
+however!</p>
+<div class="section" id="mailing-list">
+<h3>Mailing list<a class="headerlink" href="#mailing-list" title="Permalink to this headline">¶</a></h3>
+<p>The best way to get help with using Fabric is via the <a class="reference external" href="http://lists.nongnu.org/mailman/listinfo/fab-user">fab-user mailing list</a> (currently hosted at
+<tt class="docutils literal"><span class="pre">nongnu.org</span></tt>.) The Fabric developers do their best to reply promptly, and the
+list contains an active community of other Fabric users and contributors as
+well.</p>
+</div>
+<div class="section" id="twitter">
+<h3>Twitter<a class="headerlink" href="#twitter" title="Permalink to this headline">¶</a></h3>
+<p>Fabric has an official Twitter account, <a class="reference external" href="http://twitter.com/pyfabric">&#64;pyfabric</a>, which is used for announcements and occasional
+related news tidbits (e.g. &#8220;Hey, check out this neat article on Fabric!&#8221;).</p>
+</div>
+<div class="section" id="bugs-ticket-tracker">
+<span id="bugs"></span><h3>Bugs/ticket tracker<a class="headerlink" href="#bugs-ticket-tracker" title="Permalink to this headline">¶</a></h3>
+<p>To file new bugs or search existing ones, you may visit Fabric&#8217;s <a class="reference external" href="https://github.com/fabric/fabric/issues">Github Issues</a> page. This does require a (free, easy to set up) Github account.</p>
+</div>
+<div class="section" id="irc">
+<span id="id4"></span><h3>IRC<a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h3>
+<p>We maintain a semi-official IRC channel at <tt class="docutils literal"><span class="pre">#fabric</span></tt> on Freenode
+(<tt class="docutils literal"><span class="pre">irc://irc.freenode.net</span></tt>) where the developers and other users may be found.
+As always with IRC, we can&#8217;t promise immediate responses, but some folks keep
+logs of the channel and will try to get back to you when they can.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+
+
+<h3>Project Versions</h3>
+<ul id="sidebar_versions">
+    
+    
+    <li><a href="/en/1.8.0/">1.8.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.7.0/">1.7.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.2/">1.6.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.1/">1.6.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.6.0/">1.6.0</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.4/">1.5.4</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.3/">1.5.3</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.2/">1.5.2</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.1/">1.5.1</a></li>
+    
+    
+    
+    <li><a href="/en/1.5.0/">1.5.0</a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</ul>
+
+
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fabric</a><ul>
+<li><a class="reference internal" href="#about">About</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#development">Development</a></li>
+<li><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li><a class="reference internal" href="#tutorial">Tutorial</a></li>
+<li><a class="reference internal" href="#usage-documentation">Usage documentation</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#faq">FAQ</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#api-documentation">API documentation</a><ul>
+<li><a class="reference internal" href="#core-api">Core API</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#contrib-api">Contrib API</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#changelog">Changelog</a></li>
+<li><a class="reference internal" href="#roadmap">Roadmap</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-help">Getting help</a><ul>
+<li><a class="reference internal" href="#mailing-list">Mailing list</a></li>
+<li><a class="reference internal" href="#twitter">Twitter</a></li>
+<li><a class="reference internal" href="#bugs-ticket-tracker">Bugs/ticket tracker</a></li>
+<li><a class="reference internal" href="#irc">IRC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="tutorial.html"
+                        title="next chapter">概要とチュートリアル</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tutorial.html" title="概要とチュートリアル"
+             >next</a> |</li>
+        <li><a href="#">Fabric 1.8 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+  </body>
+</html>
