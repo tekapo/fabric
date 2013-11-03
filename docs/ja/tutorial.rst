@@ -1,45 +1,72 @@
 =====================
-Overview and Tutorial
+概要とチュートリアル
 =====================
 
-Welcome to Fabric!
+.. Welcome to Fabric!
 
-This document is a whirlwind tour of Fabric's features and a quick guide to its
-use. Additional documentation (which is linked to throughout) can be found in
-the :ref:`usage documentation <usage-docs>` -- please make sure to check it out.
+Fabric へようこそ !
 
+..
+    This document is a whirlwind tour of Fabric's features and a quick guide to its
+    use. Additional documentation (which is linked to throughout) can be found in
+    the :ref:`usage documentation <usage-docs>` -- please make sure to check it out.
+    
+このドキュメントは Fabric の機能を紹介する駆け足のツアーであり、使い方のクイックガイドでも
+あります。さらに詳しいドキュメント (全体にリンクされています) は :ref:`使用方法 <usage-docs>`
+にあります。ぜひご覧になってください。
 
-What is Fabric?
+.. What is Fabric?
+
+Fabric とは ?
 ===============
 
-As the ``README`` says:
+.. As the ``README`` says:
+
+``README`` によると:
 
     .. include:: ../README.rst
         :end-before: It provides
 
-More specifically, Fabric is:
+.. More specifically, Fabric is:
 
-* A tool that lets you execute **arbitrary Python functions** via the **command
-  line**;
-* A library of subroutines (built on top of a lower-level library) to make
-  executing shell commands over SSH **easy** and **Pythonic**.
+もっと具体的に言うと、Fabric とは:
 
-Naturally, most users combine these two things, using Fabric to write and
-execute Python functions, or **tasks**, to automate interactions with remote
-servers. Let's take a look.
+..
+	* A tool that lets you execute **arbitrary Python functions** via the **command
+	  line**;
+	* A library of subroutines (built on top of a lower-level library) to make
+	  executing shell commands over SSH **easy** and **Pythonic**.
 
+* **コマンドライン** 経由で **任意の Python 関数** を実行するツールです。
+* (低レベルライブラリの上に構築された) サブルーチンのライブラリで、SSH 経由で **簡単に** かつ 
+  **Python 風に** シェルコマンドを実行します。
+
+..
+	Naturally, most users combine these two things, using Fabric to write and
+	execute Python functions, or **tasks**, to automate interactions with remote
+	servers. Let's take a look.
+
+当然、たいていのユーザーはこの2つを組み合わせます。Fabric を使って Python の関数もしくは
+**タスク** を作成し、実行して、リモートサーバとのやりとりを自動化します。ではちょっと見てみましょう。
 
 Hello, ``fab``
 ==============
 
-This wouldn't be a proper tutorial without "the usual"::
+.. This wouldn't be a proper tutorial without "the usual"::
+
+"通常"とはちょっと違ったチュートリアルかもしれません::
 
     def hello():
         print("Hello world!")
 
-Placed in a Python module file named ``fabfile.py`` in your current working
-directory, that ``hello`` function can be executed with the ``fab`` tool
-(installed as part of Fabric) and does just what you'd expect::
+..
+    Placed in a Python module file named ``fabfile.py`` in your current working
+    directory, that ``hello`` function can be executed with the ``fab`` tool
+    (installed as part of Fabric) and does just what you'd expect::
+
+上のコードを ``fabfile.py`` という名前の Python モジュールファイルとしてカレントのワーキング
+ディレクトリに置くと、 ``fab`` ツール (Fabric のパーツとしてインストールされています)
+で ``hello`` 関数を実行することができ、期待した通りに動きます::
 
     $ fab hello
     Hello world!
@@ -49,55 +76,85 @@ directory, that ``hello`` function can be executed with the ``fab`` tool
 That's all there is to it. This functionality allows Fabric to be used as a
 (very) basic build tool even without importing any of its API.
 
+どうってことはありません。この機能により自身の API をインポートしなくても (とても) 
+ベーシックなビルドツールとして Fabric が利用できるということです。
+
 .. note::
 
     The ``fab`` tool simply imports your fabfile and executes the function or
     functions you instruct it to. There's nothing magic about it -- anything
     you can do in a normal Python script can be done in a fabfile!
 
+    ``fab`` ツールは単にあなたの fabfile をインポートしてその指示にしたがって
+    ひとつもしくは複数の関数を実行します。何かマジックがあるわけではありません。
+    通常の Python スクリプトで可能なすべてのことが fabfile 内でも可能なのです!
+
 .. seealso:: :ref:`execution-strategy`, :doc:`/usage/tasks`, :doc:`/usage/fab`
 
 
-Task arguments
-==============
+Task arguments タスク引数
+============================
 
-It's often useful to pass runtime parameters into your tasks, just as you might
-during regular Python programming. Fabric has basic support for this using a
-shell-compatible notation: ``<task name>:<arg>,<kwarg>=<value>,...``. It's
-contrived, but let's extend the above example to say hello to you personally::
+..
+    It's often useful to pass runtime parameters into your tasks, just as you might
+    during regular Python programming. Fabric has basic support for this using a
+    shell-compatible notation: ``<task name>:<arg>,<kwarg>=<value>,...``. It's
+    contrived, but let's extend the above example to say hello to you personally::
+
+通常の Python プログラミングのようにランタイム引数をタスクに渡せるので便利です。
+Fabric はこれに対する基本的なサポートを持ってて、シェル互換ノーテーションを使っています:
+``<task name>:<arg>,<kwarg>=<value>,...`` 不自然な感じがするかもしれませんが、
+上の例を拡張してあなたに say hello と言うようにしてみましょう::
 
     def hello(name="world"):
         print("Hello %s!" % name)
 
-By default, calling ``fab hello`` will still behave as it did before; but now
-we can personalize it::
+..
+    By default, calling ``fab hello`` will still behave as it did before; but now
+    we can personalize it::
+
+デフォルトでは、 ``fab hello`` を呼び出しても以前と同じ動きをします。今度はこれを
+パーソナライズしてみましょう::
 
     $ fab hello:name=Jeff
     Hello Jeff!
 
     Done.
 
-Those already used to programming in Python might have guessed that this
-invocation behaves exactly the same way::
+..
+    Those already used to programming in Python might have guessed that this
+    invocation behaves exactly the same way::
+
+Python プログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
+想像できると思います::
 
     $ fab hello:Jeff
     Hello Jeff!
 
     Done.
 
-For the time being, your argument values will always show up in Python as
-strings and may require a bit of string manipulation for complex types such
-as lists. Future versions may add a typecasting system to make this easier.
+..
+    For the time being, your argument values will always show up in Python as
+    strings and may require a bit of string manipulation for complex types such
+    as lists. Future versions may add a typecasting system to make this easier.
+
+差し当たりは、引数の値は常に文字列として Python に現れ、リストなどの複雑な型では少し
+文字列操作が必要になります。将来のバージョンではこれをより簡単にするため、型キャストシステム
+が追加されるかもしれません。
 
 .. seealso:: :ref:`task-arguments`
 
-Local commands
-==============
+Local commands ローカルコマンド
+================================
 
 As used above, ``fab`` only really saves a couple lines of
 ``if __name__ == "__main__"`` boilerplate. It's mostly designed for use with
 Fabric's API, which contains functions (or **operations**) for executing shell
 commands, transferring files, and so forth.
+
+上の例では、 ``fab`` は ``if __name__ == "__main__"`` の定型文の何行かを省略できるに
+過ぎませんが、たいていは Fabric の API と利用するためにデザインされています。API には
+シェルコマンドの実行、ファイルの転送などの関数 (もしくは **操作**) が含まれます。
 
 Let's build a hypothetical Web application fabfile. This example scenario is
 as follows: The Web application is managed via Git on a remote host
@@ -106,12 +163,21 @@ When we push changes back to ``vcshost``, we want to be able to immediately
 install these changes on a remote host ``my_server`` in an automated fashion.
 We will do this by automating the local and remote Git commands.
 
-Fabfiles usually work best at the root of a project::
+では、仮定のウェブアプリケーションの fabfile を作ってみましょう。この例のシナリオは次の
+ようなものです: このウェブアプリケーションはリモートホスト ``vcshost`` 上にGit経由で管理されています。
+``localhost`` 上ではこのウェブアプリケーションのローカルクローンがあります。``vcshost`` 
+に変更をプッシュすると、すぐに、そして自動的にリモートホスト ``my_server`` に変更を反映させたいと思います。
+これを、ローカルとリモートのGitコマンドを自動化することによって実施させてみましょう。
+
+..
+    Fabfiles usually work best at the root of a project::
+
+通常は、fabfileはプロジェクトのルートに置くのがいいでしょう::
 
     .
     |-- __init__.py
     |-- app.wsgi
-    |-- fabfile.py <-- our fabfile!
+    |-- fabfile.py <-- わたしたちの fabfile!
     |-- manage.py
     `-- my_app
         |-- __init__.py
@@ -126,9 +192,12 @@ Fabfiles usually work best at the root of a project::
 
     We're using a Django application here, but only as an example -- Fabric is
     not tied to any external codebase, save for its SSH library.
+    ここではDjangoアプリケーションを使用していますが、単に例として用いているだけで
+    FabricはSSHライブラリは別として、どんな外部のコードベースにもひも付けられていません。
 
 For starters, perhaps we want to run our tests and commit to our VCS so we're
-ready for a deploy::
+ready for a deploy まず第一にこのテスを実行し、VCSにコミットしてみましょう。
+そしてデプロイを準備をします::
 
     from fabric.api import local
 
@@ -137,7 +206,7 @@ ready for a deploy::
         local("git add -p && git commit")
         local("git push")
 
-The output of which might look a bit like this::
+The output of which might look a bit like this 出力はだいたい次のようになるでしょう::
 
     $ fab prepare_deploy
     [localhost] run: ./manage.py test my_app
@@ -164,6 +233,9 @@ The output of which might look a bit like this::
 The code itself is straightforward: import a Fabric API function,
 `~fabric.operations.local`, and use it to run and interact with local shell
 commands. The rest of Fabric's API is similar -- it's all just Python.
+このコード自身は単純です。FabricのAPI関数 `~fabric.operations.local` をインポートし、
+それを利用してローカルのシェルコマンドを実行し、やりとりを行います。他のFabricのAPIも似ていて
+すべてただのPythonです。
 
 .. seealso:: :doc:`api/core/operations`, :ref:`fabfile-discovery`
 
