@@ -288,11 +288,15 @@ Failure
 Our base case works fine now, but what happens if our tests fail?  Chances are
 we want to put on the brakes and fix them before deploying.
 
-基本的な動きは問題ないですが、もしテストに失敗したらどうなるでしょうか? 
+基本的な動きは問題ないですが、もしテストに失敗したらどうなるでしょうか? デプロイの前にブレーキを
+かけて修正する機会があります。
 
 Fabric checks the return value of programs called via operations and will abort
 if they didn't exit cleanly. Let's see what happens if one of our tests
 encounters an error::
+
+Fabricは操作経由で呼び出されたプログラムの返り値をチェックして、正常に終了しなかった場合には
+停止します。テストのひとつがエラーに出くわしたときにどうなるか見てみましょう。::
 
     $ fab prepare_deploy
     [localhost] run: ./manage.py test my_app
@@ -319,15 +323,24 @@ encounters an error::
 Great! We didn't have to do anything ourselves: Fabric detected the failure and
 aborted, never running the ``commit`` task.
 
+素晴らしい! 私たち自身では何もする必要がありませんでした。Fabricが失敗を検知して停止し、
+``commit`` タスクは決して実行されることはありません
+
 .. seealso:: :ref:`Failure handling (usage documentation) <failures>`
 
 Failure handling
 ----------------
+失敗の扱い
+------------
 
 But what if we wanted to be flexible and give the user a choice? A setting
 (or **environment variable**, usually shortened to **env var**) called
 :ref:`warn_only` lets you turn aborts into warnings, allowing flexible error
 handling to occur.
+
+さて、これを柔軟にしてユーザーに選択をさせるにはどうすれいいでしょう? :ref:`warn_only` と
+呼ばれる設定 (もしくは **environment variable**、通常は短く **env var**) が停止を
+警告に変え、柔軟なエラーの扱いを可能にします。
 
 Let's flip this setting on for our ``test`` function, and then inspect the
 result of the `~fabric.operations.local` call ourselves::
