@@ -192,11 +192,14 @@ We will do this by automating the local and remote Git commands.
 
     We're using a Django application here, but only as an example -- Fabric is
     not tied to any external codebase, save for its SSH library.
+	
     ここではDjangoアプリケーションを使用していますが、単に例として用いているだけで
     FabricはSSHライブラリは別として、どんな外部のコードベースにもひも付けられていません。
 
 For starters, perhaps we want to run our tests and commit to our VCS so we're
-ready for a deploy まず第一にこのテスを実行し、VCSにコミットしてみましょう。
+ready for a deploy:: 
+
+まず第一にこのテスを実行し、VCSにコミットしてみましょう。
 そしてデプロイを準備をします::
 
     from fabric.api import local
@@ -233,6 +236,7 @@ The output of which might look a bit like this 出力はだいたい次のよう
 The code itself is straightforward: import a Fabric API function,
 `~fabric.operations.local`, and use it to run and interact with local shell
 commands. The rest of Fabric's API is similar -- it's all just Python.
+
 このコード自身は単純です。FabricのAPI関数 `~fabric.operations.local` をインポートし、
 それを利用してローカルのシェルコマンドを実行し、やりとりを行います。他のFabricのAPIも似ていて
 すべてただのPythonです。
@@ -243,9 +247,15 @@ commands. The rest of Fabric's API is similar -- it's all just Python.
 Organize it your way
 ====================
 
+好きなように構造化する
+===============
+
 Because Fabric is "just Python" you're free to organize your fabfile any way
 you want. For example, it's often useful to start splitting things up into
 subtasks::
+
+Fabricは"ただのPython"なのでfabfileは好きなように自由に構造化できます。
+例えば、サブタスクに分けることから始めると便利でしょう::
 
     from fabric.api import local
 
@@ -266,12 +276,19 @@ subtasks::
 The ``prepare_deploy`` task can be called just as before, but now you can make
 a more granular call to one of the sub-tasks, if desired.
 
+``prepare_deploy`` タスクは以前と同じように呼び出すことができますが、今回は必要であれば
+サブタスクの一つとしてより粒度を細かくして呼び出しをすることができます。
 
 Failure
 =======
 
+失敗
+====
+
 Our base case works fine now, but what happens if our tests fail?  Chances are
 we want to put on the brakes and fix them before deploying.
+
+基本的な動きは問題ないですが、もしテストに失敗したらどうなるでしょうか? 
 
 Fabric checks the return value of programs called via operations and will abort
 if they didn't exit cleanly. Let's see what happens if one of our tests
