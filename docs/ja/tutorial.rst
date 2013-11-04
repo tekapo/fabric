@@ -343,7 +343,10 @@ handling to occur.
 警告に変え、柔軟なエラーの扱いを可能にします。
 
 Let's flip this setting on for our ``test`` function, and then inspect the
-result of the `~fabric.operations.local` call ourselves::
+result of the `~fabric.operations.local` call ourselves
+
+``test`` 関数でこの設定を有効にして、`~fabric.operations.local` 呼び出しの結果を調べて
+見ましょう::
 
     from __future__ import with_statement
     from fabric.api import local, settings, abort
@@ -358,6 +361,7 @@ result of the `~fabric.operations.local` call ourselves::
     [...]
 
 In adding this new feature we've introduced a number of new things:
+この新しい機能を追加するにあたり、新しいことをたくさん導入しました:
 
 * The ``__future__`` import required to use ``with:`` in Python 2.5;
 * Fabric's `contrib.console <fabric.contrib.console>` submodule, containing the
@@ -368,9 +372,19 @@ In adding this new feature we've introduced a number of new things:
   containing info about their result (such as ``.failed``, or
   ``.return_code``);
 * And the `~fabric.utils.abort` function, used to manually abort execution.
+* Python 2.5 では ``with:`` を使うために ``__future__`` のインポートが必要です。
+* Fabricの `contrib.console <fabric.contrib.console>` サブモジュールは
+  `~fabric.contrib.console.confirm` 関数を含んでいて、簡単なイエス/ノープロンプトに使われます。
+* `~fabric.context_managers.settings` コンテキストマネージャーはコードの特定のブロックに
+  設定を適用するのに使われます。
+* `~fabric.operations.local` のようなコマンドランニング操作は、その結果 (``.failed``
+  や ``.return_code`` など) に関する情報を含むオブジェクトを返すことができます。
+* そして `~fabric.utils.abort` 関数は停止を手動で実行するために使われます。
 
 However, despite the additional complexity, it's still pretty easy to follow,
 and is now much more flexible.
+
+とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったことでしょう。
 
 .. seealso:: :doc:`api/core/context_managers`, :ref:`env-vars`
 
@@ -378,9 +392,15 @@ and is now much more flexible.
 Making connections
 ==================
 
+接続する
+==========
+
 Let's start wrapping up our fabfile by putting in the keystone: a ``deploy``
 task that is destined to run on one or more remote server(s), and ensures the
-code is up to date::
+code is up to date
+
+
+::
 
     def deploy():
         code_dir = '/srv/django/myproject'
