@@ -379,7 +379,7 @@ In adding this new feature we've introduced a number of new things:
   設定を適用するのに使われます。
 * `~fabric.operations.local` のようなコマンドランニング操作は、その結果 (``.failed``
   や ``.return_code`` など) に関する情報を含むオブジェクトを返すことができます。
-* そして `~fabric.utils.abort` 関数は停止を手動で実行するために使われます。
+* そして `~fabric.utils.abort` 関数は手動で停止を実行するために使われます。
 
 However, despite the additional complexity, it's still pretty easy to follow,
 and is now much more flexible.
@@ -399,8 +399,8 @@ Let's start wrapping up our fabfile by putting in the keystone: a ``deploy``
 task that is destined to run on one or more remote server(s), and ensures the
 code is up to date
 
-
-::
+では今度は、肝心な部分を入れてfabfileを仕上げましょう。 ``deploy`` タスクは一つもしくは
+複数のリモートサーバーで実行され、コードが確実に最新になるにようにします。::
 
     def deploy():
         code_dir = '/srv/django/myproject'
@@ -409,6 +409,7 @@ code is up to date
             run("touch app.wsgi")
 
 Here again, we introduce a handful of new concepts:
+今回もまた、たくさんの新しいコンセプトが導入されています:
 
 * Fabric is just Python -- so we can make liberal use of regular Python code
   constructs such as variables and string interpolation;
@@ -417,14 +418,23 @@ Here again, we introduce a handful of new concepts:
   which does the same locally.
 * `~fabric.operations.run`, which is similar to `~fabric.operations.local` but
   runs **remotely** instead of locally.
+* FabricはただのPythonです。したがって、変数や文字列の操作などの通常のPythonコードの
+  概念を自由に利用することができます。
+* `~fabric.context_managers.cd` はコマンドに``cd /どこ/かの/ディレクトリ`` 呼び出しを
+  追加する簡単な方法です。これは同じことをローカルで実行する `~fabric.context_managers.lcd`
+  と似ています。
+* `~fabric.operations.run` は `~fabric.operations.local` に似ていますが、ローカルではなく
+  **リモートで** 動作します。
 
 We also need to make sure we import the new functions at the top of our file::
+また、ファイルの一番上で新しい関数を確実にインポートするようにします::
 
     from __future__ import with_statement
     from fabric.api import local, settings, abort, run, cd
     from fabric.contrib.console import confirm
 
 With these changes in place, let's deploy::
+これらを変更したら、デプロイしてみましょう::
 
     $ fab deploy
     No hosts found. Please specify (single) host string for connection: my_server
@@ -442,13 +452,25 @@ strings" (e.g. ``user@host:port``) and will use your local username as a
 default -- so in this example, we just had to specify the hostname,
 ``my_server``.
 
+このfabfileでは接続情報は指定していません。したがって、Fabricはどのホスト(複数可)でこの
+リモートコマンドが実行されるべきなのかが分かりません。このようなとき、Fabricは起動時に入力を
+促します。接続定義はSSHのような"ホスト文字列"(例えば ``user@host:port``)を使い、
+デフォルトではローカルのユーザー名が使われます。そのため、この例では単にホスト名
+``my_server`` だけを指定しています。
 
 Remote interactivity
 --------------------
 
+リモートとの双方向性
+---------------------
+
 ``git pull`` works fine if you've already got a checkout of your source code --
 but what if this is the first deploy? It'd be nice to handle that case too and
 do the initial ``git clone``::
+
+チェックアウトしたソースコードがすでにあるのなら ``git pull`` で問題ないでしょう。
+しかし最初のデプロイだったらどうでしょう? そうしたケースも扱えて、最初の ``git clone``
+も実行するようにするといいでしょう::
 
     def deploy():
         code_dir = '/srv/django/myproject'
@@ -465,6 +487,8 @@ commands. However, the interesting part here is the ``git clone`` call: since
 we're using Git's SSH method of accessing the repository on our Git server,
 this means our remote `~fabric.operations.run` call will need to authenticate
 itself.
+
+
 
 Older versions of Fabric (and similar high level SSH libraries) run remote
 programs in limbo, unable to be touched from the local end. This is
