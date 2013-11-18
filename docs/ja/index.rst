@@ -2,13 +2,17 @@
 Fabric
 ======
 
-About
-=====
+.. About
+
+Fabricについて
+==============
 
 .. include:: README.rst
 
 
-Installation
+.. Installation
+
+インストール
 ============
 
 Stable releases of Fabric are best installed via ``pip`` or ``easy_install``;
@@ -16,13 +20,24 @@ or you may download TGZ or ZIP source archives from a couple of official
 locations. Detailed instructions and links may be found on the
 :doc:`installation` page.
 
+Fabricの安定版は ``pip`` もしくは ``easy_install`` 経由でインストールするといいでしょう;
+もしくはいくつかの公式の場所から TGZ もしくは ZIP ソースアーカイブをダウンロードすると
+いいでしょう。詳細な説明とリンクは :doc:`installation` ページを参照してください。
+
 We recommend using the latest stable version of Fabric; releases are made often
 to prevent any large gaps in functionality between the latest stable release
 and the development version.
 
+私たちとしてはFabricの最新安定版の使用をおすすめします。最新安定版と開発版の間に機能的な
+大きなギャップが生まれないようにリリースは頻繁に出されます。
+
 However, if you want to live on the edge, you can pull down the source code
 from our Git repository, or fork us on Github. The :doc:`installation` page has
 details for how to access the source code.
+
+とは言え危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソースコードを落とすことも
+できますしGitHub上でフォークすることもできます。ソースコードへのアクセスは :doc:`installation`
+ページで詳細をご覧ください。
 
 .. warning::
 
@@ -30,8 +45,12 @@ details for how to access the source code.
     Paramiko from Git as well. See :doc:`the installation docs <installation>`
     for details.
 
+    GitからFabricをインストールする場合は依存するParamikoもGitからインストールする
+    必要があります。詳細は :doc:`the installation docs <installation>` をご覧ください。
 
-Development
+.. Development
+
+開発
 ===========
 
 Any hackers interested in improving Fabric (or even users interested in how
@@ -39,6 +58,8 @@ Fabric is put together or released) please see the :doc:`development` page. It
 contains comprehensive info on contributing, repository layout, our release
 strategy, and more.
 
+Fabricの改善に興味のあるハッカー(もしくはFabricがどのように組み立てられてリリースされるかに
+興味のある方)はこの :doc:`development` ページを参照してください。
 
 .. _documentation-index:
 
