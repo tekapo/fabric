@@ -129,7 +129,7 @@ Fabricでは実行時引数をタスクに渡せるので便利なことも多�
     Those already used to programming in Python might have guessed that this
     invocation behaves exactly the same way::
 
-Python プログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
+Pythonプログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
 想像できると思います::
 
     $ fab hello:Jeff
@@ -142,7 +142,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     strings and may require a bit of string manipulation for complex types such
     as lists. Future versions may add a typecasting system to make this easier.
 
-差し当たりは、引数の値は常に文字列として Python に現れ、リストなどの複雑な型では少し
+差し当たりは、引数の値は常に文字列としてPythonに現れ、リストなどの複雑な型では少し
 文字列操作が必要になります。将来のバージョンではこれをより簡単にするため、型キャストシステム
 が追加されるかもしれません。
 
@@ -160,7 +160,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     commands, transferring files, and so forth.
 
 上の例では、 ``fab`` は ``if __name__ == "__main__"`` の定型文の何行かを省略できるに
-過ぎませんが、たいていは Fabric の API と利用するためにデザインされています。API には
+過ぎません。たいていはFabricのAPIと利用するためにデザインされます。APIには
 シェルコマンドの実行、ファイルの転送などの関数 (もしくは **操作**) が含まれます。
 
 ..
@@ -209,7 +209,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     For starters, perhaps we want to run our tests and commit to our VCS so we're
     ready for a deploy:: 
 
-まず第一にこのテスを実行し、VCSにコミットしてみましょう。
+まず第一にこのテストを実行し、VCSにコミットしてみましょう。
 そしてデプロイを準備をします::
 
     from fabric.api import local

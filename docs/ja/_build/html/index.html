@@ -67,8 +67,8 @@
             
   <div class="section" id="fabric">
 <h1>Fabric<a class="headerlink" href="#fabric" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Fabricについて<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://travis-ci.org/fabric/fabric"><img alt="https://secure.travis-ci.org/fabric/fabric.png?branch=master" src="https://secure.travis-ci.org/fabric/fabric.png?branch=master" /></a>
 <p>Fabric は Python のライブラリで、アプリケーションのデプロイメントや
 システム管理タスクのための SSH の利用を合理化するためのコマンドライン
@@ -102,31 +102,33 @@ into other Python code, providing a Pythonic interface to the SSH protocol
 suite at a higher level than that provided by e.g. the <tt class="docutils literal"><span class="pre">Paramiko</span></tt> library
 (which Fabric itself uses.)</p>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>Stable releases of Fabric are best installed via <tt class="docutils literal"><span class="pre">pip</span></tt> or <tt class="docutils literal"><span class="pre">easy_install</span></tt>;
-or you may download TGZ or ZIP source archives from a couple of official
-locations. Detailed instructions and links may be found on the
-<a class="reference internal" href="installation.html"><em>Installation</em></a> page.</p>
-<p>We recommend using the latest stable version of Fabric; releases are made often
-to prevent any large gaps in functionality between the latest stable release
-and the development version.</p>
-<p>However, if you want to live on the edge, you can pull down the source code
-from our Git repository, or fork us on Github. The <a class="reference internal" href="installation.html"><em>Installation</em></a> page has
-details for how to access the source code.</p>
+<div class="section" id="id2">
+<h2>インストール<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Fabricの安定版は <tt class="docutils literal"><span class="pre">pip</span></tt> もしくは <tt class="docutils literal"><span class="pre">easy_install</span></tt> 経由でインストールするといいでしょう;
+もしくはいくつかの公式の場所から TGZ もしくは ZIP ソースアーカイブをダウンロードすると
+いいでしょう。詳細な説明とリンクは <a class="reference internal" href="installation.html"><em>Installation</em></a> ページを参照してください。</p>
+<p>私たちとしてはFabricの最新安定版の使用をおすすめします。最新安定版と開発版の間に機能的な
+大きなギャップが生まれないようにリリースは頻繁に出されます。</p>
+<p>とは言え、危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソースコードを落とすことも
+できますし、GitHub上でフォークすることもできます。ソースコードへのアクセスは <a class="reference internal" href="installation.html"><em>Installation</em></a>
+ページで詳細をご覧ください。</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">If you install Fabric from Git, you will need to install its dependency
+<p>If you install Fabric from Git, you will need to install its dependency
 Paramiko from Git as well. See <a class="reference internal" href="installation.html"><em>the installation docs</em></a>
 for details.</p>
+<p class="last">GitからFabricをインストールする場合は依存するParamikoもGitからインストールする
+必要があります。詳細は <a class="reference internal" href="installation.html"><em>the installation docs</em></a> をご覧ください。</p>
 </div>
 </div>
-<div class="section" id="development">
-<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>開発<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Any hackers interested in improving Fabric (or even users interested in how
 Fabric is put together or released) please see the <a class="reference internal" href="development.html"><em>Development</em></a> page. It
 contains comprehensive info on contributing, repository layout, our release
 strategy, and more.</p>
+<p>Fabricの改善に興味のあるハッカー(もしくはFabricがどのように組み立てられてリリースされるかに
+興味のある方)はこの <a class="reference internal" href="development.html"><em>Development</em></a> ページを参照してください。</p>
 </div>
 <div class="section" id="documentation">
 <span id="documentation-index"></span><h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
@@ -231,7 +233,7 @@ documentation, which expands upon the concepts outlined in the
 </div>
 </div>
 <div class="section" id="faq">
-<span id="id1"></span><h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h3>
 <p>Some frequently encountered questions, coupled with answers/solutions/excuses,
 may be found on the <a class="reference internal" href="faq.html"><em>Frequently Asked Questions (FAQ)</em></a> page.</p>
 </div>
@@ -245,7 +247,7 @@ may be found on the <a class="reference internal" href="faq.html"><em>Frequently
 <p>Fabric maintains two sets of API documentation, autogenerated from the source
 code&#8217;s docstrings (which are typically very thorough.)</p>
 <div class="section" id="core-api">
-<span id="id2"></span><h4>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h4>
+<span id="id5"></span><h4>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline">¶</a></h4>
 <p>The <strong>core</strong> API is loosely defined as those functions, classes and methods
 which form the basic building blocks of Fabric (such as
 <a class="reference internal" href="api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> and <a class="reference internal" href="api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>) upon which everything
@@ -264,7 +266,7 @@ else (the below &#8220;contrib&#8221; section, and user fabfiles) builds.</p>
 </div>
 </div>
 <div class="section" id="contrib-api">
-<span id="id3"></span><h4>Contrib API<a class="headerlink" href="#contrib-api" title="Permalink to this headline">¶</a></h4>
+<span id="id6"></span><h4>Contrib API<a class="headerlink" href="#contrib-api" title="Permalink to this headline">¶</a></h4>
 <p>Fabric&#8217;s <strong>contrib</strong> package contains commonly useful tools (often merged in
 from user fabfiles) for tasks such as user I/O, modifying remote files, and so
 forth. While the core API is likely to remain small and relatively unchanged
@@ -313,7 +315,7 @@ related news tidbits (e.g. &#8220;Hey, check out this neat article on Fabric!&#8
 <p>To file new bugs or search existing ones, you may visit Fabric&#8217;s <a class="reference external" href="https://github.com/fabric/fabric/issues">Github Issues</a> page. This does require a (free, easy to set up) Github account.</p>
 </div>
 <div class="section" id="irc">
-<span id="id4"></span><h3>IRC<a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h3>
+<span id="id7"></span><h3>IRC<a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h3>
 <p>We maintain a semi-official IRC channel at <tt class="docutils literal"><span class="pre">#fabric</span></tt> on Freenode
 (<tt class="docutils literal"><span class="pre">irc://irc.freenode.net</span></tt>) where the developers and other users may be found.
 As always with IRC, we can&#8217;t promise immediate responses, but some folks keep
@@ -439,9 +441,9 @@ logs of the channel and will try to get back to you when they can.</p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Fabric</a><ul>
-<li><a class="reference internal" href="#about">About</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#development">Development</a></li>
+<li><a class="reference internal" href="#id1">Fabricについて</a></li>
+<li><a class="reference internal" href="#id2">インストール</a></li>
+<li><a class="reference internal" href="#id3">開発</a></li>
 <li><a class="reference internal" href="#documentation">Documentation</a><ul>
 <li><a class="reference internal" href="#tutorial">Tutorial</a></li>
 <li><a class="reference internal" href="#usage-documentation">Usage documentation</a><ul>
