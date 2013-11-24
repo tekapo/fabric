@@ -29,7 +29,7 @@ Fabric とは ?
 
 .. More specifically, Fabric is:
 
-もっと具体的に言うと、Fabric とは:
+もっと具体的に言うと、Fabricとは:
 
 ..
 	* A tool that lets you execute **arbitrary Python functions** via the **command
@@ -64,8 +64,8 @@ Hello, ``fab``
     directory, that ``hello`` function can be executed with the ``fab`` tool
     (installed as part of Fabric) and does just what you'd expect::
 
-上のコードを ``fabfile.py`` という名前の Python モジュールファイルとしてカレントのワーキング
-ディレクトリに置くと、 ``fab`` ツール (Fabric のパーツとしてインストールされています)
+上のコードを ``fabfile.py`` という名前のPythonモジュールファイルとしてカレントのワーキング
+ディレクトリに置くと、 ``fab`` ツール(Fabricのパーツとしてインストールされています)
 で ``hello`` 関数を実行することができ、期待した通りに動きます::
 
     $ fab hello
@@ -77,8 +77,8 @@ Hello, ``fab``
     That's all there is to it. This functionality allows Fabric to be used as a
     (very) basic build tool even without importing any of its API.
 
-どうってことはありません。この機能により自身の API をインポートしなくても (とても) 
-ベーシックなビルドツールとして Fabric が利用できるということです。
+どうってことはありませんね。この機能性により、自身のAPIを何もインポートしなくても(とても)
+ベーシックなビルドツールとしてFabricを利用することができます。
 
 .. note::
 
