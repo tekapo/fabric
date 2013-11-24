@@ -15,28 +15,31 @@ Fabricについて
 インストール
 ============
 
-Stable releases of Fabric are best installed via ``pip`` or ``easy_install``;
-or you may download TGZ or ZIP source archives from a couple of official
-locations. Detailed instructions and links may be found on the
-:doc:`installation` page.
+..
+    Stable releases of Fabric are best installed via ``pip`` or ``easy_install``;
+    or you may download TGZ or ZIP source archives from a couple of official
+    locations. Detailed instructions and links may be found on the
+    :doc:`installation` page.
 
 Fabricの安定版は ``pip`` もしくは ``easy_install`` 経由でインストールするといいでしょう;
 もしくはいくつかの公式の場所から TGZ もしくは ZIP ソースアーカイブをダウンロードすると
 いいでしょう。詳細な説明とリンクは :doc:`installation` ページを参照してください。
 
-We recommend using the latest stable version of Fabric; releases are made often
-to prevent any large gaps in functionality between the latest stable release
-and the development version.
+..
+    We recommend using the latest stable version of Fabric; releases are made often
+    to prevent any large gaps in functionality between the latest stable release
+    and the development version.
 
 私たちとしてはFabricの最新安定版の使用をおすすめします。最新安定版と開発版の間に機能的な
 大きなギャップが生まれないようにリリースは頻繁に出されます。
 
-However, if you want to live on the edge, you can pull down the source code
-from our Git repository, or fork us on Github. The :doc:`installation` page has
-details for how to access the source code.
+..
+    However, if you want to live on the edge, you can pull down the source code
+    from our Git repository, or fork us on Github. The :doc:`installation` page has
+    details for how to access the source code.
 
-とは言え危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソースコードを落とすことも
-できますしGitHub上でフォークすることもできます。ソースコードへのアクセスは :doc:`installation`
+とは言え、危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソースコードを落とすことも
+できますし、GitHub上でフォークすることもできます。ソースコードへのアクセスは :doc:`installation`
 ページで詳細をご覧ください。
 
 .. warning::
@@ -53,27 +56,45 @@ details for how to access the source code.
 開発
 ===========
 
-Any hackers interested in improving Fabric (or even users interested in how
-Fabric is put together or released) please see the :doc:`development` page. It
-contains comprehensive info on contributing, repository layout, our release
-strategy, and more.
+..
+    Any hackers interested in improving Fabric (or even users interested in how
+    Fabric is put together or released) please see the :doc:`development` page. It
+    contains comprehensive info on contributing, repository layout, our release
+    strategy, and more.
 
 Fabricの改善に興味のあるハッカー(もしくはFabricがどのように組み立てられてリリースされるかに
-興味のある方)はこの :doc:`development` ページを参照してください。
+興味のある方)はこの :doc:`development` ページを参照してください。このページには貢献する方法、
+リポジトリのレイアウト、私たちにリリース方針に関する包括的な情報が含まれています。
 
 .. _documentation-index:
 
-Documentation
-=============
+.. Documentation
 
-Please note that all documentation is currently written with Python 2.5 users
-in mind, but with an eye for eventual Python 3.x compatibility. This leads to
-the following patterns that may throw off readers used to Python 2.4 or who
-have already upgraded to Python 2.6/2.7:
+ドキュメンテーション
+===================
+
+..
+    Please note that all documentation is currently written with Python 2.5 users
+    in mind, but with an eye for eventual Python 3.x compatibility. This leads to
+    the following patterns that may throw off readers used to Python 2.4 or who
+    have already upgraded to Python 2.6/2.7:
+
+このすべてのドキュメンテーションはPython 2.5のユーザを念頭に今は書かれていますが、最終的には
+Python 3.x 互換性への配慮もしています。このため次のパターンはPython 2.4に慣れた方やPython
+2.6/2.7にアップグレードした方には戸惑うかもしれません:
 
 * ``from __future__ import with_statement``: a "future import" required to
   use the ``with`` statement in Python 2.5 -- a feature you'll be using
   frequently. Python 2.6+ users don't need to do this.
+* ``<true_value> if <expression> else <false_value>``: Python's relatively new
+  ternary statement, available in 2.5 and newer. Python 2.4 and older used to
+  fake this with ``<expression> and <true_value> or <false_value>`` (which
+  isn't quite the same thing and has some logical loopholes.)
+* ``print(<expression>)`` instead of ``print <expression>``: We use the
+  ``print`` statement's optional parentheses where possible, in order to be
+  more compatible with Python 3.x (in which ``print`` becomes a function.)
+* ``from __future__ import with_statement``: Python 2.5で ``with`` ステートメント
+  (頻繁に使用します)を使用する場合に必要です。Python 2.6位上のユーザは必要ありません。
 * ``<true_value> if <expression> else <false_value>``: Python's relatively new
   ternary statement, available in 2.5 and newer. Python 2.4 and older used to
   fake this with ``<expression> and <true_value> or <false_value>`` (which
