@@ -105,10 +105,10 @@ Hello, ``fab``
     shell-compatible notation: ``<task name>:<arg>,<kwarg>=<value>,...``. It's
     contrived, but let's extend the above example to say hello to you personally::
 
-通常の Python プログラミングのようにランタイム引数をタスクに渡せるので便利です。
-Fabric はこれに対する基本的なサポートを持ってて、シェル互換ノーテーションを使っています:
-``<task name>:<arg>,<kwarg>=<value>,...`` 不自然な感じがするかもしれませんが、
-上の例を拡張してあなたに say hello と言うようにしてみましょう::
+Fabricでは実行時引数をタスクに渡せるので便利なことも多いです。ちょうと通常のPython
+プログラミングのようなものです。Fabricはこの基本的なサポートを持っていて、
+シェル互換ノーテーションを使っています: ``<task name>:<arg>,<kwarg>=<value>,...``
+不自然な感じがするかもしれませんが、上の例を拡張してあなたに say hello と言うようにしてみましょう::
 
     def hello(name="world"):
         print("Hello %s!" % name)
