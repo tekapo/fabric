@@ -87,7 +87,7 @@ Hello, ``fab``
         functions you instruct it to. There's nothing magic about it -- anything
         you can do in a normal Python script can be done in a fabfile!
 
-    ``fab`` ツールは単にあなたの fabfile をインポートしてその指示にしたがって
+    ``fab`` ツールは単にあなたのfabfileをインポートしてその指示にしたがって
     ひとつもしくは複数の関数を実行します。何かマジックがあるわけではありません。
     通常の Python スクリプトで可能なすべてのことが fabfile 内でも可能なのです!
 
