@@ -402,10 +402,11 @@ Fabricは操作経由で呼び出されたプログラムの返り値をチェ�
   や ``.return_code`` など) に関する情報を含むオブジェクトを返すことができます。
 * そして `~fabric.utils.abort` 関数は手動で停止を実行するために使われます。
 
-However, despite the additional complexity, it's still pretty easy to follow,
-and is now much more flexible.
+..
+    However, despite the additional complexity, it's still pretty easy to follow,
+    and is now much more flexible.
 
-とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったことでしょう。
+とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったと思います。
 
 .. seealso:: :doc:`api/core/context_managers`, :ref:`env-vars`
 
