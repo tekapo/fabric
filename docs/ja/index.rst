@@ -119,9 +119,10 @@ Tutorial
 チュートリアル
 --------------
 
-For new users, and/or for an overview of Fabric's basic functionality, please
-see the :doc:`tutorial`. The rest of the documentation will assume you're
-at least passingly familiar with the material contained within.
+..
+	For new users, and/or for an overview of Fabric's basic functionality, please
+	see the :doc:`tutorial`. The rest of the documentation will assume you're
+	at least passingly familiar with the material contained within.
 
 .. _usage-docs:
 
