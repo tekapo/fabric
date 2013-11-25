@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -189,8 +187,9 @@ to obtain role definitions, and not worry about causing delays at fabfile load
 time when calling e.g. <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>.)</p>
 <p>Use of roles is not required in any way &#8211; it&#8217;s simply a convenience in
 situations where you have common groupings of servers.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 0.9.2: </span>Added ability to use callables as <tt class="docutils literal"><span class="pre">roledefs</span></tt> values.</p>
+<div class="versionchanged">
+<p><span>Changed in version 0.9.2: </span>Added ability to use callables as <tt class="docutils literal"><span class="pre">roledefs</span></tt> values.</p>
+</div>
 </div>
 <div class="section" id="how-host-lists-are-constructed">
 <span id="host-lists"></span><h3>How host lists are constructed<a class="headerlink" href="#how-host-lists-are-constructed" title="Permalink to this headline">¶</a></h3>
@@ -443,8 +442,9 @@ to keep the implementation simple) and may be expanded in future releases.</p>
 </div>
 <div class="section" id="intelligently-executing-tasks-with-execute">
 <span id="execute"></span><h2>Intelligently executing tasks with <tt class="docutils literal"><span class="pre">execute</span></tt><a class="headerlink" href="#intelligently-executing-tasks-with-execute" title="Permalink to this headline">¶</a></h2>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
+<div class="versionadded">
+<p><span>New in version 1.3.</span></p>
+</div>
 <p>Most of the information here involves &#8220;top level&#8221; tasks executed via <a class="reference internal" href="fab.html"><em>fab</em></a>, such as the first example where we called <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">taskA</span> <span class="pre">taskB</span></tt>.
 However, it&#8217;s often convenient to wrap up multi-task invocations like this into
 their own, &#8220;meta&#8221; tasks.</p>
@@ -512,7 +512,7 @@ multiplicative numbers of subtask calls &#8211; be careful!</p>
 <p class="last">If you would like your <tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt> calls to only be called once, you
 may use the <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a> decorator.</p>
 </div>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>, <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a></p>
 </div>
@@ -715,8 +715,9 @@ may be safely changed to whatever you need.)</p>
 hard stop: set <a class="reference internal" href="env.html#skip-bad-hosts"><em>env.skip_bad_hosts</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt> and in
 most situations (typically initial connections) Fabric will simply warn and
 continue, instead of aborting.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span>New in version 1.4.</span></p>
+</div>
 </div>
 </div>
 <div class="section" id="password-management">
@@ -1023,7 +1024,7 @@ contents entirely.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
     </div>
   </body>
 </html>

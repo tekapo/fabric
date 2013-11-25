@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -15,7 +13,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -84,7 +82,7 @@
 システム管理タスクのための SSH の利用を合理化するためのコマンドライン
 ツールです。</p>
 </div></blockquote>
-<p>もっと具体的に言うと、Fabric とは:</p>
+<p>もっと具体的に言うと、Fabricとは:</p>
 <ul class="simple">
 <li><strong>コマンドライン</strong> 経由で <strong>任意の Python 関数</strong> を実行するツールです。</li>
 <li>(低レベルライブラリの上に構築された) サブルーチンのライブラリで、SSH 経由で <strong>簡単に</strong> かつ
@@ -100,33 +98,33 @@
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>上のコードを <tt class="docutils literal"><span class="pre">fabfile.py</span></tt> という名前の Python モジュールファイルとしてカレントのワーキング
-ディレクトリに置くと、 <tt class="docutils literal"><span class="pre">fab</span></tt> ツール (Fabric のパーツとしてインストールされています)
+<p>上のコードを <tt class="docutils literal"><span class="pre">fabfile.py</span></tt> という名前のPythonモジュールファイルとしてカレントのワーキング
+ディレクトリに置くと、 <tt class="docutils literal"><span class="pre">fab</span></tt> ツール(Fabricのパーツとしてインストールされています)
 で <tt class="docutils literal"><span class="pre">hello</span></tt> 関数を実行することができ、期待した通りに動きます:</p>
 <div class="highlight-python"><pre>$ fab hello
 Hello world!
 
 Done.</pre>
 </div>
-<p>どうってことはありません。この機能により自身の API をインポートしなくても (とても)
-ベーシックなビルドツールとして Fabric が利用できるということです。</p>
+<p>どうってことはありませんね。この機能性により、自身のAPIを何もインポートしなくても(とても)
+ベーシックなビルドツールとしてFabricを利用することができます。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">fab</span></tt> ツールは単にあなたの fabfile をインポートしてその指示にしたがって
+<p class="last"><tt class="docutils literal"><span class="pre">fab</span></tt> ツールは単にあなたのfabfileをインポートしてその指示にしたがって
 ひとつもしくは複数の関数を実行します。何かマジックがあるわけではありません。
 通常の Python スクリプトで可能なすべてのことが fabfile 内でも可能なのです!</p>
 </div>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/execution.html#execution-strategy"><em>Execution strategy</em></a>, <a class="reference internal" href="usage/tasks.html"><em>Defining tasks</em></a>, <a class="reference internal" href="usage/fab.html"><em>fab options and arguments</em></a></p>
 </div>
 </div>
 <div class="section" id="id2">
 <h2>タスク引数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>通常の Python プログラミングのようにランタイム引数をタスクに渡せるので便利です。
-Fabric はこれに対する基本的なサポートを持ってて、シェル互換ノーテーションを使っています:
-<tt class="docutils literal"><span class="pre">&lt;task</span> <span class="pre">name&gt;:&lt;arg&gt;,&lt;kwarg&gt;=&lt;value&gt;,...</span></tt> 不自然な感じがするかもしれませんが、
-上の例を拡張してあなたに say hello と言うようにしてみましょう:</p>
+<p>Fabricでは実行時引数をタスクに渡せるので便利なことも多いです。ちょうと通常のPython
+プログラミングのようなものです。Fabricはこの基本的なサポートを持っていて、
+シェル互換ノーテーションを使っています: <tt class="docutils literal"><span class="pre">&lt;task</span> <span class="pre">name&gt;:&lt;arg&gt;,&lt;kwarg&gt;=&lt;value&gt;,...</span></tt>
+不自然な感じがするかもしれませんが、上の例を拡張してあなたに say hello と言うようにしてみましょう:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;world&quot;</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello </span><span class="si">%s</span><span class="s">!&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
@@ -138,17 +136,17 @@ Hello Jeff!
 
 Done.</pre>
 </div>
-<p>Python プログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
+<p>Pythonプログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
 想像できると思います:</p>
 <div class="highlight-python"><pre>$ fab hello:Jeff
 Hello Jeff!
 
 Done.</pre>
 </div>
-<p>差し当たりは、引数の値は常に文字列として Python に現れ、リストなどの複雑な型では少し
+<p>差し当たりは、引数の値は常に文字列としてPythonに現れ、リストなどの複雑な型では少し
 文字列操作が必要になります。将来のバージョンではこれをより簡単にするため、型キャストシステム
 が追加されるかもしれません。</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/fab.html#task-arguments"><em>Per-task arguments</em></a></p>
 </div>
@@ -156,7 +154,7 @@ Done.</pre>
 <div class="section" id="id3">
 <h2>ローカルコマンド<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>上の例では、 <tt class="docutils literal"><span class="pre">fab</span></tt> は <tt class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span></tt> の定型文の何行かを省略できるに
-過ぎませんが、たいていは Fabric の API と利用するためにデザインされています。API には
+過ぎません。たいていはFabricのAPIと利用するためにデザインされます。APIには
 シェルコマンドの実行、ファイルの転送などの関数 (もしくは <strong>操作</strong>) が含まれます。</p>
 <p>では、仮定のウェブアプリケーションの fabfile を作ってみましょう。この例のシナリオは次の
 ようなものです: このウェブアプリケーションはリモートホスト <tt class="docutils literal"><span class="pre">vcshost</span></tt> 上にGit経由で管理されています。
@@ -183,7 +181,7 @@ Done.</pre>
 <p class="last">ここではDjangoアプリケーションを使用していますが、単に例として用いているだけで
 FabricはSSHライブラリは別として、どんな外部のコードベースにもひも付けられていません。</p>
 </div>
-<p>まず第一にこのテスを実行し、VCSにコミットしてみましょう。
+<p>まず第一にこのテストを実行し、VCSにコミットしてみましょう。
 そしてデプロイを準備をします:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">local</span>
 
@@ -219,7 +217,7 @@ Done.</pre>
 <p>このコード自身は単純です。FabricのAPI関数 <a class="reference internal" href="api/core/operations.html#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> をインポートし、
 それを利用してローカルのシェルコマンドを実行し、やりとりを行います。他のFabricのAPIも似ていて
 すべてただのPythonです。</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="api/core/operations.html"><em>Operations</em></a>, <a class="reference internal" href="usage/fabfiles.html#fabfile-discovery"><em>Fabfile discovery</em></a></p>
 </div>
@@ -278,7 +276,7 @@ Aborting.</pre>
 </div>
 <p>素晴らしい! 私たち自身では何もする必要がありませんでした。Fabricが失敗を検知して停止し、
 <tt class="docutils literal"><span class="pre">commit</span></tt> タスクは決して実行されることはありません</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/execution.html#failures"><em>Failure handling (usage documentation)</em></a></p>
 </div>
@@ -313,10 +311,8 @@ Aborting.</pre>
 や <tt class="docutils literal"><span class="pre">.return_code</span></tt> など) に関する情報を含むオブジェクトを返すことができます。</li>
 <li>そして <a class="reference internal" href="api/core/utils.html#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a> 関数は手動で停止を実行するために使われます。</li>
 </ul>
-<p>However, despite the additional complexity, it&#8217;s still pretty easy to follow,
-and is now much more flexible.</p>
-<p>とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったことでしょう。</p>
-<div class="admonition-see-also admonition seealso">
+<p>とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったと思います。</p>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="api/core/context_managers.html"><em>Context Managers</em></a>, <a class="reference internal" href="usage/env.html#env-vars"><em>Full list of env vars</em></a></p>
 </div>
@@ -456,7 +452,7 @@ Done.</pre>
 <p>Notice the <tt class="docutils literal"><span class="pre">Password:</span></tt> prompt &#8211; that was our remote <tt class="docutils literal"><span class="pre">git</span></tt> call on our Web server, asking for the password to the Git server. We were able to type it in and the clone continued normally.</p>
 <p><tt class="docutils literal"><span class="pre">Password:</span></tt> プロンプトは、ウェブサーバ上のリモートの <tt class="docutils literal"><span class="pre">git</span></tt> 呼び出しで、Gitサーバーへのパスワードへの
 問い合わせであることに留意してください。パスワードをここで入力することができ、クローンは通常のように継続されます。</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/interactivity.html"><em>Interaction with remote programs</em></a></p>
 </div>
@@ -503,7 +499,7 @@ task once for each connection.</p>
 <p>また、このようにして、Fabricに対して一度に複数のリモートシステム上で実行させることもできます。
 <tt class="docutils literal"><span class="pre">env.hosts</span></tt> はリストなので <tt class="docutils literal"><span class="pre">fab</span></tt> はこのリストを順に処理し、各接続に対して与えられた
 タスクを呼び出します。</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/env.html"><em>The environment dictionary, env</em></a>, <a class="reference internal" href="usage/execution.html#host-lists"><em>How host lists are constructed</em></a></p>
 </div>
@@ -763,7 +759,7 @@ contents on <a class="reference internal" href="index.html#documentation-index">
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
     </div>
   </body>
 </html>

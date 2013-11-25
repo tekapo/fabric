@@ -29,7 +29,7 @@ Fabric とは ?
 
 .. More specifically, Fabric is:
 
-もっと具体的に言うと、Fabric とは:
+もっと具体的に言うと、Fabricとは:
 
 ..
 	* A tool that lets you execute **arbitrary Python functions** via the **command
@@ -64,8 +64,8 @@ Hello, ``fab``
     directory, that ``hello`` function can be executed with the ``fab`` tool
     (installed as part of Fabric) and does just what you'd expect::
 
-上のコードを ``fabfile.py`` という名前の Python モジュールファイルとしてカレントのワーキング
-ディレクトリに置くと、 ``fab`` ツール (Fabric のパーツとしてインストールされています)
+上のコードを ``fabfile.py`` という名前のPythonモジュールファイルとしてカレントのワーキング
+ディレクトリに置くと、 ``fab`` ツール(Fabricのパーツとしてインストールされています)
 で ``hello`` 関数を実行することができ、期待した通りに動きます::
 
     $ fab hello
@@ -77,8 +77,8 @@ Hello, ``fab``
     That's all there is to it. This functionality allows Fabric to be used as a
     (very) basic build tool even without importing any of its API.
 
-どうってことはありません。この機能により自身の API をインポートしなくても (とても) 
-ベーシックなビルドツールとして Fabric が利用できるということです。
+どうってことはありませんね。この機能性により、自身のAPIを何もインポートしなくても(とても)
+ベーシックなビルドツールとしてFabricを利用することができます。
 
 .. note::
 
@@ -87,7 +87,7 @@ Hello, ``fab``
         functions you instruct it to. There's nothing magic about it -- anything
         you can do in a normal Python script can be done in a fabfile!
 
-    ``fab`` ツールは単にあなたの fabfile をインポートしてその指示にしたがって
+    ``fab`` ツールは単にあなたのfabfileをインポートしてその指示にしたがって
     ひとつもしくは複数の関数を実行します。何かマジックがあるわけではありません。
     通常の Python スクリプトで可能なすべてのことが fabfile 内でも可能なのです!
 
@@ -105,10 +105,10 @@ Hello, ``fab``
     shell-compatible notation: ``<task name>:<arg>,<kwarg>=<value>,...``. It's
     contrived, but let's extend the above example to say hello to you personally::
 
-通常の Python プログラミングのようにランタイム引数をタスクに渡せるので便利です。
-Fabric はこれに対する基本的なサポートを持ってて、シェル互換ノーテーションを使っています:
-``<task name>:<arg>,<kwarg>=<value>,...`` 不自然な感じがするかもしれませんが、
-上の例を拡張してあなたに say hello と言うようにしてみましょう::
+Fabricでは実行時引数をタスクに渡せるので便利なことも多いです。ちょうと通常のPython
+プログラミングのようなものです。Fabricはこの基本的なサポートを持っていて、
+シェル互換ノーテーションを使っています: ``<task name>:<arg>,<kwarg>=<value>,...``
+不自然な感じがするかもしれませんが、上の例を拡張してあなたに say hello と言うようにしてみましょう::
 
     def hello(name="world"):
         print("Hello %s!" % name)
@@ -129,7 +129,7 @@ Fabric はこれに対する基本的なサポートを持ってて、シェル�
     Those already used to programming in Python might have guessed that this
     invocation behaves exactly the same way::
 
-Python プログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
+Pythonプログラミングに慣れた方なら、この呼び出しでもまったく同じ挙動をすることが
 想像できると思います::
 
     $ fab hello:Jeff
@@ -142,7 +142,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     strings and may require a bit of string manipulation for complex types such
     as lists. Future versions may add a typecasting system to make this easier.
 
-差し当たりは、引数の値は常に文字列として Python に現れ、リストなどの複雑な型では少し
+差し当たりは、引数の値は常に文字列としてPythonに現れ、リストなどの複雑な型では少し
 文字列操作が必要になります。将来のバージョンではこれをより簡単にするため、型キャストシステム
 が追加されるかもしれません。
 
@@ -160,7 +160,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     commands, transferring files, and so forth.
 
 上の例では、 ``fab`` は ``if __name__ == "__main__"`` の定型文の何行かを省略できるに
-過ぎませんが、たいていは Fabric の API と利用するためにデザインされています。API には
+過ぎません。たいていはFabricのAPIと利用するためにデザインされます。APIには
 シェルコマンドの実行、ファイルの転送などの関数 (もしくは **操作**) が含まれます。
 
 ..
@@ -209,7 +209,7 @@ Python プログラミングに慣れた方なら、この呼び出しでもま�
     For starters, perhaps we want to run our tests and commit to our VCS so we're
     ready for a deploy:: 
 
-まず第一にこのテスを実行し、VCSにコミットしてみましょう。
+まず第一にこのテストを実行し、VCSにコミットしてみましょう。
 そしてデプロイを準備をします::
 
     from fabric.api import local
@@ -402,10 +402,11 @@ Fabricは操作経由で呼び出されたプログラムの返り値をチェ�
   や ``.return_code`` など) に関する情報を含むオブジェクトを返すことができます。
 * そして `~fabric.utils.abort` 関数は手動で停止を実行するために使われます。
 
-However, despite the additional complexity, it's still pretty easy to follow,
-and is now much more flexible.
+..
+    However, despite the additional complexity, it's still pretty easy to follow,
+    and is now much more flexible.
 
-とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったことでしょう。
+とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったと思います。
 
 .. seealso:: :doc:`api/core/context_managers`, :ref:`env-vars`
 

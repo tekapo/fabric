@@ -71,7 +71,7 @@ Fabricの改善に興味のあるハッカー(もしくはFabricがどのよう�
 .. Documentation
 
 ドキュメンテーション
-===================
+======================
 
 ..
     Please note that all documentation is currently written with Python 2.5 users
@@ -83,25 +83,26 @@ Fabricの改善に興味のあるハッカー(もしくはFabricがどのよう�
 Python 3.x 互換性への配慮もしています。このため次のパターンはPython 2.4に慣れた方やPython
 2.6/2.7にアップグレードした方には戸惑うかもしれません:
 
-* ``from __future__ import with_statement``: a "future import" required to
-  use the ``with`` statement in Python 2.5 -- a feature you'll be using
-  frequently. Python 2.6+ users don't need to do this.
-* ``<true_value> if <expression> else <false_value>``: Python's relatively new
-  ternary statement, available in 2.5 and newer. Python 2.4 and older used to
-  fake this with ``<expression> and <true_value> or <false_value>`` (which
-  isn't quite the same thing and has some logical loopholes.)
-* ``print(<expression>)`` instead of ``print <expression>``: We use the
-  ``print`` statement's optional parentheses where possible, in order to be
-  more compatible with Python 3.x (in which ``print`` becomes a function.)
+..
+	* ``from __future__ import with_statement``: a "future import" required to
+	use the ``with`` statement in Python 2.5 -- a feature you'll be using
+	frequently. Python 2.6+ users don't need to do this.
+	* ``<true_value> if <expression> else <false_value>``: Python's relatively new
+	ternary statement, available in 2.5 and newer. Python 2.4 and older used to
+	fake this with ``<expression> and <true_value> or <false_value>`` (which
+	isn't quite the same thing and has some logical loopholes.)
+	* ``print(<expression>)`` instead of ``print <expression>``: We use the
+	``print`` statement's optional parentheses where possible, in order to be
+	more compatible with Python 3.x (in which ``print`` becomes a function.)
+
 * ``from __future__ import with_statement``: Python 2.5で ``with`` ステートメント
   (頻繁に使用します)を使用する場合に必要です。Python 2.6位上のユーザは必要ありません。
-* ``<true_value> if <expression> else <false_value>``: Python's relatively new
-  ternary statement, available in 2.5 and newer. Python 2.4 and older used to
-  fake this with ``<expression> and <true_value> or <false_value>`` (which
-  isn't quite the same thing and has some logical loopholes.)
-* ``print(<expression>)`` instead of ``print <expression>``: We use the
-  ``print`` statement's optional parentheses where possible, in order to be
-  more compatible with Python 3.x (in which ``print`` becomes a function.)
+* ``<true_value> if <expression> else <false_value>``: Pythonの比較的新しい3項文で
+  2.5以上で利用できます。Python 2.4以前では ``<expression> and <true_value> or <false_value>``
+  をフェイクとして使用していました。 (同じものではなく、論理的な穴がいくつかありました)
+* ``print <expression>`` ではなく ``print(<expression>)``: ``print`` 文のオプション扱いの
+  丸括弧を可能な場合は使用します。Python 3.xとより互換性を持たせるためです。
+  (Python 3.xでは ``print`` は関数になりました)
 
 .. toctree::
     :hidden:
