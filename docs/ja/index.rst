@@ -115,7 +115,9 @@ Python 3.x 互換性への配慮もしています。このため次のパター
     roadmap
 
 Tutorial
---------
+
+チュートリアル
+--------------
 
 For new users, and/or for an overview of Fabric's basic functionality, please
 see the :doc:`tutorial`. The rest of the documentation will assume you're
