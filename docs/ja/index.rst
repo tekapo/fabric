@@ -124,6 +124,9 @@ Tutorial
 	see the :doc:`tutorial`. The rest of the documentation will assume you're
 	at least passingly familiar with the material contained within.
 
+新しいユーザーやFabricの基本的な機能の概要を知りたい方は :doc:`tutorial` を参照してください。
+このドキュメントの残りの部分では、内容に関して少なくとも一時的にはよく知っていることと仮定します。
+
 .. _usage-docs:
 
 Usage documentation
