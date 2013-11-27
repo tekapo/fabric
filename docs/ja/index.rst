@@ -129,13 +129,18 @@ Tutorial
 
 .. _usage-docs:
 
-Usage documentation
--------------------
+.. Usage documentation
 
-The following list contains all major sections of Fabric's prose (non-API)
-documentation, which expands upon the concepts outlined in the
-:doc:`tutorial` and also covers advanced topics.
+使い方のドキュメント
+---------------------
 
+..
+    The following list contains all major sections of Fabric's prose (non-API)
+    documentation, which expands upon the concepts outlined in the
+    :doc:`tutorial` and also covers advanced topics.
+
+次のリストはFabricのAPIではないドキュメントの主な項目をすべて含んでいます。
+:doc:`tutorial` のコンセプト概要から発展させて、上級者向けのトピックもカバーしています。
 .. toctree::
     :maxdepth: 2
     :glob:

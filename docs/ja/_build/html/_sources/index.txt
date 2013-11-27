@@ -115,21 +115,32 @@ Python 3.x 互換性への配慮もしています。このため次のパター
     roadmap
 
 Tutorial
---------
 
-For new users, and/or for an overview of Fabric's basic functionality, please
-see the :doc:`tutorial`. The rest of the documentation will assume you're
-at least passingly familiar with the material contained within.
+チュートリアル
+--------------
+
+..
+	For new users, and/or for an overview of Fabric's basic functionality, please
+	see the :doc:`tutorial`. The rest of the documentation will assume you're
+	at least passingly familiar with the material contained within.
+
+新しいユーザーやFabricの基本的な機能の概要を知りたい方は :doc:`tutorial` を参照してください。
+このドキュメントの残りの部分では、内容に関して少なくとも一時的にはよく知っていることと仮定します。
 
 .. _usage-docs:
 
-Usage documentation
--------------------
+.. Usage documentation
 
-The following list contains all major sections of Fabric's prose (non-API)
-documentation, which expands upon the concepts outlined in the
-:doc:`tutorial` and also covers advanced topics.
+使い方のドキュメント
+---------------------
 
+..
+    The following list contains all major sections of Fabric's prose (non-API)
+    documentation, which expands upon the concepts outlined in the
+    :doc:`tutorial` and also covers advanced topics.
+
+次のリストはFabricのAPIではないドキュメントの主な項目をすべて含んでいます。
+:doc:`tutorial` のコンセプト概要から発展させて、上級者向けのトピックもカバーしています。
 .. toctree::
     :maxdepth: 2
     :glob:

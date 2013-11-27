@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -24,8 +26,6 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Fabric 1.8 documentation" href="../index.html" />
-    <link rel="next" title="Parallel execution" href="parallel.html" />
-    <link rel="prev" title="Library Use" href="library.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -52,12 +52,6 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="parallel.html" title="Parallel execution"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="library.html" title="Library Use"
-             accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -109,12 +103,10 @@ e.g. <tt class="docutils literal"><span class="pre">[myserver]</span> <span clas
 <li><strong>user</strong>: User-generated output, i.e. local output printed by fabfile code
 via use of the <a class="reference internal" href="../api/core/utils.html#fabric.utils.fastprint" title="fabric.utils.fastprint"><tt class="xref py py-obj docutils literal"><span class="pre">fastprint</span></tt></a> or <a class="reference internal" href="../api/core/utils.html#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a> functions.</li>
 </ul>
-<div class="versionchanged">
-<p><span>Changed in version 0.9.2: </span>Added &#8220;Executing task&#8221; lines to the <tt class="docutils literal"><span class="pre">running</span></tt> output level.</p>
-</div>
-<div class="versionchanged">
-<p><span>Changed in version 0.9.2: </span>Added the <tt class="docutils literal"><span class="pre">user</span></tt> output level.</p>
-</div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 0.9.2: </span>Added &#8220;Executing task&#8221; lines to the <tt class="docutils literal"><span class="pre">running</span></tt> output level.</p>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 0.9.2: </span>Added the <tt class="docutils literal"><span class="pre">user</span></tt> output level.</p>
 </div>
 <div class="section" id="debug-output">
 <h3>Debug output<a class="headerlink" href="#debug-output" title="Permalink to this headline">¶</a></h3>
@@ -147,9 +139,8 @@ characters), this setting takes precedence over the others; so if
 </div>
 </li>
 </ul>
-<div class="versionchanged">
-<p><span>Changed in version 1.0: </span>Debug output now includes full Python tracebacks during aborts.</p>
-</div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.0: </span>Debug output now includes full Python tracebacks during aborts.</p>
 </div>
 <div class="section" id="output-level-aliases">
 <span id="output-aliases"></span><h3>Output level aliases<a class="headerlink" href="#output-level-aliases" title="Permalink to this headline">¶</a></h3>
@@ -167,9 +158,8 @@ own print statements.</li>
 <li><strong>commands</strong>: Includes <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">running</span></tt>. Good for hiding
 non-erroring commands entirely, while still displaying any stderr output.</li>
 </ul>
-<div class="versionchanged">
-<p><span>Changed in version 1.4: </span>Added the <tt class="docutils literal"><span class="pre">commands</span></tt> output alias.</p>
-</div>
+<p class="versionchanged">
+<span class="versionmodified">Changed in version 1.4: </span>Added the <tt class="docutils literal"><span class="pre">commands</span></tt> output alias.</p>
 </div>
 </div>
 <div class="section" id="hiding-and-or-showing-output-levels">
@@ -190,7 +180,7 @@ their output.</p>
 more output level names as strings, and either hide or show them within the
 wrapped block. As with Fabric&#8217;s other context managers, the prior values are
 restored when the block exits.</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>, which can nest calls to
 <a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.hide" title="fabric.context_managers.hide"><tt class="xref py py-obj docutils literal"><span class="pre">hide</span></tt></a> and/or <a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.show" title="fabric.context_managers.show"><tt class="xref py py-obj docutils literal"><span class="pre">show</span></tt></a>
@@ -334,12 +324,6 @@ take comma-separated strings as input.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="library.html"
-                        title="previous chapter">Library Use</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="parallel.html"
-                        title="next chapter">Parallel execution</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/usage/output_controls.txt"
@@ -371,18 +355,12 @@ take comma-separated strings as input.</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="parallel.html" title="Parallel execution"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="library.html" title="Library Use"
-             >previous</a> |</li>
         <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
 </html>

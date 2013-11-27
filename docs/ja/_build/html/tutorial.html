@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -13,7 +15,7 @@
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
+        URL_ROOT:    '',
         VERSION:     '1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -114,7 +116,7 @@ Done.</pre>
 ひとつもしくは複数の関数を実行します。何かマジックがあるわけではありません。
 通常の Python スクリプトで可能なすべてのことが fabfile 内でも可能なのです!</p>
 </div>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/execution.html#execution-strategy"><em>Execution strategy</em></a>, <a class="reference internal" href="usage/tasks.html"><em>Defining tasks</em></a>, <a class="reference internal" href="usage/fab.html"><em>fab options and arguments</em></a></p>
 </div>
@@ -146,7 +148,7 @@ Done.</pre>
 <p>差し当たりは、引数の値は常に文字列としてPythonに現れ、リストなどの複雑な型では少し
 文字列操作が必要になります。将来のバージョンではこれをより簡単にするため、型キャストシステム
 が追加されるかもしれません。</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/fab.html#task-arguments"><em>Per-task arguments</em></a></p>
 </div>
@@ -217,7 +219,7 @@ Done.</pre>
 <p>このコード自身は単純です。FabricのAPI関数 <a class="reference internal" href="api/core/operations.html#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> をインポートし、
 それを利用してローカルのシェルコマンドを実行し、やりとりを行います。他のFabricのAPIも似ていて
 すべてただのPythonです。</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="api/core/operations.html"><em>Operations</em></a>, <a class="reference internal" href="usage/fabfiles.html#fabfile-discovery"><em>Fabfile discovery</em></a></p>
 </div>
@@ -276,7 +278,7 @@ Aborting.</pre>
 </div>
 <p>素晴らしい! 私たち自身では何もする必要がありませんでした。Fabricが失敗を検知して停止し、
 <tt class="docutils literal"><span class="pre">commit</span></tt> タスクは決して実行されることはありません</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/execution.html#failures"><em>Failure handling (usage documentation)</em></a></p>
 </div>
@@ -312,7 +314,7 @@ Aborting.</pre>
 <li>そして <a class="reference internal" href="api/core/utils.html#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a> 関数は手動で停止を実行するために使われます。</li>
 </ul>
 <p>とは言え、この追加的な複雑性を別にすれば、理解するのはとても簡単でより柔軟になったと思います。</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="api/core/context_managers.html"><em>Context Managers</em></a>, <a class="reference internal" href="usage/env.html#env-vars"><em>Full list of env vars</em></a></p>
 </div>
@@ -452,7 +454,7 @@ Done.</pre>
 <p>Notice the <tt class="docutils literal"><span class="pre">Password:</span></tt> prompt &#8211; that was our remote <tt class="docutils literal"><span class="pre">git</span></tt> call on our Web server, asking for the password to the Git server. We were able to type it in and the clone continued normally.</p>
 <p><tt class="docutils literal"><span class="pre">Password:</span></tt> プロンプトは、ウェブサーバ上のリモートの <tt class="docutils literal"><span class="pre">git</span></tt> 呼び出しで、Gitサーバーへのパスワードへの
 問い合わせであることに留意してください。パスワードをここで入力することができ、クローンは通常のように継続されます。</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/interactivity.html"><em>Interaction with remote programs</em></a></p>
 </div>
@@ -499,7 +501,7 @@ task once for each connection.</p>
 <p>また、このようにして、Fabricに対して一度に複数のリモートシステム上で実行させることもできます。
 <tt class="docutils literal"><span class="pre">env.hosts</span></tt> はリストなので <tt class="docutils literal"><span class="pre">fab</span></tt> はこのリストを順に処理し、各接続に対して与えられた
 タスクを呼び出します。</p>
-<div class="admonition seealso">
+<div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="usage/env.html"><em>The environment dictionary, env</em></a>, <a class="reference internal" href="usage/execution.html#host-lists"><em>How host lists are constructed</em></a></p>
 </div>
@@ -759,7 +761,7 @@ contents on <a class="reference internal" href="index.html#documentation-index">
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
     </div>
   </body>
 </html>
