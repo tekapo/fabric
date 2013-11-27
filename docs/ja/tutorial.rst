@@ -54,7 +54,7 @@ Hello, ``fab``
 
 .. This wouldn't be a proper tutorial without "the usual"::
 
-"通常"とはちょっと違ったチュートリアルかもしれません::
+"いつもの"がないと正しいチュートリアルではないですよね::
 
     def hello():
         print("Hello world!")
