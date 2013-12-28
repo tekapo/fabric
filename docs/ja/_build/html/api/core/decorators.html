@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -89,9 +87,10 @@ command line, <tt class="docutils literal"><span class="pre">my_func</span></tt>
 argument (<tt class="docutils literal"><span class="pre">&#64;hosts(['host1',</span> <span class="pre">'host2'])</span></tt>).</p>
 <p>Note that this decorator actually just sets the function&#8217;s <tt class="docutils literal"><span class="pre">.hosts</span></tt>
 attribute, which is then read prior to executing the function.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 0.9.2: </span>Allow a single, iterable argument (<tt class="docutils literal"><span class="pre">&#64;hosts(iterable)</span></tt>) to be used
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.9.2: </span>Allow a single, iterable argument (<tt class="docutils literal"><span class="pre">&#64;hosts(iterable)</span></tt>) to be used
 instead of requiring <tt class="docutils literal"><span class="pre">&#64;hosts(*iterable)</span></tt>.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -116,9 +115,10 @@ against the hosts listed in the <tt class="docutils literal"><span class="pre">w
 invoked with either an argument list or a single, iterable argument.
 Similarly, this decorator uses the same mechanism as
 <a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> and simply sets <tt class="docutils literal"><span class="pre">&lt;function&gt;.roles</span></tt>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 0.9.2: </span>Allow a single, iterable argument to be used (same as
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.9.2: </span>Allow a single, iterable argument to be used (same as
 <a class="reference internal" href="#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>).</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -144,8 +144,9 @@ original run.</p>
 <p>This decorator takes precedence over the global value of <a class="reference internal" href="../../usage/env.html#env-parallel"><em>env.parallel</em></a>. However, if a task is decorated with both
 <a class="reference internal" href="#fabric.decorators.serial" title="fabric.decorators.serial"><tt class="xref py py-obj docutils literal"><span class="pre">serial</span></tt></a> <em>and</em> <a class="reference internal" href="#fabric.decorators.parallel" title="fabric.decorators.parallel"><tt class="xref py py-obj docutils literal"><span class="pre">parallel</span></tt></a>,
 <a class="reference internal" href="#fabric.decorators.parallel" title="fabric.decorators.parallel"><tt class="xref py py-obj docutils literal"><span class="pre">parallel</span></tt></a> wins.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -154,8 +155,9 @@ original run.</p>
 <dd><p>Forces the wrapped function to run in parallel, instead of sequentially.</p>
 <p>This decorator takes precedence over the global value of <a class="reference internal" href="../../usage/env.html#env-parallel"><em>env.parallel</em></a>. It also takes precedence over <a class="reference internal" href="#fabric.decorators.serial" title="fabric.decorators.serial"><tt class="xref py py-obj docutils literal"><span class="pre">serial</span></tt></a>
 if a task is decorated with both.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -166,12 +168,14 @@ if a task is decorated with both.</p>
 with arguments customizing its behavior (e.g. <tt class="docutils literal"><span class="pre">&#64;task(alias='myalias')</span></tt>).</p>
 <p>Please see the <a class="reference internal" href="../../usage/tasks.html#task-decorator"><em>new-style task</em></a> documentation for
 details on how to use this decorator.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.2: </span>Added the <tt class="docutils literal"><span class="pre">alias</span></tt>, <tt class="docutils literal"><span class="pre">aliases</span></tt>, <tt class="docutils literal"><span class="pre">task_class</span></tt> and <tt class="docutils literal"><span class="pre">default</span></tt>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.2: </span>Added the <tt class="docutils literal"><span class="pre">alias</span></tt>, <tt class="docutils literal"><span class="pre">aliases</span></tt>, <tt class="docutils literal"><span class="pre">task_class</span></tt> and <tt class="docutils literal"><span class="pre">default</span></tt>
 keyword arguments. See <a class="reference internal" href="../../usage/tasks.html#task-decorator-arguments"><em>Arguments</em></a> for details.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.5: </span>Added the <tt class="docutils literal"><span class="pre">name</span></tt> keyword argument.</p>
-<div class="admonition-see-also admonition seealso">
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.5: </span>Added the <tt class="docutils literal"><span class="pre">name</span></tt> keyword argument.</p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="docs.html#fabric.docs.unwrap_tasks" title="fabric.docs.unwrap_tasks"><tt class="xref py py-obj docutils literal"><span class="pre">unwrap_tasks</span></tt></a>, <a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a></p>
 </div>
@@ -191,12 +195,13 @@ retrofit old code without indenting everything.</p>
     <span class="o">...</span>
 </pre></div>
 </div>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a></p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
 </dd></dl>
 
 </div>
@@ -363,7 +368,7 @@ retrofit old code without indenting everything.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -8,14 +6,14 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation &mdash; Fabric 1.8 documentation</title>
+    <title>インストール &mdash; Fabric 1.8 documentation</title>
     
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
+        URL_ROOT:    './',
         VERSION:     '1.8',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
@@ -69,51 +67,67 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>Fabric is best installed via <a class="reference external" href="http://pip.openplans.org">pip</a> (highly
-recommended) or <a class="reference external" href="http://wiki.python.org/moin/CheeseShopTutorial">easy_install</a> (older, but still works
-fine), e.g.:</p>
+  <div class="section" id="id1">
+<h1>インストール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Fabricのインストールの一番いい方法は <a class="reference external" href="http://pip.openplans.org">pip</a> (お勧めです)
+もしくは <a class="reference external" href="http://wiki.python.org/moin/CheeseShopTutorial">easy_install</a> (古いですが動作します)です。
+例えば:</p>
 <div class="highlight-python"><pre>$ pip install fabric</pre>
 </div>
-<p>You may also opt to use your operating system&#8217;s package manager; the package is
-typically called <tt class="docutils literal"><span class="pre">fabric</span></tt> or <tt class="docutils literal"><span class="pre">python-fabric</span></tt>. E.g.:</p>
+<p>また、お使いのオペレーティングシステムのパッケージマネージャーを利用してもいいでしょう。
+パッケージ名はたいてい <tt class="docutils literal"><span class="pre">fabric</span></tt> もしくは <tt class="docutils literal"><span class="pre">python-fabric</span></tt> です。例えば:</p>
 <div class="highlight-python"><pre>$ sudo apt-get install fabric</pre>
 </div>
-<p>Advanced users wanting to install a development version may use <tt class="docutils literal"><span class="pre">pip</span></tt> to grab
-the latest master branch (as well as the dev version of the Paramiko
-dependency):</p>
+<p>開発版のインストールを望む上級ユーザーは <tt class="docutils literal"><span class="pre">pip</span></tt> を使って最新のマスターブランチを取得できます。
+(依存のためParamikoの開発版も必要です):</p>
 <div class="highlight-python"><pre>$ pip install paramiko==dev
 $ pip install fabric==dev</pre>
 </div>
-<p>Or, to install an editable version for debugging/hacking, execute <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span>
-<span class="pre">-e</span> <span class="pre">.</span></tt> (or <tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt>) inside a <a class="reference internal" href="#downloads"><em>downloaded</em></a>
-or <a class="reference internal" href="#source-code-checkouts"><em>cloned</em></a> copy of the source code.</p>
+<dl class="docutils">
+<dt>もしくは、デバッグやハッキングのために編集可能なバージョンをインストールしたい場合は、</dt>
+<dd><a class="reference internal" href="#downloads"><em>downloaded</em></a> もしくは <a class="reference internal" href="#source-code-checkouts"><em>cloned</em></a> したソースコード内で
+<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></tt> (もしくは <tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt>) を実行してください。</dd>
+</dl>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Any development installs of Fabric (whether via <tt class="docutils literal"><span class="pre">==dev</span></tt> or <tt class="docutils literal"><span class="pre">install</span>
+<p>Any development installs of Fabric (whether via <tt class="docutils literal"><span class="pre">==dev</span></tt> or <tt class="docutils literal"><span class="pre">install</span>
 <span class="pre">-e</span></tt>) require the development version of Paramiko to be installed
 beforehand, or Fabric&#8217;s installation may fail.</p>
+<blockquote class="last">
+<div>Fabricのどの開発版 (<tt class="docutils literal"><span class="pre">==dev</span></tt> もしくは <tt class="docutils literal"><span class="pre">install</span> <span class="pre">-e</span></tt> のどちらでも) でも
+Paramikoの開発版の事前のインストールが必要です。さもないとFabricのインストールに
+失敗します。</div></blockquote>
 </div>
-<div class="section" id="dependencies">
-<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>Dependencies</p>
+<div class="section" id="id2">
+<h2>依存<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>In order for Fabric&#8217;s installation to succeed, you will need four primary pieces of software:</p>
+<p>Fabricのインストールには次の主に4つのソフトウェアが必要です:</p>
 <ul class="simple">
 <li>the Python programming language;</li>
 <li>the <tt class="docutils literal"><span class="pre">setuptools</span></tt> packaging/installation library;</li>
 <li>the Python <tt class="docutils literal"><span class="pre">paramiko</span></tt> SSH2 library;</li>
 <li>and <tt class="docutils literal"><span class="pre">paramiko</span></tt>&#8216;s dependency, the PyCrypto cryptography library.</li>
+<li>Pythonプログラム言語</li>
+<li><tt class="docutils literal"><span class="pre">setuptools</span></tt> パッケージング/インストールライブラリ</li>
+<li>Python <tt class="docutils literal"><span class="pre">paramiko</span></tt> SSH2 ライブラリ</li>
+<li><tt class="docutils literal"><span class="pre">paramiko</span></tt> の依存、PyCrypto 暗号ライブラリ</li>
 </ul>
 <p>and, if using the <a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>:</p>
+<p>そしてもし <a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a> を利用する場合は:</p>
 <ul class="simple">
 <li>the <a class="reference internal" href="#multiprocessing">multiprocessing</a> library.</li>
+<li><a class="reference internal" href="#multiprocessing">multiprocessing</a> ライブラリ</li>
 </ul>
 <p>Please read on for important details on each dependency &#8211; there are a few
 gotchas.</p>
+<p>各依存については重要な詳細がありますので続けて読み進めてください。知っておいたほうがいいことがいくつかあります。</p>
 <div class="section" id="python">
 <h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
 <p>Fabric requires <a class="reference external" href="http://python.org">Python</a> version 2.5 or 2.6. Some caveats
 and notes about other Python versions:</p>
+<p>Fabricは <a class="reference external" href="http://python.org">Python</a> バージョン2.5もしくは2.6を必要とします。
+Pythonの他のバージョンについてはいくつかの注意事項があります。</p>
 <ul class="simple">
 <li>We are not planning on supporting <strong>Python 2.4</strong> given its age and the number
 of useful tools in Python 2.5 such as context managers and new modules.
@@ -124,66 +138,85 @@ prohibitively large, and we would link to &#8211; but not support &#8211; a thir
 incompatible with that line of development. However, we try to be at least
 somewhat forward-looking (e.g. using <tt class="docutils literal"><span class="pre">print()</span></tt> instead of <tt class="docutils literal"><span class="pre">print</span></tt>) and
 will definitely be porting to 3.x in the future once our dependencies do.</li>
+<li><a href="#id5"><span class="problematic" id="id6">**</span></a>Python 2.4**をサポートする予定はありません。このバージョンが古いということと、
+コンテキストマネージャーや新しいモジュールなど、Python 2.5の数多くの便利なツールのためです。
+とは言え、2.5特有の機能の数は実際には特に多いということはないので、サードパーティの
+2.4互換フォークへのリンク &#8211; サポートではなく &#8211; を紹介すると思います (今のところ、
+私たちの知っている限りではまだそうしたフォークはありませんが)。</li>
+<li>Fabricは <strong>Python 3.x</strong> ではまだテストされていませんので互換性がないかもしれません。
+とはいえ、少なくとも前向きに検討していて (例えば、<tt class="docutils literal"><span class="pre">print</span></tt> ではなく <tt class="docutils literal"><span class="pre">print()</span></tt>
+を使用する) 、将来的には依存するライブラリ等が3.xに移植されれば間違いなくFabricも3.xに移植します。</li>
 </ul>
 </div>
 <div class="section" id="setuptools">
 <h3>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://pypi.python.org/pypi/setuptools">Setuptools</a> comes with some Python installations by default; if yours doesn&#8217;t,
-you&#8217;ll need to grab it. In such situations it&#8217;s typically packaged as
-<tt class="docutils literal"><span class="pre">python-setuptools</span></tt>, <tt class="docutils literal"><span class="pre">py25-setuptools</span></tt> or similar. Fabric may drop its
-setuptools dependency in the future, or include alternative support for the
-<a class="reference external" href="http://pypi.python.org/pypi/distribute">Distribute</a> project, but for now setuptools is required for installation.</p>
+<p><a class="reference external" href="http://pypi.python.org/pypi/setuptools">Setuptools</a> はインストールされるPythonによってはデフォルトで同梱されています。もしなければ、
+入れる必要があります。その場合、たいていははパッケージ名が <tt class="docutils literal"><span class="pre">python-setuptools</span></tt>
+や <tt class="docutils literal"><span class="pre">py25-setuptools</span></tt> 、もしくは似た名称になっています。Fabricは将来的にはこの setuptools
+への依存をなくすか、代替の <a class="reference external" href="http://pypi.python.org/pypi/distribute">Distribute</a> プロジェクトへのサポートを含むようにします。
+しかし今のところはインストールに setuptools が必要です。</p>
 </div>
 <div class="section" id="pycrypto">
 <h3>PyCrypto<a class="headerlink" href="#pycrypto" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a>  provides the low-level
-(C-based) encryption algorithms used to run SSH, and is thus required by our
-SSH library. There are a couple gotchas associated with installing PyCrypto:
-its compatibility with Python&#8217;s package tools, and the fact that it is a
-C-based extension.</p>
-<div class="section" id="package-tools">
-<span id="pycrypto-and-pip"></span><h4>Package tools<a class="headerlink" href="#package-tools" title="Permalink to this headline">¶</a></h4>
-<p>We strongly recommend using <tt class="docutils literal"><span class="pre">pip</span></tt> to install Fabric as it is newer and
-generally better than <tt class="docutils literal"><span class="pre">easy_install</span></tt>. However, a combination of bugs in
-specific versions of Python, <tt class="docutils literal"><span class="pre">pip</span></tt> and PyCrypto can prevent installation of
-PyCrypto. Specifically:</p>
+<p><a class="reference external" href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a> はSSHの実行で利用される
+低レベル (Cベース) の暗号アルゴリズムを提供します。またそのため、わたしたちのSSHライブラリ
+では必要としています。PyCryptoのインストールに関してはいつくか知っておいたほうがいいことが
+あります。Pythonのパッケージツールとの互換性とCベースの拡張であるということです。</p>
+<span class="target" id="pycrypto-and-pip"></span><div class="section" id="id9">
+<h4>パッケージツール<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Fabricのインストールには <tt class="docutils literal"><span class="pre">pip</span></tt> の利用を強くおすすめします。<tt class="docutils literal"><span class="pre">easy_install</span></tt> よりも
+新しく、一般的に言っても優れているからです。とは言え、Pythonと <tt class="docutils literal"><span class="pre">pip</span></tt> とPyCrypto
+の特定のバージョンでの組み合わせによってはバグがあり、PyCryptoのインストールができないことがあります。
+特に、</p>
 <ul class="simple">
 <li>Python = 2.5.x</li>
 <li>PyCrypto &gt;= 2.1 (which is required to run Fabric &gt;= 1.3)</li>
 <li><tt class="docutils literal"><span class="pre">pip</span></tt> &lt; 0.8.1</li>
+<li>Python = 2.5.x</li>
+<li>PyCrypto &gt;= 2.1 (これにはFabric &gt;= 1.3が必要です)</li>
+<li><tt class="docutils literal"><span class="pre">pip</span></tt> &lt; 0.8.1</li>
 </ul>
-<p>When all three criteria are met, you may encounter <tt class="docutils literal"><span class="pre">No</span> <span class="pre">such</span> <span class="pre">file</span> <span class="pre">or</span>
-<span class="pre">directory</span></tt> IOErrors when trying to <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Fabric</span></tt> or <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span>
-<span class="pre">PyCrypto</span></tt>.</p>
+<p>この3つの条件がそろった時に <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Fabric</span></tt> もしくは <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyCrypto</span></tt>
+を実行しようとすると``No such file or directory`` IOエラーに出くわすでしょう。</p>
 <p>The fix is simply to make sure at least one of the above criteria is not met,
 by doing the following (in order of preference):</p>
+<p>修正は簡単で、以下を実行し、上の3つの条件のうち一つでも満たさなくすることです (望ましい順):</p>
 <ul class="simple">
 <li>Upgrade to <tt class="docutils literal"><span class="pre">pip</span></tt> 0.8.1 or above, e.g. by running <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt>.</li>
 <li>Upgrade to Python 2.6 or above.</li>
 <li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, and
 install PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric
 1.2.)</li>
+<li><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt> を実行するなどして <tt class="docutils literal"><span class="pre">pip</span></tt> 0.8.1 以上にアップグレードする</li>
+<li>Python 2.6以上にアップグレードする</li>
+<li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, and
+install PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric
+1.2.)</li>
 </ul>
+<p>C extension</p>
 </div>
-<div class="section" id="c-extension">
-<h4>C extension<a class="headerlink" href="#c-extension" title="Permalink to this headline">¶</a></h4>
-<p>Unless you are installing from a precompiled source such as a Debian apt
-repository or RedHat RPM, or using <a class="reference internal" href="#pypm"><em>pypm</em></a>, you will also need the
-ability to build Python C-based modules from source in order to install
-PyCrypto. Users on <strong>Unix-based platforms</strong> such as Ubuntu or Mac OS X will
-need the traditional C build toolchain installed (e.g. Developer Tools / XCode
-Tools on the Mac, or the <tt class="docutils literal"><span class="pre">build-essential</span></tt> package on Ubuntu or Debian Linux
-&#8211; basically, anything with <tt class="docutils literal"><span class="pre">gcc</span></tt>, <tt class="docutils literal"><span class="pre">make</span></tt> and so forth) as well as the
-Python development libraries, often named <tt class="docutils literal"><span class="pre">python-dev</span></tt> or similar.</p>
-<p>For <strong>Windows</strong> users we recommend using <a class="reference internal" href="#pypm"><em>ActivePython and PyPM</em></a>, installing a C
-development environment such as <a class="reference external" href="http://cygwin.com">Cygwin</a> or obtaining a
-precompiled Win32 PyCrypto package from <a class="reference external" href="http://www.voidspace.org.uk/python/modules.shtml#pycrypto">voidspace&#8217;s Python modules page</a>.</p>
+<div class="section" id="c">
+<h4>C 拡張<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
+<p>Debian aptリポジトリもしくはRedHat RPMなどのコンパイル済みのソースからインストールしたり、
+もしくは <a class="reference internal" href="#pypm"><em>pypm</em></a> を使っていたりするのでなければ、PyCryptoをインストールするためには
+ソースからPythonのCベースモジュールをビルドできるようになっている必要があります。
+UbuntuやMac OS Xのような <strong>Unixベースのプラットフォーム</strong> のユーザは、 <tt class="docutils literal"><span class="pre">python-dev</span></tt>
+もしくは似たような名称のPython開発ライブラリとともに、伝統的なCのビルドツールチェインが
+インストールされている必要があります。(例えば、MacならDeveloper Tools / XCode Tools、
+UbuntuやDebianなら <tt class="docutils literal"><span class="pre">build-essential</span></tt> パッケージ &#8211; 基本的に <tt class="docutils literal"><span class="pre">gcc</span></tt>、 <tt class="docutils literal"><span class="pre">make</span></tt></p>
+<blockquote>
+<div>などなどが付帯しているものなんでも)</div></blockquote>
+<p><strong>Windows</strong> ユーザーは <a class="reference internal" href="#pypm"><em>ActivePython and PyPM</em></a> の利用か、 <a class="reference external" href="http://cygwin.com">Cygwin</a>
+などのC開発環境のインストール、もしくは <a class="reference external" href="http://www.voidspace.org.uk/python/modules.shtml#pycrypto">voidspaceのPythonモジュールページ</a> からコンパイル済みの
+Win32 PyCryptoパッケージの取得をおすすめします。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Some Windows users whose Python is 64-bit have found that the PyCrypto
+<p>Some Windows users whose Python is 64-bit have found that the PyCrypto
 dependency <tt class="docutils literal"><span class="pre">winrandom</span></tt> may not install properly, leading to ImportErrors.
 In this scenario, you&#8217;ll probably need to compile <tt class="docutils literal"><span class="pre">winrandom</span></tt> yourself
 via e.g. MS Visual Studio.  See <a class="reference external" href="https://github.com/fabric/fabric/issues/194">#194</a> for info.</p>
+<p class="last">Pythonが64ビットのWindowsユーザーによってはPyCryptoの依存 <tt class="docutils literal"><span class="pre">winrandom</span></tt>
+が正しくインストールできず、ImportErrorsを引き起こすことがあります。</p>
 </div>
 </div>
 </div>
@@ -226,14 +259,14 @@ source distribution. This file is intended to be used with <tt class="docutils l
 </div>
 </div>
 <div class="section" id="downloads">
-<span id="id4"></span><h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
+<span id="id10"></span><h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
 <p>To obtain a tar.gz or zip archive of the Fabric source code, you may visit
 <a class="reference external" href="http://pypi.python.org/pypi/Fabric">Fabric&#8217;s PyPI page</a>, which offers manual
 downloads in addition to being the entry point for <tt class="docutils literal"><span class="pre">pip</span></tt> and
 <tt class="docutils literal"><span class="pre">easy-install</span></tt>.</p>
 </div>
 <div class="section" id="source-code-checkouts">
-<span id="id5"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="Permalink to this headline">¶</a></h2>
+<span id="id11"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="Permalink to this headline">¶</a></h2>
 <p>The Fabric developers manage the project&#8217;s source code with the <a class="reference external" href="http://git-scm.com">Git</a> DVCS. To follow Fabric&#8217;s development via Git instead of
 downloading official releases, you have the following options:</p>
 <ul class="simple">
@@ -392,13 +425,13 @@ C:\&gt;</pre>
 
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Installation</a><ul>
-<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#">インストール</a><ul>
+<li><a class="reference internal" href="#id2">依存</a><ul>
 <li><a class="reference internal" href="#python">Python</a></li>
 <li><a class="reference internal" href="#setuptools">setuptools</a></li>
 <li><a class="reference internal" href="#pycrypto">PyCrypto</a><ul>
-<li><a class="reference internal" href="#package-tools">Package tools</a></li>
-<li><a class="reference internal" href="#c-extension">C extension</a></li>
+<li><a class="reference internal" href="#id9">パッケージツール</a></li>
+<li><a class="reference internal" href="#c">C 拡張</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#multiprocessing"><tt class="docutils literal"><span class="pre">multiprocessing</span></tt></a></li>
@@ -460,7 +493,7 @@ C:\&gt;</pre>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>

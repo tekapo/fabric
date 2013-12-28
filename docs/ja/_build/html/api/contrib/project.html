@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -141,12 +139,15 @@ constructed by this function is the following:</p>
 <div class="highlight-python"><pre>rsync [--delete] [--exclude exclude[0][, --exclude[1][, ...]]] \
     [default_opts] [extra_opts] &lt;local_dir&gt; &lt;host_string&gt;:&lt;remote_dir&gt;</pre>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.0: </span>The <tt class="docutils literal"><span class="pre">ssh_opts</span></tt> keyword argument.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.1: </span>The <tt class="docutils literal"><span class="pre">capture</span></tt> keyword argument.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.8.0: </span>The <tt class="docutils literal"><span class="pre">default_opts</span></tt> keyword argument.</p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.0: </span>The <tt class="docutils literal"><span class="pre">ssh_opts</span></tt> keyword argument.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.1: </span>The <tt class="docutils literal"><span class="pre">capture</span></tt> keyword argument.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.8.0: </span>The <tt class="docutils literal"><span class="pre">default_opts</span></tt> keyword argument.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -165,10 +166,12 @@ be used.</p>
 thus it will not work too well on Win32 systems unless one is using Cygwin
 or something similar. It will attempt to clean up the local and remote
 tarfiles when it finishes executing, even in the event of a failure.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.1: </span>Added the <tt class="docutils literal"><span class="pre">local_dir</span></tt> and <tt class="docutils literal"><span class="pre">remote_dir</span></tt> kwargs.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.7: </span>Added the <tt class="docutils literal"><span class="pre">use_sudo</span></tt> kwarg.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.1: </span>Added the <tt class="docutils literal"><span class="pre">local_dir</span></tt> and <tt class="docutils literal"><span class="pre">remote_dir</span></tt> kwargs.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.7: </span>Added the <tt class="docutils literal"><span class="pre">use_sudo</span></tt> kwarg.</p>
+</div>
 </dd></dl>
 
 </div>
@@ -329,7 +332,7 @@ tarfiles when it finishes executing, even in the event of a failure.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>

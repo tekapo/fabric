@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -26,6 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Fabric 1.8 documentation" href="../index.html" />
+    <link rel="next" title="Fabfile construction and use" href="fabfiles.html" />
+    <link rel="prev" title="Execution model" href="execution.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -52,6 +52,12 @@
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="fabfiles.html" title="Fabfile construction and use"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Execution model"
+             accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>  
@@ -82,8 +88,9 @@ tasks.</p>
 </div>
 <div class="section" id="arbitrary-remote-shell-commands">
 <span id="arbitrary-commands"></span><h2>Arbitrary remote shell commands<a class="headerlink" href="#arbitrary-remote-shell-commands" title="Permalink to this headline">¶</a></h2>
-<p class="versionadded">
-<span class="versionmodified">New in version 0.9.2.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.2.</span></p>
+</div>
 <p>Fabric leverages a lesser-known command line convention and may be called in
 the following manner:</p>
 <div class="highlight-python"><pre>$ fab [options] -- [shell command]</pre>
@@ -129,8 +136,9 @@ just as valid as the more straightforward <tt class="docutils literal"><span cla
 <tt class="descname">-a</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--no_agent</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-a" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#no-agent"><em>env.no_agent</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt>, forcing our SSH layer not
 to talk to the SSH agent when trying to unlock private key files.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 0.9.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -138,8 +146,9 @@ to talk to the SSH agent when trying to unlock private key files.</p>
 <tt class="descname">-A</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--forward-agent</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-A" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#forward-agent"><em>env.forward_agent</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt>, enabling agent
 forwarding.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -147,8 +156,9 @@ forwarding.</p>
 <tt class="descname">--abort-on-prompts</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption--abort-on-prompts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#abort-on-prompts"><em>env.abort_on_prompts</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt>, forcing
 Fabric to abort whenever it would prompt for input.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -172,13 +182,14 @@ just moreso here.)</p>
 <tt class="descname">--connection-attempts</tt><tt class="descclassname">=M</tt><tt class="descclassname">, </tt><tt class="descname">-n</tt><tt class="descclassname"> M</tt><a class="headerlink" href="#cmdoption--connection-attempts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set number of times to attempt connections. Sets
 <a class="reference internal" href="env.html#connection-attempts"><em>env.connection_attempts</em></a>.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="env.html#connection-attempts"><em>env.connection_attempts</em></a>,
 <a class="reference internal" href="env.html#timeout"><em>env.timeout</em></a></p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -194,7 +205,7 @@ preventing Fabric from loading the user&#8217;s SSH <tt class="file docutils lit
 <dd><p>The fabfile name pattern to search for (defaults to <tt class="docutils literal"><span class="pre">fabfile.py</span></tt>), or
 alternately an explicit file path to load as the fabfile (e.g.
 <tt class="docutils literal"><span class="pre">/path/to/my/fabfile.py</span></tt>.)</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="fabfiles.html"><em>Fabfile construction and use</em></a></p>
 </div>
@@ -207,9 +218,10 @@ alternately an explicit file path to load as the fabfile (e.g.
 equivalent to <a class="reference internal" href="#cmdoption--shortlist"><em class="xref std std-option">--shortlist</em></a>, <tt class="docutils literal"><span class="pre">normal</span></tt> is the same as simply
 omitting this option entirely (i.e. the default), and <tt class="docutils literal"><span class="pre">nested</span></tt> prints out
 a nested namespace tree.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#cmdoption--shortlist"><em class="xref std std-option">--shortlist</em></a>, <a class="reference internal" href="#cmdoption-l"><em class="xref std std-option">--list</em></a></p>
 </div>
@@ -219,8 +231,9 @@ a nested namespace tree.</p>
 <dt id="cmdoption-g">
 <tt class="descname">-g</tt><tt class="descclassname"> HOST</tt><tt class="descclassname">, </tt><tt class="descname">--gateway</tt><tt class="descclassname">=HOST</tt><a class="headerlink" href="#cmdoption-g" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#gateway"><em>env.gateway</em></a> to <tt class="docutils literal"><span class="pre">HOST</span></tt> host string.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.5.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -249,8 +262,9 @@ strings.</p>
 <tt class="descname">-x</tt><tt class="descclassname"> HOSTS</tt><tt class="descclassname">, </tt><tt class="descname">--exclude-hosts</tt><tt class="descclassname">=HOSTS</tt><a class="headerlink" href="#cmdoption-x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#exclude-hosts"><em>env.exclude_hosts</em></a> to the given comma-delimited
 list of host strings to then keep out of the final host list.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -277,7 +291,7 @@ your fabfile, is undesirable.</p>
 supplied via <a class="reference internal" href="env.html#password"><em>env.password</em></a> at module level, or via
 <a class="reference internal" href="#cmdoption-p"><em class="xref std std-option">--password</em></a>.</p>
 </div>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="execution.html#password-management"><em>Password management</em></a></p>
 </div>
@@ -288,24 +302,27 @@ supplied via <a class="reference internal" href="env.html#password"><em>env.pass
 <tt class="descname">-k</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#no-keys"><em>env.no_keys</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt>, forcing the SSH layer to not
 look for SSH private key files in one&#8217;s home directory.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 0.9.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
 <dt id="cmdoption--keepalive">
 <tt class="descname">--keepalive</tt><tt class="descclassname">=KEEPALIVE</tt><a class="headerlink" href="#cmdoption--keepalive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#keepalive"><em>env.keepalive</em></a> to the given (integer) value, specifying an SSH keepalive interval.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
 <dt id="cmdoption--linewise">
 <tt class="descname">--linewise</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption--linewise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Forces output to be buffered line-by-line instead of byte-by-byte. Often useful or required for <a class="reference internal" href="parallel.html#linewise-output"><em>parallel execution</em></a>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -314,9 +331,10 @@ look for SSH private key files in one&#8217;s home directory.</p>
 <dd><p>Imports a fabfile as normal, but then prints a list of all discovered tasks
 and exits. Will also print the first line of each task&#8217;s docstring, if it
 has one, next to it (truncating if necessary.)</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 0.9.1: </span>Added docstring to output.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 0.9.1: </span>Added docstring to output.</p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#cmdoption--shortlist"><em class="xref std std-option">--shortlist</em></a>, <a class="reference internal" href="#cmdoption-F"><em class="xref std std-option">--list-format</em></a></p>
 </div>
@@ -328,7 +346,7 @@ has one, next to it (truncating if necessary.)</p>
 <dd><p>Sets <a class="reference internal" href="env.html#password"><em>env.password</em></a> to the given string; it will then be
 used as the default password when making SSH connections or calling the
 <tt class="docutils literal"><span class="pre">sudo</span></tt> program.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#cmdoption-I"><em class="xref std std-option">--initial-password-prompt</em></a></p>
 </div>
@@ -339,9 +357,10 @@ used as the default password when making SSH connections or calling the
 <tt class="descname">-P</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--parallel</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-P" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#env-parallel"><em>env.parallel</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt>, causing
 tasks to run in parallel.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="parallel.html"><em>Parallel execution</em></a></p>
 </div>
@@ -353,8 +372,9 @@ tasks to run in parallel.</p>
 <dd><p>Sets <a class="reference internal" href="env.html#always-use-pty"><em>env.always_use_pty</em></a> to <tt class="docutils literal"><span class="pre">False</span></tt>, causing all
 <a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>/<a class="reference internal" href="../api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a> calls to behave as if
 one had specified <tt class="docutils literal"><span class="pre">pty=False</span></tt>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.0.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.0.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -387,8 +407,9 @@ vars which are also specified on the command line. E.g.:</p>
 omitting the <tt class="docutils literal"><span class="pre">=VALUE</span></tt> (e.g. <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--set</span> <span class="pre">KEY</span></tt>), and you may set values to
 the empty string (and thus a False-equivalent value) by keeping the equals
 sign, but omitting <tt class="docutils literal"><span class="pre">VALUE</span></tt> (e.g. <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--set</span> <span class="pre">KEY=</span></tt>.)</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -403,9 +424,10 @@ shell wrapper used to execute remote commands.</p>
 <tt class="descname">--shortlist</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption--shortlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Similar to <a class="reference internal" href="#cmdoption-l"><em class="xref std std-option">--list</em></a>, but without any embellishment, just task
 names separated by newlines with no indentation or docstrings.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 0.9.2.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.2.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="#cmdoption-l"><em class="xref std std-option">--list</em></a></p>
 </div>
@@ -417,7 +439,7 @@ names separated by newlines with no indentation or docstrings.</p>
 <dd><p>A comma-separated list of <a class="reference internal" href="output_controls.html"><em>output levels</em></a> to
 be added to those that are shown by
 default.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, <a class="reference internal" href="../api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a></p>
 </div>
@@ -427,9 +449,10 @@ default.</p>
 <dt id="cmdoption--ssh-config-path">
 <tt class="descname">--ssh-config-path</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption--ssh-config-path" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#ssh-config-path"><em>env.ssh_config_path</em></a>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="execution.html#ssh-config"><em>Leveraging native SSH config files</em></a></p>
 </div>
@@ -440,21 +463,23 @@ default.</p>
 <tt class="descname">--skip-bad-hosts</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption--skip-bad-hosts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#skip-bad-hosts"><em>env.skip_bad_hosts</em></a>, causing Fabric to skip
 unavailable hosts.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
 <dt id="cmdoption--timeout">
 <tt class="descname">--timeout</tt><tt class="descclassname">=N</tt><tt class="descclassname">, </tt><tt class="descname">-t</tt><tt class="descclassname"> N</tt><a class="headerlink" href="#cmdoption--timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set connection timeout in seconds. Sets <a class="reference internal" href="env.html#timeout"><em>env.timeout</em></a>.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="env.html#timeout"><em>env.timeout</em></a>,
 <a class="reference internal" href="env.html#connection-attempts"><em>env.connection_attempts</em></a></p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.4.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.4.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -462,12 +487,13 @@ unavailable hosts.</p>
 <tt class="descname">--command-timeout</tt><tt class="descclassname">=N</tt><tt class="descclassname">, </tt><tt class="descname">-T</tt><tt class="descclassname"> N</tt><a class="headerlink" href="#cmdoption--command-timeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set remote command timeout in seconds. Sets
 <a class="reference internal" href="env.html#command-timeout"><em>env.command_timeout</em></a>.</p>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="env.html#command-timeout"><em>env.command_timeout</em></a>,</p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.6.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.6.</span></p>
+</div>
 </dd></dl>
 
 <dl class="cmdoption">
@@ -495,9 +521,10 @@ continue execution even when commands encounter error conditions.</p>
 <tt class="descname">-z</tt><tt class="descclassname"></tt><tt class="descclassname">, </tt><tt class="descname">--pool-size</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets <a class="reference internal" href="env.html#pool-size"><em>env.pool_size</em></a>, which specifies how many processes
 to run concurrently during parallel execution.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="parallel.html"><em>Parallel execution</em></a></p>
 </div>
@@ -737,6 +764,12 @@ the fabfile itself to be cleanly agnostic regarding the default username.</p>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="execution.html"
+                        title="previous chapter">Execution model</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="fabfiles.html"
+                        title="next chapter">Fabfile construction and use</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/usage/fab.txt"
@@ -768,12 +801,18 @@ the fabfile itself to be cleanly agnostic regarding the default username.</p>
         <li class="right" >
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
+        <li class="right" >
+          <a href="fabfiles.html" title="Fabfile construction and use"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="execution.html" title="Execution model"
+             >previous</a> |</li>
         <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>

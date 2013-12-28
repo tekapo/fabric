@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -79,8 +77,9 @@
 fabfiles loaded by the <a class="reference internal" href="../../usage/fab.html"><em>fab</em></a> tool.</p>
 <p>For details on how to implement and use <a class="reference internal" href="#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclasses,
 please see the usage documentation on <a class="reference internal" href="../../usage/tasks.html#new-style-tasks"><em>new-style tasks</em></a>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
 <dl class="method">
 <dt id="fabric.tasks.Task.get_hosts">
 <tt class="descname">get_hosts</tt><big>(</big><em>arg_hosts</em>, <em>arg_roles</em>, <em>arg_exclude_hosts</em>, <em>env=None</em><big>)</big><a class="headerlink" href="#fabric.tasks.Task.get_hosts" title="Permalink to this definition">¶</a></dt>
@@ -96,9 +95,10 @@ set.</p>
 <em class="property">class </em><tt class="descclassname">fabric.tasks.</tt><tt class="descname">WrappedCallableTask</tt><big>(</big><em>callable</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.tasks.WrappedCallableTask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wraps a given callable transparently, while marking it as a valid Task.</p>
 <p>Generally used via <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a> and not directly.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.1.</span></p>
-<div class="admonition-see-also admonition seealso">
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.1.</span></p>
+</div>
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="docs.html#fabric.docs.unwrap_tasks" title="fabric.docs.unwrap_tasks"><tt class="xref py py-obj docutils literal"><span class="pre">unwrap_tasks</span></tt></a>, <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a></p>
 </div>
@@ -139,16 +139,18 @@ error object or message.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition-see-also admonition seealso">
+<div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="../../usage/execution.html#execute"><em>The execute usage docs</em></a>, for an expanded explanation
 and some examples.</p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.3.</span></p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.4: </span>Added the return value mapping; previously this function had no defined
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.3.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.4: </span>Added the return value mapping; previously this function had no defined
 return value.</p>
+</div>
 </dd></dl>
 
 </div>
@@ -315,7 +317,7 @@ return value.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>

@@ -260,7 +260,7 @@ Pythonプログラミングに慣れた方なら、この呼び出しでもま�
 .. Organize it your way
 
 好きなように構造化する
-====================
+=======================
 
 ..
     Because Fabric is "just Python" you're free to organize your fabfile any way

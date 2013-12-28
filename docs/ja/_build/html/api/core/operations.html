@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -155,23 +153,29 @@ sense here and/or may not even be possible.</p>
 will be used in Fabric&#8217;s printed output instead of the default
 <tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
 </div>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
 <a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory as
 manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span><tt class="docutils literal"><span class="pre">local_path</span></tt> may now contain interpolated path- and host-related
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span><tt class="docutils literal"><span class="pre">local_path</span></tt> may now contain interpolated path- and host-related
 variables.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">remote_path</span></tt> argument and will
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">remote_path</span></tt> argument and will
 trigger recursive downloads.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of downloaded local file paths, which
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of downloaded local file paths, which
 also exhibits the <tt class="docutils literal"><span class="pre">.failed</span></tt> and <tt class="docutils literal"><span class="pre">.succeeded</span></tt> attributes.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -204,12 +208,15 @@ stdout/stderr.</p>
 context manager, allowing you to control its current working directory
 independently of the remote end (which honors
 <a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>).</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Added the <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> attributes.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Now honors the <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a> context manager.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Changed the default value of <tt class="docutils literal"><span class="pre">capture</span></tt> from <tt class="docutils literal"><span class="pre">True</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Added the <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> attributes.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a> context manager.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Changed the default value of <tt class="docutils literal"><span class="pre">capture</span></tt> from <tt class="docutils literal"><span class="pre">True</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -234,8 +241,9 @@ failed, and pollutes the stdout/stderr stream with shell output such as
 login banners, prompts and echoed stdin.</p>
 <p>Thus, this function does not have a return value and will not trigger
 Fabric&#8217;s failure handling if any remote programs result in errors.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.0.</span></p>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.0.</span></p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -356,22 +364,28 @@ same manner.</p>
 will be used in Fabric&#8217;s printed output instead of the default
 <tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
 </div>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
 <a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory as
 manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument and will
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument and will
 trigger recursive uploads.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of uploaded remote file paths which
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of uploaded remote file paths which
 also exhibits the <tt class="docutils literal"><span class="pre">.failed</span></tt> and <tt class="docutils literal"><span class="pre">.succeeded</span></tt> attributes.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.7: </span>Added <tt class="docutils literal"><span class="pre">use_glob</span></tt> option to allow disabling of globbing.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.7: </span>Added <tt class="docutils literal"><span class="pre">use_glob</span></tt> option to allow disabling of globbing.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -392,12 +406,14 @@ are encouraged to check out this function&#8217;s (6 lines long, well
 commented) source code and write their own adaptation using different
 timeout/attempt values or additional logic.</p>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 0.9.2.</span></p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.4: </span>Changed the <tt class="docutils literal"><span class="pre">wait</span></tt> kwarg to be optional, and refactored to leverage
+<div class="versionadded">
+<p><span class="versionmodified">New in version 0.9.2.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.4: </span>Changed the <tt class="docutils literal"><span class="pre">wait</span></tt> kwarg to be optional, and refactored to leverage
 the new reconnection functionality; it may not actually have to wait
 for <tt class="docutils literal"><span class="pre">wait</span></tt> seconds before reconnecting.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -421,8 +437,9 @@ the error output if requirements are not met.</p>
 <p>Note: it is assumed that the keyword arguments apply to all given keys as a
 group. If you feel the need to specify more than one <tt class="docutils literal"><span class="pre">used_for</span></tt>, for
 example, you should break your logic into multiple calls to <tt class="docutils literal"><span class="pre">require()</span></tt>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.1: </span>Allow iterable <tt class="docutils literal"><span class="pre">provided_by</span></tt> values instead of just single values.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.1: </span>Allow iterable <tt class="docutils literal"><span class="pre">provided_by</span></tt> values instead of just single values.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -482,23 +499,30 @@ dollar signs etc., specify <tt class="docutils literal"><span class="pre">shell_
 <span class="n">run</span><span class="p">(</span><span class="s">&quot;take_a_long_time&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.0: </span>The <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> return value attributes, the
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.0: </span>The <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> return value attributes, the
 <tt class="docutils literal"><span class="pre">combine_stderr</span></tt> kwarg, and interactive behavior.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>The default value of <tt class="docutils literal"><span class="pre">pty</span></tt> is now <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0.2: </span>The default value of <tt class="docutils literal"><span class="pre">combine_stderr</span></tt> is now <tt class="docutils literal"><span class="pre">None</span></tt> instead of
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>The default value of <tt class="docutils literal"><span class="pre">pty</span></tt> is now <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0.2: </span>The default value of <tt class="docutils literal"><span class="pre">combine_stderr</span></tt> is now <tt class="docutils literal"><span class="pre">None</span></tt> instead of
 <tt class="docutils literal"><span class="pre">True</span></tt>. However, the default <em>behavior</em> is unchanged, as the global
 setting is still <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.6: </span>The <tt class="docutils literal"><span class="pre">timeout</span></tt> argument.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.6: </span>The <tt class="docutils literal"><span class="pre">timeout</span></tt> argument.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+</div>
 </dd></dl>
 
 <dl class="function">
@@ -526,16 +550,21 @@ course, override this global setting.</p>
     <span class="n">sudo</span><span class="p">(</span><span class="s">&quot;whoami&quot;</span><span class="p">)</span> <span class="c"># prints &#39;mysql&#39;</span>
 </pre></div>
 </div>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.0: </span>See the changed and added notes for <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>.</p>
-<p class="versionchanged">
-<span class="versionmodified">Changed in version 1.5: </span>Now honors <a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
-<p class="versionadded">
-<span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.0: </span>See the changed and added notes for <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified">Changed in version 1.5: </span>Now honors <a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+</div>
 </dd></dl>
 
 </div>
@@ -702,7 +731,7 @@ course, override this global setting.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
     </div>
   </body>
 </html>
