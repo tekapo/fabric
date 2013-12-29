@@ -109,8 +109,8 @@ $ pip install fabric==dev</pre>
 <p>and, if using the<a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>:</p>
 <p>そしてもし<a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>を利用する場合は:</p>
 <ul class="simple">
-<li>the<a href="#id18"><span class="problematic" id="id19">`multiprocessing`_</span></a>library.</li>
-<li><a href="#id20"><span class="problematic" id="id21">`multiprocessing`_</span></a>ライブラリ</li>
+<li>the<a href="#id14"><span class="problematic" id="id15">`multiprocessing`_</span></a>library.</li>
+<li><a href="#id16"><span class="problematic" id="id17">`multiprocessing`_</span></a>ライブラリ</li>
 </ul>
 <p>Please read on for important details on each dependency &#8211; there are a fewgotchas.</p>
 <p>各依存については重要な詳細がありますので続けて読み進めてください。知っておいたほうがいいことがいくつかあります。</p>
@@ -164,14 +164,14 @@ $ pip install fabric==dev</pre>
 <p><strong>Windows</strong>ユーザーは<a class="reference internal" href="#pypm"><em>ActivePython and PyPM</em></a>の利用か、<a class="reference external" href="http://cygwin.com">Cygwin</a>などのC開発環境のインストール、もしくは<a class="reference external" href="http://www.voidspace.org.uk/python/modules.shtml#pycrypto">voidspaceのPythonモジュールページ</a>からコンパイル済みのWin32 PyCryptoパッケージの取得をおすすめします。</p>
 <div class="admonition note">
 <p class="first admonition-title">ノート</p>
-<p>Some Windows users whose Python is 64-bit have found that the PyCryptodependency<tt class="docutils literal"><span class="pre">winrandom</span></tt>may not install properly, leading to ImportErrors.In this scenario, you&#8217;ll probably need to compile<tt class="docutils literal"><span class="pre">winrandom</span></tt>yourselfvia e.g. MS Visual Studio.  See<a href="#id10"><span class="problematic" id="id11">:issue:`194`</span></a>for info.</p>
-<p class="last">64ビットのPythonを使用しているWindowsユーザーによっては、PyCryptoの依存<tt class="docutils literal"><span class="pre">winrandom</span></tt>が正しくインストールできず、ImportErrorsを引き起こすことがあります。この場合、MS Visual Studioなどで<tt class="docutils literal"><span class="pre">winrandom</span></tt>をご自分でコンパイルする必要があるかもしれません。詳細は<a href="#id12"><span class="problematic" id="id13">:issue:`194`</span></a>をご覧ください。</p>
+<p>Some Windows users whose Python is 64-bit have found that the PyCryptodependency<tt class="docutils literal"><span class="pre">winrandom</span></tt>may not install properly, leading to ImportErrors.In this scenario, you&#8217;ll probably need to compile<tt class="docutils literal"><span class="pre">winrandom</span></tt>yourselfvia e.g. MS Visual Studio.  See<a class="reference external" href="https://github.com/fabric/fabric/issues/194">#194</a>for info.</p>
+<p class="last">64ビットのPythonを使用しているWindowsユーザーによっては、PyCryptoの依存<tt class="docutils literal"><span class="pre">winrandom</span></tt>が正しくインストールできず、ImportErrorsを引き起こすことがあります。この場合、MS Visual Studioなどで<tt class="docutils literal"><span class="pre">winrandom</span></tt>をご自分でコンパイルする必要があるかもしれません。詳細は<a class="reference external" href="https://github.com/fabric/fabric/issues/194">#194</a>をご覧ください。</p>
 </div>
 <p><tt class="docutils literal"><span class="pre">multiprocessing</span></tt></p>
 </div>
 </div>
-<div class="section" id="id14">
-<h3><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="section" id="id10">
+<h3><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt><a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <p>オプションの依存、<tt class="docutils literal"><span class="pre">multiprocessing</span></tt>ライブラリはPythonの2.6以上で標準ライブラリに含まれています。もしPythonの2.5を利用していてFabricの<a class="reference internal" href="usage/parallel.html"><em>並列実行機能</em></a>を利用したい場合は、手動でインストールする必要があります。おすすめの方法は、いつもと同じく<tt class="docutils literal"><span class="pre">pip</span></tt>経由です。詳細はPyPIのページ &lt;<a class="reference external" href="http://pypi.python.org/pypi/multiprocessing/">http://pypi.python.org/pypi/multiprocessing/</a>&gt;`_ をご覧ください。</p>
 <div class="admonition warning">
 <p class="first admonition-title">警告</p>
@@ -195,11 +195,11 @@ $ pip install fabric==dev</pre>
 </div>
 </div>
 <div class="section" id="downloads">
-<span id="id15"></span><h2>Downloads<a class="headerlink" href="#downloads" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id11"></span><h2>Downloads<a class="headerlink" href="#downloads" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>To obtain a tar.gz or zip archive of the Fabric source code, you may visit<a class="reference external" href="http://pypi.python.org/pypi/Fabric">Fabric&#8217;s PyPI page</a>, which offers manualdownloads in addition to being the entry point for<tt class="docutils literal"><span class="pre">pip</span></tt>and<tt class="docutils literal"><span class="pre">easy-install</span></tt>.</p>
 </div>
 <div class="section" id="source-code-checkouts">
-<span id="id16"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<span id="id12"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>The Fabric developers manage the project&#8217;s source code with the<a class="reference external" href="http://git-scm.com">Git</a>DVCS. To follow Fabric&#8217;s development via Git instead ofdownloading official releases, you have the following options:</p>
 <ul class="simple">
 <li>Clone the canonical repository straight from<a class="reference external" href="https://github.com/fabric/fabric">the Fabric organization&#8217;s
@@ -356,7 +356,7 @@ C:\&gt;</pre>
 <li><a class="reference internal" href="#c">C 拡張</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id14"><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt></a></li>
+<li><a class="reference internal" href="#id10"><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt></a></li>
 <li><a class="reference internal" href="#development-dependencies">Development dependencies</a></li>
 </ul>
 </li>

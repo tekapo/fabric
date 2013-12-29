@@ -28,7 +28,7 @@ from datetime import datetime
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 
 sys.path.insert(0, os.path.abspath('.')) 
-extensions = ['sphinx.ext.autodoc', 'japanesesupport']
+extensions = ['sphinx.ext.autodoc', 'releases', 'japanesesupport']
 
 # 'releases' (changelog) settings
 releases_issue_uri = "https://github.com/fabric/fabric/issues/%s"
