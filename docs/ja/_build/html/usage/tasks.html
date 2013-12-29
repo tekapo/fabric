@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Defining tasks &mdash; Fabric 1.8 documentation</title>
+    <title>Defining tasks &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../index.html" />
     <link rel="next" title="Color output functions" href="../api/core/colors.html" />
     <link rel="prev" title="SSH behavior" href="ssh.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="../api/core/colors.html" title="Color output functions"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="ssh.html" title="SSH behavior"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,60 +69,37 @@
           <div class="body">
             
   <div class="section" id="defining-tasks">
-<h1>Defining tasks<a class="headerlink" href="#defining-tasks" title="Permalink to this headline">¶</a></h1>
-<p>As of Fabric 1.1, there are two distinct methods you may use in order to define
-which objects in your fabfile show up as tasks:</p>
+<h1>Defining tasks<a class="headerlink" href="#defining-tasks" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>As of Fabric 1.1, there are two distinct methods you may use in order to definewhich objects in your fabfile show up as tasks:</p>
 <ul class="simple">
-<li>The &#8220;new&#8221; method starting in 1.1 considers instances of <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>
-or its subclasses, and also descends into imported modules to allow building
-nested namespaces.</li>
-<li>The &#8220;classic&#8221; method from 1.0 and earlier considers all public callable
-objects (functions, classes etc) and only considers the objects in the
-fabfile itself with no recursing into imported module.</li>
+<li>The &#8220;new&#8221; method starting in 1.1 considers instances of<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>or its subclasses, and also descends into imported modules to allow buildingnested namespaces.</li>
+<li>The &#8220;classic&#8221; method from 1.0 and earlier considers all public callableobjects (functions, classes etc) and only considers the objects in thefabfile itself with no recursing into imported module.</li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">These two methods are <strong>mutually exclusive</strong>: if Fabric finds <em>any</em>
-new-style task objects in your fabfile or in modules it imports, it will
-assume you&#8217;ve committed to this method of task declaration and won&#8217;t
-consider any non-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> callables. If <em>no</em> new-style tasks
-are found, it reverts to the classic behavior.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">These two methods are<strong>mutually exclusive</strong>: if Fabric finds<em>any</em>new-style task objects in your fabfile or in modules it imports, it willassume you&#8217;ve committed to this method of task declaration and won&#8217;tconsider any non-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>callables. If<em>no</em>new-style tasksare found, it reverts to the classic behavior.</p>
 </div>
 <p>The rest of this document explores these two methods in detail.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">To see exactly what tasks in your fabfile may be executed via <tt class="docutils literal"><span class="pre">fab</span></tt>, use
-<a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">fab --list</em></a>.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">To see exactly what tasks in your fabfile may be executed via<tt class="docutils literal"><span class="pre">fab</span></tt>, use<a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">fab --list</em></a>.</p>
 </div>
 <div class="section" id="new-style-tasks">
-<span id="id1"></span><h2>New-style tasks<a class="headerlink" href="#new-style-tasks" title="Permalink to this headline">¶</a></h2>
-<p>Fabric 1.1 introduced the <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> class to facilitate new features
-and enable some programming best practices, specifically:</p>
+<span id="id1"></span><h2>New-style tasks<a class="headerlink" href="#new-style-tasks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Fabric 1.1 introduced the<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>class to facilitate new featuresand enable some programming best practices, specifically:</p>
 <ul class="simple">
-<li><strong>Object-oriented tasks</strong>. Inheritance and all that comes with it can make
-for much more sensible code reuse than passing around simple function
-objects.  The classic style of task declaration didn&#8217;t entirely rule this
-out, but it also didn&#8217;t make it terribly easy.</li>
-<li><strong>Namespaces</strong>. Having an explicit method of declaring tasks makes it easier
-to set up recursive namespaces without e.g. polluting your task list with the
-contents of Python&#8217;s <tt class="docutils literal"><span class="pre">os</span></tt> module (which would show up as valid &#8220;tasks&#8221;
-under the classic methodology.)</li>
+<li><strong>Object-oriented tasks</strong>. Inheritance and all that comes with it can makefor much more sensible code reuse than passing around simple functionobjects.  The classic style of task declaration didn&#8217;t entirely rule thisout, but it also didn&#8217;t make it terribly easy.</li>
+<li><strong>Namespaces</strong>. Having an explicit method of declaring tasks makes it easierto set up recursive namespaces without e.g. polluting your task list with thecontents of Python&#8217;s<tt class="docutils literal"><span class="pre">os</span></tt>module (which would show up as valid &#8220;tasks&#8221;under the classic methodology.)</li>
 </ul>
-<p>With the introduction of <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>, there are two ways to set up new
-tasks:</p>
+<p>With the introduction of<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>, there are two ways to set up newtasks:</p>
 <ul class="simple">
-<li>Decorate a regular module level function with <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>, which transparently wraps the function in a
-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclass.  The function name will be used as the task
-name when invoking.</li>
-<li>Subclass <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> (<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> itself is intended to be
-abstract), define a <tt class="docutils literal"><span class="pre">run</span></tt> method, and instantiate your subclass at module
-level. Instances&#8217; <tt class="docutils literal"><span class="pre">name</span></tt> attributes are used as the task name; if omitted
-the instance&#8217;s variable name will be used instead.</li>
+<li>Decorate a regular module level function with<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>, which transparently wraps the function in a<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclass.  The function name will be used as the taskname when invoking.</li>
+<li>Subclass<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>(<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>itself is intended to beabstract), define a<tt class="docutils literal"><span class="pre">run</span></tt>method, and instantiate your subclass at modulelevel. Instances&#8217;<tt class="docutils literal"><span class="pre">name</span></tt>attributes are used as the task name; if omittedthe instance&#8217;s variable name will be used instead.</li>
 </ul>
-<p>Use of new-style tasks also allows you to set up <a class="reference internal" href="#namespaces"><em>namespaces</em></a>.</p>
+<p>Use of new-style tasks also allows you to set up<a class="reference internal" href="#namespaces"><em>namespaces</em></a>.</p>
 <div class="section" id="the-task-decorator">
-<span id="task-decorator"></span><h3>The <tt class="docutils literal"><span class="pre">&#64;task</span></tt> decorator<a class="headerlink" href="#the-task-decorator" title="Permalink to this headline">¶</a></h3>
-<p>The quickest way to make use of new-style task features is to wrap basic task functions with <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>:</p>
+<span id="task-decorator"></span><h3>The <tt class="docutils literal"><span class="pre">&#64;task</span></tt> decorator<a class="headerlink" href="#the-task-decorator" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The quickest way to make use of new-style task features is to wrap basic task functions with<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="nd">@task</span>
@@ -129,33 +107,21 @@ the instance&#8217;s variable name will be used instead.</li>
     <span class="n">run</span><span class="p">(</span><span class="s">&quot;a command&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When this decorator is used, it signals to Fabric that <em>only</em> functions wrapped in the decorator are to be loaded up as valid tasks. (When not present, <a class="reference internal" href="#classic-tasks"><em>classic-style task</em></a> behavior kicks in.)</p>
+<p>When this decorator is used, it signals to Fabric that<em>only</em>functions wrapped in the decorator are to be loaded up as valid tasks. (When not present,<a class="reference internal" href="#classic-tasks"><em>classic-style task</em></a>behavior kicks in.)</p>
 <div class="section" id="arguments">
-<span id="task-decorator-arguments"></span><h4>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a> may also be called with arguments to
-customize its behavior. Any arguments not documented below are passed into the
-constructor of the <tt class="docutils literal"><span class="pre">task_class</span></tt> being used, with the function itself as the
-first argument (see <a class="reference internal" href="#task-decorator-and-classes"><em>Using custom subclasses with &#64;task</em></a> for details.)</p>
+<span id="task-decorator-arguments"></span><h4>Arguments<a class="headerlink" href="#arguments" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p><a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>may also be called with arguments tocustomize its behavior. Any arguments not documented below are passed into theconstructor of the<tt class="docutils literal"><span class="pre">task_class</span></tt>being used, with the function itself as thefirst argument (see<a class="reference internal" href="#task-decorator-and-classes"><em>Using custom subclasses with &#64;task</em></a>for details.)</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">task_class</span></tt>: The <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclass used to wrap the decorated
-function. Defaults to <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>.</li>
-<li><tt class="docutils literal"><span class="pre">aliases</span></tt>: An iterable of string names which will be used as aliases for
-the wrapped function. See <a class="reference internal" href="#task-aliases"><em>Aliases</em></a> for details.</li>
-<li><tt class="docutils literal"><span class="pre">alias</span></tt>: Like <tt class="docutils literal"><span class="pre">aliases</span></tt> but taking a single string argument instead of an
-iterable. If both <tt class="docutils literal"><span class="pre">alias</span></tt> and <tt class="docutils literal"><span class="pre">aliases</span></tt> are specified, <tt class="docutils literal"><span class="pre">aliases</span></tt> will
-take precedence.</li>
-<li><tt class="docutils literal"><span class="pre">default</span></tt>: A boolean value determining whether the decorated task also
-stands in for its containing module as a task name. See <a class="reference internal" href="#default-tasks"><em>Default tasks</em></a>.</li>
-<li><tt class="docutils literal"><span class="pre">name</span></tt>: A string setting the name this task appears as to the command-line
-interface. Useful for task names that would otherwise shadow Python builtins
-(which is technically legal but frowned upon and bug-prone.)</li>
+<li><tt class="docutils literal"><span class="pre">task_class</span></tt>: The<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclass used to wrap the decoratedfunction. Defaults to<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>.</li>
+<li><tt class="docutils literal"><span class="pre">aliases</span></tt>: An iterable of string names which will be used as aliases forthe wrapped function. See<a class="reference internal" href="#task-aliases"><em>Aliases</em></a>for details.</li>
+<li><tt class="docutils literal"><span class="pre">alias</span></tt>: Like<tt class="docutils literal"><span class="pre">aliases</span></tt>but taking a single string argument instead of aniterable. If both<tt class="docutils literal"><span class="pre">alias</span></tt>and<tt class="docutils literal"><span class="pre">aliases</span></tt>are specified,<tt class="docutils literal"><span class="pre">aliases</span></tt>willtake precedence.</li>
+<li><tt class="docutils literal"><span class="pre">default</span></tt>: A boolean value determining whether the decorated task alsostands in for its containing module as a task name. See<a class="reference internal" href="#default-tasks"><em>Default tasks</em></a>.</li>
+<li><tt class="docutils literal"><span class="pre">name</span></tt>: A string setting the name this task appears as to the command-lineinterface. Useful for task names that would otherwise shadow Python builtins(which is technically legal but frowned upon and bug-prone.)</li>
 </ul>
 </div>
 <div class="section" id="aliases">
-<span id="task-aliases"></span><h4>Aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h4>
-<p>Here&#8217;s a quick example of using the <tt class="docutils literal"><span class="pre">alias</span></tt> keyword argument to facilitate
-use of both a longer human-readable task name, and a shorter name which is
-quicker to type:</p>
+<span id="task-aliases"></span><h4>Aliases<a class="headerlink" href="#aliases" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Here&#8217;s a quick example of using the<tt class="docutils literal"><span class="pre">alias</span></tt>keyword argument to facilitateuse of both a longer human-readable task name, and a shorter name which isquicker to type:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="nd">@task</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s">&#39;dwm&#39;</span><span class="p">)</span>
@@ -163,29 +129,19 @@ quicker to type:</p>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>Calling <a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">--list</em></a> on this fabfile would show both the original
-<tt class="docutils literal"><span class="pre">deploy_with_migrations</span></tt> and its alias <tt class="docutils literal"><span class="pre">dwm</span></tt>:</p>
+<p>Calling<a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">--list</em></a>on this fabfile would show both the original<tt class="docutils literal"><span class="pre">deploy_with_migrations</span></tt>and its alias<tt class="docutils literal"><span class="pre">dwm</span></tt>:</p>
 <div class="highlight-python"><pre>$ fab --list
 Available commands:
 
     deploy_with_migrations
     dwm</pre>
 </div>
-<p>When more than one alias for the same function is needed, simply swap in the
-<tt class="docutils literal"><span class="pre">aliases</span></tt> kwarg, which takes an iterable of strings instead of a single
-string.</p>
+<p>When more than one alias for the same function is needed, simply swap in the<tt class="docutils literal"><span class="pre">aliases</span></tt>kwarg, which takes an iterable of strings instead of a singlestring.</p>
 </div>
 <div class="section" id="default-tasks">
-<span id="id2"></span><h4>Default tasks<a class="headerlink" href="#default-tasks" title="Permalink to this headline">¶</a></h4>
-<p>In a similar manner to <a class="reference internal" href="#task-aliases"><em>aliases</em></a>, it&#8217;s sometimes useful to
-designate a given task within a module as the &#8220;default&#8221; task, which may be
-called by referencing <em>just</em> the module name. This can save typing and/or
-allow for neater organization when there&#8217;s a single &#8220;main&#8221; task and a number
-of related tasks or subroutines.</p>
-<p>For example, a <tt class="docutils literal"><span class="pre">deploy</span></tt> submodule might contain tasks for provisioning new
-servers, pushing code, migrating databases, and so forth &#8211; but it&#8217;d be very
-convenient to highlight a task as the default &#8220;just deploy&#8221; action. Such a
-<tt class="docutils literal"><span class="pre">deploy.py</span></tt> module might look like this:</p>
+<span id="id2"></span><h4>Default tasks<a class="headerlink" href="#default-tasks" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>In a similar manner to<a class="reference internal" href="#task-aliases"><em>aliases</em></a>, it&#8217;s sometimes useful todesignate a given task within a module as the &#8220;default&#8221; task, which may becalled by referencing<em>just</em>the module name. This can save typing and/orallow for neater organization when there&#8217;s a single &#8220;main&#8221; task and a numberof related tasks or subroutines.</p>
+<p>For example, a<tt class="docutils literal"><span class="pre">deploy</span></tt>submodule might contain tasks for provisioning newservers, pushing code, migrating databases, and so forth &#8211; but it&#8217;d be veryconvenient to highlight a task as the default &#8220;just deploy&#8221; action. Such a<tt class="docutils literal"><span class="pre">deploy.py</span></tt>module might look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span>
 
 <span class="nd">@task</span>
@@ -208,7 +164,7 @@ convenient to highlight a task as the default &#8220;just deploy&#8221; action. 
     <span class="n">migrate</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>With the following task list (assuming a simple top level <tt class="docutils literal"><span class="pre">fabfile.py</span></tt> that just imports <tt class="docutils literal"><span class="pre">deploy</span></tt>):</p>
+<p>With the following task list (assuming a simple top level<tt class="docutils literal"><span class="pre">fabfile.py</span></tt>that just imports<tt class="docutils literal"><span class="pre">deploy</span></tt>):</p>
 <div class="highlight-python"><pre>$ fab --list
 Available commands:
 
@@ -217,9 +173,8 @@ Available commands:
     deploy.provision
     deploy.push</pre>
 </div>
-<p>Calling <tt class="docutils literal"><span class="pre">deploy.full_deploy</span></tt> on every deploy could get kind of old, or somebody new to the team might not be sure if that&#8217;s really the right task to run.</p>
-<p>Using the <tt class="docutils literal"><span class="pre">default</span></tt> kwarg to <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>, we can tag
-e.g. <tt class="docutils literal"><span class="pre">full_deploy</span></tt> as the default task:</p>
+<p>Calling<tt class="docutils literal"><span class="pre">deploy.full_deploy</span></tt>on every deploy could get kind of old, or somebody new to the team might not be sure if that&#8217;s really the right task to run.</p>
+<p>Using the<tt class="docutils literal"><span class="pre">default</span></tt>kwarg to<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>, we can tage.g.<tt class="docutils literal"><span class="pre">full_deploy</span></tt>as the default task:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="nd">@task</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">full_deploy</span><span class="p">():</span>
     <span class="k">pass</span>
@@ -235,26 +190,17 @@ Available commands:
     deploy.provision
     deploy.push</pre>
 </div>
-<p>Note that <tt class="docutils literal"><span class="pre">full_deploy</span></tt> still exists as its own explicit task &#8211; but now
-<tt class="docutils literal"><span class="pre">deploy</span></tt> shows up as a sort of top level alias for <tt class="docutils literal"><span class="pre">full_deploy</span></tt>.</p>
-<p>If multiple tasks within a module have <tt class="docutils literal"><span class="pre">default=True</span></tt> set, the last one to
-be loaded (typically the one lowest down in the file) will take precedence.</p>
+<p>Note that<tt class="docutils literal"><span class="pre">full_deploy</span></tt>still exists as its own explicit task &#8211; but now<tt class="docutils literal"><span class="pre">deploy</span></tt>shows up as a sort of top level alias for<tt class="docutils literal"><span class="pre">full_deploy</span></tt>.</p>
+<p>If multiple tasks within a module have<tt class="docutils literal"><span class="pre">default=True</span></tt>set, the last one tobe loaded (typically the one lowest down in the file) will take precedence.</p>
 </div>
 <div class="section" id="top-level-default-tasks">
-<h4>Top-level default tasks<a class="headerlink" href="#top-level-default-tasks" title="Permalink to this headline">¶</a></h4>
-<p>Using <tt class="docutils literal"><span class="pre">&#64;task(default=True)</span></tt> in the top level fabfile will cause the denoted
-task to execute when a user invokes <tt class="docutils literal"><span class="pre">fab</span></tt> without any task names (similar to
-e.g. <tt class="docutils literal"><span class="pre">make</span></tt>.) When using this shortcut, it is not possible to specify
-arguments to the task itself &#8211; use a regular invocation of the task if this
-is necessary.</p>
+<h4>Top-level default tasks<a class="headerlink" href="#top-level-default-tasks" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Using<tt class="docutils literal"><span class="pre">&#64;task(default=True)</span></tt>in the top level fabfile will cause the denotedtask to execute when a user invokes<tt class="docutils literal"><span class="pre">fab</span></tt>without any task names (similar toe.g.<tt class="docutils literal"><span class="pre">make</span></tt>.) When using this shortcut, it is not possible to specifyarguments to the task itself &#8211; use a regular invocation of the task if thisis necessary.</p>
 </div>
 </div>
 <div class="section" id="task-subclasses">
-<span id="id3"></span><h3><tt class="docutils literal"><span class="pre">Task</span></tt> subclasses<a class="headerlink" href="#task-subclasses" title="Permalink to this headline">¶</a></h3>
-<p>If you&#8217;re used to <a class="reference internal" href="#classic-tasks"><em>classic-style tasks</em></a>, an easy way to
-think about <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclasses is that their <tt class="docutils literal"><span class="pre">run</span></tt> method is
-directly equivalent to a classic task; its arguments are the task arguments
-(other than <tt class="docutils literal"><span class="pre">self</span></tt>) and its body is what gets executed.</p>
+<span id="id3"></span><h3><tt class="docutils literal"><span class="pre">Task</span></tt> subclasses<a class="headerlink" href="#task-subclasses" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you&#8217;re used to<a class="reference internal" href="#classic-tasks"><em>classic-style tasks</em></a>, an easy way tothink about<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclasses is that their<tt class="docutils literal"><span class="pre">run</span></tt>method isdirectly equivalent to a classic task; its arguments are the task arguments(other than<tt class="docutils literal"><span class="pre">self</span></tt>) and its body is what gets executed.</p>
 <p>For example, this new-style task:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MyTask</span><span class="p">(</span><span class="n">Task</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;deploy&quot;</span>
@@ -272,25 +218,13 @@ directly equivalent to a classic task; its arguments are the task arguments
     <span class="n">sudo</span><span class="p">(</span><span class="s">&quot;service apache2 restart&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note how we had to instantiate an instance of our class; that&#8217;s simply normal
-Python object-oriented programming at work. While it&#8217;s a small bit of
-boilerplate right now &#8211; for example, Fabric doesn&#8217;t care about the name you
-give the instantiation, only the instance&#8217;s <tt class="docutils literal"><span class="pre">name</span></tt> attribute &#8211; it&#8217;s well
-worth the benefit of having the power of classes available.</p>
+<p>Note how we had to instantiate an instance of our class; that&#8217;s simply normalPython object-oriented programming at work. While it&#8217;s a small bit ofboilerplate right now &#8211; for example, Fabric doesn&#8217;t care about the name yougive the instantiation, only the instance&#8217;s<tt class="docutils literal"><span class="pre">name</span></tt>attribute &#8211; it&#8217;s wellworth the benefit of having the power of classes available.</p>
 <p>We plan to extend the API in the future to make this experience a bit smoother.</p>
 <div class="section" id="using-custom-subclasses-with-task">
-<span id="task-decorator-and-classes"></span><h4>Using custom subclasses with <tt class="docutils literal"><span class="pre">&#64;task</span></tt><a class="headerlink" href="#using-custom-subclasses-with-task" title="Permalink to this headline">¶</a></h4>
-<p>It&#8217;s possible to marry custom <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclasses with <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>. This may be useful in cases where your core
-execution logic doesn&#8217;t do anything class/object-specific, but you want to
-take advantage of class metaprogramming or similar techniques.</p>
-<p>Specifically, any <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclass which is designed to take in a
-callable as its first constructor argument (as the built-in
-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a> does) may be specified as the
-<tt class="docutils literal"><span class="pre">task_class</span></tt> argument to <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>.</p>
-<p>Fabric will automatically instantiate a copy of the given class, passing in
-the wrapped function as the first argument. All other args/kwargs given to the
-decorator (besides the &#8220;special&#8221; arguments documented in
-<a class="reference internal" href="#task-decorator-arguments"><em>Arguments</em></a>) are added afterwards.</p>
+<span id="task-decorator-and-classes"></span><h4>Using custom subclasses with <tt class="docutils literal"><span class="pre">&#64;task</span></tt><a class="headerlink" href="#using-custom-subclasses-with-task" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>It&#8217;s possible to marry custom<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclasses with<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>. This may be useful in cases where your coreexecution logic doesn&#8217;t do anything class/object-specific, but you want totake advantage of class metaprogramming or similar techniques.</p>
+<p>Specifically, any<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclass which is designed to take in acallable as its first constructor argument (as the built-in<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>does) may be specified as the<tt class="docutils literal"><span class="pre">task_class</span></tt>argument to<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>.</p>
+<p>Fabric will automatically instantiate a copy of the given class, passing inthe wrapped function as the first argument. All other args/kwargs given to thedecorator (besides the &#8220;special&#8221; arguments documented in<a class="reference internal" href="#task-decorator-arguments"><em>Arguments</em></a>) are added afterwards.</p>
 <p>Here&#8217;s a brief and somewhat contrived example to make this obvious:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span>
 <span class="kn">from</span> <span class="nn">fabric.tasks</span> <span class="kn">import</span> <span class="n">Task</span>
@@ -309,36 +243,25 @@ decorator (besides the &#8220;special&#8221; arguments documented in
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>When this fabfile is loaded, a copy of <tt class="docutils literal"><span class="pre">CustomTask</span></tt> is instantiated, effectively calling:</p>
+<p>When this fabfile is loaded, a copy of<tt class="docutils literal"><span class="pre">CustomTask</span></tt>is instantiated, effectively calling:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">task_obj</span> <span class="o">=</span> <span class="n">CustomTask</span><span class="p">(</span><span class="n">actual_task</span><span class="p">,</span> <span class="n">myarg</span><span class="o">=</span><span class="s">&#39;value&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note how the <tt class="docutils literal"><span class="pre">alias</span></tt> kwarg is stripped out by the decorator itself and never
-reaches the class instantiation; this is identical in function to how
-<a class="reference internal" href="fab.html#task-arguments"><em>command-line task arguments</em></a> work.</p>
+<p>Note how the<tt class="docutils literal"><span class="pre">alias</span></tt>kwarg is stripped out by the decorator itself and neverreaches the class instantiation; this is identical in function to how<a class="reference internal" href="fab.html#task-arguments"><em>command-line task arguments</em></a>work.</p>
 </div>
 </div>
 <div class="section" id="namespaces">
-<span id="id4"></span><h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h3>
-<p>With <a class="reference internal" href="#classic-tasks"><em>classic tasks</em></a>, fabfiles were limited to a single,
-flat set of task names with no real way to organize them.  In Fabric 1.1 and
-newer, if you declare tasks the new way (via <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>
-or your own <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a> subclass instances) you may take advantage
-of <strong>namespacing</strong>:</p>
+<span id="id4"></span><h3>Namespaces<a class="headerlink" href="#namespaces" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>With<a class="reference internal" href="#classic-tasks"><em>classic tasks</em></a>, fabfiles were limited to a single,flat set of task names with no real way to organize them.  In Fabric 1.1 andnewer, if you declare tasks the new way (via<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">&#64;task</span></tt></a>or your own<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>subclass instances) you may take advantageof<strong>namespacing</strong>:</p>
 <ul class="simple">
-<li>Any module objects imported into your fabfile will be recursed into, looking
-for additional task objects.</li>
-<li>Within submodules, you may control which objects are &#8220;exported&#8221; by using the
-standard Python <tt class="docutils literal"><span class="pre">__all__</span></tt> module-level variable name (thought they should
-still be valid new-style task objects.)</li>
-<li>These tasks will be given new dotted-notation names based on the modules they
-came from, similar to Python&#8217;s own import syntax.</li>
+<li>Any module objects imported into your fabfile will be recursed into, lookingfor additional task objects.</li>
+<li>Within submodules, you may control which objects are &#8220;exported&#8221; by using thestandard Python<tt class="docutils literal"><span class="pre">__all__</span></tt>module-level variable name (thought they shouldstill be valid new-style task objects.)</li>
+<li>These tasks will be given new dotted-notation names based on the modules theycame from, similar to Python&#8217;s own import syntax.</li>
 </ul>
 <p>Let&#8217;s build up a fabfile package from simple to complex and see how this works.</p>
 <div class="section" id="basic">
-<h4>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h4>
-<p>We start with a single <tt class="xref py py-obj docutils literal"><span class="pre">__init__.py</span></tt> containing a few tasks (the Fabric API
-import omitted for brevity):</p>
+<h4>Basic<a class="headerlink" href="#basic" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>We start with a single<tt class="xref py py-obj docutils literal"><span class="pre">__init__.py</span></tt>containing a few tasks (the Fabric APIimport omitted for brevity):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">deploy</span><span class="p">():</span>
     <span class="o">...</span>
@@ -348,45 +271,36 @@ import omitted for brevity):</p>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>The output of <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt> would look something like this:</p>
+<p>The output of<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>would look something like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">deploy</span>
 <span class="n">compress</span>
 </pre></div>
 </div>
-<p>There&#8217;s just one namespace here: the &#8220;root&#8221; or global namespace. Looks simple
-now, but in a real-world fabfile with dozens of tasks, it can get difficult to
-manage.</p>
+<p>There&#8217;s just one namespace here: the &#8220;root&#8221; or global namespace. Looks simplenow, but in a real-world fabfile with dozens of tasks, it can get difficult tomanage.</p>
 </div>
 <div class="section" id="importing-a-submodule">
-<h4>Importing a submodule<a class="headerlink" href="#importing-a-submodule" title="Permalink to this headline">¶</a></h4>
-<p>As mentioned above, Fabric will examine any imported module objects for tasks,
-regardless of where that module exists on your Python import path.  For now we
-just want to include our own, &#8220;nearby&#8221; tasks, so we&#8217;ll make a new submodule in
-our package for dealing with, say, load balancers &#8211; <tt class="docutils literal"><span class="pre">lb.py</span></tt>:</p>
+<h4>Importing a submodule<a class="headerlink" href="#importing-a-submodule" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>As mentioned above, Fabric will examine any imported module objects for tasks,regardless of where that module exists on your Python import path.  For now wejust want to include our own, &#8220;nearby&#8221; tasks, so we&#8217;ll make a new submodule inour package for dealing with, say, load balancers &#8211;<tt class="docutils literal"><span class="pre">lb.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">add_backend</span><span class="p">():</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>And we&#8217;ll add this to the top of <tt class="docutils literal"><span class="pre">__init__.py</span></tt>:</p>
+<p>And we&#8217;ll add this to the top of<tt class="docutils literal"><span class="pre">__init__.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">lb</span>
 </pre></div>
 </div>
-<p>Now <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt> shows us:</p>
+<p>Now<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>shows us:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">deploy</span>
 <span class="n">compress</span>
 <span class="n">lb</span><span class="o">.</span><span class="n">add_backend</span>
 </pre></div>
 </div>
-<p>Again, with only one task in its own submodule, it looks kind of silly, but the
-benefits should be pretty obvious.</p>
+<p>Again, with only one task in its own submodule, it looks kind of silly, but thebenefits should be pretty obvious.</p>
 </div>
 <div class="section" id="going-deeper">
-<h4>Going deeper<a class="headerlink" href="#going-deeper" title="Permalink to this headline">¶</a></h4>
-<p>Namespacing isn&#8217;t limited to just one level. Let&#8217;s say we had a larger setup
-and wanted a namespace for database related tasks, with additional
-differentiation inside that. We make a sub-package named <tt class="docutils literal"><span class="pre">db/</span></tt> and inside it,
-a <tt class="docutils literal"><span class="pre">migrations.py</span></tt> module:</p>
+<h4>Going deeper<a class="headerlink" href="#going-deeper" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Namespacing isn&#8217;t limited to just one level. Let&#8217;s say we had a larger setupand wanted a namespace for database related tasks, with additionaldifferentiation inside that. We make a sub-package named<tt class="docutils literal"><span class="pre">db/</span></tt>and inside it,a<tt class="docutils literal"><span class="pre">migrations.py</span></tt>module:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="nd">@task</span>
 <span class="k">def</span> <span class="nf">list</span><span class="p">():</span>
     <span class="o">...</span>
@@ -396,13 +310,11 @@ a <tt class="docutils literal"><span class="pre">migrations.py</span></tt> modul
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>We need to make sure that this module is visible to anybody importing <tt class="docutils literal"><span class="pre">db</span></tt>,
-so we add it to the sub-package&#8217;s <tt class="docutils literal"><span class="pre">__init__.py</span></tt>:</p>
+<p>We need to make sure that this module is visible to anybody importing<tt class="docutils literal"><span class="pre">db</span></tt>,so we add it to the sub-package&#8217;s<tt class="docutils literal"><span class="pre">__init__.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">migrations</span>
 </pre></div>
 </div>
-<p>As a final step, we import the sub-package into our root-level <tt class="docutils literal"><span class="pre">__init__.py</span></tt>,
-so now its first few lines look like this:</p>
+<p>As a final step, we import the sub-package into our root-level<tt class="docutils literal"><span class="pre">__init__.py</span></tt>,so now its first few lines look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">lb</span>
 <span class="kn">import</span> <span class="nn">db</span>
 </pre></div>
@@ -415,7 +327,7 @@ so now its first few lines look like this:</p>
 │   └── migrations.py
 └── lb.py</pre>
 </div>
-<p>and <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt> shows:</p>
+<p>and<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>shows:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">deploy</span>
 <span class="n">compress</span>
 <span class="n">lb</span><span class="o">.</span><span class="n">add_backend</span>
@@ -423,30 +335,20 @@ so now its first few lines look like this:</p>
 <span class="n">db</span><span class="o">.</span><span class="n">migrations</span><span class="o">.</span><span class="n">run</span>
 </pre></div>
 </div>
-<p>We could also have specified (or imported) tasks directly into
-<tt class="docutils literal"><span class="pre">db/__init__.py</span></tt>, and they would show up as <tt class="docutils literal"><span class="pre">db.&lt;whatever&gt;</span></tt> as you might
-expect.</p>
+<p>We could also have specified (or imported) tasks directly into<tt class="docutils literal"><span class="pre">db/__init__.py</span></tt>, and they would show up as<tt class="docutils literal"><span class="pre">db.&lt;whatever&gt;</span></tt>as you mightexpect.</p>
 </div>
 <div class="section" id="limiting-with-all">
-<h4>Limiting with <tt class="docutils literal"><span class="pre">__all__</span></tt><a class="headerlink" href="#limiting-with-all" title="Permalink to this headline">¶</a></h4>
-<p>You may limit what Fabric &#8220;sees&#8221; when it examines imported modules, by using
-the Python convention of a module level <tt class="docutils literal"><span class="pre">__all__</span></tt> variable (a list of
-variable names.) If we didn&#8217;t want the <tt class="docutils literal"><span class="pre">db.migrations.run</span></tt> task to show up by
-default for some reason, we could add this to the top of <tt class="docutils literal"><span class="pre">db/migrations.py</span></tt>:</p>
+<h4>Limiting with <tt class="docutils literal"><span class="pre">__all__</span></tt><a class="headerlink" href="#limiting-with-all" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>You may limit what Fabric &#8220;sees&#8221; when it examines imported modules, by usingthe Python convention of a module level<tt class="docutils literal"><span class="pre">__all__</span></tt>variable (a list ofvariable names.) If we didn&#8217;t want the<tt class="docutils literal"><span class="pre">db.migrations.run</span></tt>task to show up bydefault for some reason, we could add this to the top of<tt class="docutils literal"><span class="pre">db/migrations.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;list&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Note the lack of <tt class="docutils literal"><span class="pre">'run'</span></tt> there. You could, if needed, import <tt class="docutils literal"><span class="pre">run</span></tt> directly
-into some other part of the hierarchy, but otherwise it&#8217;ll remain hidden.</p>
+<p>Note the lack of<tt class="docutils literal"><span class="pre">'run'</span></tt>there. You could, if needed, import<tt class="docutils literal"><span class="pre">run</span></tt>directlyinto some other part of the hierarchy, but otherwise it&#8217;ll remain hidden.</p>
 </div>
 <div class="section" id="switching-it-up">
-<h4>Switching it up<a class="headerlink" href="#switching-it-up" title="Permalink to this headline">¶</a></h4>
-<p>We&#8217;ve been keeping our fabfile package neatly organized and importing it in a
-straightforward manner, but the filesystem layout doesn&#8217;t actually matter here.
-All Fabric&#8217;s loader cares about is the names the modules are given when they&#8217;re
-imported.</p>
-<p>For example, if we changed the top of our root <tt class="docutils literal"><span class="pre">__init__.py</span></tt> to look like
-this:</p>
+<h4>Switching it up<a class="headerlink" href="#switching-it-up" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>We&#8217;ve been keeping our fabfile package neatly organized and importing it in astraightforward manner, but the filesystem layout doesn&#8217;t actually matter here.All Fabric&#8217;s loader cares about is the names the modules are given when they&#8217;reimported.</p>
+<p>For example, if we changed the top of our root<tt class="docutils literal"><span class="pre">__init__.py</span></tt>to look likethis:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">db</span> <span class="kn">as</span> <span class="nn">database</span>
 </pre></div>
 </div>
@@ -458,16 +360,11 @@ this:</p>
 <span class="n">database</span><span class="o">.</span><span class="n">migrations</span><span class="o">.</span><span class="n">run</span>
 </pre></div>
 </div>
-<p>This applies to any other import &#8211; you could import third party modules into
-your own task hierarchy, or grab a deeply nested module and make it appear near
-the top level.</p>
+<p>This applies to any other import &#8211; you could import third party modules intoyour own task hierarchy, or grab a deeply nested module and make it appear nearthe top level.</p>
 </div>
 <div class="section" id="nested-list-output">
-<h4>Nested list output<a class="headerlink" href="#nested-list-output" title="Permalink to this headline">¶</a></h4>
-<p>As a final note, we&#8217;ve been using the default Fabric <a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">--list</em></a>
-output during this section &#8211; it makes it more obvious what the actual task
-names are. However, you can get a more nested or tree-like view by passing
-<tt class="docutils literal"><span class="pre">nested</span></tt> to the <a class="reference internal" href="fab.html#cmdoption-F"><em class="xref std std-option">--list-format</em></a> option:</p>
+<h4>Nested list output<a class="headerlink" href="#nested-list-output" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>As a final note, we&#8217;ve been using the default Fabric<a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">--list</em></a>output during this section &#8211; it makes it more obvious what the actual tasknames are. However, you can get a more nested or tree-like view by passing<tt class="docutils literal"><span class="pre">nested</span></tt>to the<a class="reference internal" href="fab.html#cmdoption-F"><em class="xref std std-option">--list-format</em></a>option:</p>
 <div class="highlight-python"><pre>$ fab --list-format=nested --list
 Available commands (remember to call as module.[...].task):
 
@@ -480,42 +377,29 @@ Available commands (remember to call as module.[...].task):
             list
             run</pre>
 </div>
-<p>While it slightly obfuscates the &#8220;real&#8221; task names, this view provides a handy
-way of noting the organization of tasks in large namespaces.</p>
+<p>While it slightly obfuscates the &#8220;real&#8221; task names, this view provides a handyway of noting the organization of tasks in large namespaces.</p>
 </div>
 </div>
 </div>
 <div class="section" id="classic-tasks">
-<span id="id5"></span><h2>Classic tasks<a class="headerlink" href="#classic-tasks" title="Permalink to this headline">¶</a></h2>
-<p>When no new-style <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>-based tasks are found, Fabric will
-consider any callable object found in your fabfile, <strong>except</strong> the following:</p>
+<span id="id5"></span><h2>Classic tasks<a class="headerlink" href="#classic-tasks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>When no new-style<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.Task" title="fabric.tasks.Task"><tt class="xref py py-obj docutils literal"><span class="pre">Task</span></tt></a>-based tasks are found, Fabric willconsider any callable object found in your fabfile,<strong>except</strong>the following:</p>
 <ul class="simple">
-<li>Callables whose name starts with an underscore (<tt class="docutils literal"><span class="pre">_</span></tt>). In other words,
-Python&#8217;s usual &#8220;private&#8221; convention holds true here.</li>
-<li>Callables defined within Fabric itself. Fabric&#8217;s own functions such as
-<a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> and <a class="reference internal" href="../api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>  will not show up in
-your task list.</li>
+<li>Callables whose name starts with an underscore (<tt class="docutils literal"><span class="pre">_</span></tt>). In other words,Python&#8217;s usual &#8220;private&#8221; convention holds true here.</li>
+<li>Callables defined within Fabric itself. Fabric&#8217;s own functions such as<a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>and<a class="reference internal" href="../api/core/operations.html#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>will not show up inyour task list.</li>
 </ul>
 <div class="section" id="imports">
-<h3>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h3>
-<p>Python&#8217;s <tt class="docutils literal"><span class="pre">import</span></tt> statement effectively includes the imported objects in your
-module&#8217;s namespace. Since Fabric&#8217;s fabfiles are just Python modules, this means
-that imports are also considered as possible classic-style tasks, alongside
-anything defined in the fabfile itself.</p>
+<h3>Imports<a class="headerlink" href="#imports" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Python&#8217;s<tt class="docutils literal"><span class="pre">import</span></tt>statement effectively includes the imported objects in yourmodule&#8217;s namespace. Since Fabric&#8217;s fabfiles are just Python modules, this meansthat imports are also considered as possible classic-style tasks, alongsideanything defined in the fabfile itself.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This only applies to imported <em>callable objects</em> &#8211; not modules.
-Imported modules only come into play if they contain <a class="reference internal" href="#new-style-tasks"><em>new-style
-tasks</em></a>, at which point this section no longer
-applies.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">This only applies to imported<em>callable objects</em>&#8211; not modules.Imported modules only come into play if they contain<a class="reference internal" href="#new-style-tasks"><em>new-style
+tasks</em></a>, at which point this section no longerapplies.</p>
 </div>
 </div></blockquote>
-<p>Because of this, we strongly recommend that you use the <tt class="docutils literal"><span class="pre">import</span> <span class="pre">module</span></tt> form
-of importing, followed by <tt class="docutils literal"><span class="pre">module.callable()</span></tt>, which will result in a cleaner
-fabfile API than doing <tt class="docutils literal"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">callable</span></tt>.</p>
-<p>For example, here&#8217;s a sample fabfile which uses <tt class="docutils literal"><span class="pre">urllib.urlopen</span></tt> to get some
-data out of a webservice:</p>
+<p>Because of this, we strongly recommend that you use the<tt class="docutils literal"><span class="pre">import</span> <span class="pre">module</span></tt>formof importing, followed by<tt class="docutils literal"><span class="pre">module.callable()</span></tt>, which will result in a cleanerfabfile API than doing<tt class="docutils literal"><span class="pre">from</span> <span class="pre">module</span> <span class="pre">import</span> <span class="pre">callable</span></tt>.</p>
+<p>For example, here&#8217;s a sample fabfile which uses<tt class="docutils literal"><span class="pre">urllib.urlopen</span></tt>to get somedata out of a webservice:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">urlopen</span>
 
 <span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
@@ -525,19 +409,14 @@ data out of a webservice:</p>
     <span class="k">print</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This looks simple enough, and will run without error. However, look what
-happens if we run <a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">fab --list</em></a> on this fabfile:</p>
+<p>This looks simple enough, and will run without error. However, look whathappens if we run<a class="reference internal" href="fab.html#cmdoption-l"><em class="xref std std-option">fab --list</em></a>on this fabfile:</p>
 <div class="highlight-python"><pre>$ fab --list
 Available commands:
 
   webservice_read   List some directories.
   urlopen           urlopen(url [, data]) -&gt; open file-like object</pre>
 </div>
-<p>Our fabfile of only one task is showing two &#8220;tasks&#8221;, which is bad enough, and
-an unsuspecting user might accidentally try to call <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">urlopen</span></tt>, which
-probably won&#8217;t work very well. Imagine any real-world fabfile, which is likely
-to be much more complex, and hopefully you can see how this could get messy
-fast.</p>
+<p>Our fabfile of only one task is showing two &#8220;tasks&#8221;, which is bad enough, andan unsuspecting user might accidentally try to call<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">urlopen</span></tt>, whichprobably won&#8217;t work very well. Imagine any real-world fabfile, which is likelyto be much more complex, and hopefully you can see how this could get messyfast.</p>
 <p>For reference, here&#8217;s the recommended way to do it:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
 
@@ -667,7 +546,7 @@ fast.</p>
 </ul>
 
 
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Defining tasks</a><ul>
 <li><a class="reference internal" href="#new-style-tasks">New-style tasks</a><ul>
@@ -701,27 +580,27 @@ fast.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="ssh.html"
-                        title="previous chapter">SSH behavior</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">SSH behavior</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="../api/core/colors.html"
-                        title="next chapter">Color output functions</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Color output functions</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/usage/tasks.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -730,26 +609,26 @@ fast.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="../api/core/colors.html" title="Color output functions"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="ssh.html" title="SSH behavior"
-             >previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

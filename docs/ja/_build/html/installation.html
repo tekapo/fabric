@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>インストール &mdash; Fabric 1.8 documentation</title>
+    <title>インストール &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="index.html" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="index.html" />
     <link rel="next" title="Development" href="development.html" />
     <link rel="prev" title="概要とチュートリアル" href="tutorial.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="development.html" title="Development"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="tutorial.html" title="概要とチュートリアル"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,232 +69,153 @@
           <div class="body">
             
   <div class="section" id="id1">
-<h1>インストール<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Fabricのインストールの一番いい方法は <a class="reference external" href="http://pip.openplans.org">pip</a> (お勧めです)
-もしくは <a class="reference external" href="http://wiki.python.org/moin/CheeseShopTutorial">easy_install</a> (古いですが動作します)です。
-例えば:</p>
+<h1>インストール<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Fabricのインストールの一番いい方法は<a class="reference external" href="http://pip.openplans.org">pip</a>(お勧めです)もしくは<a class="reference external" href="http://wiki.python.org/moin/CheeseShopTutorial">easy_install</a>(古いですが動作します)です。例えば:</p>
 <div class="highlight-python"><pre>$ pip install fabric</pre>
 </div>
-<p>また、お使いのオペレーティングシステムのパッケージマネージャーを利用してもいいでしょう。
-パッケージ名はたいてい <tt class="docutils literal"><span class="pre">fabric</span></tt> もしくは <tt class="docutils literal"><span class="pre">python-fabric</span></tt> です。例えば:</p>
+<p>また、お使いのオペレーティングシステムのパッケージマネージャーを利用してもいいでしょう。パッケージ名はたいてい<tt class="docutils literal"><span class="pre">fabric</span></tt>もしくは<tt class="docutils literal"><span class="pre">python-fabric</span></tt>です。例えば:</p>
 <div class="highlight-python"><pre>$ sudo apt-get install fabric</pre>
 </div>
-<p>開発版のインストールを望む上級ユーザーは <tt class="docutils literal"><span class="pre">pip</span></tt> を使って最新のマスターブランチを取得できます。
-(依存のためParamikoの開発版も必要です):</p>
+<p>開発版のインストールを望む上級ユーザーは<tt class="docutils literal"><span class="pre">pip</span></tt>を使って最新のマスターブランチを取得できます。(依存のためParamikoの開発版も必要です):</p>
 <div class="highlight-python"><pre>$ pip install paramiko==dev
 $ pip install fabric==dev</pre>
 </div>
 <dl class="docutils">
 <dt>もしくは、デバッグやハッキングのために編集可能なバージョンをインストールしたい場合は、</dt>
-<dd><a class="reference internal" href="#downloads"><em>downloaded</em></a> もしくは <a class="reference internal" href="#source-code-checkouts"><em>cloned</em></a> したソースコード内で
-<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></tt> (もしくは <tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt>) を実行してください。</dd>
+<dd><a class="reference internal" href="#downloads"><em>downloaded</em></a>もしくは<a class="reference internal" href="#source-code-checkouts"><em>cloned</em></a>したソースコード内で<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></tt>(もしくは<tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></tt>) を実行してください。</dd>
 </dl>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>Any development installs of Fabric (whether via <tt class="docutils literal"><span class="pre">==dev</span></tt> or <tt class="docutils literal"><span class="pre">install</span>
-<span class="pre">-e</span></tt>) require the development version of Paramiko to be installed
-beforehand, or Fabric&#8217;s installation may fail.</p>
+<p class="first admonition-title">警告</p>
+<p>Any development installs of Fabric (whether via<tt class="docutils literal"><span class="pre">==dev</span></tt>or<tt class="docutils literal"><span class="pre">install</span>
+<span class="pre">-e</span></tt>) require the development version of Paramiko to be installedbeforehand, or Fabric&#8217;s installation may fail.</p>
 <blockquote class="last">
-<div>Fabricのどの開発版 (<tt class="docutils literal"><span class="pre">==dev</span></tt> もしくは <tt class="docutils literal"><span class="pre">install</span> <span class="pre">-e</span></tt> のどちらでも) でも
-Paramikoの開発版の事前のインストールが必要です。さもないとFabricのインストールに
-失敗します。</div></blockquote>
+<div>Fabricのどの開発版 (<tt class="docutils literal"><span class="pre">==dev</span></tt>もしくは<tt class="docutils literal"><span class="pre">install</span> <span class="pre">-e</span></tt>のどちらでも) でもParamikoの開発版の事前のインストールが必要です。さもないとFabricのインストールに失敗します。</div></blockquote>
 </div>
 <p>Dependencies</p>
 <div class="section" id="id2">
-<h2>依存<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2>依存<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>In order for Fabric&#8217;s installation to succeed, you will need four primary pieces of software:</p>
 <p>Fabricのインストールには次の主に4つのソフトウェアが必要です:</p>
 <ul class="simple">
 <li>the Python programming language;</li>
-<li>the <tt class="docutils literal"><span class="pre">setuptools</span></tt> packaging/installation library;</li>
-<li>the Python <tt class="docutils literal"><span class="pre">paramiko</span></tt> SSH2 library;</li>
-<li>and <tt class="docutils literal"><span class="pre">paramiko</span></tt>&#8216;s dependency, the PyCrypto cryptography library.</li>
+<li>the<tt class="docutils literal"><span class="pre">setuptools</span></tt>packaging/installation library;</li>
+<li>the Python<tt class="docutils literal"><span class="pre">paramiko</span></tt>SSH2 library;</li>
+<li>and<tt class="docutils literal"><span class="pre">paramiko</span></tt>&#8216;s dependency, the PyCrypto cryptography library.</li>
 <li>Pythonプログラム言語</li>
-<li><tt class="docutils literal"><span class="pre">setuptools</span></tt> パッケージング/インストールライブラリ</li>
-<li>Python <tt class="docutils literal"><span class="pre">paramiko</span></tt> SSH2 ライブラリ</li>
-<li><tt class="docutils literal"><span class="pre">paramiko</span></tt> の依存、PyCrypto 暗号ライブラリ</li>
+<li><tt class="docutils literal"><span class="pre">setuptools</span></tt>パッケージング/インストールライブラリ</li>
+<li>Python<tt class="docutils literal"><span class="pre">paramiko</span></tt>SSH2 ライブラリ</li>
+<li><tt class="docutils literal"><span class="pre">paramiko</span></tt>の依存、PyCrypto 暗号ライブラリ</li>
 </ul>
-<p>and, if using the <a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>:</p>
-<p>そしてもし <a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a> を利用する場合は:</p>
+<p>and, if using the<a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>:</p>
+<p>そしてもし<a class="reference internal" href="usage/parallel.html"><em>parallel execution mode</em></a>を利用する場合は:</p>
 <ul class="simple">
-<li>the <a class="reference internal" href="#multiprocessing">multiprocessing</a> library.</li>
-<li><a class="reference internal" href="#multiprocessing">multiprocessing</a> ライブラリ</li>
+<li>the<a href="#id18"><span class="problematic" id="id19">`multiprocessing`_</span></a>library.</li>
+<li><a href="#id20"><span class="problematic" id="id21">`multiprocessing`_</span></a>ライブラリ</li>
 </ul>
-<p>Please read on for important details on each dependency &#8211; there are a few
-gotchas.</p>
+<p>Please read on for important details on each dependency &#8211; there are a fewgotchas.</p>
 <p>各依存については重要な詳細がありますので続けて読み進めてください。知っておいたほうがいいことがいくつかあります。</p>
 <div class="section" id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
-<p>Fabric requires <a class="reference external" href="http://python.org">Python</a> version 2.5 or 2.6. Some caveats
-and notes about other Python versions:</p>
-<p>Fabricは <a class="reference external" href="http://python.org">Python</a> バージョン2.5もしくは2.6を必要とします。
-Pythonの他のバージョンについてはいくつかの注意事項があります。</p>
+<h3>Python<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Fabric requires<a class="reference external" href="http://python.org">Python</a>version 2.5 or 2.6. Some caveatsand notes about other Python versions:</p>
+<p>Fabricは<a class="reference external" href="http://python.org">Python</a>バージョン2.5もしくは2.6を必要とします。Pythonの他のバージョンについてはいくつかの注意事項があります。</p>
 <ul class="simple">
-<li>We are not planning on supporting <strong>Python 2.4</strong> given its age and the number
-of useful tools in Python 2.5 such as context managers and new modules.
-That said, the actual amount of 2.5-specific functionality is not
-prohibitively large, and we would link to &#8211; but not support &#8211; a third-party
-2.4-compatible fork. (No such fork exists at this time, to our knowledge.)</li>
-<li>Fabric has not yet been tested on <strong>Python 3.x</strong> and is thus likely to be
-incompatible with that line of development. However, we try to be at least
-somewhat forward-looking (e.g. using <tt class="docutils literal"><span class="pre">print()</span></tt> instead of <tt class="docutils literal"><span class="pre">print</span></tt>) and
-will definitely be porting to 3.x in the future once our dependencies do.</li>
-<li><a href="#id5"><span class="problematic" id="id6">**</span></a>Python 2.4**をサポートする予定はありません。このバージョンが古いということと、
-コンテキストマネージャーや新しいモジュールなど、Python 2.5の数多くの便利なツールのためです。
-とは言え、2.5特有の機能の数は実際には特に多いということはないので、サードパーティの
-2.4互換フォークへのリンク &#8211; サポートではなく &#8211; を紹介すると思います (今のところ、
-私たちの知っている限りではまだそうしたフォークはありませんが)。</li>
-<li>Fabricは <strong>Python 3.x</strong> ではまだテストされていませんので互換性がないかもしれません。
-とはいえ、少なくとも前向きに検討していて (例えば、<tt class="docutils literal"><span class="pre">print</span></tt> ではなく <tt class="docutils literal"><span class="pre">print()</span></tt>
-を使用する) 、将来的には依存するライブラリ等が3.xに移植されれば間違いなくFabricも3.xに移植します。</li>
+<li>We are not planning on supporting<strong>Python 2.4</strong>given its age and the numberof useful tools in Python 2.5 such as context managers and new modules.That said, the actual amount of 2.5-specific functionality is notprohibitively large, and we would link to &#8211; but not support &#8211; a third-party2.4-compatible fork. (No such fork exists at this time, to our knowledge.)</li>
+<li>Fabric has not yet been tested on<strong>Python 3.x</strong>and is thus likely to beincompatible with that line of development. However, we try to be at leastsomewhat forward-looking (e.g. using<tt class="docutils literal"><span class="pre">print()</span></tt>instead of<tt class="docutils literal"><span class="pre">print</span></tt>) andwill definitely be porting to 3.x in the future once our dependencies do.</li>
+<li><a href="#id5"><span class="problematic" id="id6">**</span></a>Python 2.4**をサポートする予定はありません。このバージョンが古いということと、コンテキストマネージャーや新しいモジュールなど、Python 2.5の数多くの便利なツールのためです。とは言え、2.5特有の機能の数は実際には特に多いということはないので、サードパーティの2.4互換フォークへのリンク &#8211; サポートではなく &#8211; を紹介すると思います (今のところ、私たちの知っている限りではまだそうしたフォークはありませんが)。</li>
+<li>Fabricは<strong>Python 3.x</strong>ではまだテストされていませんので互換性がないかもしれません。とはいえ、少なくとも前向きに検討していて (例えば、<tt class="docutils literal"><span class="pre">print</span></tt>ではなく<tt class="docutils literal"><span class="pre">print()</span></tt>を使用する) 、将来的には依存するライブラリ等が3.xに移植されれば間違いなくFabricも3.xに移植します。</li>
 </ul>
 </div>
 <div class="section" id="setuptools">
-<h3>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="http://pypi.python.org/pypi/setuptools">Setuptools</a> はインストールされるPythonによってはデフォルトで同梱されています。もしなければ、
-入れる必要があります。その場合、たいていははパッケージ名が <tt class="docutils literal"><span class="pre">python-setuptools</span></tt>
-や <tt class="docutils literal"><span class="pre">py25-setuptools</span></tt> 、もしくは似た名称になっています。Fabricは将来的にはこの setuptools
-への依存をなくすか、代替の <a class="reference external" href="http://pypi.python.org/pypi/distribute">Distribute</a> プロジェクトへのサポートを含むようにします。
-しかし今のところはインストールに setuptools が必要です。</p>
+<h3>setuptools<a class="headerlink" href="#setuptools" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="http://pypi.python.org/pypi/setuptools">Setuptools</a>はインストールされるPythonによってはデフォルトで同梱されています。もしなければ、入れる必要があります。その場合、たいていははパッケージ名が<tt class="docutils literal"><span class="pre">python-setuptools</span></tt>や<tt class="docutils literal"><span class="pre">py25-setuptools</span></tt>、もしくは似た名称になっています。Fabricは将来的にはこの setuptoolsへの依存をなくすか、代替の<a class="reference external" href="http://pypi.python.org/pypi/distribute">Distribute</a>プロジェクトへのサポートを含むようにします。しかし今のところはインストールに setuptools が必要です。</p>
 </div>
 <div class="section" id="pycrypto">
-<h3>PyCrypto<a class="headerlink" href="#pycrypto" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a> はSSHの実行で利用される
-低レベル (Cベース) の暗号アルゴリズムを提供します。またそのため、わたしたちのSSHライブラリ
-では必要としています。PyCryptoのインストールに関してはいつくか知っておいたほうがいいことが
-あります。Pythonのパッケージツールとの互換性とCベースの拡張であるということです。</p>
+<h3>PyCrypto<a class="headerlink" href="#pycrypto" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="https://www.dlitz.net/software/pycrypto/">PyCrypto</a>はSSHの実行で利用される低レベル (Cベース) の暗号アルゴリズムを提供します。またそのため、わたしたちのSSHライブラリでは必要としています。PyCryptoのインストールに関してはいつくか知っておいたほうがいいことがあります。Pythonのパッケージツールとの互換性とCベースの拡張であるということです。</p>
 <span class="target" id="pycrypto-and-pip"></span><div class="section" id="id9">
-<h4>パッケージツール<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>Fabricのインストールには <tt class="docutils literal"><span class="pre">pip</span></tt> の利用を強くおすすめします。<tt class="docutils literal"><span class="pre">easy_install</span></tt> よりも
-新しく、一般的に言っても優れているからです。とは言え、Pythonと <tt class="docutils literal"><span class="pre">pip</span></tt> とPyCrypto
-の特定のバージョンでの組み合わせによってはバグがあり、PyCryptoのインストールができないことがあります。
-特に、</p>
+<h4>パッケージツール<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Fabricのインストールには<tt class="docutils literal"><span class="pre">pip</span></tt>の利用を強くおすすめします。<tt class="docutils literal"><span class="pre">easy_install</span></tt>よりも新しく、一般的に言っても優れているからです。とは言え、Pythonと<tt class="docutils literal"><span class="pre">pip</span></tt>とPyCryptoの特定のバージョンでの組み合わせによってはバグがあり、PyCryptoのインストールができないことがあります。特に、</p>
 <ul class="simple">
 <li>Python = 2.5.x</li>
 <li>PyCrypto &gt;= 2.1 (which is required to run Fabric &gt;= 1.3)</li>
-<li><tt class="docutils literal"><span class="pre">pip</span></tt> &lt; 0.8.1</li>
+<li><tt class="docutils literal"><span class="pre">pip</span></tt>&lt; 0.8.1</li>
 <li>Python = 2.5.x</li>
 <li>PyCrypto &gt;= 2.1 (これにはFabric &gt;= 1.3が必要です)</li>
-<li><tt class="docutils literal"><span class="pre">pip</span></tt> &lt; 0.8.1</li>
+<li><tt class="docutils literal"><span class="pre">pip</span></tt>&lt; 0.8.1</li>
 </ul>
-<p>この3つの条件がそろった時に <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Fabric</span></tt> もしくは <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyCrypto</span></tt>
-を実行しようとすると``No such file or directory`` IOエラーに出くわすでしょう。</p>
-<p>The fix is simply to make sure at least one of the above criteria is not met,
-by doing the following (in order of preference):</p>
+<p>この3つの条件がそろった時に<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Fabric</span></tt>もしくは<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">PyCrypto</span></tt>を実行しようとすると``No such file or directory`` IOエラーに出くわすでしょう。</p>
+<p>The fix is simply to make sure at least one of the above criteria is not met,by doing the following (in order of preference):</p>
 <p>修正は簡単で、以下を実行し、上の3つの条件のうち一つでも満たさなくすることです (望ましい順):</p>
 <ul class="simple">
-<li>Upgrade to <tt class="docutils literal"><span class="pre">pip</span></tt> 0.8.1 or above, e.g. by running <tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt>.</li>
+<li>Upgrade to<tt class="docutils literal"><span class="pre">pip</span></tt>0.8.1 or above, e.g. by running<tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt>.</li>
 <li>Upgrade to Python 2.6 or above.</li>
-<li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, and
-install PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric
-1.2.)</li>
-<li><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt> を実行するなどして <tt class="docutils literal"><span class="pre">pip</span></tt> 0.8.1 以上にアップグレードする</li>
+<li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, andinstall PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric1.2.)</li>
+<li><tt class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></tt>を実行するなどして<tt class="docutils literal"><span class="pre">pip</span></tt>0.8.1 以上にアップグレードする</li>
 <li>Python 2.6以上にアップグレードする</li>
-<li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, and
-install PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric
-1.2.)</li>
+<li>Downgrade to Fabric 1.2.x, which does not require PyCrypto &gt;= 2.1, andinstall PyCrypto 2.0.1 (the oldest version on PyPI which works with Fabric1.2.)</li>
 </ul>
 <p>C extension</p>
 </div>
 <div class="section" id="c">
-<h4>C 拡張<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h4>
-<p>Debian aptリポジトリもしくはRedHat RPMなどのコンパイル済みのソースからインストールしたり、
-もしくは <a class="reference internal" href="#pypm"><em>pypm</em></a> を使っていたりするのでなければ、PyCryptoをインストールするためには
-ソースからPythonのCベースモジュールをビルドできるようになっている必要があります。
-UbuntuやMac OS Xのような <strong>Unixベースのプラットフォーム</strong> のユーザは、 <tt class="docutils literal"><span class="pre">python-dev</span></tt>
-もしくは似たような名称のPython開発ライブラリとともに、伝統的なCのビルドツールチェインが
-インストールされている必要があります。(例えば、MacならDeveloper Tools / XCode Tools、
-UbuntuやDebianなら <tt class="docutils literal"><span class="pre">build-essential</span></tt> パッケージ &#8211; 基本的に <tt class="docutils literal"><span class="pre">gcc</span></tt>、 <tt class="docutils literal"><span class="pre">make</span></tt></p>
+<h4>C 拡張<a class="headerlink" href="#c" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Debian aptリポジトリもしくはRedHat RPMなどのコンパイル済みのソースからインストールしたり、もしくは<a class="reference internal" href="#pypm"><em>pypm</em></a>を使っていたりするのでなければ、PyCryptoをインストールするためにはソースからPythonのCベースモジュールをビルドできるようになっている必要があります。UbuntuやMac OS Xのような<strong>Unixベースのプラットフォーム</strong>のユーザは、<tt class="docutils literal"><span class="pre">python-dev</span></tt>もしくは似たような名称のPython開発ライブラリとともに、伝統的なCのビルドツールチェインがインストールされている必要があります。(例えば、MacならDeveloper Tools / XCode Tools、UbuntuやDebianなら<tt class="docutils literal"><span class="pre">build-essential</span></tt>パッケージ &#8211; 基本的に<tt class="docutils literal"><span class="pre">gcc</span></tt>、<tt class="docutils literal"><span class="pre">make</span></tt></p>
 <blockquote>
 <div>などなどが付帯しているものなんでも)</div></blockquote>
-<p><strong>Windows</strong> ユーザーは <a class="reference internal" href="#pypm"><em>ActivePython and PyPM</em></a> の利用か、 <a class="reference external" href="http://cygwin.com">Cygwin</a>
-などのC開発環境のインストール、もしくは <a class="reference external" href="http://www.voidspace.org.uk/python/modules.shtml#pycrypto">voidspaceのPythonモジュールページ</a> からコンパイル済みの
-Win32 PyCryptoパッケージの取得をおすすめします。</p>
+<p><strong>Windows</strong>ユーザーは<a class="reference internal" href="#pypm"><em>ActivePython and PyPM</em></a>の利用か、<a class="reference external" href="http://cygwin.com">Cygwin</a>などのC開発環境のインストール、もしくは<a class="reference external" href="http://www.voidspace.org.uk/python/modules.shtml#pycrypto">voidspaceのPythonモジュールページ</a>からコンパイル済みのWin32 PyCryptoパッケージの取得をおすすめします。</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Some Windows users whose Python is 64-bit have found that the PyCrypto
-dependency <tt class="docutils literal"><span class="pre">winrandom</span></tt> may not install properly, leading to ImportErrors.
-In this scenario, you&#8217;ll probably need to compile <tt class="docutils literal"><span class="pre">winrandom</span></tt> yourself
-via e.g. MS Visual Studio.  See <a class="reference external" href="https://github.com/fabric/fabric/issues/194">#194</a> for info.</p>
-<p class="last">Pythonが64ビットのWindowsユーザーによってはPyCryptoの依存 <tt class="docutils literal"><span class="pre">winrandom</span></tt>
-が正しくインストールできず、ImportErrorsを引き起こすことがあります。</p>
+<p class="first admonition-title">ノート</p>
+<p>Some Windows users whose Python is 64-bit have found that the PyCryptodependency<tt class="docutils literal"><span class="pre">winrandom</span></tt>may not install properly, leading to ImportErrors.In this scenario, you&#8217;ll probably need to compile<tt class="docutils literal"><span class="pre">winrandom</span></tt>yourselfvia e.g. MS Visual Studio.  See<a href="#id10"><span class="problematic" id="id11">:issue:`194`</span></a>for info.</p>
+<p class="last">64ビットのPythonを使用しているWindowsユーザーによっては、PyCryptoの依存<tt class="docutils literal"><span class="pre">winrandom</span></tt>が正しくインストールできず、ImportErrorsを引き起こすことがあります。この場合、MS Visual Studioなどで<tt class="docutils literal"><span class="pre">winrandom</span></tt>をご自分でコンパイルする必要があるかもしれません。詳細は<a href="#id12"><span class="problematic" id="id13">:issue:`194`</span></a>をご覧ください。</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">multiprocessing</span></tt></p>
 </div>
 </div>
-</div>
-<div class="section" id="multiprocessing">
-<h3><tt class="docutils literal"><span class="pre">multiprocessing</span></tt><a class="headerlink" href="#multiprocessing" title="Permalink to this headline">¶</a></h3>
-<p>An optional dependency, the <tt class="docutils literal"><span class="pre">multiprocessing</span></tt> library is included in Python&#8217;s
-standard library in version 2.6 and higher. If you&#8217;re using Python 2.5 and want
-to make use of Fabric&#8217;s <a class="reference internal" href="usage/parallel.html"><em>parallel execution features</em></a>
-you&#8217;ll need to install it manually; the recommended route, as usual, is via
-<tt class="docutils literal"><span class="pre">pip</span></tt>.  Please see the <a class="reference external" href="http://pypi.python.org/pypi/multiprocessing/">multiprocessing PyPI page</a> for details.</p>
+<div class="section" id="id14">
+<h3><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt><a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>オプションの依存、<tt class="docutils literal"><span class="pre">multiprocessing</span></tt>ライブラリはPythonの2.6以上で標準ライブラリに含まれています。もしPythonの2.5を利用していてFabricの<a class="reference internal" href="usage/parallel.html"><em>並列実行機能</em></a>を利用したい場合は、手動でインストールする必要があります。おすすめの方法は、いつもと同じく<tt class="docutils literal"><span class="pre">pip</span></tt>経由です。詳細はPyPIのページ &lt;<a class="reference external" href="http://pypi.python.org/pypi/multiprocessing/">http://pypi.python.org/pypi/multiprocessing/</a>&gt;`_ をご覧ください。</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>Early versions of Python 2.6 (in our testing, 2.6.0 through 2.6.2) ship
-with a buggy <tt class="docutils literal"><span class="pre">multiprocessing</span></tt> module that appears to cause Fabric to
-hang at the end of sessions involving large numbers of concurrent hosts.
-If you encounter this problem, either use <a class="reference internal" href="usage/env.html#pool-size"><em>env.pool_size / -z</em></a> to limit the amount of concurrency, or upgrade to Python
-&gt;=2.6.3.</p>
-<p class="last">Python 2.5 is unaffected, as it requires the PyPI version of
-<tt class="docutils literal"><span class="pre">multiprocessing</span></tt>, which is newer than that shipped with Python &lt;2.6.3.</p>
+<p class="first admonition-title">警告</p>
+<p>Early versions of Python 2.6 (in our testing, 2.6.0 through 2.6.2) shipwith a buggy<tt class="docutils literal"><span class="pre">multiprocessing</span></tt>module that appears to cause Fabric tohang at the end of sessions involving large numbers of concurrent hosts.If you encounter this problem, either use<a class="reference internal" href="usage/env.html#pool-size"><em>env.pool_size / -z</em></a>to limit the amount of concurrency, or upgrade to Python&gt;=2.6.3.</p>
+<p class="last">Python 2.5 is unaffected, as it requires the PyPI version of<tt class="docutils literal"><span class="pre">multiprocessing</span></tt>, which is newer than that shipped with Python &lt;2.6.3.</p>
 </div>
 </div>
 <div class="section" id="development-dependencies">
-<h3>Development dependencies<a class="headerlink" href="#development-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>If you are interested in doing development work on Fabric (or even just running
-the test suite), you may also need to install some or all of the following
-packages:</p>
+<h3>Development dependencies<a class="headerlink" href="#development-dependencies" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If you are interested in doing development work on Fabric (or even just runningthe test suite), you may also need to install some or all of the followingpackages:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://git-scm.com">git</a> and <a class="reference external" href="http://mercurial.selenic.com/wiki/">Mercurial</a>, in order to obtain some of the
-other dependencies below;</li>
+<li><a class="reference external" href="http://git-scm.com">git</a>and<a class="reference external" href="http://mercurial.selenic.com/wiki/">Mercurial</a>, in order to obtain some of theother dependencies below;</li>
 <li><a class="reference external" href="https://github.com/nose-devs/nose">Nose</a></li>
 <li><a class="reference external" href="http://nedbatchelder.com/code/modules/coverage.html">Coverage</a></li>
 <li><a class="reference external" href="http://www.logilab.org/857">PyLint</a></li>
 <li><a class="reference external" href="http://farmdev.com/projects/fudge/index.html">Fudge</a></li>
 <li><a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a></li>
 </ul>
-<p>For an up-to-date list of exact testing/development requirements, including
-version numbers, please see the <tt class="docutils literal"><span class="pre">requirements.txt</span></tt> file included with the
-source distribution. This file is intended to be used with <tt class="docutils literal"><span class="pre">pip</span></tt>, e.g. <tt class="docutils literal"><span class="pre">pip</span>
+<p>For an up-to-date list of exact testing/development requirements, includingversion numbers, please see the<tt class="docutils literal"><span class="pre">requirements.txt</span></tt>file included with thesource distribution. This file is intended to be used with<tt class="docutils literal"><span class="pre">pip</span></tt>, e.g.<tt class="docutils literal"><span class="pre">pip</span>
 <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></tt>.</p>
 </div>
 </div>
 <div class="section" id="downloads">
-<span id="id10"></span><h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
-<p>To obtain a tar.gz or zip archive of the Fabric source code, you may visit
-<a class="reference external" href="http://pypi.python.org/pypi/Fabric">Fabric&#8217;s PyPI page</a>, which offers manual
-downloads in addition to being the entry point for <tt class="docutils literal"><span class="pre">pip</span></tt> and
-<tt class="docutils literal"><span class="pre">easy-install</span></tt>.</p>
+<span id="id15"></span><h2>Downloads<a class="headerlink" href="#downloads" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>To obtain a tar.gz or zip archive of the Fabric source code, you may visit<a class="reference external" href="http://pypi.python.org/pypi/Fabric">Fabric&#8217;s PyPI page</a>, which offers manualdownloads in addition to being the entry point for<tt class="docutils literal"><span class="pre">pip</span></tt>and<tt class="docutils literal"><span class="pre">easy-install</span></tt>.</p>
 </div>
 <div class="section" id="source-code-checkouts">
-<span id="id11"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="Permalink to this headline">¶</a></h2>
-<p>The Fabric developers manage the project&#8217;s source code with the <a class="reference external" href="http://git-scm.com">Git</a> DVCS. To follow Fabric&#8217;s development via Git instead of
-downloading official releases, you have the following options:</p>
+<span id="id16"></span><h2>Source code checkouts<a class="headerlink" href="#source-code-checkouts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The Fabric developers manage the project&#8217;s source code with the<a class="reference external" href="http://git-scm.com">Git</a>DVCS. To follow Fabric&#8217;s development via Git instead ofdownloading official releases, you have the following options:</p>
 <ul class="simple">
-<li>Clone the canonical repository straight from <a class="reference external" href="https://github.com/fabric/fabric">the Fabric organization&#8217;s
-repository on Github</a>,
-<tt class="docutils literal"><span class="pre">git://github.com/fabric/fabric.git</span></tt></li>
-<li>Make your own fork of the Github repository by making a Github account,
-visiting <a class="reference external" href="http://github.com/fabric/fabric">fabric/fabric</a> and clicking the
-&#8220;fork&#8221; button.</li>
+<li>Clone the canonical repository straight from<a class="reference external" href="https://github.com/fabric/fabric">the Fabric organization&#8217;s
+repository on Github</a>,<tt class="docutils literal"><span class="pre">git://github.com/fabric/fabric.git</span></tt></li>
+<li>Make your own fork of the Github repository by making a Github account,visiting<a class="reference external" href="http://github.com/fabric/fabric">fabric/fabric</a>and clicking the&#8221;fork&#8221; button.</li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you&#8217;ve obtained the Fabric source via source control and plan on
-updating your checkout in the future, we highly suggest using <tt class="docutils literal"><span class="pre">python</span>
-<span class="pre">setup.py</span> <span class="pre">develop</span></tt> instead &#8211; it will use symbolic links instead of file
-copies, ensuring that imports of the library or use of the command-line
-tool will always refer to your checkout.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">If you&#8217;ve obtained the Fabric source via source control and plan onupdating your checkout in the future, we highly suggest using<tt class="docutils literal"><span class="pre">python</span>
+<span class="pre">setup.py</span> <span class="pre">develop</span></tt>instead &#8211; it will use symbolic links instead of filecopies, ensuring that imports of the library or use of the command-linetool will always refer to your checkout.</p>
 </div>
-<p>For information on the hows and whys of Fabric development, including which
-branches may be of interest and how you can help out, please see the
-<a class="reference internal" href="development.html"><em>Development</em></a> page.</p>
+<p>For information on the hows and whys of Fabric development, including whichbranches may be of interest and how you can help out, please see the<a class="reference internal" href="development.html"><em>Development</em></a>page.</p>
 </div>
 <div class="section" id="activepython-and-pypm">
-<span id="pypm"></span><h2>ActivePython and PyPM<a class="headerlink" href="#activepython-and-pypm" title="Permalink to this headline">¶</a></h2>
-<p>Windows users who already have ActiveState&#8217;s <a class="reference external" href="http://www.activestate.com/activepython/downloads">ActivePython</a> distribution installed
-may find Fabric is best installed with <a class="reference external" href="http://code.activestate.com/pypm/">its package manager, PyPM</a>. Below is example output from an
-installation of Fabric via <tt class="docutils literal"><span class="pre">pypm</span></tt>:</p>
+<span id="pypm"></span><h2>ActivePython and PyPM<a class="headerlink" href="#activepython-and-pypm" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Windows users who already have ActiveState&#8217;s<a class="reference external" href="http://www.activestate.com/activepython/downloads">ActivePython</a>distribution installedmay find Fabric is best installed with<a class="reference external" href="http://code.activestate.com/pypm/">its package manager, PyPM</a>. Below is example output from aninstallation of Fabric via<tt class="docutils literal"><span class="pre">pypm</span></tt>:</p>
 <div class="highlight-python"><pre>C:\&gt; pypm install fabric
 The following packages will be installed into "%APPDATA%\Python" (2.7):
  paramiko-1.7.8 pycrypto-2.4 fabric-1.3.0
@@ -423,7 +345,7 @@ C:\&gt;</pre>
 </ul>
 
 
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">インストール</a><ul>
 <li><a class="reference internal" href="#id2">依存</a><ul>
@@ -434,7 +356,7 @@ C:\&gt;</pre>
 <li><a class="reference internal" href="#c">C 拡張</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multiprocessing"><tt class="docutils literal"><span class="pre">multiprocessing</span></tt></a></li>
+<li><a class="reference internal" href="#id14"><tt class="docutils literal"><span class="pre">マルチプロセッシング</span></tt></a></li>
 <li><a class="reference internal" href="#development-dependencies">Development dependencies</a></li>
 </ul>
 </li>
@@ -445,27 +367,27 @@ C:\&gt;</pre>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="tutorial.html"
-                        title="previous chapter">概要とチュートリアル</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">概要とチュートリアル</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="development.html"
-                        title="next chapter">Development</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Development</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/installation.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -474,26 +396,26 @@ C:\&gt;</pre>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="development.html" title="Development"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="tutorial.html" title="概要とチュートリアル"
-             >previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

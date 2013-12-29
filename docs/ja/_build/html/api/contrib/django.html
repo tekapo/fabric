@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Django Integration &mdash; Fabric 1.8 documentation</title>
+    <title>Django Integration &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../../index.html" />
     <link rel="next" title="File and Directory Management" href="files.html" />
     <link rel="prev" title="Console Output Utilities" href="console.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="files.html" title="File and Directory Management"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="console.html" title="Console Output Utilities"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,19 +69,12 @@
           <div class="body">
             
   <div class="section" id="module-fabric.contrib.django">
-<span id="django-integration"></span><h1>Django Integration<a class="headerlink" href="#module-fabric.contrib.django" title="Permalink to this headline">¶</a></h1>
+<span id="django-integration"></span><h1>Django Integration<a class="headerlink" href="#module-fabric.contrib.django" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 0.9.2.</span></p>
+<p><span class="versionmodified">バージョン 0.9.2 で追加.</span></p>
 </div>
-<p>These functions streamline the process of initializing Django&#8217;s settings module
-environment variable. Once this is done, your fabfile may import from your
-Django project, or Django itself, without requiring the use of <tt class="docutils literal"><span class="pre">manage.py</span></tt>
-plugins or having to set the environment variable yourself every time you use
-your fabfile.</p>
-<p>Currently, these functions only allow Fabric to interact with
-local-to-your-fabfile Django installations. This is not as limiting as it
-sounds; for example, you can use Fabric as a remote &#8220;build&#8221; tool as well as
-using it locally. Imagine the following fabfile:</p>
+<p>These functions streamline the process of initializing Django&#8217;s settings moduleenvironment variable. Once this is done, your fabfile may import from yourDjango project, or Django itself, without requiring the use of<tt class="docutils literal"><span class="pre">manage.py</span></tt>plugins or having to set the environment variable yourself every time you useyour fabfile.</p>
+<p>Currently, these functions only allow Fabric to interact withlocal-to-your-fabfile Django installations. This is not as limiting as itsounds; for example, you can use Fabric as a remote &#8220;build&#8221; tool as well asusing it locally. Imagine the following fabfile:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">local</span><span class="p">,</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">cd</span>
 <span class="kn">from</span> <span class="nn">fabric.contrib</span> <span class="kn">import</span> <span class="n">django</span>
 
@@ -97,14 +91,8 @@ using it locally. Imagine the following fabfile:</p>
         <span class="n">run</span><span class="p">(</span><span class="s">&#39;fab print_instances&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>With Fabric installed on both ends, you could execute
-<tt class="docutils literal"><span class="pre">print_production_instances</span></tt> locally, which would trigger <tt class="docutils literal"><span class="pre">print_instances</span></tt>
-on the production server &#8211; which would then be interacting with your
-production Django database.</p>
-<p>As another example, if your local and remote settings are similar, you can use
-it to obtain e.g. your database settings, and then use those when executing a
-remote (non-Fabric) command. This would allow you some degree of freedom even
-if Fabric is only installed locally:</p>
+<p>With Fabric installed on both ends, you could execute<tt class="docutils literal"><span class="pre">print_production_instances</span></tt>locally, which would trigger<tt class="docutils literal"><span class="pre">print_instances</span></tt>on the production server &#8211; which would then be interacting with yourproduction Django database.</p>
+<p>As another example, if your local and remote settings are similar, you can useit to obtain e.g. your database settings, and then use those when executing aremote (non-Fabric) command. This would allow you some degree of freedom evenif Fabric is only installed locally:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
 <span class="kn">from</span> <span class="nn">fabric.contrib</span> <span class="kn">import</span> <span class="n">django</span>
 
@@ -119,35 +107,24 @@ if Fabric is only installed locally:</p>
     <span class="p">))</span>
 </pre></div>
 </div>
-<p>The above snippet will work if run from a local, development environment, again
-provided your local <tt class="docutils literal"><span class="pre">settings.py</span></tt> mirrors your remote one in terms of
-database connection info.</p>
+<p>The above snippet will work if run from a local, development environment, againprovided your local<tt class="docutils literal"><span class="pre">settings.py</span></tt>mirrors your remote one in terms ofdatabase connection info.</p>
 <dl class="function">
 <dt id="fabric.contrib.django.project">
-<tt class="descclassname">fabric.contrib.django.</tt><tt class="descname">project</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#fabric.contrib.django.project" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sets <tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt> to <tt class="docutils literal"><span class="pre">'&lt;name&gt;.settings'</span></tt>.</p>
-<p>This function provides a handy shortcut for the common case where one is
-using the Django default naming convention for their settings file and
-location.</p>
-<p>Uses <a class="reference internal" href="#fabric.contrib.django.settings_module" title="fabric.contrib.django.settings_module"><tt class="xref py py-obj docutils literal"><span class="pre">settings_module</span></tt></a> &#8211; see its documentation for details on why and how
-to use this functionality.</p>
+<tt class="descclassname">fabric.contrib.django.</tt><tt class="descname">project</tt><big>(</big><em>name</em><big>)</big><a class="headerlink" href="#fabric.contrib.django.project" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Sets<tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt>to<tt class="docutils literal"><span class="pre">'&lt;name&gt;.settings'</span></tt>.</p>
+<p>This function provides a handy shortcut for the common case where one isusing the Django default naming convention for their settings file andlocation.</p>
+<p>Uses<a class="reference internal" href="#fabric.contrib.django.settings_module" title="fabric.contrib.django.settings_module"><tt class="xref py py-obj docutils literal"><span class="pre">settings_module</span></tt></a>&#8211; see its documentation for details on why and howto use this functionality.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.contrib.django.settings_module">
-<tt class="descclassname">fabric.contrib.django.</tt><tt class="descname">settings_module</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#fabric.contrib.django.settings_module" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set <tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt> shell environment variable to <tt class="docutils literal"><span class="pre">module</span></tt>.</p>
-<p>Due to how Django works, imports from Django or a Django project will fail
-unless the shell environment variable <tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt> is
-correctly set (see <a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/settings/">the Django settings docs</a>.)</p>
-<p>This function provides a shortcut for doing so; call it near the top of
-your fabfile or Fabric-using code, after which point any Django imports
-should work correctly.</p>
+<tt class="descclassname">fabric.contrib.django.</tt><tt class="descname">settings_module</tt><big>(</big><em>module</em><big>)</big><a class="headerlink" href="#fabric.contrib.django.settings_module" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Set<tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt>shell environment variable to<tt class="docutils literal"><span class="pre">module</span></tt>.</p>
+<p>Due to how Django works, imports from Django or a Django project will failunless the shell environment variable<tt class="docutils literal"><span class="pre">DJANGO_SETTINGS_MODULE</span></tt>iscorrectly set (see<a class="reference external" href="http://docs.djangoproject.com/en/dev/topics/settings/">the Django settings docs</a>.)</p>
+<p>This function provides a shortcut for doing so; call it near the top ofyour fabfile or Fabric-using code, after which point any Django importsshould work correctly.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function sets a <strong>shell</strong> environment variable (via
-<tt class="docutils literal"><span class="pre">os.environ</span></tt>) and is unrelated to Fabric&#8217;s own internal &#8220;env&#8221;
-variables.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">This function sets a<strong>shell</strong>environment variable (via<tt class="docutils literal"><span class="pre">os.environ</span></tt>) and is unrelated to Fabric&#8217;s own internal &#8220;env&#8221;variables.</p>
 </div>
 </dd></dl>
 
@@ -267,27 +244,27 @@ variables.</p>
 </ul>
 
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="console.html"
-                        title="previous chapter">Console Output Utilities</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Console Output Utilities</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="files.html"
-                        title="next chapter">File and Directory Management</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">File and Directory Management</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../../_sources/api/contrib/django.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -296,26 +273,26 @@ variables.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="files.html" title="File and Directory Management"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="console.html" title="Console Output Utilities"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

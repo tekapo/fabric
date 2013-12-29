@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Operations &mdash; Fabric 1.8 documentation</title>
+    <title>Operations &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../../index.html" />
     <link rel="next" title="Tasks" href="tasks.html" />
     <link rel="prev" title="Network" href="network.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Tasks"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="network.html" title="Network"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,219 +69,120 @@
           <div class="body">
             
   <div class="section" id="module-fabric.operations">
-<span id="operations"></span><h1>Operations<a class="headerlink" href="#module-fabric.operations" title="Permalink to this headline">¶</a></h1>
+<span id="operations"></span><h1>Operations<a class="headerlink" href="#module-fabric.operations" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <p>Functions to be used in fabfiles and other non-core code, such as run()/sudo().</p>
 <dl class="function">
 <dt id="fabric.operations.get">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">get</tt><big>(</big><em>remote_path</em>, <em>local_path=None</em><big>)</big><a class="headerlink" href="#fabric.operations.get" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">get</tt><big>(</big><em>remote_path</em>, <em>local_path=None</em><big>)</big><a class="headerlink" href="#fabric.operations.get" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Download one or more files from a remote host.</p>
-<p><a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a> returns an iterable containing the absolute paths
-to all local files downloaded, which will be empty if <tt class="docutils literal"><span class="pre">local_path</span></tt> was a
-StringIO object (see below for more on using StringIO). This object will
-also exhibit a <tt class="docutils literal"><span class="pre">.failed</span></tt> attribute containing any remote file paths which
-failed to download, and a <tt class="docutils literal"><span class="pre">.succeeded</span></tt> attribute equivalent to <tt class="docutils literal"><span class="pre">not</span>
+<p><a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a>returns an iterable containing the absolute pathsto all local files downloaded, which will be empty if<tt class="docutils literal"><span class="pre">local_path</span></tt>was aStringIO object (see below for more on using StringIO). This object willalso exhibit a<tt class="docutils literal"><span class="pre">.failed</span></tt>attribute containing any remote file paths whichfailed to download, and a<tt class="docutils literal"><span class="pre">.succeeded</span></tt>attribute equivalent to<tt class="docutils literal"><span class="pre">not</span>
 <span class="pre">.failed</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">remote_path</span></tt> is the remote file or directory path to download, which may
-contain shell glob syntax, e.g. <tt class="docutils literal"><span class="pre">&quot;/var/log/apache2/*.log&quot;</span></tt>, and will have
-tildes replaced by the remote home directory. Relative paths will be
-considered relative to the remote user&#8217;s home directory, or the current
-remote working directory as manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>.
-If the remote path points to a directory, that directory will be downloaded
-recursively.</p>
-<p><tt class="docutils literal"><span class="pre">local_path</span></tt> is the local file path where the downloaded file or files
-will be stored. If relative, it will honor the local current working
-directory as manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>. It may be
-interpolated, using standard Python dict-based interpolation, with the
-following variables:</p>
+<p><tt class="docutils literal"><span class="pre">remote_path</span></tt>is the remote file or directory path to download, which maycontain shell glob syntax, e.g.<tt class="docutils literal"><span class="pre">&quot;/var/log/apache2/*.log&quot;</span></tt>, and will havetildes replaced by the remote home directory. Relative paths will beconsidered relative to the remote user&#8217;s home directory, or the currentremote working directory as manipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>.If the remote path points to a directory, that directory will be downloadedrecursively.</p>
+<p><tt class="docutils literal"><span class="pre">local_path</span></tt>is the local file path where the downloaded file or fileswill be stored. If relative, it will honor the local current workingdirectory as manipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>. It may beinterpolated, using standard Python dict-based interpolation, with thefollowing variables:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">host</span></tt>: The value of <tt class="docutils literal"><span class="pre">env.host_string</span></tt>, eg <tt class="docutils literal"><span class="pre">myhostname</span></tt> or
-<tt class="docutils literal"><span class="pre">user&#64;myhostname-222</span></tt> (the colon between hostname and port is turned
-into a dash to maximize filesystem compatibility)</li>
-<li><tt class="docutils literal"><span class="pre">dirname</span></tt>: The directory part of the remote file path, e.g. the
-<tt class="docutils literal"><span class="pre">src/projectname</span></tt> in <tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt>.</li>
-<li><tt class="docutils literal"><span class="pre">basename</span></tt>: The filename part of the remote file path, e.g. the
-<tt class="docutils literal"><span class="pre">utils.py</span></tt> in <tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">path</span></tt>: The full remote path, e.g. <tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">host</span></tt>: The value of<tt class="docutils literal"><span class="pre">env.host_string</span></tt>, eg<tt class="docutils literal"><span class="pre">myhostname</span></tt>or<tt class="docutils literal"><span class="pre">user&#64;myhostname-222</span></tt>(the colon between hostname and port is turnedinto a dash to maximize filesystem compatibility)</li>
+<li><tt class="docutils literal"><span class="pre">dirname</span></tt>: The directory part of the remote file path, e.g. the<tt class="docutils literal"><span class="pre">src/projectname</span></tt>in<tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">basename</span></tt>: The filename part of the remote file path, e.g. the<tt class="docutils literal"><span class="pre">utils.py</span></tt>in<tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">path</span></tt>: The full remote path, e.g.<tt class="docutils literal"><span class="pre">src/projectname/utils.py</span></tt>.</li>
 </ul>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>When <tt class="docutils literal"><span class="pre">remote_path</span></tt> is an absolute directory path, only the inner
-directories will be recreated locally and passed into the above
-variables. So for example, <tt class="docutils literal"><span class="pre">get('/var/log',</span> <span class="pre">'%(path)s')</span></tt> would start
-writing out files like <tt class="docutils literal"><span class="pre">apache2/access.log</span></tt>,
-<tt class="docutils literal"><span class="pre">postgresql/8.4/postgresql.log</span></tt>, etc, in the local working directory.
-It would <strong>not</strong> write out e.g.  <tt class="docutils literal"><span class="pre">var/log/apache2/access.log</span></tt>.</p>
-<p>Additionally, when downloading a single file, <tt class="docutils literal"><span class="pre">%(dirname)s</span></tt> and
-<tt class="docutils literal"><span class="pre">%(path)s</span></tt> do not make as much sense and will be empty and equivalent
-to <tt class="docutils literal"><span class="pre">%(basename)s</span></tt>, respectively. Thus a call like
-<tt class="docutils literal"><span class="pre">get('/var/log/apache2/access.log',</span> <span class="pre">'%(path)s')</span></tt> will save a local
-file named <tt class="docutils literal"><span class="pre">access.log</span></tt>, not <tt class="docutils literal"><span class="pre">var/log/apache2/access.log</span></tt>.</p>
-<p class="last">This behavior is intended to be consistent with the command-line
-<tt class="docutils literal"><span class="pre">scp</span></tt> program.</p>
+<p class="first admonition-title">ノート</p>
+<p>When<tt class="docutils literal"><span class="pre">remote_path</span></tt>is an absolute directory path, only the innerdirectories will be recreated locally and passed into the abovevariables. So for example,<tt class="docutils literal"><span class="pre">get('/var/log',</span> <span class="pre">'%(path)s')</span></tt>would startwriting out files like<tt class="docutils literal"><span class="pre">apache2/access.log</span></tt>,<tt class="docutils literal"><span class="pre">postgresql/8.4/postgresql.log</span></tt>, etc, in the local working directory.It would<strong>not</strong>write out e.g.<tt class="docutils literal"><span class="pre">var/log/apache2/access.log</span></tt>.</p>
+<p>Additionally, when downloading a single file,<tt class="docutils literal"><span class="pre">%(dirname)s</span></tt>and<tt class="docutils literal"><span class="pre">%(path)s</span></tt>do not make as much sense and will be empty and equivalentto<tt class="docutils literal"><span class="pre">%(basename)s</span></tt>, respectively. Thus a call like<tt class="docutils literal"><span class="pre">get('/var/log/apache2/access.log',</span> <span class="pre">'%(path)s')</span></tt>will save a localfile named<tt class="docutils literal"><span class="pre">access.log</span></tt>, not<tt class="docutils literal"><span class="pre">var/log/apache2/access.log</span></tt>.</p>
+<p class="last">This behavior is intended to be consistent with the command-line<tt class="docutils literal"><span class="pre">scp</span></tt>program.</p>
 </div>
-<p>If left blank, <tt class="docutils literal"><span class="pre">local_path</span></tt> defaults to <tt class="docutils literal"><span class="pre">&quot;%(host)s/%(path)s&quot;</span></tt> in order
-to be safe for multi-host invocations.</p>
+<p>If left blank,<tt class="docutils literal"><span class="pre">local_path</span></tt>defaults to<tt class="docutils literal"><span class="pre">&quot;%(host)s/%(path)s&quot;</span></tt>in orderto be safe for multi-host invocations.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If your <tt class="docutils literal"><span class="pre">local_path</span></tt> argument does not contain <tt class="docutils literal"><span class="pre">%(host)s</span></tt> and your
-<a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a> call runs against multiple hosts, your local
-files will be overwritten on each successive run!</p>
+<p class="first admonition-title">警告</p>
+<p class="last">If your<tt class="docutils literal"><span class="pre">local_path</span></tt>argument does not contain<tt class="docutils literal"><span class="pre">%(host)s</span></tt>and your<a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a>call runs against multiple hosts, your localfiles will be overwritten on each successive run!</p>
 </div>
-<p>If <tt class="docutils literal"><span class="pre">local_path</span></tt> does not make use of the above variables (i.e. if it is a
-simple, explicit file path) it will act similar to <tt class="docutils literal"><span class="pre">scp</span></tt> or <tt class="docutils literal"><span class="pre">cp</span></tt>,
-overwriting pre-existing files if necessary, downloading into a directory
-if given (e.g. <tt class="docutils literal"><span class="pre">get('/path/to/remote_file.txt',</span> <span class="pre">'local_directory')</span></tt> will
-create <tt class="docutils literal"><span class="pre">local_directory/remote_file.txt</span></tt>) and so forth.</p>
-<p><tt class="docutils literal"><span class="pre">local_path</span></tt> may alternately be a file-like object, such as the result of
-<tt class="docutils literal"><span class="pre">open('path',</span> <span class="pre">'w')</span></tt> or a <tt class="docutils literal"><span class="pre">StringIO</span></tt> instance.</p>
+<p>If<tt class="docutils literal"><span class="pre">local_path</span></tt>does not make use of the above variables (i.e. if it is asimple, explicit file path) it will act similar to<tt class="docutils literal"><span class="pre">scp</span></tt>or<tt class="docutils literal"><span class="pre">cp</span></tt>,overwriting pre-existing files if necessary, downloading into a directoryif given (e.g.<tt class="docutils literal"><span class="pre">get('/path/to/remote_file.txt',</span> <span class="pre">'local_directory')</span></tt>willcreate<tt class="docutils literal"><span class="pre">local_directory/remote_file.txt</span></tt>) and so forth.</p>
+<p><tt class="docutils literal"><span class="pre">local_path</span></tt>may alternately be a file-like object, such as the result of<tt class="docutils literal"><span class="pre">open('path',</span> <span class="pre">'w')</span></tt>or a<tt class="docutils literal"><span class="pre">StringIO</span></tt>instance.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Attempting to <a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a> a directory into a file-like object is not valid
-and will result in an error.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">Attempting to<a class="reference internal" href="#fabric.operations.get" title="fabric.operations.get"><tt class="xref py py-obj docutils literal"><span class="pre">get</span></tt></a>a directory into a file-like object is not validand will result in an error.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function will use <tt class="docutils literal"><span class="pre">seek</span></tt> and <tt class="docutils literal"><span class="pre">tell</span></tt> to overwrite the entire
-contents of the file-like object, in order to be consistent with the
-behavior of <a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> (which also considers the entire
-file). However, unlike <a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>, the file pointer will
-not be restored to its previous location, as that doesn&#8217;t make as much
-sense here and/or may not even be possible.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">This function will use<tt class="docutils literal"><span class="pre">seek</span></tt>and<tt class="docutils literal"><span class="pre">tell</span></tt>to overwrite the entirecontents of the file-like object, in order to be consistent with thebehavior of<a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>(which also considers the entirefile). However, unlike<a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>, the file pointer willnot be restored to its previous location, as that doesn&#8217;t make as muchsense here and/or may not even be possible.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If a file-like object such as StringIO has a <tt class="docutils literal"><span class="pre">name</span></tt> attribute, that
-will be used in Fabric&#8217;s printed output instead of the default
-<tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
+<p class="first admonition-title">ノート</p>
+<p class="last">If a file-like object such as StringIO has a<tt class="docutils literal"><span class="pre">name</span></tt>attribute, thatwill be used in Fabric&#8217;s printed output instead of the default<tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
-<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory as
-manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Now honors the remote working directory as manipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory asmanipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Now allows file-like objects in the<tt class="docutils literal"><span class="pre">local_path</span></tt>argument.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span><tt class="docutils literal"><span class="pre">local_path</span></tt> may now contain interpolated path- and host-related
-variables.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span><tt class="docutils literal"><span class="pre">local_path</span></tt>may now contain interpolated path- and host-relatedvariables.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">remote_path</span></tt> argument and will
-trigger recursive downloads.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Directories may be specified in the<tt class="docutils literal"><span class="pre">remote_path</span></tt>argument and willtrigger recursive downloads.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of downloaded local file paths, which
-also exhibits the <tt class="docutils literal"><span class="pre">.failed</span></tt> and <tt class="docutils literal"><span class="pre">.succeeded</span></tt> attributes.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Return value is now an iterable of downloaded local file paths, whichalso exhibits the<tt class="docutils literal"><span class="pre">.failed</span></tt>and<tt class="docutils literal"><span class="pre">.succeeded</span></tt>attributes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
+<p><span class="versionmodified">バージョン 1.5 で変更: </span>Allow a<tt class="docutils literal"><span class="pre">name</span></tt>attribute on file-like objects for log output</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.local">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">local</tt><big>(</big><em>command</em>, <em>capture=False</em>, <em>shell=None</em><big>)</big><a class="headerlink" href="#fabric.operations.local" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">local</tt><big>(</big><em>command</em>, <em>capture=False</em>, <em>shell=None</em><big>)</big><a class="headerlink" href="#fabric.operations.local" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Run a command on the local system.</p>
-<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> is simply a convenience wrapper around the use of the builtin
-Python <tt class="docutils literal"><span class="pre">subprocess</span></tt> module with <tt class="docutils literal"><span class="pre">shell=True</span></tt> activated. If you need to
-do anything special, consider using the <tt class="docutils literal"><span class="pre">subprocess</span></tt> module directly.</p>
-<p><tt class="docutils literal"><span class="pre">shell</span></tt> is passed directly to <a class="reference external" href="http://docs.python.org/library/subprocess.html#subprocess.Popen">subprocess.Popen</a>&#8216;s
-<tt class="docutils literal"><span class="pre">execute</span></tt> argument (which determines the local shell to use.)  As per the
-linked documentation, on Unix the default behavior is to use <tt class="docutils literal"><span class="pre">/bin/sh</span></tt>,
-so this option is useful for setting that value to e.g.  <tt class="docutils literal"><span class="pre">/bin/bash</span></tt>.</p>
-<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> is not currently capable of simultaneously printing and
-capturing output, as <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>/<a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>
-do. The <tt class="docutils literal"><span class="pre">capture</span></tt> kwarg allows you to switch between printing and
-capturing as necessary, and defaults to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
-<p>When <tt class="docutils literal"><span class="pre">capture=False</span></tt>, the local subprocess&#8217; stdout and stderr streams are
-hooked up directly to your terminal, though you may use the global
-<a class="reference internal" href="../../usage/output_controls.html"><em>output controls</em></a> <tt class="docutils literal"><span class="pre">output.stdout</span></tt> and
-<tt class="docutils literal"><span class="pre">output.stderr</span></tt> to hide one or both if desired. In this mode, the return
-value&#8217;s stdout/stderr values are always empty.</p>
-<p>When <tt class="docutils literal"><span class="pre">capture=True</span></tt>, you will not see any output from the subprocess in
-your terminal, but the return value will contain the captured
-stdout/stderr.</p>
-<p>In either case, as with <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> and
-<a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>, this return value exhibits the <tt class="docutils literal"><span class="pre">return_code</span></tt>,
-<tt class="docutils literal"><span class="pre">stderr</span></tt>, <tt class="docutils literal"><span class="pre">failed</span></tt> and <tt class="docutils literal"><span class="pre">succeeded</span></tt> attributes. See <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> for details.</p>
-<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> will honor the <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>
-context manager, allowing you to control its current working directory
-independently of the remote end (which honors
-<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>).</p>
+<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a>is simply a convenience wrapper around the use of the builtinPython<tt class="docutils literal"><span class="pre">subprocess</span></tt>module with<tt class="docutils literal"><span class="pre">shell=True</span></tt>activated. If you need todo anything special, consider using the<tt class="docutils literal"><span class="pre">subprocess</span></tt>module directly.</p>
+<p><tt class="docutils literal"><span class="pre">shell</span></tt>is passed directly to<a class="reference external" href="http://docs.python.org/library/subprocess.html#subprocess.Popen">subprocess.Popen</a>&#8216;s<tt class="docutils literal"><span class="pre">execute</span></tt>argument (which determines the local shell to use.)  As per thelinked documentation, on Unix the default behavior is to use<tt class="docutils literal"><span class="pre">/bin/sh</span></tt>,so this option is useful for setting that value to e.g.<tt class="docutils literal"><span class="pre">/bin/bash</span></tt>.</p>
+<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a>is not currently capable of simultaneously printing andcapturing output, as<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>/<a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>do. The<tt class="docutils literal"><span class="pre">capture</span></tt>kwarg allows you to switch between printing andcapturing as necessary, and defaults to<tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<p>When<tt class="docutils literal"><span class="pre">capture=False</span></tt>, the local subprocess&#8217; stdout and stderr streams arehooked up directly to your terminal, though you may use the global<a class="reference internal" href="../../usage/output_controls.html"><em>output controls</em></a><tt class="docutils literal"><span class="pre">output.stdout</span></tt>and<tt class="docutils literal"><span class="pre">output.stderr</span></tt>to hide one or both if desired. In this mode, the returnvalue&#8217;s stdout/stderr values are always empty.</p>
+<p>When<tt class="docutils literal"><span class="pre">capture=True</span></tt>, you will not see any output from the subprocess inyour terminal, but the return value will contain the capturedstdout/stderr.</p>
+<p>In either case, as with<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>and<a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>, this return value exhibits the<tt class="docutils literal"><span class="pre">return_code</span></tt>,<tt class="docutils literal"><span class="pre">stderr</span></tt>,<tt class="docutils literal"><span class="pre">failed</span></tt>and<tt class="docutils literal"><span class="pre">succeeded</span></tt>attributes. See<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>for details.</p>
+<p><a class="reference internal" href="#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a>will honor the<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>context manager, allowing you to control its current working directoryindependently of the remote end (which honors<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>).</p>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Added the <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> attributes.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Added the<tt class="docutils literal"><span class="pre">succeeded</span></tt>and<tt class="docutils literal"><span class="pre">stderr</span></tt>attributes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a> context manager.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Now honors the<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>context manager.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Changed the default value of <tt class="docutils literal"><span class="pre">capture</span></tt> from <tt class="docutils literal"><span class="pre">True</span></tt> to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Changed the default value of<tt class="docutils literal"><span class="pre">capture</span></tt>from<tt class="docutils literal"><span class="pre">True</span></tt>to<tt class="docutils literal"><span class="pre">False</span></tt>.</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.open_shell">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">open_shell</tt><big>(</big><em>command=None</em><big>)</big><a class="headerlink" href="#fabric.operations.open_shell" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">open_shell</tt><big>(</big><em>command=None</em><big>)</big><a class="headerlink" href="#fabric.operations.open_shell" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Invoke a fully interactive shell on the remote end.</p>
-<p>If <tt class="docutils literal"><span class="pre">command</span></tt> is given, it will be sent down the pipe before handing
-control over to the invoking user.</p>
-<p>This function is most useful for when you need to interact with a heavily
-shell-based command or series of commands, such as when debugging or when
-fully interactive recovery is required upon remote program failure.</p>
-<p>It should be considered an easy way to work an interactive shell session
-into the middle of a Fabric script and is <em>not</em> a drop-in replacement for
-<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, which is also capable of interacting with the
-remote end (albeit only while its given command is executing) and has much
-stronger programmatic abilities such as error handling and stdout/stderr
-capture.</p>
-<p>Specifically, <a class="reference internal" href="#fabric.operations.open_shell" title="fabric.operations.open_shell"><tt class="xref py py-obj docutils literal"><span class="pre">open_shell</span></tt></a> provides a better interactive
-experience than <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, but use of a full remote shell
-prevents Fabric from determining whether programs run within the shell have
-failed, and pollutes the stdout/stderr stream with shell output such as
-login banners, prompts and echoed stdin.</p>
-<p>Thus, this function does not have a return value and will not trigger
-Fabric&#8217;s failure handling if any remote programs result in errors.</p>
+<p>If<tt class="docutils literal"><span class="pre">command</span></tt>is given, it will be sent down the pipe before handingcontrol over to the invoking user.</p>
+<p>This function is most useful for when you need to interact with a heavilyshell-based command or series of commands, such as when debugging or whenfully interactive recovery is required upon remote program failure.</p>
+<p>It should be considered an easy way to work an interactive shell sessioninto the middle of a Fabric script and is<em>not</em>a drop-in replacement for<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, which is also capable of interacting with theremote end (albeit only while its given command is executing) and has muchstronger programmatic abilities such as error handling and stdout/stderrcapture.</p>
+<p>Specifically,<a class="reference internal" href="#fabric.operations.open_shell" title="fabric.operations.open_shell"><tt class="xref py py-obj docutils literal"><span class="pre">open_shell</span></tt></a>provides a better interactiveexperience than<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, but use of a full remote shellprevents Fabric from determining whether programs run within the shell havefailed, and pollutes the stdout/stderr stream with shell output such aslogin banners, prompts and echoed stdin.</p>
+<p>Thus, this function does not have a return value and will not triggerFabric&#8217;s failure handling if any remote programs result in errors.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.0.</span></p>
+<p><span class="versionmodified">バージョン 1.0 で追加.</span></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.prompt">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">prompt</tt><big>(</big><em>text</em>, <em>key=None</em>, <em>default=''</em>, <em>validate=None</em><big>)</big><a class="headerlink" href="#fabric.operations.prompt" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prompt user with <tt class="docutils literal"><span class="pre">text</span></tt> and return the input (like <tt class="docutils literal"><span class="pre">raw_input</span></tt>).</p>
-<p>A single space character will be appended for convenience, but nothing
-else. Thus, you may want to end your prompt text with a question mark or a
-colon, e.g. <tt class="docutils literal"><span class="pre">prompt(&quot;What</span> <span class="pre">hostname?&quot;)</span></tt>.</p>
-<p>If <tt class="docutils literal"><span class="pre">key</span></tt> is given, the user&#8217;s input will be stored as <tt class="docutils literal"><span class="pre">env.&lt;key&gt;</span></tt> in
-addition to being returned by <a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a>. If the key already existed in
-<tt class="docutils literal"><span class="pre">env</span></tt>, its value will be overwritten and a warning printed to the user.</p>
-<p>If <tt class="docutils literal"><span class="pre">default</span></tt> is given, it is displayed in square brackets and used if the
-user enters nothing (i.e. presses Enter without entering any text).
-<tt class="docutils literal"><span class="pre">default</span></tt> defaults to the empty string. If non-empty, a space will be
-appended, so that a call such as <tt class="docutils literal"><span class="pre">prompt(&quot;What</span> <span class="pre">hostname?&quot;,</span>
-<span class="pre">default=&quot;foo&quot;)</span></tt> would result in a prompt of <tt class="docutils literal"><span class="pre">What</span> <span class="pre">hostname?</span> <span class="pre">[foo]</span></tt> (with
-a trailing space after the <tt class="docutils literal"><span class="pre">[foo]</span></tt>.)</p>
-<p>The optional keyword argument <tt class="docutils literal"><span class="pre">validate</span></tt> may be a callable or a string:</p>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">prompt</tt><big>(</big><em>text</em>, <em>key=None</em>, <em>default=''</em>, <em>validate=None</em><big>)</big><a class="headerlink" href="#fabric.operations.prompt" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Prompt user with<tt class="docutils literal"><span class="pre">text</span></tt>and return the input (like<tt class="docutils literal"><span class="pre">raw_input</span></tt>).</p>
+<p>A single space character will be appended for convenience, but nothingelse. Thus, you may want to end your prompt text with a question mark or acolon, e.g.<tt class="docutils literal"><span class="pre">prompt(&quot;What</span> <span class="pre">hostname?&quot;)</span></tt>.</p>
+<p>If<tt class="docutils literal"><span class="pre">key</span></tt>is given, the user&#8217;s input will be stored as<tt class="docutils literal"><span class="pre">env.&lt;key&gt;</span></tt>inaddition to being returned by<a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a>. If the key already existed in<tt class="docutils literal"><span class="pre">env</span></tt>, its value will be overwritten and a warning printed to the user.</p>
+<p>If<tt class="docutils literal"><span class="pre">default</span></tt>is given, it is displayed in square brackets and used if theuser enters nothing (i.e. presses Enter without entering any text).<tt class="docutils literal"><span class="pre">default</span></tt>defaults to the empty string. If non-empty, a space will beappended, so that a call such as<tt class="docutils literal"><span class="pre">prompt(&quot;What</span> <span class="pre">hostname?&quot;,</span>
+<span class="pre">default=&quot;foo&quot;)</span></tt>would result in a prompt of<tt class="docutils literal"><span class="pre">What</span> <span class="pre">hostname?</span> <span class="pre">[foo]</span></tt>(witha trailing space after the<tt class="docutils literal"><span class="pre">[foo]</span></tt>.)</p>
+<p>The optional keyword argument<tt class="docutils literal"><span class="pre">validate</span></tt>may be a callable or a string:</p>
 <ul class="simple">
-<li>If a callable, it is called with the user&#8217;s input, and should return the
-value to be stored on success. On failure, it should raise an exception
-with an exception message, which will be printed to the user.</li>
-<li>If a string, the value passed to <tt class="docutils literal"><span class="pre">validate</span></tt> is used as a regular
-expression. It is thus recommended to use raw strings in this case. Note
-that the regular expression, if it is not fully matching (bounded by
-<tt class="docutils literal"><span class="pre">^</span></tt> and <tt class="docutils literal"><span class="pre">$</span></tt>) it will be made so. In other words, the input must fully
-match the regex.</li>
+<li>If a callable, it is called with the user&#8217;s input, and should return thevalue to be stored on success. On failure, it should raise an exceptionwith an exception message, which will be printed to the user.</li>
+<li>If a string, the value passed to<tt class="docutils literal"><span class="pre">validate</span></tt>is used as a regularexpression. It is thus recommended to use raw strings in this case. Notethat the regular expression, if it is not fully matching (bounded by<tt class="docutils literal"><span class="pre">^</span></tt>and<tt class="docutils literal"><span class="pre">$</span></tt>) it will be made so. In other words, the input must fullymatch the regex.</li>
 </ul>
-<p>Either way, <a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a> will re-prompt until validation passes (or the user
-hits <tt class="docutils literal"><span class="pre">Ctrl-C</span></tt>).</p>
+<p>Either way,<a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a>will re-prompt until validation passes (or the userhits<tt class="docutils literal"><span class="pre">Ctrl-C</span></tt>).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a> honors <a class="reference internal" href="../../usage/env.html#abort-on-prompts"><em>env.abort_on_prompts</em></a> and will call <a class="reference internal" href="utils.html#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a> instead of
-prompting if that flag is set to <tt class="docutils literal"><span class="pre">True</span></tt>. If you want to block on user
-input regardless, try wrapping with
-<a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last"><a class="reference internal" href="#fabric.operations.prompt" title="fabric.operations.prompt"><tt class="xref py py-obj docutils literal"><span class="pre">prompt</span></tt></a>honors<a class="reference internal" href="../../usage/env.html#abort-on-prompts"><em>env.abort_on_prompts</em></a>and will call<a class="reference internal" href="utils.html#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a>instead ofprompting if that flag is set to<tt class="docutils literal"><span class="pre">True</span></tt>. If you want to block on userinput regardless, try wrapping with<a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>.</p>
 </div>
 <p>Examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># Simplest form:</span>
@@ -305,53 +207,26 @@ input regardless, try wrapping with
 
 <dl class="function">
 <dt id="fabric.operations.put">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">put</tt><big>(</big><em>local_path=None</em>, <em>remote_path=None</em>, <em>use_sudo=False</em>, <em>mirror_local_mode=False</em>, <em>mode=None</em>, <em>use_glob=True</em>, <em>temp_dir=''</em><big>)</big><a class="headerlink" href="#fabric.operations.put" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">put</tt><big>(</big><em>local_path=None</em>, <em>remote_path=None</em>, <em>use_sudo=False</em>, <em>mirror_local_mode=False</em>, <em>mode=None</em>, <em>use_glob=True</em>, <em>temp_dir=''</em><big>)</big><a class="headerlink" href="#fabric.operations.put" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Upload one or more files to a remote host.</p>
-<p><a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> returns an iterable containing the absolute file
-paths of all remote files uploaded. This iterable also exhibits a
-<tt class="docutils literal"><span class="pre">.failed</span></tt> attribute containing any local file paths which failed to
-upload (and may thus be used as a boolean test.) You may also check
-<tt class="docutils literal"><span class="pre">.succeeded</span></tt> which is equivalent to <tt class="docutils literal"><span class="pre">not</span> <span class="pre">.failed</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">local_path</span></tt> may be a relative or absolute local file or directory path,
-and may contain shell-style wildcards, as understood by the Python <tt class="docutils literal"><span class="pre">glob</span></tt>
-module (give <tt class="docutils literal"><span class="pre">use_glob=False</span></tt> to disable this behavior).  Tilde expansion
-(as implemented by <tt class="docutils literal"><span class="pre">os.path.expanduser</span></tt>) is also performed.</p>
-<p><tt class="docutils literal"><span class="pre">local_path</span></tt> may alternately be a file-like object, such as the result of
-<tt class="docutils literal"><span class="pre">open('path')</span></tt> or a <tt class="docutils literal"><span class="pre">StringIO</span></tt> instance.</p>
+<p><a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>returns an iterable containing the absolute filepaths of all remote files uploaded. This iterable also exhibits a<tt class="docutils literal"><span class="pre">.failed</span></tt>attribute containing any local file paths which failed toupload (and may thus be used as a boolean test.) You may also check<tt class="docutils literal"><span class="pre">.succeeded</span></tt>which is equivalent to<tt class="docutils literal"><span class="pre">not</span> <span class="pre">.failed</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">local_path</span></tt>may be a relative or absolute local file or directory path,and may contain shell-style wildcards, as understood by the Python<tt class="docutils literal"><span class="pre">glob</span></tt>module (give<tt class="docutils literal"><span class="pre">use_glob=False</span></tt>to disable this behavior).  Tilde expansion(as implemented by<tt class="docutils literal"><span class="pre">os.path.expanduser</span></tt>) is also performed.</p>
+<p><tt class="docutils literal"><span class="pre">local_path</span></tt>may alternately be a file-like object, such as the result of<tt class="docutils literal"><span class="pre">open('path')</span></tt>or a<tt class="docutils literal"><span class="pre">StringIO</span></tt>instance.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In this case, <a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> will attempt to read the entire
-contents of the file-like object by rewinding it using <tt class="docutils literal"><span class="pre">seek</span></tt> (and
-will use <tt class="docutils literal"><span class="pre">tell</span></tt> afterwards to preserve the previous file position).</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">In this case,<a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>will attempt to read the entirecontents of the file-like object by rewinding it using<tt class="docutils literal"><span class="pre">seek</span></tt>(andwill use<tt class="docutils literal"><span class="pre">tell</span></tt>afterwards to preserve the previous file position).</p>
 </div>
-<p><tt class="docutils literal"><span class="pre">remote_path</span></tt> may also be a relative or absolute location, but applied to
-the remote host. Relative paths are relative to the remote user&#8217;s home
-directory, but tilde expansion (e.g. <tt class="docutils literal"><span class="pre">~/.ssh/</span></tt>) will also be performed if
-necessary.</p>
-<p>An empty string, in either path argument, will be replaced by the
-appropriate end&#8217;s current working directory.</p>
-<p>While the SFTP protocol (which <a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> uses) has no direct ability to upload
-files to locations not owned by the connecting user, you may specify
-<tt class="docutils literal"><span class="pre">use_sudo=True</span></tt> to work around this. When set, this setting causes <a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>
-to upload the local files to a temporary location on the remote end
-(defaults to remote user&#8217;s <tt class="docutils literal"><span class="pre">$HOME</span></tt>; this may be overridden via
-<tt class="docutils literal"><span class="pre">temp_dir</span></tt>), and then use <a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a> to move them to <tt class="docutils literal"><span class="pre">remote_path</span></tt>.</p>
-<p>In some use cases, it is desirable to force a newly uploaded file to match
-the mode of its local counterpart (such as when uploading executable
-scripts). To do this, specify <tt class="docutils literal"><span class="pre">mirror_local_mode=True</span></tt>.</p>
-<p>Alternately, you may use the <tt class="docutils literal"><span class="pre">mode</span></tt> kwarg to specify an exact mode, in
-the same vein as <tt class="docutils literal"><span class="pre">os.chmod</span></tt> or the Unix <tt class="docutils literal"><span class="pre">chmod</span></tt> command.</p>
-<p><a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> will honor <a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, so
-relative values in <tt class="docutils literal"><span class="pre">remote_path</span></tt> will be prepended by the current remote
-working directory, if applicable. Thus, for example, the below snippet
-would attempt to upload to <tt class="docutils literal"><span class="pre">/tmp/files/test.txt</span></tt> instead of
-<tt class="docutils literal"><span class="pre">~/files/test.txt</span></tt>:</p>
+<p><tt class="docutils literal"><span class="pre">remote_path</span></tt>may also be a relative or absolute location, but applied tothe remote host. Relative paths are relative to the remote user&#8217;s homedirectory, but tilde expansion (e.g.<tt class="docutils literal"><span class="pre">~/.ssh/</span></tt>) will also be performed ifnecessary.</p>
+<p>An empty string, in either path argument, will be replaced by theappropriate end&#8217;s current working directory.</p>
+<p>While the SFTP protocol (which<a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>uses) has no direct ability to uploadfiles to locations not owned by the connecting user, you may specify<tt class="docutils literal"><span class="pre">use_sudo=True</span></tt>to work around this. When set, this setting causes<a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>to upload the local files to a temporary location on the remote end(defaults to remote user&#8217;s<tt class="docutils literal"><span class="pre">$HOME</span></tt>; this may be overridden via<tt class="docutils literal"><span class="pre">temp_dir</span></tt>), and then use<a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>to move them to<tt class="docutils literal"><span class="pre">remote_path</span></tt>.</p>
+<p>In some use cases, it is desirable to force a newly uploaded file to matchthe mode of its local counterpart (such as when uploading executablescripts). To do this, specify<tt class="docutils literal"><span class="pre">mirror_local_mode=True</span></tt>.</p>
+<p>Alternately, you may use the<tt class="docutils literal"><span class="pre">mode</span></tt>kwarg to specify an exact mode, inthe same vein as<tt class="docutils literal"><span class="pre">os.chmod</span></tt>or the Unix<tt class="docutils literal"><span class="pre">chmod</span></tt>command.</p>
+<p><a class="reference internal" href="#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>will honor<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, sorelative values in<tt class="docutils literal"><span class="pre">remote_path</span></tt>will be prepended by the current remoteworking directory, if applicable. Thus, for example, the below snippetwould attempt to upload to<tt class="docutils literal"><span class="pre">/tmp/files/test.txt</span></tt>instead of<tt class="docutils literal"><span class="pre">~/files/test.txt</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">with</span> <span class="n">cd</span><span class="p">(</span><span class="s">&#39;/tmp&#39;</span><span class="p">):</span>
     <span class="n">put</span><span class="p">(</span><span class="s">&#39;/path/to/local/test.txt&#39;</span><span class="p">,</span> <span class="s">&#39;files&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Use of <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a> will affect <tt class="docutils literal"><span class="pre">local_path</span></tt> in the
-same manner.</p>
+<p>Use of<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>will affect<tt class="docutils literal"><span class="pre">local_path</span></tt>in thesame manner.</p>
 <p>Examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">put</span><span class="p">(</span><span class="s">&#39;bin/project.zip&#39;</span><span class="p">,</span> <span class="s">&#39;/tmp/project.zip&#39;</span><span class="p">)</span>
 <span class="n">put</span><span class="p">(</span><span class="s">&#39;*.py&#39;</span><span class="p">,</span> <span class="s">&#39;cgi-bin/&#39;</span><span class="p">)</span>
@@ -359,139 +234,80 @@ same manner.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If a file-like object such as StringIO has a <tt class="docutils literal"><span class="pre">name</span></tt> attribute, that
-will be used in Fabric&#8217;s printed output instead of the default
-<tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
+<p class="first admonition-title">ノート</p>
+<p class="last">If a file-like object such as StringIO has a<tt class="docutils literal"><span class="pre">name</span></tt>attribute, thatwill be used in Fabric&#8217;s printed output instead of the default<tt class="docutils literal"><span class="pre">&lt;file</span> <span class="pre">obj&gt;</span></tt></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Now honors the remote working directory as manipulated by
-<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory as
-manipulated by <a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Now honors the remote working directory as manipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.cd" title="fabric.context_managers.cd"><tt class="xref py py-obj docutils literal"><span class="pre">cd</span></tt></a>, and the local working directory asmanipulated by<a class="reference internal" href="context_managers.html#fabric.context_managers.lcd" title="fabric.context_managers.lcd"><tt class="xref py py-obj docutils literal"><span class="pre">lcd</span></tt></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Now allows file-like objects in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Now allows file-like objects in the<tt class="docutils literal"><span class="pre">local_path</span></tt>argument.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Directories may be specified in the <tt class="docutils literal"><span class="pre">local_path</span></tt> argument and will
-trigger recursive uploads.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Directories may be specified in the<tt class="docutils literal"><span class="pre">local_path</span></tt>argument and willtrigger recursive uploads.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>Return value is now an iterable of uploaded remote file paths which
-also exhibits the <tt class="docutils literal"><span class="pre">.failed</span></tt> and <tt class="docutils literal"><span class="pre">.succeeded</span></tt> attributes.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>Return value is now an iterable of uploaded remote file paths whichalso exhibits the<tt class="docutils literal"><span class="pre">.failed</span></tt>and<tt class="docutils literal"><span class="pre">.succeeded</span></tt>attributes.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.5: </span>Allow a <tt class="docutils literal"><span class="pre">name</span></tt> attribute on file-like objects for log output</p>
+<p><span class="versionmodified">バージョン 1.5 で変更: </span>Allow a<tt class="docutils literal"><span class="pre">name</span></tt>attribute on file-like objects for log output</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.7: </span>Added <tt class="docutils literal"><span class="pre">use_glob</span></tt> option to allow disabling of globbing.</p>
+<p><span class="versionmodified">バージョン 1.7 で変更: </span>Added<tt class="docutils literal"><span class="pre">use_glob</span></tt>option to allow disabling of globbing.</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.reboot">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">reboot</tt><big>(</big><em>wait=120</em><big>)</big><a class="headerlink" href="#fabric.operations.reboot" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">reboot</tt><big>(</big><em>wait=120</em><big>)</big><a class="headerlink" href="#fabric.operations.reboot" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Reboot the remote system.</p>
-<p>Will temporarily tweak Fabric&#8217;s reconnection settings (<a class="reference internal" href="../../usage/env.html#timeout"><em>timeout</em></a> and
-<a class="reference internal" href="../../usage/env.html#connection-attempts"><em>connection_attempts</em></a>) to ensure that reconnection does not give up
-for at least <tt class="docutils literal"><span class="pre">wait</span></tt> seconds.</p>
+<p>Will temporarily tweak Fabric&#8217;s reconnection settings (<a class="reference internal" href="../../usage/env.html#timeout"><em>timeout</em></a>and<a class="reference internal" href="../../usage/env.html#connection-attempts"><em>connection_attempts</em></a>) to ensure that reconnection does not give upfor at least<tt class="docutils literal"><span class="pre">wait</span></tt>seconds.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>As of Fabric 1.4, the ability to reconnect partway through a session no
-longer requires use of internal APIs.  While we are not officially
-deprecating this function, adding more features to it will not be a
-priority.</p>
-<p class="last">Users who want greater control
-are encouraged to check out this function&#8217;s (6 lines long, well
-commented) source code and write their own adaptation using different
-timeout/attempt values or additional logic.</p>
+<p class="first admonition-title">ノート</p>
+<p>As of Fabric 1.4, the ability to reconnect partway through a session nolonger requires use of internal APIs.  While we are not officiallydeprecating this function, adding more features to it will not be apriority.</p>
+<p class="last">Users who want greater controlare encouraged to check out this function&#8217;s (6 lines long, wellcommented) source code and write their own adaptation using differenttimeout/attempt values or additional logic.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 0.9.2.</span></p>
+<p><span class="versionmodified">バージョン 0.9.2 で追加.</span></p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.4: </span>Changed the <tt class="docutils literal"><span class="pre">wait</span></tt> kwarg to be optional, and refactored to leverage
-the new reconnection functionality; it may not actually have to wait
-for <tt class="docutils literal"><span class="pre">wait</span></tt> seconds before reconnecting.</p>
+<p><span class="versionmodified">バージョン 1.4 で変更: </span>Changed the<tt class="docutils literal"><span class="pre">wait</span></tt>kwarg to be optional, and refactored to leveragethe new reconnection functionality; it may not actually have to waitfor<tt class="docutils literal"><span class="pre">wait</span></tt>seconds before reconnecting.</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.require">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">require</tt><big>(</big><em>*keys</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.operations.require" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">require</tt><big>(</big><em>*keys</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#fabric.operations.require" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Check for given keys in the shared environment dict and abort if not found.</p>
-<p>Positional arguments should be strings signifying what env vars should be
-checked for. If any of the given arguments do not exist, Fabric will abort
-execution and print the names of the missing keys.</p>
-<p>The optional keyword argument <tt class="docutils literal"><span class="pre">used_for</span></tt> may be a string, which will be
-printed in the error output to inform users why this requirement is in
-place. <tt class="docutils literal"><span class="pre">used_for</span></tt> is printed as part of a string similar to:</p>
+<p>Positional arguments should be strings signifying what env vars should bechecked for. If any of the given arguments do not exist, Fabric will abortexecution and print the names of the missing keys.</p>
+<p>The optional keyword argument<tt class="docutils literal"><span class="pre">used_for</span></tt>may be a string, which will beprinted in the error output to inform users why this requirement is inplace.<tt class="docutils literal"><span class="pre">used_for</span></tt>is printed as part of a string similar to:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;Th(is|ese) variable(s) (are|is) used for </span><span class="si">%s</span><span class="s">&quot;</span>
 </pre></div>
 </div>
 <p>so format it appropriately.</p>
-<p>The optional keyword argument <tt class="docutils literal"><span class="pre">provided_by</span></tt> may be a list of functions or
-function names or a single function or function name which the user should
-be able to execute in order to set the key or keys; it will be included in
-the error output if requirements are not met.</p>
-<p>Note: it is assumed that the keyword arguments apply to all given keys as a
-group. If you feel the need to specify more than one <tt class="docutils literal"><span class="pre">used_for</span></tt>, for
-example, you should break your logic into multiple calls to <tt class="docutils literal"><span class="pre">require()</span></tt>.</p>
+<p>The optional keyword argument<tt class="docutils literal"><span class="pre">provided_by</span></tt>may be a list of functions orfunction names or a single function or function name which the user shouldbe able to execute in order to set the key or keys; it will be included inthe error output if requirements are not met.</p>
+<p>Note: it is assumed that the keyword arguments apply to all given keys as agroup. If you feel the need to specify more than one<tt class="docutils literal"><span class="pre">used_for</span></tt>, forexample, you should break your logic into multiple calls to<tt class="docutils literal"><span class="pre">require()</span></tt>.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.1: </span>Allow iterable <tt class="docutils literal"><span class="pre">provided_by</span></tt> values instead of just single values.</p>
+<p><span class="versionmodified">バージョン 1.1 で変更: </span>Allow iterable<tt class="docutils literal"><span class="pre">provided_by</span></tt>values instead of just single values.</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.run">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">run</tt><big>(</big><em>command</em>, <em>shell=True</em>, <em>pty=True</em>, <em>combine_stderr=None</em>, <em>quiet=False</em>, <em>warn_only=False</em>, <em>stdout=None</em>, <em>stderr=None</em>, <em>timeout=None</em>, <em>shell_escape=None</em><big>)</big><a class="headerlink" href="#fabric.operations.run" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">run</tt><big>(</big><em>command</em>, <em>shell=True</em>, <em>pty=True</em>, <em>combine_stderr=None</em>, <em>quiet=False</em>, <em>warn_only=False</em>, <em>stdout=None</em>, <em>stderr=None</em>, <em>timeout=None</em>, <em>shell_escape=None</em><big>)</big><a class="headerlink" href="#fabric.operations.run" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Run a shell command on a remote host.</p>
-<p>If <tt class="docutils literal"><span class="pre">shell</span></tt> is True (the default), <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> will execute the given command
-string via a shell interpreter, the value of which may be controlled by
-setting <tt class="docutils literal"><span class="pre">env.shell</span></tt> (defaulting to something similar to <tt class="docutils literal"><span class="pre">/bin/bash</span> <span class="pre">-l</span> <span class="pre">-c</span>
-<span class="pre">&quot;&lt;command&gt;&quot;</span></tt>.) Any double-quote (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) or dollar-sign (<tt class="docutils literal"><span class="pre">$</span></tt>) characters
-in <tt class="docutils literal"><span class="pre">command</span></tt> will be automatically escaped when <tt class="docutils literal"><span class="pre">shell</span></tt> is True.</p>
-<p><a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> will return the result of the remote program&#8217;s stdout as a single
-(likely multiline) string. This string will exhibit <tt class="docutils literal"><span class="pre">failed</span></tt> and
-<tt class="docutils literal"><span class="pre">succeeded</span></tt> boolean attributes specifying whether the command failed or
-succeeded, and will also include the return code as the <tt class="docutils literal"><span class="pre">return_code</span></tt>
-attribute. Furthermore, it includes a copy of the requested &amp; actual
-command strings executed, as <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>,
-respectively.</p>
-<p>Any text entered in your local terminal will be forwarded to the remote
-program as it runs, thus allowing you to interact with password or other
-prompts naturally. For more on how this works, see
-<a class="reference internal" href="../../usage/interactivity.html"><em>Interaction with remote programs</em></a>.</p>
-<p>You may pass <tt class="docutils literal"><span class="pre">pty=False</span></tt> to forego creation of a pseudo-terminal on the
-remote end in case the presence of one causes problems for the command in
-question. However, this will force Fabric itself to echo any  and all input
-you type while the command is running, including sensitive passwords. (With
-<tt class="docutils literal"><span class="pre">pty=True</span></tt>, the remote pseudo-terminal will echo for you, and will
-intelligently handle password-style prompts.) See <a class="reference internal" href="../../usage/interactivity.html#pseudottys"><em>Pseudo-terminals</em></a> for
-details.</p>
-<p>Similarly, if you need to programmatically examine the stderr stream of the
-remote program (exhibited as the <tt class="docutils literal"><span class="pre">stderr</span></tt> attribute on this function&#8217;s
-return value), you may set <tt class="docutils literal"><span class="pre">combine_stderr=False</span></tt>. Doing so has a high
-chance of causing garbled output to appear on your terminal (though the
-resulting strings returned by <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> will be properly
-separated). For more info, please read <a class="reference internal" href="../../usage/interactivity.html#combine-streams"><em>Combining stdout and stderr</em></a>.</p>
-<p>To ignore non-zero return codes, specify <tt class="docutils literal"><span class="pre">warn_only=True</span></tt>. To both ignore
-non-zero return codes <em>and</em> force a command to run silently, specify
-<tt class="docutils literal"><span class="pre">quiet=True</span></tt>.</p>
-<p>To override which local streams are used to display remote stdout and/or
-stderr, specify <tt class="docutils literal"><span class="pre">stdout</span></tt> or <tt class="docutils literal"><span class="pre">stderr</span></tt>. (By default, the regular
-<tt class="docutils literal"><span class="pre">sys.stdout</span></tt> and <tt class="docutils literal"><span class="pre">sys.stderr</span></tt> Python stream objects are used.)</p>
-<p>For example, <tt class="docutils literal"><span class="pre">run(&quot;command&quot;,</span> <span class="pre">stderr=sys.stdout)</span></tt> would print the remote
-standard error to the local standard out, while preserving it as its own
-distinct attribute on the return value (as per above.) Alternately, you
-could even provide your own stream objects or loggers, e.g. <tt class="docutils literal"><span class="pre">myout</span> <span class="pre">=</span>
+<p>If<tt class="docutils literal"><span class="pre">shell</span></tt>is True (the default),<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>will execute the given commandstring via a shell interpreter, the value of which may be controlled bysetting<tt class="docutils literal"><span class="pre">env.shell</span></tt>(defaulting to something similar to<tt class="docutils literal"><span class="pre">/bin/bash</span> <span class="pre">-l</span> <span class="pre">-c</span>
+<span class="pre">&quot;&lt;command&gt;&quot;</span></tt>.) Any double-quote (<tt class="docutils literal"><span class="pre">&quot;</span></tt>) or dollar-sign (<tt class="docutils literal"><span class="pre">$</span></tt>) charactersin<tt class="docutils literal"><span class="pre">command</span></tt>will be automatically escaped when<tt class="docutils literal"><span class="pre">shell</span></tt>is True.</p>
+<p><a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>will return the result of the remote program&#8217;s stdout as a single(likely multiline) string. This string will exhibit<tt class="docutils literal"><span class="pre">failed</span></tt>and<tt class="docutils literal"><span class="pre">succeeded</span></tt>boolean attributes specifying whether the command failed orsucceeded, and will also include the return code as the<tt class="docutils literal"><span class="pre">return_code</span></tt>attribute. Furthermore, it includes a copy of the requested &amp; actualcommand strings executed, as<tt class="docutils literal"><span class="pre">.command</span></tt>and<tt class="docutils literal"><span class="pre">.real_command</span></tt>,respectively.</p>
+<p>Any text entered in your local terminal will be forwarded to the remoteprogram as it runs, thus allowing you to interact with password or otherprompts naturally. For more on how this works, see<a class="reference internal" href="../../usage/interactivity.html"><em>Interaction with remote programs</em></a>.</p>
+<p>You may pass<tt class="docutils literal"><span class="pre">pty=False</span></tt>to forego creation of a pseudo-terminal on theremote end in case the presence of one causes problems for the command inquestion. However, this will force Fabric itself to echo any  and all inputyou type while the command is running, including sensitive passwords. (With<tt class="docutils literal"><span class="pre">pty=True</span></tt>, the remote pseudo-terminal will echo for you, and willintelligently handle password-style prompts.) See<a class="reference internal" href="../../usage/interactivity.html#pseudottys"><em>Pseudo-terminals</em></a>fordetails.</p>
+<p>Similarly, if you need to programmatically examine the stderr stream of theremote program (exhibited as the<tt class="docutils literal"><span class="pre">stderr</span></tt>attribute on this function&#8217;sreturn value), you may set<tt class="docutils literal"><span class="pre">combine_stderr=False</span></tt>. Doing so has a highchance of causing garbled output to appear on your terminal (though theresulting strings returned by<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>will be properlyseparated). For more info, please read<a class="reference internal" href="../../usage/interactivity.html#combine-streams"><em>Combining stdout and stderr</em></a>.</p>
+<p>To ignore non-zero return codes, specify<tt class="docutils literal"><span class="pre">warn_only=True</span></tt>. To both ignorenon-zero return codes<em>and</em>force a command to run silently, specify<tt class="docutils literal"><span class="pre">quiet=True</span></tt>.</p>
+<p>To override which local streams are used to display remote stdout and/orstderr, specify<tt class="docutils literal"><span class="pre">stdout</span></tt>or<tt class="docutils literal"><span class="pre">stderr</span></tt>. (By default, the regular<tt class="docutils literal"><span class="pre">sys.stdout</span></tt>and<tt class="docutils literal"><span class="pre">sys.stderr</span></tt>Python stream objects are used.)</p>
+<p>For example,<tt class="docutils literal"><span class="pre">run(&quot;command&quot;,</span> <span class="pre">stderr=sys.stdout)</span></tt>would print the remotestandard error to the local standard out, while preserving it as its owndistinct attribute on the return value (as per above.) Alternately, youcould even provide your own stream objects or loggers, e.g.<tt class="docutils literal"><span class="pre">myout</span> <span class="pre">=</span>
 <span class="pre">StringIO();</span> <span class="pre">run(&quot;command&quot;,</span> <span class="pre">stdout=myout)</span></tt>.</p>
-<p>If you want an exception raised when the remote program takes too long to
-run, specify <tt class="docutils literal"><span class="pre">timeout=N</span></tt> where <tt class="docutils literal"><span class="pre">N</span></tt> is an integer number of seconds,
-after which to time out. This will cause <tt class="docutils literal"><span class="pre">run</span></tt> to raise a
-<tt class="xref py py-obj docutils literal"><span class="pre">CommandTimeout</span></tt> exception.</p>
-<p>If you want to disable Fabric&#8217;s automatic attempts at escaping quotes,
-dollar signs etc., specify <tt class="docutils literal"><span class="pre">shell_escape=False</span></tt>.</p>
+<p>If you want an exception raised when the remote program takes too long torun, specify<tt class="docutils literal"><span class="pre">timeout=N</span></tt>where<tt class="docutils literal"><span class="pre">N</span></tt>is an integer number of seconds,after which to time out. This will cause<tt class="docutils literal"><span class="pre">run</span></tt>to raise a<tt class="xref py py-obj docutils literal"><span class="pre">CommandTimeout</span></tt>exception.</p>
+<p>If you want to disable Fabric&#8217;s automatic attempts at escaping quotes,dollar signs etc., specify<tt class="docutils literal"><span class="pre">shell_escape=False</span></tt>.</p>
 <p>Examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">run</span><span class="p">(</span><span class="s">&quot;ls /var/www/&quot;</span><span class="p">)</span>
 <span class="n">run</span><span class="p">(</span><span class="s">&quot;ls /home/myuser&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
@@ -500,47 +316,35 @@ dollar signs etc., specify <tt class="docutils literal"><span class="pre">shell_
 </pre></div>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.0: </span>The <tt class="docutils literal"><span class="pre">succeeded</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> return value attributes, the
-<tt class="docutils literal"><span class="pre">combine_stderr</span></tt> kwarg, and interactive behavior.</p>
+<p><span class="versionmodified">バージョン 1.0 で追加: </span>The<tt class="docutils literal"><span class="pre">succeeded</span></tt>and<tt class="docutils literal"><span class="pre">stderr</span></tt>return value attributes, the<tt class="docutils literal"><span class="pre">combine_stderr</span></tt>kwarg, and interactive behavior.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>The default value of <tt class="docutils literal"><span class="pre">pty</span></tt> is now <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>The default value of<tt class="docutils literal"><span class="pre">pty</span></tt>is now<tt class="docutils literal"><span class="pre">True</span></tt>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0.2: </span>The default value of <tt class="docutils literal"><span class="pre">combine_stderr</span></tt> is now <tt class="docutils literal"><span class="pre">None</span></tt> instead of
-<tt class="docutils literal"><span class="pre">True</span></tt>. However, the default <em>behavior</em> is unchanged, as the global
-setting is still <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<p><span class="versionmodified">バージョン 1.0.2 で変更: </span>The default value of<tt class="docutils literal"><span class="pre">combine_stderr</span></tt>is now<tt class="docutils literal"><span class="pre">None</span></tt>instead of<tt class="docutils literal"><span class="pre">True</span></tt>. However, the default<em>behavior</em>is unchanged, as the globalsetting is still<tt class="docutils literal"><span class="pre">True</span></tt>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
+<p><span class="versionmodified">バージョン 1.5 で追加: </span>The<tt class="docutils literal"><span class="pre">quiet</span></tt>,<tt class="docutils literal"><span class="pre">warn_only</span></tt>,<tt class="docutils literal"><span class="pre">stdout</span></tt>and<tt class="docutils literal"><span class="pre">stderr</span></tt>kwargs.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
+<p><span class="versionmodified">バージョン 1.5 で追加: </span>The return value attributes<tt class="docutils literal"><span class="pre">.command</span></tt>and<tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.6: </span>The <tt class="docutils literal"><span class="pre">timeout</span></tt> argument.</p>
+<p><span class="versionmodified">バージョン 1.6 で追加: </span>The<tt class="docutils literal"><span class="pre">timeout</span></tt>argument.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+<p><span class="versionmodified">バージョン 1.7 で追加: </span>The<tt class="docutils literal"><span class="pre">shell_escape</span></tt>argument.</p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.operations.sudo">
-<tt class="descclassname">fabric.operations.</tt><tt class="descname">sudo</tt><big>(</big><em>command</em>, <em>shell=True</em>, <em>pty=True</em>, <em>combine_stderr=None</em>, <em>user=None</em>, <em>quiet=False</em>, <em>warn_only=False</em>, <em>stdout=None</em>, <em>stderr=None</em>, <em>group=None</em>, <em>timeout=None</em>, <em>shell_escape=None</em><big>)</big><a class="headerlink" href="#fabric.operations.sudo" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.operations.</tt><tt class="descname">sudo</tt><big>(</big><em>command</em>, <em>shell=True</em>, <em>pty=True</em>, <em>combine_stderr=None</em>, <em>user=None</em>, <em>quiet=False</em>, <em>warn_only=False</em>, <em>stdout=None</em>, <em>stderr=None</em>, <em>group=None</em>, <em>timeout=None</em>, <em>shell_escape=None</em><big>)</big><a class="headerlink" href="#fabric.operations.sudo" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Run a shell command on a remote host, with superuser privileges.</p>
-<p><a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a> is identical in every way to <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, except that it will always wrap
-the given <tt class="docutils literal"><span class="pre">command</span></tt> in a call to the <tt class="docutils literal"><span class="pre">sudo</span></tt> program to provide
-superuser privileges.</p>
-<p><a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a> accepts additional <tt class="docutils literal"><span class="pre">user</span></tt> and <tt class="docutils literal"><span class="pre">group</span></tt> arguments, which are
-passed to <tt class="docutils literal"><span class="pre">sudo</span></tt> and allow you to run as some user and/or group other
-than root.  On most systems, the <tt class="docutils literal"><span class="pre">sudo</span></tt> program can take a string
-username/group or an integer userid/groupid (uid/gid); <tt class="docutils literal"><span class="pre">user</span></tt> and
-<tt class="docutils literal"><span class="pre">group</span></tt> may likewise be strings or integers.</p>
-<p>You may set <a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a> at module level or via
-<a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a> if you want multiple <tt class="docutils literal"><span class="pre">sudo</span></tt> calls to
-have the same <tt class="docutils literal"><span class="pre">user</span></tt> value. An explicit <tt class="docutils literal"><span class="pre">user</span></tt> argument will, of
-course, override this global setting.</p>
+<p><a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>is identical in every way to<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>, except that it will always wrapthe given<tt class="docutils literal"><span class="pre">command</span></tt>in a call to the<tt class="docutils literal"><span class="pre">sudo</span></tt>program to providesuperuser privileges.</p>
+<p><a class="reference internal" href="#fabric.operations.sudo" title="fabric.operations.sudo"><tt class="xref py py-obj docutils literal"><span class="pre">sudo</span></tt></a>accepts additional<tt class="docutils literal"><span class="pre">user</span></tt>and<tt class="docutils literal"><span class="pre">group</span></tt>arguments, which arepassed to<tt class="docutils literal"><span class="pre">sudo</span></tt>and allow you to run as some user and/or group otherthan root.  On most systems, the<tt class="docutils literal"><span class="pre">sudo</span></tt>program can take a stringusername/group or an integer userid/groupid (uid/gid);<tt class="docutils literal"><span class="pre">user</span></tt>and<tt class="docutils literal"><span class="pre">group</span></tt>may likewise be strings or integers.</p>
+<p>You may set<a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a>at module level or via<a class="reference internal" href="context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>if you want multiple<tt class="docutils literal"><span class="pre">sudo</span></tt>calls tohave the same<tt class="docutils literal"><span class="pre">user</span></tt>value. An explicit<tt class="docutils literal"><span class="pre">user</span></tt>argument will, ofcourse, override this global setting.</p>
 <p>Examples:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">sudo</span><span class="p">(</span><span class="s">&quot;~/install_script.py&quot;</span><span class="p">)</span>
 <span class="n">sudo</span><span class="p">(</span><span class="s">&quot;mkdir /var/www/new_docroot&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s">&quot;www-data&quot;</span><span class="p">)</span>
@@ -551,19 +355,19 @@ course, override this global setting.</p>
 </pre></div>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.0: </span>See the changed and added notes for <a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>.</p>
+<p><span class="versionmodified">バージョン 1.0 で変更: </span>See the changed and added notes for<a class="reference internal" href="#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 1.5: </span>Now honors <a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a>.</p>
+<p><span class="versionmodified">バージョン 1.5 で変更: </span>Now honors<a class="reference internal" href="../../usage/env.html#sudo-user"><em>env.sudo_user</em></a>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.5: </span>The <tt class="docutils literal"><span class="pre">quiet</span></tt>, <tt class="docutils literal"><span class="pre">warn_only</span></tt>, <tt class="docutils literal"><span class="pre">stdout</span></tt> and <tt class="docutils literal"><span class="pre">stderr</span></tt> kwargs.</p>
+<p><span class="versionmodified">バージョン 1.5 で追加: </span>The<tt class="docutils literal"><span class="pre">quiet</span></tt>,<tt class="docutils literal"><span class="pre">warn_only</span></tt>,<tt class="docutils literal"><span class="pre">stdout</span></tt>and<tt class="docutils literal"><span class="pre">stderr</span></tt>kwargs.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.5: </span>The return value attributes <tt class="docutils literal"><span class="pre">.command</span></tt> and <tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
+<p><span class="versionmodified">バージョン 1.5 で追加: </span>The return value attributes<tt class="docutils literal"><span class="pre">.command</span></tt>and<tt class="docutils literal"><span class="pre">.real_command</span></tt>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.7: </span>The <tt class="docutils literal"><span class="pre">shell_escape</span></tt> argument.</p>
+<p><span class="versionmodified">バージョン 1.7 で追加: </span>The<tt class="docutils literal"><span class="pre">shell_escape</span></tt>argument.</p>
 </div>
 </dd></dl>
 
@@ -683,27 +487,27 @@ course, override this global setting.</p>
 </ul>
 
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="network.html"
-                        title="previous chapter">Network</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Network</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="tasks.html"
-                        title="next chapter">Tasks</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Tasks</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../../_sources/api/core/operations.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -712,26 +516,26 @@ course, override this global setting.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Tasks"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="network.html" title="Network"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

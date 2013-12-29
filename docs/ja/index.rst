@@ -318,10 +318,11 @@ Fabricには公式のTwitterアカウント `@pyfabric <http://twitter.com/pyfab
 IRC
 ---
 
-We maintain a semi-official IRC channel at ``#fabric`` on Freenode
-(``irc://irc.freenode.net``) where the developers and other users may be found.
-As always with IRC, we can't promise immediate responses, but some folks keep
-logs of the channel and will try to get back to you when they can.
+..
+    We maintain a semi-official IRC channel at ``#fabric`` on Freenode
+    (``irc://irc.freenode.net``) where the developers and other users may be found.
+    As always with IRC, we can't promise immediate responses, but some folks keep
+    logs of the channel and will try to get back to you when they can.
 
 わたしたちは準公式のIRCチャンネルをFreenodeの ``#fabric`` (``irc://irc.freenode.net``) 
 を維持管理していて、ここで開発者や他のユーザーを見つけることができます。IRCの常で、必ずしもすぐには

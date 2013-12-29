@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Documentation helpers &mdash; Fabric 1.8 documentation</title>
+    <title>Documentation helpers &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../../index.html" />
     <link rel="next" title="Network" href="network.html" />
     <link rel="prev" title="Decorators" href="decorators.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="network.html" title="Network"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="decorators.html" title="Decorators"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,37 +69,25 @@
           <div class="body">
             
   <div class="section" id="module-fabric.docs">
-<span id="documentation-helpers"></span><h1>Documentation helpers<a class="headerlink" href="#module-fabric.docs" title="Permalink to this headline">¶</a></h1>
+<span id="documentation-helpers"></span><h1>Documentation helpers<a class="headerlink" href="#module-fabric.docs" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <dl class="function">
 <dt id="fabric.docs.unwrap_tasks">
-<tt class="descclassname">fabric.docs.</tt><tt class="descname">unwrap_tasks</tt><big>(</big><em>module</em>, <em>hide_nontasks=False</em><big>)</big><a class="headerlink" href="#fabric.docs.unwrap_tasks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Replace task objects on <tt class="docutils literal"><span class="pre">module</span></tt> with their wrapped functions instead.</p>
-<p>Specifically, look for instances of <a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a> and
-replace them with their <tt class="docutils literal"><span class="pre">.wrapped</span></tt> attribute (the original decorated
-function.)</p>
-<p>This is intended for use with the Sphinx autodoc tool, to be run near the
-bottom of a project&#8217;s <tt class="docutils literal"><span class="pre">conf.py</span></tt>. It ensures that the autodoc extension
-will have full access to the &#8220;real&#8221; function, in terms of function
-signature and so forth. Without use of <tt class="docutils literal"><span class="pre">unwrap_tasks</span></tt>, autodoc is unable
-to access the function signature (though it is able to see e.g.
-<tt class="docutils literal"><span class="pre">__doc__</span></tt>.)</p>
-<p>For example, at the bottom of your <tt class="docutils literal"><span class="pre">conf.py</span></tt>:</p>
+<tt class="descclassname">fabric.docs.</tt><tt class="descname">unwrap_tasks</tt><big>(</big><em>module</em>, <em>hide_nontasks=False</em><big>)</big><a class="headerlink" href="#fabric.docs.unwrap_tasks" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Replace task objects on<tt class="docutils literal"><span class="pre">module</span></tt>with their wrapped functions instead.</p>
+<p>Specifically, look for instances of<a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>andreplace them with their<tt class="docutils literal"><span class="pre">.wrapped</span></tt>attribute (the original decoratedfunction.)</p>
+<p>This is intended for use with the Sphinx autodoc tool, to be run near thebottom of a project&#8217;s<tt class="docutils literal"><span class="pre">conf.py</span></tt>. It ensures that the autodoc extensionwill have full access to the &#8220;real&#8221; function, in terms of functionsignature and so forth. Without use of<tt class="docutils literal"><span class="pre">unwrap_tasks</span></tt>, autodoc is unableto access the function signature (though it is able to see e.g.<tt class="docutils literal"><span class="pre">__doc__</span></tt>.)</p>
+<p>For example, at the bottom of your<tt class="docutils literal"><span class="pre">conf.py</span></tt>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.docs</span> <span class="kn">import</span> <span class="n">unwrap_tasks</span>
 <span class="kn">import</span> <span class="nn">my_package.my_fabfile</span>
 <span class="n">unwrap_tasks</span><span class="p">(</span><span class="n">my_package</span><span class="o">.</span><span class="n">my_fabfile</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can go above and beyond, and explicitly <strong>hide</strong> all non-task
-functions, by saying <tt class="docutils literal"><span class="pre">hide_nontasks=True</span></tt>. This renames all objects
-failing the &#8220;is it a task?&#8221; check so they appear to be private, which will
-then cause autodoc to skip over them.</p>
-<p><tt class="docutils literal"><span class="pre">hide_nontasks</span></tt> is thus useful when you have a fabfile mixing in
-subroutines with real tasks and want to document <em>just</em> the real tasks.</p>
-<p>If you run this within an actual Fabric-code-using session (instead of
-within a Sphinx <tt class="docutils literal"><span class="pre">conf.py</span></tt>), please seek immediate medical attention.</p>
+<p>You can go above and beyond, and explicitly<strong>hide</strong>all non-taskfunctions, by saying<tt class="docutils literal"><span class="pre">hide_nontasks=True</span></tt>. This renames all objectsfailing the &#8220;is it a task?&#8221; check so they appear to be private, which willthen cause autodoc to skip over them.</p>
+<p><tt class="docutils literal"><span class="pre">hide_nontasks</span></tt>is thus useful when you have a fabfile mixing insubroutines with real tasks and want to document<em>just</em>the real tasks.</p>
+<p>If you run this within an actual Fabric-code-using session (instead ofwithin a Sphinx<tt class="docutils literal"><span class="pre">conf.py</span></tt>), please seek immediate medical attention.</p>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>, <a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a></p>
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="tasks.html#fabric.tasks.WrappedCallableTask" title="fabric.tasks.WrappedCallableTask"><tt class="xref py py-obj docutils literal"><span class="pre">WrappedCallableTask</span></tt></a>,<a class="reference internal" href="decorators.html#fabric.decorators.task" title="fabric.decorators.task"><tt class="xref py py-obj docutils literal"><span class="pre">task</span></tt></a></p>
 </div>
 </dd></dl>
 
@@ -218,27 +207,27 @@ within a Sphinx <tt class="docutils literal"><span class="pre">conf.py</span></t
 </ul>
 
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="decorators.html"
-                        title="previous chapter">Decorators</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Decorators</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="network.html"
-                        title="next chapter">Network</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Network</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../../_sources/api/core/docs.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -247,26 +236,26 @@ within a Sphinx <tt class="docutils literal"><span class="pre">conf.py</span></t
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="network.html" title="Network"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="decorators.html" title="Decorators"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Utils &mdash; Fabric 1.8 documentation</title>
+    <title>Utils &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../../index.html" />
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../../index.html" />
     <link rel="next" title="Console Output Utilities" href="../contrib/console.html" />
     <link rel="prev" title="Tasks" href="tasks.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="../contrib/console.html" title="Console Output Utilities"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Tasks"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,97 +69,73 @@
           <div class="body">
             
   <div class="section" id="module-fabric.utils">
-<span id="utils"></span><h1>Utils<a class="headerlink" href="#module-fabric.utils" title="Permalink to this headline">¶</a></h1>
-<p>Internal subroutines for e.g. aborting execution with an error message,
-or performing indenting on multiline output.</p>
+<span id="utils"></span><h1>Utils<a class="headerlink" href="#module-fabric.utils" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Internal subroutines for e.g. aborting execution with an error message,or performing indenting on multiline output.</p>
 <dl class="function">
 <dt id="fabric.utils.abort">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">abort</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#fabric.utils.abort" title="Permalink to this definition">¶</a></dt>
-<dd><p>Abort execution, print <tt class="docutils literal"><span class="pre">msg</span></tt> to stderr and exit with error status (1.)</p>
-<p>This function currently makes use of <a class="reference external" href="http://docs.python.org/library/sys.html#sys.exit">sys.exit</a>, which raises
-<a class="reference external" href="http://docs.python.org/library/exceptions.html#exceptions.SystemExit">SystemExit</a>. Therefore, it&#8217;s possible to detect and recover from inner
-calls to <a class="reference internal" href="#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a> by using <tt class="docutils literal"><span class="pre">except</span> <span class="pre">SystemExit</span></tt> or similar.</p>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">abort</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#fabric.utils.abort" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Abort execution, print<tt class="docutils literal"><span class="pre">msg</span></tt>to stderr and exit with error status (1.)</p>
+<p>This function currently makes use of<a class="reference external" href="http://docs.python.org/library/sys.html#sys.exit">sys.exit</a>, which raises<a class="reference external" href="http://docs.python.org/library/exceptions.html#exceptions.SystemExit">SystemExit</a>. Therefore, it&#8217;s possible to detect and recover from innercalls to<a class="reference internal" href="#fabric.utils.abort" title="fabric.utils.abort"><tt class="xref py py-obj docutils literal"><span class="pre">abort</span></tt></a>by using<tt class="docutils literal"><span class="pre">except</span> <span class="pre">SystemExit</span></tt>or similar.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.utils.error">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">error</tt><big>(</big><em>message</em>, <em>func=None</em>, <em>exception=None</em>, <em>stdout=None</em>, <em>stderr=None</em><big>)</big><a class="headerlink" href="#fabric.utils.error" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call <tt class="docutils literal"><span class="pre">func</span></tt> with given error <tt class="docutils literal"><span class="pre">message</span></tt>.</p>
-<p>If <tt class="docutils literal"><span class="pre">func</span></tt> is None (the default), the value of <tt class="docutils literal"><span class="pre">env.warn_only</span></tt>
-determines whether to call <tt class="docutils literal"><span class="pre">abort</span></tt> or <tt class="docutils literal"><span class="pre">warn</span></tt>.</p>
-<p>If <tt class="docutils literal"><span class="pre">exception</span></tt> is given, it is inspected to get a string message, which
-is printed alongside the user-generated <tt class="docutils literal"><span class="pre">message</span></tt>.</p>
-<p>If <tt class="docutils literal"><span class="pre">stdout</span></tt> and/or <tt class="docutils literal"><span class="pre">stderr</span></tt> are given, they are assumed to be strings
-to be printed.</p>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">error</tt><big>(</big><em>message</em>, <em>func=None</em>, <em>exception=None</em>, <em>stdout=None</em>, <em>stderr=None</em><big>)</big><a class="headerlink" href="#fabric.utils.error" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Call<tt class="docutils literal"><span class="pre">func</span></tt>with given error<tt class="docutils literal"><span class="pre">message</span></tt>.</p>
+<p>If<tt class="docutils literal"><span class="pre">func</span></tt>is None (the default), the value of<tt class="docutils literal"><span class="pre">env.warn_only</span></tt>determines whether to call<tt class="docutils literal"><span class="pre">abort</span></tt>or<tt class="docutils literal"><span class="pre">warn</span></tt>.</p>
+<p>If<tt class="docutils literal"><span class="pre">exception</span></tt>is given, it is inspected to get a string message, whichis printed alongside the user-generated<tt class="docutils literal"><span class="pre">message</span></tt>.</p>
+<p>If<tt class="docutils literal"><span class="pre">stdout</span></tt>and/or<tt class="docutils literal"><span class="pre">stderr</span></tt>are given, they are assumed to be stringsto be printed.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.utils.fastprint">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">fastprint</tt><big>(</big><em>text</em>, <em>show_prefix=False</em>, <em>end=''</em>, <em>flush=True</em><big>)</big><a class="headerlink" href="#fabric.utils.fastprint" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print <tt class="docutils literal"><span class="pre">text</span></tt> immediately, without any prefix or line ending.</p>
-<p>This function is simply an alias of <a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a> with different
-default argument values, such that the <tt class="docutils literal"><span class="pre">text</span></tt> is printed without any
-embellishment and immediately flushed.</p>
-<p>It is useful for any situation where you wish to print text which might
-otherwise get buffered by Python&#8217;s output buffering (such as within a
-processor intensive <tt class="docutils literal"><span class="pre">for</span></tt> loop). Since such use cases typically also
-require a lack of line endings (such as printing a series of dots to
-signify progress) it also omits the traditional newline by default.</p>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">fastprint</tt><big>(</big><em>text</em>, <em>show_prefix=False</em>, <em>end=''</em>, <em>flush=True</em><big>)</big><a class="headerlink" href="#fabric.utils.fastprint" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Print<tt class="docutils literal"><span class="pre">text</span></tt>immediately, without any prefix or line ending.</p>
+<p>This function is simply an alias of<a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a>with differentdefault argument values, such that the<tt class="docutils literal"><span class="pre">text</span></tt>is printed without anyembellishment and immediately flushed.</p>
+<p>It is useful for any situation where you wish to print text which mightotherwise get buffered by Python&#8217;s output buffering (such as within aprocessor intensive<tt class="docutils literal"><span class="pre">for</span></tt>loop). Since such use cases typically alsorequire a lack of line endings (such as printing a series of dots tosignify progress) it also omits the traditional newline by default.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since <a class="reference internal" href="#fabric.utils.fastprint" title="fabric.utils.fastprint"><tt class="xref py py-obj docutils literal"><span class="pre">fastprint</span></tt></a> calls <a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a>, it is
-likewise subject to the <tt class="docutils literal"><span class="pre">user</span></tt> <a class="reference internal" href="../../usage/output_controls.html"><em>output level</em></a>.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">Since<a class="reference internal" href="#fabric.utils.fastprint" title="fabric.utils.fastprint"><tt class="xref py py-obj docutils literal"><span class="pre">fastprint</span></tt></a>calls<a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a>, it islikewise subject to the<tt class="docutils literal"><span class="pre">user</span></tt><a class="reference internal" href="../../usage/output_controls.html"><em>output level</em></a>.</p>
 </div>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 0.9.2.</span></p>
+<p><span class="versionmodified">バージョン 0.9.2 で追加.</span></p>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
+<p class="first admonition-title">参考</p>
 <p class="last"><a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.utils.indent">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">indent</tt><big>(</big><em>text</em>, <em>spaces=4</em>, <em>strip=False</em><big>)</big><a class="headerlink" href="#fabric.utils.indent" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return <tt class="docutils literal"><span class="pre">text</span></tt> indented by the given number of spaces.</p>
-<p>If text is not a string, it is assumed to be a list of lines and will be
-joined by <tt class="docutils literal"><span class="pre">\n</span></tt> prior to indenting.</p>
-<p>When <tt class="docutils literal"><span class="pre">strip</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>, a minimum amount of whitespace is removed from
-the left-hand side of the given string (so that relative indents are
-preserved, but otherwise things are left-stripped). This allows you to
-effectively &#8220;normalize&#8221; any previous indentation for some inputs.</p>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">indent</tt><big>(</big><em>text</em>, <em>spaces=4</em>, <em>strip=False</em><big>)</big><a class="headerlink" href="#fabric.utils.indent" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>Return<tt class="docutils literal"><span class="pre">text</span></tt>indented by the given number of spaces.</p>
+<p>If text is not a string, it is assumed to be a list of lines and will bejoined by<tt class="docutils literal"><span class="pre">\n</span></tt>prior to indenting.</p>
+<p>When<tt class="docutils literal"><span class="pre">strip</span></tt>is<tt class="docutils literal"><span class="pre">True</span></tt>, a minimum amount of whitespace is removed fromthe left-hand side of the given string (so that relative indents arepreserved, but otherwise things are left-stripped). This allows you toeffectively &#8220;normalize&#8221; any previous indentation for some inputs.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.utils.puts">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">puts</tt><big>(</big><em>text</em>, <em>show_prefix=None</em>, <em>end='\n'</em>, <em>flush=False</em><big>)</big><a class="headerlink" href="#fabric.utils.puts" title="Permalink to this definition">¶</a></dt>
-<dd><p>An alias for <tt class="docutils literal"><span class="pre">print</span></tt> whose output is managed by Fabric&#8217;s output controls.</p>
-<p>In other words, this function simply prints to <tt class="docutils literal"><span class="pre">sys.stdout</span></tt>, but will
-hide its output if the <tt class="docutils literal"><span class="pre">user</span></tt> <a class="reference internal" href="../../usage/output_controls.html"><em>output level</em></a> is set to <tt class="docutils literal"><span class="pre">False</span></tt>.</p>
-<p>If <tt class="docutils literal"><span class="pre">show_prefix=False</span></tt>, <a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a> will omit the leading <tt class="docutils literal"><span class="pre">[hostname]</span></tt>
-which it tacks on by default. (It will also omit this prefix if
-<tt class="docutils literal"><span class="pre">env.host_string</span></tt> is empty.)</p>
-<p>Newlines may be disabled by setting <tt class="docutils literal"><span class="pre">end</span></tt> to the empty string (<tt class="docutils literal"><span class="pre">''</span></tt>).
-(This intentionally mirrors Python 3&#8217;s <tt class="docutils literal"><span class="pre">print</span></tt> syntax.)</p>
-<p>You may force output flushing (e.g. to bypass output buffering) by setting
-<tt class="docutils literal"><span class="pre">flush=True</span></tt>.</p>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">puts</tt><big>(</big><em>text</em>, <em>show_prefix=None</em>, <em>end='\n'</em>, <em>flush=False</em><big>)</big><a class="headerlink" href="#fabric.utils.puts" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>An alias for<tt class="docutils literal"><span class="pre">print</span></tt>whose output is managed by Fabric&#8217;s output controls.</p>
+<p>In other words, this function simply prints to<tt class="docutils literal"><span class="pre">sys.stdout</span></tt>, but willhide its output if the<tt class="docutils literal"><span class="pre">user</span></tt><a class="reference internal" href="../../usage/output_controls.html"><em>output level</em></a>is set to<tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<p>If<tt class="docutils literal"><span class="pre">show_prefix=False</span></tt>,<a class="reference internal" href="#fabric.utils.puts" title="fabric.utils.puts"><tt class="xref py py-obj docutils literal"><span class="pre">puts</span></tt></a>will omit the leading<tt class="docutils literal"><span class="pre">[hostname]</span></tt>which it tacks on by default. (It will also omit this prefix if<tt class="docutils literal"><span class="pre">env.host_string</span></tt>is empty.)</p>
+<p>Newlines may be disabled by setting<tt class="docutils literal"><span class="pre">end</span></tt>to the empty string (<tt class="docutils literal"><span class="pre">''</span></tt>).(This intentionally mirrors Python 3&#8217;s<tt class="docutils literal"><span class="pre">print</span></tt>syntax.)</p>
+<p>You may force output flushing (e.g. to bypass output buffering) by setting<tt class="docutils literal"><span class="pre">flush=True</span></tt>.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 0.9.2.</span></p>
+<p><span class="versionmodified">バージョン 0.9.2 で追加.</span></p>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
+<p class="first admonition-title">参考</p>
 <p class="last"><a class="reference internal" href="#fabric.utils.fastprint" title="fabric.utils.fastprint"><tt class="xref py py-obj docutils literal"><span class="pre">fastprint</span></tt></a></p>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="fabric.utils.warn">
-<tt class="descclassname">fabric.utils.</tt><tt class="descname">warn</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#fabric.utils.warn" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">fabric.utils.</tt><tt class="descname">warn</tt><big>(</big><em>msg</em><big>)</big><a class="headerlink" href="#fabric.utils.warn" title="この定義へのパーマリンク">¶</a></dt>
 <dd><p>Print warning message, but do not abort execution.</p>
-<p>This function honors Fabric&#8217;s <a class="reference internal" href="../../usage/output_controls.html"><em>output controls</em></a> and will print the given <tt class="docutils literal"><span class="pre">msg</span></tt> to stderr,
-provided that the <tt class="docutils literal"><span class="pre">warnings</span></tt> output level (which is active by default) is
-turned on.</p>
+<p>This function honors Fabric&#8217;s<a class="reference internal" href="../../usage/output_controls.html"><em>output controls</em></a>and will print the given<tt class="docutils literal"><span class="pre">msg</span></tt>to stderr,provided that the<tt class="docutils literal"><span class="pre">warnings</span></tt>output level (which is active by default) isturned on.</p>
 </dd></dl>
 
 </div>
@@ -277,27 +254,27 @@ turned on.</p>
 </ul>
 
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="tasks.html"
-                        title="previous chapter">Tasks</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Tasks</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="../contrib/console.html"
-                        title="next chapter">Console Output Utilities</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Console Output Utilities</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../../_sources/api/core/utils.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -306,26 +283,26 @@ turned on.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="../contrib/console.html" title="Console Output Utilities"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Tasks"
-             >previous</a> |</li>
-        <li><a href="../../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

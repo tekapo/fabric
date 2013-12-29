@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Development &mdash; Fabric 1.8 documentation</title>
+    <title>Development &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="index.html" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="index.html" />
     <link rel="next" title="Frequently Asked Questions (FAQ)" href="faq.html" />
     <link rel="prev" title="インストール" href="installation.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="faq.html" title="Frequently Asked Questions (FAQ)"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="installation.html" title="インストール"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,45 +69,29 @@
           <div class="body">
             
   <div class="section" id="development">
-<h1>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
-<p>The Fabric development team is headed by <a class="reference external" href="http://bitprophet.org">Jeff Forcier</a>, aka <tt class="docutils literal"><span class="pre">bitprophet</span></tt>.  However, dozens of other
-developers pitch in by submitting patches and ideas via <a class="reference external" href="https://github.com/fabric/fabric">GitHub issues and pull
-requests</a>, <a class="reference internal" href="index.html#irc"><em>IRC</em></a> or the <a class="reference external" href="http://lists.nongnu.org/mailman/listinfo/fab-user">mailing
+<h1>Development<a class="headerlink" href="#development" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>The Fabric development team is headed by<a class="reference external" href="http://bitprophet.org">Jeff Forcier</a>, aka<tt class="docutils literal"><span class="pre">bitprophet</span></tt>.  However, dozens of otherdevelopers pitch in by submitting patches and ideas via<a class="reference external" href="https://github.com/fabric/fabric">GitHub issues and pull
+requests</a>,<a class="reference internal" href="index.html#irc"><em>IRC</em></a>or the<a class="reference external" href="http://lists.nongnu.org/mailman/listinfo/fab-user">mailing
 list</a>.</p>
 <div class="section" id="get-the-code">
-<h2>Get the code<a class="headerlink" href="#get-the-code" title="Permalink to this headline">¶</a></h2>
-<p>Please see the <a class="reference internal" href="installation.html#source-code-checkouts"><em>Source code checkouts</em></a> section of the <a class="reference internal" href="installation.html"><em>インストール</em></a>
-page for details on how to obtain Fabric&#8217;s source code.</p>
+<h2>Get the code<a class="headerlink" href="#get-the-code" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Please see the<a class="reference internal" href="installation.html#source-code-checkouts"><em>Source code checkouts</em></a>section of the<a class="reference internal" href="installation.html"><em>インストール</em></a>page for details on how to obtain Fabric&#8217;s source code.</p>
 </div>
 <div class="section" id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<h2>Contributing<a class="headerlink" href="#contributing" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <p>There are a number of ways to get involved with Fabric:</p>
 <ul class="simple">
-<li><strong>Use Fabric and send us feedback!</strong> This is both the easiest and arguably
-the most important way to improve the project &#8211; let us know how you
-currently use Fabric and how you want to use it. (Please do try to search the
-<a class="reference external" href="https://github.com/fabric/fabric/issues">ticket tracker</a> first, though,
-when submitting feature ideas.)</li>
-<li><strong>Report bugs.</strong> Pretty much a special case of the previous item: if you
-think you&#8217;ve found a bug in Fabric, check on the <a class="reference external" href="https://github.com/fabric/fabric/issues">ticket tracker</a> to see if anyone&#8217;s reported it
-yet, and if not &#8211; file a bug! If possible, try to make sure you can
-replicate it repeatedly, and let us know the circumstances (what version of
-Fabric you&#8217;re using, what platform you&#8217;re on, and what exactly you were doing
-when the bug cropped up.)</li>
-<li><strong>Submit patches or new features.</strong> Make a <a class="reference external" href="https://github.com">Github</a>
-account, <a class="reference external" href="http://help.github.com/fork-a-repo/">create a fork</a> of <a class="reference external" href="https://github.com/fabric/fabric">the main
-Fabric repository</a>, and <a class="reference external" href="http://help.github.com/send-pull-requests/">submit a pull
+<li><strong>Use Fabric and send us feedback!</strong>This is both the easiest and arguablythe most important way to improve the project &#8211; let us know how youcurrently use Fabric and how you want to use it. (Please do try to search the<a class="reference external" href="https://github.com/fabric/fabric/issues">ticket tracker</a>first, though,when submitting feature ideas.)</li>
+<li><strong>Report bugs.</strong>Pretty much a special case of the previous item: if youthink you&#8217;ve found a bug in Fabric, check on the<a class="reference external" href="https://github.com/fabric/fabric/issues">ticket tracker</a>to see if anyone&#8217;s reported ityet, and if not &#8211; file a bug! If possible, try to make sure you canreplicate it repeatedly, and let us know the circumstances (what version ofFabric you&#8217;re using, what platform you&#8217;re on, and what exactly you were doingwhen the bug cropped up.)</li>
+<li><strong>Submit patches or new features.</strong>Make a<a class="reference external" href="https://github.com">Github</a>account,<a class="reference external" href="http://help.github.com/fork-a-repo/">create a fork</a>of<a class="reference external" href="https://github.com/fabric/fabric">the main
+Fabric repository</a>, and<a class="reference external" href="http://help.github.com/send-pull-requests/">submit a pull
 request</a>.</li>
 </ul>
-<p>While we may not always reply promptly, we do try to make time eventually to
-inspect all contributions and either incorporate them or explain why we don&#8217;t
-feel the change is a good fit.</p>
+<p>While we may not always reply promptly, we do try to make time eventually toinspect all contributions and either incorporate them or explain why we don&#8217;tfeel the change is a good fit.</p>
 <div class="section" id="patch-submission-guidelines">
-<h3>Patch submission guidelines<a class="headerlink" href="#patch-submission-guidelines" title="Permalink to this headline">¶</a></h3>
+<h3>Patch submission guidelines<a class="headerlink" href="#patch-submission-guidelines" title="このヘッドラインへのパーマリンク">¶</a></h3>
 <ul>
-<li><p class="first"><strong>Create a new Git branch specific to your change(s).</strong> For example, if
-you&#8217;re adding a new feature to foo the bars, do something like the
-following:</p>
+<li><p class="first"><strong>Create a new Git branch specific to your change(s).</strong>For example, ifyou&#8217;re adding a new feature to foo the bars, do something like thefollowing:</p>
 <div class="highlight-python"><pre>$ git checkout master # or the latest release branch -- see below
 $ git pull
 $ git checkout -b foo-the-bars
@@ -114,203 +99,110 @@ $ git checkout -b foo-the-bars
 $ git push origin HEAD
 &lt;submit pull request based on your new 'foo-the-bars' branch&gt;</pre>
 </div>
-<p>This makes life much easier for maintainers if you have (or ever plan to
-have) additional changes in your own <tt class="docutils literal"><span class="pre">master</span></tt> branch.</p>
+<p>This makes life much easier for maintainers if you have (or ever plan tohave) additional changes in your own<tt class="docutils literal"><span class="pre">master</span></tt>branch.</p>
 <blockquote>
 <div><ul class="simple">
-<li>A corollary: please <strong>don&#8217;t put multiple fixes/features in the same
-branch/pull request</strong>! In other words, if you&#8217;re hacking on new feature X
-and find a bugfix that doesn&#8217;t <em>require</em> new feature X, <strong>make a new
-distinct branch and PR</strong> for the bugfix.</li>
+<li>A corollary: please<strong>don&#8217;t put multiple fixes/features in the same
+branch/pull request</strong>! In other words, if you&#8217;re hacking on new feature Xand find a bugfix that doesn&#8217;t<em>require</em>new feature X,<strong>make a new
+distinct branch and PR</strong>for the bugfix.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Base <strong>bugfixes</strong> off the <strong>latest release branch</strong> (e.g. <tt class="docutils literal"><span class="pre">1.4</span></tt>, <tt class="docutils literal"><span class="pre">1.5</span></tt> or
-whatever&#8217;s newest) and <strong>new features</strong> off of <strong>master</strong>. If you&#8217;re unsure
-which category your change falls in, just ask on IRC or the mailing list &#8211;
-it&#8217;s often a judgement call.</p>
+<li><p class="first">Base<strong>bugfixes</strong>off the<strong>latest release branch</strong>(e.g.<tt class="docutils literal"><span class="pre">1.4</span></tt>,<tt class="docutils literal"><span class="pre">1.5</span></tt>orwhatever&#8217;s newest) and<strong>new features</strong>off of<strong>master</strong>. If you&#8217;re unsurewhich category your change falls in, just ask on IRC or the mailing list &#8211;it&#8217;s often a judgement call.</p>
 </li>
-<li><p class="first"><strong>Make sure documentation is updated</strong> &#8211; at the very least, keep docstrings
-current, and if necessary, update the ReST documentation in <tt class="docutils literal"><span class="pre">docs/</span></tt>.  For
-example, new <tt class="docutils literal"><span class="pre">env.*</span></tt> settings should be added to <tt class="docutils literal"><span class="pre">docs/usage/env.rst</span></tt>.</p>
+<li><p class="first"><strong>Make sure documentation is updated</strong>&#8211; at the very least, keep docstringscurrent, and if necessary, update the ReST documentation in<tt class="docutils literal"><span class="pre">docs/</span></tt>.  Forexample, new<tt class="docutils literal"><span class="pre">env.*</span></tt>settings should be added to<tt class="docutils literal"><span class="pre">docs/usage/env.rst</span></tt>.</p>
 </li>
-<li><p class="first"><strong>Add a changelog entry</strong> at the top of <tt class="docutils literal"><span class="pre">docs/changelog.rst</span></tt> following
-existing entries&#8217; styles. Don&#8217;t forget to attribute yourself if you&#8217;d like
-credit!</p>
+<li><p class="first"><strong>Add a changelog entry</strong>at the top of<tt class="docutils literal"><span class="pre">docs/changelog.rst</span></tt>followingexisting entries&#8217; styles. Don&#8217;t forget to attribute yourself if you&#8217;d likecredit!</p>
 <blockquote>
 <div><ul>
-<li><p class="first">If your change is a feature or support ticket intended for backporting to
-older release lines, give it the <tt class="docutils literal"><span class="pre">backported</span></tt> keyword, e.g.:</p>
+<li><p class="first">If your change is a feature or support ticket intended for backporting toolder release lines, give it the<tt class="docutils literal"><span class="pre">backported</span></tt>keyword, e.g.:</p>
 <div class="highlight-python"><pre>* :feature:`123 backported` This is my description...</pre>
 </div>
 </li>
-<li><p class="first">If it&#8217;s a &#8220;major&#8221; bugfix that is getting put out in a feature release,
-give it the <tt class="docutils literal"><span class="pre">major</span></tt> keyword:</p>
+<li><p class="first">If it&#8217;s a &#8220;major&#8221; bugfix that is getting put out in a feature release,give it the<tt class="docutils literal"><span class="pre">major</span></tt>keyword:</p>
 <div class="highlight-python"><pre>* :bug:`123 major` Description here...</pre>
 </div>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>Try writing some tests</strong> if possible &#8211; again, following existing tests is
-often easiest, and a good way to tell whether the feature you&#8217;re modifying is
-easily testable.</p>
+<li><p class="first"><strong>Try writing some tests</strong>if possible &#8211; again, following existing tests isoften easiest, and a good way to tell whether the feature you&#8217;re modifying iseasily testable.</p>
 </li>
-<li><p class="first"><strong>Use</strong> <tt class="docutils literal"><span class="pre">hub</span> <span class="pre">pull-request</span></tt> when writing a patch for a <strong>pre-existing Github
-Issue</strong>. This isn&#8217;t an absolute requirement, but makes the maintainers&#8217; lives
-much easier! Specifically: <a class="reference external" href="https://github.com/defunkt/hub/#installation">install hub</a> and then run <a class="reference external" href="https://github.com/defunkt/hub/#git-pull-request">hub
-pull-request</a> to turn the
-issue into a pull request containing your code.</p>
+<li><p class="first"><strong>Use</strong><tt class="docutils literal"><span class="pre">hub</span> <span class="pre">pull-request</span></tt>when writing a patch for a<strong>pre-existing Github
+Issue</strong>. This isn&#8217;t an absolute requirement, but makes the maintainers&#8217; livesmuch easier! Specifically:<a class="reference external" href="https://github.com/defunkt/hub/#installation">install hub</a>and then run<a class="reference external" href="https://github.com/defunkt/hub/#git-pull-request">hub
+pull-request</a>to turn theissue into a pull request containing your code.</p>
 </li>
 </ul>
 </div>
 <div class="section" id="coding-style">
-<h3>Coding style<a class="headerlink" href="#coding-style" title="Permalink to this headline">¶</a></h3>
-<p>Fabric tries hard to honor <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP-8</a>, especially (but not limited to!) the
-following:</p>
+<h3>Coding style<a class="headerlink" href="#coding-style" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Fabric tries hard to honor<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP-8</a>, especially (but not limited to!) thefollowing:</p>
 <ul class="simple">
-<li>Keep all lines under 80 characters. This goes for the ReST documentation as
-well as code itself.<ul>
-<li>Exceptions are made for situations where breaking a long string (such as a
-string being <tt class="docutils literal"><span class="pre">print</span></tt>-ed from source code, or an especially long URL link
-in documentation) would be kind of a pain.</li>
+<li>Keep all lines under 80 characters. This goes for the ReST documentation aswell as code itself.<ul>
+<li>Exceptions are made for situations where breaking a long string (such as astring being<tt class="docutils literal"><span class="pre">print</span></tt>-ed from source code, or an especially long URL linkin documentation) would be kind of a pain.</li>
 </ul>
 </li>
-<li>Typical Python 4-space (soft-tab) indents. No tabs! No 8 space indents! (No
-2- or 3-space indents, for that matter!)</li>
-<li><tt class="docutils literal"><span class="pre">CamelCase</span></tt> class names, but <tt class="docutils literal"><span class="pre">lowercase_underscore_separated</span></tt> everything
-else.</li>
+<li>Typical Python 4-space (soft-tab) indents. No tabs! No 8 space indents! (No2- or 3-space indents, for that matter!)</li>
+<li><tt class="docutils literal"><span class="pre">CamelCase</span></tt>class names, but<tt class="docutils literal"><span class="pre">lowercase_underscore_separated</span></tt>everythingelse.</li>
 </ul>
 </div>
 <div class="section" id="communication">
-<h3>Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h3>
-<p>If a ticket-tracker ticket exists for a given issue, <strong>please</strong> keep all
-communication in that ticket&#8217;s comments &#8211; for example, when submitting patches
-via Github, it&#8217;s easier for us if you leave a note in the ticket <strong>instead of</strong>
-sending a Github pull request.</p>
-<p>The core devs receive emails for just about any ticket-tracker activity, so
-additional notices via Github or other means only serve to slow things down.</p>
+<h3>Communication<a class="headerlink" href="#communication" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>If a ticket-tracker ticket exists for a given issue,<strong>please</strong>keep allcommunication in that ticket&#8217;s comments &#8211; for example, when submitting patchesvia Github, it&#8217;s easier for us if you leave a note in the ticket<strong>instead of</strong>sending a Github pull request.</p>
+<p>The core devs receive emails for just about any ticket-tracker activity, soadditional notices via Github or other means only serve to slow things down.</p>
 </div>
 </div>
 <div class="section" id="branching-repository-layout">
-<h2>Branching/Repository Layout<a class="headerlink" href="#branching-repository-layout" title="Permalink to this headline">¶</a></h2>
-<p>While Fabric&#8217;s development methodology isn&#8217;t set in stone yet, the following
-items detail how we currently organize the Git repository and expect to perform
-merges and so forth. This will be chiefly of interest to those who wish to
-follow a specific Git branch instead of released versions, or to any
-contributors.</p>
+<h2>Branching/Repository Layout<a class="headerlink" href="#branching-repository-layout" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>While Fabric&#8217;s development methodology isn&#8217;t set in stone yet, the followingitems detail how we currently organize the Git repository and expect to performmerges and so forth. This will be chiefly of interest to those who wish tofollow a specific Git branch instead of released versions, or to anycontributors.</p>
 <ul class="simple">
-<li>We use a combined &#8216;release and feature branches&#8217; methodology, where every
-minor release (e.g. 0.9, 1.0, 1.1, 1.2 etc; see <a class="reference internal" href="#releases"><em>Releases</em></a> below for
-details on versioning) gets a release branch for bugfixes, and big feature
-development is performed in a central <tt class="docutils literal"><span class="pre">master</span></tt> branch and/or in
-feature-specific feature branches (e.g. a branch for reworking the internals
-to be threadsafe, or one for overhauling task dependencies, etc.)</li>
-<li>Releases each get their own release branch, e.g. <tt class="docutils literal"><span class="pre">0.9</span></tt>, <tt class="docutils literal"><span class="pre">1.0</span></tt>, <tt class="docutils literal"><span class="pre">1.1</span></tt>
-etc, and from these the actual releases are tagged, e.g. <tt class="docutils literal"><span class="pre">0.9.3</span></tt> or
-<tt class="docutils literal"><span class="pre">1.0.0</span></tt>.</li>
-<li>New feature work is typically done in feature branches, whose naming
-convention is <tt class="docutils literal"><span class="pre">&lt;ticket</span> <span class="pre">number&gt;-&lt;short-description&gt;</span></tt>. For example, ticket
-#61, which concerned adding <tt class="docutils literal"><span class="pre">cd</span></tt> support to <tt class="docutils literal"><span class="pre">get</span></tt> and <tt class="docutils literal"><span class="pre">put</span></tt>, was
-developed in a branch named <tt class="docutils literal"><span class="pre">61-add-cd-to-get-put</span></tt>.<ul>
-<li>These branches are not intended for public use, and may be cleaned out of
-the repositories periodically. Ideally, no one feature will be in
-development long enough for its branch to become used in production!</li>
+<li>We use a combined &#8216;release and feature branches&#8217; methodology, where everyminor release (e.g. 0.9, 1.0, 1.1, 1.2 etc; see<a class="reference internal" href="#releases"><em>Releases</em></a>below fordetails on versioning) gets a release branch for bugfixes, and big featuredevelopment is performed in a central<tt class="docutils literal"><span class="pre">master</span></tt>branch and/or infeature-specific feature branches (e.g. a branch for reworking the internalsto be threadsafe, or one for overhauling task dependencies, etc.)</li>
+<li>Releases each get their own release branch, e.g.<tt class="docutils literal"><span class="pre">0.9</span></tt>,<tt class="docutils literal"><span class="pre">1.0</span></tt>,<tt class="docutils literal"><span class="pre">1.1</span></tt>etc, and from these the actual releases are tagged, e.g.<tt class="docutils literal"><span class="pre">0.9.3</span></tt>or<tt class="docutils literal"><span class="pre">1.0.0</span></tt>.</li>
+<li>New feature work is typically done in feature branches, whose namingconvention is<tt class="docutils literal"><span class="pre">&lt;ticket</span> <span class="pre">number&gt;-&lt;short-description&gt;</span></tt>. For example, ticket#61, which concerned adding<tt class="docutils literal"><span class="pre">cd</span></tt>support to<tt class="docutils literal"><span class="pre">get</span></tt>and<tt class="docutils literal"><span class="pre">put</span></tt>, wasdeveloped in a branch named<tt class="docutils literal"><span class="pre">61-add-cd-to-get-put</span></tt>.<ul>
+<li>These branches are not intended for public use, and may be cleaned out ofthe repositories periodically. Ideally, no one feature will be indevelopment long enough for its branch to become used in production!</li>
 </ul>
 </li>
-<li>Completed feature work is merged into the <tt class="docutils literal"><span class="pre">master</span></tt> branch, and once enough
-new features are done, a new release branch is created and optionally used to
-create prerelease versions for testing &#8211; or simply released as-is.</li>
-<li>While we try our best not to commit broken code or change APIs without
-warning, as with many other open-source projects we can only have a guarantee
-of stability in the release branches. Only follow <tt class="docutils literal"><span class="pre">master</span></tt> (or, even worse,
-feature branches!) if you&#8217;re willing to deal with a little pain.</li>
-<li>Conversely, because we try to keep release branches relatively stable, you
-may find it easier to use Fabric from a source checkout of a release branch
-instead of manually upgrading to new released versions. This can provide a
-decent middle ground between stability and the ability to get bugfixes or
-backported features easily.</li>
-<li>The core developers will take care of performing merging/branching on the
-official repositories. Since Git is Git, contributors may of course do
-whatever they wish in their own clones/forks.</li>
-<li>Bugfixes are to be performed on release branches and then merged into
-<tt class="docutils literal"><span class="pre">master</span></tt> so that <tt class="docutils literal"><span class="pre">master</span></tt> is always up-to-date (or nearly so; while it&#8217;s
-not mandatory to merge after every bugfix, doing so at least daily is a good
-idea.)</li>
-<li>Feature branches should periodically merge in changes from
-<tt class="docutils literal"><span class="pre">master</span></tt> so that when it comes time for them to merge back into <tt class="docutils literal"><span class="pre">master</span></tt>
-things aren&#8217;t quite as painful.</li>
+<li>Completed feature work is merged into the<tt class="docutils literal"><span class="pre">master</span></tt>branch, and once enoughnew features are done, a new release branch is created and optionally used tocreate prerelease versions for testing &#8211; or simply released as-is.</li>
+<li>While we try our best not to commit broken code or change APIs withoutwarning, as with many other open-source projects we can only have a guaranteeof stability in the release branches. Only follow<tt class="docutils literal"><span class="pre">master</span></tt>(or, even worse,feature branches!) if you&#8217;re willing to deal with a little pain.</li>
+<li>Conversely, because we try to keep release branches relatively stable, youmay find it easier to use Fabric from a source checkout of a release branchinstead of manually upgrading to new released versions. This can provide adecent middle ground between stability and the ability to get bugfixes orbackported features easily.</li>
+<li>The core developers will take care of performing merging/branching on theofficial repositories. Since Git is Git, contributors may of course dowhatever they wish in their own clones/forks.</li>
+<li>Bugfixes are to be performed on release branches and then merged into<tt class="docutils literal"><span class="pre">master</span></tt>so that<tt class="docutils literal"><span class="pre">master</span></tt>is always up-to-date (or nearly so; while it&#8217;snot mandatory to merge after every bugfix, doing so at least daily is a goodidea.)</li>
+<li>Feature branches should periodically merge in changes from<tt class="docutils literal"><span class="pre">master</span></tt>so that when it comes time for them to merge back into<tt class="docutils literal"><span class="pre">master</span></tt>things aren&#8217;t quite as painful.</li>
 </ul>
 </div>
 <div class="section" id="releases">
-<span id="id2"></span><h2>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
-<p>Fabric tries to follow open-source standards and conventions in its release
-tagging, including typical version numbers such as 2.0, 1.2.5, or
-1.2b1. Each release will be marked as a tag in the Git repositories, and
-are broken down as follows:</p>
+<span id="id2"></span><h2>Releases<a class="headerlink" href="#releases" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Fabric tries to follow open-source standards and conventions in its releasetagging, including typical version numbers such as 2.0, 1.2.5, or1.2b1. Each release will be marked as a tag in the Git repositories, andare broken down as follows:</p>
 <div class="section" id="major">
-<h3>Major<a class="headerlink" href="#major" title="Permalink to this headline">¶</a></h3>
-<p>Major releases update the first number, e.g. going from 0.9 to 1.0, and
-indicate that the software has reached some very large milestone.</p>
-<p>For example, the 1.0 release signified a commitment to a medium to long term
-API and some significant backwards incompatible (compared to the 0.9 series)
-features. Version 2.0 might indicate a rewrite using a new underlying network
-technology or an overhaul to be more object-oriented.</p>
-<p>Major releases will often be backwards-incompatible with the previous line of
-development, though this is not a requirement, just a usual happenstance.
-Users should expect to have to make at least some changes to their fabfiles
-when switching between major versions.</p>
+<h3>Major<a class="headerlink" href="#major" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Major releases update the first number, e.g. going from 0.9 to 1.0, andindicate that the software has reached some very large milestone.</p>
+<p>For example, the 1.0 release signified a commitment to a medium to long termAPI and some significant backwards incompatible (compared to the 0.9 series)features. Version 2.0 might indicate a rewrite using a new underlying networktechnology or an overhaul to be more object-oriented.</p>
+<p>Major releases will often be backwards-incompatible with the previous line ofdevelopment, though this is not a requirement, just a usual happenstance.Users should expect to have to make at least some changes to their fabfileswhen switching between major versions.</p>
 </div>
 <div class="section" id="minor">
-<h3>Minor<a class="headerlink" href="#minor" title="Permalink to this headline">¶</a></h3>
-<p>Minor releases, such as moving from 1.0 to 1.1, typically mean that one or more
-new, large features has been added. They are also sometimes used to mark off
-the fact that a lot of bug fixes or small feature modifications have occurred
-since the previous minor release. (And, naturally, some of them will involve
-both at the same time.)</p>
-<p>These releases are guaranteed to be backwards-compatible with all other
-releases containing the same major version number, so a fabfile that works
-with 1.0 should also work fine with 1.1 or even 1.9.</p>
+<h3>Minor<a class="headerlink" href="#minor" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Minor releases, such as moving from 1.0 to 1.1, typically mean that one or morenew, large features has been added. They are also sometimes used to mark offthe fact that a lot of bug fixes or small feature modifications have occurredsince the previous minor release. (And, naturally, some of them will involveboth at the same time.)</p>
+<p>These releases are guaranteed to be backwards-compatible with all otherreleases containing the same major version number, so a fabfile that workswith 1.0 should also work fine with 1.1 or even 1.9.</p>
 </div>
 <div class="section" id="bugfix-tertiary">
-<h3>Bugfix/tertiary<a class="headerlink" href="#bugfix-tertiary" title="Permalink to this headline">¶</a></h3>
-<p>The third and final part of version numbers, such as the &#8216;3&#8217; in 1.0.3,
-generally indicate a release containing one or more bugfixes, although minor
-feature modifications may (rarely) occur.</p>
-<p>This third number is sometimes omitted for the first major or minor release in
-a series, e.g. 1.2 or 2.0, and in these cases it can be considered an implicit
-zero (e.g. 2.0.0).</p>
+<h3>Bugfix/tertiary<a class="headerlink" href="#bugfix-tertiary" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>The third and final part of version numbers, such as the &#8216;3&#8217; in 1.0.3,generally indicate a release containing one or more bugfixes, although minorfeature modifications may (rarely) occur.</p>
+<p>This third number is sometimes omitted for the first major or minor release ina series, e.g. 1.2 or 2.0, and in these cases it can be considered an implicitzero (e.g. 2.0.0).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The 0.9 series of development included more significant feature work than
-is typically found in tertiary releases; from 1.0 onwards a more
-traditional approach, as per the above, is used.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">The 0.9 series of development included more significant feature work thanis typically found in tertiary releases; from 1.0 onwards a moretraditional approach, as per the above, is used.</p>
 </div>
 </div>
 </div>
 <div class="section" id="support-of-older-releases">
-<h2>Support of older releases<a class="headerlink" href="#support-of-older-releases" title="Permalink to this headline">¶</a></h2>
-<p>Major and minor releases do not mark the end of the previous line or lines of
-development:</p>
+<h2>Support of older releases<a class="headerlink" href="#support-of-older-releases" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Major and minor releases do not mark the end of the previous line or lines ofdevelopment:</p>
 <ul class="simple">
-<li>The two most recent minor release branches will continue to receive critical
-bugfixes. For example, if 1.1 were the latest minor release, it and 1.0 would
-get bugfixes, but not 0.9 or earlier; and once 1.2 came out, this window
-would then only extend back to 1.1.</li>
-<li>Depending on the nature of bugs found and the difficulty in backporting them,
-older release lines may also continue to get bugfixes &#8211; but there&#8217;s no
-longer a guarantee of any kind. Thus, if a bug were found in 1.1 that
-affected 0.9 and could be easily applied, a new 0.9.x version <em>might</em> be
-released.</li>
-<li>This policy may change in the future to accommodate more branches, depending
-on development speed.</li>
+<li>The two most recent minor release branches will continue to receive criticalbugfixes. For example, if 1.1 were the latest minor release, it and 1.0 wouldget bugfixes, but not 0.9 or earlier; and once 1.2 came out, this windowwould then only extend back to 1.1.</li>
+<li>Depending on the nature of bugs found and the difficulty in backporting them,older release lines may also continue to get bugfixes &#8211; but there&#8217;s nolonger a guarantee of any kind. Thus, if a bug were found in 1.1 thataffected 0.9 and could be easily applied, a new 0.9.x version<em>might</em>bereleased.</li>
+<li>This policy may change in the future to accommodate more branches, dependingon development speed.</li>
 </ul>
-<p>We hope that this policy will allow us to have a rapid minor release cycle (and
-thus keep new features coming out frequently) without causing users to feel too
-much pressure to upgrade right away. At the same time, the backwards
-compatibility guarantee means that users should still feel comfortable
-upgrading to the next minor release in order to stay within this sliding
-support window.</p>
+<p>We hope that this policy will allow us to have a rapid minor release cycle (andthus keep new features coming out frequently) without causing users to feel toomuch pressure to upgrade right away. At the same time, the backwardscompatibility guarantee means that users should still feel comfortableupgrading to the next minor release in order to stay within this slidingsupport window.</p>
 </div>
 </div>
 
@@ -428,7 +320,7 @@ support window.</p>
 </ul>
 
 
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Development</a><ul>
 <li><a class="reference internal" href="#get-the-code">Get the code</a></li>
@@ -450,27 +342,27 @@ support window.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="installation.html"
-                        title="previous chapter">インストール</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">インストール</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="faq.html"
-                        title="next chapter">Frequently Asked Questions (FAQ)</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Frequently Asked Questions (FAQ)</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/development.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -479,26 +371,26 @@ support window.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="faq.html" title="Frequently Asked Questions (FAQ)"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="installation.html" title="インストール"
-             >previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

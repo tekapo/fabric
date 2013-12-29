@@ -240,19 +240,28 @@ Win32 PyCryptoパッケージの取得をおすすめします。
     In this scenario, you'll probably need to compile ``winrandom`` yourself
     via e.g. MS Visual Studio.  See :issue:`194` for info.
 
-    Pythonが64ビットのWindowsユーザーによってはPyCryptoの依存 ``winrandom`` 
-    が正しくインストールできず、ImportErrorsを引き起こすことがあります。
+    64ビットのPythonを使用しているWindowsユーザーによっては、PyCryptoの依存 ``winrandom`` 
+    が正しくインストールできず、ImportErrorsを引き起こすことがあります。この場合、
+    MS Visual Studioなどで ``winrandom`` をご自分でコンパイルする必要があるかもしれません。
+    詳細は :issue:`194` をご覧ください。
 
 ``multiprocessing``
--------------------
 
-An optional dependency, the ``multiprocessing`` library is included in Python's
-standard library in version 2.6 and higher. If you're using Python 2.5 and want
-to make use of Fabric's :doc:`parallel execution features </usage/parallel>`
-you'll need to install it manually; the recommended route, as usual, is via
-``pip``.  Please see the `multiprocessing PyPI page
-<http://pypi.python.org/pypi/multiprocessing/>`_ for details.
+``マルチプロセッシング``
+-------------------------
 
+..
+    An optional dependency, the ``multiprocessing`` library is included in Python's
+    standard library in version 2.6 and higher. If you're using Python 2.5 and want
+    to make use of Fabric's :doc:`parallel execution features </usage/parallel>`
+    you'll need to install it manually; the recommended route, as usual, is via
+    ``pip``.  Please see the `multiprocessing PyPI page
+    <http://pypi.python.org/pypi/multiprocessing/>`_ for details.
+
+オプションの依存、 ``multiprocessing`` ライブラリはPythonの2.6以上で標準ライブラリに含まれています。
+もしPythonの2.5を利用していてFabricの :doc:`並列実行機能 </usage/parallel>` を利用したい場合は、
+手動でインストールする必要があります。おすすめの方法は、いつもと同じく ``pip`` 経由です。
+詳細はPyPIのページ <http://pypi.python.org/pypi/multiprocessing/>`_ をご覧ください。
 
 .. warning::
     Early versions of Python 2.6 (in our testing, 2.6.0 through 2.6.2) ship

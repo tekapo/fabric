@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SSH behavior &mdash; Fabric 1.8 documentation</title>
+    <title>SSH behavior &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../index.html" />
     <link rel="next" title="Defining tasks" href="tasks.html" />
     <link rel="prev" title="Parallel execution" href="parallel.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Defining tasks"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="parallel.html" title="Parallel execution"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,59 +69,26 @@
           <div class="body">
             
   <div class="section" id="ssh-behavior">
-<h1>SSH behavior<a class="headerlink" href="#ssh-behavior" title="Permalink to this headline">¶</a></h1>
-<p>Fabric currently makes use of a pure-Python SSH re-implementation for managing
-connections, meaning that there are occasionally spots where it is limited by
-that library&#8217;s capabilities. Below are areas of note where Fabric will exhibit
-behavior that isn&#8217;t consistent with, or as flexible as, the behavior of the
-<tt class="docutils literal"><span class="pre">ssh</span></tt> command-line program.</p>
+<h1>SSH behavior<a class="headerlink" href="#ssh-behavior" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Fabric currently makes use of a pure-Python SSH re-implementation for managingconnections, meaning that there are occasionally spots where it is limited bythat library&#8217;s capabilities. Below are areas of note where Fabric will exhibitbehavior that isn&#8217;t consistent with, or as flexible as, the behavior of the<tt class="docutils literal"><span class="pre">ssh</span></tt>command-line program.</p>
 <div class="section" id="unknown-hosts">
-<h2>Unknown hosts<a class="headerlink" href="#unknown-hosts" title="Permalink to this headline">¶</a></h2>
-<p>SSH&#8217;s host key tracking mechanism keeps tabs on all the hosts you attempt to
-connect to, and maintains a <tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt> file with mappings between
-identifiers (IP address, sometimes with a hostname as well) and SSH keys. (For
-details on how this works, please see the <a class="reference external" href="http://openssh.org/manual.html">OpenSSH documentation</a>.)</p>
-<p>The <tt class="docutils literal"><span class="pre">paramiko</span></tt> library is capable of loading up your <tt class="docutils literal"><span class="pre">known_hosts</span></tt> file,
-and will then compare any host it connects to, with that mapping. Settings are
-available to determine what happens when an unknown host (a host whose username
-or IP is not found in <tt class="docutils literal"><span class="pre">known_hosts</span></tt>) is seen:</p>
+<h2>Unknown hosts<a class="headerlink" href="#unknown-hosts" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>SSH&#8217;s host key tracking mechanism keeps tabs on all the hosts you attempt toconnect to, and maintains a<tt class="docutils literal"><span class="pre">~/.ssh/known_hosts</span></tt>file with mappings betweenidentifiers (IP address, sometimes with a hostname as well) and SSH keys. (Fordetails on how this works, please see the<a class="reference external" href="http://openssh.org/manual.html">OpenSSH documentation</a>.)</p>
+<p>The<tt class="docutils literal"><span class="pre">paramiko</span></tt>library is capable of loading up your<tt class="docutils literal"><span class="pre">known_hosts</span></tt>file,and will then compare any host it connects to, with that mapping. Settings areavailable to determine what happens when an unknown host (a host whose usernameor IP is not found in<tt class="docutils literal"><span class="pre">known_hosts</span></tt>) is seen:</p>
 <ul class="simple">
-<li><strong>Reject</strong>: the host key is rejected and the connection is not made. This
-results in a Python exception, which will terminate your Fabric session with a
-message that the host is unknown.</li>
-<li><strong>Add</strong>: the new host key is added to the in-memory list of known hosts, the
-connection is made, and things continue normally. Note that this does <strong>not</strong>
-modify your on-disk <tt class="docutils literal"><span class="pre">known_hosts</span></tt> file!</li>
-<li><strong>Ask</strong>: not yet implemented at the Fabric level, this is a <tt class="docutils literal"><span class="pre">paramiko</span></tt>
-library option which would result in the user being prompted about the
-unknown key and whether to accept it.</li>
+<li><strong>Reject</strong>: the host key is rejected and the connection is not made. Thisresults in a Python exception, which will terminate your Fabric session with amessage that the host is unknown.</li>
+<li><strong>Add</strong>: the new host key is added to the in-memory list of known hosts, theconnection is made, and things continue normally. Note that this does<strong>not</strong>modify your on-disk<tt class="docutils literal"><span class="pre">known_hosts</span></tt>file!</li>
+<li><strong>Ask</strong>: not yet implemented at the Fabric level, this is a<tt class="docutils literal"><span class="pre">paramiko</span></tt>library option which would result in the user being prompted about theunknown key and whether to accept it.</li>
 </ul>
-<p>Whether to reject or add hosts, as above, is controlled in Fabric via the
-<a class="reference internal" href="env.html#reject-unknown-hosts"><em>env.reject_unknown_hosts</em></a> option, which is False
-by default for convenience&#8217;s sake. We feel this is a valid tradeoff between
-convenience and security; anyone who feels otherwise can easily modify their
-fabfiles at module level to set <tt class="docutils literal"><span class="pre">env.reject_unknown_hosts</span> <span class="pre">=</span> <span class="pre">True</span></tt>.</p>
+<p>Whether to reject or add hosts, as above, is controlled in Fabric via the<a class="reference internal" href="env.html#reject-unknown-hosts"><em>env.reject_unknown_hosts</em></a>option, which is Falseby default for convenience&#8217;s sake. We feel this is a valid tradeoff betweenconvenience and security; anyone who feels otherwise can easily modify theirfabfiles at module level to set<tt class="docutils literal"><span class="pre">env.reject_unknown_hosts</span> <span class="pre">=</span> <span class="pre">True</span></tt>.</p>
 </div>
 <div class="section" id="known-hosts-with-changed-keys">
-<h2>Known hosts with changed keys<a class="headerlink" href="#known-hosts-with-changed-keys" title="Permalink to this headline">¶</a></h2>
-<p>The point of SSH&#8217;s key/fingerprint tracking is so that man-in-the-middle
-attacks can be detected: if an attacker redirects your SSH traffic to a
-computer under his control, and pretends to be your original destination
-server, the host keys will not match. Thus, the default behavior of SSH (and
-its Python implementation) is to immediately abort the connection when a host
-previously recorded in <tt class="docutils literal"><span class="pre">known_hosts</span></tt> suddenly starts sending us a different
-host key.</p>
-<p>In some edge cases such as some EC2 deployments, you may want to ignore this
-potential problem. Our SSH layer, at the time of writing, doesn&#8217;t give us
-control over this exact behavior, but we can sidestep it by simply skipping the
-loading of <tt class="docutils literal"><span class="pre">known_hosts</span></tt> &#8211; if the host list being compared to is empty, then
-there&#8217;s no problem. Set <a class="reference internal" href="env.html#disable-known-hosts"><em>env.disable_known_hosts</em></a> to
-True when you want this behavior; it is False by default, in order to preserve
-default SSH behavior.</p>
+<h2>Known hosts with changed keys<a class="headerlink" href="#known-hosts-with-changed-keys" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>The point of SSH&#8217;s key/fingerprint tracking is so that man-in-the-middleattacks can be detected: if an attacker redirects your SSH traffic to acomputer under his control, and pretends to be your original destinationserver, the host keys will not match. Thus, the default behavior of SSH (andits Python implementation) is to immediately abort the connection when a hostpreviously recorded in<tt class="docutils literal"><span class="pre">known_hosts</span></tt>suddenly starts sending us a differenthost key.</p>
+<p>In some edge cases such as some EC2 deployments, you may want to ignore thispotential problem. Our SSH layer, at the time of writing, doesn&#8217;t give uscontrol over this exact behavior, but we can sidestep it by simply skipping theloading of<tt class="docutils literal"><span class="pre">known_hosts</span></tt>&#8211; if the host list being compared to is empty, thenthere&#8217;s no problem. Set<a class="reference internal" href="env.html#disable-known-hosts"><em>env.disable_known_hosts</em></a>toTrue when you want this behavior; it is False by default, in order to preservedefault SSH behavior.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Enabling <a class="reference internal" href="env.html#disable-known-hosts"><em>env.disable_known_hosts</em></a> will leave
-you wide open to man-in-the-middle attacks! Please use with caution.</p>
+<p class="first admonition-title">警告</p>
+<p class="last">Enabling<a class="reference internal" href="env.html#disable-known-hosts"><em>env.disable_known_hosts</em></a>will leaveyou wide open to man-in-the-middle attacks! Please use with caution.</p>
 </div>
 </div>
 </div>
@@ -239,7 +207,7 @@ you wide open to man-in-the-middle attacks! Please use with caution.</p>
 </ul>
 
 
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">SSH behavior</a><ul>
 <li><a class="reference internal" href="#unknown-hosts">Unknown hosts</a></li>
@@ -248,27 +216,27 @@ you wide open to man-in-the-middle attacks! Please use with caution.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="parallel.html"
-                        title="previous chapter">Parallel execution</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Parallel execution</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="tasks.html"
-                        title="next chapter">Defining tasks</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">Defining tasks</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/usage/ssh.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -277,26 +245,26 @@ you wide open to man-in-the-middle attacks! Please use with caution.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="tasks.html" title="Defining tasks"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="parallel.html" title="Parallel execution"
-             >previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

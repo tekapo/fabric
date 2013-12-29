@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Development roadmap &mdash; Fabric 1.8 documentation</title>
+    <title>Development roadmap &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="index.html" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="index.html" />
     <link rel="next" title="The environment dictionary, env" href="usage/env.html" />
     <link rel="prev" title="Troubleshooting" href="troubleshooting.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="usage/env.html" title="The environment dictionary, env"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="troubleshooting.html" title="Troubleshooting"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,65 +69,46 @@
           <div class="body">
             
   <div class="section" id="development-roadmap">
-<h1>Development roadmap<a class="headerlink" href="#development-roadmap" title="Permalink to this headline">¶</a></h1>
-<p>This document outlines Fabric&#8217;s intended development path. Please make sure
-you&#8217;re reading <a class="reference external" href="http://docs.fabfile.org/en/latest/roadmap.html">the latest version</a> of this document!</p>
+<h1>Development roadmap<a class="headerlink" href="#development-roadmap" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>This document outlines Fabric&#8217;s intended development path. Please make sureyou&#8217;re reading<a class="reference external" href="http://docs.fabfile.org/en/latest/roadmap.html">the latest version</a>of this document!</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This information is subject to change without warning, and should not be
-used as a basis for any life- or career-altering decisions!</p>
+<p class="first admonition-title">警告</p>
+<p class="last">This information is subject to change without warning, and should not beused as a basis for any life- or career-altering decisions!</p>
 </div>
 <div class="section" id="fabric-1-x">
-<h2>Fabric 1.x<a class="headerlink" href="#fabric-1-x" title="Permalink to this headline">¶</a></h2>
-<p>Fabric 1.x, while not end-of-life&#8217;d, has reached a tipping point regarding
-internal tech debt &amp; ability to make significant improvements without harming
-backwards compatibility.</p>
-<p>As such, future 1.x releases (<strong>1.6</strong> onwards) will emphasize small-to-medium
-features (new features not requiring major overhauls of the internals) and
-bugfixes.</p>
+<h2>Fabric 1.x<a class="headerlink" href="#fabric-1-x" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Fabric 1.x, while not end-of-life&#8217;d, has reached a tipping point regardinginternal tech debt &amp; ability to make significant improvements without harmingbackwards compatibility.</p>
+<p>As such, future 1.x releases (<strong>1.6</strong>onwards) will emphasize small-to-mediumfeatures (new features not requiring major overhauls of the internals) andbugfixes.</p>
 </div>
 <div class="section" id="invoke-fabric-2-x-and-patchwork">
-<h2>Invoke, Fabric 2.x and Patchwork<a class="headerlink" href="#invoke-fabric-2-x-and-patchwork" title="Permalink to this headline">¶</a></h2>
-<p>While 1.x moves on as above, we are working on a reimagined 2.x version of the
-tool, and plan to:</p>
+<h2>Invoke, Fabric 2.x and Patchwork<a class="headerlink" href="#invoke-fabric-2-x-and-patchwork" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>While 1.x moves on as above, we are working on a reimagined 2.x version of thetool, and plan to:</p>
 <ul>
-<li><p class="first">Finish and release <a class="reference external" href="https://github.com/pyinvoke/invoke">the Invoke tool/library</a> (see also <a class="reference external" href="https://github.com/fabric/fabric/issues/565">#565</a>), which is a
-revamped and standalone version of Fabric&#8217;s task running components.</p>
+<li><p class="first">Finish and release<a class="reference external" href="https://github.com/pyinvoke/invoke">the Invoke tool/library</a>(see also<a href="#id1"><span class="problematic" id="id2">:issue:`565`</span></a>), which is arevamped and standalone version of Fabric&#8217;s task running components.</p>
 <blockquote>
 <div><ul class="simple">
-<li>Initially it will be basic, matching Fabric&#8217;s current functionality, but
-with a cleaner base to build on.</li>
-<li>Said cleaner base then gives us a jumping-off point for new task-oriented
-features such as before/after hooks / call chains, task collections,
-improved namespacing and so forth.</li>
+<li>Initially it will be basic, matching Fabric&#8217;s current functionality, butwith a cleaner base to build on.</li>
+<li>Said cleaner base then gives us a jumping-off point for new task-orientedfeatures such as before/after hooks / call chains, task collections,improved namespacing and so forth.</li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first">Start putting together Fabric 2.0, a partly/mostly rewritten Fabric core:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Leverage Invoke for task running, which will leave Fabric itself much
-more library oriented.</li>
-<li>Implement object-oriented hosts/host lists and all the fun stuff that
-provides (e.g. no more hacky host string and unintuitive env var
-manipulation.)</li>
+<li>Leverage Invoke for task running, which will leave Fabric itself muchmore library oriented.</li>
+<li>Implement object-oriented hosts/host lists and all the fun stuff thatprovides (e.g. no more hacky host string and unintuitive env varmanipulation.)</li>
 <li>No (or optional &amp; non-default) shared state.</li>
-<li>Any other core overhauls difficult to do in a backwards compatible
-fashion.</li>
+<li>Any other core overhauls difficult to do in a backwards compatiblefashion.</li>
 <li><a class="reference external" href="https://github.com/fabric/fabric/issues?labels=2.x">Current issue list</a></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Spin off <tt class="docutils literal"><span class="pre">fabric.contrib.*</span></tt> into a standalone &#8220;super-Fabric&#8221; (as in, &#8220;above Fabric&#8221;) library, <a class="reference external" href="https://github.com/fabric/patchwork">Patchwork</a>.</p>
+<li><p class="first">Spin off<tt class="docutils literal"><span class="pre">fabric.contrib.*</span></tt>into a standalone &#8220;super-Fabric&#8221; (as in, &#8220;above Fabric&#8221;) library,<a class="reference external" href="https://github.com/fabric/patchwork">Patchwork</a>.</p>
 <blockquote>
 <div><ul class="simple">
-<li>This lets core &#8220;execute commands on hosts&#8221; functionality iterate
-separately from &#8220;commonly useful shortcuts using Fabric core&#8221;.</li>
-<li>Lots of preliminary work &amp; prior-art scanning has been done in
-<a class="reference external" href="https://github.com/fabric/fabric/issues/461">#461</a>.</li>
-<li>A public-but-alpha codebase for Patchwork exists as we think about the
-API, and is currently based on Fabric 1.x. It will likely be Fabric 2.x
-based by the time it is stable.</li>
+<li>This lets core &#8220;execute commands on hosts&#8221; functionality iterateseparately from &#8220;commonly useful shortcuts using Fabric core&#8221;.</li>
+<li>Lots of preliminary work &amp; prior-art scanning has been done in<a href="#id3"><span class="problematic" id="id4">:issue:`461`</span></a>.</li>
+<li>A public-but-alpha codebase for Patchwork exists as we think about theAPI, and is currently based on Fabric 1.x. It will likely be Fabric 2.xbased by the time it is stable.</li>
 </ul>
 </div></blockquote>
 </li>
@@ -248,7 +230,7 @@ based by the time it is stable.</li>
 </ul>
 
 
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Development roadmap</a><ul>
 <li><a class="reference internal" href="#fabric-1-x">Fabric 1.x</a></li>
@@ -257,27 +239,27 @@ based by the time it is stable.</li>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="troubleshooting.html"
-                        title="previous chapter">Troubleshooting</a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">Troubleshooting</a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="usage/env.html"
-                        title="next chapter">The environment dictionary, <tt class="docutils literal"><span class="pre">env</span></tt></a></p>
-  <h3>This Page</h3>
+                        title="次の章へ">The environment dictionary, <tt class="docutils literal"><span class="pre">env</span></tt></a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/roadmap.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -286,26 +268,26 @@ based by the time it is stable.</li>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="usage/env.html" title="The environment dictionary, env"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="troubleshooting.html" title="Troubleshooting"
-             >previous</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

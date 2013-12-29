@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Execution model &mdash; Fabric 1.8 documentation</title>
+    <title>Execution model &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="../index.html" />
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="../index.html" />
     <link rel="next" title="fab options and arguments" href="fab.html" />
     <link rel="prev" title="The environment dictionary, env" href="env.html" />
  
@@ -44,21 +45,21 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="fab.html" title="fab options and arguments"
-             accesskey="N">next</a> |</li>
+             accesskey="N">次へ</a> |</li>
         <li class="right" >
           <a href="env.html" title="The environment dictionary, env"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             accesskey="P">前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -68,29 +69,17 @@
           <div class="body">
             
   <div class="section" id="execution-model">
-<h1>Execution model<a class="headerlink" href="#execution-model" title="Permalink to this headline">¶</a></h1>
-<p>If you&#8217;ve read the <a class="reference internal" href="../tutorial.html"><em>概要とチュートリアル</em></a>, you should already be familiar with how
-Fabric operates in the base case (a single task on a single host.) However, in
-many situations you&#8217;ll find yourself wanting to execute multiple tasks and/or
-on multiple hosts. Perhaps you want to split a big task into smaller reusable
-parts, or crawl a collection of servers looking for an old user to remove. Such
-a scenario requires specific rules for when and how tasks are executed.</p>
-<p>This document explores Fabric&#8217;s execution model, including the main execution
-loop, how to define host lists, how connections are made, and so forth.</p>
+<h1>Execution model<a class="headerlink" href="#execution-model" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>If you&#8217;ve read the<a class="reference internal" href="../tutorial.html"><em>概要とチュートリアル</em></a>, you should already be familiar with howFabric operates in the base case (a single task on a single host.) However, inmany situations you&#8217;ll find yourself wanting to execute multiple tasks and/oron multiple hosts. Perhaps you want to split a big task into smaller reusableparts, or crawl a collection of servers looking for an old user to remove. Sucha scenario requires specific rules for when and how tasks are executed.</p>
+<p>This document explores Fabric&#8217;s execution model, including the main executionloop, how to define host lists, how connections are made, and so forth.</p>
 <div class="section" id="execution-strategy">
-<span id="id1"></span><h2>Execution strategy<a class="headerlink" href="#execution-strategy" title="Permalink to this headline">¶</a></h2>
-<p>Fabric defaults to a single, serial execution method, though there is an
-alternative parallel mode available as of Fabric 1.3 (see
-<a class="reference internal" href="parallel.html"><em>Parallel execution</em></a>). This default behavior is as follows:</p>
+<span id="id1"></span><h2>Execution strategy<a class="headerlink" href="#execution-strategy" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Fabric defaults to a single, serial execution method, though there is analternative parallel mode available as of Fabric 1.3 (see<a class="reference internal" href="parallel.html"><em>Parallel execution</em></a>). This default behavior is as follows:</p>
 <ul class="simple">
-<li>A list of tasks is created. Currently this list is simply the arguments given
-to <a class="reference internal" href="fab.html"><em>fab</em></a>, preserving the order given.</li>
-<li>For each task, a task-specific host list is generated from various
-sources (see <a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a> below for details.)</li>
-<li>The task list is walked through in order, and each task is run once per host
-in its host list.</li>
-<li>Tasks with no hosts in their host list are considered local-only, and will
-always run once and only once.</li>
+<li>A list of tasks is created. Currently this list is simply the arguments givento<a class="reference internal" href="fab.html"><em>fab</em></a>, preserving the order given.</li>
+<li>For each task, a task-specific host list is generated from varioussources (see<a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a>below for details.)</li>
+<li>The task list is walked through in order, and each task is run once per hostin its host list.</li>
+<li>Tasks with no hosts in their host list are considered local-only, and willalways run once and only once.</li>
 </ul>
 <p>Thus, given the following fabfile:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">env</span>
@@ -109,69 +98,40 @@ always run once and only once.</li>
 </div>
 <p>you will see that Fabric performs the following:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">taskA</span></tt> executed on <tt class="docutils literal"><span class="pre">host1</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">taskA</span></tt> executed on <tt class="docutils literal"><span class="pre">host2</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">taskB</span></tt> executed on <tt class="docutils literal"><span class="pre">host1</span></tt></li>
-<li><tt class="docutils literal"><span class="pre">taskB</span></tt> executed on <tt class="docutils literal"><span class="pre">host2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">taskA</span></tt>executed on<tt class="docutils literal"><span class="pre">host1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">taskA</span></tt>executed on<tt class="docutils literal"><span class="pre">host2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">taskB</span></tt>executed on<tt class="docutils literal"><span class="pre">host1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">taskB</span></tt>executed on<tt class="docutils literal"><span class="pre">host2</span></tt></li>
 </ul>
-<p>While this approach is simplistic, it allows for a straightforward composition
-of task functions, and (unlike tools which push the multi-host functionality
-down to the individual function calls) enables shell script-like logic where
-you may introspect the output or return code of a given command and decide what
-to do next.</p>
+<p>While this approach is simplistic, it allows for a straightforward compositionof task functions, and (unlike tools which push the multi-host functionalitydown to the individual function calls) enables shell script-like logic whereyou may introspect the output or return code of a given command and decide whatto do next.</p>
 </div>
 <div class="section" id="defining-tasks">
-<h2>Defining tasks<a class="headerlink" href="#defining-tasks" title="Permalink to this headline">¶</a></h2>
-<p>For details on what constitutes a Fabric task and how to organize them, please see <a class="reference internal" href="tasks.html"><em>Defining tasks</em></a>.</p>
+<h2>Defining tasks<a class="headerlink" href="#defining-tasks" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>For details on what constitutes a Fabric task and how to organize them, please see<a class="reference internal" href="tasks.html"><em>Defining tasks</em></a>.</p>
 </div>
 <div class="section" id="defining-host-lists">
-<h2>Defining host lists<a class="headerlink" href="#defining-host-lists" title="Permalink to this headline">¶</a></h2>
-<p>Unless you&#8217;re using Fabric as a simple build system (which is possible, but not
-the primary use-case) having tasks won&#8217;t do you any good without the ability to
-specify remote hosts on which to execute them. There are a number of ways to do
-so, with scopes varying from global to per-task, and it&#8217;s possible mix and
-match as needed.</p>
+<h2>Defining host lists<a class="headerlink" href="#defining-host-lists" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Unless you&#8217;re using Fabric as a simple build system (which is possible, but notthe primary use-case) having tasks won&#8217;t do you any good without the ability tospecify remote hosts on which to execute them. There are a number of ways to doso, with scopes varying from global to per-task, and it&#8217;s possible mix andmatch as needed.</p>
 <div class="section" id="hosts">
-<span id="host-strings"></span><h3>Hosts<a class="headerlink" href="#hosts" title="Permalink to this headline">¶</a></h3>
-<p>Hosts, in this context, refer to what are also called &#8220;host strings&#8221;: Python
-strings specifying a username, hostname and port combination, in the form of
-<tt class="docutils literal"><span class="pre">username&#64;hostname:port</span></tt>. User and/or port (and the associated <tt class="docutils literal"><span class="pre">&#64;</span></tt> or
-<tt class="docutils literal"><span class="pre">:</span></tt>) may be omitted, and will be filled by the executing user&#8217;s local
-username, and/or port 22, respectively. Thus, <tt class="docutils literal"><span class="pre">admin&#64;foo.com:222</span></tt>,
-<tt class="docutils literal"><span class="pre">deploy&#64;website</span></tt> and <tt class="docutils literal"><span class="pre">nameserver1</span></tt> could all be valid host strings.</p>
-<p>IPv6 address notation is also supported, for example <tt class="docutils literal"><span class="pre">::1</span></tt>, <tt class="docutils literal"><span class="pre">[::1]:1222</span></tt>,
-<tt class="docutils literal"><span class="pre">user&#64;2001:db8::1</span></tt> or <tt class="docutils literal"><span class="pre">user&#64;[2001:db8::1]:1222</span></tt>. Square brackets
-are necessary only to separate the address from the port number. If no
-port number is used, the brackets are optional. Also if host string is
-specified via command-line argument, it may be necessary to escape
-brackets in some shells.</p>
+<span id="host-strings"></span><h3>Hosts<a class="headerlink" href="#hosts" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Hosts, in this context, refer to what are also called &#8220;host strings&#8221;: Pythonstrings specifying a username, hostname and port combination, in the form of<tt class="docutils literal"><span class="pre">username&#64;hostname:port</span></tt>. User and/or port (and the associated<tt class="docutils literal"><span class="pre">&#64;</span></tt>or<tt class="docutils literal"><span class="pre">:</span></tt>) may be omitted, and will be filled by the executing user&#8217;s localusername, and/or port 22, respectively. Thus,<tt class="docutils literal"><span class="pre">admin&#64;foo.com:222</span></tt>,<tt class="docutils literal"><span class="pre">deploy&#64;website</span></tt>and<tt class="docutils literal"><span class="pre">nameserver1</span></tt>could all be valid host strings.</p>
+<p>IPv6 address notation is also supported, for example<tt class="docutils literal"><span class="pre">::1</span></tt>,<tt class="docutils literal"><span class="pre">[::1]:1222</span></tt>,<tt class="docutils literal"><span class="pre">user&#64;2001:db8::1</span></tt>or<tt class="docutils literal"><span class="pre">user&#64;[2001:db8::1]:1222</span></tt>. Square bracketsare necessary only to separate the address from the port number. If noport number is used, the brackets are optional. Also if host string isspecified via command-line argument, it may be necessary to escapebrackets in some shells.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The user/hostname split occurs at the last <tt class="docutils literal"><span class="pre">&#64;</span></tt> found, so e.g. email
-address usernames are valid and will be parsed correctly.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">The user/hostname split occurs at the last<tt class="docutils literal"><span class="pre">&#64;</span></tt>found, so e.g. emailaddress usernames are valid and will be parsed correctly.</p>
 </div>
-<p>During execution, Fabric normalizes the host strings given and then stores each
-part (username/hostname/port) in the environment dictionary, for both its use
-and for tasks to reference if the need arises. See <a class="reference internal" href="env.html"><em>The environment dictionary, env</em></a> for details.</p>
+<p>During execution, Fabric normalizes the host strings given and then stores eachpart (username/hostname/port) in the environment dictionary, for both its useand for tasks to reference if the need arises. See<a class="reference internal" href="env.html"><em>The environment dictionary, env</em></a>for details.</p>
 </div>
 <div class="section" id="roles">
-<span id="execution-roles"></span><h3>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h3>
-<p>Host strings map to single hosts, but sometimes it&#8217;s useful to arrange hosts in
-groups. Perhaps you have a number of Web servers behind a load balancer and
-want to update all of them, or want to run a task on &#8220;all client servers&#8221;.
-Roles provide a way of defining strings which correspond to lists of host
-strings, and can then be specified instead of writing out the entire list every
-time.</p>
-<p>This mapping is defined as a dictionary, <tt class="docutils literal"><span class="pre">env.roledefs</span></tt>, which must be
-modified by a fabfile in order to be used. A simple example:</p>
+<span id="execution-roles"></span><h3>Roles<a class="headerlink" href="#roles" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Host strings map to single hosts, but sometimes it&#8217;s useful to arrange hosts ingroups. Perhaps you have a number of Web servers behind a load balancer andwant to update all of them, or want to run a task on &#8220;all client servers&#8221;.Roles provide a way of defining strings which correspond to lists of hoststrings, and can then be specified instead of writing out the entire list everytime.</p>
+<p>This mapping is defined as a dictionary,<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>, which must bemodified by a fabfile in order to be used. A simple example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">roledefs</span><span class="p">[</span><span class="s">&#39;webservers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;www1&#39;</span><span class="p">,</span> <span class="s">&#39;www2&#39;</span><span class="p">,</span> <span class="s">&#39;www3&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Since <tt class="docutils literal"><span class="pre">env.roledefs</span></tt> is naturally empty by default, you may also opt to
-re-assign to it without fear of losing any information (provided you aren&#8217;t
-loading other fabfiles which also modify it, of course):</p>
+<p>Since<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>is naturally empty by default, you may also opt tore-assign to it without fear of losing any information (provided you aren&#8217;tloading other fabfiles which also modify it, of course):</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span>
@@ -180,31 +140,19 @@ loading other fabfiles which also modify it, of course):</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In addition to list/iterable object types, the values in <tt class="docutils literal"><span class="pre">env.roledefs</span></tt> may
-be callables, and will thus be called when looked up when tasks are run instead
-of at module load time. (For example, you could connect to remote servers
-to obtain role definitions, and not worry about causing delays at fabfile load
-time when calling e.g. <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>.)</p>
-<p>Use of roles is not required in any way &#8211; it&#8217;s simply a convenience in
-situations where you have common groupings of servers.</p>
+<p>In addition to list/iterable object types, the values in<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>maybe callables, and will thus be called when looked up when tasks are run insteadof at module load time. (For example, you could connect to remote serversto obtain role definitions, and not worry about causing delays at fabfile loadtime when calling e.g.<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">--list</span></tt>.)</p>
+<p>Use of roles is not required in any way &#8211; it&#8217;s simply a convenience insituations where you have common groupings of servers.</p>
 <div class="versionchanged">
-<p><span class="versionmodified">Changed in version 0.9.2: </span>Added ability to use callables as <tt class="docutils literal"><span class="pre">roledefs</span></tt> values.</p>
+<p><span class="versionmodified">バージョン 0.9.2 で変更: </span>Added ability to use callables as<tt class="docutils literal"><span class="pre">roledefs</span></tt>values.</p>
 </div>
 </div>
 <div class="section" id="how-host-lists-are-constructed">
-<span id="host-lists"></span><h3>How host lists are constructed<a class="headerlink" href="#how-host-lists-are-constructed" title="Permalink to this headline">¶</a></h3>
-<p>There are a number of ways to specify host lists, either globally or per-task,
-and generally these methods override one another instead of merging together
-(though this may change in future releases.) Each such method is typically
-split into two parts, one for hosts and one for roles.</p>
+<span id="host-lists"></span><h3>How host lists are constructed<a class="headerlink" href="#how-host-lists-are-constructed" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There are a number of ways to specify host lists, either globally or per-task,and generally these methods override one another instead of merging together(though this may change in future releases.) Each such method is typicallysplit into two parts, one for hosts and one for roles.</p>
 <div class="section" id="globally-via-env">
-<h4>Globally, via <tt class="docutils literal"><span class="pre">env</span></tt><a class="headerlink" href="#globally-via-env" title="Permalink to this headline">¶</a></h4>
-<p>The most common method of setting hosts or roles is by modifying two key-value
-pairs in the environment dictionary, <a class="reference internal" href="env.html"><em>env</em></a>: <tt class="docutils literal"><span class="pre">hosts</span></tt> and <tt class="docutils literal"><span class="pre">roles</span></tt>.
-The value of these variables is checked at runtime, while constructing each
-tasks&#8217;s host list.</p>
-<p>Thus, they may be set at module level, which will take effect when the fabfile
-is imported:</p>
+<h4>Globally, via <tt class="docutils literal"><span class="pre">env</span></tt><a class="headerlink" href="#globally-via-env" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>The most common method of setting hosts or roles is by modifying two key-valuepairs in the environment dictionary,<a class="reference internal" href="env.html"><em>env</em></a>:<tt class="docutils literal"><span class="pre">hosts</span></tt>and<tt class="docutils literal"><span class="pre">roles</span></tt>.The value of these variables is checked at runtime, while constructing eachtasks&#8217;s host list.</p>
+<p>Thus, they may be set at module level, which will take effect when the fabfileis imported:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">hosts</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;host1&#39;</span><span class="p">,</span> <span class="s">&#39;host2&#39;</span><span class="p">]</span>
@@ -213,11 +161,8 @@ is imported:</p>
     <span class="n">run</span><span class="p">(</span><span class="s">&#39;ls /var/www&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Such a fabfile, run simply as <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">mytask</span></tt>, will run <tt class="docutils literal"><span class="pre">mytask</span></tt> on <tt class="docutils literal"><span class="pre">host1</span></tt>
-followed by <tt class="docutils literal"><span class="pre">host2</span></tt>.</p>
-<p>Since the env vars are checked for <em>each</em> task, this means that if you have the
-need, you can actually modify <tt class="docutils literal"><span class="pre">env</span></tt> in one task and it will affect all
-following tasks:</p>
+<p>Such a fabfile, run simply as<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">mytask</span></tt>, will run<tt class="docutils literal"><span class="pre">mytask</span></tt>on<tt class="docutils literal"><span class="pre">host1</span></tt>followed by<tt class="docutils literal"><span class="pre">host2</span></tt>.</p>
+<p>Since the env vars are checked for<em>each</em>task, this means that if you have theneed, you can actually modify<tt class="docutils literal"><span class="pre">env</span></tt>in one task and it will affect allfollowing tasks:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="k">def</span> <span class="nf">set_hosts</span><span class="p">():</span>
@@ -227,41 +172,25 @@ following tasks:</p>
     <span class="n">run</span><span class="p">(</span><span class="s">&#39;ls /var/www&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When run as <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">set_hosts</span> <span class="pre">mytask</span></tt>, <tt class="docutils literal"><span class="pre">set_hosts</span></tt> is a &#8220;local&#8221; task &#8211; its
-own host list is empty &#8211; but <tt class="docutils literal"><span class="pre">mytask</span></tt> will again run on the two hosts given.</p>
+<p>When run as<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">set_hosts</span> <span class="pre">mytask</span></tt>,<tt class="docutils literal"><span class="pre">set_hosts</span></tt>is a &#8220;local&#8221; task &#8211; itsown host list is empty &#8211; but<tt class="docutils literal"><span class="pre">mytask</span></tt>will again run on the two hosts given.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This technique used to be a common way of creating fake &#8220;roles&#8221;, but is
-less necessary now that roles are fully implemented. It may still be useful
-in some situations, however.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">This technique used to be a common way of creating fake &#8220;roles&#8221;, but isless necessary now that roles are fully implemented. It may still be usefulin some situations, however.</p>
 </div>
-<p>Alongside <tt class="docutils literal"><span class="pre">env.hosts</span></tt> is <tt class="docutils literal"><span class="pre">env.roles</span></tt> (not to be confused with
-<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>!) which, if given, will be taken as a list of role names to
-look up in <tt class="docutils literal"><span class="pre">env.roledefs</span></tt>.</p>
+<p>Alongside<tt class="docutils literal"><span class="pre">env.hosts</span></tt>is<tt class="docutils literal"><span class="pre">env.roles</span></tt>(not to be confused with<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>!) which, if given, will be taken as a list of role names tolook up in<tt class="docutils literal"><span class="pre">env.roledefs</span></tt>.</p>
 </div>
 <div class="section" id="globally-via-the-command-line">
-<h4>Globally, via the command line<a class="headerlink" href="#globally-via-the-command-line" title="Permalink to this headline">¶</a></h4>
-<p>In addition to modifying <tt class="docutils literal"><span class="pre">env.hosts</span></tt>, <tt class="docutils literal"><span class="pre">env.roles</span></tt>, and
-<tt class="docutils literal"><span class="pre">env.exclude_hosts</span></tt> at the module level, you may define them by passing
-comma-separated string arguments to the command-line switches
-<a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts/-H</em></a> and <a class="reference internal" href="fab.html#cmdoption-R"><em class="xref std std-option">--roles/-R</em></a>, e.g.:</p>
+<h4>Globally, via the command line<a class="headerlink" href="#globally-via-the-command-line" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>In addition to modifying<tt class="docutils literal"><span class="pre">env.hosts</span></tt>,<tt class="docutils literal"><span class="pre">env.roles</span></tt>, and<tt class="docutils literal"><span class="pre">env.exclude_hosts</span></tt>at the module level, you may define them by passingcomma-separated string arguments to the command-line switches<a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts/-H</em></a>and<a class="reference internal" href="fab.html#cmdoption-R"><em class="xref std std-option">--roles/-R</em></a>, e.g.:</p>
 <div class="highlight-python"><pre>$ fab -H host1,host2 mytask</pre>
 </div>
-<p>Such an invocation is directly equivalent to <tt class="docutils literal"><span class="pre">env.hosts</span> <span class="pre">=</span> <span class="pre">['host1',</span> <span class="pre">'host2']</span></tt>
-&#8211; the argument parser knows to look for these arguments and will modify
-<tt class="docutils literal"><span class="pre">env</span></tt> at parse time.</p>
+<p>Such an invocation is directly equivalent to<tt class="docutils literal"><span class="pre">env.hosts</span> <span class="pre">=</span> <span class="pre">['host1',</span> <span class="pre">'host2']</span></tt>&#8211; the argument parser knows to look for these arguments and will modify<tt class="docutils literal"><span class="pre">env</span></tt>at parse time.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It&#8217;s possible, and in fact common, to use these switches to set only a
-single host or role. Fabric simply calls <tt class="docutils literal"><span class="pre">string.split(',')</span></tt> on the given
-string, so a string with no commas turns into a single-item list.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">It&#8217;s possible, and in fact common, to use these switches to set only asingle host or role. Fabric simply calls<tt class="docutils literal"><span class="pre">string.split(',')</span></tt>on the givenstring, so a string with no commas turns into a single-item list.</p>
 </div>
-<p>It is important to know that these command-line switches are interpreted
-<strong>before</strong> your fabfile is loaded: any reassignment to <tt class="docutils literal"><span class="pre">env.hosts</span></tt> or
-<tt class="docutils literal"><span class="pre">env.roles</span></tt> in your fabfile will overwrite them.</p>
-<p>If you wish to nondestructively merge the command-line hosts with your
-fabfile-defined ones, make sure your fabfile uses <tt class="docutils literal"><span class="pre">env.hosts.extend()</span></tt>
-instead:</p>
+<p>It is important to know that these command-line switches are interpreted<strong>before</strong>your fabfile is loaded: any reassignment to<tt class="docutils literal"><span class="pre">env.hosts</span></tt>or<tt class="docutils literal"><span class="pre">env.roles</span></tt>in your fabfile will overwrite them.</p>
+<p>If you wish to nondestructively merge the command-line hosts with yourfabfile-defined ones, make sure your fabfile uses<tt class="docutils literal"><span class="pre">env.hosts.extend()</span></tt>instead:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">hosts</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">&#39;host3&#39;</span><span class="p">,</span> <span class="s">&#39;host4&#39;</span><span class="p">])</span>
@@ -270,53 +199,35 @@ instead:</p>
     <span class="n">run</span><span class="p">(</span><span class="s">&#39;ls /var/www&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>When this fabfile is run as <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">-H</span> <span class="pre">host1,host2</span> <span class="pre">mytask</span></tt>, <tt class="docutils literal"><span class="pre">env.hosts</span></tt> will
-then contain <tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">'host3',</span> <span class="pre">'host4']</span></tt> at the time that
-<tt class="docutils literal"><span class="pre">mytask</span></tt> is executed.</p>
+<p>When this fabfile is run as<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">-H</span> <span class="pre">host1,host2</span> <span class="pre">mytask</span></tt>,<tt class="docutils literal"><span class="pre">env.hosts</span></tt>willthen contain<tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">'host3',</span> <span class="pre">'host4']</span></tt>at the time that<tt class="docutils literal"><span class="pre">mytask</span></tt>is executed.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">env.hosts</span></tt> is simply a Python list object &#8211; so you may use
-<tt class="docutils literal"><span class="pre">env.hosts.append()</span></tt> or any other such method you wish.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last"><tt class="docutils literal"><span class="pre">env.hosts</span></tt>is simply a Python list object &#8211; so you may use<tt class="docutils literal"><span class="pre">env.hosts.append()</span></tt>or any other such method you wish.</p>
 </div>
 </div>
 <div class="section" id="per-task-via-the-command-line">
-<span id="hosts-per-task-cli"></span><h4>Per-task, via the command line<a class="headerlink" href="#per-task-via-the-command-line" title="Permalink to this headline">¶</a></h4>
-<p>Globally setting host lists only works if you want all your tasks to run on the
-same host list all the time. This isn&#8217;t always true, so Fabric provides a few
-ways to be more granular and specify host lists which apply to a single task
-only. The first of these uses task arguments.</p>
-<p>As outlined in <a class="reference internal" href="fab.html"><em>fab options and arguments</em></a>, it&#8217;s possible to specify per-task arguments via a
-special command-line syntax. In addition to naming actual arguments to your
-task function, this may be used to set the <tt class="docutils literal"><span class="pre">host</span></tt>, <tt class="docutils literal"><span class="pre">hosts</span></tt>, <tt class="docutils literal"><span class="pre">role</span></tt> or
-<tt class="docutils literal"><span class="pre">roles</span></tt> &#8220;arguments&#8221;, which are interpreted by Fabric when building host lists
-(and removed from the arguments passed to the task itself.)</p>
+<span id="hosts-per-task-cli"></span><h4>Per-task, via the command line<a class="headerlink" href="#per-task-via-the-command-line" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Globally setting host lists only works if you want all your tasks to run on thesame host list all the time. This isn&#8217;t always true, so Fabric provides a fewways to be more granular and specify host lists which apply to a single taskonly. The first of these uses task arguments.</p>
+<p>As outlined in<a class="reference internal" href="fab.html"><em>fab options and arguments</em></a>, it&#8217;s possible to specify per-task arguments via aspecial command-line syntax. In addition to naming actual arguments to yourtask function, this may be used to set the<tt class="docutils literal"><span class="pre">host</span></tt>,<tt class="docutils literal"><span class="pre">hosts</span></tt>,<tt class="docutils literal"><span class="pre">role</span></tt>or<tt class="docutils literal"><span class="pre">roles</span></tt>&#8220;arguments&#8221;, which are interpreted by Fabric when building host lists(and removed from the arguments passed to the task itself.)</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since commas are already used to separate task arguments from one another,
-semicolons must be used in the <tt class="docutils literal"><span class="pre">hosts</span></tt> or <tt class="docutils literal"><span class="pre">roles</span></tt> arguments to
-delineate individual host strings or role names. Furthermore, the argument
-must be quoted to prevent your shell from interpreting the semicolons.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">Since commas are already used to separate task arguments from one another,semicolons must be used in the<tt class="docutils literal"><span class="pre">hosts</span></tt>or<tt class="docutils literal"><span class="pre">roles</span></tt>arguments todelineate individual host strings or role names. Furthermore, the argumentmust be quoted to prevent your shell from interpreting the semicolons.</p>
 </div>
-<p>Take the below fabfile, which is the same one we&#8217;ve been using, but which
-doesn&#8217;t define any host info at all:</p>
+<p>Take the below fabfile, which is the same one we&#8217;ve been using, but whichdoesn&#8217;t define any host info at all:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span>
 
 <span class="k">def</span> <span class="nf">mytask</span><span class="p">():</span>
     <span class="n">run</span><span class="p">(</span><span class="s">&#39;ls /var/www&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To specify per-task hosts for <tt class="docutils literal"><span class="pre">mytask</span></tt>, execute it like so:</p>
+<p>To specify per-task hosts for<tt class="docutils literal"><span class="pre">mytask</span></tt>, execute it like so:</p>
 <div class="highlight-python"><pre>$ fab mytask:hosts="host1;host2"</pre>
 </div>
-<p>This will override any other host list and ensure <tt class="docutils literal"><span class="pre">mytask</span></tt> always runs on
-just those two hosts.</p>
+<p>This will override any other host list and ensure<tt class="docutils literal"><span class="pre">mytask</span></tt>always runs onjust those two hosts.</p>
 </div>
 <div class="section" id="per-task-via-decorators">
-<h4>Per-task, via decorators<a class="headerlink" href="#per-task-via-decorators" title="Permalink to this headline">¶</a></h4>
-<p>If a given task should always run on a predetermined host list, you may wish to
-specify this in your fabfile itself. This can be done by decorating a task
-function with the <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> or <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a>
-decorators. These decorators take a variable argument list, like so:</p>
+<h4>Per-task, via decorators<a class="headerlink" href="#per-task-via-decorators" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>If a given task should always run on a predetermined host list, you may wish tospecify this in your fabfile itself. This can be done by decorating a taskfunction with the<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>or<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a>decorators. These decorators take a variable argument list, like so:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="nd">@hosts</span><span class="p">(</span><span class="s">&#39;host1&#39;</span><span class="p">,</span> <span class="s">&#39;host2&#39;</span><span class="p">)</span>
@@ -330,45 +241,25 @@ decorators. These decorators take a variable argument list, like so:</p>
 def mytask():
     # ...</pre>
 </div>
-<p>When used, these decorators override any checks of <tt class="docutils literal"><span class="pre">env</span></tt> for that particular
-task&#8217;s host list (though <tt class="docutils literal"><span class="pre">env</span></tt> is not modified in any way &#8211; it is simply
-ignored.) Thus, even if the above fabfile had defined <tt class="docutils literal"><span class="pre">env.hosts</span></tt> or the call
-to <a class="reference internal" href="fab.html"><em>fab</em></a> uses <a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts/-H</em></a>, <tt class="docutils literal"><span class="pre">mytask</span></tt> would still run
-on a host list of <tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2']</span></tt>.</p>
-<p>However, decorator host lists do <strong>not</strong> override per-task command-line
-arguments, as given in the previous section.</p>
+<p>When used, these decorators override any checks of<tt class="docutils literal"><span class="pre">env</span></tt>for that particulartask&#8217;s host list (though<tt class="docutils literal"><span class="pre">env</span></tt>is not modified in any way &#8211; it is simplyignored.) Thus, even if the above fabfile had defined<tt class="docutils literal"><span class="pre">env.hosts</span></tt>or the callto<a class="reference internal" href="fab.html"><em>fab</em></a>uses<a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts/-H</em></a>,<tt class="docutils literal"><span class="pre">mytask</span></tt>would still runon a host list of<tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2']</span></tt>.</p>
+<p>However, decorator host lists do<strong>not</strong>override per-task command-linearguments, as given in the previous section.</p>
 </div>
 <div class="section" id="order-of-precedence">
-<h4>Order of precedence<a class="headerlink" href="#order-of-precedence" title="Permalink to this headline">¶</a></h4>
-<p>We&#8217;ve been pointing out which methods of setting host lists trump the others,
-as we&#8217;ve gone along. However, to make things clearer, here&#8217;s a quick breakdown:</p>
+<h4>Order of precedence<a class="headerlink" href="#order-of-precedence" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>We&#8217;ve been pointing out which methods of setting host lists trump the others,as we&#8217;ve gone along. However, to make things clearer, here&#8217;s a quick breakdown:</p>
 <ul class="simple">
-<li>Per-task, command-line host lists (<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">mytask:host=host1</span></tt>) override
-absolutely everything else.</li>
-<li>Per-task, decorator-specified host lists (<tt class="docutils literal"><span class="pre">&#64;hosts('host1')</span></tt>) override the
-<tt class="docutils literal"><span class="pre">env</span></tt> variables.</li>
-<li>Globally specified host lists set in the fabfile (<tt class="docutils literal"><span class="pre">env.hosts</span> <span class="pre">=</span> <span class="pre">['host1']</span></tt>)
-<em>can</em> override such lists set on the command-line, but only if you&#8217;re not
-careful (or want them to.)</li>
-<li>Globally specified host lists set on the command-line (<tt class="docutils literal"><span class="pre">--hosts=host1</span></tt>)
-will initialize the <tt class="docutils literal"><span class="pre">env</span></tt> variables, but that&#8217;s it.</li>
+<li>Per-task, command-line host lists (<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">mytask:host=host1</span></tt>) overrideabsolutely everything else.</li>
+<li>Per-task, decorator-specified host lists (<tt class="docutils literal"><span class="pre">&#64;hosts('host1')</span></tt>) override the<tt class="docutils literal"><span class="pre">env</span></tt>variables.</li>
+<li>Globally specified host lists set in the fabfile (<tt class="docutils literal"><span class="pre">env.hosts</span> <span class="pre">=</span> <span class="pre">['host1']</span></tt>)<em>can</em>override such lists set on the command-line, but only if you&#8217;re notcareful (or want them to.)</li>
+<li>Globally specified host lists set on the command-line (<tt class="docutils literal"><span class="pre">--hosts=host1</span></tt>)will initialize the<tt class="docutils literal"><span class="pre">env</span></tt>variables, but that&#8217;s it.</li>
 </ul>
-<p>This logic may change slightly in the future to be more consistent (e.g.
-having <a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts</em></a> somehow take precedence over <tt class="docutils literal"><span class="pre">env.hosts</span></tt> in the
-same way that command-line per-task lists trump in-code ones) but only in a
-backwards-incompatible release.</p>
+<p>This logic may change slightly in the future to be more consistent (e.g.having<a class="reference internal" href="fab.html#cmdoption-H"><em class="xref std std-option">--hosts</em></a>somehow take precedence over<tt class="docutils literal"><span class="pre">env.hosts</span></tt>in thesame way that command-line per-task lists trump in-code ones) but only in abackwards-incompatible release.</p>
 </div>
 </div>
 <div class="section" id="combining-host-lists">
-<span id="id2"></span><h3>Combining host lists<a class="headerlink" href="#combining-host-lists" title="Permalink to this headline">¶</a></h3>
-<p>There is no &#8220;unionizing&#8221; of hosts between the various sources mentioned in
-<a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a>. If <tt class="docutils literal"><span class="pre">env.hosts</span></tt> is set to <tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">'host3']</span></tt>,
-and a per-function (e.g.  via <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>) host list is set to
-just <tt class="docutils literal"><span class="pre">['host2',</span> <span class="pre">'host3']</span></tt>, that function will <strong>not</strong> execute on <tt class="docutils literal"><span class="pre">host1</span></tt>,
-because the per-task decorator host list takes precedence.</p>
-<p>However, for each given source, if both roles <strong>and</strong> hosts are specified, they
-will be merged together into a single host list. Take, for example, this
-fabfile where both of the decorators are used:</p>
+<span id="id2"></span><h3>Combining host lists<a class="headerlink" href="#combining-host-lists" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>There is no &#8220;unionizing&#8221; of hosts between the various sources mentioned in<a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a>. If<tt class="docutils literal"><span class="pre">env.hosts</span></tt>is set to<tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">'host3']</span></tt>,and a per-function (e.g.  via<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>) host list is set tojust<tt class="docutils literal"><span class="pre">['host2',</span> <span class="pre">'host3']</span></tt>, that function will<strong>not</strong>execute on<tt class="docutils literal"><span class="pre">host1</span></tt>,because the per-task decorator host list takes precedence.</p>
+<p>However, for each given source, if both roles<strong>and</strong>hosts are specified, theywill be merged together into a single host list. Take, for example, thisfabfile where both of the decorators are used:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">hosts</span><span class="p">,</span> <span class="n">roles</span><span class="p">,</span> <span class="n">run</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;role1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]}</span>
@@ -379,87 +270,53 @@ fabfile where both of the decorators are used:</p>
     <span class="n">run</span><span class="p">(</span><span class="s">&#39;ls /var/www&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Assuming no command-line hosts or roles are given when <tt class="docutils literal"><span class="pre">mytask</span></tt> is executed,
-this fabfile will call <tt class="docutils literal"><span class="pre">mytask</span></tt> on a host list of <tt class="docutils literal"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></tt> &#8211; the
-union of <tt class="docutils literal"><span class="pre">role1</span></tt> and the contents of the <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a> call.</p>
+<p>Assuming no command-line hosts or roles are given when<tt class="docutils literal"><span class="pre">mytask</span></tt>is executed,this fabfile will call<tt class="docutils literal"><span class="pre">mytask</span></tt>on a host list of<tt class="docutils literal"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c']</span></tt>&#8211; theunion of<tt class="docutils literal"><span class="pre">role1</span></tt>and the contents of the<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.hosts" title="fabric.decorators.hosts"><tt class="xref py py-obj docutils literal"><span class="pre">hosts</span></tt></a>call.</p>
 </div>
 <div class="section" id="host-list-deduplication">
-<span id="deduplication"></span><h3>Host list deduplication<a class="headerlink" href="#host-list-deduplication" title="Permalink to this headline">¶</a></h3>
-<p>By default, to support <a class="reference internal" href="#combining-host-lists"><em>Combining host lists</em></a>, Fabric deduplicates the
-final host list so any given host string is only present once. However, this
-prevents explicit/intentional running of a task multiple times on the same
-target host, which is sometimes useful.</p>
-<p>To turn off deduplication, set <a class="reference internal" href="env.html#dedupe-hosts"><em>env.dedupe_hosts</em></a> to
-<tt class="docutils literal"><span class="pre">False</span></tt>.</p>
+<span id="deduplication"></span><h3>Host list deduplication<a class="headerlink" href="#host-list-deduplication" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>By default, to support<a class="reference internal" href="#combining-host-lists"><em>Combining host lists</em></a>, Fabric deduplicates thefinal host list so any given host string is only present once. However, thisprevents explicit/intentional running of a task multiple times on the sametarget host, which is sometimes useful.</p>
+<p>To turn off deduplication, set<a class="reference internal" href="env.html#dedupe-hosts"><em>env.dedupe_hosts</em></a>to<tt class="docutils literal"><span class="pre">False</span></tt>.</p>
 </div>
 <div class="section" id="excluding-specific-hosts">
-<span id="excluding-hosts"></span><h3>Excluding specific hosts<a class="headerlink" href="#excluding-specific-hosts" title="Permalink to this headline">¶</a></h3>
-<p>At times, it is useful to exclude one or more specific hosts, e.g. to override
-a few bad or otherwise undesirable hosts which are pulled in from a role or an
-autogenerated host list.</p>
+<span id="excluding-hosts"></span><h3>Excluding specific hosts<a class="headerlink" href="#excluding-specific-hosts" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>At times, it is useful to exclude one or more specific hosts, e.g. to overridea few bad or otherwise undesirable hosts which are pulled in from a role or anautogenerated host list.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">As of Fabric 1.4, you may wish to use <a class="reference internal" href="env.html#skip-bad-hosts"><em>skip_bad_hosts</em></a> instead, which
-automatically skips over any unreachable hosts.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">As of Fabric 1.4, you may wish to use<a class="reference internal" href="env.html#skip-bad-hosts"><em>skip_bad_hosts</em></a>instead, whichautomatically skips over any unreachable hosts.</p>
 </div>
-<p>Host exclusion may be accomplished globally with <a class="reference internal" href="fab.html#cmdoption-x"><em class="xref std std-option">--exclude-hosts/-x</em></a>:</p>
+<p>Host exclusion may be accomplished globally with<a class="reference internal" href="fab.html#cmdoption-x"><em class="xref std std-option">--exclude-hosts/-x</em></a>:</p>
 <div class="highlight-python"><pre>$ fab -R myrole -x host2,host5 mytask</pre>
 </div>
-<p>If <tt class="docutils literal"><span class="pre">myrole</span></tt> was defined as <tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">...,</span> <span class="pre">'host15']</span></tt>, the above
-invocation would run with an effective host list of <tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host3',</span>
+<p>If<tt class="docutils literal"><span class="pre">myrole</span></tt>was defined as<tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host2',</span> <span class="pre">...,</span> <span class="pre">'host15']</span></tt>, the aboveinvocation would run with an effective host list of<tt class="docutils literal"><span class="pre">['host1',</span> <span class="pre">'host3',</span>
 <span class="pre">'host4',</span> <span class="pre">'host6',</span> <span class="pre">...,</span> <span class="pre">'host15']</span></tt>.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Using this option does not modify <tt class="docutils literal"><span class="pre">env.hosts</span></tt> &#8211; it only causes the
-main execution loop to skip the requested hosts.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">Using this option does not modify<tt class="docutils literal"><span class="pre">env.hosts</span></tt>&#8211; it only causes themain execution loop to skip the requested hosts.</p>
 </div>
 </div></blockquote>
-<p>Exclusions may be specified per-task by using an extra <tt class="docutils literal"><span class="pre">exclude_hosts</span></tt> kwarg,
-which is implemented similarly to the abovementioned <tt class="docutils literal"><span class="pre">hosts</span></tt> and <tt class="docutils literal"><span class="pre">roles</span></tt>
-per-task kwargs, in that it is stripped from the actual task invocation. This
-example would have the same result as the global exclude above:</p>
+<p>Exclusions may be specified per-task by using an extra<tt class="docutils literal"><span class="pre">exclude_hosts</span></tt>kwarg,which is implemented similarly to the abovementioned<tt class="docutils literal"><span class="pre">hosts</span></tt>and<tt class="docutils literal"><span class="pre">roles</span></tt>per-task kwargs, in that it is stripped from the actual task invocation. Thisexample would have the same result as the global exclude above:</p>
 <div class="highlight-python"><pre>$ fab mytask:roles=myrole,exclude_hosts="host2;host5"</pre>
 </div>
-<p>Note that the host list is semicolon-separated, just as with the <tt class="docutils literal"><span class="pre">hosts</span></tt>
-per-task argument.</p>
+<p>Note that the host list is semicolon-separated, just as with the<tt class="docutils literal"><span class="pre">hosts</span></tt>per-task argument.</p>
 <div class="section" id="combining-exclusions">
-<h4>Combining exclusions<a class="headerlink" href="#combining-exclusions" title="Permalink to this headline">¶</a></h4>
-<p>Host exclusion lists, like host lists themselves, are not merged together
-across the different &#8220;levels&#8221; they can be declared in. For example, a global
-<tt class="docutils literal"><span class="pre">-x</span></tt> option will not affect a per-task host list set with a decorator or
-keyword argument, nor will per-task <tt class="docutils literal"><span class="pre">exclude_hosts</span></tt> keyword arguments affect
-a global <tt class="docutils literal"><span class="pre">-H</span></tt> list.</p>
-<p>There is one minor exception to this rule, namely that CLI-level keyword
-arguments (<tt class="docutils literal"><span class="pre">mytask:exclude_hosts=x,y</span></tt>) <strong>will</strong> be taken into account when
-examining host lists set via <tt class="docutils literal"><span class="pre">&#64;hosts</span></tt> or <tt class="docutils literal"><span class="pre">&#64;roles</span></tt>. Thus a task function
-decorated with <tt class="docutils literal"><span class="pre">&#64;hosts('host1',</span> <span class="pre">'host2')</span></tt> executed as <tt class="docutils literal"><span class="pre">fab</span>
-<span class="pre">taskname:exclude_hosts=host2</span></tt> will only run on <tt class="docutils literal"><span class="pre">host1</span></tt>.</p>
-<p>As with the host list merging, this functionality is currently limited (partly
-to keep the implementation simple) and may be expanded in future releases.</p>
+<h4>Combining exclusions<a class="headerlink" href="#combining-exclusions" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Host exclusion lists, like host lists themselves, are not merged togetheracross the different &#8220;levels&#8221; they can be declared in. For example, a global<tt class="docutils literal"><span class="pre">-x</span></tt>option will not affect a per-task host list set with a decorator orkeyword argument, nor will per-task<tt class="docutils literal"><span class="pre">exclude_hosts</span></tt>keyword arguments affecta global<tt class="docutils literal"><span class="pre">-H</span></tt>list.</p>
+<p>There is one minor exception to this rule, namely that CLI-level keywordarguments (<tt class="docutils literal"><span class="pre">mytask:exclude_hosts=x,y</span></tt>)<strong>will</strong>be taken into account whenexamining host lists set via<tt class="docutils literal"><span class="pre">&#64;hosts</span></tt>or<tt class="docutils literal"><span class="pre">&#64;roles</span></tt>. Thus a task functiondecorated with<tt class="docutils literal"><span class="pre">&#64;hosts('host1',</span> <span class="pre">'host2')</span></tt>executed as<tt class="docutils literal"><span class="pre">fab</span>
+<span class="pre">taskname:exclude_hosts=host2</span></tt>will only run on<tt class="docutils literal"><span class="pre">host1</span></tt>.</p>
+<p>As with the host list merging, this functionality is currently limited (partlyto keep the implementation simple) and may be expanded in future releases.</p>
 </div>
 </div>
 </div>
 <div class="section" id="intelligently-executing-tasks-with-execute">
-<span id="execute"></span><h2>Intelligently executing tasks with <tt class="docutils literal"><span class="pre">execute</span></tt><a class="headerlink" href="#intelligently-executing-tasks-with-execute" title="Permalink to this headline">¶</a></h2>
+<span id="execute"></span><h2>Intelligently executing tasks with <tt class="docutils literal"><span class="pre">execute</span></tt><a class="headerlink" href="#intelligently-executing-tasks-with-execute" title="このヘッドラインへのパーマリンク">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.3.</span></p>
+<p><span class="versionmodified">バージョン 1.3 で追加.</span></p>
 </div>
-<p>Most of the information here involves &#8220;top level&#8221; tasks executed via <a class="reference internal" href="fab.html"><em>fab</em></a>, such as the first example where we called <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">taskA</span> <span class="pre">taskB</span></tt>.
-However, it&#8217;s often convenient to wrap up multi-task invocations like this into
-their own, &#8220;meta&#8221; tasks.</p>
-<p>Prior to Fabric 1.3, this had to be done by hand, as outlined in
-<a class="reference internal" href="library.html"><em>Library Use</em></a>. Fabric&#8217;s design eschews magical behavior, so simply
-<em>calling</em> a task function does <strong>not</strong> take into account decorators such as
-<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a>.</p>
-<p>New in Fabric 1.3 is the <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> helper function, which takes a
-task object or name as its first argument. Using it is effectively the same as
-calling the given task from the command line: all the rules given above in
-<a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a> apply. (The <tt class="docutils literal"><span class="pre">hosts</span></tt> and <tt class="docutils literal"><span class="pre">roles</span></tt> keyword arguments to
-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> are analogous to <a class="reference internal" href="#hosts-per-task-cli"><em>CLI per-task arguments</em></a>, including how they override all other host/role-setting
-methods.)</p>
-<p>As an example, here&#8217;s a fabfile defining two stand-alone tasks for deploying a
-Web application:</p>
+<p>Most of the information here involves &#8220;top level&#8221; tasks executed via<a class="reference internal" href="fab.html"><em>fab</em></a>, such as the first example where we called<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">taskA</span> <span class="pre">taskB</span></tt>.However, it&#8217;s often convenient to wrap up multi-task invocations like this intotheir own, &#8220;meta&#8221; tasks.</p>
+<p>Prior to Fabric 1.3, this had to be done by hand, as outlined in<a class="reference internal" href="library.html"><em>Library Use</em></a>. Fabric&#8217;s design eschews magical behavior, so simply<em>calling</em>a task function does<strong>not</strong>take into account decorators such as<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a>.</p>
+<p>New in Fabric 1.3 is the<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>helper function, which takes atask object or name as its first argument. Using it is effectively the same ascalling the given task from the command line: all the rules given above in<a class="reference internal" href="#host-lists"><em>How host lists are constructed</em></a>apply. (The<tt class="docutils literal"><span class="pre">hosts</span></tt>and<tt class="docutils literal"><span class="pre">roles</span></tt>keyword arguments to<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>are analogous to<a class="reference internal" href="#hosts-per-task-cli"><em>CLI per-task arguments</em></a>, including how they override all other host/role-settingmethods.)</p>
+<p>As an example, here&#8217;s a fabfile defining two stand-alone tasks for deploying aWeb application:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">roles</span>
 
 <span class="n">env</span><span class="o">.</span><span class="n">roledefs</span> <span class="o">=</span> <span class="p">{</span>
@@ -478,13 +335,10 @@ Web application:</p>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>In Fabric &lt;=1.2, the only way to ensure that <tt class="docutils literal"><span class="pre">migrate</span></tt> runs on the DB servers
-and that <tt class="docutils literal"><span class="pre">update</span></tt> runs on the Web servers (short of manual
-<tt class="docutils literal"><span class="pre">env.host_string</span></tt> manipulation) was to call both as top level tasks:</p>
+<p>In Fabric &lt;=1.2, the only way to ensure that<tt class="docutils literal"><span class="pre">migrate</span></tt>runs on the DB serversand that<tt class="docutils literal"><span class="pre">update</span></tt>runs on the Web servers (short of manual<tt class="docutils literal"><span class="pre">env.host_string</span></tt>manipulation) was to call both as top level tasks:</p>
 <div class="highlight-python"><pre>$ fab migrate update</pre>
 </div>
-<p>Fabric &gt;=1.3 can use <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> to set up a meta-task. Update the
-<tt class="docutils literal"><span class="pre">import</span></tt> line like so:</p>
+<p>Fabric &gt;=1.3 can use<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>to set up a meta-task. Update the<tt class="docutils literal"><span class="pre">import</span></tt>line like so:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">roles</span><span class="p">,</span> <span class="n">execute</span>
 </pre></div>
 </div>
@@ -494,37 +348,27 @@ and that <tt class="docutils literal"><span class="pre">update</span></tt> runs 
     <span class="n">execute</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>That&#8217;s all there is to it; the <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a> decorators will be honored as expected, resulting in the following execution sequence:</p>
+<p>That&#8217;s all there is to it; the<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.roles" title="fabric.decorators.roles"><tt class="xref py py-obj docutils literal"><span class="pre">roles</span></tt></a>decorators will be honored as expected, resulting in the following execution sequence:</p>
 <ul class="simple">
-<li><tt class="xref py py-obj docutils literal"><span class="pre">migrate</span></tt> on <tt class="xref py py-obj docutils literal"><span class="pre">db1</span></tt></li>
-<li><tt class="xref py py-obj docutils literal"><span class="pre">migrate</span></tt> on <tt class="xref py py-obj docutils literal"><span class="pre">db2</span></tt></li>
-<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt> on <tt class="xref py py-obj docutils literal"><span class="pre">web1</span></tt></li>
-<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt> on <tt class="xref py py-obj docutils literal"><span class="pre">web2</span></tt></li>
-<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt> on <tt class="xref py py-obj docutils literal"><span class="pre">web3</span></tt></li>
+<li><tt class="xref py py-obj docutils literal"><span class="pre">migrate</span></tt>on<tt class="xref py py-obj docutils literal"><span class="pre">db1</span></tt></li>
+<li><tt class="xref py py-obj docutils literal"><span class="pre">migrate</span></tt>on<tt class="xref py py-obj docutils literal"><span class="pre">db2</span></tt></li>
+<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt>on<tt class="xref py py-obj docutils literal"><span class="pre">web1</span></tt></li>
+<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt>on<tt class="xref py py-obj docutils literal"><span class="pre">web2</span></tt></li>
+<li><tt class="xref py py-obj docutils literal"><span class="pre">update</span></tt>on<tt class="xref py py-obj docutils literal"><span class="pre">web3</span></tt></li>
 </ul>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p>This technique works because tasks that themselves have no host list (this
-includes the global host list settings) only run one time. If used inside a
-&#8220;regular&#8221; task that is going to run on multiple hosts, calls to
-<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> will also run multiple times, resulting in
-multiplicative numbers of subtask calls &#8211; be careful!</p>
-<p class="last">If you would like your <tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt> calls to only be called once, you
-may use the <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a> decorator.</p>
+<p class="first admonition-title">警告</p>
+<p>This technique works because tasks that themselves have no host list (thisincludes the global host list settings) only run one time. If used inside a&#8221;regular&#8221; task that is going to run on multiple hosts, calls to<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>will also run multiple times, resulting inmultiplicative numbers of subtask calls &#8211; be careful!</p>
+<p class="last">If you would like your<tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt>calls to only be called once, youmay use the<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a>decorator.</p>
 </div>
 <div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last"><a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>, <a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a></p>
+<p class="first admonition-title">参考</p>
+<p class="last"><a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>,<a class="reference internal" href="../api/core/decorators.html#fabric.decorators.runs_once" title="fabric.decorators.runs_once"><tt class="xref py py-obj docutils literal"><span class="pre">runs_once</span></tt></a></p>
 </div>
 <div class="section" id="leveraging-execute-to-access-multi-host-results">
-<span id="leveraging-execute-return-value"></span><h3>Leveraging <tt class="docutils literal"><span class="pre">execute</span></tt> to access multi-host results<a class="headerlink" href="#leveraging-execute-to-access-multi-host-results" title="Permalink to this headline">¶</a></h3>
-<p>In nontrivial Fabric runs, especially parallel ones, you may want to gather up
-a bunch of per-host result values at the end - e.g. to present a summary table,
-perform calculations, etc.</p>
-<p>It&#8217;s not possible to do this in Fabric&#8217;s default &#8220;naive&#8221; mode (one where you
-rely on Fabric looping over host lists on your behalf), but with <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>
-it&#8217;s pretty easy. Simply switch from calling the actual work-bearing task, to
-calling a &#8220;meta&#8221; task which takes control of execution with <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>:</p>
+<span id="leveraging-execute-return-value"></span><h3>Leveraging <tt class="docutils literal"><span class="pre">execute</span></tt> to access multi-host results<a class="headerlink" href="#leveraging-execute-to-access-multi-host-results" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>In nontrivial Fabric runs, especially parallel ones, you may want to gather upa bunch of per-host result values at the end - e.g. to present a summary table,perform calculations, etc.</p>
+<p>It&#8217;s not possible to do this in Fabric&#8217;s default &#8220;naive&#8221; mode (one where yourely on Fabric looping over host lists on your behalf), but with<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>it&#8217;s pretty easy. Simply switch from calling the actual work-bearing task, tocalling a &#8220;meta&#8221; task which takes control of execution with<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">task</span><span class="p">,</span> <span class="n">execute</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">runs_once</span>
 
 <span class="nd">@task</span>
@@ -538,18 +382,12 @@ calling a &#8220;meta&#8221; task which takes control of execution with <a class
     <span class="k">print</span> <span class="n">results</span>
 </pre></div>
 </div>
-<p>In the above, <tt class="docutils literal"><span class="pre">workhorse</span></tt> can do any Fabric stuff at all &#8211; it&#8217;s literally
-your old &#8220;naive&#8221; task &#8211; except that it needs to return something useful.</p>
-<p><tt class="docutils literal"><span class="pre">go</span></tt> is your new entry point (to be invoked as <tt class="docutils literal"><span class="pre">fab</span> <span class="pre">go</span></tt>, or whatnot) and
-its job is to take the <tt class="docutils literal"><span class="pre">results</span></tt> dictionary from the <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> call and do
-whatever you need with it. Check the API docs for details on the structure of
-that return value.</p>
+<p>In the above,<tt class="docutils literal"><span class="pre">workhorse</span></tt>can do any Fabric stuff at all &#8211; it&#8217;s literallyyour old &#8220;naive&#8221; task &#8211; except that it needs to return something useful.</p>
+<p><tt class="docutils literal"><span class="pre">go</span></tt>is your new entry point (to be invoked as<tt class="docutils literal"><span class="pre">fab</span> <span class="pre">go</span></tt>, or whatnot) andits job is to take the<tt class="docutils literal"><span class="pre">results</span></tt>dictionary from the<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>call and dowhatever you need with it. Check the API docs for details on the structure ofthat return value.</p>
 </div>
 <div class="section" id="using-execute-with-dynamically-set-host-lists">
-<span id="dynamic-hosts"></span><h3>Using <tt class="docutils literal"><span class="pre">execute</span></tt> with dynamically-set host lists<a class="headerlink" href="#using-execute-with-dynamically-set-host-lists" title="Permalink to this headline">¶</a></h3>
-<p>A common intermediate-to-advanced use case for Fabric is to parameterize lookup
-of one&#8217;s target host list at runtime (when use of <a class="reference internal" href="#execution-roles"><em>Roles</em></a> does not
-suffice). <tt class="docutils literal"><span class="pre">execute</span></tt> can make this extremely simple, like so:</p>
+<span id="dynamic-hosts"></span><h3>Using <tt class="docutils literal"><span class="pre">execute</span></tt> with dynamically-set host lists<a class="headerlink" href="#using-execute-with-dynamically-set-host-lists" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>A common intermediate-to-advanced use case for Fabric is to parameterize lookupof one&#8217;s target host list at runtime (when use of<a class="reference internal" href="#execution-roles"><em>Roles</em></a>does notsuffice).<tt class="docutils literal"><span class="pre">execute</span></tt>can make this extremely simple, like so:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">execute</span><span class="p">,</span> <span class="n">task</span>
 
 <span class="c"># For example, code talking to an HTTP API, or a database, or ...</span>
@@ -572,24 +410,16 @@ suffice). <tt class="docutils literal"><span class="pre">execute</span></tt> can
     <span class="n">execute</span><span class="p">(</span><span class="n">do_work</span><span class="p">,</span> <span class="n">hosts</span><span class="o">=</span><span class="n">host_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>For example, if <tt class="docutils literal"><span class="pre">external_datastore</span></tt> was a simplistic &#8220;look up hosts by tag
-in a database&#8221; service, and you wanted to run a task on all hosts tagged as
-being related to your application stack, you might call the above like this:</p>
+<p>For example, if<tt class="docutils literal"><span class="pre">external_datastore</span></tt>was a simplistic &#8220;look up hosts by tagin a database&#8221; service, and you wanted to run a task on all hosts tagged asbeing related to your application stack, you might call the above like this:</p>
 <div class="highlight-python"><pre>$ fab deploy:app</pre>
 </div>
-<p>But wait! A data migration has gone awry on the DB servers. Let&#8217;s fix up our
-migration code in our source repo, and deploy just the DB boxes again:</p>
+<p>But wait! A data migration has gone awry on the DB servers. Let&#8217;s fix up ourmigration code in our source repo, and deploy just the DB boxes again:</p>
 <div class="highlight-python"><pre>$ fab deploy:db</pre>
 </div>
-<p>This use case looks similar to Fabric&#8217;s roles, but has much more potential, and
-is by no means limited to a single argument. Define the task however you wish,
-query your external data store in whatever way you need &#8211; it&#8217;s just Python.</p>
+<p>This use case looks similar to Fabric&#8217;s roles, but has much more potential, andis by no means limited to a single argument. Define the task however you wish,query your external data store in whatever way you need &#8211; it&#8217;s just Python.</p>
 <div class="section" id="the-alternate-approach">
-<h4>The alternate approach<a class="headerlink" href="#the-alternate-approach" title="Permalink to this headline">¶</a></h4>
-<p>Similar to the above, but using <tt class="docutils literal"><span class="pre">fab</span></tt>&#8216;s ability to call multiple tasks in
-succession instead of an explicit <tt class="docutils literal"><span class="pre">execute</span></tt> call, is to mutate
-<a class="reference internal" href="env.html#hosts"><em>env.hosts</em></a> in a host-list lookup task and then call <tt class="docutils literal"><span class="pre">do_work</span></tt>
-in the same session:</p>
+<h4>The alternate approach<a class="headerlink" href="#the-alternate-approach" title="このヘッドラインへのパーマリンク">¶</a></h4>
+<p>Similar to the above, but using<tt class="docutils literal"><span class="pre">fab</span></tt>&#8216;s ability to call multiple tasks insuccession instead of an explicit<tt class="docutils literal"><span class="pre">execute</span></tt>call, is to mutate<a class="reference internal" href="env.html#hosts"><em>env.hosts</em></a>in a host-list lookup task and then call<tt class="docutils literal"><span class="pre">do_work</span></tt>in the same session:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">run</span><span class="p">,</span> <span class="n">task</span>
 
 <span class="kn">from</span> <span class="nn">mylib</span> <span class="kn">import</span> <span class="n">external_datastore</span>
@@ -609,8 +439,7 @@ in the same session:</p>
 <p>Then invoke like so:</p>
 <div class="highlight-python"><pre>$ fab set_hosts:app do_work</pre>
 </div>
-<p>One benefit of this approach over the previous one is that you can replace
-<tt class="docutils literal"><span class="pre">do_work</span></tt> with any other &#8220;workhorse&#8221; task:</p>
+<p>One benefit of this approach over the previous one is that you can replace<tt class="docutils literal"><span class="pre">do_work</span></tt>with any other &#8220;workhorse&#8221; task:</p>
 <div class="highlight-python"><pre>$ fab set_hosts:db snapshot
 $ fab set_hosts:cassandra,cluster2 repair_ring
 $ fab set_hosts:redis,environ=prod status</pre>
@@ -619,46 +448,21 @@ $ fab set_hosts:redis,environ=prod status</pre>
 </div>
 </div>
 <div class="section" id="failure-handling">
-<span id="failures"></span><h2>Failure handling<a class="headerlink" href="#failure-handling" title="Permalink to this headline">¶</a></h2>
-<p>Once the task list has been constructed, Fabric will start executing them as
-outlined in <a class="reference internal" href="#execution-strategy"><em>Execution strategy</em></a>, until all tasks have been run on the
-entirety of their host lists. However, Fabric defaults to a &#8220;fail-fast&#8221;
-behavior pattern: if anything goes wrong, such as a remote program returning a
-nonzero return value or your fabfile&#8217;s Python code encountering an exception,
-execution will halt immediately.</p>
-<p>This is typically the desired behavior, but there are many exceptions to the
-rule, so Fabric provides <tt class="docutils literal"><span class="pre">env.warn_only</span></tt>, a Boolean setting. It defaults to
-<tt class="docutils literal"><span class="pre">False</span></tt>, meaning an error condition will result in the program aborting
-immediately. However, if <tt class="docutils literal"><span class="pre">env.warn_only</span></tt> is set to <tt class="docutils literal"><span class="pre">True</span></tt> at the time of
-failure &#8211; with, say, the <a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a> context
-manager &#8211; Fabric will emit a warning message but continue executing.</p>
+<span id="failures"></span><h2>Failure handling<a class="headerlink" href="#failure-handling" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Once the task list has been constructed, Fabric will start executing them asoutlined in<a class="reference internal" href="#execution-strategy"><em>Execution strategy</em></a>, until all tasks have been run on theentirety of their host lists. However, Fabric defaults to a &#8220;fail-fast&#8221;behavior pattern: if anything goes wrong, such as a remote program returning anonzero return value or your fabfile&#8217;s Python code encountering an exception,execution will halt immediately.</p>
+<p>This is typically the desired behavior, but there are many exceptions to therule, so Fabric provides<tt class="docutils literal"><span class="pre">env.warn_only</span></tt>, a Boolean setting. It defaults to<tt class="docutils literal"><span class="pre">False</span></tt>, meaning an error condition will result in the program abortingimmediately. However, if<tt class="docutils literal"><span class="pre">env.warn_only</span></tt>is set to<tt class="docutils literal"><span class="pre">True</span></tt>at the time offailure &#8211; with, say, the<a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>contextmanager &#8211; Fabric will emit a warning message but continue executing.</p>
 </div>
 <div class="section" id="connections">
-<span id="id3"></span><h2>Connections<a class="headerlink" href="#connections" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">fab</span></tt> itself doesn&#8217;t actually make any connections to remote hosts. Instead,
-it simply ensures that for each distinct run of a task on one of its hosts, the
-env var <tt class="docutils literal"><span class="pre">env.host_string</span></tt> is set to the right value. Users wanting to
-leverage Fabric as a library may do so manually to achieve similar effects
-(though as of Fabric 1.3, using <a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a> is preferred and more
-powerful.)</p>
-<p><tt class="docutils literal"><span class="pre">env.host_string</span></tt> is (as the name implies) the &#8220;current&#8221; host string, and is
-what Fabric uses to determine what connections to make (or re-use) when
-network-aware functions are run. Operations like <a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> or
-<a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> use <tt class="docutils literal"><span class="pre">env.host_string</span></tt> as a lookup key in a shared
-dictionary which maps host strings to SSH connection objects.</p>
+<span id="id3"></span><h2>Connections<a class="headerlink" href="#connections" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">fab</span></tt>itself doesn&#8217;t actually make any connections to remote hosts. Instead,it simply ensures that for each distinct run of a task on one of its hosts, theenv var<tt class="docutils literal"><span class="pre">env.host_string</span></tt>is set to the right value. Users wanting toleverage Fabric as a library may do so manually to achieve similar effects(though as of Fabric 1.3, using<a class="reference internal" href="../api/core/tasks.html#fabric.tasks.execute" title="fabric.tasks.execute"><tt class="xref py py-obj docutils literal"><span class="pre">execute</span></tt></a>is preferred and morepowerful.)</p>
+<p><tt class="docutils literal"><span class="pre">env.host_string</span></tt>is (as the name implies) the &#8220;current&#8221; host string, and iswhat Fabric uses to determine what connections to make (or re-use) whennetwork-aware functions are run. Operations like<a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>or<a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>use<tt class="docutils literal"><span class="pre">env.host_string</span></tt>as a lookup key in a shareddictionary which maps host strings to SSH connection objects.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The connections dictionary (currently located at
-<tt class="docutils literal"><span class="pre">fabric.state.connections</span></tt>) acts as a cache, opting to return previously
-created connections if possible in order to save some overhead, and
-creating new ones otherwise.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">The connections dictionary (currently located at<tt class="docutils literal"><span class="pre">fabric.state.connections</span></tt>) acts as a cache, opting to return previouslycreated connections if possible in order to save some overhead, andcreating new ones otherwise.</p>
 </div>
 <div class="section" id="lazy-connections">
-<h3>Lazy connections<a class="headerlink" href="#lazy-connections" title="Permalink to this headline">¶</a></h3>
-<p>Because connections are driven by the individual operations, Fabric will not
-actually make connections until they&#8217;re necessary. Take for example this task
-which does some local housekeeping prior to interacting with the remote
-server:</p>
+<h3>Lazy connections<a class="headerlink" href="#lazy-connections" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Because connections are driven by the individual operations, Fabric will notactually make connections until they&#8217;re necessary. Take for example this taskwhich does some local housekeeping prior to interacting with the remoteserver:</p>
 <div class="highlight-python"><pre>from fabric.api import *
 
 @hosts('host1')
@@ -671,146 +475,75 @@ def clean_and_upload():
 </div>
 <p>What happens, connection-wise, is as follows:</p>
 <ol class="arabic simple">
-<li>The two <a class="reference internal" href="../api/core/operations.html#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a> calls will run without making any network
-connections whatsoever;</li>
-<li><a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> asks the connection cache for a connection to
-<tt class="docutils literal"><span class="pre">host1</span></tt>;</li>
-<li>The connection cache fails to find an existing connection for that host
-string, and so creates a new SSH connection, returning it to
-<a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>;</li>
-<li><a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a> uploads the file through that connection;</li>
-<li>Finally, the <a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a> call asks the cache for a connection
-to that same host string, and is given the existing, cached connection for
-its own use.</li>
+<li>The two<a class="reference internal" href="../api/core/operations.html#fabric.operations.local" title="fabric.operations.local"><tt class="xref py py-obj docutils literal"><span class="pre">local</span></tt></a>calls will run without making any networkconnections whatsoever;</li>
+<li><a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>asks the connection cache for a connection to<tt class="docutils literal"><span class="pre">host1</span></tt>;</li>
+<li>The connection cache fails to find an existing connection for that hoststring, and so creates a new SSH connection, returning it to<a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>;</li>
+<li><a class="reference internal" href="../api/core/operations.html#fabric.operations.put" title="fabric.operations.put"><tt class="xref py py-obj docutils literal"><span class="pre">put</span></tt></a>uploads the file through that connection;</li>
+<li>Finally, the<a class="reference internal" href="../api/core/operations.html#fabric.operations.run" title="fabric.operations.run"><tt class="xref py py-obj docutils literal"><span class="pre">run</span></tt></a>call asks the cache for a connectionto that same host string, and is given the existing, cached connection forits own use.</li>
 </ol>
-<p>Extrapolating from this, you can also see that tasks which don&#8217;t use any
-network-borne operations will never actually initiate any connections (though
-they will still be run once for each host in their host list, if any.)</p>
+<p>Extrapolating from this, you can also see that tasks which don&#8217;t use anynetwork-borne operations will never actually initiate any connections (thoughthey will still be run once for each host in their host list, if any.)</p>
 </div>
 <div class="section" id="closing-connections">
-<h3>Closing connections<a class="headerlink" href="#closing-connections" title="Permalink to this headline">¶</a></h3>
-<p>Fabric&#8217;s connection cache never closes connections itself &#8211; it leaves this up
-to whatever is using it. The <a class="reference internal" href="fab.html"><em>fab</em></a> tool does this bookkeeping for
-you: it iterates over all open connections and closes them just before it exits
-(regardless of whether the tasks failed or not.)</p>
-<p>Library users will need to ensure they explicitly close all open connections
-before their program exits. This can be accomplished by calling
-<a class="reference internal" href="../api/core/network.html#fabric.network.disconnect_all" title="fabric.network.disconnect_all"><tt class="xref py py-obj docutils literal"><span class="pre">disconnect_all</span></tt></a> at the end of your script.</p>
+<h3>Closing connections<a class="headerlink" href="#closing-connections" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Fabric&#8217;s connection cache never closes connections itself &#8211; it leaves this upto whatever is using it. The<a class="reference internal" href="fab.html"><em>fab</em></a>tool does this bookkeeping foryou: it iterates over all open connections and closes them just before it exits(regardless of whether the tasks failed or not.)</p>
+<p>Library users will need to ensure they explicitly close all open connectionsbefore their program exits. This can be accomplished by calling<a class="reference internal" href="../api/core/network.html#fabric.network.disconnect_all" title="fabric.network.disconnect_all"><tt class="xref py py-obj docutils literal"><span class="pre">disconnect_all</span></tt></a>at the end of your script.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="../api/core/network.html#fabric.network.disconnect_all" title="fabric.network.disconnect_all"><tt class="xref py py-obj docutils literal"><span class="pre">disconnect_all</span></tt></a> may be moved to a more public location in
-the future; we&#8217;re still working on making the library aspects of Fabric
-more solidified and organized.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last"><a class="reference internal" href="../api/core/network.html#fabric.network.disconnect_all" title="fabric.network.disconnect_all"><tt class="xref py py-obj docutils literal"><span class="pre">disconnect_all</span></tt></a>may be moved to a more public location inthe future; we&#8217;re still working on making the library aspects of Fabricmore solidified and organized.</p>
 </div>
 </div>
 <div class="section" id="multiple-connection-attempts-and-skipping-bad-hosts">
-<h3>Multiple connection attempts and skipping bad hosts<a class="headerlink" href="#multiple-connection-attempts-and-skipping-bad-hosts" title="Permalink to this headline">¶</a></h3>
-<p>As of Fabric 1.4, multiple attempts may be made to connect to remote servers
-before aborting with an error: Fabric will try connecting
-<a class="reference internal" href="env.html#connection-attempts"><em>env.connection_attempts</em></a> times before giving up,
-with a timeout of <a class="reference internal" href="env.html#timeout"><em>env.timeout</em></a> seconds each time. (These
-currently default to 1 try and 10 seconds, to match previous behavior, but they
-may be safely changed to whatever you need.)</p>
-<p>Furthermore, even total failure to connect to a server is no longer an absolute
-hard stop: set <a class="reference internal" href="env.html#skip-bad-hosts"><em>env.skip_bad_hosts</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt> and in
-most situations (typically initial connections) Fabric will simply warn and
-continue, instead of aborting.</p>
+<h3>Multiple connection attempts and skipping bad hosts<a class="headerlink" href="#multiple-connection-attempts-and-skipping-bad-hosts" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>As of Fabric 1.4, multiple attempts may be made to connect to remote serversbefore aborting with an error: Fabric will try connecting<a class="reference internal" href="env.html#connection-attempts"><em>env.connection_attempts</em></a>times before giving up,with a timeout of<a class="reference internal" href="env.html#timeout"><em>env.timeout</em></a>seconds each time. (Thesecurrently default to 1 try and 10 seconds, to match previous behavior, but theymay be safely changed to whatever you need.)</p>
+<p>Furthermore, even total failure to connect to a server is no longer an absolutehard stop: set<a class="reference internal" href="env.html#skip-bad-hosts"><em>env.skip_bad_hosts</em></a>to<tt class="docutils literal"><span class="pre">True</span></tt>and inmost situations (typically initial connections) Fabric will simply warn andcontinue, instead of aborting.</p>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 1.4.</span></p>
+<p><span class="versionmodified">バージョン 1.4 で追加.</span></p>
 </div>
 </div>
 </div>
 <div class="section" id="password-management">
-<span id="id4"></span><h2>Password management<a class="headerlink" href="#password-management" title="Permalink to this headline">¶</a></h2>
-<p>Fabric maintains an in-memory, two-tier password cache to help remember your
-login and sudo passwords in certain situations; this helps avoid tedious
-re-entry when multiple systems share the same password <a class="footnote-reference" href="#id6" id="id5">[1]</a>, or if a remote
-system&#8217;s <tt class="docutils literal"><span class="pre">sudo</span></tt> configuration doesn&#8217;t do its own caching.</p>
-<p>The first layer is a simple default or fallback password cache,
-<a class="reference internal" href="env.html#password"><em>env.password</em></a> (which may also be set at the command line via
-<a class="reference internal" href="fab.html#cmdoption-p"><em class="xref std std-option">--password</em></a> or <a class="reference internal" href="fab.html#cmdoption-I"><em class="xref std std-option">--initial-password-prompt</em></a>). This
-env var stores a single password which (if non-empty) will be tried in the
-event that the host-specific cache (see below) has no entry for the current
-<a class="reference internal" href="env.html#host-string"><em>host string</em></a>.</p>
-<p><a class="reference internal" href="env.html#passwords"><em>env.passwords</em></a> (plural!) serves as a per-user/per-host cache,
-storing the most recently entered password for every unique user/host/port
-combination.  Due to this cache, connections to multiple different users and/or
-hosts in the same session will only require a single password entry for each.
-(Previous versions of Fabric used only the single, default password cache and
-thus required password re-entry every time the previously entered password
-became invalid.)</p>
-<p>Depending on your configuration and the number of hosts your session will
-connect to, you may find setting either or both of these env vars to be useful.
-However, Fabric will automatically fill them in as necessary without any
-additional configuration.</p>
-<p>Specifically, each time a password prompt is presented to the user, the value
-entered is used to update both the single default password cache, and the cache
-value for the current value of <tt class="docutils literal"><span class="pre">env.host_string</span></tt>.</p>
+<span id="id4"></span><h2>Password management<a class="headerlink" href="#password-management" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Fabric maintains an in-memory, two-tier password cache to help remember yourlogin and sudo passwords in certain situations; this helps avoid tediousre-entry when multiple systems share the same password<a class="footnote-reference" href="#id6" id="id5">[1]</a>, or if a remotesystem&#8217;s<tt class="docutils literal"><span class="pre">sudo</span></tt>configuration doesn&#8217;t do its own caching.</p>
+<p>The first layer is a simple default or fallback password cache,<a class="reference internal" href="env.html#password"><em>env.password</em></a>(which may also be set at the command line via<a class="reference internal" href="fab.html#cmdoption-p"><em class="xref std std-option">--password</em></a>or<a class="reference internal" href="fab.html#cmdoption-I"><em class="xref std std-option">--initial-password-prompt</em></a>). Thisenv var stores a single password which (if non-empty) will be tried in theevent that the host-specific cache (see below) has no entry for the current<a class="reference internal" href="env.html#host-string"><em>host string</em></a>.</p>
+<p><a class="reference internal" href="env.html#passwords"><em>env.passwords</em></a>(plural!) serves as a per-user/per-host cache,storing the most recently entered password for every unique user/host/portcombination.  Due to this cache, connections to multiple different users and/orhosts in the same session will only require a single password entry for each.(Previous versions of Fabric used only the single, default password cache andthus required password re-entry every time the previously entered passwordbecame invalid.)</p>
+<p>Depending on your configuration and the number of hosts your session willconnect to, you may find setting either or both of these env vars to be useful.However, Fabric will automatically fill them in as necessary without anyadditional configuration.</p>
+<p>Specifically, each time a password prompt is presented to the user, the valueentered is used to update both the single default password cache, and the cachevalue for the current value of<tt class="docutils literal"><span class="pre">env.host_string</span></tt>.</p>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>We highly recommend the use of SSH <a class="reference external" href="http://en.wikipedia.org/wiki/Public_key">key-based access</a> instead of relying on
-homogeneous password setups, as it&#8217;s significantly more secure.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id5">[1]</a></td><td>We highly recommend the use of SSH<a class="reference external" href="http://en.wikipedia.org/wiki/Public_key">key-based access</a>instead of relying onhomogeneous password setups, as it&#8217;s significantly more secure.</td></tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="leveraging-native-ssh-config-files">
-<span id="ssh-config"></span><h2>Leveraging native SSH config files<a class="headerlink" href="#leveraging-native-ssh-config-files" title="Permalink to this headline">¶</a></h2>
-<p>Command-line SSH clients (such as the one provided by <a class="reference external" href="http://openssh.org">OpenSSH</a>) make use of a specific configuration format typically
-known as <tt class="docutils literal"><span class="pre">ssh_config</span></tt>, and will read from a file in the platform-specific
-location <tt class="docutils literal"><span class="pre">$HOME/.ssh/config</span></tt> (or an arbitrary path given to
-<a class="reference internal" href="fab.html#cmdoption--ssh-config-path"><em class="xref std std-option">--ssh-config-path</em></a>/<a class="reference internal" href="env.html#ssh-config-path"><em>env.ssh_config_path</em></a>.) This
-file allows specification of various SSH options such as default or per-host
-usernames, hostname aliases, and toggling other settings (such as whether to
-use <a class="reference internal" href="env.html#forward-agent"><em>agent forwarding</em></a>.)</p>
-<p>Fabric&#8217;s SSH implementation allows loading a subset of these options from one&#8217;s
-actual SSH config file, should it exist. This behavior is not enabled by
-default (in order to be backwards compatible) but may be turned on by setting
-<a class="reference internal" href="env.html#use-ssh-config"><em>env.use_ssh_config</em></a> to <tt class="docutils literal"><span class="pre">True</span></tt> at the top of your
-fabfile.</p>
+<span id="ssh-config"></span><h2>Leveraging native SSH config files<a class="headerlink" href="#leveraging-native-ssh-config-files" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Command-line SSH clients (such as the one provided by<a class="reference external" href="http://openssh.org">OpenSSH</a>) make use of a specific configuration format typicallyknown as<tt class="docutils literal"><span class="pre">ssh_config</span></tt>, and will read from a file in the platform-specificlocation<tt class="docutils literal"><span class="pre">$HOME/.ssh/config</span></tt>(or an arbitrary path given to<a class="reference internal" href="fab.html#cmdoption--ssh-config-path"><em class="xref std std-option">--ssh-config-path</em></a>/<a class="reference internal" href="env.html#ssh-config-path"><em>env.ssh_config_path</em></a>.) Thisfile allows specification of various SSH options such as default or per-hostusernames, hostname aliases, and toggling other settings (such as whether touse<a class="reference internal" href="env.html#forward-agent"><em>agent forwarding</em></a>.)</p>
+<p>Fabric&#8217;s SSH implementation allows loading a subset of these options from one&#8217;sactual SSH config file, should it exist. This behavior is not enabled bydefault (in order to be backwards compatible) but may be turned on by setting<a class="reference internal" href="env.html#use-ssh-config"><em>env.use_ssh_config</em></a>to<tt class="docutils literal"><span class="pre">True</span></tt>at the top of yourfabfile.</p>
 <p>If enabled, the following SSH config directives will be loaded and honored by Fabric:</p>
 <ul>
-<li><p class="first"><tt class="docutils literal"><span class="pre">User</span></tt> and <tt class="docutils literal"><span class="pre">Port</span></tt> will be used to fill in the appropriate connection
-parameters when not otherwise specified, in the following fashion:</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">User</span></tt>and<tt class="docutils literal"><span class="pre">Port</span></tt>will be used to fill in the appropriate connectionparameters when not otherwise specified, in the following fashion:</p>
 <ul class="simple">
-<li>Globally specified <tt class="docutils literal"><span class="pre">User</span></tt>/<tt class="docutils literal"><span class="pre">Port</span></tt> will be used in place of the current
-defaults (local username and 22, respectively) if the appropriate env vars
-are not set.</li>
-<li>However, if <a class="reference internal" href="env.html#user"><em>env.user</em></a>/<a class="reference internal" href="env.html#port"><em>env.port</em></a> <em>are</em> set, they
-override global <tt class="docutils literal"><span class="pre">User</span></tt>/<tt class="docutils literal"><span class="pre">Port</span></tt> values.</li>
-<li>User/port values in the host string itself (e.g. <tt class="docutils literal"><span class="pre">hostname:222</span></tt>) will
-override everything, including any <tt class="docutils literal"><span class="pre">ssh_config</span></tt> values.</li>
+<li>Globally specified<tt class="docutils literal"><span class="pre">User</span></tt>/<tt class="docutils literal"><span class="pre">Port</span></tt>will be used in place of the currentdefaults (local username and 22, respectively) if the appropriate env varsare not set.</li>
+<li>However, if<a class="reference internal" href="env.html#user"><em>env.user</em></a>/<a class="reference internal" href="env.html#port"><em>env.port</em></a><em>are</em>set, theyoverride global<tt class="docutils literal"><span class="pre">User</span></tt>/<tt class="docutils literal"><span class="pre">Port</span></tt>values.</li>
+<li>User/port values in the host string itself (e.g.<tt class="docutils literal"><span class="pre">hostname:222</span></tt>) willoverride everything, including any<tt class="docutils literal"><span class="pre">ssh_config</span></tt>values.</li>
 </ul>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">HostName</span></tt> can be used to replace the given hostname, just like with
-regular <tt class="docutils literal"><span class="pre">ssh</span></tt>. So a <tt class="docutils literal"><span class="pre">Host</span> <span class="pre">foo</span></tt> entry specifying <tt class="docutils literal"><span class="pre">HostName</span> <span class="pre">example.com</span></tt>
-will allow you to give Fabric the hostname <tt class="docutils literal"><span class="pre">'foo'</span></tt> and have that expanded
-into <tt class="docutils literal"><span class="pre">'example.com'</span></tt> at connection time.</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">HostName</span></tt>can be used to replace the given hostname, just like withregular<tt class="docutils literal"><span class="pre">ssh</span></tt>. So a<tt class="docutils literal"><span class="pre">Host</span> <span class="pre">foo</span></tt>entry specifying<tt class="docutils literal"><span class="pre">HostName</span> <span class="pre">example.com</span></tt>will allow you to give Fabric the hostname<tt class="docutils literal"><span class="pre">'foo'</span></tt>and have that expandedinto<tt class="docutils literal"><span class="pre">'example.com'</span></tt>at connection time.</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">IdentityFile</span></tt> will extend (not replace) <a class="reference internal" href="env.html#key-filename"><em>env.key_filename</em></a>.</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">IdentityFile</span></tt>will extend (not replace)<a class="reference internal" href="env.html#key-filename"><em>env.key_filename</em></a>.</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">ForwardAgent</span></tt> will augment <a class="reference internal" href="env.html#forward-agent"><em>env.forward_agent</em></a> in an
-&#8220;OR&#8221; manner: if either is set to a positive value, agent forwarding will be
-enabled.</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ForwardAgent</span></tt>will augment<a class="reference internal" href="env.html#forward-agent"><em>env.forward_agent</em></a>in an&#8221;OR&#8221; manner: if either is set to a positive value, agent forwarding will beenabled.</p>
 </li>
-<li><p class="first"><tt class="docutils literal"><span class="pre">ProxyCommand</span></tt> will trigger use of a proxy command for host connections,
-just as with regular <tt class="docutils literal"><span class="pre">ssh</span></tt>.</p>
+<li><p class="first"><tt class="docutils literal"><span class="pre">ProxyCommand</span></tt>will trigger use of a proxy command for host connections,just as with regular<tt class="docutils literal"><span class="pre">ssh</span></tt>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If all you want to do is bounce SSH traffic off a gateway, you may find
-<a class="reference internal" href="env.html#gateway"><em>env.gateway</em></a> to be a more efficient connection method
-(which will also honor more Fabric-level settings) than the typical <tt class="docutils literal"><span class="pre">ssh</span>
-<span class="pre">gatewayhost</span> <span class="pre">nc</span> <span class="pre">%h</span> <span class="pre">%p</span></tt> method of using <tt class="docutils literal"><span class="pre">ProxyCommand</span></tt> as a gateway.</p>
+<p class="first admonition-title">ノート</p>
+<p class="last">If all you want to do is bounce SSH traffic off a gateway, you may find<a class="reference internal" href="env.html#gateway"><em>env.gateway</em></a>to be a more efficient connection method(which will also honor more Fabric-level settings) than the typical<tt class="docutils literal"><span class="pre">ssh</span>
+<span class="pre">gatewayhost</span> <span class="pre">nc</span> <span class="pre">%h</span> <span class="pre">%p</span></tt>method of using<tt class="docutils literal"><span class="pre">ProxyCommand</span></tt>as a gateway.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>If your SSH config file contains <tt class="docutils literal"><span class="pre">ProxyCommand</span></tt> directives <em>and</em> you have
-set <a class="reference internal" href="env.html#gateway"><em>env.gateway</em></a> to a non-<tt class="docutils literal"><span class="pre">None</span></tt> value, <tt class="docutils literal"><span class="pre">env.gateway</span></tt>
-will take precedence and the <tt class="docutils literal"><span class="pre">ProxyCommand</span></tt> will be ignored.</p>
-<p class="last">If one has a pre-created SSH config file, rationale states it will be
-easier for you to modify <tt class="docutils literal"><span class="pre">env.gateway</span></tt> (e.g. via
-<a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>) than to work around your conf file&#8217;s
-contents entirely.</p>
+<p class="first admonition-title">ノート</p>
+<p>If your SSH config file contains<tt class="docutils literal"><span class="pre">ProxyCommand</span></tt>directives<em>and</em>you haveset<a class="reference internal" href="env.html#gateway"><em>env.gateway</em></a>to a non-<tt class="docutils literal"><span class="pre">None</span></tt>value,<tt class="docutils literal"><span class="pre">env.gateway</span></tt>will take precedence and the<tt class="docutils literal"><span class="pre">ProxyCommand</span></tt>will be ignored.</p>
+<p class="last">If one has a pre-created SSH config file, rationale states it will beeasier for you to modify<tt class="docutils literal"><span class="pre">env.gateway</span></tt>(e.g. via<a class="reference internal" href="../api/core/context_managers.html#fabric.context_managers.settings" title="fabric.context_managers.settings"><tt class="xref py py-obj docutils literal"><span class="pre">settings</span></tt></a>) than to work around your conf file&#8217;scontents entirely.</p>
 </div>
 </li>
 </ul>
@@ -931,7 +664,7 @@ contents entirely.</p>
 </ul>
 
 
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">目次</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Execution model</a><ul>
 <li><a class="reference internal" href="#execution-strategy">Execution strategy</a></li>
@@ -976,27 +709,27 @@ contents entirely.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>前のトピックへ</h4>
   <p class="topless"><a href="env.html"
-                        title="previous chapter">The environment dictionary, <tt class="docutils literal"><span class="pre">env</span></tt></a></p>
-  <h4>Next topic</h4>
+                        title="前の章へ">The environment dictionary, <tt class="docutils literal"><span class="pre">env</span></tt></a></p>
+  <h4>次のトピックへ</h4>
   <p class="topless"><a href="fab.html"
-                        title="next chapter"><tt class="docutils literal"><span class="pre">fab</span></tt> options and arguments</a></p>
-  <h3>This Page</h3>
+                        title="次の章へ"><tt class="docutils literal"><span class="pre">fab</span></tt> options and arguments</a></p>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/usage/execution.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -1005,26 +738,26 @@ contents entirely.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
+          <a href="../genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="../py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
+          <a href="../py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
         <li class="right" >
           <a href="fab.html" title="fab options and arguments"
-             >next</a> |</li>
+             >次へ</a> |</li>
         <li class="right" >
           <a href="env.html" title="The environment dictionary, env"
-             >previous</a> |</li>
-        <li><a href="../index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+             >前へ</a> |</li>
+        <li><a href="../index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>

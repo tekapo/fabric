@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Patch submission guidelines &mdash; Fabric 1.8 documentation</title>
+    <title>Patch submission guidelines &mdash; Fabric 1.8 ドキュメント</title>
     
     <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Fabric 1.8 documentation" href="index.html" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Fabric 1.8 ドキュメント" href="index.html" />
  
 <script type="text/javascript">
   var _gaq = _gaq || [];
@@ -42,15 +43,15 @@
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="総合索引"
+             accesskey="I">索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -60,11 +61,9 @@
           <div class="body">
             
   <div class="section" id="patch-submission-guidelines">
-<h1>Patch submission guidelines<a class="headerlink" href="#patch-submission-guidelines" title="Permalink to this headline">¶</a></h1>
+<h1>Patch submission guidelines<a class="headerlink" href="#patch-submission-guidelines" title="このヘッドラインへのパーマリンク">¶</a></h1>
 <ul>
-<li><p class="first"><strong>Create a new Git branch specific to your change(s).</strong> For example, if
-you&#8217;re adding a new feature to foo the bars, do something like the
-following:</p>
+<li><p class="first"><strong>Create a new Git branch specific to your change(s).</strong>For example, ifyou&#8217;re adding a new feature to foo the bars, do something like thefollowing:</p>
 <div class="highlight-python"><pre>$ git checkout master # or the latest release branch -- see below
 $ git pull
 $ git checkout -b foo-the-bars
@@ -72,53 +71,38 @@ $ git checkout -b foo-the-bars
 $ git push origin HEAD
 &lt;submit pull request based on your new 'foo-the-bars' branch&gt;</pre>
 </div>
-<p>This makes life much easier for maintainers if you have (or ever plan to
-have) additional changes in your own <tt class="docutils literal"><span class="pre">master</span></tt> branch.</p>
+<p>This makes life much easier for maintainers if you have (or ever plan tohave) additional changes in your own<tt class="docutils literal"><span class="pre">master</span></tt>branch.</p>
 <blockquote>
 <div><ul class="simple">
-<li>A corollary: please <strong>don&#8217;t put multiple fixes/features in the same
-branch/pull request</strong>! In other words, if you&#8217;re hacking on new feature X
-and find a bugfix that doesn&#8217;t <em>require</em> new feature X, <strong>make a new
-distinct branch and PR</strong> for the bugfix.</li>
+<li>A corollary: please<strong>don&#8217;t put multiple fixes/features in the same
+branch/pull request</strong>! In other words, if you&#8217;re hacking on new feature Xand find a bugfix that doesn&#8217;t<em>require</em>new feature X,<strong>make a new
+distinct branch and PR</strong>for the bugfix.</li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">Base <strong>bugfixes</strong> off the <strong>latest release branch</strong> (e.g. <tt class="docutils literal"><span class="pre">1.4</span></tt>, <tt class="docutils literal"><span class="pre">1.5</span></tt> or
-whatever&#8217;s newest) and <strong>new features</strong> off of <strong>master</strong>. If you&#8217;re unsure
-which category your change falls in, just ask on IRC or the mailing list &#8211;
-it&#8217;s often a judgement call.</p>
+<li><p class="first">Base<strong>bugfixes</strong>off the<strong>latest release branch</strong>(e.g.<tt class="docutils literal"><span class="pre">1.4</span></tt>,<tt class="docutils literal"><span class="pre">1.5</span></tt>orwhatever&#8217;s newest) and<strong>new features</strong>off of<strong>master</strong>. If you&#8217;re unsurewhich category your change falls in, just ask on IRC or the mailing list &#8211;it&#8217;s often a judgement call.</p>
 </li>
-<li><p class="first"><strong>Make sure documentation is updated</strong> &#8211; at the very least, keep docstrings
-current, and if necessary, update the ReST documentation in <tt class="docutils literal"><span class="pre">docs/</span></tt>.  For
-example, new <tt class="docutils literal"><span class="pre">env.*</span></tt> settings should be added to <tt class="docutils literal"><span class="pre">docs/usage/env.rst</span></tt>.</p>
+<li><p class="first"><strong>Make sure documentation is updated</strong>&#8211; at the very least, keep docstringscurrent, and if necessary, update the ReST documentation in<tt class="docutils literal"><span class="pre">docs/</span></tt>.  Forexample, new<tt class="docutils literal"><span class="pre">env.*</span></tt>settings should be added to<tt class="docutils literal"><span class="pre">docs/usage/env.rst</span></tt>.</p>
 </li>
-<li><p class="first"><strong>Add a changelog entry</strong> at the top of <tt class="docutils literal"><span class="pre">docs/changelog.rst</span></tt> following
-existing entries&#8217; styles. Don&#8217;t forget to attribute yourself if you&#8217;d like
-credit!</p>
+<li><p class="first"><strong>Add a changelog entry</strong>at the top of<tt class="docutils literal"><span class="pre">docs/changelog.rst</span></tt>followingexisting entries&#8217; styles. Don&#8217;t forget to attribute yourself if you&#8217;d likecredit!</p>
 <blockquote>
 <div><ul>
-<li><p class="first">If your change is a feature or support ticket intended for backporting to
-older release lines, give it the <tt class="docutils literal"><span class="pre">backported</span></tt> keyword, e.g.:</p>
+<li><p class="first">If your change is a feature or support ticket intended for backporting toolder release lines, give it the<tt class="docutils literal"><span class="pre">backported</span></tt>keyword, e.g.:</p>
 <div class="highlight-python"><pre>* :feature:`123 backported` This is my description...</pre>
 </div>
 </li>
-<li><p class="first">If it&#8217;s a &#8220;major&#8221; bugfix that is getting put out in a feature release,
-give it the <tt class="docutils literal"><span class="pre">major</span></tt> keyword:</p>
+<li><p class="first">If it&#8217;s a &#8220;major&#8221; bugfix that is getting put out in a feature release,give it the<tt class="docutils literal"><span class="pre">major</span></tt>keyword:</p>
 <div class="highlight-python"><pre>* :bug:`123 major` Description here...</pre>
 </div>
 </li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first"><strong>Try writing some tests</strong> if possible &#8211; again, following existing tests is
-often easiest, and a good way to tell whether the feature you&#8217;re modifying is
-easily testable.</p>
+<li><p class="first"><strong>Try writing some tests</strong>if possible &#8211; again, following existing tests isoften easiest, and a good way to tell whether the feature you&#8217;re modifying iseasily testable.</p>
 </li>
-<li><p class="first"><strong>Use</strong> <tt class="docutils literal"><span class="pre">hub</span> <span class="pre">pull-request</span></tt> when writing a patch for a <strong>pre-existing Github
-Issue</strong>. This isn&#8217;t an absolute requirement, but makes the maintainers&#8217; lives
-much easier! Specifically: <a class="reference external" href="https://github.com/defunkt/hub/#installation">install hub</a> and then run <a class="reference external" href="https://github.com/defunkt/hub/#git-pull-request">hub
-pull-request</a> to turn the
-issue into a pull request containing your code.</p>
+<li><p class="first"><strong>Use</strong><tt class="docutils literal"><span class="pre">hub</span> <span class="pre">pull-request</span></tt>when writing a patch for a<strong>pre-existing Github
+Issue</strong>. This isn&#8217;t an absolute requirement, but makes the maintainers&#8217; livesmuch easier! Specifically:<a class="reference external" href="https://github.com/defunkt/hub/#installation">install hub</a>and then run<a class="reference external" href="https://github.com/defunkt/hub/#git-pull-request">hub
+pull-request</a>to turn theissue into a pull request containing your code.</p>
 </li>
 </ul>
 </div>
@@ -237,21 +221,21 @@ issue into a pull request containing your code.</p>
 </ul>
 
 
-  <h3>This Page</h3>
+  <h3>このページ</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/CONTRIBUTING.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">ソースコードを表示</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>クイック検索</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="検索" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    モジュール、クラス、または関数名を入力してください
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -260,20 +244,20 @@ issue into a pull request containing your code.</p>
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>ナビゲーション</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="総合索引"
+             >索引</a></li>
         <li class="right" >
-          <a href="py-modindex.html" title="Python Module Index"
-             >modules</a> |</li>
-        <li><a href="index.html">Fabric 1.8 documentation</a> &raquo;</li> 
+          <a href="py-modindex.html" title="Pythonモジュール索引"
+             >モジュール</a> |</li>
+        <li><a href="index.html">Fabric 1.8 ドキュメント</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2013, Christian Vest Hansen and Jeffrey E. Forcier.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+      このドキュメントは <a href="http://sphinx-doc.org/">Sphinx</a> 1.2 で生成しました。
     </div>
   </body>
 </html>
