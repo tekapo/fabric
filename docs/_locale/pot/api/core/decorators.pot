@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/decorators.rst:3
+# bcc56654c7ff4db8bf526a0c9e5ff952
+msgid "Decorators"
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators:1
+# 02b911ab6ec64be1a5a341e2822421e1
+msgid "Convenience decorators for use in fabfiles."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.hosts:1
+# 1b2c0851088e40ca809fac989c8ba1c1
+msgid "Decorator defining which host or hosts to execute the wrapped function on."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.hosts:3
+# 4f9c433ee73b47adbbafb24ccba0ccc1
+msgid "For example, the following will ensure that, barring an override on the command line, ``my_func`` will be run on ``host1``, ``host2`` and ``host3``, and with specific users on ``host1`` and ``host3``::"
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.hosts:11
+# 09e2f9f3fed841cca45643a89d797c59
+msgid "`~fabric.decorators.hosts` may be invoked with either an argument list (``@hosts('host1')``, ``@hosts('host1', 'host2')``) or a single, iterable argument (``@hosts(['host1', 'host2'])``)."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.hosts:15
+# 62edc690596b4514bb899e8f9b09748a
+msgid "Note that this decorator actually just sets the function's ``.hosts`` attribute, which is then read prior to executing the function."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.hosts:18
+# 7bf517783d354985a42ff25b1734eb1d
+msgid "Allow a single, iterable argument (``@hosts(iterable)``) to be used instead of requiring ``@hosts(*iterable)``."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.roles:1
+# 41c8c3b60c4e4033906669e0f6d47e5e
+msgid "Decorator defining a list of role names, used to look up host lists."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.roles:3
+# 9531c42dbf424cef8d9bf6b91fca6a56
+msgid "A role is simply defined as a key in `env` whose value is a list of one or more host connection strings. For example, the following will ensure that, barring an override on the command line, ``my_func`` will be executed against the hosts listed in the ``webserver`` and ``dbserver`` roles::"
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.roles:17
+# 98c21c6613b5482db2ab62c8c1b7722a
+msgid "As with `~fabric.decorators.hosts`, `~fabric.decorators.roles` may be invoked with either an argument list or a single, iterable argument. Similarly, this decorator uses the same mechanism as `~fabric.decorators.hosts` and simply sets ``<function>.roles``."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.roles:22
+# a736719ff5b947959bb615217557c189
+msgid "Allow a single, iterable argument to be used (same as `~fabric.decorators.hosts`)."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.runs_once:1
+# 128e825f2d4b4e4b8210cbbf5db26fab
+msgid "Decorator preventing wrapped function from running more than once."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.runs_once:3
+# bf3a1a889db746d48105e335a1c7c25c
+msgid "By keeping internal state, this decorator allows you to mark a function such that it will only run once per Python interpreter session, which in typical use means \"once per invocation of the ``fab`` program\"."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.runs_once:7
+# 34b6f6cf569a4e6ab280b37c2bc3c6b1
+msgid "Any function wrapped with this decorator will silently fail to execute the 2nd, 3rd, ..., Nth time it is called, and will return the value of the original run."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.runs_once:11
+# ab53b790a7244fb4a52c8980b12911ff
+msgid "``runs_once`` does not work with parallel task execution."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.serial:1
+# 01ee196f594843e5a48f06d98b03f905
+msgid "Forces the wrapped function to always run sequentially, never in parallel."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.serial:3
+# 543e776caf644d4a8e279054f8dbe873
+msgid "This decorator takes precedence over the global value of :ref:`env.parallel <env-parallel>`. However, if a task is decorated with both `~fabric.decorators.serial` *and* `~fabric.decorators.parallel`, `~fabric.decorators.parallel` wins."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.parallel:1
+# 3afef63d89754db8b185fa9d8d1b5c86
+msgid "Forces the wrapped function to run in parallel, instead of sequentially."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.parallel:3
+# 2e8d2c55f3f342e9b6fd06de917eb70d
+msgid "This decorator takes precedence over the global value of :ref:`env.parallel <env-parallel>`. It also takes precedence over `~fabric.decorators.serial` if a task is decorated with both."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:1
+# c2d10a2fe7bf48b4b92d3d2acc82b748
+msgid "Decorator declaring the wrapped function to be a new-style task."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:3
+# 706123053d6a4ec39e292a37618d72d9
+msgid "May be invoked as a simple, argument-less decorator (i.e. ``@task``) or with arguments customizing its behavior (e.g. ``@task(alias='myalias')``)."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:6
+# ddd3f45f8572458ca4296937ad5fe4c5
+msgid "Please see the :ref:`new-style task <task-decorator>` documentation for details on how to use this decorator."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:9
+# 97cc3ee8f6164f3190813f62238c26b3
+msgid "Added the ``alias``, ``aliases``, ``task_class`` and ``default`` keyword arguments. See :ref:`task-decorator-arguments` for details."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:12
+# feb0de7b732c4def93ed4aee9a562eb3
+msgid "Added the ``name`` keyword argument."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.task:15
+# 08ed4fcf12bf4775ae0b00efd5c6dee2
+msgid "`~fabric.docs.unwrap_tasks`, `~fabric.tasks.WrappedCallableTask`"
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.with_settings:1
+# c077316bcc414305bb1cc980daf90620
+msgid "Decorator equivalent of ``fabric.context_managers.settings``."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.with_settings:3
+# 21ec9cd8ef9246a6b5d10d981ea6bcbd
+msgid "Allows you to wrap an entire function as if it was called inside a block with the ``settings`` context manager. This may be useful if you know you want a given setting applied to an entire function body, or wish to retrofit old code without indenting everything."
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.with_settings:8
+# 511898b30ccb477499afeaadbd938d20
+msgid "For example, to turn aborts into warnings for an entire task function::"
+msgstr ""
+
+#: ../../../fabric/decorators.py:docstring of fabric.decorators.with_settings:14
+# 0bc7826526084f3197d16e44f95ea24e
+msgid "`~fabric.context_managers.settings`"
+msgstr ""
+

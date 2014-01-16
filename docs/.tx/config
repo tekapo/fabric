@@ -1,0 +1,159 @@
+[main]
+host = https://www.transifex.com
+type = PO
+
+[fabric-docs-1_8_1.changelog]
+file_filter = locale/<lang>/LC_MESSAGES/changelog.po
+source_file = locale/pot/changelog.pot
+source_lang = en
+
+[fabric-docs-1_8_1.development]
+file_filter = locale/<lang>/LC_MESSAGES/development.po
+source_file = locale/pot/development.pot
+source_lang = en
+
+[fabric-docs-1_8_1.faq]
+file_filter = locale/<lang>/LC_MESSAGES/faq.po
+source_file = locale/pot/faq.pot
+source_lang = en
+
+[fabric-docs-1_8_1.index]
+file_filter = locale/<lang>/LC_MESSAGES/index.po
+source_file = locale/pot/index.pot
+source_lang = en
+
+[fabric-docs-1_8_1.installation]
+file_filter = locale/<lang>/LC_MESSAGES/installation.po
+source_file = locale/pot/installation.pot
+source_lang = en
+
+[fabric-docs-1_8_1.roadmap]
+file_filter = locale/<lang>/LC_MESSAGES/roadmap.po
+source_file = locale/pot/roadmap.pot
+source_lang = en
+
+[fabric-docs-1_8_1.troubleshooting]
+file_filter = locale/<lang>/LC_MESSAGES/troubleshooting.po
+source_file = locale/pot/troubleshooting.pot
+source_lang = en
+
+[fabric-docs-1_8_1.tutorial]
+file_filter = locale/<lang>/LC_MESSAGES/tutorial.po
+source_file = locale/pot/tutorial.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--contrib--console]
+file_filter = locale/<lang>/LC_MESSAGES/api/contrib/console.po
+source_file = locale/pot/api/contrib/console.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--contrib--django]
+file_filter = locale/<lang>/LC_MESSAGES/api/contrib/django.po
+source_file = locale/pot/api/contrib/django.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--contrib--files]
+file_filter = locale/<lang>/LC_MESSAGES/api/contrib/files.po
+source_file = locale/pot/api/contrib/files.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--contrib--project]
+file_filter = locale/<lang>/LC_MESSAGES/api/contrib/project.po
+source_file = locale/pot/api/contrib/project.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--colors]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/colors.po
+source_file = locale/pot/api/core/colors.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--context_managers]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/context_managers.po
+source_file = locale/pot/api/core/context_managers.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--decorators]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/decorators.po
+source_file = locale/pot/api/core/decorators.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--docs]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/docs.po
+source_file = locale/pot/api/core/docs.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--network]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/network.po
+source_file = locale/pot/api/core/network.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--operations]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/operations.po
+source_file = locale/pot/api/core/operations.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--tasks]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/tasks.po
+source_file = locale/pot/api/core/tasks.pot
+source_lang = en
+
+[fabric-docs-1_8_1.api--core--utils]
+file_filter = locale/<lang>/LC_MESSAGES/api/core/utils.po
+source_file = locale/pot/api/core/utils.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--env]
+file_filter = locale/<lang>/LC_MESSAGES/usage/env.po
+source_file = locale/pot/usage/env.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--execution]
+file_filter = locale/<lang>/LC_MESSAGES/usage/execution.po
+source_file = locale/pot/usage/execution.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--fab]
+file_filter = locale/<lang>/LC_MESSAGES/usage/fab.po
+source_file = locale/pot/usage/fab.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--fabfiles]
+file_filter = locale/<lang>/LC_MESSAGES/usage/fabfiles.po
+source_file = locale/pot/usage/fabfiles.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--interactivity]
+file_filter = locale/<lang>/LC_MESSAGES/usage/interactivity.po
+source_file = locale/pot/usage/interactivity.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--library]
+file_filter = locale/<lang>/LC_MESSAGES/usage/library.po
+source_file = locale/pot/usage/library.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--output_controls]
+file_filter = locale/<lang>/LC_MESSAGES/usage/output_controls.po
+source_file = locale/pot/usage/output_controls.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--parallel]
+file_filter = locale/<lang>/LC_MESSAGES/usage/parallel.po
+source_file = locale/pot/usage/parallel.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--ssh]
+file_filter = locale/<lang>/LC_MESSAGES/usage/ssh.po
+source_file = locale/pot/usage/ssh.pot
+source_lang = en
+
+[fabric-docs-1_8_1.usage--tasks]
+file_filter = locale/<lang>/LC_MESSAGES/usage/tasks.po
+source_file = locale/pot/usage/tasks.pot
+source_lang = en
+
+[fabric-docs-1_8_1.indexpot]
+file_filter = translations/fabric-docs-1_8_1.indexpot/<lang>.po
+source_lang = en
+type = PO
+

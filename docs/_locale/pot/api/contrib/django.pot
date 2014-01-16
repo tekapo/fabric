@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/contrib/django.rst:3
+# 2abb241fcf15477ab31aa444b746df81
+msgid "Django Integration"
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django:3
+# 7fa2cbb47f0c4b8bb917001bff4ec81b
+msgid "These functions streamline the process of initializing Django's settings module environment variable. Once this is done, your fabfile may import from your Django project, or Django itself, without requiring the use of ``manage.py`` plugins or having to set the environment variable yourself every time you use your fabfile."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django:9
+# 45ed428514ea46caadb2629209248c3e
+msgid "Currently, these functions only allow Fabric to interact with local-to-your-fabfile Django installations. This is not as limiting as it sounds; for example, you can use Fabric as a remote \"build\" tool as well as using it locally. Imagine the following fabfile::"
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django:29
+# 4b0dcbbc563e4674a1c32d92ac424c59
+msgid "With Fabric installed on both ends, you could execute ``print_production_instances`` locally, which would trigger ``print_instances`` on the production server -- which would then be interacting with your production Django database."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django:34
+# 8ef4753615824a6ab3d2d24c8eaaeaec
+msgid "As another example, if your local and remote settings are similar, you can use it to obtain e.g. your database settings, and then use those when executing a remote (non-Fabric) command. This would allow you some degree of freedom even if Fabric is only installed locally::"
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django:52
+# 9c061c2e9e784e199cdbf5ab20ae42c6
+msgid "The above snippet will work if run from a local, development environment, again provided your local ``settings.py`` mirrors your remote one in terms of database connection info."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.project:1
+# bcf31c396bb4470e9e766c79c52ce42a
+msgid "Sets ``DJANGO_SETTINGS_MODULE`` to ``'<name>.settings'``."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.project:3
+# 1bbf0f51f3d447e6b873b7c46bca2af9
+msgid "This function provides a handy shortcut for the common case where one is using the Django default naming convention for their settings file and location."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.project:7
+# 657f3185ea6a4c618dbfe8341ecd4fd5
+msgid "Uses `settings_module` -- see its documentation for details on why and how to use this functionality."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.settings_module:1
+# f4a66ae2ad8a4c0dbfee55ce95bf0e5d
+msgid "Set ``DJANGO_SETTINGS_MODULE`` shell environment variable to ``module``."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.settings_module:3
+# 658bb460cfa8401f9744d1262cedd9bb
+msgid "Due to how Django works, imports from Django or a Django project will fail unless the shell environment variable ``DJANGO_SETTINGS_MODULE`` is correctly set (see `the Django settings docs <http://docs.djangoproject.com/en/dev/topics/settings/>`_.)"
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.settings_module:8
+# bb305ad4c8af411483459101e74e904b
+msgid "This function provides a shortcut for doing so; call it near the top of your fabfile or Fabric-using code, after which point any Django imports should work correctly."
+msgstr ""
+
+#: ../../../fabric/contrib/django.py:docstring of fabric.contrib.django.settings_module:14
+# 01971ebf8d2841e3a7ba7f017f4ac9d9
+msgid "This function sets a **shell** environment variable (via ``os.environ``) and is unrelated to Fabric's own internal \"env\" variables."
+msgstr ""
+

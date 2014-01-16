@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/contrib/project.rst:3
+# 5e6ce3031aec4e8b9143f410b63b5874
+msgid "Project Tools"
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project:1
+# 644b3a9e794a4115a5b30fd2623b0eb4
+msgid "Useful non-core functionality, e.g. functions composing multiple operations."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:1
+# 70ddffee60f349a899fa1133e7af0f6a
+msgid "Synchronize a remote directory with the current project directory via rsync."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:3
+# 41914dd83ca24584b7f72f7fa146e7c6
+msgid "Where ``upload_project()`` makes use of ``scp`` to copy one's entire project every time it is invoked, ``rsync_project()`` uses the ``rsync`` command-line utility, which only transfers files newer than those on the remote end."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:8
+# 559cdf2ea7cf4de28a97a9fb5f890c21
+msgid "``rsync_project()`` is thus a simple wrapper around ``rsync``; for details on how ``rsync`` works, please see its manpage. ``rsync`` must be installed on both your local and remote systems in order for this operation to work correctly."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:13
+# 810bb1b3982e4f3a99f14f4e94ba5814
+msgid "This function makes use of Fabric's ``local()`` operation, and returns the output of that function call; thus it will return the stdout, if any, of the resultant ``rsync`` call."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:17
+# b9c13fe487d8485884e7a228bee99b4e
+msgid "``rsync_project()`` takes the following parameters:"
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:19
+# 6a598b10a9884716a6977819e523d39a
+msgid "``remote_dir``: the only required parameter, this is the path to the directory on the remote server. Due to how ``rsync`` is implemented, the exact behavior depends on the value of ``local_dir``:"
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:23
+# 871bc59238da434db73d276a0d786d27
+msgid "If ``local_dir`` ends with a trailing slash, the files will be dropped inside of ``remote_dir``. E.g. ``rsync_project(\"/home/username/project\", \"foldername/\")`` will drop the contents of ``foldername`` inside of ``/home/username/project``."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:27
+# 7fbee014a62e4549951a15b9aebc71e0
+msgid "If ``local_dir`` does **not** end with a trailing slash (and this includes the default scenario, when ``local_dir`` is not specified), ``remote_dir`` is effectively the \"parent\" directory, and a new directory named after ``local_dir`` will be created inside of it. So ``rsync_project(\"/home/username\", \"foldername\")`` would create a new directory ``/home/username/foldername`` (if needed) and place the files there."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:35
+# c33e6c79889f4832bb51597b96f19e2f
+msgid "``local_dir``: by default, ``rsync_project`` uses your current working directory as the source directory. This may be overridden by specifying ``local_dir``, which is a string passed verbatim to ``rsync``, and thus may be a single directory (``\"my_directory\"``) or multiple directories (``\"dir1 dir2\"``). See the ``rsync`` documentation for details."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:40
+# 262d3831d3434bf3844f1cb774fb3a69
+msgid "``exclude``: optional, may be a single string, or an iterable of strings, and is used to pass one or more ``--exclude`` options to ``rsync``."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:42
+# fa73666ecebb4c528fd25e821592cddf
+msgid "``delete``: a boolean controlling whether ``rsync``'s ``--delete`` option is used. If True, instructs ``rsync`` to remove remote files that no longer exist locally. Defaults to False."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:45
+# b6ef3add35b84c6ba6a785a14d8bab4a
+msgid "``extra_opts``: an optional, arbitrary string which you may use to pass custom arguments or options to ``rsync``."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:47
+# 58b4359eed2b4f369135def480e543be
+msgid "``ssh_opts``: Like ``extra_opts`` but specifically for the SSH options string (rsync's ``--rsh`` flag.)"
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:49
+# 04e8d49753f44be1a1a88efdabbc433f
+msgid "``capture``: Sent directly into an inner `~fabric.operations.local` call."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:50
+# cf63cc21f19143e79938ee8f3fdfd662
+msgid "``upload``: a boolean controlling whether file synchronization is performed up or downstream. Upstream by default."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:52
+# bef7ddad236642deb174e6591cacafaf
+msgid "``default_opts``: the default rsync options ``-pthrvz``, override if desired (e.g. to remove verbosity, etc)."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:55
+# 327edd5e43594e3f9852bb46f9bd1f52
+msgid "Furthermore, this function transparently honors Fabric's port and SSH key settings. Calling this function when the current host string contains a nonstandard port, or when ``env.key_filename`` is non-empty, will use the specified port and/or SSH key filename(s)."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:60
+# e838afd39363403ab91d8684cc32a0e4
+msgid "For reference, the approximate ``rsync`` command-line call that is constructed by this function is the following::"
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:66
+# d4db1ffc04dc4a5790a2ee829d90ee2e
+msgid "The ``ssh_opts`` keyword argument."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:68
+# 127ddf4272d148d3a57a9a77575c6884
+msgid "The ``capture`` keyword argument."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:70
+# 4cccacb42df64947ad0da16141627e0e
+msgid "The ``default_opts`` keyword argument."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:1
+# cbb26f0c657b433283b95150b22e63bc
+msgid "Upload the current project to a remote system via ``tar``/``gzip``."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:3
+# 852304d7061c4f2dbb95c7b58512dafa
+msgid "``local_dir`` specifies the local project directory to upload, and defaults to the current working directory."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:6
+# 21d0904bbd814c80b5fa01745662e696
+msgid "``remote_dir`` specifies the target directory to upload into (meaning that a copy of ``local_dir`` will appear as a subdirectory of ``remote_dir``) and defaults to the remote user's home directory."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:10
+# c73a61f2d4004f7aa967a9018b063184
+msgid "``use_sudo`` specifies which method should be used when executing commands remotely. ``sudo`` will be used if use_sudo is True, otherwise ``run`` will be used."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:14
+# ee79a3f0248b41bab9d66141df00a592
+msgid "This function makes use of the ``tar`` and ``gzip`` programs/libraries, thus it will not work too well on Win32 systems unless one is using Cygwin or something similar. It will attempt to clean up the local and remote tarfiles when it finishes executing, even in the event of a failure."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:19
+# fd9151d1a9fe4fa7a77875039f15f62f
+msgid "Added the ``local_dir`` and ``remote_dir`` kwargs."
+msgstr ""
+
+#: ../../../fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:22
+# 3d5c5103df684519ae8b10d108f75c8f
+msgid "Added the ``use_sudo`` kwarg."
+msgstr ""
+

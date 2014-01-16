@@ -1,0 +1,423 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/context_managers.rst:3
+# 2cb1412258c241578efff3f9d215469b
+msgid "Context Managers"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:1
+# fe3d375d5a1c4a58a7a30bd56a5c88c2
+msgid "Context managers for use with the ``with`` statement."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:3
+# 983c275168ef48c9a0c9c201f3cd4800
+msgid "When using Python 2.5, you will need to start your fabfile with ``from __future__ import with_statement`` in order to make use of the ``with`` statement (which is a regular, non ``__future__`` feature of Python 2.6+.)"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:8
+# 04033683730a41268509589c8d6559d3
+msgid "If you are using multiple directly nested ``with`` statements, it can be convenient to use multiple context expressions in one single with statement. Instead of writing::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:17
+# 22dbc7b0a4e24188b9919f9d8f3a7238
+msgid "you can write::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:23
+# 5781fc49931e4db6a11aa475b4efaf10
+msgid "Note that you need Python 2.7+ for this to work. On Python 2.5 or 2.6, you can do the following::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers:31
+# f74d6a0549a94bec99291be62ed363ae
+msgid "Finally, note that `~fabric.context_managers.settings` implements ``nested`` itself -- see its API doc for details."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:1
+# cd72c6982d4843c39ac3a8fd98db6f56
+msgid "Context manager that keeps directory state when calling remote operations."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:3
+# 6e57ef89deb3446c846834ad64106d0f
+msgid "Any calls to `run`, `sudo`, `get`, or `put` within the wrapped block will implicitly have a string similar to ``\"cd <path> && \"`` prefixed in order to give the sense that there is actually statefulness involved."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:8
+# b2a7df959b1c4a1583402f822fb95470
+msgid "`cd` only affects *remote* paths -- to modify *local* paths, use `~fabric.context_managers.lcd`."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:11
+# ef8a235cbb5641e191a338bafc5b953b
+msgid "Because use of `cd` affects all such invocations, any code making use of those operations, such as much of the ``contrib`` section, will also be affected by use of `cd`."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:15
+# 95f3a596e04448ccb019e0f042d05817
+msgid "Like the actual 'cd' shell builtin, `cd` may be called with relative paths (keep in mind that your default starting directory is your remote user's ``$HOME``) and may be nested as well."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:19
+# 806ce3df5cb04689a29c4462679a029a
+msgid "Below is a \"normal\" attempt at using the shell 'cd', which doesn't work due to how shell-less SSH connections are implemented -- state is **not** kept between invocations of `run` or `sudo`::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:26
+# 799ba9df7f3842938167d12a4561d97f
+msgid "The above snippet will list the contents of the remote user's ``$HOME`` instead of ``/var/www``. With `cd`, however, it will work as expected::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:32
+# 8872b2eb837d4f66a052997511cf0d20
+msgid "Finally, a demonstration (see inline comments) of nesting::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:41
+# 92418639bba6476ea417c17ead5f62a9
+msgid "This context manager is currently implemented by appending to (and, as always, restoring afterwards) the current value of an environment variable, ``env.cwd``. However, this implementation may change in the future, so we do not recommend manually altering ``env.cwd`` -- only the *behavior* of `cd` will have any guarantee of backwards compatibility."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:50
+# 38023792f8b347e2ae3ff4975f23b890
+msgid "Space characters will be escaped automatically to make dealing with such directory names easier."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:53
+# 49581846eb5f4f29937c2a6116b8dbac
+msgid "Applies to `get` and `put` in addition to the command-running operations."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.cd:57
+# 9154dbc0427f40a69534f3fa89524463
+msgid "`~fabric.context_managers.lcd`"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.char_buffered:1
+# 611c2a77a53943f5a1fb9e59789a836b
+msgid "Force local terminal ``pipe`` be character, not line, buffered."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.char_buffered:3
+# ed3d7de4a1d04686a91cef93fada8fad
+msgid "Only applies on Unix-based systems; on Windows this is a no-op."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.hide:1
+# c709ecd715314c94bff8b8e346949763
+msgid "Context manager for setting the given output ``groups`` to False."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.hide:3
+# e3e7495000894f799bea6e31c3ddfe0b
+msgid "``groups`` must be one or more strings naming the output groups defined in `~fabric.state.output`. The given groups will be set to False for the duration of the enclosed block, and restored to their previous value afterwards."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.hide:8
+# 3bdf5eebd463444da51f3a4424790b85
+msgid "For example, to hide the \"[hostname] run:\" status lines, as well as preventing printout of stdout and stderr, one might use `hide` as follows::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.lcd:1
+# 0a042443e3964e20b459ead6e84b53d4
+msgid "Context manager for updating local current working directory."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.lcd:3
+# ddcfad7703d64dc5a78618870e50125d
+msgid "This context manager is identical to `~fabric.context_managers.cd`, except that it changes a different env var (`lcwd`, instead of `cwd`) and thus only affects the invocation of `~fabric.operations.local` and the local arguments to `~fabric.operations.get`/`~fabric.operations.put`."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.lcd:8
+# 3f1a4c0c177c457ab04ae103ccd50246
+msgid "Relative path arguments are relative to the local user's current working directory, which will vary depending on where Fabric (or Fabric-using code) was invoked. You can check what this is with `os.getcwd <http://docs.python.org/release/2.6/library/os.html#os.getcwd>`_. It may be useful to pin things relative to the location of the fabfile in use, which may be found in :ref:`env.real_fabfile <real-fabfile>`"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:1
+# b15a4474654348fabcc62a9f8a44746b
+msgid "Append the given ``path`` to the PATH used to execute any wrapped commands."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:3
+# 414be1805c5a41ab9b272ad995293431
+msgid "Any calls to `run` or `sudo` within the wrapped block will implicitly have a string similar to ``\"PATH=$PATH:<path> \"`` prepended before the given command."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:7
+# e620ffa1bc174dafb44fbc022c16bbdf
+msgid "You may customize the behavior of `path` by specifying the optional ``behavior`` keyword argument, as follows:"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:10
+# cedf4e718a5d40caade5a0256f4734e5
+msgid "``'append'``: append given path to the current ``$PATH``, e.g. ``PATH=$PATH:<path>``. This is the default behavior."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:12
+# c823ca55afa7413fb9fad7b6656f99fb
+msgid "``'prepend'``: prepend given path to the current ``$PATH``, e.g. ``PATH=<path>:$PATH``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:14
+# 42ba8a4f1ca349b1bbf8df2dd14e5665
+msgid "``'replace'``: ignore previous value of ``$PATH`` altogether, e.g. ``PATH=<path>``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.path:19
+# ea5094ee448744cd8f862dcd0cc4f8ec
+msgid "This context manager is currently implemented by modifying (and, as always, restoring afterwards) the current value of environment variables, ``env.path`` and ``env.path_behavior``. However, this implementation may change in the future, so we do not recommend manually altering them directly."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:1
+# fb7c6e7b54d141d38f54baafdd8c5740
+msgid "Prefix all wrapped `run`/`sudo` commands with given command plus ``&&``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:3
+# 135fadc1d2b944b5b35db332f9a8c129
+msgid "This is nearly identical to `~fabric.operations.cd`, except that nested invocations append to a list of command strings instead of modifying a single string."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:7
+# 889c4bd0fb92449ba0ecb22cbbb461db
+msgid "Most of the time, you'll want to be using this alongside a shell script which alters shell state, such as ones which export or alter shell environment variables."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:11
+# 1108dbacf93747c087235b980b181190
+msgid "For example, one of the most common uses of this tool is with the ``workon`` command from `virtualenvwrapper <http://www.doughellmann.com/projects/virtualenvwrapper/>`_::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:18
+# 95c51ece18f5411eb8b0efd4d2cd71af
+msgid "In the above snippet, the actual shell command run would be this::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:22
+# e572d723ba3f414386dda6f46e66b3e8
+msgid "This context manager is compatible with `~fabric.context_managers.cd`, so if your virtualenv doesn't ``cd`` in its ``postactivate`` script, you could do the following::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:31
+# 29f7326f979c41b586821db48ecea30d
+msgid "Which would result in executions like so::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:36
+# 9e69e3c3bb5d44bab56a30499e7af44d
+msgid "Finally, as alluded to near the beginning, `~fabric.context_managers.prefix` may be nested if desired, e.g.::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:44
+# e675aa711c7b462e90fed3fcda3cf378
+msgid "The result::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.prefix:49
+# e00a60a5dc864c02b6133d79793a03ce
+msgid "Contrived, but hopefully illustrative."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.quiet:1
+# b22805ee63474c8fb6bc749070b61db6
+msgid "Alias to ``settings(hide('everything'), warn_only=True)``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.quiet:3
+# b594b316ed21437f8200916da36d5b70
+msgid "Useful for wrapping remote interrogative commands which you expect to fail occasionally, and/or which you want to silence."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.quiet:6
+# cff2de2cbc1049d6b802f007a4836014
+msgid "Example::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.quiet:11
+# 4a60c5e02646488fb50bc50bbf4acb7b
+msgid "When used in a task, the above snippet will not produce any ``run: test -e /tmp/build`` line, nor will any stdout/stderr display, and command failure is ignored."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.quiet:16
+# b076c1ed556843a2a4e5907fed0341a2
+msgid ":ref:`env.warn_only <warn_only>`, `~fabric.context_managers.settings`, `~fabric.context_managers.hide`"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:1
+# c6b4a6a8cf684b8b994284bd81405786
+msgid "Create a tunnel forwarding a locally-visible port to the remote target."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:3
+# 63dbc50149114998815c04ec4642b847
+msgid "For example, you can let the remote host access a database that is installed on the client host::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:12
+# e5f1f9d03fba42f8a168debda8122918
+msgid "The database might be installed on a client only reachable from the client host (as opposed to *on* the client itself)::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:19
+# 1caeaaa538344f68b80fc1b19ab4e497
+msgid "``remote_tunnel`` accepts up to four arguments:"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:21
+# 5f7dbb52e45f451da93b94d13b47d7b1
+msgid "``remote_port`` (mandatory) is the remote port to listen to."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:22
+# 00ed987806414c4d9b054bfd9df31ca8
+msgid "``local_port`` (optional) is the local port to connect to; the default is the same port as the remote one."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:24
+# 5f5f71b410794c52bf01b1ecccaac4f9
+msgid "``local_host`` (optional) is the locally-reachable computer (DNS name or IP address) to connect to; the default is ``localhost`` (that is, the same computer Fabric is running on)."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:27
+# 28cbbc93271d40f68f060ca343d67574
+msgid "``remote_bind_address`` (optional) is the remote IP address to bind to for listening, on the current target. It should be an IP address assigned to an interface on the target (or a DNS name that resolves to such IP). You can use \"0.0.0.0\" to bind to all interfaces."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.remote_tunnel:33
+# 2df13e3626514704a738e5527f253324
+msgid "By default, most SSH servers only allow remote tunnels to listen to the localhost interface (127.0.0.1). In these cases, `remote_bind_address` is ignored by the server, and the tunnel will listen only to 127.0.0.1."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:1
+# e87ac3e01a8e4a298d92df71d7c4e39d
+msgid "Nest context managers and/or override ``env`` variables."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:3
+# 92b1ef261f5845c4bec8cdf9a533ee97
+msgid "`settings` serves two purposes:"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:5
+# 1317636fd8114937a366a4225b195d68
+msgid "Most usefully, it allows temporary overriding/updating of ``env`` with any provided keyword arguments, e.g. ``with settings(user='foo'):``. Original values, if any, will be restored once the ``with`` block closes."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:9
+# 672aa9ff6dba4f9883fbf7bf89d173c6
+msgid "The keyword argument ``clean_revert`` has special meaning for ``settings`` itself (see below) and will be stripped out before execution."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:13
+# 3c9168f803be4076bae670c47cca44ee
+msgid "In addition, it will use `contextlib.nested`_ to nest any given non-keyword arguments, which should be other context managers, e.g. ``with settings(hide('stderr'), show('stdout')):``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:19
+# 6d434e8c25fb4e5ca3020fee272cd97c
+msgid "These behaviors may be specified at the same time if desired. An example will hopefully illustrate why this is considered useful::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:32
+# 1e2877d7546e42afa436adcd6fb29fce
+msgid "The above task executes a `run` statement, but will warn instead of aborting if the ``ls`` fails, and all output -- including the warning itself -- is prevented from printing to the user. The end result, in this scenario, is a completely silent task that allows the caller to figure out what type of system the remote host is, without incurring the handful of output that would normally occur."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:39
+# deb78dcbe4684dc893cfc09a2d78da2d
+msgid "Thus, `settings` may be used to set any combination of environment variables in tandem with hiding (or showing) specific levels of output, or in tandem with any other piece of Fabric functionality implemented as a context manager."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:44
+# a4024ac6d3384a68b8d445b77763cebf
+msgid "If ``clean_revert`` is set to ``True``, ``settings`` will **not** revert keys which are altered within the nested block, instead only reverting keys whose values remain the same as those given. More examples will make this clear; below is how ``settings`` operates normally::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:59
+# 12bbe3eef76b4237bbbd0152e7a66216
+msgid "The internal modification of ``env.host_string`` is nullified -- not always desirable. That's where ``clean_revert`` comes in::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:72
+# a6c3ae83a9784794ae0b3e433959c154
+msgid "Brand new keys which did not exist in ``env`` prior to using ``settings`` are also preserved if ``clean_revert`` is active. When ``False``, such keys are removed when the block exits."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.settings:76
+# fe7eaa8eba9a4b15bcc0338720c2881d
+msgid "The ``clean_revert`` kwarg."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.shell_env:1
+# a7c2b5e7865d4081b86efc871d22379b
+msgid "Set shell environment variables for wrapped commands."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.shell_env:3
+# 57efd510772f43ee800ae8c66b2d0840
+msgid "For example, the below shows how you might set a ZeroMQ related environment variable when installing a Python ZMQ library::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.shell_env:9
+# 0b395aa9deff431daea37d359d6039a9
+msgid "As with `~fabric.context_managers.prefix`, this effectively turns the ``run`` command into::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.shell_env:14
+# 2864892ce5004745ac0e62e9d9c3f99d
+msgid "Multiple key-value pairs may be given simultaneously."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.shell_env:17
+# 51a3dc770dde42f89946720af43d6ab3
+msgid "If used to affect the behavior of `~fabric.operations.local` when running from a Windows localhost, ``SET`` commands will be used to implement this feature."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.show:1
+# e68a53db02534bce97ab34d1f87c2a51
+msgid "Context manager for setting the given output ``groups`` to True."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.show:3
+# 6e7f7432e8484cd7a4ea87637d0ccc5b
+msgid "``groups`` must be one or more strings naming the output groups defined in `~fabric.state.output`. The given groups will be set to True for the duration of the enclosed block, and restored to their previous value afterwards."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.show:8
+# 757b73f3248b418d8d922cbabf2a9898
+msgid "For example, to turn on debug output (which is typically off by default)::"
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.show:14
+# 6eb34b92ff424485a6050b15f6b25685
+msgid "As almost all output groups are displayed by default, `show` is most useful for turning on the normally-hidden ``debug`` group, or when you know or suspect that code calling your own code is trying to hide output with `hide`."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.warn_only:1
+# feea7093e6cd47a3951ccbf620f5ddef
+msgid "Alias to ``settings(warn_only=True)``."
+msgstr ""
+
+#: ../../../fabric/context_managers.py:docstring of fabric.context_managers.warn_only:4
+# a814b5673d36423b8ff333eb1bffc634
+msgid ":ref:`env.warn_only <warn_only>`, `~fabric.context_managers.settings`, `~fabric.context_managers.quiet`"
+msgstr ""
+

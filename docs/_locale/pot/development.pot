@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../development.rst:3
+# 43887c9fb9094203b768e11b7dde58a6
+msgid "Development"
+msgstr ""
+
+#: ../../development.rst:5
+# 39bae48f37dc42cf92653acf3cc0ff7d
+msgid "The Fabric development team is headed by `Jeff Forcier <http://bitprophet.org>`_, aka ``bitprophet``.  However, dozens of other developers pitch in by submitting patches and ideas via `GitHub issues and pull requests <https://github.com/fabric/fabric>`_, :ref:`IRC <irc>` or the `mailing list <http://lists.nongnu.org/mailman/listinfo/fab-user>`_."
+msgstr ""
+
+#: ../../development.rst:12
+# abc3f17a753a481c8f1c4795097e5dc1
+msgid "Get the code"
+msgstr ""
+
+#: ../../development.rst:14
+# 2879b954394642db9eb597dcf7137b90
+msgid "Please see the :ref:`source-code-checkouts` section of the :doc:`installation` page for details on how to obtain Fabric's source code."
+msgstr ""
+
+#: ../../development.rst:18
+# 0a7df670ed984c6fb7f27199ae56b3d4
+msgid "Contributing"
+msgstr ""
+
+#: ../../development.rst:20
+# 650d0be987794f9ca58ca2fdc22c8090
+msgid "There are a number of ways to get involved with Fabric:"
+msgstr ""
+
+#: ../../development.rst:22
+# 907c2883be6140e48aaa652d560d421d
+msgid "**Use Fabric and send us feedback!** This is both the easiest and arguably the most important way to improve the project -- let us know how you currently use Fabric and how you want to use it. (Please do try to search the `ticket tracker <https://github.com/fabric/fabric/issues>`_ first, though, when submitting feature ideas.)"
+msgstr ""
+
+#: ../../development.rst:27
+# b8d0ae30191445bc91ed743763a7fcea
+msgid "**Report bugs.** Pretty much a special case of the previous item: if you think you've found a bug in Fabric, check on the `ticket tracker <https://github.com/fabric/fabric/issues>`_ to see if anyone's reported it yet, and if not -- file a bug! If possible, try to make sure you can replicate it repeatedly, and let us know the circumstances (what version of Fabric you're using, what platform you're on, and what exactly you were doing when the bug cropped up.)"
+msgstr ""
+
+#: ../../development.rst:34
+# c64f317927c54932a7ae8c59150361d6
+msgid "**Submit patches or new features.** Make a `Github <https://github.com>`_ account, `create a fork <http://help.github.com/fork-a-repo/>`_ of `the main Fabric repository <https://github.com/fabric/fabric>`_, and `submit a pull request <http://help.github.com/send-pull-requests/>`_."
+msgstr ""
+
+#: ../../development.rst:39
+# e0d84fb0b606472bb42615048ef96974
+msgid "While we may not always reply promptly, we do try to make time eventually to inspect all contributions and either incorporate them or explain why we don't feel the change is a good fit."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:2
+# 5023d51977ba496cb198d6723b218895
+msgid "Patch submission guidelines"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:4
+# adb46ace20364f46a2cccb151a012476
+msgid "**Create a new Git branch specific to your change(s).** For example, if you're adding a new feature to foo the bars, do something like the following::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:15
+# e95091803fcc4961a8e0369a45fbb09f
+msgid "This makes life much easier for maintainers if you have (or ever plan to have) additional changes in your own ``master`` branch."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:18
+# 55131e4677374555a97644d6509528b4
+msgid "A corollary: please **don't put multiple fixes/features in the same branch/pull request**! In other words, if you're hacking on new feature X and find a bugfix that doesn't *require* new feature X, **make a new distinct branch and PR** for the bugfix."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:23
+# cff6f82fe0bd4fc3b0be75be5e501978
+msgid "Base **bugfixes** off the **latest release branch** (e.g. ``1.4``, ``1.5`` or whatever's newest) and **new features** off of **master**. If you're unsure which category your change falls in, just ask on IRC or the mailing list -- it's often a judgement call."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:27
+# b690db21844645b599dae84984472c02
+msgid "**Make sure documentation is updated** -- at the very least, keep docstrings current, and if necessary, update the ReST documentation in ``docs/``.  For example, new ``env.*`` settings should be added to ``docs/usage/env.rst``."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:30
+# 808191acf9e34ab6810ac3416ba4f559
+msgid "**Add a changelog entry** at the top of ``docs/changelog.rst`` following existing entries' styles. Don't forget to attribute yourself if you'd like credit!"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:34
+# 7d052d2553184ee9a5c13cb1ebe5748f
+msgid "If your change is a feature or support ticket intended for backporting to older release lines, give it the ``backported`` keyword, e.g.::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:39
+# 920bd89a82ab4c0181c97b7a59d6d08f
+msgid "If it's a \"major\" bugfix that is getting put out in a feature release, give it the ``major`` keyword::"
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:44
+# 8d54cbd356a64106854b2a15ecfcadac
+msgid "**Try writing some tests** if possible -- again, following existing tests is often easiest, and a good way to tell whether the feature you're modifying is easily testable."
+msgstr ""
+
+#: ../../../CONTRIBUTING.rst:47
+# 62e64d937eb047a4853ed953916ba725
+msgid "**Use** ``hub pull-request`` when writing a patch for a **pre-existing Github Issue**. This isn't an absolute requirement, but makes the maintainers' lives much easier! Specifically: `install hub <https://github.com/defunkt/hub/#installation>`_ and then run `hub pull-request <https://github.com/defunkt/hub/#git-pull-request>`_ to turn the issue into a pull request containing your code."
+msgstr ""
+
+#: ../../development.rst:46
+# 4a2b60a0fe794adc911a02d55e81133c
+msgid "Coding style"
+msgstr ""
+
+#: ../../development.rst:48
+# 65f9b3220ad748b3a37740ad87916390
+msgid "Fabric tries hard to honor `PEP-8`_, especially (but not limited to!) the following:"
+msgstr ""
+
+#: ../../development.rst:51
+# ad3d6c65cb2a4ea5b8086a7bb345e2a9
+msgid "Keep all lines under 80 characters. This goes for the ReST documentation as well as code itself."
+msgstr ""
+
+#: ../../development.rst:54
+# f9595f3ce986426b82d0379aab164996
+msgid "Exceptions are made for situations where breaking a long string (such as a string being ``print``-ed from source code, or an especially long URL link in documentation) would be kind of a pain."
+msgstr ""
+
+#: ../../development.rst:58
+# 65dd32da40b044cd8de237b46fccda7f
+msgid "Typical Python 4-space (soft-tab) indents. No tabs! No 8 space indents! (No 2- or 3-space indents, for that matter!)"
+msgstr ""
+
+#: ../../development.rst:60
+# 2fb39062038240e994cbe290e8f1200b
+msgid "``CamelCase`` class names, but ``lowercase_underscore_separated`` everything else."
+msgstr ""
+
+#: ../../development.rst:66
+# 115f000fd1974331b7e652c28f1aad37
+msgid "Communication"
+msgstr ""
+
+#: ../../development.rst:68
+# 632fcc57bc1743d48c695b65b2eeda27
+msgid "If a ticket-tracker ticket exists for a given issue, **please** keep all communication in that ticket's comments -- for example, when submitting patches via Github, it's easier for us if you leave a note in the ticket **instead of** sending a Github pull request."
+msgstr ""
+
+#: ../../development.rst:73
+# 7c44411a67de4fd5a7e6607d73cf8fe2
+msgid "The core devs receive emails for just about any ticket-tracker activity, so additional notices via Github or other means only serve to slow things down."
+msgstr ""
+
+#: ../../development.rst:77
+# 917a8de932d74e369a737e4771c35010
+msgid "Branching/Repository Layout"
+msgstr ""
+
+#: ../../development.rst:79
+# 20f886b34d9e43409f105e617109fedd
+msgid "While Fabric's development methodology isn't set in stone yet, the following items detail how we currently organize the Git repository and expect to perform merges and so forth. This will be chiefly of interest to those who wish to follow a specific Git branch instead of released versions, or to any contributors."
+msgstr ""
+
+#: ../../development.rst:85
+# 888dc11166324716950a100ed613c1e0
+msgid "We use a combined 'release and feature branches' methodology, where every minor release (e.g. 0.9, 1.0, 1.1, 1.2 etc; see :ref:`releases` below for details on versioning) gets a release branch for bugfixes, and big feature development is performed in a central ``master`` branch and/or in feature-specific feature branches (e.g. a branch for reworking the internals to be threadsafe, or one for overhauling task dependencies, etc.)"
+msgstr ""
+
+#: ../../development.rst:91
+# 2960508227134294be94363bc17795e3
+msgid "Releases each get their own release branch, e.g. ``0.9``, ``1.0``, ``1.1`` etc, and from these the actual releases are tagged, e.g. ``0.9.3`` or ``1.0.0``."
+msgstr ""
+
+#: ../../development.rst:94
+# 241cb9a6d73d41c1a2ac84b5a96a44b0
+msgid "New feature work is typically done in feature branches, whose naming convention is ``<ticket number>-<short-description>``. For example, ticket #61, which concerned adding ``cd`` support to ``get`` and ``put``, was developed in a branch named ``61-add-cd-to-get-put``."
+msgstr ""
+
+#: ../../development.rst:99
+# 49380e62db17409ea00a6353b2b9d10a
+msgid "These branches are not intended for public use, and may be cleaned out of the repositories periodically. Ideally, no one feature will be in development long enough for its branch to become used in production!"
+msgstr ""
+
+#: ../../development.rst:103
+# 78753d193b374c85b30669c6814318a3
+msgid "Completed feature work is merged into the ``master`` branch, and once enough new features are done, a new release branch is created and optionally used to create prerelease versions for testing -- or simply released as-is."
+msgstr ""
+
+#: ../../development.rst:106
+# e039e86e496e4d41bb7f8830f0580c0a
+msgid "While we try our best not to commit broken code or change APIs without warning, as with many other open-source projects we can only have a guarantee of stability in the release branches. Only follow ``master`` (or, even worse, feature branches!) if you're willing to deal with a little pain."
+msgstr ""
+
+#: ../../development.rst:110
+# c06c9a8ebd424dd0baea32d6a7a4d0d0
+msgid "Conversely, because we try to keep release branches relatively stable, you may find it easier to use Fabric from a source checkout of a release branch instead of manually upgrading to new released versions. This can provide a decent middle ground between stability and the ability to get bugfixes or backported features easily."
+msgstr ""
+
+#: ../../development.rst:115
+# ac82adbe0c774aaea56aecc405e79fe5
+msgid "The core developers will take care of performing merging/branching on the official repositories. Since Git is Git, contributors may of course do whatever they wish in their own clones/forks."
+msgstr ""
+
+#: ../../development.rst:118
+# 54f2daa6893a4d0d8071c1b491ace072
+msgid "Bugfixes are to be performed on release branches and then merged into ``master`` so that ``master`` is always up-to-date (or nearly so; while it's not mandatory to merge after every bugfix, doing so at least daily is a good idea.)"
+msgstr ""
+
+#: ../../development.rst:122
+# 4311e758c8cb4b7b9e7ceccf4871bf2a
+msgid "Feature branches should periodically merge in changes from ``master`` so that when it comes time for them to merge back into ``master`` things aren't quite as painful."
+msgstr ""
+
+#: ../../development.rst:129
+# f633d9ee9dc346e8ac6bdb3d13c29d51
+msgid "Releases"
+msgstr ""
+
+#: ../../development.rst:131
+# 0d3852622e0942f8ac5108e753a5d10e
+msgid "Fabric tries to follow open-source standards and conventions in its release tagging, including typical version numbers such as 2.0, 1.2.5, or 1.2b1. Each release will be marked as a tag in the Git repositories, and are broken down as follows:"
+msgstr ""
+
+#: ../../development.rst:137
+# 99f5937f2aa04b3a945e385fc3be91c0
+msgid "Major"
+msgstr ""
+
+#: ../../development.rst:139
+# 597959605d4645f7a29ca031c1afc4b0
+msgid "Major releases update the first number, e.g. going from 0.9 to 1.0, and indicate that the software has reached some very large milestone."
+msgstr ""
+
+#: ../../development.rst:142
+# 96ed55e8aec341b38b485a05d7773776
+msgid "For example, the 1.0 release signified a commitment to a medium to long term API and some significant backwards incompatible (compared to the 0.9 series) features. Version 2.0 might indicate a rewrite using a new underlying network technology or an overhaul to be more object-oriented."
+msgstr ""
+
+#: ../../development.rst:147
+# 40433d32c7914980862e443fc95342c7
+msgid "Major releases will often be backwards-incompatible with the previous line of development, though this is not a requirement, just a usual happenstance. Users should expect to have to make at least some changes to their fabfiles when switching between major versions."
+msgstr ""
+
+#: ../../development.rst:153
+# 9911c21eedb9437bb17a29cf7871a44b
+msgid "Minor"
+msgstr ""
+
+#: ../../development.rst:155
+# b87bfd84491c4f699ea8396c257aaa64
+msgid "Minor releases, such as moving from 1.0 to 1.1, typically mean that one or more new, large features has been added. They are also sometimes used to mark off the fact that a lot of bug fixes or small feature modifications have occurred since the previous minor release. (And, naturally, some of them will involve both at the same time.)"
+msgstr ""
+
+#: ../../development.rst:161
+# 984554300d1645bc96710bed966442b2
+msgid "These releases are guaranteed to be backwards-compatible with all other releases containing the same major version number, so a fabfile that works with 1.0 should also work fine with 1.1 or even 1.9."
+msgstr ""
+
+#: ../../development.rst:166
+# 7c066c94f3bb47459d600c98ecc91e5a
+msgid "Bugfix/tertiary"
+msgstr ""
+
+#: ../../development.rst:168
+# 03098d4bbc464b2aadebdb310d8f855f
+msgid "The third and final part of version numbers, such as the '3' in 1.0.3, generally indicate a release containing one or more bugfixes, although minor feature modifications may (rarely) occur."
+msgstr ""
+
+#: ../../development.rst:172
+# e64739c857974f19a411f2ff77d5009a
+msgid "This third number is sometimes omitted for the first major or minor release in a series, e.g. 1.2 or 2.0, and in these cases it can be considered an implicit zero (e.g. 2.0.0)."
+msgstr ""
+
+#: ../../development.rst:178
+# 888b5015f5214448ba2f64f0a451d42e
+msgid "The 0.9 series of development included more significant feature work than is typically found in tertiary releases; from 1.0 onwards a more traditional approach, as per the above, is used."
+msgstr ""
+
+#: ../../development.rst:184
+# ce657f177b92458884432a52dc46440a
+msgid "Support of older releases"
+msgstr ""
+
+#: ../../development.rst:186
+# 1fff4fcec3c54fcea2d7006d91d25df0
+msgid "Major and minor releases do not mark the end of the previous line or lines of development:"
+msgstr ""
+
+#: ../../development.rst:189
+# 9db824a99e9a412685ffb5cc4b1bc432
+msgid "The two most recent minor release branches will continue to receive critical bugfixes. For example, if 1.1 were the latest minor release, it and 1.0 would get bugfixes, but not 0.9 or earlier; and once 1.2 came out, this window would then only extend back to 1.1."
+msgstr ""
+
+#: ../../development.rst:193
+# fae5212003354f2b9149ae7182dd94dc
+msgid "Depending on the nature of bugs found and the difficulty in backporting them, older release lines may also continue to get bugfixes -- but there's no longer a guarantee of any kind. Thus, if a bug were found in 1.1 that affected 0.9 and could be easily applied, a new 0.9.x version *might* be released."
+msgstr ""
+
+#: ../../development.rst:198
+# e68b1b26b2ab42d394700ebf8d29865a
+msgid "This policy may change in the future to accommodate more branches, depending on development speed."
+msgstr ""
+
+#: ../../development.rst:201
+# 7e246ebf58534d1980c98564f52b0c7f
+msgid "We hope that this policy will allow us to have a rapid minor release cycle (and thus keep new features coming out frequently) without causing users to feel too much pressure to upgrade right away. At the same time, the backwards compatibility guarantee means that users should still feel comfortable upgrading to the next minor release in order to stay within this sliding support window."
+msgstr ""
+

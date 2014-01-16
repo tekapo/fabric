@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/colors.rst:3
+# 06891a2fd93448f181bfc27ee501b84d
+msgid "Color output functions"
+msgstr ""
+
+#: ../../../fabric/colors.py:docstring of fabric.colors:3
+# 7690f7605cd748f9a23cd49a84f4d12d
+msgid "Functions for wrapping strings in ANSI color codes."
+msgstr ""
+
+#: ../../../fabric/colors.py:docstring of fabric.colors:5
+# 92d91404d65f4c93ae90e4699b4b2947
+msgid "Each function within this module returns the input string ``text``, wrapped with ANSI color codes for the appropriate color."
+msgstr ""
+
+#: ../../../fabric/colors.py:docstring of fabric.colors:8
+# 7e7887de5bbf4555a14e61692c565d56
+msgid "For example, to print some text as green on supporting terminals::"
+msgstr ""
+
+#: ../../../fabric/colors.py:docstring of fabric.colors:14
+# a6ba4b9e42504c66b574ebc89191f642
+msgid "Because these functions simply return modified strings, you can nest them::"
+msgstr ""
+
+#: ../../../fabric/colors.py:docstring of fabric.colors:20
+# 41ce9450a3f8460789f254ebd290f4f0
+msgid "If ``bold`` is set to ``True``, the ANSI flag for bolding will be flipped on for that particular invocation, which usually shows up as a bold or brighter version of the original color on most terminals."
+msgstr ""
+

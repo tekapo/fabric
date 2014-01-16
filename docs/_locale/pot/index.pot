@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:3
+# 3cfbe463477b47e6af0f174bc0307d98
+msgid "Fabric"
+msgstr ""
+
+#: ../../index.rst:6
+# 48b64ae2534147dba23bed85f4055eef
+msgid "About"
+msgstr ""
+
+#: ../../../README.rst:4
+# 1c4f6436c04f4f4baff1f167cd332ac2
+msgid "Fabric is a Python (2.5 or higher) library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks."
+msgstr ""
+
+#: ../../../README.rst:8
+# 4cd77fb831ff46c5b060a4ec34023357
+msgid "It provides a basic suite of operations for executing local or remote shell commands (normally or via ``sudo``) and uploading/downloading files, as well as auxiliary functionality such as prompting the running user for input, or aborting execution."
+msgstr ""
+
+#: ../../../README.rst:13
+# 3ed6a55fc626431ba1e463a2a257c353
+msgid "Typical use involves creating a Python module containing one or more functions, then executing them via the ``fab`` command-line tool. Below is a small but complete \"fabfile\" containing a single task::"
+msgstr ""
+
+#: ../../../README.rst:22
+# b9a3d36c183342f7ab3de44f3f3daf6f
+msgid "Once a task is defined, it may be run on one or more servers, like so::"
+msgstr ""
+
+#: ../../../README.rst:34
+# 8c29a2eef5774aba9de313057b4d8a70
+msgid "In addition to use via the ``fab`` tool, Fabric's components may be imported into other Python code, providing a Pythonic interface to the SSH protocol suite at a higher level than that provided by e.g. the ``Paramiko`` library (which Fabric itself uses.)"
+msgstr ""
+
+#: ../../index.rst:12
+# 216e47b12b2f42dabfae41c514283482
+msgid "Installation"
+msgstr ""
+
+#: ../../index.rst:14
+# 58cbe9ff3ab546e6813a2543606874ef
+msgid "Stable releases of Fabric are best installed via ``pip`` or ``easy_install``; or you may download TGZ or ZIP source archives from a couple of official locations. Detailed instructions and links may be found on the :doc:`installation` page."
+msgstr ""
+
+#: ../../index.rst:19
+# d6c8a1209d6c40a8bed5ab1877337add
+msgid "We recommend using the latest stable version of Fabric; releases are made often to prevent any large gaps in functionality between the latest stable release and the development version."
+msgstr ""
+
+#: ../../index.rst:23
+# 9864ddfda7fc4ea4a15955278f9cda18
+msgid "However, if you want to live on the edge, you can pull down the source code from our Git repository, or fork us on Github. The :doc:`installation` page has details for how to access the source code."
+msgstr ""
+
+#: ../../index.rst:29
+# 47f8f0135d0f4bc98bf26f1705ade564
+msgid "If you install Fabric from Git, you will need to install its dependency Paramiko from Git as well. See :doc:`the installation docs <installation>` for details."
+msgstr ""
+
+#: ../../index.rst:35
+# af3a98c2e3574eaeb7a57793bddce684
+msgid "Development"
+msgstr ""
+
+#: ../../index.rst:37
+# f739c57a91ae4842bb8ac862823f9085
+msgid "Any hackers interested in improving Fabric (or even users interested in how Fabric is put together or released) please see the :doc:`development` page. It contains comprehensive info on contributing, repository layout, our release strategy, and more."
+msgstr ""
+
+#: ../../index.rst:46
+# e14fcc7601cf4be89b41e4c676288a8f
+msgid "Documentation"
+msgstr ""
+
+#: ../../index.rst:48
+# e7936fde5ad8446587f85b866e48c9db
+msgid "Please note that all documentation is currently written with Python 2.5 users in mind, but with an eye for eventual Python 3.x compatibility. This leads to the following patterns that may throw off readers used to Python 2.4 or who have already upgraded to Python 2.6/2.7:"
+msgstr ""
+
+#: ../../index.rst:53
+# 574e3955d20c4496b8c55bd155c19afb
+msgid "``from __future__ import with_statement``: a \"future import\" required to use the ``with`` statement in Python 2.5 -- a feature you'll be using frequently. Python 2.6+ users don't need to do this."
+msgstr ""
+
+#: ../../index.rst:56
+# 491cef1086544c26b8700a1b5f061620
+msgid "``<true_value> if <expression> else <false_value>``: Python's relatively new ternary statement, available in 2.5 and newer. Python 2.4 and older used to fake this with ``<expression> and <true_value> or <false_value>`` (which isn't quite the same thing and has some logical loopholes.)"
+msgstr ""
+
+#: ../../index.rst:60
+# b1fafb32c817403dad9d1330ec186200
+msgid "``print(<expression>)`` instead of ``print <expression>``: We use the ``print`` statement's optional parentheses where possible, in order to be more compatible with Python 3.x (in which ``print`` becomes a function.)"
+msgstr ""
+
+#: ../../index.rst:75
+# 71ff6ac6bdf245a795d7ac4d90847f7d
+msgid "Tutorial"
+msgstr ""
+
+#: ../../index.rst:77
+# aa19ef085c9245f9939a29f1ade12556
+msgid "For new users, and/or for an overview of Fabric's basic functionality, please see the :doc:`tutorial`. The rest of the documentation will assume you're at least passingly familiar with the material contained within."
+msgstr ""
+
+#: ../../index.rst:84
+# d235ecf90a02440592d1df72926beec8
+msgid "Usage documentation"
+msgstr ""
+
+#: ../../index.rst:86
+# 478483ed13c54d56b3560984bcf9d0f5
+msgid "The following list contains all major sections of Fabric's prose (non-API) documentation, which expands upon the concepts outlined in the :doc:`tutorial` and also covers advanced topics."
+msgstr ""
+
+#: ../../index.rst:99
+# f2c630513b78416e818d5d64b46f164c
+msgid "FAQ"
+msgstr ""
+
+#: ../../index.rst:101
+# c9bd25f822874abe81a3fe68146d9d2e
+msgid "Some frequently encountered questions, coupled with answers/solutions/excuses, may be found on the :doc:`faq` page."
+msgstr ""
+
+#: ../../index.rst:105
+# 4888a8bacf9542c1a2665bd2552d6233
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../index.rst:107
+# aabe06ba98d440c1800907ed00cd9d52
+msgid "Before asking for help or filing a bug, make sure you've read our :doc:`document on troubleshooting <troubleshooting>`."
+msgstr ""
+
+#: ../../index.rst:113
+# b75b5ccaf4e24599b9e03c9721afea5d
+msgid "API documentation"
+msgstr ""
+
+#: ../../index.rst:115
+# 32ed823bf8f84ec3a17dbab1393a40f7
+msgid "Fabric maintains two sets of API documentation, autogenerated from the source code's docstrings (which are typically very thorough.)"
+msgstr ""
+
+#: ../../index.rst:121
+# 0343212c739547559dd72a9badb53575
+msgid "Core API"
+msgstr ""
+
+#: ../../index.rst:123
+# 2c0cd7555814453bbe2cf32db8b6498b
+msgid "The **core** API is loosely defined as those functions, classes and methods which form the basic building blocks of Fabric (such as `~fabric.operations.run` and `~fabric.operations.sudo`) upon which everything else (the below \"contrib\" section, and user fabfiles) builds."
+msgstr ""
+
+#: ../../index.rst:137
+# 1d3d48852cfc4731a4a8278df17a998e
+msgid "Contrib API"
+msgstr ""
+
+#: ../../index.rst:139
+# b8efceae00e94eb3b51c6d71e28cf16a
+msgid "Fabric's **contrib** package contains commonly useful tools (often merged in from user fabfiles) for tasks such as user I/O, modifying remote files, and so forth. While the core API is likely to remain small and relatively unchanged over time, this contrib section will grow and evolve (while trying to remain backwards-compatible) as more use-cases are solved and added."
+msgstr ""
+
+#: ../../index.rst:153
+# 115c32edf3644bb2bc2ac11bc6581264
+msgid "Changelog"
+msgstr ""
+
+#: ../../index.rst:155
+# c90ace33a5724dae809ea1bf3267f1e2
+msgid "Please see :doc:`the changelog </changelog>`."
+msgstr ""
+
+#: ../../index.rst:159
+# fd972525b5bd4f7e94e5315e5fe0601f
+msgid "Roadmap"
+msgstr ""
+
+#: ../../index.rst:161
+# 9b6fe277a33041da8ecff0f9f21a7567
+msgid "Please see :doc:`the roadmap </roadmap>`."
+msgstr ""
+
+#: ../../index.rst:165
+# dd418ef8c510425bbf4e61dbb7b92359
+msgid "Getting help"
+msgstr ""
+
+#: ../../index.rst:167
+# 38432e0320ae46caa65adfb10ec2efd7
+msgid "If you've scoured the :ref:`prose <usage-docs>` and :ref:`API <api_docs>` documentation and still can't find an answer to your question, below are various support resources that should help. We do request that you do at least skim the documentation before posting tickets or mailing list questions, however!"
+msgstr ""
+
+#: ../../index.rst:174
+# 1956627f04214f579daa48c578d39e33
+msgid "Mailing list"
+msgstr ""
+
+#: ../../index.rst:176
+# 106127144b254110a1c277a03d48ceb6
+msgid "The best way to get help with using Fabric is via the `fab-user mailing list <http://lists.nongnu.org/mailman/listinfo/fab-user>`_ (currently hosted at ``nongnu.org``.) The Fabric developers do their best to reply promptly, and the list contains an active community of other Fabric users and contributors as well."
+msgstr ""
+
+#: ../../index.rst:183
+# d013c1acf2544a069385a43db7607a35
+msgid "Twitter"
+msgstr ""
+
+#: ../../index.rst:185
+# 6095912b533b42518661a71c62400ffa
+msgid "Fabric has an official Twitter account, `@pyfabric <http://twitter.com/pyfabric>`_, which is used for announcements and occasional related news tidbits (e.g. \"Hey, check out this neat article on Fabric!\")."
+msgstr ""
+
+#: ../../index.rst:192
+# d590f06097c7496dadcbbe0f373dadcd
+msgid "Bugs/ticket tracker"
+msgstr ""
+
+#: ../../index.rst:194
+# dd43c69e72de47d28dd557d1a218034a
+msgid "To file new bugs or search existing ones, you may visit Fabric's `Github Issues <https://github.com/fabric/fabric/issues>`_ page. This does require a (free, easy to set up) Github account."
+msgstr ""
+
+#: ../../index.rst:200
+# 949132b4899c4a7186bc0669f707bc0f
+msgid "IRC"
+msgstr ""
+
+#: ../../index.rst:202
+# edd06c30c684426c988915aa3dbc8175
+msgid "We maintain a semi-official IRC channel at ``#fabric`` on Freenode (``irc://irc.freenode.net``) where the developers and other users may be found. As always with IRC, we can't promise immediate responses, but some folks keep logs of the channel and will try to get back to you when they can."
+msgstr ""
+

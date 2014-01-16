@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/ssh.rst:3
+# 850996e8ab224ee7be04e2bcc90c8668
+msgid "SSH behavior"
+msgstr ""
+
+#: ../../usage/ssh.rst:5
+# a05c47de2c8b494ea7ac1d36204b36b4
+msgid "Fabric currently makes use of a pure-Python SSH re-implementation for managing connections, meaning that there are occasionally spots where it is limited by that library's capabilities. Below are areas of note where Fabric will exhibit behavior that isn't consistent with, or as flexible as, the behavior of the ``ssh`` command-line program."
+msgstr ""
+
+#: ../../usage/ssh.rst:13
+# 277d8b8340114d62a0d364c9b8f86591
+msgid "Unknown hosts"
+msgstr ""
+
+#: ../../usage/ssh.rst:15
+# e970057173fd4f7f9817767d742519c0
+msgid "SSH's host key tracking mechanism keeps tabs on all the hosts you attempt to connect to, and maintains a ``~/.ssh/known_hosts`` file with mappings between identifiers (IP address, sometimes with a hostname as well) and SSH keys. (For details on how this works, please see the `OpenSSH documentation <http://openssh.org/manual.html>`_.)"
+msgstr ""
+
+#: ../../usage/ssh.rst:21
+# f6bcdb407e4245999b328d080f3aa319
+msgid "The ``paramiko`` library is capable of loading up your ``known_hosts`` file, and will then compare any host it connects to, with that mapping. Settings are available to determine what happens when an unknown host (a host whose username or IP is not found in ``known_hosts``) is seen:"
+msgstr ""
+
+#: ../../usage/ssh.rst:26
+# 52fdb5e13c4e419a89cbfff33938e500
+msgid "**Reject**: the host key is rejected and the connection is not made. This results in a Python exception, which will terminate your Fabric session with a message that the host is unknown."
+msgstr ""
+
+#: ../../usage/ssh.rst:29
+# 9ee49786925643faa1391b7b107c3915
+msgid "**Add**: the new host key is added to the in-memory list of known hosts, the connection is made, and things continue normally. Note that this does **not** modify your on-disk ``known_hosts`` file!"
+msgstr ""
+
+#: ../../usage/ssh.rst:32
+# 3628adcb979540feaf2930ef71f46f29
+msgid "**Ask**: not yet implemented at the Fabric level, this is a ``paramiko`` library option which would result in the user being prompted about the unknown key and whether to accept it."
+msgstr ""
+
+#: ../../usage/ssh.rst:36
+# aae2eed0e0d04d8aaa2b046f50094e82
+msgid "Whether to reject or add hosts, as above, is controlled in Fabric via the :ref:`env.reject_unknown_hosts <reject-unknown-hosts>` option, which is False by default for convenience's sake. We feel this is a valid tradeoff between convenience and security; anyone who feels otherwise can easily modify their fabfiles at module level to set ``env.reject_unknown_hosts = True``."
+msgstr ""
+
+#: ../../usage/ssh.rst:44
+# da74c82266084c0b947620e439fc9db4
+msgid "Known hosts with changed keys"
+msgstr ""
+
+#: ../../usage/ssh.rst:46
+# 6d5e4610eca048d0932784817748cdf3
+msgid "The point of SSH's key/fingerprint tracking is so that man-in-the-middle attacks can be detected: if an attacker redirects your SSH traffic to a computer under his control, and pretends to be your original destination server, the host keys will not match. Thus, the default behavior of SSH (and its Python implementation) is to immediately abort the connection when a host previously recorded in ``known_hosts`` suddenly starts sending us a different host key."
+msgstr ""
+
+#: ../../usage/ssh.rst:54
+# 2c724ef2f4994dacae16563a3964bd00
+msgid "In some edge cases such as some EC2 deployments, you may want to ignore this potential problem. Our SSH layer, at the time of writing, doesn't give us control over this exact behavior, but we can sidestep it by simply skipping the loading of ``known_hosts`` -- if the host list being compared to is empty, then there's no problem. Set :ref:`env.disable_known_hosts <disable-known-hosts>` to True when you want this behavior; it is False by default, in order to preserve default SSH behavior."
+msgstr ""
+
+#: ../../usage/ssh.rst:63
+# 31451def4a084383bf49d9ed1ab890cb
+msgid "Enabling :ref:`env.disable_known_hosts <disable-known-hosts>` will leave you wide open to man-in-the-middle attacks! Please use with caution."
+msgstr ""
+

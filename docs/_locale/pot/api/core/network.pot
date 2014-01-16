@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/network.rst:3
+# 89a164f6f064468f8f2704f3e3168c09
+msgid "Network"
+msgstr ""
+
+#: ../../../fabric/network.py:docstring of fabric.network:1
+# 8c008a8209664456b71e437d848a7bfb
+msgid "Classes and subroutines dealing with network connections and related topics."
+msgstr ""
+
+#: ../../../fabric/network.py:docstring of fabric.network.disconnect_all:1
+# 733503760a7045afaa6aa5bbac98d386
+msgid "Disconnect from all currently connected servers."
+msgstr ""
+
+#: ../../../fabric/network.py:docstring of fabric.network.disconnect_all:3
+# 68939b284a0344a0961805543c253d1b
+msgid "Used at the end of ``fab``'s main loop, and also intended for use by library users."
+msgstr ""
+

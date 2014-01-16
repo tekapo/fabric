@@ -1,0 +1,1499 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../changelog.rst:5
+# 824426b3dd54448cb862cff57ac1a593
+msgid "Changelog"
+msgstr ""
+
+#: ../../changelog.rst:530
+# 6c13694edbfb4ad69e1e22737f15575c
+msgid "Prehistory"
+msgstr ""
+
+#: ../../changelog.rst:532
+# 74295399c48049adb6cc756addf97443
+msgid "The content below this section comes from older versions of Fabric which wrote out changelogs to individual, undated files. They have been concatenated and preserved here for historical reasons, and may not be in strict chronological order."
+msgstr ""
+
+#: ../../changelog.rst:541
+# f1e417b4eb2b427d80919d485588593f
+msgid "Changes in version 1.1.2 (2011-07-07)"
+msgstr ""
+
+#: ../../changelog.rst:544
+#: ../../changelog.rst:556
+#: ../../changelog.rst:627
+#: ../../changelog.rst:667
+#: ../../changelog.rst:702
+#: ../../changelog.rst:882
+#: ../../changelog.rst:893
+#: ../../changelog.rst:906
+#: ../../changelog.rst:974
+#: ../../changelog.rst:1041
+#: ../../changelog.rst:1099
+# 5cd180ba8784467a82fa58fdf3540d97
+# bfc6de75378c4831af84b4a3f0c24010
+# c47811de1c174076a57fb797d6c59ae0
+# 6ae22942fefd4d329531d502bddae8fe
+# 00919a9ab1b6407dbe4cbd1f739b63f2
+# 43c06e865223445fa81c1dbcbc09b48b
+# c6e5e3a13ea843a69df94d0f82466fbb
+# 6d4e7787d0b3469292f07032ad2c7484
+# 9d1a8593a00c4889bd973e1237ffdbf5
+# 33323c9e97f84b95baefa9fdabc0c752
+# d631f069570b4092b3dda5bea1006440
+msgid "Bugfixes"
+msgstr ""
+
+#: ../../changelog.rst:546
+# c0d3fab01ad640ee80660d6227b4ce87
+msgid ":issue:`375`: The logic used to separate tasks from modules when running ``fab --list`` incorrectly considered task classes implementing the mapping interface to be modules, not individual tasks. This has been corrected. Thanks to Vladimir Mihailenco for the catch."
+msgstr ""
+
+#: ../../changelog.rst:553
+# 7e4f6b97916f4df7b43a7e5a29213dce
+msgid "Changes in version 1.1.1 (2011-06-29)"
+msgstr ""
+
+#: ../../changelog.rst:558
+# 4f962616881d4430b5cc167f0007775c
+msgid "The public API for `~fabric.tasks.Task` mentioned use of the ``run()`` method, but Fabric's main execution loop had not been updated to look for and call it, forcing users who subclassed `~fabric.tasks.Task` to define ``__call__()`` instead. This was an oversight and has been corrected."
+msgstr ""
+
+#: ../../changelog.rst:563
+# cd53029e2aac4c9f9a0d792ddcfa4e18
+msgid ":ref:`task-subclasses`"
+msgstr ""
+
+#: ../../changelog.rst:567
+# 1af4f54275f2444a8c164454e1d62653
+msgid "Changes in version 1.1 (2011-06-24)"
+msgstr ""
+
+#: ../../changelog.rst:569
+# c32c8cc4855d47c6886cae7d36590626
+msgid "This page lists all changes made to Fabric in its 1.1.0 release."
+msgstr ""
+
+#: ../../changelog.rst:572
+# c0dcf6f10199450e853e4dc0109bb45a
+msgid "This release also includes all applicable changes from the 1.0.2 release."
+msgstr ""
+
+#: ../../changelog.rst:575
+#: ../../changelog.rst:737
+# ef52c9941d8c4d4e890ae26e627b4aba
+# 37b6404295bc4a45902c96745fd54b7f
+msgid "Highlights"
+msgstr ""
+
+#: ../../changelog.rst:577
+# 8877513470e44dec94fdee21af3adf4b
+msgid ":issue:`76`: :ref:`New-style tasks <new-style-tasks>` have been added. With the addition of the `~fabric.decorators.task` decorator and the `~fabric.tasks.Task` class, you can now \"opt-in\" and explicitly mark task functions as tasks, and Fabric will ignore the rest. The original behavior (now referred to as :ref:`\"classic\" tasks <classic-tasks>`) will still take effect if no new-style tasks are found. Major thanks to Travis Swicegood for the original implementation."
+msgstr ""
+
+#: ../../changelog.rst:584
+# 3c1ed85712ce48678503ce2a33500255
+msgid ":issue:`56`: Namespacing is now possible: Fabric will crawl imported module objects looking for new-style task objects and build a dotted hierarchy (tasks named e.g. ``web.deploy`` or ``db.migrations.run``), allowing for greater organization. See :ref:`namespaces` for details. Thanks again to Travis Swicegood."
+msgstr ""
+
+#: ../../changelog.rst:592
+#: ../../changelog.rst:809
+#: ../../changelog.rst:949
+#: ../../changelog.rst:964
+#: ../../changelog.rst:998
+#: ../../changelog.rst:1085
+# ce8b8747ba6b46e5b2103e447c03faa9
+# c1ecc4bb415140a4912c3e463eda4335
+# 42ed420c98f849a78503abae94a0da73
+# 19e0636d96804e42a87cdd4e41d578a7
+# bd9e4fdcc7f1436088b0765779ad3b2f
+# f26e8fdfd5f1444bb7eab49c5c239659
+msgid "Feature additions"
+msgstr ""
+
+#: ../../changelog.rst:594
+# 7a0422ffb677436b9c6222bd3598e540
+msgid ":issue:`10`: `~fabric.contrib.upload_project` now allows control over the local and remote directory paths, and has improved error handling. Thanks to Rodrigue Alcazar for the patch."
+msgstr ""
+
+#: ../../changelog.rst:597
+# a4df928474d142a8be86e94b04c70c12
+msgid "As part of :issue:`56` (highlighted above), added :option:`--list-format <-F>` to allow specification of a nested output format from :option:`--list <-l>`."
+msgstr ""
+
+#: ../../changelog.rst:600
+# 86f4d6f34a004380ac66378d3e3ffc69
+msgid ":issue:`107`: `~fabric.operations.require`'s ``provided_by`` kwarg now accepts iterables in addition to single values. Thanks to Thomas Ballinger for the patch."
+msgstr ""
+
+#: ../../changelog.rst:603
+# 34861346313349ecb3623d9b4428ef22
+msgid ":issue:`117`: `~fabric.contrib.files.upload_template` now supports the `~fabric.operations.put` flags ``mirror_local_mode`` and ``mode``. Thanks to Joe Stump for the suggestion and Thomas Ballinger for the patch."
+msgstr ""
+
+#: ../../changelog.rst:606
+# 5291fec54d4b4e51bf147ad3844d25d0
+msgid ":issue:`154`: `~fabric.contrib.files.sed` now allows customized regex flags to be specified via a new ``flags`` parameter. Thanks to Nick Trew for the suggestion and Morgan Goose for initial implementation."
+msgstr ""
+
+#: ../../changelog.rst:609
+# c95efe140fb243d59be5e09b685e4cc2
+msgid ":issue:`170`: Allow :ref:`exclusion <excluding-hosts>` of specific hosts from the final run list. Thanks to Casey Banner for the suggestion and patch."
+msgstr ""
+
+#: ../../changelog.rst:611
+# 9e2dd9eab2b34821bfa1e6c23462df40
+msgid ":issue:`189`: Added :option:`--abort-on-prompts`/:ref:`env.abort_on_prompts <abort-on-prompts>` to allow a more non-interactive behavior, aborting/exiting instead of trying to prompt the running user. Thanks to Jeremy Avnet and Matt Chisholm for the initial patch."
+msgstr ""
+
+#: ../../changelog.rst:615
+# d421361d5a0f4a1b810cbc170f284221
+msgid ":issue:`273`: `~fabric.contrib.files.upload_template` now offers control over whether it attempts to create backups of pre-existing destination files. Thanks to Ales Zoulek for the suggestion and initial patch."
+msgstr ""
+
+#: ../../changelog.rst:618
+# fba2240177a74435a6473cbd1319b774
+msgid ":issue:`283`: Added the `~fabric.decorators.with_settings` decorator to allow application of env var settings to an entire function, as an alternative to using the `~fabric.context_managers.settings` context manager. Thanks to Travis Swicegood for the patch."
+msgstr ""
+
+#: ../../changelog.rst:622
+# 1243db683a344d499c6694d8aa81c4b2
+msgid ":issue:`353`: Added :option:`--keepalive`/:ref:`env.keepalive <keepalive>` to allow specification of an SSH keepalive parameter for troublesome network connections. Thanks to Mark Merritt for catch & patch."
+msgstr ""
+
+#: ../../changelog.rst:629
+# 0b68d18da4dc45f8918d449e0c4ea7c3
+msgid ":issue:`115`: An implementation detail causing host lists to lose order when deduped by the ``fab`` execution loop, has been patched to preserve order instead. So e.g. ``fab -H a,b,c`` (or setting ``env.hosts = ['a', 'b', 'c']``) will now always run on ``a``, then ``b``, then ``c``. Previously, there was a chance the order could get mixed up during deduplication. Thanks to Rohit Aggarwal for the report."
+msgstr ""
+
+#: ../../changelog.rst:635
+# 26d05de88fb54b979b5ae720d769ecc1
+msgid ":issue:`345`: `~fabric.contrib.files.contains` returned the stdout of its internal ``grep`` command instead of success/failure, causing incorrect behavior when stderr exists and is combined with stdout. This has been corrected. Thanks to Szymon Reichmann for catch and patch."
+msgstr ""
+
+#: ../../changelog.rst:641
+#: ../../changelog.rst:867
+#: ../../changelog.rst:935
+#: ../../changelog.rst:986
+#: ../../changelog.rst:1060
+#: ../../changelog.rst:1116
+# 4a966718bbf24d5987eb52cf0d14da2f
+# 5e0b4ee4a1f34acfa1092455098f35da
+# d913d0f0485f4cbe9894f2d22786e33a
+# 5466eb142fbb4212b8de99d6fd002641
+# f171b8b33cb74d43b0ce4827d11913c2
+# f23e12f7a93e45d6bdb187304cb860c8
+msgid "Documentation updates"
+msgstr ""
+
+#: ../../changelog.rst:643
+# 90b9d2a569604ac1890b49e898f765a8
+msgid "Documentation for task declaration has been moved from :doc:`/usage/execution` into its own docs page, :doc:`/usage/tasks`, as a result of the changes added in :issue:`76` and :issue:`56`."
+msgstr ""
+
+#: ../../changelog.rst:646
+# cd79da9c047d4b6a8730b83720a46885
+msgid ":issue:`184`: Make the usage of `~fabric.contrib.project.rsync_project`'s ``local_dir`` argument more obvious, regarding its use in the ``rsync`` call. (Specifically, so users know they can pass in multiple, space-joined directory names instead of just one single directory.)"
+msgstr ""
+
+#: ../../changelog.rst:652
+# e610dc7066f64ed892e58241e4ccdef5
+msgid "Internals"
+msgstr ""
+
+#: ../../changelog.rst:654
+# 163ca0e88f094eaebb298e439c76a1ae
+msgid ":issue:`307`: A whole pile of minor PEP8 tweaks. Thanks to Markus Gattol for highlighting the ``pep8`` tool and to Rick Harding for the patch."
+msgstr ""
+
+#: ../../changelog.rst:656
+# ca7f47e577b14552aae777f1c89148ff
+msgid ":issue:`314`: Test utility decorator improvements. Thanks to Rick Harding for initial catch & patch."
+msgstr ""
+
+#: ../../changelog.rst:661
+# 7ba44d643cdc4e7bb1849cb292f1174d
+msgid "Changes in version 1.0.2 (2011-06-24)"
+msgstr ""
+
+#: ../../changelog.rst:664
+# fb7619103fc44ce0be160ace87d3c92e
+msgid "This release also includes all applicable changes from the 0.9.7 release."
+msgstr ""
+
+#: ../../changelog.rst:669
+# 5b47f4842aa24ec1b74ac498b52b9a53
+msgid ":issue:`258`: Bugfix to a previous, incorrectly applied fix regarding `~fabric.operations.local` on Windows platforms."
+msgstr ""
+
+#: ../../changelog.rst:671
+# e83fc26242ad4c3c8c8c7d7b3ceff38a
+msgid ":issue:`324`: Update `~fabric.operations.run`/`~fabric.operations.sudo`'s ``combine_stderr`` kwarg so that it correctly overrides the global setting in all cases. This required changing its default value to ``None``, but the default behavior (behaving as if the setting were ``True``) has not changed. Thanks to Matthew Woodcraft and Connor Smith for the catch."
+msgstr ""
+
+#: ../../changelog.rst:676
+# a09e6c10804c46a0985965d49009865a
+msgid ":issue:`337`: Fix logic bug in `~fabric.operations.put` preventing use of ``mirror_local_mode``. Thanks to Roman Imankulov for catch & patch."
+msgstr ""
+
+#: ../../changelog.rst:678
+# cc33d4d9e041446c960d8ed2ab5029db
+msgid ":issue:`352` (also :issue:`320`): Seemingly random issues with output lockup and input problems (e.g. sudo prompts incorrectly rejecting passwords) appear to have been caused by an I/O race condition. This has been fixed. Thanks to Max Arnold and Paul Oswald for the detailed reports and to Max for the diagnosis and patch."
+msgstr ""
+
+#: ../../changelog.rst:686
+#: ../../changelog.rst:724
+# db27db4355d143aabbbca5c6e0b9c4e1
+# 5360c9a9151f40cea7b041fa48e53bde
+msgid "Documentation"
+msgstr ""
+
+#: ../../changelog.rst:688
+# bfc4ade57d644129a04e8ecfd159ac4c
+msgid "Updated the API documentation for `~fabric.context_managers.cd` to explicitly point users to `~fabric.context_managers.lcd` for modifying local paths."
+msgstr ""
+
+#: ../../changelog.rst:690
+# 189c86ef6d7e45ae83f15294894b5297
+msgid "Clarified the behavior of `~fabric.contrib.project.rsync_project` re: how trailing slashes in ``local_dir`` affect ``remote_dir``. Thanks to Mark Merritt for the catch."
+msgstr ""
+
+#: ../../changelog.rst:696
+# d9793ffe8e8f4f919b971ccfc953742f
+msgid "Changes in version 1.0.1 (2011-03-27)"
+msgstr ""
+
+#: ../../changelog.rst:699
+# 16b45426a85e41438af31dc2d42f01b4
+msgid "This release also includes all applicable changes from the 0.9.5 release."
+msgstr ""
+
+#: ../../changelog.rst:704
+# 978ede4de6a54497891e1a208f2f9381
+msgid ":issue:`301`: Fixed a bug in `~fabric.operations.local`'s behavior when ``capture=False`` and ``output.stdout`` (or ``.stderr``) was also ``False``. Thanks to Chris Rose for the catch."
+msgstr ""
+
+#: ../../changelog.rst:707
+# f249ed8232da4f009c806512f3a6374c
+msgid ":issue:`310`: Update edge case in `~fabric.operations.put` where using the ``mode`` kwarg alongside ``use_sudo=True`` runs a hidden `~fabric.operations.sudo` command. The ``mode`` kwarg needs to be octal but was being interpolated in the ``sudo`` call as a string/integer. Thanks to Adam Ernst for the catch and suggested fix."
+msgstr ""
+
+#: ../../changelog.rst:712
+# 56650dd38d8346cd9009c037d6ba4939
+msgid ":issue:`311`: `~fabric.contrib.files.append` was supposed to have its ``partial`` kwarg's default flipped from ``True`` to ``False``. However, only the documentation was altered. This has been fixed. Thanks to Adam Ernst for bringing it to our attention."
+msgstr ""
+
+#: ../../changelog.rst:716
+# 49e9b082b8054de899683e773f1dcf06
+msgid ":issue:`312`: Tweak internal I/O related loops to prevent high CPU usage and poor screen-printing behavior on some systems. Thanks to Kirill Pinchuk for the initial patch."
+msgstr ""
+
+#: ../../changelog.rst:719
+# 47bab1a8186145eca18c33a5fa710b54
+msgid ":issue:`320`: Some users reported problems with dropped input, particularly while entering `~fabric.operations.sudo` passwords. This was fixed via the same change as for :issue:`312`."
+msgstr ""
+
+#: ../../changelog.rst:726
+# 6040a1314ff14a08a2028bec42d8d531
+msgid "Added a missing entry for :ref:`env.path <env-path>` in the usage documentation."
+msgstr ""
+
+#: ../../changelog.rst:731
+# 4d9f67a44dd24234983044c4e4237f89
+msgid "Changes in version 1.0 (2011-03-04)"
+msgstr ""
+
+#: ../../changelog.rst:733
+# 84c0e6c7057641fca3ae48a37f02d2fe
+msgid "This page lists all changes made to Fabric in its 1.0.0 release."
+msgstr ""
+
+#: ../../changelog.rst:739
+# dbcdcc1a4d6b4887911dc99da3c92c45
+msgid ":issue:`7`: `~fabric.operations.run`/`~fabric.operations.sudo` now allow full interactivity with the remote end. You can interact with remote prompts and similar interfaces, making certain tasks much easier, and freeing you from the need to find noninteractive solutions if you don't want to. See :doc:`/usage/interactivity` for more on these changes."
+msgstr ""
+
+#: ../../changelog.rst:744
+# 3b98f06f0f084390a62b1adabbefe5e4
+msgid "`~fabric.operations.put` and `~fabric.operations.get` received many updates, including but not limited to: recursion, globbing, inline ``sudo`` capability, and increased control over local file paths. See the individual ticket line-items below for details. Erich Heine (``sophacles`` on IRC) played a large part in implementing and/or collecting these changes and deserves much of the credit."
+msgstr ""
+
+#: ../../changelog.rst:750
+# 008cb506b6474b438fffc80ce291a614
+msgid "Added functionality for loading fabfiles which are Python packages (directories) instead of just modules (single files). This allows for easier organization of nontrivial fabfiles and paves the way for task namespacing in the near future. See :ref:`fabfile-discovery` for details."
+msgstr ""
+
+#: ../../changelog.rst:754
+# 5136528294c946229a14bdae3183cbf8
+msgid ":issue:`185`: Mostly of interest to those contributing to Fabric itself, Fabric now leverages Paramiko to provide a stub SSH and SFTP server for use during runs of our test suite. This makes quick, configurable full-stack testing of Fabric (and, to an extent, user fabfiles) possible."
+msgstr ""
+
+#: ../../changelog.rst:761
+# 0c478661a95b4d2ba4c78f80a99e54cb
+msgid "Backwards-incompatible changes"
+msgstr ""
+
+#: ../../changelog.rst:763
+# 7980a64cbb784305ae5639459f1f5bf6
+msgid "The below changes are **backwards incompatible** and have the potential to break your 0.9.x based fabfiles!"
+msgstr ""
+
+#: ../../changelog.rst:766
+# 7655982ed0894f5e8d23279b467e4e2e
+msgid "`~fabric.contrib.files.contains` and `~fabric.contrib.files.append` previously had the ``filename`` argument in the second position, whereas all other functions in the `contrib.files <fabric.contrib.files>` module had ``filename`` as the first argument.  These two functions have been brought in line with the rest of the module."
+msgstr ""
+
+#: ../../changelog.rst:771
+# 5a660b0a314d4ed3b412d5d98d33cb32
+msgid "`~fabric.contrib.files.sed` now escapes single-quotes and parentheses in addition to forward slashes, in its ``before`` and ``after`` kwargs. Related to, but not entirely contained within, :issue:`159`."
+msgstr ""
+
+#: ../../changelog.rst:774
+# 87b21136e91f43d0a5dfcfbacebd5d72
+msgid "The ``user`` and ``pty`` kwargs in `~fabric.operations.sudo`'s signature have had their order swapped around to more closely match `~fabric.operations.run`."
+msgstr ""
+
+#: ../../changelog.rst:777
+# 22822ece4d1b43d29f249c345c36c692
+msgid "As part of the changes made in :issue:`7`, `~fabric.operations.run` and `~fabric.operations.sudo` have had the default value of their ``pty`` kwargs changed from ``False`` to ``True``. This, plus the addition of the :ref:`combine-stderr` kwarg/env var, may result in significant behavioral changes in remote programs which operate differently when attached to a tty."
+msgstr ""
+
+#: ../../changelog.rst:782
+# b46af055494740bb8931bfde06617b17
+msgid ":issue:`61`: `~fabric.operations.put` and `~fabric.operations.get` now honor the remote current-working-directory changes applied by `~fabric.context_managers.cd`. Previously they would always treat relative remote paths as being relative to the remote home directory."
+msgstr ""
+
+#: ../../changelog.rst:786
+# f16f1c0f6144444fb3d0aeb3e144b21b
+msgid ":issue:`79`: `~fabric.operations.get` now allows increased control over local filenames when downloading single or multiple files. This is backwards incompatible because the default path/filename for downloaded files has changed.  Thanks to Juha Mustonen, Erich Heine and Max Arnold for brainstorming solutions."
+msgstr ""
+
+#: ../../changelog.rst:791
+# 964e85ef5f1c45eebca3163a6bae1542
+msgid ":issue:`88`: `~fabric.operations.local` has changed the default value of its ``capture`` kwarg, from ``True`` to ``False``. This was changed in order to be more intuitive, at the cost of no longer defaulting to the same rich return value as in `~fabric.operations.run`/`~fabric.operations.sudo` (which is still available by specifying ``capture=True``.)"
+msgstr ""
+
+#: ../../changelog.rst:796
+# 765deac4fc7c424aa78a2fb55720e60b
+msgid ":issue:`121`: `~fabric.operations.put` will no longer automatically attempt to mirror local file modes. Instead, you'll need to specify ``mirror_local_mode=True`` to get this behavior. Thanks to Paul Smith for a patch covering part of this change."
+msgstr ""
+
+#: ../../changelog.rst:800
+# e18d8b1aef7740c9a76f595e8086dac8
+msgid ":issue:`172`: `~fabric.contrib.files.append` has changed the default value of its ``partial`` kwarg from ``True`` to ``False`` in order to be safer/more intuitive."
+msgstr ""
+
+#: ../../changelog.rst:803
+# fad85c32073c4e5db16e79d722b8e8b0
+msgid ":issue:`221`: `~fabric.decorators.runs_once` now memoizes the wrapped task's return value and returns that value on subsequent invocations, instead of returning None. Thanks to Jacob Kaplan-Moss and Travis Swicegood for catch + patch."
+msgstr ""
+
+#: ../../changelog.rst:811
+# b44d77b377f848c8b8ad2080e8ab7e96
+msgid "Prerelease versions of Fabric (starting with the 1.0 prereleases) will now print the Git SHA1 hash of the current checkout, if the user is working off of a Git clone of the Fabric source code repository."
+msgstr ""
+
+#: ../../changelog.rst:814
+# f2a6f0b01c4c497196e80349f15e05e7
+msgid "Added `~fabric.context_managers.path` context manager for modifying commands' effective ``$PATH``."
+msgstr ""
+
+#: ../../changelog.rst:816
+# bec4e7a32951466a80d1ace640128e7f
+msgid "Added convenience ``.succeeded`` attribute to the return values of `~fabric.operations.run`/`~fabric.operations.sudo`/`~fabric.operations.local` which is simply the opposite of the ``.failed`` attribute. (This addition has also been backported to Fabric's 0.9 series.)"
+msgstr ""
+
+#: ../../changelog.rst:820
+# 6d75745e8fca436b9d547c995628f2ca
+msgid "Refactored SSH disconnection code out of the main ``fab`` loop into `~fabric.network.disconnect_all`, allowing library users to avoid problems with non-fabfile Python scripts hanging after execution finishes."
+msgstr ""
+
+#: ../../changelog.rst:823
+# 26e15194c3bd46afb0c001c374523011
+msgid ":issue:`2`: Added ``use_sudo`` kwarg to `~fabric.operations.put` to allow uploading of files to privileged locations. Thanks to Erich Heine and IRC user ``npmap`` for suggestions and patches."
+msgstr ""
+
+#: ../../changelog.rst:826
+# 649256149a9b4ffa9d47d22e0c62bc81
+msgid ":issue:`23`: Added `~fabric.context_managers.prefix` context manager for easier management of persistent state across commands."
+msgstr ""
+
+#: ../../changelog.rst:828
+# db27a1c8edfb4550b232995f1e6fbb40
+msgid ":issue:`27`: Added environment variable (:ref:`always-use-pty`) and command-line flag (:option:`--no-pty`) for global control over the `~fabric.operations.run`/`~fabric.operations.sudo` ``pty`` argument."
+msgstr ""
+
+#: ../../changelog.rst:831
+# 6136236af363419c9c1e8a5c677612b6
+msgid ":issue:`28`: Allow shell-style globbing in `~fabric.operations.get`. Thanks to Erich Heine and Max Arnold."
+msgstr ""
+
+#: ../../changelog.rst:833
+# 0bad5685bcd242cf87bcfddc45bbe7d6
+msgid ":issue:`55`: `~fabric.operations.run`, `~fabric.operations.sudo` and `~fabric.operations.local` now provide access to their standard error (stderr) as an attribute on the return value, alongside e.g. ``.failed``."
+msgstr ""
+
+#: ../../changelog.rst:836
+# c8a16abacb014945aee34e5580b16654
+msgid ":issue:`148`: `~fabric.operations.local` now returns the same \"rich\" string object as `~fabric.operations.run`/`~fabric.operations.sudo` do, so that it is a string containing the command's stdout (if ``capture=True``) or the empty string (if ``capture=False``) which exposes the ``.failed`` and ``.return_code`` attributes, and so forth."
+msgstr ""
+
+#: ../../changelog.rst:841
+#: ../../changelog.rst:1029
+# cde81e214143422f96b9f498d7b726d2
+# 595adc0d4f724d9cbf9098af62bb5ec1
+msgid ":issue:`151`: Added a `~fabric.utils.puts` utility function, which allows greater control over fabfile-generated (as opposed to Fabric-generated) output. Also added `~fabric.utils.fastprint`, an alias to `~fabric.utils.puts` allowing for convenient unbuffered, non-newline-terminated printing."
+msgstr ""
+
+#: ../../changelog.rst:846
+# d6d2ff94bbb74d4bb38641e549f92c31
+msgid ":issue:`192`: Added per-user/host password cache to assist in multi-connection scenarios."
+msgstr ""
+
+#: ../../changelog.rst:848
+# e261675ee8dc4dcd91626877a00f35dd
+msgid ":issue:`193`: When requesting a remote pseudo-terminal, use the invoking terminal's dimensions instead of going with the default."
+msgstr ""
+
+#: ../../changelog.rst:850
+# 8a728483030a4feebaaee5ffc3e88775
+msgid ":issue:`217`: `~fabric.operations.get`/`~fabric.operations.put` now accept file-like objects as well as local file paths for their ``local_path`` arguments."
+msgstr ""
+
+#: ../../changelog.rst:853
+# 624826b1214544229847e9d78f492141
+msgid ":issue:`245`: Added the `~fabric.context_managers.lcd` context manager for controlling `~fabric.operations.local`'s current working directory and `~fabric.operations.put`/`~fabric.operations.get`'s local working directories."
+msgstr ""
+
+#: ../../changelog.rst:857
+# d624c35511b24d08b17f9bfe9a6a6f36
+msgid ":issue:`274`: `~fabric.operations.put`/`~fabric.operations.get` now have return values which may be iterated over to access the paths of files uploaded remotely or downloaded locally, respectively. These return values also allow access to ``.failed`` and ``.succeeded`` attributes, just like `~fabric.operations.run` and friends. (In this case, ``.failed`` is actually a list itself containing any paths which failed to transfer, which naturally acts as a boolean as well.)"
+msgstr ""
+
+#: ../../changelog.rst:869
+# a82d2854431a418a8f104674a753de53
+msgid "API, tutorial and usage docs updated with the above new features."
+msgstr ""
+
+#: ../../changelog.rst:870
+# 250efb18259e454987e07155a9f602fa
+msgid "README now makes the Python 2.5+ requirement up front and explicit; some folks were still assuming it would run on Python 2.4."
+msgstr ""
+
+#: ../../changelog.rst:872
+# 81cc28a17a6c4c2381099fb319ded6ac
+msgid "Added a link to Python's documentation for string interpolation in `~fabric.contrib.files.upload_template`'s docstring."
+msgstr ""
+
+#: ../../changelog.rst:877
+# 52d8aa7a65fa47219bf849658d03120d
+msgid "Changes in version 0.9.7 (2011-06-23)"
+msgstr ""
+
+#: ../../changelog.rst:879
+# 34514e08377f42e4b3ce0184c95bc476
+msgid "The following changes were implemented in Fabric 0.9.7:"
+msgstr ""
+
+#: ../../changelog.rst:884
+# ea64ad4cc1d74a8b8fb0ac2d8ae3821d
+msgid ":issue:`329`: `~fabric.operations.reboot` would have problems reconnecting post-reboot (resulting in a traceback) if ``env.host_string`` was not fully-formed (did not contain user and port specifiers.) This has been fixed."
+msgstr ""
+
+#: ../../changelog.rst:888
+# 8c6933916c594bcab653d98f4d5042f8
+msgid "Changes in version 0.9.6 (2011-04-29)"
+msgstr ""
+
+#: ../../changelog.rst:890
+# f6f4a93f7ded40878282ff17c8263f30
+msgid "The following changes were implemented in Fabric 0.9.6:"
+msgstr ""
+
+#: ../../changelog.rst:895
+# 9d8f0b2305ae4d2bb975fc561ad4e796
+msgid ":issue:`347`: `~fabric.contrib.files.append` incorrectly tested for ``str`` instead of ``types.StringTypes``, causing it to split up Unicode strings as if they were one character per line. This has been fixed."
+msgstr ""
+
+#: ../../changelog.rst:901
+# 85130104d3804249a2e4fc5c697f3f78
+msgid "Changes in version 0.9.5 (2011-03-21)"
+msgstr ""
+
+#: ../../changelog.rst:903
+# 49f869f9faf34c4c9eae6bb2371c51ef
+msgid "The following changes were implemented in Fabric 0.9.5:"
+msgstr ""
+
+#: ../../changelog.rst:908
+# b19d16068bc04d59933d126a21b44039
+msgid ":issue:`37`: Internal refactoring of a Paramiko call from ``_transport`` to ``get_transport()``."
+msgstr ""
+
+#: ../../changelog.rst:910
+# 8c74c3a8d94b46499c7f49dee710bffe
+msgid ":issue:`258`: Modify subprocess call on Windows platforms to avoid space/quote problems in `~fabric.operations.local`. Thanks to Henrik Heimbuerger and Raymond Cote for catch + suggested fixes."
+msgstr ""
+
+#: ../../changelog.rst:913
+# 79472d16b38041acb4e7acb99a93ce51
+msgid ":issue:`261`: Fix bug in `~fabric.contrib.files.comment` which truncated regexen ending with ``$``. Thanks to Antti Kaihola for the catch."
+msgstr ""
+
+#: ../../changelog.rst:915
+# 5a738d3960a041e18ce3cf56c9bd975e
+msgid ":issue:`264`: Fix edge case in `~fabric.operations.reboot` by gracefully clearing connection cache. Thanks to Jason Gerry for the report & troubleshooting."
+msgstr ""
+
+#: ../../changelog.rst:918
+# 755de8bc1f9544a58eb50161916198f0
+msgid ":issue:`268`: Allow for ``@`` symbols in usernames, which is valid on some systems. Fabric's host-string parser now splits username and hostname at the last ``@`` found instead of the first. Thanks to Thadeus Burgess for the report."
+msgstr ""
+
+#: ../../changelog.rst:922
+# a18f62d0bff248d485c8cb74f3cdbe4f
+msgid ":issue:`287`: Fix bug in password prompt causing occasional tracebacks. Thanks to Antti Kaihola for the catch and Rick Harding for testing the proposed solution."
+msgstr ""
+
+#: ../../changelog.rst:925
+# f8f7cd77fbd54a3ea24f65d90e5e2a93
+msgid ":issue:`288`: Use temporary files to work around the lack of a ``-i`` flag in OpenBSD and NetBSD `~fabric.contrib.files.sed`. Thanks to Morgan Lefieux for catch + patches."
+msgstr ""
+
+#: ../../changelog.rst:928
+# d85e41aead514958ac877a2fbbb5d084
+msgid ":issue:`305`: Strip whitespace from hostnames to help prevent user error. Thanks to Michael Bravo for the report and Rick Harding for the patch."
+msgstr ""
+
+#: ../../changelog.rst:930
+# e8090584393b4c42af06813f1e0657a4
+msgid ":issue:`316`: Use of `~fabric.context_managers.settings` with key names not previously set in ``env`` no longer raises KeyErrors. Whoops. Thanks to Adam Ernst for the catch."
+msgstr ""
+
+#: ../../changelog.rst:937
+# 02ed425d1302447c8964abc20b28e053
+msgid ":issue:`228`: Added description of the PyCrypto + pip + Python 2.5 problem to the documentation and removed the Python 2.5 check from ``setup.py``."
+msgstr ""
+
+#: ../../changelog.rst:939
+# baf0a2505d084bf58939f7efe36b7f1c
+msgid ":issue:`291`: Updated the PyPM-related install docs re: recent changes in PyPM and its download URLs. Thanks to Sridhar Ratnakumar for the patch."
+msgstr ""
+
+#: ../../changelog.rst:944
+# aa0d8e96fd214c2cb3adf843c11d1c44
+msgid "Changes in version 0.9.4 (2011-02-18)"
+msgstr ""
+
+#: ../../changelog.rst:946
+# b88277ec759f4ae58bf59b46d3140022
+msgid "The following changes were implemented in Fabric 0.9.4:"
+msgstr ""
+
+#: ../../changelog.rst:951
+# 375f40e35b3d43c8bdb10691619644a0
+msgid "Added :doc:`documentation </usage/library>` for using Fabric as a library."
+msgstr ""
+
+#: ../../changelog.rst:952
+# 59836b11bc3d4844b049cc0b5e69fb1e
+msgid "Mentioned our `Twitter account <https://twitter.com/pyfabric>`_ on the main docs page."
+msgstr ""
+
+#: ../../changelog.rst:954
+# 910641fe934343eb98702b37e77cd940
+msgid ":issue:`290`: Added ``escape`` kwarg to `~fabric.contrib.files.append` to allow control over previously automatic single-quote escaping."
+msgstr ""
+
+#: ../../changelog.rst:959
+# 8f64b7013b5249fbb845f33e766296f1
+msgid "Changes in version 0.9.3 (2010-11-12)"
+msgstr ""
+
+#: ../../changelog.rst:961
+# 257b00317c9649a3bad3ac618b488bae
+msgid "The following changes were implemented in Fabric 0.9.3:"
+msgstr ""
+
+#: ../../changelog.rst:966
+# 8d4d9a027f5c45a5b59921beb9b7c86f
+msgid ":issue:`255`: Added ``stderr`` and ``succeeded`` attributes to `~fabric.operations.local`."
+msgstr ""
+
+#: ../../changelog.rst:968
+# 66f882e2911d4d3187964ee0d1d6d5ea
+msgid ":issue:`254`: Backported the ``.stderr`` and ``.succeeded`` attributes on `~fabric.operations.run`/`~fabric.operations.sudo` return values, from the Git master/pre-1.0 branch. Please see those functions' API docs for details."
+msgstr ""
+
+#: ../../changelog.rst:976
+# f59c8c6c75014f63959a8fb1dd9bef5b
+msgid ":issue:`228`: We discovered that the pip + PyCrypto installation problem was limited to Python 2.5 only, and have updated our ``setup.py`` accordingly."
+msgstr ""
+
+#: ../../changelog.rst:978
+# e8d34e4848f745e6b40995145c53a682
+msgid ":issue:`230`: Arbitrary or remainder commands (``fab <opts> -- <run command here>``) will no longer blow up when invoked with no fabfile present. Thanks to IRC user ``orkaa`` for the report."
+msgstr ""
+
+#: ../../changelog.rst:981
+# 9d133e358bad4e80a2532d19ff64d8f6
+msgid ":issue:`242`: Empty string values in task CLI args now parse correctly. Thanks to Aaron Levy for the catch + patch."
+msgstr ""
+
+#: ../../changelog.rst:988
+# c031769843ef476fa6353f4714a40536
+msgid ":issue:`239`: Fixed typo in execution usage docs. Thanks to Pradeep Gowda and Turicas for the catch."
+msgstr ""
+
+#: ../../changelog.rst:993
+# ecc1f0243c574a3bae352b0218f0991e
+msgid "Changes in version 0.9.2 (2010-09-06)"
+msgstr ""
+
+#: ../../changelog.rst:995
+# 2167aa758fb643aa9408837234966cc7
+msgid "The following changes were implemented in Fabric 0.9.2:"
+msgstr ""
+
+#: ../../changelog.rst:1000
+# fedd2d458792437f89493beff6dc2ab0
+msgid "The `~fabric.operations.reboot` operation has been added, providing a way for Fabric to issue a reboot command and then reconnect after the system has restarted."
+msgstr ""
+
+#: ../../changelog.rst:1003
+# c1750bc844284c7aa5ebd4e669dead18
+msgid "``python setup.py test`` now runs Fabric's test suite (provided you have all the prerequisites from the ``requirements.txt`` installed). Thanks to Eric Holscher for the patch."
+msgstr ""
+
+#: ../../changelog.rst:1006
+# cd9d7c949e6a42d0b38e20bf199ae600
+msgid "Added functionality for loading fabfiles which are Python packages (directories) instead of just modules (single files.) See :ref:`fabfile-discovery`."
+msgstr ""
+
+#: ../../changelog.rst:1009
+# cbfc1cce92fc4868b8fb5ac40b7a918e
+msgid "Added output lines informing the user of which tasks are being executed (e.g. ``[myserver] Executing task 'foo'``.)"
+msgstr ""
+
+#: ../../changelog.rst:1011
+# 6cede5ab2bab4d7f9668c60e9d641a63
+msgid "Added support for lazy (callable) role definition values in ``env.roledefs``."
+msgstr ""
+
+#: ../../changelog.rst:1012
+# 89e6cd8d372041bdbf1d66337a3f772e
+msgid "Added `contrib.django <fabric.contrib.django>` module with basic Django integration."
+msgstr ""
+
+#: ../../changelog.rst:1014
+# 1bf08eb49cce4729a10857fe7ab1015e
+msgid ":ref:`env.local_user <local-user>` was added, providing easy and permanent access to the local system username, even if an alternate remote username has been specified."
+msgstr ""
+
+#: ../../changelog.rst:1017
+# 4287930556aa4549bf823ec292308c0d
+msgid ":issue:`29`: Added support for arbitrary command-line-driven anonymous tasks via ``fab [options] -- [shell command]``. See :ref:`arbitrary-commands`."
+msgstr ""
+
+#: ../../changelog.rst:1019
+# c10afb51742a45c8a8315584eef26476
+msgid ":issue:`52`: Full tracebacks during aborts are now displayed if the user has opted to see debug-level output."
+msgstr ""
+
+#: ../../changelog.rst:1021
+# cb0f2a9ff6384ca2b8461d5b8df4ce2e
+msgid ":issue:`101`: Added `~fabric.colors` module with basic color output support. (:issue:`101` is still open: we plan to leverage the new module in Fabric's own output in the future.)"
+msgstr ""
+
+#: ../../changelog.rst:1024
+# 40d662c699f94e2e98575ad15826784a
+msgid ":issue:`137`: Commas used to separate per-task arguments may now be escaped with a backslash. Thanks to Erich Heine for the patch."
+msgstr ""
+
+#: ../../changelog.rst:1026
+# 957d589ed59d4a00a6169b821d930204
+msgid ":issue:`144`: `~fabric.decorators.hosts` (and `~fabric.decorators.roles`) will now expand a single, iterable argument instead of requiring one to use e.g.  ``@hosts(*iterable)``."
+msgstr ""
+
+#: ../../changelog.rst:1034
+# f7c55f8c384f4720a7e7e84fea78a79f
+msgid ":issue:`208`: Users rolling their own shell completion or who otherwise find themselves performing text manipulation on the output of :option:`--list <-l>` may now use :option:`--shortlist` to get a plain, newline-separated list of task names."
+msgstr ""
+
+#: ../../changelog.rst:1043
+# 930559e81f624a35a2a10eef18f19668
+msgid "The interactive \"what host to connect to?\" prompt now correctly updates the appropriate environment variables (hostname, username, port) based on user input."
+msgstr ""
+
+#: ../../changelog.rst:1046
+# d2c04665635f4a9b8e03f10658cf0e3e
+msgid "Fixed a bug where Fabric's own internal fabfile would pre-empt the user's fabfile due to a PYTHONPATH order issue. User fabfiles are now always loaded at the front of the PYTHONPATH during import."
+msgstr ""
+
+#: ../../changelog.rst:1049
+# 63696e122aba4a8d973de8edfd89cc93
+msgid "Disabled some DeprecationWarnings thrown by Paramiko when that library is imported into Fabric under Python 2.6."
+msgstr ""
+
+#: ../../changelog.rst:1051
+# c7e77c970bab4b4f8607db1e1c02b502
+msgid ":issue:`44`, :issue:`63`: Modified `~fabric.contrib.project.rsync_project` to honor the SSH port and identity file settings. Thanks to Mitch Matuson and Morgan Goose."
+msgstr ""
+
+#: ../../changelog.rst:1054
+# 441e11053d7143ada13b19178aeeceb7
+msgid ":issue:`123`: Removed Cygwin from the \"are we on Windows\" test; now, only Python installs whose ``sys.platform`` says ``'win32'`` will use Windows-only code paths (e.g. importing of ``pywin32``)."
+msgstr ""
+
+#: ../../changelog.rst:1062
+# c1ac55279035470cb9ca8d80700dfb26
+msgid "Added a few new items to the :doc:`FAQ </faq>`."
+msgstr ""
+
+#: ../../changelog.rst:1063
+# 8a8b686f8b2b4dcbb078710bae02db94
+msgid ":issue:`173`: Simple but rather embarrassing typo fix in README. Thanks to Ted Nyman for the catch."
+msgstr ""
+
+#: ../../changelog.rst:1065
+# 06c8f115d8f547499a0847d03e6b5905
+msgid ":issue:`194`: Added a note to :doc:`the install docs </installation>` about a possible edge case some Windows 64-bit Python users may encounter."
+msgstr ""
+
+#: ../../changelog.rst:1067
+# 35cf16c238eb4e6b953a1304106b5522
+msgid ":issue:`216`: Overhauled the :ref:`process backgrounding FAQ <faq-daemonize>` to include additional techniques and be more holistic."
+msgstr ""
+
+#: ../../changelog.rst:1072
+# 4da70b30d83d47ca9ffd2dcfef4d6bc5
+msgid "Packaging updates"
+msgstr ""
+
+#: ../../changelog.rst:1074
+# 4f3592a0af1f45f99a0e9d3583d95610
+msgid ":issue:`86`, :issue:`158`: Removed the bundled Paramiko 1.7.4 and updated the ``setup.py`` to require Paramiko >=1.7.6. This lets us skip the known-buggy Paramiko 1.7.5 while getting some much needed bugfixes in Paramiko 1.7.6."
+msgstr ""
+
+#: ../../changelog.rst:1080
+# 599d985c2e794e2f85f787ce341e482b
+msgid "Changes in version 0.9.1 (2010-05-28)"
+msgstr ""
+
+#: ../../changelog.rst:1082
+# 9e1da51244e24cc1a19b6fca0c9db03d
+msgid "The following changes were implemented in Fabric 0.9.1:"
+msgstr ""
+
+#: ../../changelog.rst:1087
+# 363a8f9a22694042a821b5bcb4c9f2c4
+msgid ":issue:`82`: `~fabric.contrib.files.append` now offers a ``partial`` kwarg allowing control over whether the \"don't append if given text already exists\" test looks for exact matches or not. Thanks to Jonas Nockert for the catch and discussion."
+msgstr ""
+
+#: ../../changelog.rst:1091
+# 65d42d3452eb40f9876b5d71b109362f
+msgid ":issue:`112`: ``fab --list`` now prints out the fabfile's module-level docstring as a header, if there is one."
+msgstr ""
+
+#: ../../changelog.rst:1093
+# 6a4460cc92cc4099af2595426d1d98d3
+msgid ":issue:`141`: Added some more CLI args/env vars to allow user configuration of the Paramiko ``connect`` call -- specifically :ref:`no_agent` and :ref:`no_keys`."
+msgstr ""
+
+#: ../../changelog.rst:1101
+# 3d1d7fccc5764f6f9cd7beda5f97fdef
+msgid ":issue:`75`: ``fab``, when called with no arguments or (useful) options, now prints help, even when no fabfile can be found. Previously, calling ``fab`` in a location with no fabfile would complain about the lack of fabfile instead of displaying help."
+msgstr ""
+
+#: ../../changelog.rst:1105
+# a9f7f124ef82437da377b97a104069aa
+msgid ":issue:`130`: Context managers now correctly clean up ``env`` if they encounter an exception. Thanks to Carl Meyer for catch + patch."
+msgstr ""
+
+#: ../../changelog.rst:1107
+# 0b4ee8782ac7477aa970a7be6e23a660
+msgid ":issue:`132`: `~fabric.operations.local` now calls ``strip`` on its stdout, matching the behavior of `~fabric.operations.run`/`~fabric.operations.sudo`. Thanks to Carl Meyer again on this one."
+msgstr ""
+
+#: ../../changelog.rst:1110
+# 5b183097b27d41f6a38a776ef48b5908
+msgid ":issue:`166`: `~fabric.context_managers.cd` now correctly overwrites ``env.cwd`` when given an absolute path, instead of naively appending its argument to ``env.cwd``'s previous value."
+msgstr ""
+
+#: ../../changelog.rst:1118
+# 655315628e56468485807e45454ee521
+msgid "A number of small to medium documentation tweaks were made which had no specific Redmine ticket. The largest of these is the addition of :doc:`the FAQ <../faq>` to the Sphinx documentation instead of storing it as a source-only text file. (Said FAQ was also slightly expanded with new FAQs.)"
+msgstr ""
+
+#: ../../changelog.rst:1122
+# bd4121c15faa4d388c9f0a1d1596500e
+msgid ":issue:`17`: Added :ref:`note to FAQ <faq-daemonize>` re: use of ``dtach`` as alternative to ``screen``. Thanks to Erich Heine for the tip."
+msgstr ""
+
+#: ../../changelog.rst:1124
+# f5b533f3d0d547328af9ccaf11bff2c7
+msgid ":issue:`64`: Updated :ref:`installation docs <downloads>` to clarify where package maintainers should be downloading tarballs from. Thanks to James Pearson for providing the necessary perspective."
+msgstr ""
+
+#: ../../changelog.rst:1127
+# aa23bad912f4447c80c82020ef9a17bc
+msgid ":issue:`95`: Added a link to a given version's changelog on the PyPI page (technically, to the ``setup.py`` ``long_description`` field)."
+msgstr ""
+
+#: ../../changelog.rst:1129
+# 64d65f7adde24ad3bd90426e1d81b85b
+msgid ":issue:`110`: Alphabetized :ref:`the CLI argument command reference <command-line-options>`. Thanks to Erich Heine."
+msgstr ""
+
+#: ../../changelog.rst:1131
+# b337dd591da0400181dd478b3fd09204
+msgid ":issue:`120`: Tweaked documentation, help strings to make it more obvious that fabfiles are simply Python modules."
+msgstr ""
+
+#: ../../changelog.rst:1133
+# d80f5f46509d4e8da311bf0bd914d93a
+msgid ":issue:`127`: Added :ref:`note to install docs <pypm>` re: ActiveState's PyPM. Thanks to Sridhar Ratnakumar for the tip."
+msgstr ""
+
+#: ../../changelog.rst:1138
+# 86700c10b6f84709b3e8b3fa40e50518
+msgid "Changes in version 0.9 (2009-11-08)"
+msgstr ""
+
+#: ../../changelog.rst:1140
+# 6bfbc91acf454b8e957ab8edf5dfda38
+msgid "This document details the various backwards-incompatible changes made during Fabric's rewrite between versions 0.1 and 0.9. The codebase has been almost completely rewritten and reorganized and an attempt has been made to remove \"magical\" behavior and make things more simple and Pythonic; the ``fab`` command-line component has also been redone to behave more like a typical Unix program."
+msgstr ""
+
+#: ../../changelog.rst:1149
+# 59a8c4f915114b00ba12f17a38ba70da
+msgid "Major changes"
+msgstr ""
+
+#: ../../changelog.rst:1151
+# c1187c162dc640548d3bf307a84b10e8
+msgid "You'll want to at least skim the entire document, but the primary changes that will need to be made to one's fabfiles are as follows:"
+msgstr ""
+
+#: ../../changelog.rst:1155
+# 0d3220aad3ed49b0a8cfab37926bdef5
+msgid "Imports"
+msgstr ""
+
+#: ../../changelog.rst:1157
+# 362ed991da1a4fc2bf8be552e1011f56
+msgid "You will need to **explicitly import any and all methods or decorators used**, at the top of your fabfile; they are no longer magically available. Here's a sample fabfile that worked with 0.1 and earlier::"
+msgstr ""
+
+#: ../../changelog.rst:1166
+# 65417ec4cc0a4fb1bbe87a5655c72657
+msgid "The above fabfile uses `hosts`, `run` and `sudo`, and so in Fabric 0.9 one simply needs to import those objects from the new API module ``fabric.api``::"
+msgstr ""
+
+#: ../../changelog.rst:1176
+# b17ecb1b56de4dc6b2e7e65e8799b324
+msgid "You may, if you wish, use ``from fabric.api import *``, though this is technically not Python best practices; or you may import directly from the Fabric submodules (e.g. ``from fabric.decorators import hosts``.) See :doc:`../usage/fabfiles` for more information."
+msgstr ""
+
+#: ../../changelog.rst:1182
+# 962c595346e743f4a5f8c8f1e9749735
+msgid "Python version"
+msgstr ""
+
+#: ../../changelog.rst:1184
+# 739495dead7c4349bffe558922feb991
+msgid "Fabric started out Python 2.5-only, but became largely 2.4 compatible at one point during its lifetime. Fabric is once again **only compatible with Python 2.5 or newer**, in order to take advantage of the various new features and functions available in that version."
+msgstr ""
+
+#: ../../changelog.rst:1189
+# 695a155eef374568819d730d454913a7
+msgid "With this change we're setting an official policy to support the two most recent stable releases of the Python 2.x line, which at time of writing is 2.5 and 2.6. We feel this is a decent compromise between new features and the reality of operating system packaging concerns. Given that most users use Fabric from their workstations, which are typically more up-to-date than servers, we're hoping this doesn't cut out too many folks."
+msgstr ""
+
+#: ../../changelog.rst:1196
+# 072950804d9f44bdb976ca06bbca3fda
+msgid "Finally, note that while we will not officially support a 2.4-compatible version or fork, we may provide a link to such a project if one arises."
+msgstr ""
+
+#: ../../changelog.rst:1200
+# 3a8b088d874d42e0a8b0c1cf26765f79
+msgid "Environment/config variables"
+msgstr ""
+
+#: ../../changelog.rst:1202
+# 0f37ef4f4aec48168027f8a802336aa7
+msgid "The ``config`` object previously used to access and set internal state (including Fabric config options) **has been renamed** to :data:`env`, but otherwise remains mostly the same (it allows both dictionary and object-attribute style access to its data.) :data:`env` resides in the :mod:`state` submodule and is importable via ``fabric.api``, so where before one might have seen fabfiles like this::"
+msgstr ""
+
+#: ../../changelog.rst:1212
+# 97a9e55e769847ae8c03b8d899abbbed
+msgid "one will now be explicitly importing the object like so::"
+msgstr ""
+
+#: ../../changelog.rst:1220
+# 84c22251842c46f6b4e806fd80139e35
+msgid "Execution mode"
+msgstr ""
+
+#: ../../changelog.rst:1222
+# eca8155d3b42446e87178685e24758b7
+msgid "Fabric's default mode of use, in prior versions, was what we called \"broad mode\": your tasks, as Python code, ran only once, and any calls to functions that made connections (such as `run` or `sudo`) would run once per host in the current host list. We also offered \"deep mode\", in which your entire task function would run once per host."
+msgstr ""
+
+#: ../../changelog.rst:1228
+# 9c085119a0354511bb56db2220d9fa1c
+msgid "In Fabric 0.9, this dichotomy has been removed, and **\"deep mode\" is the method Fabric uses to perform all operations**. This allows you to treat your Fabfiles much more like regular Python code, including the use of ``if`` statements and so forth, and allows operations like `run` to unambiguously return the output from the server."
+msgstr ""
+
+#: ../../changelog.rst:1234
+# 64f342a42e5a4861ad19d3c68869bfb6
+msgid "Other modes of execution such as the old \"broad mode\" may return as Fabric's internals are refactored and expanded, but for now we've simplified things, and deep mode made the most sense as the primary mode of use."
+msgstr ""
+
+#: ../../changelog.rst:1239
+# c8ee546f8fef479c9e210988282d891c
+msgid "\"Lazy\" string interpolation"
+msgstr ""
+
+#: ../../changelog.rst:1241
+# b0c73c94a4574d9d9c3e0aca84b9a126
+msgid "Because of how Fabric used to run in \"broad mode\" (see previous section) a special string formatting technique -- the use of a bash-like dollar sign notation, e.g. ``\"hostname: $(fab_host)\"`` -- had to be used to allow the current state of execution to be represented in one's operations. **This is no longer necessary and has been removed**. Because your tasks are executed once per host, you may build strings normally (e.g. with the ``%`` operator) and refer to ``env.host_string``, ``env.user`` and so forth."
+msgstr ""
+
+#: ../../changelog.rst:1249
+# 3ba3e0c3cbec42d0a50234db7790eff9
+msgid "For example, Fabric 0.1 had to insert the current username like so::"
+msgstr ""
+
+#: ../../changelog.rst:1253
+# c8f97bfd6816415c932043a929b7af26
+msgid "Fabric 0.9 and up simply reference ``env`` variables as normal::"
+msgstr ""
+
+#: ../../changelog.rst:1257
+# 3815a708a98a47148fb3fcea6ceebf51
+msgid "As with the execution modes, a special string interpolation function or method that automatically makes use of ``env`` values may find its way back into Fabric at some point if a need becomes apparent."
+msgstr ""
+
+#: ../../changelog.rst:1263
+# 623a0196b3b54cb48e89359d562d73e1
+msgid "Other backwards-incompatible changes"
+msgstr ""
+
+#: ../../changelog.rst:1265
+# f355d503b20c427d9e9947a3f40682e4
+msgid "In no particular order:"
+msgstr ""
+
+#: ../../changelog.rst:1267
+# 84c5b7421e7843748aec788030a2f44c
+msgid "The Fabric config file location used to be ``~/.fabric``; in the interests of honoring Unix filename conventions, it's now ``~/.fabricrc``."
+msgstr ""
+
+#: ../../changelog.rst:1270
+# 9010cb6be00b46839e93ca26067e6332
+msgid "The old ``config`` object (now :data:`env`) had a ``getAny`` method which took one or more key strings as arguments, and returned the value attached to the first valid key. This method still exists but has been renamed to `first`."
+msgstr ""
+
+#: ../../changelog.rst:1275
+# daee3fe245cd48debf40785ee3288183
+msgid "Environment variables such as ``fab_host`` have been renamed to simply e.g. ``host``. This looks cleaner and feels more natural, and requires less typing. Users will naturally need to be careful not to override these variables, but the same holds true for e.g. Python's builtin methods and types already, so we felt it was worth the tradeoff."
+msgstr ""
+
+#: ../../changelog.rst:1281
+# 008f639aa2924f1897bcb53f3c58ebe6
+msgid "Fabric's version header is no longer printed every time the program runs; you should now use the standard ``--version``/``-V`` command-line options to print version and exit."
+msgstr ""
+
+#: ../../changelog.rst:1285
+# 72bdd5559f1049a4a58d1bb6562cd8b9
+msgid "The old ``about`` command has been removed; other Unix programs don't typically offer this. Users can always view the license and warranty info in their respective text files distributed with the software."
+msgstr ""
+
+#: ../../changelog.rst:1289
+# 2e8fd8cb271541daa3dfbdd02fb3a43b
+msgid "The old ``help`` command is now the typical Unix options ``-h``/``--help``."
+msgstr ""
+
+#: ../../changelog.rst:1291
+# c88348eb4c3e4d7ebdc3c21199948f9e
+msgid "Furthermore, there is no longer a listing of Fabric's programming API available through the command line -- those topics impact fabfile authors, not fab users (even though the former is a subset of the latter) and should stay in the documentation only."
+msgstr ""
+
+#: ../../changelog.rst:1296
+# fae4b3d6a56b4e87a870acdba60ad11d
+msgid "`prompt`'s primary function is now to return a value to the caller, although it may still optionally store the entered value in `env` as well."
+msgstr ""
+
+#: ../../changelog.rst:1299
+# 76d1e303ef3b4ebb9e8168d1e92dae48
+msgid "`prompt` now considers the empty string to be valid input; this allows other functions to wrap `prompt` and handle \"empty\" input on their own terms."
+msgstr ""
+
+#: ../../changelog.rst:1302
+# 7cdefe6138f04671a96a9afe31fc9d83
+msgid "In addition to the above changes, `prompt` has been updated to behave more obviously, as its previous behavior was confusing in a few ways:"
+msgstr ""
+
+#: ../../changelog.rst:1305
+# 904cd137601f4d29bd022326af1fe67b
+msgid "It will now overwrite pre-existing values in the environment dict, but will print a warning to the user if it does so."
+msgstr ""
+
+#: ../../changelog.rst:1308
+# c46c86cac2484b3dae0468d53415b92e
+msgid "Additionally, (and this appeared to be undocumented) the ``default`` argument could take a callable as well as a string, and would simply set the default message to the return value if a callable was given. This seemed to add unnecessary complexity (given that users may call e.g. ``prompt(blah, msg, default=my_callable()``) so it has been removed."
+msgstr ""
+
+#: ../../changelog.rst:1314
+# 613e7cb8210b46c88ded477268caa8da
+msgid "When connecting, Fabric used to use the undocumented ``fab_pkey`` env variable as a method of passing in a Paramiko ``PKey`` object to the SSH client's ``connect`` method. This has been removed in favor of an ``ssh``-like ``-i`` option, which allows one to specify a private key file to use; that should generally be enough for most users."
+msgstr ""
+
+#: ../../changelog.rst:1320
+# 7445261afd21483699efbc5f9489cc9f
+msgid "``download`` is now `get` in order to match up with `put` (the name mismatch was due to `get` being the old method of getting env vars.)"
+msgstr ""
+
+#: ../../changelog.rst:1323
+# 269a75aa3d7c4c0d8f5ed6834fc29db6
+msgid "The ``noshell`` argument to `sudo` (added late in its life to previous Fabric versions) has been renamed to ``shell`` (defaults to True, so the effective behavior remains the same) and has also been extended to the `run` operation."
+msgstr ""
+
+#: ../../changelog.rst:1328
+# 77f185940c4e415f8cb05853c2e12472
+msgid "Additionally, the global ``sudo_noshell`` option has been renamed to ``use_shell`` and also applies to both `run` and `sudo`."
+msgstr ""
+
+#: ../../changelog.rst:1331
+# 682b6f7a892b41c89d0f9c6f6357e868
+msgid "``local_per_host`` has been removed, as it only applied to the now-removed \"broad mode\"."
+msgstr ""
+
+#: ../../changelog.rst:1334
+# 84952745a80046c8951a04f7f06a3287
+msgid "``load`` has been removed; Fabric is now \"just Python\", so use Python's import mechanisms in order to stitch multiple fabfiles together."
+msgstr ""
+
+#: ../../changelog.rst:1337
+# 1da35c703e564212b84c0b376496dc4f
+msgid "``abort`` is no longer an \"operation\" *per se* and has been moved to :mod:`fabric.utils`. It is otherwise the same as before, taking a single string message, printing it to the user and then calling ``sys.exit(1)``."
+msgstr ""
+
+#: ../../changelog.rst:1341
+# 857402d4c0a146be940c8515cfcba3b6
+msgid "``rsyncproject`` and ``upload_project`` have been moved into :mod:`fabric.contrib` (specifically, :mod:`fabric.contrib.project`), which is intended to be a new tree of submodules for housing \"extra\" code which may build on top of the core Fabric operations."
+msgstr ""
+
+#: ../../changelog.rst:1346
+# 71a67fee3d634464b233eee4739ecd1f
+msgid "``invoke`` has been turned on its head, and is now the `runs_once` decorator (living in :mod:`fabric.decorators`). When used to decorate a function, that function will only execute one time during the lifetime of a ``fab`` run. Thus, where you might have used ``invoke`` multiple times to ensure a given command only runs once, you may now use `runs_once` to decorate the function and then call it multiple times in a normal fashion."
+msgstr ""
+
+#: ../../changelog.rst:1353
+# 37fbe34843924954af917f0f44ee6e6a
+msgid "It looks like the regex behavior of the ``validate`` argument to `prompt` was never actually implemented. It now works as advertised."
+msgstr ""
+
+#: ../../changelog.rst:1356
+# 118b6980cb7b4f31988c7a6be1b50040
+msgid "Couldn't think of a good reason for `require` to be a decorator *and* a function, and the function is more versatile in terms of where it may be used, so the decorator has been removed."
+msgstr ""
+
+#: ../../changelog.rst:1360
+# 6b67e04bb8f34554a2bb34c5b32e898a
+msgid "As things currently stand with the execution model, the ``depends`` decorator doesn't make a lot of sense: instead, it's safest/best to simply make \"meta\" commands that just call whatever chain of \"real\" commands you need performed for a given overarching task."
+msgstr ""
+
+#: ../../changelog.rst:1365
+# 830202cf3aac4194849267f337d08ac7
+msgid "For example, instead of having command A say that it \"depends on\" command B, create a command C which calls A and B in the right order, e.g.::"
+msgstr ""
+
+#: ../../changelog.rst:1386
+# 6a99848a221446e0b2d9b05b0ac5d4db
+msgid "The execution model is still subject to change as Fabric evolves. Please don't hesitate to email the list or the developers if you have a use case that needs something Fabric doesn't provide right now!"
+msgstr ""
+
+#: ../../changelog.rst:1390
+# 098e925cb535472b8e9833b758385416
+msgid "Removed the old ``fab shell`` functionality, since the move to \"just Python\" should make vanilla ``python``/``ipython`` usage of Fabric much easier."
+msgstr ""
+
+#: ../../changelog.rst:1393
+# 16a5685ac0d649b9967e2b88f4455db7
+msgid "We may add it back in later as a convenient shortcut to what basically amounts to running ``ipython`` and performing a handful of ``from fabric.foo import bar`` calls."
+msgstr ""
+
+#: ../../changelog.rst:1397
+# cdc325ab3d1346c7a85d4c4db62a5d35
+msgid "The undocumented `fab_quiet` option has been replaced by a much more granular set of output controls. For more info, see :doc:`../usage/output_controls`."
+msgstr ""
+
+#: ../../changelog.rst:1402
+# e4f08ace5d9d4514a5de368f597bd1e7
+msgid "Changes from alpha 1 to alpha 2"
+msgstr ""
+
+#: ../../changelog.rst:1404
+# c9b2cfc67eb74abcb50c218bb284a213
+msgid "The below list was generated by running ``git shortlog 0.9a1..0.9a2`` and then manually sifting through and editing the resulting commit messages. This will probably occur for the rest of the alphas and betas; we hope to use Sphinx-specific methods of documenting changes once the final release is out the door."
+msgstr ""
+
+#: ../../changelog.rst:1410
+# 51286ce8bfd04240ac105c89890d77b8
+msgid "Various minor tweaks to the (still in-progress) documentation, including one thanks to Curt Micol."
+msgstr ""
+
+#: ../../changelog.rst:1413
+# 471e36c318ad4511974252f7dd5718d7
+msgid "Added a number of TODO items based on user feedback (thanks!)"
+msgstr ""
+
+#: ../../changelog.rst:1415
+# 2b73b7a607df40af8bfa9d82068d6f0d
+msgid "Host information now available in granular form (user, host, port) in the env dict, alongside the full ``user@host:port`` host string."
+msgstr ""
+
+#: ../../changelog.rst:1418
+# 675bd6ec574047e8ac61ce4b1bfe2e63
+msgid "Parsing of host strings is now more lenient when examining the username (e.g. hyphens.)"
+msgstr ""
+
+#: ../../changelog.rst:1421
+# e03003e5696e460795de278fd8bb94a2
+msgid "User/host info no longer cleared out between commands."
+msgstr ""
+
+#: ../../changelog.rst:1423
+# c09f228bb91c4da0a12600d99868d31e
+msgid "Tweaked ``setup.py`` to use ``find_packages``. Thanks to Pat McNerthney."
+msgstr ""
+
+#: ../../changelog.rst:1425
+# 94264fa0eed04c51b778688710382cbf
+msgid "Added 'capture' argument to `~fabric.operations.local` to allow local interactive tasks."
+msgstr ""
+
+#: ../../changelog.rst:1428
+# adbb0a7970da44d8bce059d86a4761e5
+msgid "Reversed default value of `~fabric.operations.local`'s ``show_stderr`` kwarg; local stderr now prints by default instead of being hidden by default."
+msgstr ""
+
+#: ../../changelog.rst:1432
+# 6ed1b5ba5ff74d8aa7dcb3ba6ceaf41b
+msgid "Various internal fabfile tweaks."
+msgstr ""
+
+#: ../../changelog.rst:1436
+# 3c6dda7531fe47eaa5a8368176369387
+msgid "Changes from alpha 2 to alpha 3"
+msgstr ""
+
+#: ../../changelog.rst:1438
+# 7a19d92cd4004936bf8ee98988519655
+msgid "Lots of updates to the documentation and TODO"
+msgstr ""
+
+#: ../../changelog.rst:1440
+# d4d4842a6923461593901bc897c5cce7
+msgid "Added contrib.files with a handful of file-centric subroutines"
+msgstr ""
+
+#: ../../changelog.rst:1442
+# aebe2eb306194ce0a8d346a5f33b06bf
+msgid "Added contrib.console for console UI stuff (so far, just `confirm`)"
+msgstr ""
+
+#: ../../changelog.rst:1444
+# 998b3481823e42aa942429eb05026281
+msgid "Reworked config file mechanisms a bit, added CLI flag for setting it."
+msgstr ""
+
+#: ../../changelog.rst:1446
+# 8ba93e5be6c949cc9ad30f8f1eeca8ab
+msgid "Output controls (including CLI args, documentation) have been added"
+msgstr ""
+
+#: ../../changelog.rst:1448
+# 1563abd885074c059764a5cbdbd1643b
+msgid "Test coverage tweaked and grown a small amount (thanks in part to Peter Ellis)"
+msgstr ""
+
+#: ../../changelog.rst:1451
+# 4818fcdedf674e9191070a7eaba69485
+msgid "Roles overhauled/fixed (more like hosts now)"
+msgstr ""
+
+#: ../../changelog.rst:1453
+# d9cd87d6727746e3a34e9008110088af
+msgid "Changed ``--list`` linewrap behavior to truncate instead."
+msgstr ""
+
+#: ../../changelog.rst:1455
+# 45d5accea2e442bfa75ab9ec6bb2dfac
+msgid "Make private key passphrase prompting more obvious to users."
+msgstr ""
+
+#: ../../changelog.rst:1457
+# 7b1e0564ac91477d9e3c44e1d6872a54
+msgid "Add ``pty`` option to `sudo`. Thanks to José Muanis for the tip-off re: get_pty()"
+msgstr ""
+
+#: ../../changelog.rst:1459
+# c13a3902bd6b4fb9a6c61470e3070f2d
+msgid "Add CLI argument for setting the shell used in commands (thanks to Steve Steiner)"
+msgstr ""
+
+#: ../../changelog.rst:1461
+# 44f863ce5c1747a2b3f4aa6171e19030
+msgid "Only load host keys when ``env.reject_unknown_keys`` is True. Thanks to Pat McNerthney."
+msgstr ""
+
+#: ../../changelog.rst:1464
+# 6164c02e2d3945eaaafcb668d6ce099d
+msgid "And many, many additional bugfixes and behavioral tweaks too small to merit cluttering up this list! Thanks as always to everyone who contributed bugfixes, feedback and/or patches."
+msgstr ""
+
+#: ../../changelog.rst:1470
+# edca368d32814d1dbc2d59f33727e534
+msgid "Changes from alpha 3 to beta 1"
+msgstr ""
+
+#: ../../changelog.rst:1472
+# bee8773210f7456fb0d78efa550c7969
+msgid "This is closer to being a straight dump of the Git changelog than the previous sections; apologies for the overall change in tense."
+msgstr ""
+
+#: ../../changelog.rst:1475
+# 263d8645a815440d83872dac828e148d
+msgid "Add autodocs for fabric.contrib.console."
+msgstr ""
+
+#: ../../changelog.rst:1477
+# 044daa6b1c3e45cba183ba3fe89bcd7f
+msgid "Minor cleanup to package init and setup.py."
+msgstr ""
+
+#: ../../changelog.rst:1479
+# 85c166f5b8a24d2cb97012e6223eb6f3
+msgid "Handle exceptions with strerror attributes that are None instead of strings."
+msgstr ""
+
+#: ../../changelog.rst:1481
+# aa3651c881d846b68363f6681c2b40ed
+msgid "contrib.files.append may now take a list of strings if desired."
+msgstr ""
+
+#: ../../changelog.rst:1483
+# df27b212f0034687937c530254c53470
+msgid "Straighten out how prompt() deals with trailing whitespace"
+msgstr ""
+
+#: ../../changelog.rst:1485
+# 0c3163c131684a93bfb416733e458214
+msgid "Add 'cd' context manager."
+msgstr ""
+
+#: ../../changelog.rst:1487
+# f50e24fb84b54e0490841a250da7609e
+msgid "Update upload_template to correctly handle backing up target directories."
+msgstr ""
+
+#: ../../changelog.rst:1489
+# 1b79319efc75429398efd9b4a32edee4
+msgid "upload_template() can now use Jinja2 if it's installed and user asks for it."
+msgstr ""
+
+#: ../../changelog.rst:1491
+# 9b509b426f8f4dada281e356de20cb1a
+msgid "Handle case where remote host SSH key doesn't match known_hosts."
+msgstr ""
+
+#: ../../changelog.rst:1493
+# 7775c42fd62e402da87d7795c4c29900
+msgid "Fix race condition in run/sudo."
+msgstr ""
+
+#: ../../changelog.rst:1495
+# d9e0e46c23f84e6394f5c4fbe994a0c6
+msgid "Start fledgling FAQ; extended pty option to run(); related doc tweaks."
+msgstr ""
+
+#: ../../changelog.rst:1497
+# a6a98951f5224df0be0089ee6ae01a02
+msgid "Bring local() in line with run()/sudo() in terms of .failed attribute."
+msgstr ""
+
+#: ../../changelog.rst:1499
+# fcaad9756f9944e08017dddcae9a8136
+msgid "Add dollar-sign backslash escaping to run/sudo."
+msgstr ""
+
+#: ../../changelog.rst:1501
+# 7f9254cc457a4242a3e3fcf46a579360
+msgid "Add FAQ question re: backgrounding processes."
+msgstr ""
+
+#: ../../changelog.rst:1503
+# e45ca70723d9493f895958ac7a6ebff6
+msgid "Extend some of put()'s niceties to get(), plus docstring/comment updates"
+msgstr ""
+
+#: ../../changelog.rst:1505
+# f027875402864325836eaf4195bbec50
+msgid "Add debug output of chosen fabfile for troubleshooting fabfile discovery."
+msgstr ""
+
+#: ../../changelog.rst:1507
+# 724a6b18d99040138dacc9d3b75b23c0
+msgid "Fix Python path bug which sometimes caused Fabric's internal fabfile to pre-empt user's fabfile during load phase."
+msgstr ""
+
+#: ../../changelog.rst:1510
+# 50a125bf94b34b1fae1d8570146123f8
+msgid "Gracefully handle \"display\" for tasks with no docstring."
+msgstr ""
+
+#: ../../changelog.rst:1512
+# 247191f8f1f6447b95ed2aa2209bdc55
+msgid "Fix edge case that comes up during some auth/prompt situations."
+msgstr ""
+
+#: ../../changelog.rst:1514
+# f2e6dc1b4acd4475ad14e359f30f1404
+msgid "Handle carriage returns in output_thread correctly. Thanks to Brian Rosner."
+msgstr ""
+
+#: ../../changelog.rst:1518
+# e6ce812c2c7843a29941745abdef3fe1
+msgid "Changes from beta 1 to release candidate 1"
+msgstr ""
+
+#: ../../changelog.rst:1520
+# 40db0292dcb041e68d9f047e66da9bc9
+msgid "As with the previous changelog, this is also mostly a dump of the Git log. We promise that future changelogs will be more verbose :)"
+msgstr ""
+
+#: ../../changelog.rst:1523
+# b0919352e48a4046bfe7bc7a6baf2a03
+msgid "Near-total overhaul and expansion of documentation (this is the big one!) Other mentions of documentation in this list are items deserving their own mention, e.g. FAQ updates."
+msgstr ""
+
+#: ../../changelog.rst:1526
+# d1b9b2ea134d4a18b495d99876f2540a
+msgid "Add FAQ question re: passphrase/password prompt"
+msgstr ""
+
+#: ../../changelog.rst:1527
+# 484d0f755d2a415cbb55f93d70a0d087
+msgid "Vendorized Paramiko: it is now included in our distribution and is no longer an external dependency, at least until upstream fixes a nasty 1.7.5 bug."
+msgstr ""
+
+#: ../../changelog.rst:1529
+# e4531fc148d04445b434d557b5f4ac34
+msgid "Fix #34: switch upload_template to use mkstemp (also removes Python 2.5.2+ dependency -- now works on 2.5.0 and up)"
+msgstr ""
+
+#: ../../changelog.rst:1531
+# 75ef335dec644119bb5436113c997c19
+msgid "Fix #62 by escaping backticks."
+msgstr ""
+
+#: ../../changelog.rst:1532
+# 337cf496ce38433d8507484b07faf342
+msgid "Replace \"ls\" with \"test\" in exists()"
+msgstr ""
+
+#: ../../changelog.rst:1533
+# d532ef37bf124ec58117361bb9cc5a14
+msgid "Fixes #50. Thanks to Alex Koshelev for the patch."
+msgstr ""
+
+#: ../../changelog.rst:1534
+# 093ff78ad21c4de19f20f40f40bc7ba8
+msgid "``local``'s return value now exhibits ``.return_code``."
+msgstr ""
+
+#: ../../changelog.rst:1535
+# 9429a048ae8b46b7b7794e9075c83ff0
+msgid "Abort on bad role names instead of blowing up."
+msgstr ""
+
+#: ../../changelog.rst:1536
+# 1761473bc5c44b49b2f452decac04d69
+msgid "Turn off DeprecationWarning when importing paramiko."
+msgstr ""
+
+#: ../../changelog.rst:1537
+# 5ce90a05598a4476a43ef85d1b4cdef6
+msgid "Attempted fix re #32 (dropped output)"
+msgstr ""
+
+#: ../../changelog.rst:1538
+# 9018fa1d0cff47b2b92ce07da6d7819a
+msgid "Update role/host initialization logic (was missing some edge cases)"
+msgstr ""
+
+#: ../../changelog.rst:1539
+# 7c91956e395c4c58adc7bc840c804164
+msgid "Add note to install docs re: PyCrypto on win32."
+msgstr ""
+
+#: ../../changelog.rst:1540
+# 8f2ca9cf6575477d9c6cf7a4937a744f
+msgid "Add FAQ item re: changing env.shell."
+msgstr ""
+
+#: ../../changelog.rst:1541
+# b8df914177dc45e6a1d9acb551286e50
+msgid "Rest of TODO migrated to tickets."
+msgstr ""
+
+#: ../../changelog.rst:1542
+# a25c2620e6a949c7b15f39d38a5d893a
+msgid "``fab test`` (when in source tree) now uses doctests."
+msgstr ""
+
+#: ../../changelog.rst:1543
+# 525d5f8730db40f0820c9048ff19db1b
+msgid "Add note to compatibility page re: fab_quiet."
+msgstr ""
+
+#: ../../changelog.rst:1544
+# 99ffc134d18e4a1db2778eb60331c364
+msgid "Update local() to honor context_managers.cd()"
+msgstr ""
+
+#: ../../changelog.rst:1547
+# 18c1197fb2f74073bc0f9f9edec0ad50
+msgid "Changes from release candidate 1 to final release"
+msgstr ""
+
+#: ../../changelog.rst:1549
+# e3fea0d694ac4593a222b7aae3da51b0
+msgid "Fixed the `~fabric.contrib.files.sed` docstring to accurately reflect which ``sed`` options it uses."
+msgstr ""
+
+#: ../../changelog.rst:1551
+# 589c0788deff4a20b2652b53ced45263
+msgid "Various changes to internal fabfile, version mechanisms, and other non-user-facing things."
+msgstr ""
+

@@ -26,7 +26,8 @@ from datetime import datetime
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'releases']
+sys.path.insert(0, os.path.abspath('.'))
+extensions = ['sphinx.ext.autodoc', 'releases', 'japanesesupport']
 
 # 'releases' (changelog) settings
 releases_issue_uri = "https://github.com/fabric/fabric/issues/%s"
@@ -236,3 +237,7 @@ def unwrap_decorated_functions():
                 setattr(module, name, obj.undecorated)
 
 unwrap_decorated_functions()
+
+locale_dirs = ['_locale/']   #path is example but recommended.
+#locale_dirs = ['locale/']   #path is example but recommended.
+gettext_compact = False     #optional.

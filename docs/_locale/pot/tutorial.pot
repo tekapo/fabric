@@ -1,0 +1,428 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../tutorial.rst:3
+# 9bb8faabee2948b280f85d87675439d5
+msgid "Overview and Tutorial"
+msgstr ""
+
+#: ../../tutorial.rst:5
+# 8d994550c0c64de3b5372bada54ec495
+msgid "Welcome to Fabric!"
+msgstr ""
+
+#: ../../tutorial.rst:7
+# 0b3d38ccf2914763a91a4ee2f01b9fd5
+msgid "This document is a whirlwind tour of Fabric's features and a quick guide to its use. Additional documentation (which is linked to throughout) can be found in the :ref:`usage documentation <usage-docs>` -- please make sure to check it out."
+msgstr ""
+
+#: ../../tutorial.rst:13
+# e37a3654ebb04aa586cfeef1f464b0c5
+msgid "What is Fabric?"
+msgstr ""
+
+#: ../../tutorial.rst:15
+# 2b0fb40040fd421c9bbafa261f72c3c9
+msgid "As the ``README`` says:"
+msgstr ""
+
+#: ../../../README.rst:4
+# fd751fee1f9241fc83c1cd03cb3b289a
+msgid "Fabric is a Python (2.5 or higher) library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks."
+msgstr ""
+
+#: ../../tutorial.rst:20
+# 91d9d22ffc81402ba124ce0b3bc1b3f7
+msgid "More specifically, Fabric is:"
+msgstr ""
+
+#: ../../tutorial.rst:22
+# 79c76c444bba4e17bb1db4090517c790
+msgid "A tool that lets you execute **arbitrary Python functions** via the **command line**;"
+msgstr ""
+
+#: ../../tutorial.rst:24
+# 4998c19318d0459bb44dbb4a381cb06b
+msgid "A library of subroutines (built on top of a lower-level library) to make executing shell commands over SSH **easy** and **Pythonic**."
+msgstr ""
+
+#: ../../tutorial.rst:27
+# 66db7ba29e4540479d044d46ac91e4ab
+msgid "Naturally, most users combine these two things, using Fabric to write and execute Python functions, or **tasks**, to automate interactions with remote servers. Let's take a look."
+msgstr ""
+
+#: ../../tutorial.rst:33
+# 2d44450587c1412183ddd715158f36ac
+msgid "Hello, ``fab``"
+msgstr ""
+
+#: ../../tutorial.rst:35
+# 73149cf73c844cfd920be846742625ad
+msgid "This wouldn't be a proper tutorial without \"the usual\"::"
+msgstr ""
+
+#: ../../tutorial.rst:40
+# 370eadf24f1f4e278e1f25178698d79d
+msgid "Placed in a Python module file named ``fabfile.py`` in your current working directory, that ``hello`` function can be executed with the ``fab`` tool (installed as part of Fabric) and does just what you'd expect::"
+msgstr ""
+
+#: ../../tutorial.rst:49
+# 00e2b396987b4312be2699246a7fd841
+msgid "That's all there is to it. This functionality allows Fabric to be used as a (very) basic build tool even without importing any of its API."
+msgstr ""
+
+#: ../../tutorial.rst:54
+# b5f92520d71f4abdb699c1db58f4a7d3
+msgid "The ``fab`` tool simply imports your fabfile and executes the function or functions you instruct it to. There's nothing magic about it -- anything you can do in a normal Python script can be done in a fabfile!"
+msgstr ""
+
+#: ../../tutorial.rst:58
+# 830f6e46c0b64389baa2a72780b8c44d
+msgid ":ref:`execution-strategy`, :doc:`/usage/tasks`, :doc:`/usage/fab`"
+msgstr ""
+
+#: ../../tutorial.rst:62
+# a07ae4120cbf4c5db5fd43cd52aaf463
+msgid "Task arguments"
+msgstr ""
+
+#: ../../tutorial.rst:64
+# a75cc9e9cee24dd9a927f294ee16018c
+msgid "It's often useful to pass runtime parameters into your tasks, just as you might during regular Python programming. Fabric has basic support for this using a shell-compatible notation: ``<task name>:<arg>,<kwarg>=<value>,...``. It's contrived, but let's extend the above example to say hello to you personally::"
+msgstr ""
+
+#: ../../tutorial.rst:72
+# deb83a7e9fc54959b972ec44136a872c
+msgid "By default, calling ``fab hello`` will still behave as it did before; but now we can personalize it::"
+msgstr ""
+
+#: ../../tutorial.rst:80
+# a84d9a12263b4b2bbfa3d7b03248c0b1
+msgid "Those already used to programming in Python might have guessed that this invocation behaves exactly the same way::"
+msgstr ""
+
+#: ../../tutorial.rst:88
+# 2f720630baf746a4a38c80a728e11b2d
+msgid "For the time being, your argument values will always show up in Python as strings and may require a bit of string manipulation for complex types such as lists. Future versions may add a typecasting system to make this easier."
+msgstr ""
+
+#: ../../tutorial.rst:92
+# 65a534184be9472095d557011f82d09c
+msgid ":ref:`task-arguments`"
+msgstr ""
+
+#: ../../tutorial.rst:95
+# 1c5f1606b6694c2784709373baf2dffb
+msgid "Local commands"
+msgstr ""
+
+#: ../../tutorial.rst:97
+# 5ba2dad0123c4e979e2c26bd4da81863
+msgid "As used above, ``fab`` only really saves a couple lines of ``if __name__ == \"__main__\"`` boilerplate. It's mostly designed for use with Fabric's API, which contains functions (or **operations**) for executing shell commands, transferring files, and so forth."
+msgstr ""
+
+#: ../../tutorial.rst:102
+# f383060e2c3c49328c99a6e8d1b1a579
+msgid "Let's build a hypothetical Web application fabfile. This example scenario is as follows: The Web application is managed via Git on a remote host ``vcshost``. On ``localhost``, we have a local clone of said Web application. When we push changes back to ``vcshost``, we want to be able to immediately install these changes on a remote host ``my_server`` in an automated fashion. We will do this by automating the local and remote Git commands."
+msgstr ""
+
+#: ../../tutorial.rst:109
+# 006d8b0735a848a68b444995cd29b459
+msgid "Fabfiles usually work best at the root of a project::"
+msgstr ""
+
+#: ../../tutorial.rst:127
+# 9a22870c61174296ad0abab984e986c1
+msgid "We're using a Django application here, but only as an example -- Fabric is not tied to any external codebase, save for its SSH library."
+msgstr ""
+
+#: ../../tutorial.rst:130
+# 03cebd455c9d462aa46b54cf0fe67f7c
+msgid "For starters, perhaps we want to run our tests and commit to our VCS so we're ready for a deploy::"
+msgstr ""
+
+#: ../../tutorial.rst:140
+# 433c123ef4064d05afa9e0c0e9179b76
+msgid "The output of which might look a bit like this::"
+msgstr ""
+
+#: ../../tutorial.rst:164
+# 6315dbba15b94a36acdfd62e2e1a52b6
+msgid "The code itself is straightforward: import a Fabric API function, `~fabric.operations.local`, and use it to run and interact with local shell commands. The rest of Fabric's API is similar -- it's all just Python."
+msgstr ""
+
+#: ../../tutorial.rst:168
+# 41626e4620ea4ce29dc2d74e6c81e46e
+msgid ":doc:`api/core/operations`, :ref:`fabfile-discovery`"
+msgstr ""
+
+#: ../../tutorial.rst:172
+# 5e2ae2c1419540bf8919521314c3911a
+msgid "Organize it your way"
+msgstr ""
+
+#: ../../tutorial.rst:174
+# ee914fb0b89f4538812b29de7b31af7d
+msgid "Because Fabric is \"just Python\" you're free to organize your fabfile any way you want. For example, it's often useful to start splitting things up into subtasks::"
+msgstr ""
+
+#: ../../tutorial.rst:194
+# c455df252b54417cb09dbbc6268f8b8b
+msgid "The ``prepare_deploy`` task can be called just as before, but now you can make a more granular call to one of the sub-tasks, if desired."
+msgstr ""
+
+#: ../../tutorial.rst:199
+# f95c0ef032934cb8ab599b6858aac428
+msgid "Failure"
+msgstr ""
+
+#: ../../tutorial.rst:201
+# f08d4271ac064e11b06f19500614db43
+msgid "Our base case works fine now, but what happens if our tests fail?  Chances are we want to put on the brakes and fix them before deploying."
+msgstr ""
+
+#: ../../tutorial.rst:204
+# 935692e4eda84e149ec1899b4a4f6022
+msgid "Fabric checks the return value of programs called via operations and will abort if they didn't exit cleanly. Let's see what happens if one of our tests encounters an error::"
+msgstr ""
+
+#: ../../tutorial.rst:230
+# 7cc0f41b654e4e96ba5802d37b7b28c2
+msgid "Great! We didn't have to do anything ourselves: Fabric detected the failure and aborted, never running the ``commit`` task."
+msgstr ""
+
+#: ../../tutorial.rst:233
+# 35c449a142f44b0a8f4257f07b1d7450
+msgid ":ref:`Failure handling (usage documentation) <failures>`"
+msgstr ""
+
+#: ../../tutorial.rst:236
+# e1b60caafb194a11bed341fd32b30620
+msgid "Failure handling"
+msgstr ""
+
+#: ../../tutorial.rst:238
+# c1953de2a2b84fd0a9f30927e4fce19a
+msgid "But what if we wanted to be flexible and give the user a choice? A setting (or **environment variable**, usually shortened to **env var**) called :ref:`warn_only` lets you turn aborts into warnings, allowing flexible error handling to occur."
+msgstr ""
+
+#: ../../tutorial.rst:243
+# 1386ef40e2a64f228dcef66011767280
+msgid "Let's flip this setting on for our ``test`` function, and then inspect the result of the `~fabric.operations.local` call ourselves::"
+msgstr ""
+
+#: ../../tutorial.rst:258
+# 40ef2370e95f4ee3bf082f7b27d748cf
+msgid "In adding this new feature we've introduced a number of new things:"
+msgstr ""
+
+#: ../../tutorial.rst:260
+# ae4f7683258a416aa3afa0293e8ecf81
+msgid "The ``__future__`` import required to use ``with:`` in Python 2.5;"
+msgstr ""
+
+#: ../../tutorial.rst:261
+# c37f48829284496a8dcd934e4fb21d3b
+msgid "Fabric's `contrib.console <fabric.contrib.console>` submodule, containing the `~fabric.contrib.console.confirm` function, used for simple yes/no prompts;"
+msgstr ""
+
+#: ../../tutorial.rst:263
+# 8cd8f0ce02f343e481c0af5d8f6f1ae2
+msgid "The `~fabric.context_managers.settings` context manager, used to apply settings to a specific block of code;"
+msgstr ""
+
+#: ../../tutorial.rst:265
+# 70aef714839f40d68a4b690145661a1c
+msgid "Command-running operations like `~fabric.operations.local` can return objects containing info about their result (such as ``.failed``, or ``.return_code``);"
+msgstr ""
+
+#: ../../tutorial.rst:268
+# dafc0bae8e494d909465beaf511657ca
+msgid "And the `~fabric.utils.abort` function, used to manually abort execution."
+msgstr ""
+
+#: ../../tutorial.rst:270
+# a0aa8646d3594b80a906b85e798650ac
+msgid "However, despite the additional complexity, it's still pretty easy to follow, and is now much more flexible."
+msgstr ""
+
+#: ../../tutorial.rst:273
+# 5d0af86a8d4c4bc4aa070d72ac183658
+msgid ":doc:`api/core/context_managers`, :ref:`env-vars`"
+msgstr ""
+
+#: ../../tutorial.rst:277
+# a15d3a77020349b9a10e6e5115e59e03
+msgid "Making connections"
+msgstr ""
+
+#: ../../tutorial.rst:279
+# 9a5fd352883c4491a0d8c66323436a6c
+msgid "Let's start wrapping up our fabfile by putting in the keystone: a ``deploy`` task that is destined to run on one or more remote server(s), and ensures the code is up to date::"
+msgstr ""
+
+#: ../../tutorial.rst:289
+# 6d031a778c55408f9e203485e52e6ca8
+msgid "Here again, we introduce a handful of new concepts:"
+msgstr ""
+
+#: ../../tutorial.rst:291
+# 7e9ba53a898d4f0daff4ef28e299ddf3
+msgid "Fabric is just Python -- so we can make liberal use of regular Python code constructs such as variables and string interpolation;"
+msgstr ""
+
+#: ../../tutorial.rst:293
+# 2733f9e327f249c8bb3e1fa8b9f74428
+msgid "`~fabric.context_managers.cd`, an easy way of prefixing commands with a ``cd /to/some/directory`` call. This is similar to  `~fabric.context_managers.lcd` which does the same locally."
+msgstr ""
+
+#: ../../tutorial.rst:296
+# c8b3de6f5abd47f38ccffc69619b334d
+msgid "`~fabric.operations.run`, which is similar to `~fabric.operations.local` but runs **remotely** instead of locally."
+msgstr ""
+
+#: ../../tutorial.rst:299
+# 54b04246d73c4073811d78d241e85d8b
+msgid "We also need to make sure we import the new functions at the top of our file::"
+msgstr ""
+
+#: ../../tutorial.rst:305
+# 729e111b3d8f43ec8b54864a61da9ff7
+msgid "With these changes in place, let's deploy::"
+msgstr ""
+
+#: ../../tutorial.rst:316
+# 7fe24a2c6ac04d08927861be781ba5ee
+msgid "We never specified any connection info in our fabfile, so Fabric doesn't know on which host(s) the remote command should be executed. When this happens, Fabric prompts us at runtime. Connection definitions use SSH-like \"host strings\" (e.g. ``user@host:port``) and will use your local username as a default -- so in this example, we just had to specify the hostname, ``my_server``."
+msgstr ""
+
+#: ../../tutorial.rst:325
+# 22972c4122034be1aa8cccd1bc36c1ab
+msgid "Remote interactivity"
+msgstr ""
+
+#: ../../tutorial.rst:327
+# d1dd56defed94963830a59dd722bf822
+msgid "``git pull`` works fine if you've already got a checkout of your source code -- but what if this is the first deploy? It'd be nice to handle that case too and do the initial ``git clone``::"
+msgstr ""
+
+#: ../../tutorial.rst:340
+# d90a6cd73bb1484aa79c0dcaf01bbf5f
+msgid "As with our calls to `~fabric.operations.local` above, `~fabric.operations.run` also lets us construct clean Python-level logic based on executed shell commands. However, the interesting part here is the ``git clone`` call: since we're using Git's SSH method of accessing the repository on our Git server, this means our remote `~fabric.operations.run` call will need to authenticate itself."
+msgstr ""
+
+#: ../../tutorial.rst:347
+# eae5fa8e3fbf478da7ca76b79c341884
+msgid "Older versions of Fabric (and similar high level SSH libraries) run remote programs in limbo, unable to be touched from the local end. This is problematic when you have a serious need to enter passwords or otherwise interact with the remote program."
+msgstr ""
+
+#: ../../tutorial.rst:352
+# b49c2ce4097d4a51a1bb6162736604fe
+msgid "Fabric 1.0 and later breaks down this wall and ensures you can always talk to the other side. Let's see what happens when we run our updated ``deploy`` task on a new server with no Git checkout::"
+msgstr ""
+
+#: ../../tutorial.rst:378
+# 0a366649d61f4356befd725adb11e6d6
+msgid "Notice the ``Password:`` prompt -- that was our remote ``git`` call on our Web server, asking for the password to the Git server. We were able to type it in and the clone continued normally."
+msgstr ""
+
+#: ../../tutorial.rst:380
+# f781064d8ddc487d998b9079218954b1
+msgid ":doc:`/usage/interactivity`"
+msgstr ""
+
+#: ../../tutorial.rst:386
+# 8f47ed7fb86945f2bf5edf738d491cb7
+msgid "Defining connections beforehand"
+msgstr ""
+
+#: ../../tutorial.rst:388
+# c45d9d8c6b474b45b730a4a1ca125c17
+msgid "Specifying connection info at runtime gets old real fast, so Fabric provides a handful of ways to do it in your fabfile or on the command line. We won't cover all of them here, but we will show you the most common one: setting the global host list, :ref:`env.hosts <hosts>`."
+msgstr ""
+
+#: ../../tutorial.rst:393
+# 98f51ffb5e1a4af59b7d7cac47b38d65
+msgid ":doc:`env <usage/env>` is a global dictionary-like object driving many of Fabric's settings, and can be written to with attributes as well (in fact, `~fabric.context_managers.settings`, seen above, is simply a wrapper for this.) Thus, we can modify it at module level near the top of our fabfile like so::"
+msgstr ""
+
+#: ../../tutorial.rst:407
+# b0089ff0505d45cbaac6ea8d84d4aaa3
+msgid "When ``fab`` loads up our fabfile, our modification of ``env`` will execute, storing our settings change. The end result is exactly as above: our ``deploy`` task will run against the ``my_server`` server."
+msgstr ""
+
+#: ../../tutorial.rst:411
+# 7378436918c14559aaa8391e63ca80f9
+msgid "This is also how you can tell Fabric to run on multiple remote systems at once: because ``env.hosts`` is a list, ``fab`` iterates over it, calling the given task once for each connection."
+msgstr ""
+
+#: ../../tutorial.rst:415
+# 6d5e88842d704e8abd5498c0e06bfb24
+msgid ":doc:`usage/env`, :ref:`host-lists`"
+msgstr ""
+
+#: ../../tutorial.rst:419
+# 8631860182eb4df98b53c94b841fe57d
+msgid "Conclusion"
+msgstr ""
+
+#: ../../tutorial.rst:421
+# 6fef535f5ae84a2f90cd86f04883d4b3
+msgid "Our completed fabfile is still pretty short, as such things go. Here it is in its entirety::"
+msgstr ""
+
+#: ../../tutorial.rst:456
+# a0a5cc1789294171adb45a4304b517d4
+msgid "This fabfile makes use of a large portion of Fabric's feature set:"
+msgstr ""
+
+#: ../../tutorial.rst:458
+# b6c872d6f11b4b989484afe56db72fce
+msgid "defining fabfile tasks and running them with :doc:`fab <usage/fab>`;"
+msgstr ""
+
+#: ../../tutorial.rst:459
+# 24d10473577a41ddb3f5b168bee6e69d
+msgid "calling local shell commands with `~fabric.operations.local`;"
+msgstr ""
+
+#: ../../tutorial.rst:460
+# f675288f0b194e1cbaa044642234726a
+msgid "modifying env vars with `~fabric.context_managers.settings`;"
+msgstr ""
+
+#: ../../tutorial.rst:461
+# 94d60ceaeea74b7980218c880342df4d
+msgid "handling command failures, prompting the user, and manually aborting;"
+msgstr ""
+
+#: ../../tutorial.rst:462
+# 4f33b159de3c46b09b0fcab2cf121b5e
+msgid "and defining host lists and `~fabric.operations.run`-ning remote commands."
+msgstr ""
+
+#: ../../tutorial.rst:464
+# 9b13e76cc3ef4f50a11f3ba2bd033765
+msgid "However, there's still a lot more we haven't covered here! Please make sure you follow the various \"see also\" links, and check out the documentation table of contents on :ref:`the main index page <documentation-index>`."
+msgstr ""
+
+#: ../../tutorial.rst:468
+# 6968292aaa934a2596d3cb0ccac27109
+msgid "Thanks for reading!"
+msgstr ""
+

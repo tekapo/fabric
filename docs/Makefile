@@ -10,6 +10,7 @@ PAPER         =
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d _build/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: help clean html dirhtml pickle json htmlhelp qthelp latex changes linkcheck doctest
 
@@ -22,6 +23,7 @@ help:
 	@echo "  htmlhelp  to make HTML files and a HTML help project"
 	@echo "  qthelp    to make HTML files and a qthelp project"
 	@echo "  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
+	@echo "  gettext   to make PO message catalogs"
 	@echo "  changes   to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck to check all external links for integrity"
 	@echo "  doctest   to run all doctests embedded in the documentation (if enabled)"
@@ -30,7 +32,7 @@ clean:
 	-rm -rf _build/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) _build/html
+	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) _build/html/ja
 	@echo
 	@echo "Build finished. The HTML pages are in _build/html."
 
@@ -70,6 +72,11 @@ latex:
 	@echo "Build finished; the LaTeX files are in _build/latex."
 	@echo "Run \`make all-pdf' or \`make all-ps' in that directory to" \
 	      "run these through (pdf)latex."
+
+gettext:
+	$(SPHINXBUILD) -b gettext $(I18NSPHINXOPTS) _locale/pot
+	@echo
+	@echo "Build finished. The message catalogs are in $(BUILDDIR)/_locale."
 
 changes:
 	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) _build/changes

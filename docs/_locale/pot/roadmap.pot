@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-03 19:54+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../roadmap.rst:3
+# f703432865b543b4b4e9eaa22b2c6df7
+msgid "Development roadmap"
+msgstr ""
+
+#: ../../roadmap.rst:5
+# b9c2bab0738c4eb8903d3a59af2dc08b
+msgid "This document outlines Fabric's intended development path. Please make sure you're reading `the latest version <http://docs.fabfile.org/en/latest/roadmap.html>`_ of this document!"
+msgstr ""
+
+#: ../../roadmap.rst:10
+# 52ba46286f2e4f558aea5a0769e4eb82
+msgid "This information is subject to change without warning, and should not be used as a basis for any life- or career-altering decisions!"
+msgstr ""
+
+#: ../../roadmap.rst:14
+# 8aa73a746c6e4a4ca4f3b9a854c9ded7
+msgid "Fabric 1.x"
+msgstr ""
+
+#: ../../roadmap.rst:16
+# 07f6b1ce3511476fbd6431c3fef5f3f5
+msgid "Fabric 1.x, while not end-of-life'd, has reached a tipping point regarding internal tech debt & ability to make significant improvements without harming backwards compatibility."
+msgstr ""
+
+#: ../../roadmap.rst:20
+# 8b20deae485d4eec9b9e714a1c3d634c
+msgid "As such, future 1.x releases (**1.6** onwards) will emphasize small-to-medium features (new features not requiring major overhauls of the internals) and bugfixes."
+msgstr ""
+
+#: ../../roadmap.rst:25
+# 13e44c3421cd4bf1934cb2a1a2b237b2
+msgid "Invoke, Fabric 2.x and Patchwork"
+msgstr ""
+
+#: ../../roadmap.rst:27
+# 48a9f752f3c842a38c4172aca4ccea0a
+msgid "While 1.x moves on as above, we are working on a reimagined 2.x version of the tool, and plan to:"
+msgstr ""
+
+#: ../../roadmap.rst:30
+# 6741e77c9b8046938134092f0209c12e
+msgid "Finish and release `the Invoke tool/library <https://github.com/pyinvoke/invoke>`_ (see also :issue:`565`), which is a revamped and standalone version of Fabric's task running components."
+msgstr ""
+
+#: ../../roadmap.rst:34
+# ce7929a325d6495ca60705167711503f
+msgid "As of late 2013, Invoke is approaching maturity and already has a handful of features lacking in Fabric itself, including but not limited to:"
+msgstr ""
+
+#: ../../roadmap.rst:37
+# e83e595fa64047bb9ec44dce11a77360
+msgid "a more explicit and powerful namespacing implementation"
+msgstr ""
+
+#: ../../roadmap.rst:38
+# dfa959c73d32479f889c2bfa7b7bf1b5
+msgid "\"regular\" style CLI flags,"
+msgstr ""
+
+#: ../../roadmap.rst:39
+# 70de7c555dd74c1b84710ac4428f3d23
+msgid "before/after hooks"
+msgstr ""
+
+#: ../../roadmap.rst:40
+# 76dceefcbd5848e2a614b5629ce52613
+msgid "explicit context management"
+msgstr ""
+
+#: ../../roadmap.rst:42
+# 58281a297e9040a5a8330fd20bb0dc87
+msgid "Invoke is already Python 3 compatible, due to being a new codebase with few dependencies."
+msgstr ""
+
+#: ../../roadmap.rst:44
+# c1197ca03861428cba1e932909b81666
+msgid "As Fabric 2 is developed, Invoke will continue to grow & change to suit Fabric's needs while remaining a high quality standalone task runner."
+msgstr ""
+
+#: ../../roadmap.rst:47
+# 272d3bee8f0f44a692101bc0bbb0b8ed
+msgid "Start putting together Fabric 2.0, a mostly-rewritten Fabric core:"
+msgstr ""
+
+#: ../../roadmap.rst:49
+# 6a0e531286f14edc9d0e17e6ed0738d6
+msgid "Leverage Invoke for task running, leaving Fabric itself much more library oriented."
+msgstr ""
+
+#: ../../roadmap.rst:51
+# b1861c6927d342ca933874c5b70401ab
+msgid "Implement object-oriented hosts/host lists and all the fun stuff that provides (e.g. no more hacky host string and unintuitive env var manipulation.)"
+msgstr ""
+
+#: ../../roadmap.rst:54
+# b03d2d871b264b4c81a9de34168930f6
+msgid "No more shared state by default (thanks to Invoke's context design.)"
+msgstr ""
+
+#: ../../roadmap.rst:55
+# 3e5d64c9890e4bf28af9c4b6f2d4acef
+msgid "Any other core overhauls difficult to do in a backwards compatible fashion."
+msgstr ""
+
+#: ../../roadmap.rst:57
+# 8ccccf9e6e804aacafc40fc5a7e8e726
+msgid "Test-driven development (Invoke does this as well.)"
+msgstr ""
+
+#: ../../roadmap.rst:58
+# 5261daba3c014cca963d048de381773b
+msgid "Requires Paramiko to become Python 3 compatible - one of the major hurdles to overcome. See `Paramiko #16 <https://github.com/paramiko/paramiko/issues/16>`_."
+msgstr ""
+
+#: ../../roadmap.rst:62
+# e582667ea3f548fbac73c6faa20147ce
+msgid "Spin off ``fabric.contrib.*`` into a standalone \"super-Fabric\" (as in, \"above Fabric\") library, `Patchwork <https://github.com/fabric/patchwork>`_."
+msgstr ""
+
+#: ../../roadmap.rst:64
+# 1c21358927a84455ae4adcdc5b4ae6fb
+msgid "This lets core \"execute commands on hosts\" functionality iterate separately from \"commonly useful shortcuts using Fabric core\"."
+msgstr ""
+
+#: ../../roadmap.rst:66
+# 7c421958020e4a0ca9ee647f30704c90
+msgid "Lots of preliminary work & prior-art scanning has been done in :issue:`461`."
+msgstr ""
+
+#: ../../roadmap.rst:68
+# dbc005b261474db8962a69bafcb121d7
+msgid "A public-but-alpha codebase for Patchwork exists as we think about the API, and is currently based on Fabric 1.x. It will likely be Fabric 2.x based by the time it is stable."
+msgstr ""
+
