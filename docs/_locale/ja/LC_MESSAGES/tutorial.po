@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: 2014-01-15 20:00+0900\n"
+"PO-Revision-Date: 2014-01-24 17:09+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -46,6 +46,8 @@ msgid ""
 "streamlining the use of SSH for application deployment or systems "
 "administration tasks."
 msgstr ""
+"Fabricは、アプリケーションのデプロイやシステム管理のタスクのためにSSHの利用を"
+"簡素化するためのPython(2.5以上)のライブラリとコマンドラインツールです。"
 
 #: ../../tutorial.rst:20
 msgid "More specifically, Fabric is:"
@@ -115,7 +117,7 @@ msgstr ""
 
 #: ../../tutorial.rst:58
 msgid ":ref:`execution-strategy`, :doc:`/usage/tasks`, :doc:`/usage/fab`"
-msgstr ""
+msgstr ":ref:`execution-strategy`, :doc:`/usage/tasks`, :doc:`/usage/fab`"
 
 #: ../../tutorial.rst:62
 msgid "Task arguments"
@@ -163,7 +165,7 @@ msgstr ""
 
 #: ../../tutorial.rst:92
 msgid ":ref:`task-arguments`"
-msgstr ""
+msgstr ":ref:`task-arguments`"
 
 #: ../../tutorial.rst:95
 msgid "Local commands"
@@ -236,7 +238,7 @@ msgstr ""
 
 #: ../../tutorial.rst:168
 msgid ":doc:`api/core/operations`, :ref:`fabfile-discovery`"
-msgstr ""
+msgstr ":doc:`api/core/operations`, :ref:`fabfile-discovery`"
 
 #: ../../tutorial.rst:172
 msgid "Organize it your way"
@@ -292,7 +294,7 @@ msgstr ""
 
 #: ../../tutorial.rst:233
 msgid ":ref:`Failure handling (usage documentation) <failures>`"
-msgstr ""
+msgstr ":ref:`Failure handling (usage documentation) <failures>`"
 
 #: ../../tutorial.rst:236
 msgid "Failure handling"
@@ -371,11 +373,11 @@ msgstr ""
 
 #: ../../tutorial.rst:273
 msgid ":doc:`api/core/context_managers`, :ref:`env-vars`"
-msgstr ""
+msgstr ":doc:`api/core/context_managers`, :ref:`env-vars`"
 
 #: ../../tutorial.rst:277
 msgid "Making connections"
-msgstr ""
+msgstr "接続する"
 
 #: ../../tutorial.rst:279
 msgid ""
@@ -383,16 +385,21 @@ msgid ""
 "task that is destined to run on one or more remote server(s), and ensures "
 "the code is up to date::"
 msgstr ""
+"では今度は、肝心な部分を入れてfabfileを仕上げましょう。 ``deploy`` タスクは一"
+"つもしくは複数のリモートサーバーで実行され、コードが確実に最新になるにように"
+"します::"
 
 #: ../../tutorial.rst:289
 msgid "Here again, we introduce a handful of new concepts:"
-msgstr ""
+msgstr "今回もまた、たくさんの新しいコンセプトが導入されています:"
 
 #: ../../tutorial.rst:291
 msgid ""
 "Fabric is just Python -- so we can make liberal use of regular Python code "
 "constructs such as variables and string interpolation;"
 msgstr ""
+"FabricはただのPythonです。したがって、変数や文字列の操作などの通常のPython"
+"コードの概念を自由に利用することができます。"
 
 #: ../../tutorial.rst:293
 msgid ""
@@ -400,22 +407,27 @@ msgid ""
 "``cd /to/some/directory`` call. This is similar to  `~fabric."
 "context_managers.lcd` which does the same locally."
 msgstr ""
+"`~fabric.context_managers.cd` はコマンドに``cd /どこ/かの/ディレクトリ`` 呼び"
+"出しを追加する簡単な方法です。これは同じことをローカルで実行する `~fabric."
+"context_managers.lcd` と似ています。"
 
 #: ../../tutorial.rst:296
 msgid ""
 "`~fabric.operations.run`, which is similar to `~fabric.operations.local` but "
 "runs **remotely** instead of locally."
 msgstr ""
+"`~fabric.operations.run` は `~fabric.operations.local` に似ていますが、ローカ"
+"ルではなく **リモートで** 動作します。"
 
 #: ../../tutorial.rst:299
 msgid ""
 "We also need to make sure we import the new functions at the top of our "
 "file::"
-msgstr ""
+msgstr "また、ファイルの一番上で新しい関数を確実にインポートするようにします::"
 
 #: ../../tutorial.rst:305
 msgid "With these changes in place, let's deploy::"
-msgstr ""
+msgstr "これらを変更したら、デプロイしてみましょう::"
 
 #: ../../tutorial.rst:316
 msgid ""
@@ -426,10 +438,16 @@ msgid ""
 "as a default -- so in this example, we just had to specify the hostname, "
 "``my_server``."
 msgstr ""
+"このfabfileでは接続情報は指定していません。したがって、Fabricはどのホスト(複"
+"数可)でこのリモートコマンドが実行されるべきなのかが分かりません。このようなと"
+"き、Fabricは起動時に入力を促します。接続定義はSSHのような \"ホスト文字列"
+"\" (例えば ``user@host:port``)を使い、デフォルトではローカルのユーザー名が使"
+"われます。そのため、この例では単にホスト名 ``my_server`` だけを指定していま"
+"す。"
 
 #: ../../tutorial.rst:325
 msgid "Remote interactivity"
-msgstr ""
+msgstr "リモートとの双方向性"
 
 #: ../../tutorial.rst:327
 msgid ""
@@ -437,6 +455,9 @@ msgid ""
 "-- but what if this is the first deploy? It'd be nice to handle that case "
 "too and do the initial ``git clone``::"
 msgstr ""
+"チェックアウトしたソースコードがすでにあるのなら ``git pull`` で問題ないで"
+"しょう。しかし最初のデプロイだったらどうでしょう? そうしたケースも扱えて、最"
+"初の ``git clone`` も実行するようにするといいでしょう::"
 
 #: ../../tutorial.rst:340
 msgid ""
@@ -447,6 +468,12 @@ msgid ""
 "server, this means our remote `~fabric.operations.run` call will need to "
 "authenticate itself."
 msgstr ""
+"上の `~fabric.operations.local` との場合と同じように `~fabric.operations."
+"run` もまた、シェルコマンドの実行をベースにきれいなPythonレベルのロジックを組"
+"み立てることができます。しかし、ここでの興味深い部分は ``git clone`` 呼び出し"
+"で、Gitサーバ上のリポジトリへのアクセスにGitのSSHメソッドを利用します。つまり"
+"リモートの `~fabric.operations.run` 呼び出しは、自身の認証を必要とするので"
+"す。"
 
 #: ../../tutorial.rst:347
 msgid ""
@@ -455,6 +482,10 @@ msgid ""
 "problematic when you have a serious need to enter passwords or otherwise "
 "interact with the remote program."
 msgstr ""
+"Fabricの以前のバージョン(と、同じようなハイレベルなSSHライブラリ)では、リモー"
+"トプログラムのの実行は中途半端な状態で、ローカル側からは触れませんでした。こ"
+"れはパスワードの入力が本当に必要な場合やリモートプログラムとの情報のやりとり"
+"が必要な場合に解決が難しい問題でした。"
 
 #: ../../tutorial.rst:352
 msgid ""
@@ -462,6 +493,9 @@ msgid ""
 "to the other side. Let's see what happens when we run our updated ``deploy`` "
 "task on a new server with no Git checkout::"
 msgstr ""
+"Fabric 1.0以降ではこの問題を解決し、リモート側と常にやりとりできることを確保"
+"しています。では、Gitチェックアウトがないときに新しいサーバー上でアップデート"
+"した ``deploy`` タスクを実行したときに何が起こるか見てみましょう::"
 
 #: ../../tutorial.rst:378
 msgid ""
@@ -469,14 +503,17 @@ msgid ""
 "Web server, asking for the password to the Git server. We were able to type "
 "it in and the clone continued normally."
 msgstr ""
+"``Password:`` プロンプトは、ウェブサーバ上のリモートの ``git`` 呼び出しで、"
+"Gitサーバーへのパスワードへの問い合わせであることに留意してください。パスワー"
+"ドをここで入力することができ、クローンは通常のように継続されます。"
 
 #: ../../tutorial.rst:380
 msgid ":doc:`/usage/interactivity`"
-msgstr ""
+msgstr ":doc:`/usage/interactivity`"
 
 #: ../../tutorial.rst:386
 msgid "Defining connections beforehand"
-msgstr ""
+msgstr "予め接続を定義する"
 
 #: ../../tutorial.rst:388
 msgid ""
@@ -485,6 +522,10 @@ msgid ""
 "cover all of them here, but we will show you the most common one: setting "
 "the global host list, :ref:`env.hosts <hosts>`."
 msgstr ""
+"起動時に接続情報を指定するのはすぐにうんざりしてくると思います。そのため"
+"Fabricでは、fabfile内やコマンドライン上でこれを行うためのたくさんの手段を提供"
+"しています。ここではすべてをカバーしませんが、もっともよくある手段、グローバ"
+"ルなホストリストの設定 :ref:`env.hosts <hosts>` をお見せしましょう。"
 
 #: ../../tutorial.rst:393
 msgid ""
@@ -494,6 +535,11 @@ msgid ""
 "this.) Thus, we can modify it at module level near the top of our fabfile "
 "like so::"
 msgstr ""
+":doc:`env <usage/env>` はFabricのたくさんの設定を操作するグローバルな辞書のよ"
+"うなオブジェクトで、さらに属性とともに書くことも可能です。(実際のところ、上に"
+"みられるように `~fabric.context_managers.settings` はこれの単なるラッパーで"
+"す)したがって、モジュールレベルで、自分のfabfileの一番上に近いところで次のよ"
+"うに変更が可能です::"
 
 #: ../../tutorial.rst:407
 msgid ""
@@ -501,6 +547,9 @@ msgid ""
 "storing our settings change. The end result is exactly as above: our "
 "``deploy`` task will run against the ``my_server`` server."
 msgstr ""
+"``fab`` がfabfileを読み込むとき、今回変更した ``env`` が実行され、設定の変更"
+"を格納します。その結果は上の通りになり、``deploy`` タスクが ``my_server`` に"
+"対して実行されます。"
 
 #: ../../tutorial.rst:411
 msgid ""
@@ -508,45 +557,49 @@ msgid ""
 "once: because ``env.hosts`` is a list, ``fab`` iterates over it, calling the "
 "given task once for each connection."
 msgstr ""
+"また、このようにして、Fabricに対して一度に複数のリモートシステム上で実行させ"
+"ることもできます。``env.hosts`` はリストなので ``fab`` はこのリストを順に処理"
+"し、各接続に対して与えられたタスクを呼び出します。"
 
 #: ../../tutorial.rst:415
 msgid ":doc:`usage/env`, :ref:`host-lists`"
-msgstr ""
+msgstr ":doc:`usage/env`, :ref:`host-lists`"
 
 #: ../../tutorial.rst:419
 msgid "Conclusion"
-msgstr ""
+msgstr "まとめ"
 
 #: ../../tutorial.rst:421
 msgid ""
 "Our completed fabfile is still pretty short, as such things go. Here it is "
 "in its entirety::"
 msgstr ""
+"完成したfabfileは、それでもかなり短いものです。全体では以下になります::"
 
 #: ../../tutorial.rst:456
 msgid "This fabfile makes use of a large portion of Fabric's feature set:"
-msgstr ""
+msgstr "このfabfileはFabricの機能セットのうちのかなりの部分を利用しています:"
 
 #: ../../tutorial.rst:458
 msgid "defining fabfile tasks and running them with :doc:`fab <usage/fab>`;"
-msgstr ""
+msgstr "fabfileのタスクを定義し、それを :doc:`fab <usage/fab>` で実行"
 
 #: ../../tutorial.rst:459
 msgid "calling local shell commands with `~fabric.operations.local`;"
-msgstr ""
+msgstr "`~fabric.operations.local` でローカルのシェルコマンドを呼び出し"
 
 #: ../../tutorial.rst:460
 msgid "modifying env vars with `~fabric.context_managers.settings`;"
-msgstr ""
+msgstr "`~fabric.context_managers.settings` で env 変数を変更"
 
 #: ../../tutorial.rst:461
 msgid "handling command failures, prompting the user, and manually aborting;"
-msgstr ""
+msgstr "コマンド失敗の扱い、ユーザーにプロンプト表示、手動アボート"
 
 #: ../../tutorial.rst:462
 msgid ""
 "and defining host lists and `~fabric.operations.run`-ning remote commands."
-msgstr ""
+msgstr "ホストリストの定義と `~fabric.operations.run` のリモートコマンド実行"
 
 #: ../../tutorial.rst:464
 msgid ""
@@ -554,7 +607,11 @@ msgid ""
 "you follow the various \"see also\" links, and check out the documentation "
 "table of contents on :ref:`the main index page <documentation-index>`."
 msgstr ""
+"とは言え、ここではカバーしていないこともまだたくさんあります ! ぜひさまざま"
+"な \"see also\" リンクをたどってみてください。また、 :ref:`the main index "
+"page <documentation-index>` のドキュメンテーションの目次もチェックしてみてく"
+"ださい。"
 
 #: ../../tutorial.rst:468
 msgid "Thanks for reading!"
-msgstr ""
+msgstr "読んでくれて、ありがとうございます !"
