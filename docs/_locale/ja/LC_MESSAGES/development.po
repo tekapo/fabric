@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: 2014-02-15 19:04+0900\n"
+"PO-Revision-Date: 2014-02-16 12:02+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -309,6 +309,13 @@ msgid ""
 "specific feature branches (e.g. a branch for reworking the internals to be "
 "threadsafe, or one for overhauling task dependencies, etc.)"
 msgstr ""
+"わたしたちは「リリースブランチとフィーチャーブランチ」を統合した開発手法を"
+"採っています。各マイナーリリース(例えば、0.9、1.0、1.1、1.2など。バージョニン"
+"グに関しては :ref:`releases` を参照してください)でバグフィックスのためのリ"
+"リースブランチを持ち、大きな機能開発は中央の ``master`` ブランチ と/もしくは"
+"その特定の機能用のフィーチャーブランチで行われます(例えばスレッドセーフにする"
+"ための内部的な改変のためのブランチや、タスク依存のオーバーホールのためのブラ"
+"ンチなど)。"
 
 #: ../../development.rst:91
 msgid ""
@@ -316,6 +323,9 @@ msgid ""
 "etc, and from these the actual releases are tagged, e.g. ``0.9.3`` or "
 "``1.0.0``."
 msgstr ""
+"各リリースは専用のリリースブランチを持ちます。例えば、 ``0.9``、 ``1.0``、 "
+"``1.1`` などで、実際のリリースはここでタグ付けされます。例えば、``0.9.3`` や "
+"``1.0.0`` などです。"
 
 #: ../../development.rst:94
 msgid ""
@@ -324,13 +334,20 @@ msgid ""
 "#61, which concerned adding ``cd`` support to ``get`` and ``put``, was "
 "developed in a branch named ``61-add-cd-to-get-put``."
 msgstr ""
+"新機能の作業は通常はフィーチャーブランチで行われます。命名規則は ``<ticket "
+"number>-<short-description>`` です。例えば、 ``get`` と ``put`` に ``cd`` サ"
+"ポートを追加するためのチケット#61は、 ``61-add-cd-to-get-put`` と命名されたブ"
+"ランチで開発されました。"
 
 #: ../../development.rst:99
+#, fuzzy
 msgid ""
 "These branches are not intended for public use, and may be cleaned out of "
 "the repositories periodically. Ideally, no one feature will be in "
 "development long enough for its branch to become used in production!"
 msgstr ""
+"これらのブランチは正式な利用向けではありませんし、リポジトリは定期的に削除さ"
+"れるでしょう。理想的には、正式版として利用されるようになるための当該ブランチ"
 
 #: ../../development.rst:103
 msgid ""
@@ -338,6 +355,10 @@ msgid ""
 "new features are done, a new release branch is created and optionally used "
 "to create prerelease versions for testing -- or simply released as-is."
 msgstr ""
+"完了した機能追加は ``master`` ブランチへマージされ、新しい機能追加が十分そ"
+"ろったところで新しいリリースブランチが作成されたり、テスト用のプレリリース"
+"バージョンを作成するために利用されたり、もしくは単にそのままリリースされたり"
+"します。"
 
 #: ../../development.rst:106
 msgid ""
@@ -380,7 +401,7 @@ msgstr ""
 
 #: ../../development.rst:129
 msgid "Releases"
-msgstr ""
+msgstr "リリース"
 
 #: ../../development.rst:131
 msgid ""
@@ -392,7 +413,7 @@ msgstr ""
 
 #: ../../development.rst:137
 msgid "Major"
-msgstr ""
+msgstr "メジャー"
 
 #: ../../development.rst:139
 msgid ""
@@ -418,7 +439,7 @@ msgstr ""
 
 #: ../../development.rst:153
 msgid "Minor"
-msgstr ""
+msgstr "マイナー"
 
 #: ../../development.rst:155
 msgid ""
@@ -463,7 +484,7 @@ msgstr ""
 
 #: ../../development.rst:184
 msgid "Support of older releases"
-msgstr ""
+msgstr "古いリリースのサポート"
 
 #: ../../development.rst:186
 msgid ""
