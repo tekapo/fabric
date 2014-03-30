@@ -1,160 +1,226 @@
-# 
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+#
+# Translators:
+# 0bytetest-green <xenolith0bytetestcomgreen@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: Fabric 1.8\n"
+"Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2014-02-15 23:41+0900\n"
+"PO-Revision-Date: 2014-03-22 09:52+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.4\n"
 
+# f703432865b543b4b4e9eaa22b2c6df7
 #: ../../roadmap.rst:3
 msgid "Development roadmap"
-msgstr ""
+msgstr "開発ロードマップ"
 
+# b9c2bab0738c4eb8903d3a59af2dc08b
 #: ../../roadmap.rst:5
 msgid ""
 "This document outlines Fabric's intended development path. Please make sure "
-"you're reading `the latest version "
-"<http://docs.fabfile.org/en/latest/roadmap.html>`_ of this document!"
+"you're reading `the latest version <http://docs.fabfile.org/en/latest/"
+"roadmap.html>`_ of this document!"
 msgstr ""
+"このドキュメントは Fabric の開発予定の概要です。` <http://docs.fabfile.org/"
+"en/latest/roadmap.html> の最新のドキュメント`を読んでください!"
 
+# 52ba46286f2e4f558aea5a0769e4eb82
 #: ../../roadmap.rst:10
 msgid ""
 "This information is subject to change without warning, and should not be "
 "used as a basis for any life- or career-altering decisions!"
 msgstr ""
+"ここの情報は予告なしに変更されます。従って人生やキャリアに関わるどんな決定の"
+"ベースにもすべきではありません!"
 
+# 8aa73a746c6e4a4ca4f3b9a854c9ded7
 #: ../../roadmap.rst:14
 msgid "Fabric 1.x"
-msgstr ""
+msgstr "Fabric 1.x"
 
+# 07f6b1ce3511476fbd6431c3fef5f3f5
 #: ../../roadmap.rst:16
 msgid ""
 "Fabric 1.x, while not end-of-life'd, has reached a tipping point regarding "
 "internal tech debt & ability to make significant improvements without "
 "harming backwards compatibility."
 msgstr ""
+"Fabric 1.x はまだ現役ですが内部の技術的負の遺産や下位互換性を犠牲にすることな"
+"しに大幅な改良ができないため,限界点に達しています。"
 
+# 8b20deae485d4eec9b9e714a1c3d634c
 #: ../../roadmap.rst:20
 msgid ""
 "As such, future 1.x releases (**1.6** onwards) will emphasize small-to-"
 "medium features (new features not requiring major overhauls of the "
 "internals) and bugfixes."
 msgstr ""
+"そのようなわけで将来の 1.x リリース(**1.6** 以前)は小中規模の改造(大規模な"
+"オーバーホールを必要としない新機能)とバグフィックスに重点が置かれます。"
 
+# 13e44c3421cd4bf1934cb2a1a2b237b2
 #: ../../roadmap.rst:25
 msgid "Invoke, Fabric 2.x and Patchwork"
-msgstr ""
+msgstr "Invoke, Fabric 2.x, Patchwork"
 
+# 48a9f752f3c842a38c4172aca4ccea0a
 #: ../../roadmap.rst:27
 msgid ""
 "While 1.x moves on as above, we are working on a reimagined 2.x version of "
 "the tool, and plan to:"
 msgstr ""
+"1.xは上記の方針で進めますが、我々はコンセプトを再構築した 2.x バージョンの"
+"ツールに取り組みます。計画は:"
 
+# 6741e77c9b8046938134092f0209c12e
 #: ../../roadmap.rst:30
 msgid ""
-"Finish and release `the Invoke tool/library "
-"<https://github.com/pyinvoke/invoke>`_ (see also :issue:`565`), which is a "
-"revamped and standalone version of Fabric's task running components."
+"Finish and release `the Invoke tool/library <https://github.com/pyinvoke/"
+"invoke>`_ (see also :issue:`565`), which is a revamped and standalone "
+"version of Fabric's task running components."
 msgstr ""
+"`Invoke ツール/ライブラリ<https://github.com/pyinvoke/invoke>`の完成とリリー"
+"ス(参照 :issue:`565`)、これは改良したFabricのタスク実行コンポーネントのスタン"
+"ドアロン・バージョン。"
 
+# ce7929a325d6495ca60705167711503f
 #: ../../roadmap.rst:34
 msgid ""
-"As of late 2013, Invoke is approaching maturity and already has a handful of"
-" features lacking in Fabric itself, including but not limited to:"
+"As of late 2013, Invoke is approaching maturity and already has a handful of "
+"features lacking in Fabric itself, including but not limited to:"
 msgstr ""
+"2013年後半現在、Invoke は成熟期に近づいてすでに Fabric に欠けている機能を少し"
+"持っています。それだけでなく:"
 
+# e83e595fa64047bb9ec44dce11a77360
 #: ../../roadmap.rst:37
 msgid "a more explicit and powerful namespacing implementation"
-msgstr ""
+msgstr "さらにわかりやすく強力な名前空間の実装"
 
+# dfa959c73d32479f889c2bfa7b7bf1b5
 #: ../../roadmap.rst:38
 msgid "\"regular\" style CLI flags,"
-msgstr ""
+msgstr "\"regular\" スタイル CLI フラッグ、"
 
+# 70de7c555dd74c1b84710ac4428f3d23
 #: ../../roadmap.rst:39
 msgid "before/after hooks"
-msgstr ""
+msgstr "before/after フック"
 
+# 76dceefcbd5848e2a614b5629ce52613
 #: ../../roadmap.rst:40
 msgid "explicit context management"
-msgstr ""
+msgstr "わかりやすいコンテキスト管理"
 
+# 58281a297e9040a5a8330fd20bb0dc87
 #: ../../roadmap.rst:42
 msgid ""
 "Invoke is already Python 3 compatible, due to being a new codebase with few "
 "dependencies."
 msgstr ""
+"Invoke の新しい依存性の少ないコードベースによりすでに Python 3 と互換性があり"
+"ます。"
 
+# c1197ca03861428cba1e932909b81666
 #: ../../roadmap.rst:44
 msgid ""
 "As Fabric 2 is developed, Invoke will continue to grow & change to suit "
 "Fabric's needs while remaining a high quality standalone task runner."
 msgstr ""
+"Fabric 2 が開発されたので Invoke は高品質のスタンドアロン・タスクランナーとし"
+"て Fabric の要求に合わせて成長を続けます。"
 
+# 272d3bee8f0f44a692101bc0bbb0b8ed
 #: ../../roadmap.rst:47
 msgid "Start putting together Fabric 2.0, a mostly-rewritten Fabric core:"
-msgstr ""
+msgstr "Fabric 2.0 の構成、ほとんど書きなおされた Fabric コア:"
 
+# 6a0e531286f14edc9d0e17e6ed0738d6
 #: ../../roadmap.rst:49
 msgid ""
 "Leverage Invoke for task running, leaving Fabric itself much more library "
 "oriented."
 msgstr ""
+"タスクの実行にもっと Invoke を活用する。Fabric自身をもっとライブラリ志向に。"
 
+# b1861c6927d342ca933874c5b70401ab
 #: ../../roadmap.rst:51
 msgid ""
 "Implement object-oriented hosts/host lists and all the fun stuff that "
 "provides (e.g. no more hacky host string and unintuitive env var "
 "manipulation.)"
 msgstr ""
+"オブジェクト指向の hosts/host リストの実装とそれに関すること(例えば不完全な "
+"host 文字列の廃止と直感的でない env 変数の取り扱い。)"
 
+# b03d2d871b264b4c81a9de34168930f6
 #: ../../roadmap.rst:54
 msgid "No more shared state by default (thanks to Invoke's context design.)"
-msgstr ""
+msgstr "デフォルトで共有状態を使わない。(Invokeのコンテキストデザインに感謝)"
 
+# 3e5d64c9890e4bf28af9c4b6f2d4acef
 #: ../../roadmap.rst:55
 msgid ""
 "Any other core overhauls difficult to do in a backwards compatible fashion."
-msgstr ""
+msgstr "下位互換性を難しくしている他のコアのオーバーホール。"
 
+# 8ccccf9e6e804aacafc40fc5a7e8e726
 #: ../../roadmap.rst:57
 msgid "Test-driven development (Invoke does this as well.)"
-msgstr ""
+msgstr "テスト駆動開発(Invokeと同様)"
 
+# 5261daba3c014cca963d048de381773b
 #: ../../roadmap.rst:58
 msgid ""
 "Requires Paramiko to become Python 3 compatible - one of the major hurdles "
-"to overcome. See `Paramiko #16 "
-"<https://github.com/paramiko/paramiko/issues/16>`_."
+"to overcome. See `Paramiko #16 <https://github.com/paramiko/paramiko/"
+"issues/16>`_."
 msgstr ""
+"Paramiko に Python 3 と互換性を持たせる必要性 - 最もやっかいな問題の一つ。 参"
+"照 `Paramiko #16 <https://github.com/paramiko/paramiko/issues/16>`_."
 
+# e582667ea3f548fbac73c6faa20147ce
 #: ../../roadmap.rst:62
 msgid ""
 "Spin off ``fabric.contrib.*`` into a standalone \"super-Fabric\" (as in, "
-"\"above Fabric\") library, `Patchwork "
-"<https://github.com/fabric/patchwork>`_."
+"\"above Fabric\") library, `Patchwork <https://github.com/fabric/"
+"patchwork>`_."
 msgstr ""
+"``fabric.contrib.*`` のスタンドアロン \"super-Fabric\" へのスピンオフ。(上記"
+"の)ライブラリ、`Patchwork <https://github.com/fabric/patchwork>`_."
 
+# 1c21358927a84455ae4adcdc5b4ae6fb
 #: ../../roadmap.rst:64
 msgid ""
 "This lets core \"execute commands on hosts\" functionality iterate "
 "separately from \"commonly useful shortcuts using Fabric core\"."
 msgstr ""
+"これで \"Fabricコアを使う一般的に有効なショートカット\"と別にコアが\"ホスト上"
+"のコマンド実行\"を繰り返すことができます。"
 
+# 7c421958020e4a0ca9ee647f30704c90
 #: ../../roadmap.rst:66
 msgid ""
 "Lots of preliminary work & prior-art scanning has been done in :issue:`461`."
-msgstr ""
+msgstr ":issue:`461` の多くの作業準備と先行技術の調査は完了"
 
+# dbc005b261474db8962a69bafcb121d7
 #: ../../roadmap.rst:68
 msgid ""
 "A public-but-alpha codebase for Patchwork exists as we think about the API, "
 "and is currently based on Fabric 1.x. It will likely be Fabric 2.x based by "
 "the time it is stable."
 msgstr ""
+"APIを考えた Patchwork のアルファ版の公開コードはありますが、これは Fabric 1.x"
+"がベースです。Fabric 2.x が安定するまでに Fabric 2.x ベースになるでしょう。"

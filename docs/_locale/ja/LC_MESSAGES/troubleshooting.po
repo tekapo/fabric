@@ -1,32 +1,39 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-03-24 19:05+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: ../../troubleshooting.rst:3
 msgid "Troubleshooting"
-msgstr ""
+msgstr "トラブルシューティング"
 
 #: ../../troubleshooting.rst:5
 msgid ""
 "Stuck? Having a problem? Here are the steps to try before you submit a bug "
 "report."
 msgstr ""
+"行き詰まってしまいましたか? 問題がありますか? バグを報告する前に試してもらい"
+"たいステップが有ります。"
 
 #: ../../troubleshooting.rst:8
 msgid ""
-"**Make sure you're on the latest version.** If you're not on the most recent"
-" version, your problem may have been solved already! Upgrading is always the"
-" best first step."
+"**Make sure you're on the latest version.** If you're not on the most recent "
+"version, your problem may have been solved already! Upgrading is always the "
+"best first step."
 msgstr ""
+"**最新版を使用する。** もし最新版お使いではないのなら、もしかしたらあなたの問"
+"題はすでに解決済みかもしれません! アップグレードはいつも最良で最初のステップ"
+"です。"
 
 #: ../../troubleshooting.rst:11
 msgid ""
@@ -35,6 +42,10 @@ msgid ""
 "and see if the problem goes away. This will help the devs narrow down when "
 "the problem first arose in the commit log."
 msgstr ""
+"**古いバージョンを試す。** すでに最新版のFabricを *使用* しているのなら、少し"
+"前のマイナーバージョン(例えば、1.7を使っているのなら1.5や1.6)を試して、その問"
+"題が発生するかどうか試してみてください。これにより、その問題がコミットログに"
+"最初に現れた時期を開発者が絞り込むのに役立ちます。"
 
 #: ../../troubleshooting.rst:15
 msgid ""
@@ -42,12 +53,17 @@ msgid ""
 "library for its SSH functionality, so try applying the above two steps to "
 "your Paramiko install as well."
 msgstr ""
+"**Paramiko の切り替えを試す。** FabricはSSHの機能でParamikoに大きく依存してい"
+"るので、上の2つのステップにParamikoのインストールを試してみてください。"
 
 #: ../../troubleshooting.rst:20
 msgid ""
 "Fabric versions sometimes have different Paramiko dependencies - so to try "
 "older Paramikos you may need to downgrade Fabric as well."
 msgstr ""
+"FabricはバージョンによってはParamikoへの依存が違うことがあります。したがっ"
+"て、Fabricをダウングレードした場合、古いバージョンのParamikoが必要になるかも"
+"しれません。"
 
 #: ../../troubleshooting.rst:23
 msgid ""
@@ -55,20 +71,30 @@ msgid ""
 "behavior or output of a remote command, try recreating it without Fabric "
 "involved:"
 msgstr ""
+"**間違いなくFabricが問題なのかを確認する。** もしその問題がリモートコマンドの"
+"挙動内か出力内にある場合、Fabric無しでもその問題が発生するか試してみてくださ"
+"い:"
 
 #: ../../troubleshooting.rst:27
 msgid ""
-"Run Fabric with ``--show=debug`` and look for the ``run:`` or ``sudo:`` line"
-" about the command in question. Try running that exact command, including "
-"any ``/bin/bash`` wrapper, remotely and see what happens. This may find "
-"problems related to the bash or sudo wrappers."
+"Run Fabric with ``--show=debug`` and look for the ``run:`` or ``sudo:`` line "
+"about the command in question. Try running that exact command, including any "
+"``/bin/bash`` wrapper, remotely and see what happens. This may find problems "
+"related to the bash or sudo wrappers."
 msgstr ""
+"Fabricを ``--show=debug`` 付きで実行し、問題になっているコマンドで ``run:`` "
+"もしくは ``sudo:`` の行を探します。リモートで ``/bin/bash`` のすべてのラッ"
+"パーを含む正確なコマンドを試して、何が起こるか確認してください。これにより、"
+"bashやsudoラッパーに関連する問題かどうかが分かります。"
 
 #: ../../troubleshooting.rst:31
 msgid ""
 "Execute the command (both the normal version, and the 'unwrapped' version "
 "seen via ``--show=debug``) from your local workstation using ``ssh``, e.g.::"
 msgstr ""
+"ローカルのワークステーションからsshを使ってそのコマンド(通常バージョンと ``--"
+"show=debug`` で参照できる 'ラッパーされていない' バージョンの両方)を実行して"
+"ください。例えば::"
 
 #: ../../troubleshooting.rst:37
 msgid ""
@@ -76,3 +102,6 @@ msgid ""
 "remotely. This helps identify apps that behave poorly when run in a non-"
 "shell-spawned PTY."
 msgstr ""
+"``-t`` フラグは、リモートでPTYを有効にするFabricのデフォルトの挙動と同じ動作"
+"をします。非シェル生成のPTYでの動作時に不完全に作動しているアプリケーションを"
+"特定するのに役立ちます。"
