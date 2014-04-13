@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-03-22 09:56+0900\n"
+"PO-Revision-Date: 2014-04-13 13:18+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -125,7 +125,7 @@ msgid ""
 msgstr ""
 "ほとんどの場合タスクは fabfile に書くことになるでしょう。(一度使ったものは、"
 "もう一度使うことになるでしょうから) しかしこの機能は fabfile の接続設定を利用"
-"している時にで手軽ですばやく SSH-borne コマンドを実行できます。"
+"している時に手軽ですばやく SSH-borne コマンドを実行できます。"
 
 # eb4e00f0334242e2a2d7dbdf7a47050c
 #: ../../usage/fab.rst:70
@@ -151,7 +151,7 @@ msgid ""
 "just as valid as the more straightforward ``fab -H hostname -i path/to/"
 "keyfile task1 task2``."
 msgstr ""
-"``fab`` は Python の `optparse` ライブラリを使います。これは Linux や GNU ス"
+"``fab`` は Python の `optparse`_ ライブラリを使います。これは Linux や GNU ス"
 "タイルのショートやロングオプションが使えるということです。また自由にオプショ"
 "ンと引数を使えます。例えば ``fab task1 -H hostname task2 -i path/to/"
 "keyfile`` はもっとわかりやすく ``fab -H hostname -i path/to/keyfile task1 "
@@ -437,6 +437,9 @@ msgid ""
 "`~fabric.operations.run`/`~fabric.operations.sudo` calls to behave as if one "
 "had specified ``pty=False``."
 msgstr ""
+":ref:`env.always_use_pty <always-use-pty>` を ``False`` にセット。すべての "
+"`~fabric.operations.run`/`~fabric.operations.sudo` の呼び出しは "
+"``pty=False`` の指定と同じになります。"
 
 # 87f0a928066a4fe3ac31c89e0c4ea1fc
 #: ../../usage/fab.rst:259
@@ -445,6 +448,9 @@ msgid ""
 "causing Fabric to abort when connecting to hosts not found in the user's "
 "SSH :file:`known_hosts` file."
 msgstr ""
+":ref:`env.reject_unknown_hosts <reject-unknown-hosts>` を ``True`` にセット。"
+"Fabric はユーザーの SSH :file:`known_hosts` で見つからないホストへの接続を中"
+"止します。"
 
 # 95a55de53bbd4dad8d62e92ab95afba3
 #: ../../usage/fab.rst:265
@@ -461,9 +467,9 @@ msgid ""
 "this way have a low precedence -- they will not override more specific env "
 "vars which are also specified on the command line. E.g.::"
 msgstr ""
-"Allows you to set default values for arbitrary Fabric env vars. Values set "
-"this way have a low precedence -- they will not override more specific env "
-"vars which are also specified on the command line. 例えば::"
+"デフォルトのy Fabric の env の値を任意の値にセット。しかしこの方法の優先度は"
+"低くなります。 -- コマンドラインで指定された env の値を上書きできません。例え"
+"ば::"
 
 # 11e85961fb43477991ae9aaec6c19a3d
 #: ../../usage/fab.rst:276
@@ -487,10 +493,10 @@ msgid ""
 "the empty string (and thus a False-equivalent value) by keeping the equals "
 "sign, but omitting ``VALUE`` (e.g. ``fab --set KEY=``.)"
 msgstr ""
-"Other than basic string values, you may also set env vars to True by "
-"omitting the ``=VALUE`` (例えば ``fab --set KEY``), and you may set values "
-"to the empty string (and thus a False-equivalent value) by keeping the "
-"equals sign, but omitting ``VALUE`` (e.g. ``fab --set KEY=``.)"
+"基本的な文字列の他に ``=VALUE`` を省略することで env は True になります。(例"
+"えば ``fab --set KEY``), and you may set values to また イコールは使って"
+"``VALUE`` を省略することで空の文字列(そして False と等価)にセットできます。"
+"(例えば ``fab --set KEY=``)"
 
 # dc891227b40142d1a78924576f3b9b33
 #: ../../usage/fab.rst:290
@@ -521,6 +527,8 @@ msgid ""
 "A comma-separated list of :doc:`output levels <output_controls>` to be added "
 "to those that are shown by default."
 msgstr ""
+"デフォルトで表示されるコンマで区切られた :doc:`output levels "
+"<output_controls>` のリスト。"
 
 # e2010c7c016c4acc93e8843797c51813
 #: ../../usage/fab.rst:307
@@ -620,6 +628,9 @@ msgid ""
 "to all given tasks equally. Additionally, since tasks are just Python "
 "functions, it's often desirable to pass in arguments to them at runtime."
 msgstr ""
+":ref:`command-line-options` で与えられたオプションは ``fab`` 呼び出しの全体に"
+"適用されます。順番によらずオプションは等しくタスクに与えられます。加えてタス"
+"クは Python関数なので引数は実行時に渡されるのが望ましいでしょう。"
 
 # 572bed8495c641bca878d045e7fdf156
 #: ../../usage/fab.rst:375
@@ -627,6 +638,8 @@ msgid ""
 "Answering both these needs is the concept of \"per-task arguments\", which "
 "is a special syntax you can tack onto the end of any task name:"
 msgstr ""
+"この両方のニーズに答えるのが \"per-task 引数\" のコンセプトです。これはタスク"
+"名に添える特殊な構文です:"
 
 # 7c7d97ae9e834a33b128d3dfdc95cb44
 #: ../../usage/fab.rst:378
@@ -658,6 +671,8 @@ msgid ""
 "end up as Python strings, so plan accordingly. (We hope to improve upon this "
 "in future versions of Fabric, provided an intuitive syntax can be found.)"
 msgstr ""
+"このプロセスは文字列解析を呼び出します。すべての値は Python 文字列になりま"
+"す。(直感的な構文が見つかれば将来のバージョンの Fabric で改良します。)"
 
 # 166dd49c0b4548bba2be1b4314626165
 #: ../../usage/fab.rst:388
@@ -665,6 +680,8 @@ msgid ""
 "For example, a \"create a new user\" task might be defined like so (omitting "
 "most of the actual logic for brevity)::"
 msgstr ""
+"例えば、 \"create a new user\" タスクはこの様に定義できます。(簡単にするため"
+"に実際のロジックは省略)::"
 
 # 0b0b85277a3949ea8a0db287bbe8c18b
 #: ../../usage/fab.rst:395
@@ -692,6 +709,8 @@ msgid ""
 "The ``log_action`` call above is useful for illustrating escaped commas, "
 "like so::"
 msgstr ""
+"上記の ``log_action`` の呼び出しはコンマのエスケープの説明に有効です。このよ"
+"うに::"
 
 # a3eeb94f41684637822d85c57a3fb62d
 #: ../../usage/fab.rst:417
@@ -700,6 +719,9 @@ msgid ""
 "shell syntax errors. Quotes are also needed whenever an argument involves "
 "other shell-related characters such as spaces."
 msgstr ""
+"コンマはバックスラッシュでエスケープします。そうしないとシンタックスエラーに"
+"なります。クォートもまた引数にスペースのようなシェルの特殊文字を含むときには"
+"必要になります。"
 
 # b1ad6aeea27448d2be38764033005c8f
 #: ../../usage/fab.rst:421
@@ -707,6 +729,8 @@ msgid ""
 "All of the above are translated into the expected Python function calls. For "
 "example, the last call above would become::"
 msgstr ""
+"上記のすべては期待される Python関数の呼び出しに変換されます。例えば最後の呼び"
+"出しはこのように::(訳注:adminの値がおかしい)"
 
 # d158277d496d4d5290745490b070fcfe
 #: ../../usage/fab.rst:427
@@ -736,10 +760,10 @@ msgid ""
 "manner -- a regrettable but necessary sacrifice.)"
 msgstr ""
 "これらの特殊な kwargs は args/kwargs から **取り除かれて** タスク関数に送られ"
-"ます。function itself; this is so that you don't run into TypeErrors if your "
-"task doesn't define the kwargs in question. (It also means that if you "
-"**do** define arguments with these names, you won't be able to specify them "
-"in this manner -- a regrettable but necessary sacrifice.)"
+"ます。これはタスクが問題の kwargs を定義していないなら TypeErrors になりませ"
+"ん。doesn't define the kwargs in question. (これはまたこれらの名前の引数を定"
+"義して **いた** らこの方法で指定することはできません -- 残念なことに必要な犠"
+"牲。)"
 
 # 2a30b7af8b5e440a903505de74927b63
 #: ../../usage/fab.rst:442

@@ -1,21 +1,23 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
 # This file is distributed under the same license as the Fabric package.
-# 
+#
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-02-23 01:46+0000\n"
-"Last-Translator: tekapo <tekapo@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-docs-1_8_2/language/ja/)\n"
+"PO-Revision-Date: 2014-04-13 14:57+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.4\n"
 
 # 43887c9fb9094203b768e11b7dde58a6
 #: ../../development.rst:3
@@ -25,12 +27,17 @@ msgstr "開発"
 # 39bae48f37dc42cf92653acf3cc0ff7d
 #: ../../development.rst:5
 msgid ""
-"The Fabric development team is headed by `Jeff Forcier "
-"<http://bitprophet.org>`_, aka ``bitprophet``.  However, dozens of other "
-"developers pitch in by submitting patches and ideas via `GitHub issues and "
-"pull requests <https://github.com/fabric/fabric>`_, :ref:`IRC <irc>` or the "
-"`mailing list <http://lists.nongnu.org/mailman/listinfo/fab-user>`_."
-msgstr "Fabricの開発チームは `Jeff Forcier <http://bitprophet.org>`_、別名 ``bitprophet`` に率いられています。とは言え、他にもたくさんの開発者が `GitHubのイシューとプルリクエスト <https://github.com/fabric/fabric>`_、 :ref:`IRC <irc>` もしくは `メーリングリスト <http://lists.nongnu.org/mailman/listinfo/fab-user>`_ 経由でパッチやアイディアを提供しています。"
+"The Fabric development team is headed by `Jeff Forcier <http://bitprophet."
+"org>`_, aka ``bitprophet``.  However, dozens of other developers pitch in by "
+"submitting patches and ideas via `GitHub issues and pull requests <https://"
+"github.com/fabric/fabric>`_, :ref:`IRC <irc>` or the `mailing list <http://"
+"lists.nongnu.org/mailman/listinfo/fab-user>`_."
+msgstr ""
+"Fabricの開発チームは `Jeff Forcier <http://bitprophet.org>`_、別名 "
+"``bitprophet`` に率いられています。とは言え、他にもたくさんの開発者が `GitHub"
+"のイシューとプルリクエスト <https://github.com/fabric/fabric>`_、 :ref:`IRC "
+"<irc>` もしくは `メーリングリスト <http://lists.nongnu.org/mailman/listinfo/"
+"fab-user>`_ 経由でパッチやアイディアを提供しています。"
 
 # abc3f17a753a481c8f1c4795097e5dc1
 #: ../../development.rst:12
@@ -40,9 +47,12 @@ msgstr "コードの取得"
 # 2879b954394642db9eb597dcf7137b90
 #: ../../development.rst:14
 msgid ""
-"Please see the :ref:`source-code-checkouts` section of the "
-":doc:`installation` page for details on how to obtain Fabric's source code."
-msgstr "Fabricのソースコードの取得に関しての詳細は :doc:`インストール <installation>` ページの :ref:`source-code-checkouts` セクションをご覧ください。"
+"Please see the :ref:`source-code-checkouts` section of the :doc:"
+"`installation` page for details on how to obtain Fabric's source code."
+msgstr ""
+"Fabricのソースコードの取得に関しての詳細は :doc:`インストール "
+"<installation>` ページの :ref:`source-code-checkouts` セクションをご覧くださ"
+"い。"
 
 # 0a7df670ed984c6fb7f27199ae56b3d4
 #: ../../development.rst:18
@@ -62,36 +72,54 @@ msgid ""
 "currently use Fabric and how you want to use it. (Please do try to search "
 "the `ticket tracker <https://github.com/fabric/fabric/issues>`_ first, "
 "though, when submitting feature ideas.)"
-msgstr "**Fabricを使ってフィードバックを送ってください!** これがこのプロジェクトを改善するためのもっとも簡単でもっとも間違いが少なく、もっとも重要な方法です。どのようにFabricを使っていて、どのようにFabricを使いたいのかをお知らせください。(とは言え、アイディアを送るときには、まず `チケットトラッカー <https://github.com/fabric/fabric/issues>`_ で検索するようにしてください)"
+msgstr ""
+"**Fabricを使ってフィードバックを送ってください!** これがこのプロジェクトを改"
+"善するためのもっとも簡単でもっとも間違いが少なく、もっとも重要な方法です。ど"
+"のようにFabricを使っていて、どのようにFabricを使いたいのかをお知らせくださ"
+"い。(とは言え、アイディアを送るときには、まず `チケットトラッカー <https://"
+"github.com/fabric/fabric/issues>`_ で検索するようにしてください)"
 
 # b8d0ae30191445bc91ed743763a7fcea
 #: ../../development.rst:27
 msgid ""
 "**Report bugs.** Pretty much a special case of the previous item: if you "
-"think you've found a bug in Fabric, check on the `ticket tracker "
-"<https://github.com/fabric/fabric/issues>`_ to see if anyone's reported it "
-"yet, and if not -- file a bug! If possible, try to make sure you can "
-"replicate it repeatedly, and let us know the circumstances (what version of "
-"Fabric you're using, what platform you're on, and what exactly you were "
-"doing when the bug cropped up.)"
-msgstr "**バグを報告してください。** ひとつ上の項目のかなり特別なケースです。もしFabricにバグを見つけたと思ったら、他の人がまだ報告していないか `チケットトラッカー <https://github.com/fabric/fabric/issues>`_ で確認して、まだ報告されていなかったらバグを報告してください! 可能なら繰り返し再現可能であることを確認し、環境(Fabricのバージョン、プラットフォーム、バグ発生時に何をしようとしていたかを具体的に)をお知らせください。"
+"think you've found a bug in Fabric, check on the `ticket tracker <https://"
+"github.com/fabric/fabric/issues>`_ to see if anyone's reported it yet, and "
+"if not -- file a bug! If possible, try to make sure you can replicate it "
+"repeatedly, and let us know the circumstances (what version of Fabric you're "
+"using, what platform you're on, and what exactly you were doing when the bug "
+"cropped up.)"
+msgstr ""
+"**バグを報告してください。** ひとつ上の項目のかなり特別なケースです。もし"
+"Fabricにバグを見つけたと思ったら、他の人がまだ報告していないか `チケットト"
+"ラッカー <https://github.com/fabric/fabric/issues>`_ で確認して、まだ報告され"
+"ていなかったらバグを報告してください! 可能なら繰り返し再現可能であることを確"
+"認し、環境(Fabricのバージョン、プラットフォーム、バグ発生時に何をしようとして"
+"いたかを具体的に)をお知らせください。"
 
 # c64f317927c54932a7ae8c59150361d6
 #: ../../development.rst:34
 msgid ""
 "**Submit patches or new features.** Make a `Github <https://github.com>`_ "
-"account, `create a fork <http://help.github.com/fork-a-repo/>`_ of `the main"
-" Fabric repository <https://github.com/fabric/fabric>`_, and `submit a pull "
+"account, `create a fork <http://help.github.com/fork-a-repo/>`_ of `the main "
+"Fabric repository <https://github.com/fabric/fabric>`_, and `submit a pull "
 "request <http://help.github.com/send-pull-requests/>`_."
-msgstr "**パッチや新機能のコードを送ってください。** `Github <https://github.com>`_ アカウントを作成し、 `Fabricのメインリポジトリ <https://github.com/fabric/fabric>`_ を `フォークして <http://help.github.com/fork-a-repo/>`_ `プルリクエストを送ってください <http://help.github.com/send-pull-requests/>`_。"
+msgstr ""
+"**パッチや新機能のコードを送ってください。** `Github <https://github.com>`_ "
+"アカウントを作成し、 `Fabricのメインリポジトリ <https://github.com/fabric/"
+"fabric>`_ を `フォークして <http://help.github.com/fork-a-repo/>`_ `プルリク"
+"エストを送ってください <http://help.github.com/send-pull-requests/>`_。"
 
 # e0d84fb0b606472bb42615048ef96974
 #: ../../development.rst:39
 msgid ""
-"While we may not always reply promptly, we do try to make time eventually to"
-" inspect all contributions and either incorporate them or explain why we "
+"While we may not always reply promptly, we do try to make time eventually to "
+"inspect all contributions and either incorporate them or explain why we "
 "don't feel the change is a good fit."
-msgstr "必ずしもすぐには反応できないかもしれませんが、最終的にはすべてのパッチやコードを精査する時間を作るようにして、それらを取り込むか、取り込まない場合はなぜその変更がFabricに向かないかの説明をするようにします。"
+msgstr ""
+"必ずしもすぐには反応できないかもしれませんが、最終的にはすべてのパッチやコー"
+"ドを精査する時間を作るようにして、それらを取り込むか、取り込まない場合はなぜ"
+"その変更がFabricに向かないかの説明をするようにします。"
 
 # 5023d51977ba496cb198d6723b218895
 #: ../../../CONTRIBUTING.rst:2
@@ -104,23 +132,32 @@ msgid ""
 "**Create a new Git branch specific to your change(s).** For example, if "
 "you're adding a new feature to foo the bars, do something like the "
 "following::"
-msgstr "**その変更のための新しいGitブランチを作成してください。** 例えば、foo the barsという新しい機能を追加するには次のようにします::"
+msgstr ""
+"**その変更のための新しいGitブランチを作成してください。** 例えば、foo the "
+"barsという新しい機能を追加するには次のようにします::"
 
 # e95091803fcc4961a8e0369a45fbb09f
 #: ../../../CONTRIBUTING.rst:15
 msgid ""
 "This makes life much easier for maintainers if you have (or ever plan to "
 "have) additional changes in your own ``master`` branch."
-msgstr "こうすることにより、もし自分の ``master`` ブランチに追加の変更を加えるとしても(もしくはその予定だけだとしても)、メンテナーにとってはずいぶん楽になります。"
+msgstr ""
+"こうすることにより、もし自分の ``master`` ブランチに追加の変更を加えるとして"
+"も(もしくはその予定だけだとしても)、メンテナーにとってはずいぶん楽になりま"
+"す。"
 
 # 55131e4677374555a97644d6509528b4
 #: ../../../CONTRIBUTING.rst:18
 msgid ""
-"A corollary: please **don't put multiple fixes/features in the same "
-"branch/pull request**! In other words, if you're hacking on new feature X "
-"and find a bugfix that doesn't *require* new feature X, **make a new "
-"distinct branch and PR** for the bugfix."
-msgstr "当然の結果として、**同一ブランチ/同一プルリクエスト内に複数の修正/機能追加は行わないようにしてください**! 言い換えると、新しい機能をハッキングしていてその *機能* を必要としないバグフィックスがあるときは、そのバグフィックスのための **新しい別のブランチとプルリクエストを作成してください**。"
+"A corollary: please **don't put multiple fixes/features in the same branch/"
+"pull request**! In other words, if you're hacking on new feature X and find "
+"a bugfix that doesn't *require* new feature X, **make a new distinct branch "
+"and PR** for the bugfix."
+msgstr ""
+"当然の結果として、**同一ブランチ/同一プルリクエスト内に複数の修正/機能追加は"
+"行わないようにしてください**! 言い換えると、新しい機能をハッキングしていてそ"
+"の *機能* を必要としないバグフィックスがあるときは、そのバグフィックスのため"
+"の **新しい別のブランチとプルリクエストを作成してください**。"
 
 # cff6f82fe0bd4fc3b0be75be5e501978
 #: ../../../CONTRIBUTING.rst:23
@@ -129,15 +166,22 @@ msgid ""
 "or whatever's newest) and **new features** off of **master**. If you're "
 "unsure which category your change falls in, just ask on IRC or the mailing "
 "list -- it's often a judgement call."
-msgstr "**バグフィックス** は **最新のリリースブランチ** (例えば ``1.4``、``1.5`` などの最新)から、 **新しい機能** は **master** からブランチを作成してください。もし自分の変更がどのカテゴリーに属するのかわからない場合はIRCもしくはメーリングリストで聞いてください。"
+msgstr ""
+"**バグフィックス** は **最新のリリースブランチ** (例えば ``1.4``、``1.5`` な"
+"どの最新)から、 **新しい機能** は **master** からブランチを作成してください。"
+"もし自分の変更がどのカテゴリーに属するのかわからない場合はIRCもしくはメーリン"
+"グリストで聞いてください。"
 
 # b690db21844645b599dae84984472c02
 #: ../../../CONTRIBUTING.rst:27
 msgid ""
-"**Make sure documentation is updated** -- at the very least, keep docstrings"
-" current, and if necessary, update the ReST documentation in ``docs/``.  For"
-" example, new ``env.*`` settings should be added to ``docs/usage/env.rst``."
-msgstr "**ドキュメントを確実に更新してください** -- 最低限、docstringを最新にして、必要なら、 ``docs/`` のReSTドキュメントを更新してください。例えば、新しい ``env.*`` 設定は ``docs/usage/env.rst`` に追加します。"
+"**Make sure documentation is updated** -- at the very least, keep docstrings "
+"current, and if necessary, update the ReST documentation in ``docs/``.  For "
+"example, new ``env.*`` settings should be added to ``docs/usage/env.rst``."
+msgstr ""
+"**ドキュメントを確実に更新してください** -- 最低限、docstringを最新にして、必"
+"要なら、 ``docs/`` のReSTドキュメントを更新してください。例えば、新しい "
+"``env.*`` 設定は ``docs/usage/env.rst`` に追加します。"
 
 # 808191acf9e34ab6810ac3416ba4f559
 #: ../../../CONTRIBUTING.rst:30
@@ -145,40 +189,56 @@ msgid ""
 "**Add a changelog entry** at the top of ``docs/changelog.rst`` following "
 "existing entries' styles. Don't forget to attribute yourself if you'd like "
 "credit!"
-msgstr "**変更履歴を追加してください**。これまでのエントリーのスタイルにそって ``docs/changelog.rst`` の一番上に追加します。クレジットが欲しい場合は、ご自分への言及を忘れずに!"
+msgstr ""
+"**変更履歴を追加してください**。これまでのエントリーのスタイルにそって "
+"``docs/changelog.rst`` の一番上に追加します。クレジットが欲しい場合は、ご自分"
+"への言及を忘れずに!"
 
 # 7d052d2553184ee9a5c13cb1ebe5748f
 #: ../../../CONTRIBUTING.rst:34
 msgid ""
 "If your change is a feature or support ticket intended for backporting to "
 "older release lines, give it the ``backported`` keyword, e.g.::"
-msgstr "その変更が古いリリースへのバックポート向けの機能やサポートチケットなら、``backposted`` キーワードを含めてください。例えば::"
+msgstr ""
+"その変更が古いリリースへのバックポート向けの機能やサポートチケットなら、"
+"``backposted`` キーワードを含めてください。例えば::"
 
 # 920bd89a82ab4c0181c97b7a59d6d08f
 #: ../../../CONTRIBUTING.rst:39
 msgid ""
 "If it's a \"major\" bugfix that is getting put out in a feature release, "
 "give it the ``major`` keyword::"
-msgstr "主要なリリースとして扱われるような \"major\" (大き)なバグフィックスの場合は、 ``major`` キーワードを含めてください::"
+msgstr ""
+"主要なリリースとして扱われるような \"major\" (大き)なバグフィックスの場合"
+"は、 ``major`` キーワードを含めてください::"
 
 # 8d54cbd356a64106854b2a15ecfcadac
 #: ../../../CONTRIBUTING.rst:44
 msgid ""
-"**Try writing some tests** if possible -- again, following existing tests is"
-" often easiest, and a good way to tell whether the feature you're modifying "
+"**Try writing some tests** if possible -- again, following existing tests is "
+"often easiest, and a good way to tell whether the feature you're modifying "
 "is easily testable."
-msgstr "**テストをいくらか書くようにしてください**、もし可能なら。ご自分の変更が簡単にテスト可能かどうかを伝えるためには、既存のテストに従うのがたいていは最も簡単で最も優れた方法です。"
+msgstr ""
+"**テストをいくらか書くようにしてください**、もし可能なら。ご自分の変更が簡単"
+"にテスト可能かどうかを伝えるためには、既存のテストに従うのがたいていは最も簡"
+"単で最も優れた方法です。"
 
 # 62e64d937eb047a4853ed953916ba725
 #: ../../../CONTRIBUTING.rst:47
 msgid ""
 "**Use** ``hub pull-request`` when writing a patch for a **pre-existing "
 "Github Issue**. This isn't an absolute requirement, but makes the "
-"maintainers' lives much easier! Specifically: `install hub "
-"<https://github.com/defunkt/hub/#installation>`_ and then run `hub pull-"
-"request <https://github.com/defunkt/hub/#git-pull-request>`_ to turn the "
-"issue into a pull request containing your code."
-msgstr "**既存のGithubイシュー** のためのパッチを書く場合は ``hub pull-request`` を**使ってください**。これは必須ではありませんが、メンテナーが楽になります! 具体的にいうと、 `hubをインストール <https://github.com/defunkt/hub/#installation>`_ して、 `hub pull-request <https://github.com/defunkt/hub/#git-pull-request>`_ を実行します。すると、そのイシューを自分のコードが含まれたプルリクエストに変更します。"
+"maintainers' lives much easier! Specifically: `install hub <https://github."
+"com/defunkt/hub/#installation>`_ and then run `hub pull-request <https://"
+"github.com/defunkt/hub/#git-pull-request>`_ to turn the issue into a pull "
+"request containing your code."
+msgstr ""
+"**既存のGithubイシュー** のためのパッチを書く場合は ``hub pull-request`` を**"
+"使ってください**。これは必須ではありませんが、メンテナーが楽になります! 具体"
+"的にいうと、 `hubをインストール <https://github.com/defunkt/hub/"
+"#installation>`_ して、 `hub pull-request <https://github.com/defunkt/hub/"
+"#git-pull-request>`_ を実行します。すると、そのイシューを自分のコードが含まれ"
+"たプルリクエストに変更します。"
 
 # 4a2b60a0fe794adc911a02d55e81133c
 #: ../../development.rst:46
@@ -190,14 +250,18 @@ msgstr "コーディングスタイル"
 msgid ""
 "Fabric tries hard to honor `PEP-8`_, especially (but not limited to!) the "
 "following:"
-msgstr "Fabricは特に次の項目に関して(これに限定しているわけではありませんが!) `PEP-8`_ の履行に尽力しています:"
+msgstr ""
+"Fabricは特に次の項目に関して(これに限定しているわけではありませんが!) "
+"`PEP-8`_ の履行に尽力しています:"
 
 # ad3d6c65cb2a4ea5b8086a7bb345e2a9
 #: ../../development.rst:51
 msgid ""
 "Keep all lines under 80 characters. This goes for the ReST documentation as "
 "well as code itself."
-msgstr "すべての行を80文字以下に保つ。これはコード自体だけではなく、ReSTドキュメントにも当てはまります。"
+msgstr ""
+"すべての行を80文字以下に保つ。これはコード自体だけではなく、ReSTドキュメント"
+"にも当てはまります。"
 
 # f9595f3ce986426b82d0379aab164996
 #: ../../development.rst:54
@@ -205,21 +269,28 @@ msgid ""
 "Exceptions are made for situations where breaking a long string (such as a "
 "string being ``print``-ed from source code, or an especially long URL link "
 "in documentation) would be kind of a pain."
-msgstr "長い文字列の改行が困難な場合は例外となります(ソースコードからの ``print`` された文字列やドキュメント内の特に長いURLなど)。 "
+msgstr ""
+"長い文字列の改行が困難な場合は例外となります(ソースコードからの ``print`` さ"
+"れた文字列やドキュメント内の特に長いURLなど)。 "
 
 # 65dd32da40b044cd8de237b46fccda7f
 #: ../../development.rst:58
 msgid ""
 "Typical Python 4-space (soft-tab) indents. No tabs! No 8 space indents! (No "
 "2- or 3-space indents, for that matter!)"
-msgstr "Python標準の4スペース(ソフトタブ)インデントの使用。タブは使わないでください! 8スペースインデントは使わないでください。(さらに言えば、2スペースや3スペースインデントも!)"
+msgstr ""
+"Python標準の4スペース(ソフトタブ)インデントの使用。タブは使わないでください! "
+"8スペースインデントは使わないでください。(さらに言えば、2スペースや3スペース"
+"インデントも!)"
 
 # 2fb39062038240e994cbe290e8f1200b
 #: ../../development.rst:60
 msgid ""
-"``CamelCase`` class names, but ``lowercase_underscore_separated`` everything"
-" else."
-msgstr "クラス名は ``CamelCase`` で、それ以外は ``lowercase_underscore_separated`` で。"
+"``CamelCase`` class names, but ``lowercase_underscore_separated`` everything "
+"else."
+msgstr ""
+"クラス名は ``CamelCase`` で、それ以外は ``lowercase_underscore_separated`` "
+"で。"
 
 # 115f000fd1974331b7e652c28f1aad37
 #: ../../development.rst:66
@@ -233,14 +304,20 @@ msgid ""
 "communication in that ticket's comments -- for example, when submitting "
 "patches via Github, it's easier for us if you leave a note in the ticket "
 "**instead of** sending a Github pull request."
-msgstr "そのイシューに既存のチケットトラッカーのチケットがある場合は、そのチケットのコメント内ですべてのコミュニケーションをとるように **してください** 。例えば、GitHub経由でパッチを送る場合、GitHubプルリクエスト **送るのではなく** 、そのチケット内にメモを入れるとわたしたちにとって助かります。"
+msgstr ""
+"そのイシューに既存のチケットトラッカーのチケットがある場合は、そのチケットの"
+"コメント内ですべてのコミュニケーションをとるように **してください** 。例え"
+"ば、GitHub経由でパッチを送る場合、GitHubプルリクエスト **送るのではなく** 、"
+"そのチケット内にメモを入れるとわたしたちにとって助かります。"
 
 # 7c44411a67de4fd5a7e6607d73cf8fe2
 #: ../../development.rst:73
 msgid ""
 "The core devs receive emails for just about any ticket-tracker activity, so "
 "additional notices via Github or other means only serve to slow things down."
-msgstr "主要開発者たちはチケットラッカーのすべてのアクティビティのメールを受け取ります。そのため、GitHubやその他を経由する追加の通知は進行を遅くするだけです。"
+msgstr ""
+"主要開発者たちはチケットラッカーのすべてのアクティビティのメールを受け取りま"
+"す。そのため、GitHubやその他を経由する追加の通知は進行を遅くするだけです。"
 
 # 917a8de932d74e369a737e4771c35010
 #: ../../development.rst:77
@@ -250,12 +327,16 @@ msgstr "ブランチ/リポジトリのレイアウト"
 # 20f886b34d9e43409f105e617109fedd
 #: ../../development.rst:79
 msgid ""
-"While Fabric's development methodology isn't set in stone yet, the following"
-" items detail how we currently organize the Git repository and expect to "
+"While Fabric's development methodology isn't set in stone yet, the following "
+"items detail how we currently organize the Git repository and expect to "
 "perform merges and so forth. This will be chiefly of interest to those who "
-"wish to follow a specific Git branch instead of released versions, or to any"
-" contributors."
-msgstr "Fabricの開発手順はまだ確定しているというわけではありませんが、現在どのようにGitリポジトリを構造化し、マージその他を実行するかについて以下の項目で詳述します。これは主に、リリースされたバージョンではなく特定のGitブランチを追うことを望む方たちとすべての参加協力者の方たちにとって利益になるでしょう。"
+"wish to follow a specific Git branch instead of released versions, or to any "
+"contributors."
+msgstr ""
+"Fabricの開発手順はまだ確定しているというわけではありませんが、現在どのように"
+"Gitリポジトリを構造化し、マージその他を実行するかについて以下の項目で詳述しま"
+"す。これは主に、リリースされたバージョンではなく特定のGitブランチを追うことを"
+"望む方たちとすべての参加協力者の方たちにとって利益になるでしょう。"
 
 # 888dc11166324716950a100ed613c1e0
 #: ../../development.rst:85
@@ -266,7 +347,14 @@ msgid ""
 "development is performed in a central ``master`` branch and/or in feature-"
 "specific feature branches (e.g. a branch for reworking the internals to be "
 "threadsafe, or one for overhauling task dependencies, etc.)"
-msgstr "わたしたちは「リリースブランチとフィーチャーブランチ」を統合した開発手法を採っています。各マイナーリリース(例えば、0.9、1.0、1.1、1.2など。バージョニングに関しては :ref:`releases` を参照してください)でバグフィックスのためのリリースブランチを持ち、大きな機能開発は中央の ``master`` ブランチ と/もしくはその特定の機能用のフィーチャーブランチで行われます(例えばスレッドセーフにするための内部的な改変のためのブランチや、タスク依存のオーバーホールのためのブランチなど)。"
+msgstr ""
+"わたしたちは「リリースブランチとフィーチャーブランチ」を統合した開発手法を"
+"採っています。各マイナーリリース(例えば、0.9、1.0、1.1、1.2など。バージョニン"
+"グに関しては :ref:`releases` を参照してください)でバグフィックスのためのリ"
+"リースブランチを持ち、大きな機能開発は中央の ``master`` ブランチ と/もしくは"
+"その特定の機能用のフィーチャーブランチで行われます(例えばスレッドセーフにする"
+"ための内部的な改変のためのブランチや、タスク依存のオーバーホールのためのブラ"
+"ンチなど)。"
 
 # 2960508227134294be94363bc17795e3
 #: ../../development.rst:91
@@ -274,7 +362,10 @@ msgid ""
 "Releases each get their own release branch, e.g. ``0.9``, ``1.0``, ``1.1`` "
 "etc, and from these the actual releases are tagged, e.g. ``0.9.3`` or "
 "``1.0.0``."
-msgstr "各リリースは専用のリリースブランチを持ちます。例えば、 ``0.9``、 ``1.0``、 ``1.1`` などで、実際のリリースはここでタグ付けされます。例えば、``0.9.3`` や ``1.0.0`` などです。"
+msgstr ""
+"各リリースは専用のリリースブランチを持ちます。例えば、 ``0.9``、 ``1.0``、 "
+"``1.1`` などで、実際のリリースはここでタグ付けされます。例えば、``0.9.3`` や "
+"``1.0.0`` などです。"
 
 # 241cb9a6d73d41c1a2ac84b5a96a44b0
 #: ../../development.rst:94
@@ -283,23 +374,34 @@ msgid ""
 "convention is ``<ticket number>-<short-description>``. For example, ticket "
 "#61, which concerned adding ``cd`` support to ``get`` and ``put``, was "
 "developed in a branch named ``61-add-cd-to-get-put``."
-msgstr "新機能の作業は通常はフィーチャーブランチで行われます。命名規則は ``<ticket number>-<short-description>`` です。例えば、 ``get`` と ``put`` に ``cd`` サポートを追加するためのチケット#61は、 ``61-add-cd-to-get-put`` と命名されたブランチで開発されました。"
+msgstr ""
+"新機能の作業は通常はフィーチャーブランチで行われます。命名規則は ``<ticket "
+"number>-<short-description>`` です。例えば、 ``get`` と ``put`` に ``cd`` サ"
+"ポートを追加するためのチケット#61は、 ``61-add-cd-to-get-put`` と命名されたブ"
+"ランチで開発されました。"
 
 # 49380e62db17409ea00a6353b2b9d10a
 #: ../../development.rst:99
+#, fuzzy
 msgid ""
 "These branches are not intended for public use, and may be cleaned out of "
 "the repositories periodically. Ideally, no one feature will be in "
 "development long enough for its branch to become used in production!"
 msgstr ""
+"これらのブランチは一般的な使用を目的とはしていませんし、定期的にリポジトリか"
+"ら片付けられるかもしれません。"
 
 # 78753d193b374c85b30669c6814318a3
 #: ../../development.rst:103
 msgid ""
-"Completed feature work is merged into the ``master`` branch, and once enough"
-" new features are done, a new release branch is created and optionally used "
+"Completed feature work is merged into the ``master`` branch, and once enough "
+"new features are done, a new release branch is created and optionally used "
 "to create prerelease versions for testing -- or simply released as-is."
-msgstr "完了した機能追加は ``master`` ブランチへマージされ、新しい機能追加が十分そろったところで新しいリリースブランチが作成されたり、テスト用のプレリリースバージョンを作成するために利用されたり、もしくは単にそのままリリースされたりします。"
+msgstr ""
+"完了した機能追加は ``master`` ブランチへマージされ、新しい機能追加が十分そ"
+"ろったところで新しいリリースブランチが作成されたり、テスト用のプレリリース"
+"バージョンを作成するために利用されたり、もしくは単にそのままリリースされたり"
+"します。"
 
 # e039e86e496e4d41bb7f8830f0580c0a
 #: ../../development.rst:106
@@ -309,6 +411,10 @@ msgid ""
 "guarantee of stability in the release branches. Only follow ``master`` (or, "
 "even worse, feature branches!) if you're willing to deal with a little pain."
 msgstr ""
+"コードを破壊したり警告なしでのAPIの変更はしないよう最大限の努力はしています"
+"が、他の多くのオープンソースプロジェクトと同様、リリースブランチでの安定性し"
+"かわたしたちは保証していません。少しでも痛みを抑えたいのなら、 ``master`` だ"
+"け(最悪でもフィーチャーブランチ)をフォローしてください。"
 
 # c06c9a8ebd424dd0baea32d6a7a4d0d0
 #: ../../development.rst:110
@@ -319,6 +425,11 @@ msgid ""
 "decent middle ground between stability and the ability to get bugfixes or "
 "backported features easily."
 msgstr ""
+"反対に、わたしたちはリリースブランチを比較的安定に保つようにしているので、新"
+"しいリリースバージョンに手動でアップグレードするよりも、リリースブランチの"
+"ソースをチェックアウトしてFabricを利用するほうが容易かもしれません。これは、"
+"安定性とバグフィックスやバックポートされた機能を簡単に得るための機能性の間に"
+"ある、かなり優れた妥協点を提供することができます。"
 
 # ac82adbe0c774aaea56aecc405e79fe5
 #: ../../development.rst:115
@@ -332,17 +443,17 @@ msgstr ""
 #: ../../development.rst:118
 msgid ""
 "Bugfixes are to be performed on release branches and then merged into "
-"``master`` so that ``master`` is always up-to-date (or nearly so; while it's"
-" not mandatory to merge after every bugfix, doing so at least daily is a "
-"good idea.)"
+"``master`` so that ``master`` is always up-to-date (or nearly so; while it's "
+"not mandatory to merge after every bugfix, doing so at least daily is a good "
+"idea.)"
 msgstr ""
 
 # 4311e758c8cb4b7b9e7ceccf4871bf2a
 #: ../../development.rst:122
 msgid ""
 "Feature branches should periodically merge in changes from ``master`` so "
-"that when it comes time for them to merge back into ``master`` things aren't"
-" quite as painful."
+"that when it comes time for them to merge back into ``master`` things aren't "
+"quite as painful."
 msgstr ""
 
 # f633d9ee9dc346e8ac6bdb3d13c29d51
@@ -355,8 +466,8 @@ msgstr "リリース"
 msgid ""
 "Fabric tries to follow open-source standards and conventions in its release "
 "tagging, including typical version numbers such as 2.0, 1.2.5, or 1.2b1. "
-"Each release will be marked as a tag in the Git repositories, and are broken"
-" down as follows:"
+"Each release will be marked as a tag in the Git repositories, and are broken "
+"down as follows:"
 msgstr ""
 
 # 99f5937f2aa04b3a945e385fc3be91c0
@@ -374,19 +485,19 @@ msgstr ""
 # 96ed55e8aec341b38b485a05d7773776
 #: ../../development.rst:142
 msgid ""
-"For example, the 1.0 release signified a commitment to a medium to long term"
-" API and some significant backwards incompatible (compared to the 0.9 "
-"series) features. Version 2.0 might indicate a rewrite using a new "
-"underlying network technology or an overhaul to be more object-oriented."
+"For example, the 1.0 release signified a commitment to a medium to long term "
+"API and some significant backwards incompatible (compared to the 0.9 series) "
+"features. Version 2.0 might indicate a rewrite using a new underlying "
+"network technology or an overhaul to be more object-oriented."
 msgstr ""
 
 # 40433d32c7914980862e443fc95342c7
 #: ../../development.rst:147
 msgid ""
 "Major releases will often be backwards-incompatible with the previous line "
-"of development, though this is not a requirement, just a usual happenstance."
-" Users should expect to have to make at least some changes to their fabfiles"
-" when switching between major versions."
+"of development, though this is not a requirement, just a usual happenstance. "
+"Users should expect to have to make at least some changes to their fabfiles "
+"when switching between major versions."
 msgstr ""
 
 # 9911c21eedb9437bb17a29cf7871a44b
@@ -421,8 +532,8 @@ msgstr "バグフィクス/第三のバージョン"
 #: ../../development.rst:168
 msgid ""
 "The third and final part of version numbers, such as the '3' in 1.0.3, "
-"generally indicate a release containing one or more bugfixes, although minor"
-" feature modifications may (rarely) occur."
+"generally indicate a release containing one or more bugfixes, although minor "
+"feature modifications may (rarely) occur."
 msgstr ""
 
 # e64739c857974f19a411f2ff77d5009a
@@ -436,8 +547,8 @@ msgstr ""
 # 888b5015f5214448ba2f64f0a451d42e
 #: ../../development.rst:178
 msgid ""
-"The 0.9 series of development included more significant feature work than is"
-" typically found in tertiary releases; from 1.0 onwards a more traditional "
+"The 0.9 series of development included more significant feature work than is "
+"typically found in tertiary releases; from 1.0 onwards a more traditional "
 "approach, as per the above, is used."
 msgstr ""
 
@@ -456,8 +567,8 @@ msgstr ""
 # 9db824a99e9a412685ffb5cc4b1bc432
 #: ../../development.rst:189
 msgid ""
-"The two most recent minor release branches will continue to receive critical"
-" bugfixes. For example, if 1.1 were the latest minor release, it and 1.0 "
+"The two most recent minor release branches will continue to receive critical "
+"bugfixes. For example, if 1.1 were the latest minor release, it and 1.0 "
 "would get bugfixes, but not 0.9 or earlier; and once 1.2 came out, this "
 "window would then only extend back to 1.1."
 msgstr ""
@@ -475,8 +586,8 @@ msgstr ""
 # e68b1b26b2ab42d394700ebf8d29865a
 #: ../../development.rst:198
 msgid ""
-"This policy may change in the future to accommodate more branches, depending"
-" on development speed."
+"This policy may change in the future to accommodate more branches, depending "
+"on development speed."
 msgstr ""
 
 # 7e246ebf58534d1980c98564f52b0c7f
@@ -486,6 +597,6 @@ msgid ""
 "(and thus keep new features coming out frequently) without causing users to "
 "feel too much pressure to upgrade right away. At the same time, the "
 "backwards compatibility guarantee means that users should still feel "
-"comfortable upgrading to the next minor release in order to stay within this"
-" sliding support window."
+"comfortable upgrading to the next minor release in order to stay within this "
+"sliding support window."
 msgstr ""
