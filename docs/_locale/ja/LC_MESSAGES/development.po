@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-04-13 14:57+0900\n"
+"PO-Revision-Date: 2014-04-22 09:31+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -438,6 +438,9 @@ msgid ""
 "official repositories. Since Git is Git, contributors may of course do "
 "whatever they wish in their own clones/forks."
 msgstr ""
+"コアの開発者は公式のリポジトリではマージ作業とブランチ作成の実施の面倒を見ま"
+"す。GitはGitなので、コントリビューターはもちろん自分のクローンやフォークでな"
+"んでも好きにできます。"
 
 # 54f2daa6893a4d0d8071c1b491ace072
 #: ../../development.rst:118
@@ -447,6 +450,10 @@ msgid ""
 "not mandatory to merge after every bugfix, doing so at least daily is a good "
 "idea.)"
 msgstr ""
+"バグフィックスはリリースブランチで実施され、その後 ``master`` にマージされま"
+"す。したがって ``master`` は常に最新(もしくは、各バグフィックスごとに強制的に"
+"マージされるわけではないので、ほぼ最新です。最低でも日毎に行うのはいい考えで"
+"す)です。"
 
 # 4311e758c8cb4b7b9e7ceccf4871bf2a
 #: ../../development.rst:122
@@ -455,6 +462,9 @@ msgid ""
 "that when it comes time for them to merge back into ``master`` things aren't "
 "quite as painful."
 msgstr ""
+"フィーチャーブランチでは定期的に変更点を ``master`` からマージするといいで"
+"しょう。そうすると、 ``master`` にマージして戻すときにそれほど苦労しないはず"
+"です。"
 
 # f633d9ee9dc346e8ac6bdb3d13c29d51
 #: ../../development.rst:129
@@ -469,6 +479,9 @@ msgid ""
 "Each release will be marked as a tag in the Git repositories, and are broken "
 "down as follows:"
 msgstr ""
+"Fabricは、2.0、1.2.5、1.2bなど、一般的なバージョンナンバーを含め、リリースの"
+"タグ付けに関してオープンソースの基準と規約に従うようにしています。書くリリー"
+"スはGit内でタグとしてマークされ、次のように分けられます:"
 
 # 99f5937f2aa04b3a945e385fc3be91c0
 #: ../../development.rst:137
@@ -481,6 +494,8 @@ msgid ""
 "Major releases update the first number, e.g. going from 0.9 to 1.0, and "
 "indicate that the software has reached some very large milestone."
 msgstr ""
+"メジャーリリースでは最初の番号を更新します。例えば0.9から1.0で、これはこのソ"
+"フトウェアが大きなマイルストーンに達したことを意味します。"
 
 # 96ed55e8aec341b38b485a05d7773776
 #: ../../development.rst:142
@@ -490,6 +505,10 @@ msgid ""
 "features. Version 2.0 might indicate a rewrite using a new underlying "
 "network technology or an overhaul to be more object-oriented."
 msgstr ""
+"例えば、1.0リリースでは中期から長期のAPIと、ある程度重要な後方互換性(0.9シ"
+"リーズと比較して)へのコミットメントを意味していました。バージョン2.0では、下"
+"層の新しいネットワーク技術を利用した書き直しや、よりオブジェクト指向にするた"
+"めのオーバーホールを目指すことになるでしょう。"
 
 # 40433d32c7914980862e443fc95342c7
 #: ../../development.rst:147
@@ -499,6 +518,11 @@ msgid ""
 "Users should expect to have to make at least some changes to their fabfiles "
 "when switching between major versions."
 msgstr ""
+"メジャーリリースではその開発の前のメジャーバージョンのラインとの後方互換性が"
+"なくなることがありますが、これは必須のことではありませんし、たまたまそうなっ"
+"てしまったというだけのことが普通です。メジャーバージョンのアップグレードで"
+"は、ユーザーは自分のfabfileに少なくともなんらかの変更が必要になることは覚悟す"
+"るべきでしょう。"
 
 # 9911c21eedb9437bb17a29cf7871a44b
 #: ../../development.rst:153
@@ -514,6 +538,10 @@ msgid ""
 "have occurred since the previous minor release. (And, naturally, some of "
 "them will involve both at the same time.)"
 msgstr ""
+"1.0から1.1などのマイナーリリースでは、ひとつもしくは複数の新しくて大きな機能"
+"が追加されることを一般的には意味します。また、前のマイナーリリースに対してバ"
+"グがたくさんフィクスされたか、小さな機能変更が施されたこと(もちろん両方が同時"
+"に含まれることもあります)に印を付けるということのためにも利用されます。"
 
 # 984554300d1645bc96710bed966442b2
 #: ../../development.rst:161
@@ -522,6 +550,9 @@ msgid ""
 "releases containing the same major version number, so a fabfile that works "
 "with 1.0 should also work fine with 1.1 or even 1.9."
 msgstr ""
+"これらのリリースは同じメジャーリリース番号を含んでいる他のすべてとの後方互換"
+"性が保証されています。したがって、1.0で動作するfabfileは1.1や1.9でも動作する"
+"はずです。"
 
 # 7c066c94f3bb47459d600c98ecc91e5a
 #: ../../development.rst:166
@@ -535,6 +566,9 @@ msgid ""
 "generally indicate a release containing one or more bugfixes, although minor "
 "feature modifications may (rarely) occur."
 msgstr ""
+"1.0.3の'3'のようなバージョンナンバーの3つ目の、そして最後の部分は、一般的にひ"
+"とつもしくは複数のバグフィックスを含むリリースであることを示しています。ま"
+"た、小さな機能変更が含まれることも(まれに)あります。"
 
 # e64739c857974f19a411f2ff77d5009a
 #: ../../development.rst:172
@@ -543,6 +577,8 @@ msgid ""
 "in a series, e.g. 1.2 or 2.0, and in these cases it can be considered an "
 "implicit zero (e.g. 2.0.0)."
 msgstr ""
+"この3つ目の番号は最初のメジャーもしくはマイナーリリースでは省略されることが有"
+"ります。例えば1.2や2.0で、この場合、暗黙的にゼロがあるとみなされます。"
 
 # 888b5015f5214448ba2f64f0a451d42e
 #: ../../development.rst:178
@@ -551,6 +587,9 @@ msgid ""
 "typically found in tertiary releases; from 1.0 onwards a more traditional "
 "approach, as per the above, is used."
 msgstr ""
+"0.9シリーズの開発では、第三のバージョンの通常のリリースで見られるよりもより重"
+"要な機能的な作業が含まれていました。1.0からは上述したようによりトラディショナ"
+"ルなアプローチが用いられています。"
 
 # ce657f177b92458884432a52dc46440a
 #: ../../development.rst:184
@@ -563,6 +602,8 @@ msgid ""
 "Major and minor releases do not mark the end of the previous line or lines "
 "of development:"
 msgstr ""
+"メジャーとマイナーのリリースはその前のバージョンラインや開発のラインの終わり"
+"を告げるものではありません。"
 
 # 9db824a99e9a412685ffb5cc4b1bc432
 #: ../../development.rst:189
@@ -572,6 +613,10 @@ msgid ""
 "would get bugfixes, but not 0.9 or earlier; and once 1.2 came out, this "
 "window would then only extend back to 1.1."
 msgstr ""
+"重要なバグフィックスは2つの最も最近のマイナーリリースで引き続き受け付けられま"
+"す。例えば、1.1が最新のマイナーリリースの場合、このバージョンと1.0ではバグが"
+"フィックスされることがありますが、0.9やそれ以前のバージョンではありません。そ"
+"して1.2がリリースされると、こんどは1.1までが対象となります。"
 
 # fae5212003354f2b9149ae7182dd94dc
 #: ../../development.rst:193
@@ -582,6 +627,10 @@ msgid ""
 "affected 0.9 and could be easily applied, a new 0.9.x version *might* be "
 "released."
 msgstr ""
+"発見されたバグの性質やバックポートの難易度にもよりますが、古いリリースライン"
+"へもバグのフィックスが入るとことがあります。ただし、どんな種類の保証もされて"
+"いはいませんが。もし0.9に影響を与えるバグが1.1で見つかった場合、そして修正の"
+"適用が簡単な場合、新しい0.9のバージョンがリリースされる *かも* しれません。"
 
 # e68b1b26b2ab42d394700ebf8d29865a
 #: ../../development.rst:198
@@ -589,6 +638,8 @@ msgid ""
 "This policy may change in the future to accommodate more branches, depending "
 "on development speed."
 msgstr ""
+"開発のスピードにもよりますが、将来的にはより多くのブランチに適応するためにこ"
+"のポリシーは変更されるかもしれません。"
 
 # 7e246ebf58534d1980c98564f52b0c7f
 #: ../../development.rst:201
@@ -600,3 +651,9 @@ msgid ""
 "comfortable upgrading to the next minor release in order to stay within this "
 "sliding support window."
 msgstr ""
+"このポリシーによって、すぐにアップグレードしなくてならないという多大な圧力を"
+"ユーザーに感じさせることなく、高速なマイナーリリースのサイクルが可能になるこ"
+"と(そして、新しい機能が頻繁に登場するような状態を保つこと)を私たちは望んでい"
+"ます。同時に、後方互換性を請け負うことは、メンテナンスされるバージョンをスラ"
+"イドさせていくためにも、ユーザーにとって次のマイナーリリースへのアップグレー"
+"ドを気安く感じさせることができます。"

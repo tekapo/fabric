@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-04-13 13:15+0900\n"
+"PO-Revision-Date: 2014-04-19 13:40+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,6 @@ msgstr ""
 "られた ``fabfile/`` もしくは ``fabfile.py`` を探します。"
 
 #: ../../usage/fabfiles.rst:18
-#, fuzzy
 msgid ""
 "The fabfile discovery algorithm searches in the invoking user's current "
 "working directory or any parent directories. Thus, it is oriented around "
@@ -52,7 +51,10 @@ msgid ""
 "the tree the user invokes ``fab``."
 msgstr ""
 "fabfileの探索アルゴリズムは、起動しているユーザーのカレントワーキングディレク"
-"トリやその親ディレクトリを探します。"
+"トリやその親ディレクトリを探します。したがって、\"プロジェクト\" ユース周り指"
+"向で、例えばコードツリーのルートに ``fabfile.py`` を保持しておきます。こうし"
+"たfabfileは、ユーザーが ``fab`` を呼び出すツリー内であればどこであれ見つけら"
+"れます。"
 
 #: ../../usage/fabfiles.rst:24
 msgid ""
@@ -63,6 +65,12 @@ msgid ""
 "f fab_tasks.py <task name>``, or add ``fabfile = fab_tasks.py`` to ``~/."
 "fabricrc``."
 msgstr ""
+"探索される特定の名称は :option:`-f` オプション付きのコマンドラインや "
+"``fabfile`` の値をセットする :ref:`fabricrc <fabricrc>` 行を追加することで"
+"オーバーライドできます。例えば、fabfileを ``fab_tasks.py`` と名づけたい場合、"
+"そのファイル名でファイルを作成し、 ``fab -f fab_tasks.py <task name>`` という"
+"具合に呼び出すか、``~/.fabricrc`` に ``fabfile = fab_tasks.py`` を追加しま"
+"す。"
 
 #: ../../usage/fabfiles.rst:31
 msgid ""
@@ -72,6 +80,11 @@ msgid ""
 "When in this mode, tilde-expansion will be applied, so one may refer to e.g. "
 "``~/personal_fabfile.py``."
 msgstr ""
+"与えられたfabfile名にファイル名ではなくパス要素が含まれる場合(例えば、``../"
+"fabfile.py`` や ``/dir1/dir2/custom_fabfile``)、それはファイルパスとして扱わ"
+"れ、その存在の確認がどのような種類の探索もなしに直に行われます。このモード"
+"時、チルダは展開されて適用されますので、例えば、``~/personal_fabfile.py`` な"
+"ども参照可能です。"
 
 #: ../../usage/fabfiles.rst:39
 msgid ""
@@ -81,10 +94,14 @@ msgid ""
 "fabfile's containing folder to the Python load path (and removes it "
 "immediately afterwards.)"
 msgstr ""
+"Fabricはそのコンテンツにアクセスするためにfabfileの通常の ``import`` (実際は "
+"``__import__``) を行います。 ``評価`` もしくはそれに類似する動作は行いませ"
+"ん。そのため、Fabricは一時的に見つけたfabfileを含むフォルダーをPythonの読み込"
+"みパスに追加します(そして後ですぐに取り除きます)。"
 
 #: ../../usage/fabfiles.rst:45
 msgid "The ability to load package fabfiles."
-msgstr ""
+msgstr "fabfileのパッケージを読み込む機能。"
 
 #: ../../usage/fabfiles.rst:52
 msgid "Importing Fabric"
@@ -97,6 +114,10 @@ msgid ""
 "make life easier for Fabric's packaging script) Fabric's public API is "
 "maintained in the ``fabric.api`` module."
 msgstr ""
+"FabricはただのPythonなので、そのコンポーネントを好きなようにインポート *可能"
+"* です。とは言え、カプセル化と利便性のため(そしてFabricのパッケージスクリプト"
+"の仕事をやりやすくするため)、 ``fabric.api`` モジュール内にFabricのパブリック"
+"APIがメンテナンスされています。"
 
 #: ../../usage/fabfiles.rst:59
 msgid ""
@@ -105,6 +126,11 @@ msgid ""
 "utils` are included in this module as a single, flat namespace. This enables "
 "a very simple and consistent interface to Fabric within your fabfiles::"
 msgstr ""
+"Fabricの :doc:`../api/core/operations`、 :doc:`../api/core/"
+"context_managers`、 :doc:`../api/core/decorators`、 :doc:`../api/core/utils` "
+"のすべてが、単一でフラットな名前空間としてこのモジュールに含まれています。こ"
+"れによりfabfile内のFabricに対するとても単純で一貫性のあるインターフェイスが可"
+"能になっています::"
 
 #: ../../usage/fabfiles.rst:69
 msgid ""
@@ -114,18 +140,25 @@ msgid ""
 "nontrivial fabfiles, you'll be using all or most of the API, and the star "
 "import::"
 msgstr ""
+"これは(`多くの理由により`_)技術的なベストプラクティスではありませんし、Fab "
+"APIの呼び出しを2,3利用するだけならおそらく ``from fabric.api import env, "
+"run`` などのように明示したほうが *いい* でしょう。とは言え、たいていの単純で"
+"はないfabfileではすべてもしくはほとんどのAPIを利用するでしょうから、スター(ア"
+"スタリスク)のインポートを使うといいでしょう::"
 
 #: ../../usage/fabfiles.rst:77
 msgid "will be a lot easier to write and read than::"
-msgstr ""
+msgstr "上記は、以下を読み書きするよりははるかに容易でしょう::"
 
 #: ../../usage/fabfiles.rst:82
 msgid "so in this case we feel pragmatism overrides best practices."
 msgstr ""
+"なので、このケースではベストプラクティスよりも実用主義の方がより優位に感じま"
+"す。"
 
 #: ../../usage/fabfiles.rst:88
 msgid "Defining tasks and importing callables"
-msgstr ""
+msgstr "タスクの定義とコールバックのインポート"
 
 #: ../../usage/fabfiles.rst:90
 msgid ""
@@ -133,3 +166,6 @@ msgid ""
 "when it loads your fabfile, as well as notes on how best to import other "
 "code, please see :doc:`/usage/tasks` in the :doc:`execution` documentation."
 msgstr ""
+"fabfileを読み込んだ時にFabricが正確には何をタスクとみなすのかについて、そして"
+"他のコードをインポートする良い方法についての重要な情報が :doc:`execution` ド"
+"キュメンテーションの :doc:`/usage/tasks` にありますので、参考にしてください。"

@@ -1,19 +1,23 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-05-19 17:52+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Language: ja\n"
 "Content-Transfer-Encoding: 8bit\n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../../usage/library.rst:3
 msgid "Library Use"
-msgstr ""
+msgstr "ライブラリの利用"
 
 #: ../../usage/library.rst:5
 msgid ""
@@ -22,6 +26,10 @@ msgid ""
 "internals are written in such a manner as to be easily used without ``fab`` "
 "or fabfiles at all -- this document will show you how."
 msgstr ""
+"Fabricの主なユースケースではfabfileと :doc:`fab </usage/fab>` ツール経由で、"
+"このドキュメントのほとんどではそのことについて書かれています。とは言え、"
+"Fabricの中は ``fab`` やfabfileをまったく使わなくても簡単に使えるように書かれ"
+"ています。このドキュメントではその方法を紹介します。"
 
 #: ../../usage/library.rst:10
 msgid ""
@@ -29,19 +37,27 @@ msgid ""
 "compared to writing a fabfile and using ``fab`` to run it: how connections "
 "are really made, and how disconnections occur."
 msgstr ""
+"fabfileを書くことや実行時に ``fab`` を使うことと比較した場合に、いくつか念頭"
+"に置いてほしいことが有ります。どのように接続されているのかとどのように切断さ"
+"れるかということです。"
 
 #: ../../usage/library.rst:15
 msgid "Connections"
-msgstr ""
+msgstr "接続"
 
 #: ../../usage/library.rst:17
 msgid ""
 "We've documented how Fabric really connects to its hosts before, but it's "
 "currently somewhat buried in the middle of the overall :doc:`execution docs "
-"</usage/execution>`. Specifically, you'll want to skip over to the "
-":ref:`connections` section and read it real quick. (You should really give "
-"that entire document a once-over, but it's not absolutely required.)"
+"</usage/execution>`. Specifically, you'll want to skip over to the :ref:"
+"`connections` section and read it real quick. (You should really give that "
+"entire document a once-over, but it's not absolutely required.)"
 msgstr ""
+"Fabricが実際にどのようにホストに接続するかについては以前に文書化しています"
+"が、いまは :doc:`execution docs </usage/execution>` 全体のどこかに埋もれてし"
+"まっています。特に :ref:`connections` セクションに行ってざっと読んでみるとい"
+"いかもしれません(必須ではありませんが、一度はこのドキュメントの全体をざっと読"
+"んだほうがよいでしょう)。"
 
 #: ../../usage/library.rst:23
 msgid ""
@@ -51,6 +67,11 @@ msgid ""
 "mechanisms for setting hosts are interpreted by the ``fab`` tool when it "
 "runs, and don't matter when running as a library."
 msgstr ""
+"このセクションでも言及しているように、重要なのは :ref:`env.host_string "
+"<host_string>` に接続時に `~fabric.operations.run`、`~fabric.operations."
+"sudo` その他の操作がひとつの場所を見に行っているだけだということです。ホスト"
+"をセットするその他のすべてのメカニズムは実行時に ``fab`` ツールによって解釈さ"
+"れ、ライブラリとして実行される場合は問題にはなりません。"
 
 #: ../../usage/library.rst:29
 msgid ""
@@ -60,10 +81,15 @@ msgid ""
 "`~fabric.tasks.execute`'s documentation for details -- manual host string "
 "manipulation should be rarely necessary."
 msgstr ""
+"とは言え、与えられたタスク ``X`` と与えられたホストのリスト ``Y`` を結合した"
+"いという大抵のユースケースでは、Fabric 1.3の時点で、 ``execute(X, hosts=Y)`` "
+"経由の `~fabric.tasks.execute` 関数で扱うことができます。詳細は `~fabric."
+"tasks.execute` のドキュメントをご覧ください。手動でのホスト文字列の操作はほと"
+"んど必要ないはずです。"
 
 #: ../../usage/library.rst:32
 msgid "Disconnecting"
-msgstr ""
+msgstr "接続解除"
 
 #: ../../usage/library.rst:34
 msgid ""
@@ -71,25 +97,35 @@ msgid ""
 "hosts at the end of a session; otherwise, Python will sit around forever "
 "waiting for those network resources to be released."
 msgstr ""
+"他に ``fab`` が行うおもなことは、セッションの終わりにすべてのホストからの接続"
+"を解除することです。そうしないと、Pythonはそれらのネットワークリソースが解放"
+"されるまで居座り続けるでしょう。"
 
 #: ../../usage/library.rst:38
 msgid ""
 "Fabric 0.9.4 and newer have a function you can use to do this easily: "
-"`~fabric.network.disconnect_all`. Simply make sure your code calls this when"
-" it terminates (typically in the ``finally`` clause of an outer ``try: "
+"`~fabric.network.disconnect_all`. Simply make sure your code calls this when "
+"it terminates (typically in the ``finally`` clause of an outer ``try: "
 "finally`` statement -- lest errors in your code prevent disconnections from "
 "happening!) and things ought to work pretty well."
 msgstr ""
+"Fabric 0.9.4以降ではこれを簡単に行うために利用できる関数、`~fabric.network."
+"disconnect_all` が有ります。終了時(たいていは ``try: finally`` ステートメント"
+"の外の ``finally`` 節で、何かの拍子に接続解除を妨げるエラーをださないよう)"
+"に、単にこれを自分のコードで呼び出すようにします。これでうまく動作するはずで"
+"す。"
 
 #: ../../usage/library.rst:44
 msgid ""
 "If you're on Fabric 0.9.3 or older, you can simply do this "
 "(``disconnect_all`` just adds a bit of nice output to this logic)::"
 msgstr ""
+"Fabric 0.9.3以上なら、単にこれだけです(``disconnect_all`` はこのロジックに"
+"ちょっと整った出力を加えているだけです)::"
 
 #: ../../usage/library.rst:55
 msgid "Final note"
-msgstr ""
+msgstr "最後に"
 
 #: ../../usage/library.rst:57
 msgid ""
@@ -99,3 +135,8 @@ msgid ""
 "Fabric source code, ``fabric/main.py`` contains the bulk of the extra work "
 "done by ``fab``, and may serve as a useful reference."
 msgstr ""
+"このドキュメントは初期の草稿段階で、 ``fab`` の利用とライブラリの利用との違い"
+"をすべてカバーしてはいません。とは言え、上記はもっともつまずきやすい箇所にハ"
+"イライトを当てています。疑問に思った時はFabricのソースコード内のメモに "
+"``fab`` によって実行される追加の動作の大半が含まれていますので参照してくださ"
+"い。"
