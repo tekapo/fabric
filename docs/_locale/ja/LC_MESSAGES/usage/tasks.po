@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-05-20 09:30+0900\n"
+"PO-Revision-Date: 2014-06-09 15:25+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,8 @@ msgid ""
 "As of Fabric 1.1, there are two distinct methods you may use in order to "
 "define which objects in your fabfile show up as tasks:"
 msgstr ""
+"Fabric 1.1からは、fabfileの中でどのオブジェクトをタスクとして示すかを定義する"
+"ために利用できる、2つのはっきりと異なった方法があります:"
 
 #: ../../usage/tasks.rst:8
 msgid ""
@@ -30,6 +32,9 @@ msgid ""
 "Task` or its subclasses, and also descends into imported modules to allow "
 "building nested namespaces."
 msgstr ""
+"1.1からスタートした \"新しい\" 方法は `~fabric.tasks.Task` もしくはそのサブク"
+"ラスのインスタンスを考慮し、また、ネストされた名前空間を構築できるようにする"
+"ためにインポートされたモジュールに落とし込まれています。"
 
 #: ../../usage/tasks.rst:11
 msgid ""
@@ -37,6 +42,9 @@ msgid ""
 "objects (functions, classes etc) and only considers the objects in the "
 "fabfile itself with no recursing into imported module."
 msgstr ""
+"\"クラシックな\" 方法は1.0以前からのもので、すべてのパブリックな呼び出し可能"
+"なオブジェクト(関数やクラスなど)を考慮し、インポートされたモジュールへの再帰"
+"的には処理せず、そのfabfileのオブジェクトのみ考慮します。"
 
 #: ../../usage/tasks.rst:16
 msgid ""
@@ -46,16 +54,23 @@ msgid ""
 "non-`~fabric.tasks.Task` callables. If *no* new-style tasks are found, it "
 "reverts to the classic behavior."
 msgstr ""
+"これらの2つの方法は **相互に排他的です** : もしFabricがfabfile内やインポート"
+"したモジュール内に **どんな** 新しいスタイルのタスクオブジェクトでも見つけれ"
+"ば、タスク宣言のこのメッソドをコミットしたとしてみなされ、`~fabric.tasks."
+"Task` 以外の呼び出しは考慮されません。新しいスタイルのタスクが *なければ* ク"
+"ラシックな挙動に戻ります。"
 
 #: ../../usage/tasks.rst:22
 msgid "The rest of this document explores these two methods in detail."
-msgstr ""
+msgstr "このドキュメントではkの2つのメソッドを詳細に説明します。"
 
 #: ../../usage/tasks.rst:26
 msgid ""
 "To see exactly what tasks in your fabfile may be executed via ``fab``, use :"
 "option:`fab --list <-l>`."
 msgstr ""
+"fabfileでどのタスクが ``fab`` 経由で実行されうるかを厳密に確認するには :"
+"option:`fab --list <-l>` を使います。"
 
 #: ../../usage/tasks.rst:32
 msgid "New-style tasks"
@@ -66,6 +81,8 @@ msgid ""
 "Fabric 1.1 introduced the `~fabric.tasks.Task` class to facilitate new "
 "features and enable some programming best practices, specifically:"
 msgstr ""
+"Fabric 1.1では新しい機能を促進し、プログラミングのベストプラクティスを可能に"
+"するために `~fabric.tasks.Task` クラスを導入しました。特に:"
 
 #: ../../usage/tasks.rst:37
 msgid ""
@@ -74,6 +91,10 @@ msgid ""
 "objects.  The classic style of task declaration didn't entirely rule this "
 "out, but it also didn't make it terribly easy."
 msgstr ""
+"**オブジェクト指向のタスク**。継承とそれに伴うすべては、単純に関数オブジェク"
+"トを渡し回るより、より実用的なコードの最利用を可能のします。タスク宣言のクラ"
+"シックなスタイルは完全に排除されているわけではありませんでしたが、ことをとて"
+"も簡単にするわけでもありませんでした。"
 
 #: ../../usage/tasks.rst:41
 msgid ""
@@ -82,12 +103,18 @@ msgid ""
 "the contents of Python's ``os`` module (which would show up as valid \"tasks"
 "\" under the classic methodology.)"
 msgstr ""
+"**名前空間**。タスクの宣言を明確なメソッドにすることによって、例えば、(クラ"
+"シックな手順のもとで有効な \"タスク\" として表示される)Python ``os`` モジュー"
+"ルのコンテンツでタスクリストを汚すことなく、再帰的な名前空間のセットアップが"
+"容易になります。"
 
 #: ../../usage/tasks.rst:46
 msgid ""
 "With the introduction of `~fabric.tasks.Task`, there are two ways to set up "
 "new tasks:"
 msgstr ""
+"`~fabric.tasks.Task` の前置きとして、新しいタスクをセットアップするには2つの"
+"方法があります:"
 
 #: ../../usage/tasks.rst:49
 msgid ""
@@ -95,6 +122,9 @@ msgid ""
 "task>`, which transparently wraps the function in a `~fabric.tasks.Task` "
 "subclass.  The function name will be used as the task name when invoking."
 msgstr ""
+"`@task <fabric.decorators.task>` で通常のモジュールレベルの関数をデコレートし"
+"ます。これは `~fabric.tasks.Task` サブクラス内の関数を透過的にラップします。"
+"実行時には関数名がタスク名として使われます。"
 
 #: ../../usage/tasks.rst:53
 msgid ""
@@ -103,12 +133,18 @@ msgid ""
 "level. Instances' ``name`` attributes are used as the task name; if omitted "
 "the instance's variable name will be used instead."
 msgstr ""
+"`~fabric.tasks.Task` サブクラス(`~fabric.tasks.Task` 自身は抽象的であることを"
+"意図されています)は ``run`` メソッドを定義し、モジュールレベルであなたのサブ"
+"クラスをインスタンス化します。インスタンスの ``name`` 属性がタスク名として使"
+"われます。省略した場合には、その代わりにインスタンスの変数名が使われます。"
 
 #: ../../usage/tasks.rst:58
 msgid ""
 "Use of new-style tasks also allows you to set up :ref:`namespaces "
 "<namespaces>`."
 msgstr ""
+"新しいスタイルのタスクの利用はまた、 :ref:`名前空間 <namespaces>` のセット"
+"アップも可能にします。"
 
 #: ../../usage/tasks.rst:65
 msgid "The ``@task`` decorator"
@@ -119,6 +155,8 @@ msgid ""
 "The quickest way to make use of new-style task features is to wrap basic "
 "task functions with `@task <fabric.decorators.task>`::"
 msgstr ""
+"新しいスタイルのタスク機能を利用するもっとも簡単な方法は基本のタスク関数を "
+"`@task <fabric.decorators.task>`: で囲ってしまう方法です:"
 
 #: ../../usage/tasks.rst:76
 msgid ""
@@ -126,6 +164,9 @@ msgid ""
 "wrapped in the decorator are to be loaded up as valid tasks. (When not "
 "present, :ref:`classic-style task <classic-tasks>` behavior kicks in.)"
 msgstr ""
+"このデコレータが使われると、このデコレータで囲われた関数 *のみ* が有効なタス"
+"クとして読み込まれることをFabricに伝えます。(表示されない場合は、 :ref:`クラ"
+"シックスタイルの <classic-tasks>` 挙動で動作しています)"
 
 #: ../../usage/tasks.rst:81
 msgid "Arguments"
@@ -138,18 +179,27 @@ msgid ""
 "the constructor of the ``task_class`` being used, with the function itself "
 "as the first argument (see :ref:`task-decorator-and-classes` for details.)"
 msgstr ""
+"`@task <fabric.decorators.task>` はまた、引数とともに呼び出してその挙動をカス"
+"タマイズすることもできます。以下に記述されていない引数は利用中の "
+"``task_class`` のコンストラクタにその最初の関数自身を最初の引数として渡されま"
+"す。(詳細は :ref:`task-decorator-and-classes` をご覧ください)"
 
 #: ../../usage/tasks.rst:88
 msgid ""
 "``task_class``: The `~fabric.tasks.Task` subclass used to wrap the decorated "
 "function. Defaults to `~fabric.tasks.WrappedCallableTask`."
 msgstr ""
+"``task_class``: `~fabric.tasks.Task` のサブクラスで、デコレートされた関数を"
+"ラップするために使用されます。デフォルトは `~fabric.tasks."
+"WrappedCallableTask` です。"
 
 #: ../../usage/tasks.rst:90
 msgid ""
 "``aliases``: An iterable of string names which will be used as aliases for "
 "the wrapped function. See :ref:`task-aliases` for details."
 msgstr ""
+"``aliases``: ラップされた関数用のエイリアスとして繰り返し使える文字列名。詳細"
+"は :ref:`task-aliases` をご覧ください。"
 
 #: ../../usage/tasks.rst:92
 msgid ""
@@ -157,19 +207,28 @@ msgid ""
 "an iterable. If both ``alias`` and ``aliases`` are specified, ``aliases`` "
 "will take precedence."
 msgstr ""
+"``alias``: ``aliases`` と似ていますが、繰り返しできない単一の文字列引数を取り"
+"ます。もし ``alias`` と ``aliases`` の両方が設定されている場合、 ``aliases`` "
+"の方が優先されます。"
 
 #: ../../usage/tasks.rst:95
 msgid ""
 "``default``: A boolean value determining whether the decorated task also "
 "stands in for its containing module as a task name. See :ref:`default-tasks`."
 msgstr ""
+"``default``: デコレートされたタスクが、タスク名としてそれが含むモジュールの代"
+"役を務めるかどうかを決めるための真偽値。:ref:`default-tasks` を参照してくださ"
+"い。"
 
 #: ../../usage/tasks.rst:97
+#, fuzzy
 msgid ""
 "``name``: A string setting the name this task appears as to the command-line "
 "interface. Useful for task names that would otherwise shadow Python builtins "
 "(which is technically legal but frowned upon and bug-prone.)"
 msgstr ""
+"``name``: そのタスクがコマンドラインインターフェースに表示されるときの名称を"
+"設定する文字列です。"
 
 #: ../../usage/tasks.rst:104
 msgid "Aliases"
@@ -181,12 +240,16 @@ msgid ""
 "use of both a longer human-readable task name, and a shorter name which is "
 "quicker to type::"
 msgstr ""
+"以下は、人間が読める長めのタスク名とすばやくタイプするための短めのタスク名の"
+"両方の利用を手助けするための ``alias`` キーワード引数の簡単な利用例です: "
 
 #: ../../usage/tasks.rst:116
 msgid ""
 "Calling :option:`--list <-l>` on this fabfile would show both the original "
 "``deploy_with_migrations`` and its alias ``dwm``::"
 msgstr ""
+"このfabfileで :option:`--list <-l>` を呼び出すとオリジナルの"
+"``deploy_with_migrations`` とエイリアスの ``dwm``: を表示します:"
 
 #: ../../usage/tasks.rst:125
 msgid ""
@@ -301,7 +364,7 @@ msgstr ""
 
 #: ../../usage/tasks.rst:249
 msgid "Using custom subclasses with ``@task``"
-msgstr ""
+msgstr "``@task`` とのカスタムサブクラスの使用"
 
 #: ../../usage/tasks.rst:251
 msgid ""
@@ -346,7 +409,7 @@ msgstr ""
 
 #: ../../usage/tasks.rst:295
 msgid "Namespaces"
-msgstr ""
+msgstr "名前空間"
 
 #: ../../usage/tasks.rst:297
 msgid ""
@@ -516,6 +579,9 @@ msgid ""
 "into your own task hierarchy, or grab a deeply nested module and make it "
 "appear near the top level."
 msgstr ""
+"これは他のどのインポートにも適用されます。サードパーティのモジュールを自分の"
+"タスク階層にインポートしたり、深くネストされたモジュールを取ってきてトップレ"
+"ベル近くに置くことも可能です。"
 
 #: ../../usage/tasks.rst:448
 msgid "Nested list output"
