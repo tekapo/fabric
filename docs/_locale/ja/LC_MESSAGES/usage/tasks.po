@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-06-16 18:56+0900\n"
+"PO-Revision-Date: 2014-06-22 14:42+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../usage/tasks.rst:22
 msgid "The rest of this document explores these two methods in detail."
-msgstr "このドキュメントではkの2つのメソッドを詳細に説明します。"
+msgstr "このドキュメントではこの2つのメソッドを詳細に説明します。"
 
 #: ../../usage/tasks.rst:26
 msgid ""
@@ -221,14 +221,15 @@ msgstr ""
 "い。"
 
 #: ../../usage/tasks.rst:97
-#, fuzzy
 msgid ""
 "``name``: A string setting the name this task appears as to the command-line "
 "interface. Useful for task names that would otherwise shadow Python builtins "
 "(which is technically legal but frowned upon and bug-prone.)"
 msgstr ""
 "``name``: そのタスクがコマンドラインインターフェースに表示されるときの名称を"
-"設定する文字列です。"
+"設定する文字列です。Pythonのビルトインを別の方法でシャドーイングするタスク名"
+"で便利です(これは技術的には可能ですが、好まれませんし、バグの温床にもなりま"
+"す)。"
 
 #: ../../usage/tasks.rst:104
 msgid "Aliases"
@@ -351,6 +352,10 @@ msgid ""
 "specify arguments to the task itself -- use a regular invocation of the task "
 "if this is necessary."
 msgstr ""
+"トップレベルのfabfileで ``@task(default=True)`` を使用すると、ユーザーがタス"
+"ク名なしで ``fab`` を呼び出した際にそのタスクを実行します(例えば、 ``make`` "
+"に似ています)。このショートカットの使用時にはタスク自身に引数を指定することは"
+"できません。引数が必要な場合は通常のタスク呼び出しを実行してください。"
 
 #: ../../usage/tasks.rst:214
 msgid "``Task`` subclasses"
@@ -363,16 +368,21 @@ msgid ""
 "directly equivalent to a classic task; its arguments are the task arguments "
 "(other than ``self``) and its body is what gets executed."
 msgstr ""
+":ref:`クラシックスタイルのタスク <classic-tasks>` に慣れている場合は、 "
+"`~fabric.tasks.Task` はその ``run`` メソッドがクラシックなタスクとそのまま同"
+"等であると考えると分かりやすいでしょう。その引数が(``self`` 以外の)タスクの引"
+"数で、そのボディが実行される内容となります。"
 
 #: ../../usage/tasks.rst:221
 msgid "For example, this new-style task::"
-msgstr ""
+msgstr "例えば、この新しいスタイルのタスクは::"
 
 #: ../../usage/tasks.rst:231
 msgid "is exactly equivalent to this function-based task::"
-msgstr ""
+msgstr "この関数ベースのタスクとまったく同等です::"
 
 #: ../../usage/tasks.rst:238
+#, fuzzy
 msgid ""
 "Note how we had to instantiate an instance of our class; that's simply "
 "normal Python object-oriented programming at work. While it's a small bit of "
@@ -380,12 +390,18 @@ msgid ""
 "give the instantiation, only the instance's ``name`` attribute -- it's well "
 "worth the benefit of having the power of classes available."
 msgstr ""
+"クラスのインスタンスをどのように作成しているかに留意してくだだい。これは実際"
+"に動作する単純な通常のPythonオブジェクト指向プログラミングです。この時点では"
+"小さなひな形に過ぎませんが、Fabricはインスタンス作成時に与える名前は気にせ"
+"ず、そのインスタンスの ``名前`` 属性のみを気にします。"
 
 #: ../../usage/tasks.rst:244
 msgid ""
 "We plan to extend the API in the future to make this experience a bit "
 "smoother."
 msgstr ""
+"将来的にはこのAPIを拡張して、このエクスペリエンスをより洗練させていく予定で"
+"す。"
 
 #: ../../usage/tasks.rst:249
 msgid "Using custom subclasses with ``@task``"
@@ -398,6 +414,10 @@ msgid ""
 "execution logic doesn't do anything class/object-specific, but you want to "
 "take advantage of class metaprogramming or similar techniques."
 msgstr ""
+"カスタムな `~fabric.tasks.Task` サブクラスと `@task <fabric.decorators."
+"task>` を結合させることも可能です。これはコアの実行ロジックがクラス/オブジェ"
+"クト指向ではないけれどもクラスのメタプログラミングやそれと似たテクニックを活"
+"用したい場合に有用です。"
 
 #: ../../usage/tasks.rst:256
 msgid ""
@@ -406,6 +426,10 @@ msgid ""
 "WrappedCallableTask` does) may be specified as the ``task_class`` argument "
 "to `@task <fabric.decorators.task>`."
 msgstr ""
+"特に、呼び出し可能なものとして最初のコンストラクタ引数を取るように設計されて"
+"いるすべての `~fabric.tasks.Task` サブクラスは(ビルトインの `~fabric.tasks."
+"WrappedCallableTask` と同様に)、 `@task <fabric.decorators.task>` への "
+"``task_class`` 引数として指定することができます。"
 
 #: ../../usage/tasks.rst:261
 msgid ""
@@ -414,16 +438,22 @@ msgid ""
 "the decorator (besides the \"special\" arguments documented in :ref:`task-"
 "decorator-arguments`) are added afterwards."
 msgstr ""
+"Fabricは与えられたクラスのコピーを自動的にインスタンス化し、最初の引数として"
+"ラップされた関数に渡されます。デコレーターに渡されるすべての他の引数/キーワー"
+"ド引数( :ref:`task-decorator-arguments` に記述されている \"特別な\" 引数以外)"
+"はその後に追加されます。"
 
 #: ../../usage/tasks.rst:266
 msgid "Here's a brief and somewhat contrived example to make this obvious::"
-msgstr ""
+msgstr "これを明確にするための簡単でいくらか工夫されている例をお見せします::"
 
 #: ../../usage/tasks.rst:284
 msgid ""
 "When this fabfile is loaded, a copy of ``CustomTask`` is instantiated, "
 "effectively calling::"
 msgstr ""
+"このfabfileが読み込まれた時、``CustomTask`` のコピーがインスタンス化され、事"
+"実上は以下を呼び出しています::"
 
 #: ../../usage/tasks.rst:288
 msgid ""
@@ -431,6 +461,9 @@ msgid ""
 "never reaches the class instantiation; this is identical in function to how :"
 "ref:`command-line task arguments <task-arguments>` work."
 msgstr ""
+"``alias`` キーワード引数がデコレーター自身によってどのように取り除かれるか、"
+"そしてクラスのインスタンス化には到達しないことに留意してください。これは :"
+"ref:`コマンドラインタスクの引数 <task-arguments>` の動作と機能的に同一です。"
 
 #: ../../usage/tasks.rst:295
 msgid "Namespaces"
@@ -444,12 +477,19 @@ msgid ""
 "decorators.task>` or your own `~fabric.tasks.Task` subclass instances) you "
 "may take advantage of **namespacing**:"
 msgstr ""
+":ref:`クラシックなタスク <classic-tasks>` では、複数のfabfileは単一でフラット"
+"なタスク名のセットに制限され、それらを体系化する本格的な方法はありません。"
+"Fabric 1.1以降では、タスクを新しいやり方(`@task <fabric.decorators.task>` も"
+"しくは ご自分の `~fabric.tasks.Task` サブクラスのインスタンス経由)で宣言すれ"
+"ば **名前空間** を活用することができます:"
 
 #: ../../usage/tasks.rst:303
 msgid ""
 "Any module objects imported into your fabfile will be recursed into, looking "
 "for additional task objects."
 msgstr ""
+"fabfileにインポートされたどのモジュールオブジェクトも再帰的に処理され、追加の"
+"タスクオブジェクトを探します。"
 
 #: ../../usage/tasks.rst:305
 msgid ""
@@ -457,18 +497,25 @@ msgid ""
 "the standard Python ``__all__`` module-level variable name (thought they "
 "should still be valid new-style task objects.)"
 msgstr ""
+"サブモジュール内では、Python標準の ``__all__`` モジュールレベル変数名を使って"
+"どのオブジェクトが \"exported\" されるかをコントロールすることができます(有効"
+"な新しいタスクオブジェクトでなければなりませんが)。"
 
 #: ../../usage/tasks.rst:308
 msgid ""
 "These tasks will be given new dotted-notation names based on the modules "
 "they came from, similar to Python's own import syntax."
 msgstr ""
+"これらのタスクは、Python自身のインポートシンタックスと似た、それを含んだモ"
+"ジュールをベースにした新しいドットノーテーション名が与えられます。"
 
 #: ../../usage/tasks.rst:311
 msgid ""
 "Let's build up a fabfile package from simple to complex and see how this "
 "works."
 msgstr ""
+"単純な複雑なものまでfabfileのパッケージを組み立てて、どのように動作するか見て"
+"みましょう。"
 
 #: ../../usage/tasks.rst:314
 msgid "Basic"
@@ -479,10 +526,12 @@ msgid ""
 "We start with a single `__init__.py` containing a few tasks (the Fabric API "
 "import omitted for brevity)::"
 msgstr ""
+"まずはいくつかのタスクを含む一つの `__init__.py` (簡潔性のためFabricのAPIは省"
+"略します)から始めてみましょう::"
 
 #: ../../usage/tasks.rst:327
 msgid "The output of ``fab --list`` would look something like this::"
-msgstr ""
+msgstr "``fab --list`` の出力は次のようになるでしょう::"
 
 #: ../../usage/tasks.rst:332
 msgid ""
@@ -490,10 +539,13 @@ msgid ""
 "simple now, but in a real-world fabfile with dozens of tasks, it can get "
 "difficult to manage."
 msgstr ""
+"ここでは名前空間は一つだけで、 \"root\" もしくはグローバルな名前空間です。今"
+"は単純に見えますが、実世界のfabfileではたくさんのタスクがあり、管理が難しくな"
+"り得ます。"
 
 #: ../../usage/tasks.rst:337
 msgid "Importing a submodule"
-msgstr ""
+msgstr "サブモジュールのインポート"
 
 #: ../../usage/tasks.rst:339
 msgid ""
@@ -503,24 +555,31 @@ msgid ""
 "new submodule in our package for dealing with, say, load balancers -- ``lb."
 "py``::"
 msgstr ""
+"前述のとおり、モジュールがPythonのインポートパス上のどこにあるかには関係な"
+"く、Fabricはインポートされたモジュールオブジェクトのタスクを調べます。今のと"
+"ころは、とりあえず \"手近にある\" 自前のタスクを含めたいと思いますので、そう"
+"ですね、ロードバランサを扱うためのパッケージに新しいサブモジュール ``lb.py`` "
+"を作ってみましょう::"
 
 #: ../../usage/tasks.rst:348
 msgid "And we'll add this to the top of ``__init__.py``::"
-msgstr ""
+msgstr "そして ``__init__.py`` の一番上にこれを追加します::"
 
 #: ../../usage/tasks.rst:352
 msgid "Now ``fab --list`` shows us::"
-msgstr ""
+msgstr "さて、これで ``fab --list`` は次のようになります::"
 
 #: ../../usage/tasks.rst:358
 msgid ""
 "Again, with only one task in its own submodule, it looks kind of silly, but "
 "the benefits should be pretty obvious."
 msgstr ""
+"モジュールに一つだけのタスクではある種他愛のないもののように見えますが、その"
+"恩恵はかなり明白だと思います。"
 
 #: ../../usage/tasks.rst:362
 msgid "Going deeper"
-msgstr ""
+msgstr "さらに奥深くへ"
 
 #: ../../usage/tasks.rst:364
 msgid ""
@@ -529,32 +588,42 @@ msgid ""
 "differentiation inside that. We make a sub-package named ``db/`` and inside "
 "it, a ``migrations.py`` module::"
 msgstr ""
+"名前空間化は単にひとつのレベルに制限されることはありません。より大きなセット"
+"アップを持ち、データベース関連のタスクのための名前空間が必要になっていて、そ"
+"の中に追加の別のタスクがあるとしましょう。 ``db/`` と名前を付けられたサブパッ"
+"ケージを作り、その中に ``migrations.py`` モジュールを起きます::"
 
 #: ../../usage/tasks.rst:377
 msgid ""
 "We need to make sure that this module is visible to anybody importing "
 "``db``, so we add it to the sub-package's ``__init__.py``::"
 msgstr ""
+"このモジュールは ``db`` をインポートしているすべてから見えるようにする必要が"
+"あるので、このサブパッケージの ``__init__.py`` に以下を追加します::"
 
 #: ../../usage/tasks.rst:382
 msgid ""
 "As a final step, we import the sub-package into our root-level ``__init__."
 "py``, so now its first few lines look like this::"
 msgstr ""
+"最後のステップとして、ルートレベルの ``__init__.py`` にサブパッケージをイン"
+"ポートします。これで最初の何行かは以下のようになります::"
 
 #: ../../usage/tasks.rst:388
 msgid "After all that, our file tree looks like this::"
-msgstr ""
+msgstr "そして、ファイルツリーは以下のようになります::"
 
 #: ../../usage/tasks.rst:397
 msgid "and ``fab --list`` shows::"
-msgstr ""
+msgstr "``fab --list`` は次のようになります::"
 
 #: ../../usage/tasks.rst:405
 msgid ""
 "We could also have specified (or imported) tasks directly into ``db/__init__."
 "py``, and they would show up as ``db.<whatever>`` as you might expect."
 msgstr ""
+"また、タスクを ``db/__init__.py`` 内に直接設定(もしくはインポート)することも"
+"可能で、ご想像どおり ``db.<なんちゃら>`` として表示されます。"
 
 #: ../../usage/tasks.rst:410
 msgid "Limiting with ``__all__``"
@@ -577,8 +646,9 @@ msgid ""
 msgstr ""
 
 #: ../../usage/tasks.rst:423
+#, fuzzy
 msgid "Switching it up"
-msgstr ""
+msgstr "ひとつ上へ"
 
 #: ../../usage/tasks.rst:425
 msgid ""
@@ -609,8 +679,9 @@ msgstr ""
 "ベル近くに置くことも可能です。"
 
 #: ../../usage/tasks.rst:448
+#, fuzzy
 msgid "Nested list output"
-msgstr ""
+msgstr "プラグインが予期しない出力をしました。"
 
 #: ../../usage/tasks.rst:450
 msgid ""
