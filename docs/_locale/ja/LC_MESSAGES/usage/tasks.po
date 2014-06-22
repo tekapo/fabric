@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-06-22 14:42+0900\n"
+"PO-Revision-Date: 2014-06-22 19:34+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -382,7 +382,6 @@ msgid "is exactly equivalent to this function-based task::"
 msgstr "この関数ベースのタスクとまったく同等です::"
 
 #: ../../usage/tasks.rst:238
-#, fuzzy
 msgid ""
 "Note how we had to instantiate an instance of our class; that's simply "
 "normal Python object-oriented programming at work. While it's a small bit of "
@@ -392,8 +391,9 @@ msgid ""
 msgstr ""
 "クラスのインスタンスをどのように作成しているかに留意してくだだい。これは実際"
 "に動作する単純な通常のPythonオブジェクト指向プログラミングです。この時点では"
-"小さなひな形に過ぎませんが、Fabricはインスタンス作成時に与える名前は気にせ"
-"ず、そのインスタンスの ``名前`` 属性のみを気にします。"
+"小さなひな形に過ぎませんが、例えば、Fabricはインスタンス作成時に与える名前は"
+"気にせず、そのインスタンスの ``名前`` 属性のみを気にします。クラスの力(ちか"
+"ら)を利用可能にすることの恩恵は検討に値するでしょう。"
 
 #: ../../usage/tasks.rst:244
 msgid ""
@@ -637,6 +637,11 @@ msgid ""
 "up by default for some reason, we could add this to the top of ``db/"
 "migrations.py``::"
 msgstr ""
+"インポートされたモジュールをFabricが分析するときに、モジュールレベル "
+"``__all__`` 変数(変数名のリスト)のPythonの決まり事を利用することによって、"
+"Fabricが \"見る\" ものを制限することができます。もし何かの理由によりデフォル"
+"トでは ``db.migrations.run`` タスクを表示させたくない場合、 ``db/migrations."
+"py`` の一番上に以下を追加することができます::"
 
 #: ../../usage/tasks.rst:419
 msgid ""
@@ -644,9 +649,11 @@ msgid ""
 "directly into some other part of the hierarchy, but otherwise it'll remain "
 "hidden."
 msgstr ""
+"ここには ``'run'`` がないことに留意してください。もし必要なら ``run`` をこの"
+"階層のどこかに直接インポートすることも可能ですが、そうでなければ、隠れれたま"
+"まになります。"
 
 #: ../../usage/tasks.rst:423
-#, fuzzy
 msgid "Switching it up"
 msgstr "ひとつ上へ"
 
@@ -657,16 +664,20 @@ msgid ""
 "here. All Fabric's loader cares about is the names the modules are given "
 "when they're imported."
 msgstr ""
+"これまで、fabfileパッケージを片付いた状態に維持し、直接的な方法でインポートし"
+"てきましたが、ファイルシステムのレイアウトはここでは実際には考慮していませ"
+"ん。Fabricのすべてのローダーが気にするのは、インポートされた時のモジュールに"
+"与えられた名称です。"
 
 #: ../../usage/tasks.rst:430
 msgid ""
 "For example, if we changed the top of our root ``__init__.py`` to look like "
 "this::"
-msgstr ""
+msgstr "例えば、ルートの ``__init__.py`` の市場うえを次のように変更すると::"
 
 #: ../../usage/tasks.rst:435
 msgid "Our task list would change thusly::"
-msgstr ""
+msgstr "タスクリストは次のように変わります::"
 
 #: ../../usage/tasks.rst:443
 msgid ""
@@ -679,9 +690,8 @@ msgstr ""
 "ベル近くに置くことも可能です。"
 
 #: ../../usage/tasks.rst:448
-#, fuzzy
 msgid "Nested list output"
-msgstr "プラグインが予期しない出力をしました。"
+msgstr "ネストされたリスト出力"
 
 #: ../../usage/tasks.rst:450
 msgid ""
@@ -690,12 +700,18 @@ msgid ""
 "names are. However, you can get a more nested or tree-like view by passing "
 "``nested`` to the :option:`--list-format <-F>` option::"
 msgstr ""
+"最後に、このセクションではデフォルトのFabric :option:`--list <-l>` 出力を使用"
+"してきました。これにより実際のタスク名は何なのかがより明確になります。とは言"
+"え、:option:`--list-format <-F>` オプションに ``nested`` を渡すと、よりネスト"
+"されていたりツリーライクな表示を得られます::"
 
 #: ../../usage/tasks.rst:467
 msgid ""
 "While it slightly obfuscates the \"real\" task names, this view provides a "
 "handy way of noting the organization of tasks in large namespaces."
 msgstr ""
+"\"実際の\" タスク名が少し分かりにくくなりますが、この表示は大規模な名前空間で"
+"のタスク構成を把握する簡単な方法を提供します。"
 
 #: ../../usage/tasks.rst:474
 msgid "Classic tasks"
@@ -706,12 +722,17 @@ msgid ""
 "When no new-style `~fabric.tasks.Task`-based tasks are found, Fabric will "
 "consider any callable object found in your fabfile, **except** the following:"
 msgstr ""
+"新しいスタイルの `~fabric.tasks.Task` ベースのタスクが見つからない場合、"
+"Fabricはfabfile内の呼び出し可能などんなオブジェクトでも検討します。 **ただ"
+"し、** 次を除きます:"
 
 #: ../../usage/tasks.rst:479
 msgid ""
 "Callables whose name starts with an underscore (``_``). In other words, "
 "Python's usual \"private\" convention holds true here."
 msgstr ""
+"アンダースコア(``_``)で始まる名称の呼び出し可能なオブジェクト。言い換えると、"
+"ここではPythonの通常の \"プライベート\" 規則が適用されます。"
 
 #: ../../usage/tasks.rst:481
 msgid ""
@@ -719,6 +740,9 @@ msgid ""
 "`~fabric.operations.run` and `~fabric.operations.sudo`  will not show up in "
 "your task list."
 msgstr ""
+"Fabric自身内で定義されている呼び出し可能なオブジェクト。 `~fabric.operations."
+"run` と `~fabric.operations.sudo` などのFabric自身の関数はタスクリストには表"
+"示されません。"
 
 #: ../../usage/tasks.rst:487
 msgid "Imports"
@@ -731,6 +755,10 @@ msgid ""
 "this means that imports are also considered as possible classic-style tasks, "
 "alongside anything defined in the fabfile itself."
 msgstr ""
+"Pythonの ``import`` ステートメントは事実上、あなたのモジュール名前空間にある"
+"インポートされたオブジェクトを含みます。Fabricのfabfileは単なるPythonモジュー"
+"ルなので、インポートもまた、fabfile自身に定義されているすべてと一緒に出来る限"
+"りクラシックスタイルのタスクとみなされます。"
 
 #: ../../usage/tasks.rst:495
 msgid ""
@@ -738,6 +766,10 @@ msgid ""
 "modules only come into play if they contain :ref:`new-style tasks <new-style-"
 "tasks>`, at which point this section no longer applies."
 msgstr ""
+"これはインポートされた *呼び出し可能なオブジェクト* のみに適用され、モジュー"
+"ルには適用されません。インポートされたモジュールは :ref:`新しいスタイルのタス"
+"ク <new-style-tasks>` を含む場合のみ実行され、その時点でこのセクションは適用"
+"されません。"
 
 #: ../../usage/tasks.rst:500
 msgid ""
@@ -745,18 +777,26 @@ msgid ""
 "form of importing, followed by ``module.callable()``, which will result in a "
 "cleaner fabfile API than doing ``from module import callable``."
 msgstr ""
+"このため、私達としては後ろに ``module.callable()`` が続くインポートの "
+"``import module`` 形式を利用するよう強くおすすめします。これにより、結果とし"
+"て ``from module import callable`` を行うよりもよりきれいなfabfile APIになり"
+"ます。"
 
 #: ../../usage/tasks.rst:504
 msgid ""
 "For example, here's a sample fabfile which uses ``urllib.urlopen`` to get "
 "some data out of a webservice::"
 msgstr ""
+"ウェブサービスから何らかのデータを取り出すために ``urllib.urlopen`` を使用し"
+"ているサンプルのfabfileを例に上げましょう::"
 
 #: ../../usage/tasks.rst:515
 msgid ""
 "This looks simple enough, and will run without error. However, look what "
 "happens if we run :option:`fab --list <-l>` on this fabfile::"
 msgstr ""
+"これはかなり単純でエラー無しで実行できます。しかし、このfabfileで :option:"
+"`fab --list <-l>` を実行するとどうなるか見てみましょう::"
 
 #: ../../usage/tasks.rst:524
 msgid ""
@@ -766,12 +806,17 @@ msgid ""
 "is likely to be much more complex, and hopefully you can see how this could "
 "get messy fast."
 msgstr ""
+"1つのタスクしかないfabfileで2つの \"タスク\" が表示されています。これはよくあ"
+"りませんし、疑うことを知らないユーザーがうっかりと ``fab urlopen`` を呼びだそ"
+"うとするかもしれませんし、たぶんまともには動作しないでしょう。実世界のfabfile"
+"を想像してみてください。かなり複雑になることが多いでしょうし、すぐに乱雑に"
+"なってしまうことがわかってもらえると思います。"
 
 #: ../../usage/tasks.rst:530
 msgid "For reference, here's the recommended way to do it::"
-msgstr ""
+msgstr "参考のため、以下がおすすめの方法になります::"
 
 #: ../../usage/tasks.rst:540
 msgid ""
 "It's a simple change, but it'll make anyone using your fabfile a bit happier."
-msgstr ""
+msgstr "簡単な変更ですが、このfabfileを使う誰をも少しは幸せにするでしょう。"
