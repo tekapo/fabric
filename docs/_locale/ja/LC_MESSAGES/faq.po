@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-03-22 09:51+0900\n"
+"PO-Revision-Date: 2014-06-27 22:24+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 # 12a58b5a4ee34968bbd69be68e5afa80
 #: ../../faq.rst:3
