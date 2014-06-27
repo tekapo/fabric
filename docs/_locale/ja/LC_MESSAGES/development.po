@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-04-22 09:31+0900\n"
+"PO-Revision-Date: 2014-06-27 16:22+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 # 43887c9fb9094203b768e11b7dde58a6
 #: ../../development.rst:3
@@ -382,14 +382,14 @@ msgstr ""
 
 # 49380e62db17409ea00a6353b2b9d10a
 #: ../../development.rst:99
-#, fuzzy
 msgid ""
 "These branches are not intended for public use, and may be cleaned out of "
 "the repositories periodically. Ideally, no one feature will be in "
 "development long enough for its branch to become used in production!"
 msgstr ""
 "これらのブランチは一般的な使用を目的とはしていませんし、定期的にリポジトリか"
-"ら片付けられるかもしれません。"
+"ら片付けられるかもしれません。理想的には、1つの機能は、そのブランチが本番環境"
+"で使われるようになるほどの長い開発時間以上をかけてはいけません。"
 
 # 78753d193b374c85b30669c6814318a3
 #: ../../development.rst:103

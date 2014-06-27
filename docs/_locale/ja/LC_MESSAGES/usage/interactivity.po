@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-04-30 14:26+0900\n"
+"PO-Revision-Date: 2014-06-27 15:58+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -236,14 +236,18 @@ msgstr ""
 "を隠してまったく何もエコーしないようにします。"
 
 #: ../../usage/interactivity.rst:113
-#, fuzzy
 msgid ""
 "In addition to allowing normal echo behavior, a pty also means programs that "
 "behave differently when attached to a terminal device will then do so. For "
 "example, programs that colorize output on terminals but not when run in the "
 "background will print colored output. Be wary of this if you inspect the "
 "return value of `~fabric.operations.run` or `~fabric.operations.sudo`!"
-msgstr "通常のエコーの挙動を許可することに加えて、ptyは"
+msgstr ""
+"通常のエコーの挙動を許可することに加えて、ターミナルデバイスにアタッチされた"
+"時に別の挙動を示すプログラムは、その挙動を示します。例えば、ターミナル上では"
+"カラーで出力し、バックグラウンドではカラーで出力しないプログラムは、ptyはカ"
+"ラーで出力します。`~fabric.operations.run` もしくは `~fabric.operations."
+"sudo` の返り値を調べる場合は注意してください!"
 
 #: ../../usage/interactivity.rst:119
 msgid ""
@@ -258,7 +262,6 @@ msgid "Combining the two"
 msgstr "この2つの統合"
 
 #: ../../usage/interactivity.rst:126
-#, fuzzy
 msgid ""
 "As a final note, keep in mind that use of pseudo-terminals effectively "
 "implies combining stdout and stderr -- in much the same way as the :ref:"
@@ -266,11 +269,11 @@ msgid ""
 "device naturally sends both stdout and stderr to the same place -- the "
 "user's display -- thus making it impossible to differentiate between them."
 msgstr ""
-"最後の注意点として、擬似ターミナルを効果的に利用する標準出力と標準エラー出力"
-"を統合するたいていは :ref:`combine_stderr <combine_streams>` の設定と同じ方法"
-"でこれはターミナルデバイスが当山ながら標準出力と標準エラー出力の両方を同じ場"
-"所、ユーザーのディスプレイに送るためしたがってこれが両者の分化を不可能にして"
-"います。"
+"最後の注意点として、擬似ターミナルの利用は事実上、標準出力と標準エラー出力を"
+"統合するということです。これは :ref:`combine_stderr <combine_streams>` の設定"
+"が行うのとまったく同じ方法です。これはターミナルデバイスが当然ながら標準出力"
+"と標準エラー出力の両方を同じ場所、ユーザーのディスプレイに送るためで、した"
+"がってこれにより両者の分化が不可能になっています"
 
 #: ../../usage/interactivity.rst:132
 msgid ""
@@ -283,7 +286,6 @@ msgstr ""
 "れています。他の組み合わせは以下になります。"
 
 #: ../../usage/interactivity.rst:136
-#, fuzzy
 msgid ""
 "``run(\"cmd\", pty=False, combine_stderr=True)``: will cause Fabric to echo "
 "all stdin itself, including passwords, as well as potentially altering "
@@ -291,11 +293,11 @@ msgid ""
 "pty and you're not concerned about password prompts."
 msgstr ""
 "``run(\"cmd\", pty=False, combine_stderr=True)``: Fabricはパスワードも含め、"
-"すべての標準入力をエコーします、てptyで動作していてパスワードのプロンプトにつ"
-"いて心配していない時に ``cmd`` の挙動が好ましくない場合に便利です。"
+"すべての標準入力をエコーします。また、 ``cmd`` の挙動が変更される可能性もあり"
+"ます。ptyで動作していてパスワードのプロンプトについて心配していない時に "
+"``cmd`` の挙動が好ましくない場合に便利です。\t"
 
 #: ../../usage/interactivity.rst:140
-#, fuzzy
 msgid ""
 "``run(\"cmd\", pty=False, combine_stderr=False)``: with both settings "
 "``False``, Fabric will echo stdin and won't issue a pty -- and this is "
@@ -304,10 +306,10 @@ msgid ""
 "stream, which is occasionally useful."
 msgstr ""
 "``run(\"cmd\", pty=False, combine_stderr=False)``: 両方の設定が ``False`` の"
-"時、Fabricは標準入力をエコーし、will echo stdin and won't issue a pty -- and "
-"this is highly likely to result in undesired behavior for all but the "
-"simplest commands. However, it is also the only way to access a distinct "
-"stderr stream, which is occasionally useful."
+"時、Fabricは標準入力をエコーし、ptyを発行しません。そしてこれは、もっともシン"
+"プルなコマンド以外のすべてで好ましくない挙動をもたらす可能性が高くなります。"
+"とは言え、区別された標準エラー出力にアクセスする唯一の方法ですし、そうした場"
+"合には便利です。"
 
 #: ../../usage/interactivity.rst:145
 msgid ""

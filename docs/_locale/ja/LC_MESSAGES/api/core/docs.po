@@ -1,24 +1,28 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-06-22 20:33+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../../api/core/docs.rst:3
 msgid "Documentation helpers"
-msgstr ""
+msgstr "ドキュメントヘルパー"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:1
 msgid ""
 "Replace task objects on ``module`` with their wrapped functions instead."
 msgstr ""
+"``モジュール`` 上のタスクオブジェクトをラップされた関数に置き換えます。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:3
 msgid ""
@@ -33,8 +37,7 @@ msgid ""
 "bottom of a project's ``conf.py``. It ensures that the autodoc extension "
 "will have full access to the \"real\" function, in terms of function "
 "signature and so forth. Without use of ``unwrap_tasks``, autodoc is unable "
-"to access the function signature (though it is able to see e.g. "
-"``__doc__``.)"
+"to access the function signature (though it is able to see e.g. ``__doc__``.)"
 msgstr ""
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:14
@@ -43,9 +46,9 @@ msgstr ""
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:20
 msgid ""
-"You can go above and beyond, and explicitly **hide** all non-task functions,"
-" by saying ``hide_nontasks=True``. This renames all objects failing the \"is"
-" it a task?\" check so they appear to be private, which will then cause "
+"You can go above and beyond, and explicitly **hide** all non-task functions, "
+"by saying ``hide_nontasks=True``. This renames all objects failing the \"is "
+"it a task?\" check so they appear to be private, which will then cause "
 "autodoc to skip over them."
 msgstr ""
 
