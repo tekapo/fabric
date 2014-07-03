@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-06-24 13:42+0900\n"
+"PO-Revision-Date: 2014-07-03 15:00+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,9 @@ msgid ""
 "__future__ import with_statement`` in order to make use of the ``with`` "
 "statement (which is a regular, non ``__future__`` feature of Python 2.6+.)"
 msgstr ""
+"Python 2.5の利用時、 ``with`` ステートメントを利用するためにはfabfileを "
+"``from __future__ import with_statement`` から始める必要があります(Python 2.6"
+"以上では通常の非 non ``__future__`` 機能です)。"
 
 #: ../../../fabric/context_managers.pydocstring of fabric.context_managers:8
 msgid ""
@@ -35,28 +38,37 @@ msgid ""
 "convenient to use multiple context expressions in one single with statement. "
 "Instead of writing::"
 msgstr ""
+"ダイレクトにネストされている複数の ``with`` ステートメントを使用する場合、1つ"
+"のwithステートメント内に複数のコンテキスト表現を用いたほうが便利なことがあり"
+"ます。次のように書く代わりに::"
 
 #: ../../../fabric/context_managers.pydocstring of fabric.context_managers:17
 msgid "you can write::"
-msgstr ""
+msgstr "次のように書くことができます::"
 
 #: ../../../fabric/context_managers.pydocstring of fabric.context_managers:23
 msgid ""
 "Note that you need Python 2.7+ for this to work. On Python 2.5 or 2.6, you "
 "can do the following::"
 msgstr ""
+"このようにするにはPython 2.7以上が必要です。Python 2.5もしくは2.6では次のよう"
+"にします::"
 
 #: ../../../fabric/context_managers.pydocstring of fabric.context_managers:31
 msgid ""
 "Finally, note that `~fabric.context_managers.settings` implements ``nested`` "
 "itself -- see its API doc for details."
 msgstr ""
+"最後に `~fabric.context_managers.settings` は ``nested`` 自身を実装しているこ"
+"とに留意してください。詳しくはこのAPIドキュメントをご覧ください。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:1
 msgid ""
 "Context manager that keeps directory state when calling remote operations."
 msgstr ""
+"コンテキストマネージャーはリモート操作を呼び出すときにはディレクトリの状態を"
+"維持します。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:3
@@ -65,6 +77,9 @@ msgid ""
 "implicitly have a string similar to ``\"cd <path> && \"`` prefixed in order "
 "to give the sense that there is actually statefulness involved."
 msgstr ""
+"これでラップされたブロック内の `run`、 `sudo`、 `get`、 `put` へのどんな呼び"
+"出しも、実際に状態が維持されているという意味を持たせるために ``\"cd <path> "
+"&& \"`` がプリフィックスされたのと似た文字列を暗に含みます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:8
@@ -72,6 +87,8 @@ msgid ""
 "`cd` only affects *remote* paths -- to modify *local* paths, use `~fabric."
 "context_managers.lcd`."
 msgstr ""
+"`cd` は *リモート* のパスでのみ作用します。 *ローカル* パスを変更するには "
+"`~fabric.context_managers.lcd` を使います。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:11
@@ -80,6 +97,8 @@ msgid ""
 "those operations, such as much of the ``contrib`` section, will also be "
 "affected by use of `cd`."
 msgstr ""
+"`cd` の利用はこうしたすべての実行に影響を与えるので、``contrib`` セクションの"
+"多くなど、うした操作を行うコードもまた `cd` の利用に影響を受けます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:15
@@ -88,6 +107,9 @@ msgid ""
 "(keep in mind that your default starting directory is your remote user's ``"
 "$HOME``) and may be nested as well."
 msgstr ""
+"実際のシェルビルトインの `cd` のように、 `cd` は相対パスで呼び出すことができ"
+"(最初のディレクトリのデフォルトはリモートユーザーの ``$HOME`` であることに気"
+"をつけてください)、ネストすることも可能です。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:19
@@ -96,6 +118,9 @@ msgid ""
 "due to how shell-less SSH connections are implemented -- state is **not** "
 "kept between invocations of `run` or `sudo`::"
 msgstr ""
+"下の例はシェルの `cd` を使った \"ノーマルな\" 試みで、 `run` もしくは `sudo` "
+"の実行と実行の間の状態が維持 **されない** というシェルなしSSH接続の実装のため"
+"動作しません。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:26
@@ -103,11 +128,13 @@ msgid ""
 "The above snippet will list the contents of the remote user's ``$HOME`` "
 "instead of ``/var/www``. With `cd`, however, it will work as expected::"
 msgstr ""
+"上の例は ``/var/www`` ではなく、リモートユーザーの ``$HOME`` のコンテンツの一"
+"覧を表示します。`cd` とともに使うと期待通りに動作します::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:32
 msgid "Finally, a demonstration (see inline comments) of nesting::"
-msgstr ""
+msgstr "最後に、ネストの例(インラインのコメントをご覧ください)をお見せします::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:41
@@ -118,6 +145,11 @@ msgid ""
 "not recommend manually altering ``env.cwd`` -- only the *behavior* of `cd` "
 "will have any guarantee of backwards compatibility."
 msgstr ""
+"このコンテキストマネージャーは環境変数のカレントの値、 ``env.cwd`` に追加する"
+"ことによって実装されています(そして、いつものようにその後もとの状態にもどしま"
+"す)。とは言え、この実装は将来的には変更されるかもしれませんので、手動で "
+"``env.cwd`` に変更することはおすすめしません。後方互換性を保証するのは `cd` "
+"の *挙動* のみです。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:50
@@ -125,32 +157,38 @@ msgid ""
 "Space characters will be escaped automatically to make dealing with such "
 "directory names easier."
 msgstr ""
+"空白文字を含むディレクトリ名を扱うため、空白文字は自動的にエスケープされま"
+"す。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:53
 msgid ""
 "Applies to `get` and `put` in addition to the command-running operations."
-msgstr ""
+msgstr "コマンドでの操作に加え、 `get` と `put` にも適用されます。\t"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.cd:57
 msgid "`~fabric.context_managers.lcd`"
-msgstr ""
+msgstr "`~fabric.context_managers.lcd`"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.char_buffered:1
 msgid "Force local terminal ``pipe`` be character, not line, buffered."
 msgstr ""
+"ローカルターミナルの ``パイプ`` を行ごとではなく文字ごとに強制的にバッファし"
+"ます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.char_buffered:3
 msgid "Only applies on Unix-based systems; on Windows this is a no-op."
 msgstr ""
+"ユニックスベースのシステムのみの適用されます。Windowsでは操作できません。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.hide:1
 msgid "Context manager for setting the given output ``groups`` to False."
 msgstr ""
+"与えられた出力 ``groups`` をFalseにセットするためにコンテキストマネージャー。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.hide:3
@@ -160,6 +198,9 @@ msgid ""
 "duration of the enclosed block, and restored to their previous value "
 "afterwards."
 msgstr ""
+"``groups`` は `~fabric.state.output` で定義された出力グループを命名している1"
+"つ以上の文字列でなければなりません。与えられたグループは、囲まれたブロックで"
+"の継続性のためFalseにセットされ、その後は前の状態に戻ります。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.hide:8
@@ -167,11 +208,16 @@ msgid ""
 "For example, to hide the \"[hostname] run:\" status lines, as well as "
 "preventing printout of stdout and stderr, one might use `hide` as follows::"
 msgstr ""
+"例えば、 \"[hostname] run:\" のステータスラインを隠し、同じように標準出力と標"
+"準エラー出力を表示させないようにするには、次のように `hide` を利用することが"
+"できます::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.lcd:1
 msgid "Context manager for updating local current working directory."
 msgstr ""
+"ローカルのカレントワーキングディレクトリを更新するためのコンテキストマネー"
+"ジャー。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.lcd:3
@@ -181,6 +227,10 @@ msgid ""
 "affects the invocation of `~fabric.operations.local` and the local arguments "
 "to `~fabric.operations.get`/`~fabric.operations.put`."
 msgstr ""
+"このコンテキストマネージャーは `~fabric.context_managers.cd` と同じですが、別"
+"の環境変数(`cwd` ではなく `lcwd`)を変更するので、 `~fabric.operations.local` "
+"の実行と `~fabric.operations.get`/`~fabric.operations.put` へのローカルの引数"
+"のみに影響を与えます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.lcd:8
@@ -192,12 +242,20 @@ msgid ""
 "relative to the location of the fabfile in use, which may be found in :ref:"
 "`env.real_fabfile <real-fabfile>`"
 msgstr ""
+"相対パスの引数はローカルユーザーのカレントのワーキングディレクトリに対する相"
+"対になり、Fabric(もしくはFabricを使うコード)がどこで実行されるかによって違っ"
+"てきます。これは `os.getcwd <http://docs.python.org/release/2.6/library/os."
+"html#os.getcwd>`_ で確認できます。fabfileが利用されている場所からの相対に固定"
+"すると便利かもしれません。それは :ref:`env.real_fabfile <real-fabfile>` で確"
+"認できます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:1
 msgid ""
 "Append the given ``path`` to the PATH used to execute any wrapped commands."
 msgstr ""
+"ラップされたコマンド実行するために使われるパスに与えられた ``path`` を追加し"
+"ます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:3
@@ -206,6 +264,9 @@ msgid ""
 "string similar to ``\"PATH=$PATH:<path> \"`` prepended before the given "
 "command."
 msgstr ""
+"これで囲まれたブロック内の `run` もしくは `sudo` に対するどんな呼び出しも、与"
+"えられたコマンドの前に ``\"PATH=$PATH:<path> \"`` に似た文字列を暗黙のうちに"
+"追加されます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:7
@@ -213,6 +274,8 @@ msgid ""
 "You may customize the behavior of `path` by specifying the optional "
 "``behavior`` keyword argument, as follows:"
 msgstr ""
+"次のように、オプションの ``behavior`` キーワード引数を指定することによって "
+"`path` の挙動をカスタマイズできます:"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:10
@@ -220,6 +283,8 @@ msgid ""
 "``'append'``: append given path to the current ``$PATH``, e.g. ``PATH=$PATH:"
 "<path>``. This is the default behavior."
 msgstr ""
+"``'append'``: カレントの ``$PATH`` に与えられたパスを追加します。例えば "
+"``PATH=$PATH:<path>`` です。これはデフォルトの挙動になります。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:12
@@ -227,6 +292,8 @@ msgid ""
 "``'prepend'``: prepend given path to the current ``$PATH``, e.g. "
 "``PATH=<path>:$PATH``."
 msgstr ""
+"``'prepend'``: カレントの ``$PATH`` に与えられたパスを前に追加します。例えば "
+"``PATH=<path>:$PATH`` です。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:14
@@ -234,6 +301,8 @@ msgid ""
 "``'replace'``: ignore previous value of ``$PATH`` altogether, e.g. "
 "``PATH=<path>``."
 msgstr ""
+"``'replace'``: ``$PATH`` の前の値を完全に無視します。例えば ``PATH=<path>`` "
+"となります。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.path:19
@@ -243,20 +312,29 @@ msgid ""
 "path`` and ``env.path_behavior``. However, this implementation may change in "
 "the future, so we do not recommend manually altering them directly."
 msgstr ""
+"このコンテキストマネージャーは、環境変数 ``env.path`` と ``env."
+"path_behavior`` のカレントの値を変更する(そしていつものようにその後に元に戻"
+"す)ように今は実装されています。しかし、この実装は将来的には変更されるかもしれ"
+"ないので直接手動で変更することはおすすめしません。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:1
 msgid ""
 "Prefix all wrapped `run`/`sudo` commands with given command plus ``&&``."
 msgstr ""
+"囲まれたすべての `run`/`sudo` コマンドの前に、与えられたコマンドと ``&&`` を"
+"追加します。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:3
+#, fuzzy
 msgid ""
 "This is nearly identical to `~fabric.operations.cd`, except that nested "
 "invocations append to a list of command strings instead of modifying a "
 "single string."
 msgstr ""
+"これは `~fabric.operations.cd` とほとんど同一でが、1つの文字列を変更する代わ"
+"りにコマンド文字列のリストに、ネストされたmodifying a single string."
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:7
@@ -527,6 +605,7 @@ msgstr ""
 #: fabric.context_managers.show:1
 msgid "Context manager for setting the given output ``groups`` to True."
 msgstr ""
+"与えられた出力 ``groups`` をTrueにセットするためにコンテキストマネージャー。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.show:3
@@ -536,6 +615,9 @@ msgid ""
 "duration of the enclosed block, and restored to their previous value "
 "afterwards."
 msgstr ""
+"``groups`` は `~fabric.state.output` で定義された出力グループを命名している1"
+"つ以上の文字列でなければなりません。与えられたグループは、囲まれたブロックで"
+"の継続性のためTrueにセットされ、その後は前の状態に戻ります。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.show:8
