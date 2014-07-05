@@ -4,15 +4,15 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-07-03 15:00+0900\n"
+"PO-Revision-Date: 2014-07-05 10:03+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.6\n"
 
 #: ../../api/core/context_managers.rst:3
 msgid "Context Managers"
@@ -327,14 +327,13 @@ msgstr ""
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:3
-#, fuzzy
 msgid ""
 "This is nearly identical to `~fabric.operations.cd`, except that nested "
 "invocations append to a list of command strings instead of modifying a "
 "single string."
 msgstr ""
-"これは `~fabric.operations.cd` とほとんど同一でが、1つの文字列を変更する代わ"
-"りにコマンド文字列のリストに、ネストされたmodifying a single string."
+"これは `~fabric.operations.cd` とほとんど同一ですが、1つの文字列を変更する代"
+"わりにコマンド文字列のリストに、ネストされた呼び出しが追加されます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:7
@@ -343,6 +342,8 @@ msgid ""
 "which alters shell state, such as ones which export or alter shell "
 "environment variables."
 msgstr ""
+"たいていの場合、シェル環境変数をエクスポートしたり変更するような、シェルの状"
+"態を変えるシェルスクリプトと一緒に使うといいでしょう。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:11
