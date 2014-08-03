@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-07-05 10:03+0900\n"
+"PO-Revision-Date: 2014-08-03 17:46+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
-"X-Generator: Poedit 1.6.6\n"
+"X-Generator: Poedit 1.6.7\n"
 
 #: ../../api/core/context_managers.rst:3
 msgid "Context Managers"
@@ -352,11 +352,14 @@ msgid ""
 "command from `virtualenvwrapper <http://www.doughellmann.com/projects/"
 "virtualenvwrapper/>`_::"
 msgstr ""
+"例えば、このツールのもっとも一般的な利用方法の1つは `virtualenvwrapper "
+"<http://www.doughellmann.com/projects/virtualenvwrapper/>`_ からの "
+"``workon`` コマンドと使うものです::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:18
 msgid "In the above snippet, the actual shell command run would be this::"
-msgstr ""
+msgstr "上記の例では、実際のシェルコマンドの実行はこのようになります::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:22
@@ -365,11 +368,14 @@ msgid ""
 "your virtualenv doesn't ``cd`` in its ``postactivate`` script, you could do "
 "the following::"
 msgstr ""
+"このコンテキストマネージャーは `~fabric.context_managers.cd` と互換性があるの"
+"で、もし自分の virtualenv がその ``postactivate`` スクリプトで ``cd`` できな"
+"いときは次ようにもできます::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:31
 msgid "Which would result in executions like so::"
-msgstr ""
+msgstr "これは、実行時には次のような結果になります::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:36
@@ -377,6 +383,8 @@ msgid ""
 "Finally, as alluded to near the beginning, `~fabric.context_managers.prefix` "
 "may be nested if desired, e.g.::"
 msgstr ""
+"最後に、冒頭近くで示唆したように、`~fabric.context_managers.prefix` はお好み"
+"のようにネストできます。例えば::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:44
@@ -386,12 +394,12 @@ msgstr "結果::"
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.prefix:49
 msgid "Contrived, but hopefully illustrative."
-msgstr ""
+msgstr "不自然かもしれませんが、説明的だと思います。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:1
 msgid "Alias to ``settings(hide('everything'), warn_only=True)``."
-msgstr ""
+msgstr "``settings(hide('everything'), warn_only=True)``へのエイリアス。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:3
@@ -399,6 +407,8 @@ msgid ""
 "Useful for wrapping remote interrogative commands which you expect to fail "
 "occasionally, and/or which you want to silence."
 msgstr ""
+"時折失敗が予期されるかつ/もしくは何も表示させたくない疑問形のリモートコマンド"
+"をラップするときに便利です。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:6
@@ -412,6 +422,9 @@ msgid ""
 "tmp/build`` line, nor will any stdout/stderr display, and command failure is "
 "ignored."
 msgstr ""
+"タスク内で使用されると、上記スニペットは ``run: test -e /tmp/build`` の行を生"
+"成せず、また、標準出力/標準エラー出力のまったく表示させず、コマンドの失敗は無"
+"視されます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:16
@@ -419,11 +432,15 @@ msgid ""
 ":ref:`env.warn_only <warn_only>`, `~fabric.context_managers.settings`, "
 "`~fabric.context_managers.hide`"
 msgstr ""
+":ref:`env.warn_only <warn_only>`、 `~fabric.context_managers.settings`、 "
+"`~fabric.context_managers.hide`"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:1
 msgid "Create a tunnel forwarding a locally-visible port to the remote target."
 msgstr ""
+"ローカルの開いているポートからリモートのターゲットにトンネルフォワーディング"
+"を作成します。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:3
@@ -431,6 +448,8 @@ msgid ""
 "For example, you can let the remote host access a database that is installed "
 "on the client host::"
 msgstr ""
+"例えば、クライアントホストにインストールしてあるデータベースへリモートからア"
+"クセスさせます::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:12
@@ -438,16 +457,18 @@ msgid ""
 "The database might be installed on a client only reachable from the client "
 "host (as opposed to *on* the client itself)::"
 msgstr ""
+"データベースは、クライアントホストからのみ接続可能なクライアント上にインス"
+"トールされているとします(クライアント自身の *上に* あるのとは対照的に)::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:19
 msgid "``remote_tunnel`` accepts up to four arguments:"
-msgstr ""
+msgstr "``remote_tunnel``は4個までの引き数を取ります:"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:21
 msgid "``remote_port`` (mandatory) is the remote port to listen to."
-msgstr ""
+msgstr "``remote_port`` (必須)リッスンするリモートホストのポート。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:22
@@ -455,6 +476,8 @@ msgid ""
 "``local_port`` (optional) is the local port to connect to; the default is "
 "the same port as the remote one."
 msgstr ""
+"``local_port`` (オプション) は接続するローカルのポートです。デフォルトはリ"
+"モートのポートと同じポートです。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:24
@@ -463,6 +486,9 @@ msgid ""
 "address) to connect to; the default is ``localhost`` (that is, the same "
 "computer Fabric is running on)."
 msgstr ""
+"``local_host`` (オプション) は接続するローカルで到達可能なコンピュータ(DNS名"
+"かIPアドレス)です。デフォルトは``localhost``です(これはつまり、Fabricが動いて"
+"いるのと同じコンピュータのことです)。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:27
@@ -472,6 +498,10 @@ msgid ""
 "interface on the target (or a DNS name that resolves to such IP). You can "
 "use \"0.0.0.0\" to bind to all interfaces."
 msgstr ""
+"``remote_bind_address`` (オプション) は、カレントターゲット上のリッスンするた"
+"めにバインドするためのリモートのIPアドレスです。これはターゲット上のインター"
+"フェースに割り当てられたIPである必要があります(もしくはそうしたIPをリゾルブす"
+"るDNS名)。すべてのインターフェースにバインドするには \"0.0.0.0\" を使います。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:33
@@ -480,16 +510,21 @@ msgid ""
 "localhost interface (127.0.0.1). In these cases, `remote_bind_address` is "
 "ignored by the server, and the tunnel will listen only to 127.0.0.1."
 msgstr ""
+"デフォルトでは、たいていのSSHサーバはリモートトンネルにローカルホストのイン"
+"ターフェース(127.0.0.1)をリッスンすることしか許可していません。こうしたケース"
+"では`remote_bind_address`はサーバーによって無視され、トンネルは127.0.0.1だけ"
+"をリッスンします。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:1
 msgid "Nest context managers and/or override ``env`` variables."
 msgstr ""
+"コンテキストマネージャーをネストおよび/もしくは``env``変数を上書きします。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:3
 msgid "`settings` serves two purposes:"
-msgstr ""
+msgstr "`settings`には2つの目的があります:"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:5
