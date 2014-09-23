@@ -4,15 +4,15 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-06-22 20:33+0900\n"
+"PO-Revision-Date: 2014-09-23 14:06+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../../api/core/docs.rst:3
 msgid "Documentation helpers"
@@ -30,6 +30,8 @@ msgid ""
 "replace them with their ``.wrapped`` attribute (the original decorated "
 "function.)"
 msgstr ""
+"特に `~fabric.tasks.WrappedCallableTask` のインスタンスを探し、その ``."
+"wrapped`` 属性(元のデコレートされた関数)と置き換えます。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:7
 msgid ""
@@ -39,10 +41,15 @@ msgid ""
 "signature and so forth. Without use of ``unwrap_tasks``, autodoc is unable "
 "to access the function signature (though it is able to see e.g. ``__doc__``.)"
 msgstr ""
+"これはSphinxのautodocツールとともに使用するよう意図されていて、プロジェクト"
+"の ``conf.py`` の最後のほうで実行されます。autodoc拡張機能が関数シグネチャな"
+"どにおける \"実際の\" 関数に対して完全なアクセスを確実に持つようにします。 "
+"``unwrap_tasks`` 利用なしではautodocは関数シグネチャにアクセスできません"
+"(``__doc__`` などで見ることはできますが)。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:14
 msgid "For example, at the bottom of your ``conf.py``::"
-msgstr ""
+msgstr "例えば、``conf.py`` の最後の方で::"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:20
 msgid ""
@@ -51,19 +58,27 @@ msgid ""
 "it a task?\" check so they appear to be private, which will then cause "
 "autodoc to skip over them."
 msgstr ""
+"それ以上のことも可能です。``hide_nontasks=True`` と指定することによってタスク"
+"以外のすべての関数を明示的に **隠す** ことができます。これによりすべてのオブ"
+"ジェクトで \"これはタスク?\" のチェックに失敗するようになり、そのためプライ"
+"ベートのように見え、その結果autodocはこれらをスキップします。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:25
 msgid ""
 "``hide_nontasks`` is thus useful when you have a fabfile mixing in "
 "subroutines with real tasks and want to document *just* the real tasks."
 msgstr ""
+"したがって、``hide_nontasks`` は、fabfileに実際のタスクを持つサブルーチンが"
+"入っていて、本当のタスク *だけ* をドキュメント化したいときに便利です。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:28
 msgid ""
 "If you run this within an actual Fabric-code-using session (instead of "
 "within a Sphinx ``conf.py``), please seek immediate medical attention."
 msgstr ""
+"もし実際のセッションを使用しているFabricコード内で(Sphinxの ``conf.py`` 内で"
+"はなく)これを実行するのなら、すぐに病院で診てもらってください。"
 
 #: ../../../fabric/docs.pydocstring of fabric.docs.unwrap_tasks:33
 msgid "`~fabric.tasks.WrappedCallableTask`, `~fabric.decorators.task`"
-msgstr ""
+msgstr "`~fabric.tasks.WrappedCallableTask`, `~fabric.decorators.task`"
