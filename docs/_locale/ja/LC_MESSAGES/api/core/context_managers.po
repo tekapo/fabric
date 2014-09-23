@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-08-03 17:46+0900\n"
+"PO-Revision-Date: 2014-08-03 18:00+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -603,12 +603,12 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:76
 msgid "The ``clean_revert`` kwarg."
-msgstr ""
+msgstr "``clean_revert``キーワード引数。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:1
 msgid "Set shell environment variables for wrapped commands."
-msgstr ""
+msgstr "ラップされたコマンドのためのシェル環境変数をセットします。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:3
@@ -627,7 +627,7 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:14
 msgid "Multiple key-value pairs may be given simultaneously."
-msgstr ""
+msgstr "複数のキーバリューペアを同時に与えることができます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:17
@@ -672,7 +672,7 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:1
 msgid "Alias to ``settings(warn_only=True)``."
-msgstr ""
+msgstr "``settings(warn_only=True)``のエイリアス。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:4
