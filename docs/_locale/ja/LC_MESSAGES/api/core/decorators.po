@@ -1,35 +1,43 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-09-27 12:34+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 
 #: ../../api/core/decorators.rst:3
 msgid "Decorators"
-msgstr ""
+msgstr "デコレーター"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators:1
 msgid "Convenience decorators for use in fabfiles."
-msgstr ""
+msgstr "fabfileで使われる便利なデコレーター。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.hosts:1
 msgid ""
 "Decorator defining which host or hosts to execute the wrapped function on."
 msgstr ""
+"ラップされた関数をひとつもしくは複数のどのホストに対して実行するのかを定義し"
+"ているデコレーターです。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.hosts:3
 msgid ""
 "For example, the following will ensure that, barring an override on the "
-"command line, ``my_func`` will be run on ``host1``, ``host2`` and ``host3``,"
-" and with specific users on ``host1`` and ``host3``::"
+"command line, ``my_func`` will be run on ``host1``, ``host2`` and ``host3``, "
+"and with specific users on ``host1`` and ``host3``::"
 msgstr ""
+"例えば、以下はコマンドラインへの上書きを防ぎます。``my_func`` は ``host1``、"
+"``host2``、``host3`` に対して、そして ``host1``と``host3`` に対してはユーザー"
+"を指定して実行されます。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.hosts:11
 msgid ""
@@ -37,22 +45,31 @@ msgid ""
 "(``@hosts('host1')``, ``@hosts('host1', 'host2')``) or a single, iterable "
 "argument (``@hosts(['host1', 'host2'])``)."
 msgstr ""
+"`~fabric.decorators.hosts` は引き数リスト(``@hosts('host1')``, "
+"``@hosts('host1', 'host2')``)もしくは繰り返しの引き数(``@hosts(['host1', "
+"'host2'])``)を取って実行できます。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.hosts:15
 msgid ""
 "Note that this decorator actually just sets the function's ``.hosts`` "
 "attribute, which is then read prior to executing the function."
 msgstr ""
+"このデコレーターは実際には単にその関数の ``.hosts`` 属性をセットするだけで"
+"す。そのため、その関数の実行に先立って読み込まれます。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.hosts:18
 msgid ""
 "Allow a single, iterable argument (``@hosts(iterable)``) to be used instead "
 "of requiring ``@hosts(*iterable)``."
 msgstr ""
+"``@hosts(*iterable)`` を必要とする代わりに繰り返しの引き数 "
+"(``@hosts(iterable)``) として利用できるようになりました。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.roles:1
 msgid "Decorator defining a list of role names, used to look up host lists."
 msgstr ""
+"ホストリストを参照するために利用されるロール名のリストを定義するデコレーター"
+"です。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.roles:3
 msgid ""
@@ -61,31 +78,45 @@ msgid ""
 "barring an override on the command line, ``my_func`` will be executed "
 "against the hosts listed in the ``webserver`` and ``dbserver`` roles::"
 msgstr ""
+"ロールは、一つもしくは複数のホスト接続文字列を値とする `env` のキーとして単純"
+"に定義されます。例えば次の例は、コマンドラインに対する上書きを防ぎ、"
+"``my_func`` が ``webserver`` と ``dbserver`` のロールにリストされているホスト"
+"に対して実行されます。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.roles:17
 msgid ""
 "As with `~fabric.decorators.hosts`, `~fabric.decorators.roles` may be "
 "invoked with either an argument list or a single, iterable argument. "
-"Similarly, this decorator uses the same mechanism as "
-"`~fabric.decorators.hosts` and simply sets ``<function>.roles``."
+"Similarly, this decorator uses the same mechanism as `~fabric.decorators."
+"hosts` and simply sets ``<function>.roles``."
 msgstr ""
+"`~fabric.decorators.hosts` と同じように `~fabric.decorators.roles` は引き数リ"
+"ストもしくは単一の繰り返しの引き数を取って実行できます。同じように、このデコ"
+"レーターは `~fabric.decorators.hosts` と同じ仕組みを使い、単純に "
+"``<function>.roles`` をセットします。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.roles:22
 msgid ""
-"Allow a single, iterable argument to be used (same as "
-"`~fabric.decorators.hosts`)."
+"Allow a single, iterable argument to be used (same as `~fabric.decorators."
+"hosts`)."
 msgstr ""
+"単一の繰り返しの引き数(`~fabric.decorators.hosts` と同じように)が使えるように"
+"なりました。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.runs_once:1
 msgid "Decorator preventing wrapped function from running more than once."
-msgstr ""
+msgstr "ラップされた関数が複数回実行されないようにするデコレーターです。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.runs_once:3
 msgid ""
-"By keeping internal state, this decorator allows you to mark a function such"
-" that it will only run once per Python interpreter session, which in typical"
-" use means \"once per invocation of the ``fab`` program\"."
+"By keeping internal state, this decorator allows you to mark a function such "
+"that it will only run once per Python interpreter session, which in typical "
+"use means \"once per invocation of the ``fab`` program\"."
 msgstr ""
+"内部の状態を保持することによって、このデコレーターは関数に印をつけ、一つの"
+"Python繰り返しセッションにつき一度だけしか実行できないようにします。典型的な"
+"使用法としてはつまり、\"その ``fab`` プログラムの実行につき一回\" ということ"
+"です。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.runs_once:7
 msgid ""
@@ -93,28 +124,39 @@ msgid ""
 "2nd, 3rd, ..., Nth time it is called, and will return the value of the "
 "original run."
 msgstr ""
+"このデコレーターでラップされたどんな関数でも、それが2回め、3回め、n回目に呼び"
+"出されて呼び出されたときに何もせずに実行に失敗し、最初のオリジナルの実行の値"
+"を返します。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.runs_once:11
 msgid "``runs_once`` does not work with parallel task execution."
-msgstr ""
+msgstr "``runs_once`` は並列タスク実行では動作しません。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.serial:1
 msgid ""
 "Forces the wrapped function to always run sequentially, never in parallel."
 msgstr ""
+"これでラップされた関数が常に順番に実行されるよう、決して並列には実行されない"
+"ようにします。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.serial:3
 msgid ""
 "This decorator takes precedence over the global value of :ref:`env.parallel "
-"<env-parallel>`. However, if a task is decorated with both "
-"`~fabric.decorators.serial` *and* `~fabric.decorators.parallel`, "
-"`~fabric.decorators.parallel` wins."
+"<env-parallel>`. However, if a task is decorated with both `~fabric."
+"decorators.serial` *and* `~fabric.decorators.parallel`, `~fabric.decorators."
+"parallel` wins."
 msgstr ""
+"このデコレーターは :ref:`env.parallel <env-parallel>` のグローバル値よりも優"
+"先します。とは言え、`~fabric.decorators.serial` と `~fabric.decorators."
+"parallel` の *両方* のデコレーターを持つタスクでは `~fabric.decorators."
+"parallel` が優先します。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.parallel:1
 msgid ""
 "Forces the wrapped function to run in parallel, instead of sequentially."
 msgstr ""
+"これでラップされた関数が常に並列に実行されるよう、決して順番には実行されない"
+"ようにします。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.parallel:3
 msgid ""
@@ -122,55 +164,69 @@ msgid ""
 "<env-parallel>`. It also takes precedence over `~fabric.decorators.serial` "
 "if a task is decorated with both."
 msgstr ""
+"このデコレーターは :ref:`env.parallel <env-parallel>` のグローバル値よりも優"
+"先します。また、`~fabric.decorators.serial` と両方を持つタスクでは `~fabric."
+"decorators.serial` よりも優先します。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:1
 msgid "Decorator declaring the wrapped function to be a new-style task."
 msgstr ""
+"ラップされた関数が新しいスタイルのタスクであることを宣言するデコレーターで"
+"す。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:3
 msgid ""
-"May be invoked as a simple, argument-less decorator (i.e. ``@task``) or with"
-" arguments customizing its behavior (e.g. ``@task(alias='myalias')``)."
+"May be invoked as a simple, argument-less decorator (i.e. ``@task``) or with "
+"arguments customizing its behavior (e.g. ``@task(alias='myalias')``)."
 msgstr ""
+"単純な引数なしのデコレーターとして、もしくは挙動をカスタマイズする引き数 (e."
+"g. ``@task(alias='myalias')``) を伴って実行されます。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:6
 msgid ""
 "Please see the :ref:`new-style task <task-decorator>` documentation for "
 "details on how to use this decorator."
 msgstr ""
+"このデコレーターの利用法の詳細は :ref:`new-style task <task-decorator>` をご"
+"覧ください。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:9
 msgid ""
 "Added the ``alias``, ``aliases``, ``task_class`` and ``default`` keyword "
 "arguments. See :ref:`task-decorator-arguments` for details."
 msgstr ""
+"``alias``、``aliases``、``task_class``、``default`` のキーワード引き数を追加"
+"しました。詳細は :ref:`task-decorator-arguments` をご覧ください。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:12
 msgid "Added the ``name`` keyword argument."
-msgstr ""
+msgstr "``name`` キーワード引き数を追加しました。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.task:15
 msgid "`~fabric.docs.unwrap_tasks`, `~fabric.tasks.WrappedCallableTask`"
-msgstr ""
+msgstr "`~fabric.docs.unwrap_tasks`, `~fabric.tasks.WrappedCallableTask`"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.with_settings:1
 msgid "Decorator equivalent of ``fabric.context_managers.settings``."
-msgstr ""
+msgstr "``fabric.context_managers.settings`` と同等のデコレーターです。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.with_settings:3
 msgid ""
 "Allows you to wrap an entire function as if it was called inside a block "
 "with the ``settings`` context manager. This may be useful if you know you "
-"want a given setting applied to an entire function body, or wish to retrofit"
-" old code without indenting everything."
+"want a given setting applied to an entire function body, or wish to retrofit "
+"old code without indenting everything."
 msgstr ""
+"まるで ``settings`` コンテキストマネージャーを伴ってひとつのブロック内で呼び"
+"出されたように関数全体をラップします。これは、関数ボディ全体に与えられたセッ"
+"ティングを適用させたいときや、すべてをインデントさせずに古いコードを変更した"
+"いときに便利です。"
 
 #: ../../../fabric/decorators.pydocstring of fabric.decorators.with_settings:8
-msgid ""
-"For example, to turn aborts into warnings for an entire task function::"
-msgstr ""
+msgid "For example, to turn aborts into warnings for an entire task function::"
+msgstr "例えば、タスク関数全体で停止を警告に変更します::"
 
 #: ../../../fabric/decorators.pydocstring of
 #: fabric.decorators.with_settings:14
 msgid "`~fabric.context_managers.settings`"
-msgstr ""
+msgstr "`~fabric.context_managers.settings`"
