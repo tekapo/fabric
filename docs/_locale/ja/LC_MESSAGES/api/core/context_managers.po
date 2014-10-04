@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-10-04 11:37+0900\n"
+"PO-Revision-Date: 2014-10-04 12:18+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -623,6 +623,9 @@ msgid ""
 "are also preserved if ``clean_revert`` is active. When ``False``, such keys "
 "are removed when the block exits."
 msgstr ""
+"``clean_revert`` 有効時には ``settings`` の利用前に ``env`` に存在しなかった"
+"新しいキーも保存されます。``False`` の時はこうしたキーはブロック終了時に取り"
+"除かれます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:76
@@ -640,6 +643,8 @@ msgid ""
 "For example, the below shows how you might set a ZeroMQ related environment "
 "variable when installing a Python ZMQ library::"
 msgstr ""
+"例えば、以下はPythonのZMQライブラリをインストールするときに関連する環境変数を"
+"どのようにセットするのかをお見せしています::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:9
@@ -647,6 +652,8 @@ msgid ""
 "As with `~fabric.context_managers.prefix`, this effectively turns the "
 "``run`` command into::"
 msgstr ""
+"`~fabric.context_managers.prefix` と同様に、これは実質的に ``run`` コマンドを"
+"以下に変更します::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:14
@@ -660,6 +667,8 @@ msgid ""
 "from a Windows localhost, ``SET`` commands will be used to implement this "
 "feature."
 msgstr ""
+"Windowsのローカルホストから実行したときに `~fabric.operations.local` の挙動に"
+"営業が出る場合、この機能の実装には ``SET`` コマンドが使われます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.show:1
@@ -684,6 +693,8 @@ msgstr ""
 msgid ""
 "For example, to turn on debug output (which is typically off by default)::"
 msgstr ""
+"例えば、デバッグ出力を有効にします(デフォルトではたいていオフになっていま"
+"す)::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.show:14
@@ -692,6 +703,10 @@ msgid ""
 "for turning on the normally-hidden ``debug`` group, or when you know or "
 "suspect that code calling your own code is trying to hide output with `hide`."
 msgstr ""
+"ほぼすべての出力グループがデフォルトでは表示されますが、通常は非表示になって"
+"いる ``debug`` グループをオンにしたり、ご自分のコードを呼び出すコードが "
+"`hide` で出力を隠そうとしていることを知っていたり疑っていたりする場合に "
+"`show` はとても有用です。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:1
@@ -700,10 +715,9 @@ msgstr "``settings(warn_only=True)`` のエイリアスです。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:4
-#, fuzzy
 msgid ""
 ":ref:`env.warn_only <warn_only>`, `~fabric.context_managers.settings`, "
 "`~fabric.context_managers.quiet`"
 msgstr ""
 ":ref:`env.warn_only <warn_only>`、 `~fabric.context_managers.settings`、 "
-"`~fabric.context_managers.hide`"
+"`~fabric.context_managers.quiet`"
