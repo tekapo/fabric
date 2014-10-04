@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-09-27 12:46+0900\n"
+"PO-Revision-Date: 2014-10-04 09:11+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -38,6 +38,12 @@ msgid ""
 "failed to download, and a ``.succeeded`` attribute equivalent to ``not ."
 "failed``."
 msgstr ""
+"`~fabric.operations.get` はダウンロードしたすべてのローカルファイルへの絶対パ"
+"スを含む反復可能オブジェクトを返します。これはもし ``local_path`` がStringIO"
+"オブジェクトの場合には空になります(StringIOオブジェクト利用時についての詳細は"
+"下の方を参照してください)。このオブジェクトはまた、ダウンロードに失敗したすべ"
+"てのリモートファイルのパスを含む``.failed``属性と ``not .failed``と同等の ``."
+"succeeded``属性を提示します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:10
 msgid ""
@@ -49,6 +55,13 @@ msgid ""
 "the remote path points to a directory, that directory will be downloaded "
 "recursively."
 msgstr ""
+"``remote_path`` はダウンロードするリモートファイルもしくはリモートディレクト"
+"リのパスで、例えば ``\"/var/log/apache2/*.log\"`` などのシェルglogシンタック"
+"スを含むことができ、チルダはリモートのホームディレクトリに置き換えます。相対"
+"パスはリモートのユーザーのホームディレクトリからの相対位置として、もしくは"
+"`~fabric.context_managers.cd` によってコントロールされたリモートのカレント"
+"ワーキングディレクトリからの相対位置として扱われます。もしリモートパスにディ"
+"レクトリが指定されている時、そのディレクトリが再帰的にダウンロードされます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:18
 msgid ""
@@ -58,29 +71,42 @@ msgid ""
 "interpolated, using standard Python dict-based interpolation, with the "
 "following variables:"
 msgstr ""
+"``local_path`` はダウンロードしたリモートファイルもしくはファイルが保存される"
+"場所へのパスです。もし相対パスの場合、`~fabric.context_managers.lcd` によって"
+"コントロールされるローカルのワーキングディレクトリを受け取ります。これは"
+"Python標準の辞書ベースの挿入によって、次の変数を伴って挿入されうことがありま"
+"す:"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:24
+#, fuzzy
 msgid ""
 "``host``: The value of ``env.host_string``, eg ``myhostname`` or "
 "``user@myhostname-222`` (the colon between hostname and port is turned into "
 "a dash to maximize filesystem compatibility)"
 msgstr ""
+"``host``: The value of ``env.host_string``, eg ``myhostname`` or "
+"``user@myhostname-222`` (the colon between hostname and port is turned into "
+"a dash to maximize filesystem compatibility)"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:27
 msgid ""
 "``dirname``: The directory part of the remote file path, e.g. the ``src/"
 "projectname`` in ``src/projectname/utils.py``."
 msgstr ""
+"``dirname``: ``src/projectname/utils.py`` の ``src/projectname`` などのリモー"
+"トファイルパスのディレクトリ部分です。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:29
 msgid ""
 "``basename``: The filename part of the remote file path, e.g. the ``utils."
 "py`` in ``src/projectname/utils.py``"
 msgstr ""
+"``basename``: ``src/projectname/utils.py`` の ``utils.py`` などのリモートファ"
+"イルパスのファイル名部分です。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:31
 msgid "``path``: The full remote path, e.g. ``src/projectname/utils.py``."
-msgstr ""
+msgstr "``path``: ``src/projectname/utils.py`` などのリモートのフルパスです。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:34
 msgid ""
@@ -91,6 +117,11 @@ msgid ""
 "in the local working directory. It would **not** write out e.g.  ``var/log/"
 "apache2/access.log``."
 msgstr ""
+"``remote_path`` がディレクトリの絶対パスのとき、内部ディレクトリだけがローカ"
+"ルに作られて上記の変数に渡されます。例えば、``get('/var/log', '%(path)s')`` "
+"は、ローカルのワーキングディレクトリで ``apache2/access.log``、"
+"``postgresql/8.4/postgresql.log`` などのように出力されます。``var/log/"
+"apache2/access.log`` などのようには **出力されません**。 "
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.get:41
 msgid ""
@@ -370,11 +401,11 @@ msgstr ""
 #: ../../../fabric/operations.pydocstring of fabric.operations.prompt:39
 #: fabric.operations.put:56 fabric.operations.run:59 fabric.operations.sudo:18
 msgid "Examples::"
-msgstr ""
+msgstr "例::"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:1
 msgid "Upload one or more files to a remote host."
-msgstr ""
+msgstr "リモートホストへ一つもしくは複数のファイルをアップロードします。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:3
 msgid ""
@@ -526,8 +557,9 @@ msgid ""
 msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:13
+#, fuzzy
 msgid "so format it appropriately."
-msgstr ""
+msgstr "フォーマット"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:15
 msgid ""
@@ -550,7 +582,7 @@ msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:1
 msgid "Run a shell command on a remote host."
-msgstr ""
+msgstr "リモートホストに対してシェルコマンドを実行します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:3
 msgid ""
@@ -667,7 +699,7 @@ msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:84
 msgid "The ``timeout`` argument."
-msgstr ""
+msgstr "``timeout`` 引き数。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:87
 #: fabric.operations.sudo:39
@@ -677,6 +709,7 @@ msgstr ""
 #: ../../../fabric/operations.pydocstring of fabric.operations.sudo:1
 msgid "Run a shell command on a remote host, with superuser privileges."
 msgstr ""
+"リモートホストに対してスーパーユーザー権限でシェルコマンドを実行します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.sudo:3
 msgid ""

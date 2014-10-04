@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-08-03 18:00+0900\n"
+"PO-Revision-Date: 2014-10-04 09:37+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../../api/core/context_managers.rst:3
 msgid "Context Managers"
@@ -533,6 +533,9 @@ msgid ""
 "provided keyword arguments, e.g. ``with settings(user='foo'):``. Original "
 "values, if any, will be restored once the ``with`` block closes."
 msgstr ""
+"もっとも便利なのが、 ``env`` を与えられるどんなキーワード引き数、例えば"
+"``with settings(user='foo'):`` などで一時的に上書き更新できることです。元の値"
+"は、もしあればですが、``with`` ブロックが閉じられると戻されます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:9
@@ -540,6 +543,8 @@ msgid ""
 "The keyword argument ``clean_revert`` has special meaning for ``settings`` "
 "itself (see below) and will be stripped out before execution."
 msgstr ""
+"キーワード引き数 ``clean_revert`` は ``settings`` 自身にとっては特別な意味を"
+"持ち(下記参照)、実行前に取り除かれます。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:13
@@ -548,6 +553,9 @@ msgid ""
 "arguments, which should be other context managers, e.g. ``with "
 "settings(hide('stderr'), show('stdout')):``."
 msgstr ""
+"加えて、 `contextlib.nested`_ を使うと、与えられたどんな非キーワード引き数で"
+"もネストできます。これは他のコンテキストマネージャーである必要がありますが、"
+"例えば ``with settings(hide('stderr'), show('stdout')):`` などです。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:19
@@ -555,6 +563,8 @@ msgid ""
 "These behaviors may be specified at the same time if desired. An example "
 "will hopefully illustrate why this is considered useful::"
 msgstr ""
+"これらの挙動は望めば同時に指定することも可能です。これがなぜ便利であるのかは"
+"例でわかりやすく説明します::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:32
@@ -676,7 +686,10 @@ msgstr "``settings(warn_only=True)``のエイリアス。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:4
+#, fuzzy
 msgid ""
 ":ref:`env.warn_only <warn_only>`, `~fabric.context_managers.settings`, "
 "`~fabric.context_managers.quiet`"
 msgstr ""
+":ref:`env.warn_only <warn_only>`、 `~fabric.context_managers.settings`、 "
+"`~fabric.context_managers.hide`"
