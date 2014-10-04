@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-10-04 10:16+0900\n"
+"PO-Revision-Date: 2014-10-04 11:37+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -576,6 +576,11 @@ msgid ""
 "system the remote host is, without incurring the handful of output that "
 "would normally occur."
 msgstr ""
+"上のタスクは `run` 命令文を実行しますが、もし ``ls`` が失敗した場合に中断する"
+"のではなく警告を出し、その警告自身を含めたすべての出力はユーザーには表示され"
+"ません。その結果としてこのシナリオでは、通常であれば発生するたくさんの出力を"
+"発生させずに、リモートホストがどのシステムのタイプなのかを呼び出しが判別する"
+"ことができる完全に静かなタスクとなります。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:39
@@ -585,6 +590,9 @@ msgid ""
 "with any other piece of Fabric functionality implemented as a context "
 "manager."
 msgstr ""
+"したがって `settings` は、特定のレベルの出力を隠す(もしくは表示する)のととも"
+"に、もしくはコンテキストマネージャーとして実装された他のFabricの機能のひとつ"
+"とともに、環境変数とのどんな組み合わせでもセットするために利用可能です。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:44
@@ -594,6 +602,10 @@ msgid ""
 "whose values remain the same as those given. More examples will make this "
 "clear; below is how ``settings`` operates normally::"
 msgstr ""
+"``clean_revert`` が ``True`` にセットされると、``settings`` はネストされたブ"
+"ロック内で変更されたキーは **元には戻しません** 。その代わり、与えられたとき"
+"と同じ値を持つキーだけを元に戻します。さらに例をご覧になるとより理解できるで"
+"しょう。以下は ``settings`` の通常の動作です::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:59
@@ -601,6 +613,8 @@ msgid ""
 "The internal modification of ``env.host_string`` is nullified -- not always "
 "desirable. That's where ``clean_revert`` comes in::"
 msgstr ""
+"``env.host_string`` の内部での変更は取り消されていますが、これが常に希望の状"
+"態であるとは限りません。ここで ``clean_revert`` の登場です::"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:72
