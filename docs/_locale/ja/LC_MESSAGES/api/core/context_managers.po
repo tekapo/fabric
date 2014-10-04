@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-10-04 09:37+0900\n"
+"PO-Revision-Date: 2014-10-04 10:16+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -463,7 +463,7 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:19
 msgid "``remote_tunnel`` accepts up to four arguments:"
-msgstr "``remote_tunnel``は4個までの引き数を取ります:"
+msgstr "``remote_tunnel`` は4個までの引き数を取ります:"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:21
@@ -487,8 +487,8 @@ msgid ""
 "computer Fabric is running on)."
 msgstr ""
 "``local_host`` (オプション) は接続するローカルで到達可能なコンピュータ(DNS名"
-"かIPアドレス)です。デフォルトは``localhost``です(これはつまり、Fabricが動いて"
-"いるのと同じコンピュータのことです)。"
+"かIPアドレス)です。デフォルトは ``localhost`` です(これはつまり、Fabricが動い"
+"ているのと同じコンピュータのことです)。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:27
@@ -519,12 +519,12 @@ msgstr ""
 #: fabric.context_managers.settings:1
 msgid "Nest context managers and/or override ``env`` variables."
 msgstr ""
-"コンテキストマネージャーをネストおよび/もしくは``env``変数を上書きします。"
+"コンテキストマネージャーをネストおよび/もしくは ``env`` 変数を上書きします。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:3
 msgid "`settings` serves two purposes:"
-msgstr "`settings`には2つの目的があります:"
+msgstr "`settings` には2つの目的があります:"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:5
@@ -613,7 +613,7 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.settings:76
 msgid "The ``clean_revert`` kwarg."
-msgstr "``clean_revert``キーワード引数。"
+msgstr "``clean_revert`` キーワード引数。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.shell_env:1
@@ -682,7 +682,7 @@ msgstr ""
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:1
 msgid "Alias to ``settings(warn_only=True)``."
-msgstr "``settings(warn_only=True)``のエイリアス。"
+msgstr "``settings(warn_only=True)`` のエイリアスです。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.warn_only:4
