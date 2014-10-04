@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-10-04 12:18+0900\n"
+"PO-Revision-Date: 2014-10-04 12:30+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -399,7 +399,7 @@ msgstr "不自然かもしれませんが、説明的だと思います。"
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:1
 msgid "Alias to ``settings(hide('everything'), warn_only=True)``."
-msgstr "``settings(hide('everything'), warn_only=True)``へのエイリアス。"
+msgstr "``settings(hide('everything'), warn_only=True)`` へのエイリアス。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.quiet:3
@@ -498,10 +498,11 @@ msgid ""
 "interface on the target (or a DNS name that resolves to such IP). You can "
 "use \"0.0.0.0\" to bind to all interfaces."
 msgstr ""
-"``remote_bind_address`` (オプション) は、カレントターゲット上のリッスンするた"
-"めにバインドするためのリモートのIPアドレスです。これはターゲット上のインター"
-"フェースに割り当てられたIPである必要があります(もしくはそうしたIPをリゾルブす"
-"るDNS名)。すべてのインターフェースにバインドするには \"0.0.0.0\" を使います。"
+"``remote_bind_address``  (オプション) は、カレントターゲット上のリッスンする"
+"ためにバインドするためのリモートのIPアドレスです。これはターゲット上のイン"
+"ターフェースに割り当てられたIPである必要があります(もしくはそうしたIPをリゾル"
+"ブするDNS名)。すべてのインターフェースにバインドするには \"0.0.0.0\" を使いま"
+"す。"
 
 #: ../../../fabric/context_managers.pydocstring of
 #: fabric.context_managers.remote_tunnel:33
@@ -533,7 +534,7 @@ msgid ""
 "provided keyword arguments, e.g. ``with settings(user='foo'):``. Original "
 "values, if any, will be restored once the ``with`` block closes."
 msgstr ""
-"もっとも便利なのが、 ``env`` を与えられるどんなキーワード引き数、例えば"
+"もっとも便利なのが、 ``env`` を与えられるどんなキーワード引き数、例えば "
 "``with settings(user='foo'):`` などで一時的に上書き更新できることです。元の値"
 "は、もしあればですが、``with`` ブロックが閉じられると戻されます。"
 
