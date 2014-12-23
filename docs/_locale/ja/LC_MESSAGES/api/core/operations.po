@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-12-11 12:17+0900\n"
+"PO-Revision-Date: 2014-12-23 10:02+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
-"X-Generator: Poedit 1.7\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../../api/core/operations.rst:3
 msgid "Operations"
@@ -491,6 +491,8 @@ msgid ""
 "Either way, `prompt` will re-prompt until validation passes (or the user "
 "hits ``Ctrl-C``)."
 msgstr ""
+"どちらにせよ、バリデーションに通るまで(もしくはユーザーが ``Ctrl-C`` を押すま"
+"で) `prompt` は再度入力を待ちます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.prompt:33
 msgid ""
@@ -499,6 +501,11 @@ msgid ""
 "flag is set to ``True``. If you want to block on user input regardless, try "
 "wrapping with `~fabric.context_managers.settings`."
 msgstr ""
+"`~fabric.operations.prompt` は :ref:`env.abort_on_prompts <abort-on-"
+"prompts>` を優先し、このフラグが  ``True`` にセットされている場合はプロンプト"
+"を表示する代わりに `~fabric.utils.abort` を呼び出します。もそこれにかかわらず"
+"ユーザーの入力をブロックしたい場合は、 `~fabric.context_managers.settings` で"
+"囲ってみてください。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.prompt:39
 #: fabric.operations.put:56 fabric.operations.run:59 fabric.operations.sudo:18
@@ -517,6 +524,10 @@ msgid ""
 "(and may thus be used as a boolean test.) You may also check ``.succeeded`` "
 "which is equivalent to ``not .failed``."
 msgstr ""
+"`~fabric.operations.put` はアップロードしたすべてのリモートファイルの完全パス"
+"を含む反復可能オブジェクトを返します。この反復可能オブジェクトはまた、アップ"
+"ロードに失敗したすべてのローカルファイル(そしておそらく真偽テストとして使われ"
+"たもの)のパスを含む ``.failed`` 属性を提示します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:9
 msgid ""
@@ -525,6 +536,11 @@ msgid ""
 "module (give ``use_glob=False`` to disable this behavior).  Tilde expansion "
 "(as implemented by ``os.path.expanduser``) is also performed."
 msgstr ""
+"``local_path`` はローカルのファイルもしくはディレクトリの相対もしくは絶対パス"
+"で、Pythonの ``glob`` モジュールによって理解されるよう(この挙動を無効にしたい"
+"場合は ``use_glob=False`` としてください)、シェルスタイルのワイルドカードを含"
+"むことがあります。(``os.path.expanduser`` によって実装されている)チルダの展開"
+"も実行されます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:14
 msgid ""
@@ -540,6 +556,9 @@ msgid ""
 "contents of the file-like object by rewinding it using ``seek`` (and will "
 "use ``tell`` afterwards to preserve the previous file position)."
 msgstr ""
+"この場合、`~fabric.operations.put` は ``seek`` を使ってリワインドすることによ"
+"りファイル形式オブジェクトのコンテンツ全体を読み取ろうとします(そして前回の"
+"ファイル位置を保存するためにその後に ``tell`` を使います)。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:22
 msgid ""
@@ -548,12 +567,17 @@ msgid ""
 "directory, but tilde expansion (e.g. ``~/.ssh/``) will also be performed if "
 "necessary."
 msgstr ""
+"``remote_path`` は相対的もしくは絶対的な場所で、リモートホストに適用されるも"
+"のです。相対パスはリモートユーザーのホームディレクトリに対する相対で、必要に"
+"応じてチルダ展開(例えば ``~/.ssh/``)が実施されます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:27
 msgid ""
 "An empty string, in either path argument, will be replaced by the "
 "appropriate end's current working directory."
 msgstr ""
+"どちらのパス引き数も空の文字列の場合、適切な側のカレントワーキングディレクト"
+"リによって置き換えられます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:30
 msgid ""
@@ -564,6 +588,13 @@ msgid ""
 "(defaults to remote user's ``$HOME``; this may be overridden via "
 "``temp_dir``), and then use `sudo` to move them to ``remote_path``."
 msgstr ""
+"SFTPプロトコル(`put` が利用します)には接続ユーザーによって所有されていない場"
+"所へファイルをアップロードする直接的な方法はありませんが、``use_sudo=True`` "
+"と指定することによりこれが可能になります。これがセットされたとき、この設定に"
+"より `put` はローカルファイルをリモート側の一時フィアル保管場所(デフォルトで"
+"はリモートユーザーの ``$HOME`` ですが、 ``temp_dir`` によって上書き可能です)"
+"にアップロードし、それから `sudo` を利用してそれらのファイルを "
+"``remote_path`` に移動します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:37
 msgid ""
@@ -571,12 +602,17 @@ msgid ""
 "the mode of its local counterpart (such as when uploading executable "
 "scripts). To do this, specify ``mirror_local_mode=True``."
 msgstr ""
+"場合によっては、新しくアップロードしたファイルのモードを強制的にローカル側の"
+"ものと一致させたほうが望ましいこともあります(実行可能ファイルをアップロードし"
+"た時など)。これを行うには ``mirror_local_mode=True`` を指定します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:41
 msgid ""
 "Alternately, you may use the ``mode`` kwarg to specify an exact mode, in the "
 "same vein as ``os.chmod`` or the Unix ``chmod`` command."
 msgstr ""
+"代わりに、``os.chmod`` もしくはUnixの ``chmod`` コマンドと同様に ``mode`` "
+"キーワード引き数を使って同じモードを指定することもできます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:44
 msgid ""
@@ -586,12 +622,18 @@ msgid ""
 "attempt to upload to ``/tmp/files/test.txt`` instead of ``~/files/test."
 "txt``::"
 msgstr ""
+"`~fabric.operations.put` は `~fabric.context_managers.cd` を優先するので、も"
+"しあれば、 ``remote_path`` の相対値がリモートのカレントワーキングディレクトリ"
+"によって追加されます。したがって、以下の例では ``~/files/test.txt`` ではなく "
+"``/tmp/files/test.txt`` にアップロードしようとします::"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:53
 msgid ""
 "Use of `~fabric.context_managers.lcd` will affect ``local_path`` in the same "
 "manner."
 msgstr ""
+"同じように `~fabric.context_managers.lcd` の利用は ``local_path`` に影響を与"
+"えます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:72
 msgid ""
@@ -611,7 +653,7 @@ msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.put:80
 msgid "Added ``use_glob`` option to allow disabling of globbing."
-msgstr ""
+msgstr "globを無効にできるように ``use_glob`` オプションを追加。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.reboot:1
 msgid "Reboot the remote system."
@@ -623,6 +665,8 @@ msgid ""
 "ref:`connection-attempts`) to ensure that reconnection does not give up for "
 "at least ``wait`` seconds."
 msgstr ""
+"これは一時的にFabricの再接続設定 (:ref:`timeout` と :ref:`connection-"
+"attempts`) を調整し、少なくとも ``wait`` 秒は再接続を止めないようにします。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.reboot:8
 msgid ""
@@ -630,6 +674,9 @@ msgid ""
 "longer requires use of internal APIs.  While we are not officially "
 "deprecating this function, adding more features to it will not be a priority."
 msgstr ""
+"Fabric 1.4以降では一つのセッション途中での再接続の機能は内部APIの利用を必要と"
+"はしません。この機能を公式には非推奨とはしませんが、これにさらに機能を追加す"
+"ることは優先度としては低いです。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.reboot:13
 msgid ""
@@ -637,6 +684,9 @@ msgid ""
 "(6 lines long, well commented) source code and write their own adaptation "
 "using different timeout/attempt values or additional logic."
 msgstr ""
+"﻿より細かく制御したいユーザーは、この関数のソースコード(6行で、よくコメントし"
+"てあります)をチェックし、異なるタイムアウト/試行値または追加のロジックを使用"
+"して独自の変更を書くことを奨励します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.reboot:19
 msgid ""
@@ -644,11 +694,13 @@ msgid ""
 "new reconnection functionality; it may not actually have to wait for "
 "``wait`` seconds before reconnecting."
 msgstr ""
+"``wait`` キーワード引き数を任意に変更し、新しい再接続機能を活用するようにリ"
+"ファクタリング。実際には、再接続前に ``wait`` 秒待つ必要はないかもしれない。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:1
 msgid ""
 "Check for given keys in the shared environment dict and abort if not found."
-msgstr ""
+msgstr "共有環境辞書に与えられているキーをチェックし、なければ中止します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:3
 msgid ""
@@ -656,6 +708,9 @@ msgid ""
 "checked for. If any of the given arguments do not exist, Fabric will abort "
 "execution and print the names of the missing keys."
 msgstr ""
+"位置指定引数は文字列で、どの環境変数をチェックするのかを指定します。与えられ"
+"た引き数がどれでも存在しない場合は、Fabricは実行を中止し、見つからなかった"
+"キーの名称を出力します。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:7
 msgid ""
@@ -663,6 +718,9 @@ msgid ""
 "printed in the error output to inform users why this requirement is in "
 "place. ``used_for`` is printed as part of a string similar to::"
 msgstr ""
+"位置指定引数の ``used_for`` は文字列であることも可能で、その場所でそれがなぜ"
+"必須なのかをユーザーに知らせるためのエラーに出力されます。 ``used_for`` は次"
+"の文字列に似た文字列の一部として出力されます::"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:13
 msgid "so format it appropriately."
@@ -675,6 +733,10 @@ msgid ""
 "be able to execute in order to set the key or keys; it will be included in "
 "the error output if requirements are not met."
 msgstr ""
+"位置指定引数の ``provided_by`` は、単一もしくは複数のキーをセットするために"
+"ユーザーが実行することのできる複数の関数または複数の関数名、あるいはひとつの"
+"関数またはひとつの関数名のリストとして渡すことができます。もし必須事項を満た"
+"していなければ、エラーメッセージの中にそれが含められます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:20
 msgid ""
@@ -682,10 +744,15 @@ msgid ""
 "group. If you feel the need to specify more than one ``used_for``, for "
 "example, you should break your logic into multiple calls to ``require()``."
 msgstr ""
+"キーワード引き数はグループとしてすべての与えられたキーに適用されるとうことを"
+"前提としていることに留意してください。 ``used_for`` を複数指定する必要を感じ"
+"た場合、例えば、ロジックを ``require()`` への複数の呼び出しに分割するといいで"
+"しょう。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.require:24
 msgid "Allow iterable ``provided_by`` values instead of just single values."
 msgstr ""
+"単一の値ではなく、反復可能オブジェクト ``provided_by`` の値を可能にしました。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:1
 msgid "Run a shell command on a remote host."
@@ -700,6 +767,11 @@ msgid ""
 "characters in ``command`` will be automatically escaped when ``shell`` is "
 "True."
 msgstr ""
+"``shell`` が True (デフォルト)の場合、 `run` はシェルインタープリター経由で渡"
+"されるコマンドを実行します。この値は ``env.shell`` (デフォルトは ``/bin/bash "
+"-l -c \"<command>\"`` と同様なものです)の設定によって制御可能です。``shell`` "
+"が True のとき、コマンド内の二重引用符 (``\"``) またはドルマーク (``$``) 文字"
+"は自動的にエスケープされます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:9
 msgid ""
@@ -710,6 +782,12 @@ msgid ""
 "attribute. Furthermore, it includes a copy of the requested & actual command "
 "strings executed, as ``.command`` and ``.real_command``, respectively."
 msgstr ""
+"`run` は単一の文字列(おそらくは複数行)としてリモートプログラムの標準出力の結"
+"果を返します。この文字列はそのコマンドが成功したか失敗したかを明記するため "
+"``failed`` と ``succeeded`` の真偽値属性を提示し、 ``return_code`` 属性として"
+"のリターンコードも含みます。さらに、それぞれ ``.command`` と ``."
+"real_command`` として、リクエストされ、実際に実行されたコマンド文字列のコピー"
+"も含んでいます。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:17
 msgid ""
@@ -718,6 +796,10 @@ msgid ""
 "prompts naturally. For more on how this works, see :doc:`/usage/"
 "interactivity`."
 msgstr ""
+"ローカルのターミナルに入力したすべてのテキストは、それが実行されるたびにリ"
+"モートに送られます。つまり、パスワードやその他のプロンプトと自然な感じでやり"
+"とりできるようにします。この挙動の詳細は :doc:`/usage/interactivity` をご覧く"
+"ださい。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:22
 msgid ""
@@ -729,6 +811,12 @@ msgid ""
 "intelligently handle password-style prompts.) See :ref:`pseudottys` for "
 "details."
 msgstr ""
+"該当のコマンドにとってその存在が問題になる場合は、リモート側の擬似ターミナル"
+"の生成に先立って ``pty=False`` を渡すこともできます。とは言え、そうするとその"
+"コマンドの実行中はタイプした入力をパスワードも含めてすべてエコーするよう"
+"Fabricに強制します。( ``pty=True`` であれば、リモートの擬似ターミナルはエコー"
+"するものの、パスワードスタイルのプロンプトは賢く扱います) 詳細は :ref:"
+"`pseudottys` をご覧ください。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:30
 msgid ""
@@ -739,6 +827,12 @@ msgid ""
 "resulting strings returned by `~fabric.operations.run` will be properly "
 "separated). For more info, please read :ref:`combine_streams`."
 msgstr ""
+"同じように、リモートプログラムの標準エラー出力ストリーム(この関数の返り値に "
+"``stderr`` として明示されます)をプログラム的に調べる必要がある場合は、 "
+"``combine_stderr=False`` をセットすることができます。これを設定すると高い確率"
+"で自分のターミナルでの出力を文字化けさせてしまいます( `~fabric.operations."
+"run` によって返される結果文字列は適切に分離されていますが)詳細は :ref:"
+"`combine_streams` をご覧ください。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:37
 msgid ""
@@ -785,7 +879,7 @@ msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:70
 msgid "The default value of ``pty`` is now ``True``."
-msgstr "``pty `` のデフォルト値を ``True`` に変更しました。"
+msgstr "``pty`` のデフォルト値を ``True`` に変更しました。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:73
 msgid ""
@@ -811,7 +905,7 @@ msgstr "``timeout`` 引き数。"
 #: ../../../fabric/operations.pydocstring of fabric.operations.run:87
 #: fabric.operations.sudo:39
 msgid "The ``shell_escape`` argument."
-msgstr "``shell_escape `` 引き数。"
+msgstr "``shell_escape`` 引き数。"
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.sudo:1
 msgid "Run a shell command on a remote host, with superuser privileges."
@@ -848,4 +942,4 @@ msgstr ""
 
 #: ../../../fabric/operations.pydocstring of fabric.operations.sudo:30
 msgid "Now honors :ref:`env.sudo_user <sudo_user>`."
-msgstr ""
+msgstr ":ref:`env.sudo_user <sudo_user>` を優先するようになりました。"

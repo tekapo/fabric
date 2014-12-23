@@ -1,28 +1,35 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-14 14:50+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
 
 #: ../../api/contrib/django.rst:3
 msgid "Django Integration"
-msgstr ""
+msgstr "Django との統合"
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:3
 msgid ""
 "These functions streamline the process of initializing Django's settings "
-"module environment variable. Once this is done, your fabfile may import from"
-" your Django project, or Django itself, without requiring the use of "
+"module environment variable. Once this is done, your fabfile may import "
+"from your Django project, or Django itself, without requiring the use of "
 "``manage.py`` plugins or having to set the environment variable yourself "
 "every time you use your fabfile."
 msgstr ""
+"これらの関数はDjangoのモジュール環境変数の初期化プロセスを簡素化します。ひと"
+"たび行われると、``manage.py`` プラグインの利用を要求されることなく、もしくは"
+"自分のfabfileを使うごとに環境変数を設定することなく、fabfileがDjangoプロジェ"
+"クトもしくはDjango自身からインポートします。"
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:9
 msgid ""
@@ -31,6 +38,10 @@ msgid ""
 "example, you can use Fabric as a remote \"build\" tool as well as using it "
 "locally. Imagine the following fabfile::"
 msgstr ""
+"いまのところこれらの関数は、Djangoインストールのご自分のローカルのfabfileと"
+"のやり取りをFabricができるようにしているだけです。これはそれほど限定的なもの"
+"ではありません。例えば、ローカルでの利用と同じようにリモートの\"build\" ツー"
+"ルとしてFabricを利用することも可能です。次のfabfileをご覧ください:"
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:29
 msgid ""
@@ -39,13 +50,17 @@ msgid ""
 "``print_instances`` on the production server -- which would then be "
 "interacting with your production Django database."
 msgstr ""
+"Fabricがローカルとリモートの両方にインストールされていれば、"
+"``print_production_instances`` をローカルで実行すると本番サーバー上の "
+"``print_instances`` を実行します。そして、これは本番のDjangoデータベースとや"
+"り取りを行います。"
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:34
 msgid ""
 "As another example, if your local and remote settings are similar, you can "
 "use it to obtain e.g. your database settings, and then use those when "
-"executing a remote (non-Fabric) command. This would allow you some degree of"
-" freedom even if Fabric is only installed locally::"
+"executing a remote (non-Fabric) command. This would allow you some degree "
+"of freedom even if Fabric is only installed locally::"
 msgstr ""
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:52
@@ -58,7 +73,7 @@ msgstr ""
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.project:1
 msgid "Sets ``DJANGO_SETTINGS_MODULE`` to ``'<name>.settings'``."
-msgstr ""
+msgstr "``DJANGO_SETTINGS_MODULE`` を ``'<name>.settings'`` にセットします。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.project:3
@@ -74,33 +89,38 @@ msgid ""
 "Uses `settings_module` -- see its documentation for details on why and how "
 "to use this functionality."
 msgstr ""
+"`settings_module` を利用します -- なぜ、そしてどのようにこの機能を利用するの"
+"かについての詳細はそのドキュメントをご覧ください。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:1
 msgid ""
 "Set ``DJANGO_SETTINGS_MODULE`` shell environment variable to ``module``."
 msgstr ""
+"``DJANGO_SETTINGS_MODULE`` のシェル環境変数を ``module`` にセットします。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:3
 msgid ""
 "Due to how Django works, imports from Django or a Django project will fail "
 "unless the shell environment variable ``DJANGO_SETTINGS_MODULE`` is "
-"correctly set (see `the Django settings docs "
-"<http://docs.djangoproject.com/en/dev/topics/settings/>`_.)"
+"correctly set (see `the Django settings docs <http://docs.djangoproject.com/"
+"en/dev/topics/settings/>`_.)"
 msgstr ""
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:8
 msgid ""
-"This function provides a shortcut for doing so; call it near the top of your"
-" fabfile or Fabric-using code, after which point any Django imports should "
-"work correctly."
+"This function provides a shortcut for doing so; call it near the top of "
+"your fabfile or Fabric-using code, after which point any Django imports "
+"should work correctly."
 msgstr ""
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:14
 msgid ""
-"This function sets a **shell** environment variable (via ``os.environ``) and"
-" is unrelated to Fabric's own internal \"env\" variables."
+"This function sets a **shell** environment variable (via ``os.environ``) "
+"and is unrelated to Fabric's own internal \"env\" variables."
 msgstr ""
+"この関数は **シェル** 環境変数を(``os.environ`` 経由で)セットしますが、"
+"Fabric自身の内部  \"env\" 変数とは関連しません。"
