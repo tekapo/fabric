@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 10:53+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../docs/api/core/tasks.rst:3
+# 83656181b87e44c5bafb0ee06f90e195
+msgid "Tasks"
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task:1
+# 1afc777a2faf441fbb8a6f4b36277b88
+msgid "Abstract base class for objects wishing to be picked up as Fabric tasks."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task:3
+# 56cf59ab795440e29bdd3325aac98733
+msgid "Instances of subclasses will be treated as valid tasks when present in fabfiles loaded by the :doc:`fab </usage/fab>` tool."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task:6
+# 5f34b4acd36844e783f67da82ae54240
+msgid "For details on how to implement and use `~fabric.tasks.Task` subclasses, please see the usage documentation on :ref:`new-style tasks <new-style-tasks>`."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task.__weakref__:1
+# 1413ad8a1f0d4e958b7a747dd166b9d6
+msgid "list of weak references to the object (if defined)"
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task.get_hosts_and_effective_roles:1
+# 9ccdb579011d49169f84b7bd77d8ec6f
+msgid "Return a tuple containing the host list the given task should be using and the roles being used."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.Task.get_hosts_and_effective_roles:4
+# 4b3dbf2414fa44e8b38956330dd881ca
+msgid "See :ref:`host-lists` for detailed documentation on how host lists are set."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.WrappedCallableTask:1
+# 6148156cbfee459bb490382c9237c878
+msgid "Wraps a given callable transparently, while marking it as a valid Task."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.WrappedCallableTask:3
+# 04ad7fd22568477eacccd091c6d828a2
+msgid "Generally used via `~fabric.decorators.task` and not directly."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.WrappedCallableTask:7
+# 21ebcb25ae97437f9773d5ea28f104ef
+msgid "`~fabric.docs.unwrap_tasks`, `~fabric.decorators.task`"
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:1
+# aff4160dcd72456a87c86d6a3edec4b8
+msgid "Execute ``task`` (callable or name), honoring host/role decorators, etc."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:3
+# 59cef8954c48487ea29d48458b7e7e6c
+msgid "``task`` may be an actual callable object, or it may be a registered task name, which is used to look up a callable just as if the name had been given on the command line (including :ref:`namespaced tasks <namespaces>`, e.g. ``\"deploy.migrate\"``."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:8
+# 6c7a6cc1982240c1a0f9258d9b88a106
+msgid "The task will then be executed once per host in its host list, which is (again) assembled in the same manner as CLI-specified tasks: drawing from :option:`-H`, :ref:`env.hosts <hosts>`, the `~fabric.decorators.hosts` or `~fabric.decorators.roles` decorators, and so forth."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:13
+# f4353af1c25a4e4881778ef414d25fa9
+msgid "``host``, ``hosts``, ``role``, ``roles`` and ``exclude_hosts`` kwargs will be stripped out of the final call, and used to set the task's host list, as if they had been specified on the command line like e.g. ``fab taskname:host=hostname``."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:18
+# ce970bceb885466a981133b94f00bbbf
+msgid "Any other arguments or keyword arguments will be passed verbatim into ``task`` (the function itself -- not the ``@task`` decorator wrapping your function!) when it is called, so ``execute(mytask, 'arg1', kwarg1='value')`` will (once per host) invoke ``mytask('arg1', kwarg1='value')``."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:24
+# 02404b734de8406b89454e7b10e49973
+msgid "a dictionary mapping host strings to the given task's return value for that host's execution run. For example, ``execute(foo, hosts=['a', 'b'])`` might return ``{'a': None, 'b': 'bar'}`` if ``foo`` returned nothing on host `a` but returned ``'bar'`` on host `b`.  In situations where a task execution fails for a given host but overall progress does not abort (such as when :ref:`env.skip_bad_hosts <skip-bad-hosts>` is True) the return value for that host will be the error object or message."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:25
+# 0f23d917b7c0426fb24de79056147b71
+msgid "a dictionary mapping host strings to the given task's return value for that host's execution run. For example, ``execute(foo, hosts=['a', 'b'])`` might return ``{'a': None, 'b': 'bar'}`` if ``foo`` returned nothing on host `a` but returned ``'bar'`` on host `b`."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:30
+# b3da6e65496244b4a03f002baa36d57f
+msgid "In situations where a task execution fails for a given host but overall progress does not abort (such as when :ref:`env.skip_bad_hosts <skip-bad-hosts>` is True) the return value for that host will be the error object or message."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:36
+# 03bd05adf49143b39e3b3950577cd485
+msgid ":ref:`The execute usage docs <execute>`, for an expanded explanation and some examples."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.execute:40
+# a889bdeb10c24c6eb3cf33de214e3557
+msgid "Added the return value mapping; previously this function had no defined return value."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.requires_parallel:1
+# 08987e3a336b4fec80924d54793701ea
+msgid "Returns True if given ``task`` should be run in parallel mode."
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.requires_parallel:3
+# 8ca3c1be6f8d4f8fbd287254a55a2b5b
+msgid "Specifically:"
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.requires_parallel:5
+# aab8cf7e17d64d43a03305d91cf4a825
+msgid "It's been explicitly marked with ``@parallel``, or:"
+msgstr ""
+
+#: ../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/tasks.py:docstring of fabric.tasks.requires_parallel:6
+# 646d3db15ae246c1893325fe09f1023f
+msgid "It's *not* been explicitly marked with ``@serial`` *and* the global parallel option (``env.parallel``) is set to ``True``."
+msgstr ""
+

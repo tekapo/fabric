@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 10:53+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../docs/usage/parallel.rst:3
+# bed686dbf5b345d69bf35fcbe036e291
+msgid "Parallel execution"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:9
+# 59b276c06bb64fdfb5fd2bd4af882c30
+msgid "By default, Fabric executes all specified tasks **serially** (see :ref:`execution-strategy` for details.) This document describes Fabric's options for running tasks on multiple hosts in **parallel**, via per-task decorators and/or global command-line switches."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:16
+# 7affb06bbf0a40f4975f6a4f4149c2be
+msgid "What it does"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:18
+# 97eb5a69155f48c8b8ddd4d912271b3c
+msgid "Because Fabric 1.x is not fully threadsafe (and because in general use, task functions do not typically interact with one another) this functionality is implemented via the Python `multiprocessing <http://docs.python.org/library/multiprocessing.html>`_ module. It creates one new process for each host and task combination, optionally using a (configurable) sliding window to prevent too many processes from running at the same time."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:26
+# 66dcdd710b9c414aa5dfc2d1d2f3cbc7
+msgid "For example, imagine a scenario where you want to update Web application code on a number of Web servers, and then reload the servers once the code has been distributed everywhere (to allow for easier rollback if code updates fail.) One could implement this with the following fabfile::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:40
+# bb02728029b24381b3cec6d2a11d3b14
+msgid "and execute it on a set of 3 servers, in serial, like so::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:44
+# 9cbddd55ae4249eda436e9f3fa85b2c4
+msgid "Normally, without any parallel execution options activated, Fabric would run in order:"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:47
+# 69094e6fb3c843dd99b91038c40e6f47
+msgid "``update`` on ``web1``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:48
+# 1c3ee70283c24b1385ab2953df521fdd
+msgid "``update`` on ``web2``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:49
+# 28cfde6e92b541aeb318b15555bb4838
+msgid "``update`` on ``web3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:50
+# 624e142c516b43bb9c77a8170caca5cd
+msgid "``reload`` on ``web1``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:51
+# 515fe43107914a2989cee69a1d29fe9f
+msgid "``reload`` on ``web2``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:52
+# fe2707a7c7dc4f1a94b89d9bdcd0fc10
+msgid "``reload`` on ``web3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:54
+# 3e175975c37e40c48467f6f5a9609f29
+msgid "With parallel execution activated (via :option:`-P` -- see below for details), this turns into:"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:57
+# 6ec275dbd03e40668d51c14d037629e9
+msgid "``update`` on ``web1``, ``web2``, and ``web3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:58
+# 8a3d5c76df7c46e8855a6a36cfd79a2d
+msgid "``reload`` on ``web1``, ``web2``, and ``web3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:60
+# 1b5163e1711d4501b3360a99607e5d19
+msgid "Hopefully the benefits of this are obvious -- if ``update`` took 5 seconds to run and ``reload`` took 2 seconds, serial execution takes (5+2)*3 = 21 seconds to run, while parallel execution takes only a third of the time, (5+2) = 7 seconds on average."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:67
+# 80e6e119aad6443d8750edc6995a688f
+msgid "How to use it"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:70
+# 20151282dda045f8bde3dc10d58a0329
+msgid "Decorators"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:72
+# 0257dede12d3412e859e6b0a71238730
+msgid "Since the minimum \"unit\" that parallel execution affects is a task, the functionality may be enabled or disabled on a task-by-task basis using the `~fabric.decorators.parallel` and `~fabric.decorators.serial` decorators. For example, this fabfile::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:86
+# ab6293d12ddb4deea411b211791fa383
+msgid "when run in this manner::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:90
+# 017e5a68190047cebac00be56e26f0a2
+msgid "will result in the following execution sequence:"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:92
+# 7f16a2f006264b999fc06385d227cf0b
+msgid "``runs_in_parallel`` on ``host1``, ``host2``, and ``host3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:93
+# 7516690a649549dabd7929ded475a85f
+msgid "``runs_serially`` on ``host1``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:94
+# 2c1be4df13314a09a6b0590e01dbdd1a
+msgid "``runs_serially`` on ``host2``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:95
+# 3394689bad284b129283af00649e15e7
+msgid "``runs_serially`` on ``host3``"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:98
+# 3cdd733ba82845f3840b78f5c9091470
+msgid "Command-line flags"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:100
+# 5d4d42c9f328497281a456dcbdec9118
+msgid "One may also force all tasks to run in parallel by using the command-line flag :option:`-P` or the env variable :ref:`env.parallel <env-parallel>`.  However, any task specifically wrapped with `~fabric.decorators.serial` will ignore this setting and continue to run serially."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:105
+# ad47b06020564c1485471ac277fdd875
+msgid "For example, the following fabfile will result in the same execution sequence as the one above::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:117
+# 518fd4226da24569b91763cf9092cbc7
+msgid "when invoked like so::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:121
+# a5720d2f336f4315b87445df4bc30699
+msgid "As before, ``runs_in_parallel`` will run in parallel, and ``runs_serially`` in sequence."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:126
+# cacb59a7fa83415485ffefade94a3d11
+msgid "Bubble size"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:128
+# 9d2dec4dfee04114be5689521720e2db
+msgid "With large host lists, a user's local machine can get overwhelmed by running too many concurrent Fabric processes. Because of this, you may opt to use a moving bubble approach that limits Fabric to a specific number of concurrently active processes."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:133
+# 63740587cb7a4c90b1d201ddf5cd4c40
+msgid "By default, no bubble is used and all hosts are run in one concurrent pool. You can override this on a per-task level by specifying the ``pool_size`` keyword argument to `~fabric.decorators.parallel`, or globally via :option:`-z`."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:137
+# d6aeb27cb1ab4466b84ca3980eef99d4
+msgid "For example, to run on 5 hosts at a time::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:145
+# 75d8b2fb0eb54b63bef90faca554b228
+msgid "Or skip the ``pool_size`` kwarg and instead::"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:152
+# 671dd5a2a7c3432aa34ade364f3227b8
+msgid "Linewise vs bytewise output"
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:154
+# 4ffd22889e2b42a6ad26948ad4a0eeb0
+msgid "Fabric's default mode of printing to the terminal is byte-by-byte, in order to support :doc:`/usage/interactivity`. This often gives poor results when running in parallel mode, as the multiple processes may write to your terminal's standard out stream simultaneously."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:159
+# 369586d64f09459f94c796fd4663c540
+msgid "To help offset this problem, Fabric's option for linewise output is automatically enabled whenever parallelism is active. This will cause you to lose most of the benefits outlined in the above link Fabric's remote interactivity features, but as those do not map well to parallel invocations, it's typically a fair trade."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:165
+# 85c610fc04f64276b301411477ed7e2a
+msgid "There's no way to avoid the multiple processes mixing up on a line-by-line basis, but you will at least be able to tell them apart by the host-string line prefix."
+msgstr ""
+
+#: ../../docs/usage/parallel.rst:170
+# bce1f0ee8c9f4a4f99e750d1fbbdc0cd
+msgid "Future versions will add improved logging support to make troubleshooting parallel runs easier."
+msgstr ""
+
