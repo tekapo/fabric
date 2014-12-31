@@ -1,23 +1,25 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-12-25 19:43+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../../changelog.rst:5
 msgid "Changelog"
-msgstr ""
+msgstr "更新履歴"
 
 #: ../../changelog.rst:530
 msgid "Prehistory"
-msgstr ""
+msgstr "﻿先史時代"
 
 #: ../../changelog.rst:532
 msgid ""
@@ -26,17 +28,21 @@ msgid ""
 "concatenated and preserved here for historical reasons, and may not be in "
 "strict chronological order."
 msgstr ""
+"The content below this section comes from older versions of Fabric which "
+"wrote out changelogs to individual, undated files. They have been "
+"concatenated and preserved here for historical reasons, and may not be in "
+"strict chronological order."
 
 #: ../../changelog.rst:541
 msgid "Changes in version 1.1.2 (2011-07-07)"
-msgstr ""
+msgstr "Changes in version 1.1.2 (2011-07-07)"
 
 #: ../../changelog.rst:544 ../../changelog.rst:556 ../../changelog.rst:627
 #: ../../changelog.rst:667 ../../changelog.rst:702 ../../changelog.rst:882
 #: ../../changelog.rst:893 ../../changelog.rst:906 ../../changelog.rst:974
 #: ../../changelog.rst:1041 ../../changelog.rst:1099
 msgid "Bugfixes"
-msgstr ""
+msgstr "﻿バグ修正"
 
 #: ../../changelog.rst:546
 msgid ""
@@ -45,10 +51,14 @@ msgid ""
 "interface to be modules, not individual tasks. This has been corrected. "
 "Thanks to Vladimir Mihailenco for the catch."
 msgstr ""
+":issue:`375`: The logic used to separate tasks from modules when running "
+"``fab --list`` incorrectly considered task classes implementing the mapping "
+"interface to be modules, not individual tasks. This has been corrected. "
+"Thanks to Vladimir Mihailenco for the catch."
 
 #: ../../changelog.rst:553
 msgid "Changes in version 1.1.1 (2011-06-29)"
-msgstr ""
+msgstr "Changes in version 1.1.1 (2011-06-29)"
 
 #: ../../changelog.rst:558
 msgid ""
@@ -57,38 +67,50 @@ msgid ""
 "and call it, forcing users who subclassed `~fabric.tasks.Task` to define "
 "``__call__()`` instead. This was an oversight and has been corrected."
 msgstr ""
+"The public API for `~fabric.tasks.Task` mentioned use of the ``run()`` "
+"method, but Fabric's main execution loop had not been updated to look for "
+"and call it, forcing users who subclassed `~fabric.tasks.Task` to define "
+"``__call__()`` instead. This was an oversight and has been corrected."
 
 #: ../../changelog.rst:563
 msgid ":ref:`task-subclasses`"
-msgstr ""
+msgstr ":ref:`task-subclasses`"
 
 #: ../../changelog.rst:567
 msgid "Changes in version 1.1 (2011-06-24)"
-msgstr ""
+msgstr "Changes in version 1.1 (2011-06-24)"
 
 #: ../../changelog.rst:569
 msgid "This page lists all changes made to Fabric in its 1.1.0 release."
-msgstr ""
+msgstr "This page lists all changes made to Fabric in its 1.1.0 release."
 
 #: ../../changelog.rst:572
 msgid ""
 "This release also includes all applicable changes from the 1.0.2 release."
 msgstr ""
+"This release also includes all applicable changes from the 1.0.2 release."
 
 #: ../../changelog.rst:575 ../../changelog.rst:737
 msgid "Highlights"
-msgstr ""
+msgstr "﻿ハイライト"
 
 #: ../../changelog.rst:577
 msgid ""
 ":issue:`76`: :ref:`New-style tasks <new-style-tasks>` have been added. With "
-"the addition of the `~fabric.decorators.task` decorator and the "
-"`~fabric.tasks.Task` class, you can now \"opt-in\" and explicitly mark task "
-"functions as tasks, and Fabric will ignore the rest. The original behavior "
-"(now referred to as :ref:`\"classic\" tasks <classic-tasks>`) will still "
-"take effect if no new-style tasks are found. Major thanks to Travis "
-"Swicegood for the original implementation."
+"the addition of the `~fabric.decorators.task` decorator and the `~fabric."
+"tasks.Task` class, you can now \"opt-in\" and explicitly mark task functions "
+"as tasks, and Fabric will ignore the rest. The original behavior (now "
+"referred to as :ref:`\"classic\" tasks <classic-tasks>`) will still take "
+"effect if no new-style tasks are found. Major thanks to Travis Swicegood for "
+"the original implementation."
 msgstr ""
+":issue:`76`: :ref:`New-style tasks <new-style-tasks>` have been added. With "
+"the addition of the `~fabric.decorators.task` decorator and the `~fabric."
+"tasks.Task` class, you can now \"opt-in\" and explicitly mark task functions "
+"as tasks, and Fabric will ignore the rest. The original behavior (now "
+"referred to as :ref:`\"classic\" tasks <classic-tasks>`) will still take "
+"effect if no new-style tasks are found. Major thanks to Travis Swicegood for "
+"the original implementation."
 
 #: ../../changelog.rst:584
 msgid ""
@@ -98,25 +120,36 @@ msgid ""
 "greater organization. See :ref:`namespaces` for details. Thanks again to "
 "Travis Swicegood."
 msgstr ""
+":issue:`56`: Namespacing is now possible: Fabric will crawl imported module "
+"objects looking for new-style task objects and build a dotted hierarchy "
+"(tasks named e.g. ``web.deploy`` or ``db.migrations.run``), allowing for "
+"greater organization. See :ref:`namespaces` for details. Thanks again to "
+"Travis Swicegood."
 
 #: ../../changelog.rst:592 ../../changelog.rst:809 ../../changelog.rst:949
 #: ../../changelog.rst:964 ../../changelog.rst:998 ../../changelog.rst:1085
 msgid "Feature additions"
-msgstr ""
+msgstr "﻿機能の追加"
 
 #: ../../changelog.rst:594
 msgid ""
 ":issue:`10`: `~fabric.contrib.upload_project` now allows control over the "
-"local and remote directory paths, and has improved error handling. Thanks to"
-" Rodrigue Alcazar for the patch."
+"local and remote directory paths, and has improved error handling. Thanks to "
+"Rodrigue Alcazar for the patch."
 msgstr ""
+":issue:`10`: `~fabric.contrib.upload_project` now allows control over the "
+"local and remote directory paths, and has improved error handling. Thanks to "
+"Rodrigue Alcazar for the patch."
 
 #: ../../changelog.rst:597
 msgid ""
-"As part of :issue:`56` (highlighted above), added :option:`--list-format "
-"<-F>` to allow specification of a nested output format from :option:`--list "
-"<-l>`."
+"As part of :issue:`56` (highlighted above), added :option:`--list-format <-"
+"F>` to allow specification of a nested output format from :option:`--list <-"
+"l>`."
 msgstr ""
+"As part of :issue:`56` (highlighted above), added :option:`--list-format <-"
+"F>` to allow specification of a nested output format from :option:`--list <-"
+"l>`."
 
 #: ../../changelog.rst:600
 msgid ""
@@ -124,13 +157,19 @@ msgid ""
 "accepts iterables in addition to single values. Thanks to Thomas Ballinger "
 "for the patch."
 msgstr ""
+":issue:`107`: `~fabric.operations.require`'s ``provided_by`` kwarg now "
+"accepts iterables in addition to single values. Thanks to Thomas Ballinger "
+"for the patch."
 
 #: ../../changelog.rst:603
 msgid ""
 ":issue:`117`: `~fabric.contrib.files.upload_template` now supports the "
-"`~fabric.operations.put` flags ``mirror_local_mode`` and ``mode``. Thanks to"
-" Joe Stump for the suggestion and Thomas Ballinger for the patch."
+"`~fabric.operations.put` flags ``mirror_local_mode`` and ``mode``. Thanks to "
+"Joe Stump for the suggestion and Thomas Ballinger for the patch."
 msgstr ""
+":issue:`117`: `~fabric.contrib.files.upload_template` now supports the "
+"`~fabric.operations.put` flags ``mirror_local_mode`` and ``mode``. Thanks to "
+"Joe Stump for the suggestion and Thomas Ballinger for the patch."
 
 #: ../../changelog.rst:606
 msgid ""
@@ -138,21 +177,29 @@ msgid ""
 "to be specified via a new ``flags`` parameter. Thanks to Nick Trew for the "
 "suggestion and Morgan Goose for initial implementation."
 msgstr ""
+":issue:`154`: `~fabric.contrib.files.sed` now allows customized regex flags "
+"to be specified via a new ``flags`` parameter. Thanks to Nick Trew for the "
+"suggestion and Morgan Goose for initial implementation."
 
 #: ../../changelog.rst:609
 msgid ""
 ":issue:`170`: Allow :ref:`exclusion <excluding-hosts>` of specific hosts "
-"from the final run list. Thanks to Casey Banner for the suggestion and "
-"patch."
+"from the final run list. Thanks to Casey Banner for the suggestion and patch."
 msgstr ""
+":issue:`170`: Allow :ref:`exclusion <excluding-hosts>` of specific hosts "
+"from the final run list. Thanks to Casey Banner for the suggestion and patch."
 
 #: ../../changelog.rst:611
 msgid ""
 ":issue:`189`: Added :option:`--abort-on-prompts`/:ref:`env.abort_on_prompts "
-"<abort-on-prompts>` to allow a more non-interactive behavior, "
-"aborting/exiting instead of trying to prompt the running user. Thanks to "
-"Jeremy Avnet and Matt Chisholm for the initial patch."
+"<abort-on-prompts>` to allow a more non-interactive behavior, aborting/"
+"exiting instead of trying to prompt the running user. Thanks to Jeremy Avnet "
+"and Matt Chisholm for the initial patch."
 msgstr ""
+":issue:`189`: Added :option:`--abort-on-prompts`/:ref:`env.abort_on_prompts "
+"<abort-on-prompts>` to allow a more non-interactive behavior, aborting/"
+"exiting instead of trying to prompt the running user. Thanks to Jeremy Avnet "
+"and Matt Chisholm for the initial patch."
 
 #: ../../changelog.rst:615
 msgid ""
@@ -160,6 +207,9 @@ msgid ""
 "over whether it attempts to create backups of pre-existing destination "
 "files. Thanks to Ales Zoulek for the suggestion and initial patch."
 msgstr ""
+":issue:`273`: `~fabric.contrib.files.upload_template` now offers control "
+"over whether it attempts to create backups of pre-existing destination "
+"files. Thanks to Ales Zoulek for the suggestion and initial patch."
 
 #: ../../changelog.rst:618
 msgid ""
@@ -168,23 +218,36 @@ msgid ""
 "alternative to using the `~fabric.context_managers.settings` context "
 "manager. Thanks to Travis Swicegood for the patch."
 msgstr ""
+":issue:`283`: Added the `~fabric.decorators.with_settings` decorator to "
+"allow application of env var settings to an entire function, as an "
+"alternative to using the `~fabric.context_managers.settings` context "
+"manager. Thanks to Travis Swicegood for the patch."
 
 #: ../../changelog.rst:622
 msgid ""
 ":issue:`353`: Added :option:`--keepalive`/:ref:`env.keepalive <keepalive>` "
-"to allow specification of an SSH keepalive parameter for troublesome network"
-" connections. Thanks to Mark Merritt for catch & patch."
+"to allow specification of an SSH keepalive parameter for troublesome network "
+"connections. Thanks to Mark Merritt for catch & patch."
 msgstr ""
+":issue:`353`: Added :option:`--keepalive`/:ref:`env.keepalive <keepalive>` "
+"to allow specification of an SSH keepalive parameter for troublesome network "
+"connections. Thanks to Mark Merritt for catch & patch."
 
 #: ../../changelog.rst:629
 msgid ""
-":issue:`115`: An implementation detail causing host lists to lose order when"
-" deduped by the ``fab`` execution loop, has been patched to preserve order "
+":issue:`115`: An implementation detail causing host lists to lose order when "
+"deduped by the ``fab`` execution loop, has been patched to preserve order "
 "instead. So e.g. ``fab -H a,b,c`` (or setting ``env.hosts = ['a', 'b', "
 "'c']``) will now always run on ``a``, then ``b``, then ``c``. Previously, "
-"there was a chance the order could get mixed up during deduplication. Thanks"
-" to Rohit Aggarwal for the report."
+"there was a chance the order could get mixed up during deduplication. Thanks "
+"to Rohit Aggarwal for the report."
 msgstr ""
+":issue:`115`: An implementation detail causing host lists to lose order when "
+"deduped by the ``fab`` execution loop, has been patched to preserve order "
+"instead. So e.g. ``fab -H a,b,c`` (or setting ``env.hosts = ['a', 'b', "
+"'c']``) will now always run on ``a``, then ``b``, then ``c``. Previously, "
+"there was a chance the order could get mixed up during deduplication. Thanks "
+"to Rohit Aggarwal for the report."
 
 #: ../../changelog.rst:635
 msgid ""
@@ -193,18 +256,25 @@ msgid ""
 "behavior when stderr exists and is combined with stdout. This has been "
 "corrected. Thanks to Szymon Reichmann for catch and patch."
 msgstr ""
+":issue:`345`: `~fabric.contrib.files.contains` returned the stdout of its "
+"internal ``grep`` command instead of success/failure, causing incorrect "
+"behavior when stderr exists and is combined with stdout. This has been "
+"corrected. Thanks to Szymon Reichmann for catch and patch."
 
 #: ../../changelog.rst:641 ../../changelog.rst:867 ../../changelog.rst:935
 #: ../../changelog.rst:986 ../../changelog.rst:1060 ../../changelog.rst:1116
 msgid "Documentation updates"
-msgstr ""
+msgstr "﻿ドキュメントの更新"
 
 #: ../../changelog.rst:643
 msgid ""
-"Documentation for task declaration has been moved from "
-":doc:`/usage/execution` into its own docs page, :doc:`/usage/tasks`, as a "
-"result of the changes added in :issue:`76` and :issue:`56`."
+"Documentation for task declaration has been moved from :doc:`/usage/"
+"execution` into its own docs page, :doc:`/usage/tasks`, as a result of the "
+"changes added in :issue:`76` and :issue:`56`."
 msgstr ""
+"Documentation for task declaration has been moved from :doc:`/usage/"
+"execution` into its own docs page, :doc:`/usage/tasks`, as a result of the "
+"changes added in :issue:`76` and :issue:`56`."
 
 #: ../../changelog.rst:646
 msgid ""
@@ -213,72 +283,98 @@ msgid ""
 "call. (Specifically, so users know they can pass in multiple, space-joined "
 "directory names instead of just one single directory.)"
 msgstr ""
+":issue:`184`: Make the usage of `~fabric.contrib.project.rsync_project`'s "
+"``local_dir`` argument more obvious, regarding its use in the ``rsync`` "
+"call. (Specifically, so users know they can pass in multiple, space-joined "
+"directory names instead of just one single directory.)"
 
 #: ../../changelog.rst:652
 msgid "Internals"
-msgstr ""
+msgstr "Internals"
 
 #: ../../changelog.rst:654
 msgid ""
-":issue:`307`: A whole pile of minor PEP8 tweaks. Thanks to Markus Gattol for"
-" highlighting the ``pep8`` tool and to Rick Harding for the patch."
+":issue:`307`: A whole pile of minor PEP8 tweaks. Thanks to Markus Gattol for "
+"highlighting the ``pep8`` tool and to Rick Harding for the patch."
 msgstr ""
+":issue:`307`: A whole pile of minor PEP8 tweaks. Thanks to Markus Gattol for "
+"highlighting the ``pep8`` tool and to Rick Harding for the patch."
 
 #: ../../changelog.rst:656
 msgid ""
 ":issue:`314`: Test utility decorator improvements. Thanks to Rick Harding "
 "for initial catch & patch."
 msgstr ""
+":issue:`314`: Test utility decorator improvements. Thanks to Rick Harding "
+"for initial catch & patch."
 
 #: ../../changelog.rst:661
 msgid "Changes in version 1.0.2 (2011-06-24)"
-msgstr ""
+msgstr "Changes in version 1.0.2 (2011-06-24)"
 
 #: ../../changelog.rst:664
 msgid ""
 "This release also includes all applicable changes from the 0.9.7 release."
 msgstr ""
+"This release also includes all applicable changes from the 0.9.7 release."
 
 #: ../../changelog.rst:669
 msgid ""
 ":issue:`258`: Bugfix to a previous, incorrectly applied fix regarding "
 "`~fabric.operations.local` on Windows platforms."
 msgstr ""
+":issue:`258`: Bugfix to a previous, incorrectly applied fix regarding "
+"`~fabric.operations.local` on Windows platforms."
 
 #: ../../changelog.rst:671
 msgid ""
 ":issue:`324`: Update `~fabric.operations.run`/`~fabric.operations.sudo`'s "
 "``combine_stderr`` kwarg so that it correctly overrides the global setting "
 "in all cases. This required changing its default value to ``None``, but the "
-"default behavior (behaving as if the setting were ``True``) has not changed."
-" Thanks to Matthew Woodcraft and Connor Smith for the catch."
+"default behavior (behaving as if the setting were ``True``) has not changed. "
+"Thanks to Matthew Woodcraft and Connor Smith for the catch."
 msgstr ""
+":issue:`324`: Update `~fabric.operations.run`/`~fabric.operations.sudo`'s "
+"``combine_stderr`` kwarg so that it correctly overrides the global setting "
+"in all cases. This required changing its default value to ``None``, but the "
+"default behavior (behaving as if the setting were ``True``) has not changed. "
+"Thanks to Matthew Woodcraft and Connor Smith for the catch."
 
 #: ../../changelog.rst:676
 msgid ""
 ":issue:`337`: Fix logic bug in `~fabric.operations.put` preventing use of "
 "``mirror_local_mode``. Thanks to Roman Imankulov for catch & patch."
 msgstr ""
+":issue:`337`: Fix logic bug in `~fabric.operations.put` preventing use of "
+"``mirror_local_mode``. Thanks to Roman Imankulov for catch & patch."
 
 #: ../../changelog.rst:678
 msgid ""
-":issue:`352` (also :issue:`320`): Seemingly random issues with output lockup"
-" and input problems (e.g. sudo prompts incorrectly rejecting passwords) "
+":issue:`352` (also :issue:`320`): Seemingly random issues with output lockup "
+"and input problems (e.g. sudo prompts incorrectly rejecting passwords) "
 "appear to have been caused by an I/O race condition. This has been fixed. "
-"Thanks to Max Arnold and Paul Oswald for the detailed reports and to Max for"
-" the diagnosis and patch."
+"Thanks to Max Arnold and Paul Oswald for the detailed reports and to Max for "
+"the diagnosis and patch."
 msgstr ""
+":issue:`352` (also :issue:`320`): Seemingly random issues with output lockup "
+"and input problems (e.g. sudo prompts incorrectly rejecting passwords) "
+"appear to have been caused by an I/O race condition. This has been fixed. "
+"Thanks to Max Arnold and Paul Oswald for the detailed reports and to Max for "
+"the diagnosis and patch."
 
 #: ../../changelog.rst:686 ../../changelog.rst:724
 msgid "Documentation"
-msgstr ""
+msgstr "ドキュメント"
 
 #: ../../changelog.rst:688
 msgid ""
 "Updated the API documentation for `~fabric.context_managers.cd` to "
-"explicitly point users to `~fabric.context_managers.lcd` for modifying local"
-" paths."
+"explicitly point users to `~fabric.context_managers.lcd` for modifying local "
+"paths."
 msgstr ""
+"Updated the API documentation for `~fabric.context_managers.cd` to "
+"explicitly point users to `~fabric.context_managers.lcd` for modifying local "
+"paths."
 
 #: ../../changelog.rst:690
 msgid ""
@@ -286,31 +382,43 @@ msgid ""
 "trailing slashes in ``local_dir`` affect ``remote_dir``. Thanks to Mark "
 "Merritt for the catch."
 msgstr ""
+"Clarified the behavior of `~fabric.contrib.project.rsync_project` re: how "
+"trailing slashes in ``local_dir`` affect ``remote_dir``. Thanks to Mark "
+"Merritt for the catch."
 
 #: ../../changelog.rst:696
 msgid "Changes in version 1.0.1 (2011-03-27)"
-msgstr ""
+msgstr "Changes in version 1.0.1 (2011-03-27)"
 
 #: ../../changelog.rst:699
 msgid ""
 "This release also includes all applicable changes from the 0.9.5 release."
 msgstr ""
+"This release also includes all applicable changes from the 0.9.5 release."
 
 #: ../../changelog.rst:704
 msgid ""
 ":issue:`301`: Fixed a bug in `~fabric.operations.local`'s behavior when "
-"``capture=False`` and ``output.stdout`` (or ``.stderr``) was also ``False``."
-" Thanks to Chris Rose for the catch."
+"``capture=False`` and ``output.stdout`` (or ``.stderr``) was also ``False``. "
+"Thanks to Chris Rose for the catch."
 msgstr ""
+":issue:`301`: Fixed a bug in `~fabric.operations.local`'s behavior when "
+"``capture=False`` and ``output.stdout`` (or ``.stderr``) was also ``False``. "
+"Thanks to Chris Rose for the catch."
 
 #: ../../changelog.rst:707
 msgid ""
 ":issue:`310`: Update edge case in `~fabric.operations.put` where using the "
-"``mode`` kwarg alongside ``use_sudo=True`` runs a hidden "
-"`~fabric.operations.sudo` command. The ``mode`` kwarg needs to be octal but "
-"was being interpolated in the ``sudo`` call as a string/integer. Thanks to "
-"Adam Ernst for the catch and suggested fix."
+"``mode`` kwarg alongside ``use_sudo=True`` runs a hidden `~fabric.operations."
+"sudo` command. The ``mode`` kwarg needs to be octal but was being "
+"interpolated in the ``sudo`` call as a string/integer. Thanks to Adam Ernst "
+"for the catch and suggested fix."
 msgstr ""
+":issue:`310`: Update edge case in `~fabric.operations.put` where using the "
+"``mode`` kwarg alongside ``use_sudo=True`` runs a hidden `~fabric.operations."
+"sudo` command. The ``mode`` kwarg needs to be octal but was being "
+"interpolated in the ``sudo`` call as a string/integer. Thanks to Adam Ernst "
+"for the catch and suggested fix."
 
 #: ../../changelog.rst:712
 msgid ""
@@ -319,13 +427,20 @@ msgid ""
 "only the documentation was altered. This has been fixed. Thanks to Adam "
 "Ernst for bringing it to our attention."
 msgstr ""
+":issue:`311`: `~fabric.contrib.files.append` was supposed to have its "
+"``partial`` kwarg's default flipped from ``True`` to ``False``. However, "
+"only the documentation was altered. This has been fixed. Thanks to Adam "
+"Ernst for bringing it to our attention."
 
 #: ../../changelog.rst:716
 msgid ""
-":issue:`312`: Tweak internal I/O related loops to prevent high CPU usage and"
-" poor screen-printing behavior on some systems. Thanks to Kirill Pinchuk for"
-" the initial patch."
+":issue:`312`: Tweak internal I/O related loops to prevent high CPU usage and "
+"poor screen-printing behavior on some systems. Thanks to Kirill Pinchuk for "
+"the initial patch."
 msgstr ""
+":issue:`312`: Tweak internal I/O related loops to prevent high CPU usage and "
+"poor screen-printing behavior on some systems. Thanks to Kirill Pinchuk for "
+"the initial patch."
 
 #: ../../changelog.rst:719
 msgid ""
@@ -333,47 +448,67 @@ msgid ""
 "while entering `~fabric.operations.sudo` passwords. This was fixed via the "
 "same change as for :issue:`312`."
 msgstr ""
+":issue:`320`: Some users reported problems with dropped input, particularly "
+"while entering `~fabric.operations.sudo` passwords. This was fixed via the "
+"same change as for :issue:`312`."
 
 #: ../../changelog.rst:726
 msgid ""
 "Added a missing entry for :ref:`env.path <env-path>` in the usage "
 "documentation."
 msgstr ""
+"Added a missing entry for :ref:`env.path <env-path>` in the usage "
+"documentation."
 
 #: ../../changelog.rst:731
 msgid "Changes in version 1.0 (2011-03-04)"
-msgstr ""
+msgstr "Changes in version 1.0 (2011-03-04)"
 
 #: ../../changelog.rst:733
 msgid "This page lists all changes made to Fabric in its 1.0.0 release."
-msgstr ""
+msgstr "This page lists all changes made to Fabric in its 1.0.0 release."
 
 #: ../../changelog.rst:739
 msgid ""
 ":issue:`7`: `~fabric.operations.run`/`~fabric.operations.sudo` now allow "
-"full interactivity with the remote end. You can interact with remote prompts"
-" and similar interfaces, making certain tasks much easier, and freeing you "
-"from the need to find noninteractive solutions if you don't want to. See "
-":doc:`/usage/interactivity` for more on these changes."
+"full interactivity with the remote end. You can interact with remote prompts "
+"and similar interfaces, making certain tasks much easier, and freeing you "
+"from the need to find noninteractive solutions if you don't want to. See :"
+"doc:`/usage/interactivity` for more on these changes."
 msgstr ""
+":issue:`7`: `~fabric.operations.run`/`~fabric.operations.sudo` now allow "
+"full interactivity with the remote end. You can interact with remote prompts "
+"and similar interfaces, making certain tasks much easier, and freeing you "
+"from the need to find noninteractive solutions if you don't want to. See :"
+"doc:`/usage/interactivity` for more on these changes."
 
 #: ../../changelog.rst:744
 msgid ""
-"`~fabric.operations.put` and `~fabric.operations.get` received many updates,"
-" including but not limited to: recursion, globbing, inline ``sudo`` "
+"`~fabric.operations.put` and `~fabric.operations.get` received many updates, "
+"including but not limited to: recursion, globbing, inline ``sudo`` "
 "capability, and increased control over local file paths. See the individual "
 "ticket line-items below for details. Erich Heine (``sophacles`` on IRC) "
 "played a large part in implementing and/or collecting these changes and "
 "deserves much of the credit."
 msgstr ""
+"`~fabric.operations.put` and `~fabric.operations.get` received many updates, "
+"including but not limited to: recursion, globbing, inline ``sudo`` "
+"capability, and increased control over local file paths. See the individual "
+"ticket line-items below for details. Erich Heine (``sophacles`` on IRC) "
+"played a large part in implementing and/or collecting these changes and "
+"deserves much of the credit."
 
 #: ../../changelog.rst:750
 msgid ""
 "Added functionality for loading fabfiles which are Python packages "
-"(directories) instead of just modules (single files). This allows for easier"
-" organization of nontrivial fabfiles and paves the way for task namespacing "
+"(directories) instead of just modules (single files). This allows for easier "
+"organization of nontrivial fabfiles and paves the way for task namespacing "
 "in the near future. See :ref:`fabfile-discovery` for details."
 msgstr ""
+"Added functionality for loading fabfiles which are Python packages "
+"(directories) instead of just modules (single files). This allows for easier "
+"organization of nontrivial fabfiles and paves the way for task namespacing "
+"in the near future. See :ref:`fabfile-discovery` for details."
 
 #: ../../changelog.rst:754
 msgid ""
@@ -382,74 +517,110 @@ msgid ""
 "during runs of our test suite. This makes quick, configurable full-stack "
 "testing of Fabric (and, to an extent, user fabfiles) possible."
 msgstr ""
+":issue:`185`: Mostly of interest to those contributing to Fabric itself, "
+"Fabric now leverages Paramiko to provide a stub SSH and SFTP server for use "
+"during runs of our test suite. This makes quick, configurable full-stack "
+"testing of Fabric (and, to an extent, user fabfiles) possible."
 
 #: ../../changelog.rst:761
 msgid "Backwards-incompatible changes"
-msgstr ""
+msgstr "Backwards-incompatible changes"
 
 #: ../../changelog.rst:763
 msgid ""
 "The below changes are **backwards incompatible** and have the potential to "
 "break your 0.9.x based fabfiles!"
 msgstr ""
+"The below changes are **backwards incompatible** and have the potential to "
+"break your 0.9.x based fabfiles!"
 
 #: ../../changelog.rst:766
 msgid ""
 "`~fabric.contrib.files.contains` and `~fabric.contrib.files.append` "
-"previously had the ``filename`` argument in the second position, whereas all"
-" other functions in the `contrib.files <fabric.contrib.files>` module had "
+"previously had the ``filename`` argument in the second position, whereas all "
+"other functions in the `contrib.files <fabric.contrib.files>` module had "
 "``filename`` as the first argument.  These two functions have been brought "
 "in line with the rest of the module."
 msgstr ""
+"`~fabric.contrib.files.contains` and `~fabric.contrib.files.append` "
+"previously had the ``filename`` argument in the second position, whereas all "
+"other functions in the `contrib.files <fabric.contrib.files>` module had "
+"``filename`` as the first argument.  These two functions have been brought "
+"in line with the rest of the module."
 
 #: ../../changelog.rst:771
 msgid ""
 "`~fabric.contrib.files.sed` now escapes single-quotes and parentheses in "
-"addition to forward slashes, in its ``before`` and ``after`` kwargs. Related"
-" to, but not entirely contained within, :issue:`159`."
+"addition to forward slashes, in its ``before`` and ``after`` kwargs. Related "
+"to, but not entirely contained within, :issue:`159`."
 msgstr ""
+"`~fabric.contrib.files.sed` now escapes single-quotes and parentheses in "
+"addition to forward slashes, in its ``before`` and ``after`` kwargs. Related "
+"to, but not entirely contained within, :issue:`159`."
 
 #: ../../changelog.rst:774
 msgid ""
 "The ``user`` and ``pty`` kwargs in `~fabric.operations.sudo`'s signature "
-"have had their order swapped around to more closely match "
-"`~fabric.operations.run`."
+"have had their order swapped around to more closely match `~fabric."
+"operations.run`."
 msgstr ""
+"The ``user`` and ``pty`` kwargs in `~fabric.operations.sudo`'s signature "
+"have had their order swapped around to more closely match `~fabric."
+"operations.run`."
 
 #: ../../changelog.rst:777
 msgid ""
 "As part of the changes made in :issue:`7`, `~fabric.operations.run` and "
-"`~fabric.operations.sudo` have had the default value of their ``pty`` kwargs"
-" changed from ``False`` to ``True``. This, plus the addition of the :ref"
-":`combine-stderr` kwarg/env var, may result in significant behavioral "
-"changes in remote programs which operate differently when attached to a tty."
+"`~fabric.operations.sudo` have had the default value of their ``pty`` kwargs "
+"changed from ``False`` to ``True``. This, plus the addition of the :ref:"
+"`combine-stderr` kwarg/env var, may result in significant behavioral changes "
+"in remote programs which operate differently when attached to a tty."
 msgstr ""
+"As part of the changes made in :issue:`7`, `~fabric.operations.run` and "
+"`~fabric.operations.sudo` have had the default value of their ``pty`` kwargs "
+"changed from ``False`` to ``True``. This, plus the addition of the :ref:"
+"`combine-stderr` kwarg/env var, may result in significant behavioral changes "
+"in remote programs which operate differently when attached to a tty."
 
 #: ../../changelog.rst:782
 msgid ""
-":issue:`61`: `~fabric.operations.put` and `~fabric.operations.get` now honor"
-" the remote current-working-directory changes applied by "
-"`~fabric.context_managers.cd`. Previously they would always treat relative "
-"remote paths as being relative to the remote home directory."
+":issue:`61`: `~fabric.operations.put` and `~fabric.operations.get` now honor "
+"the remote current-working-directory changes applied by `~fabric."
+"context_managers.cd`. Previously they would always treat relative remote "
+"paths as being relative to the remote home directory."
 msgstr ""
+":issue:`61`: `~fabric.operations.put` and `~fabric.operations.get` now honor "
+"the remote current-working-directory changes applied by `~fabric."
+"context_managers.cd`. Previously they would always treat relative remote "
+"paths as being relative to the remote home directory."
 
 #: ../../changelog.rst:786
 msgid ""
 ":issue:`79`: `~fabric.operations.get` now allows increased control over "
-"local filenames when downloading single or multiple files. This is backwards"
-" incompatible because the default path/filename for downloaded files has "
+"local filenames when downloading single or multiple files. This is backwards "
+"incompatible because the default path/filename for downloaded files has "
 "changed.  Thanks to Juha Mustonen, Erich Heine and Max Arnold for "
 "brainstorming solutions."
 msgstr ""
+":issue:`79`: `~fabric.operations.get` now allows increased control over "
+"local filenames when downloading single or multiple files. This is backwards "
+"incompatible because the default path/filename for downloaded files has "
+"changed.  Thanks to Juha Mustonen, Erich Heine and Max Arnold for "
+"brainstorming solutions."
 
 #: ../../changelog.rst:791
 msgid ""
-":issue:`88`: `~fabric.operations.local` has changed the default value of its"
-" ``capture`` kwarg, from ``True`` to ``False``. This was changed in order to"
-" be more intuitive, at the cost of no longer defaulting to the same rich "
-"return value as in `~fabric.operations.run`/`~fabric.operations.sudo` (which"
-" is still available by specifying ``capture=True``.)"
+":issue:`88`: `~fabric.operations.local` has changed the default value of its "
+"``capture`` kwarg, from ``True`` to ``False``. This was changed in order to "
+"be more intuitive, at the cost of no longer defaulting to the same rich "
+"return value as in `~fabric.operations.run`/`~fabric.operations.sudo` (which "
+"is still available by specifying ``capture=True``.)"
 msgstr ""
+":issue:`88`: `~fabric.operations.local` has changed the default value of its "
+"``capture`` kwarg, from ``True`` to ``False``. This was changed in order to "
+"be more intuitive, at the cost of no longer defaulting to the same rich "
+"return value as in `~fabric.operations.run`/`~fabric.operations.sudo` (which "
+"is still available by specifying ``capture=True``.)"
 
 #: ../../changelog.rst:796
 msgid ""
@@ -458,21 +629,32 @@ msgid ""
 "``mirror_local_mode=True`` to get this behavior. Thanks to Paul Smith for a "
 "patch covering part of this change."
 msgstr ""
+":issue:`121`: `~fabric.operations.put` will no longer automatically attempt "
+"to mirror local file modes. Instead, you'll need to specify "
+"``mirror_local_mode=True`` to get this behavior. Thanks to Paul Smith for a "
+"patch covering part of this change."
 
 #: ../../changelog.rst:800
 msgid ""
 ":issue:`172`: `~fabric.contrib.files.append` has changed the default value "
-"of its ``partial`` kwarg from ``True`` to ``False`` in order to be "
-"safer/more intuitive."
+"of its ``partial`` kwarg from ``True`` to ``False`` in order to be safer/"
+"more intuitive."
 msgstr ""
+":issue:`172`: `~fabric.contrib.files.append` has changed the default value "
+"of its ``partial`` kwarg from ``True`` to ``False`` in order to be safer/"
+"more intuitive."
 
 #: ../../changelog.rst:803
 msgid ""
-":issue:`221`: `~fabric.decorators.runs_once` now memoizes the wrapped task's"
-" return value and returns that value on subsequent invocations, instead of "
-"returning None. Thanks to Jacob Kaplan-Moss and Travis Swicegood for catch +"
-" patch."
+":issue:`221`: `~fabric.decorators.runs_once` now memoizes the wrapped task's "
+"return value and returns that value on subsequent invocations, instead of "
+"returning None. Thanks to Jacob Kaplan-Moss and Travis Swicegood for catch + "
+"patch."
 msgstr ""
+":issue:`221`: `~fabric.decorators.runs_once` now memoizes the wrapped task's "
+"return value and returns that value on subsequent invocations, instead of "
+"returning None. Thanks to Jacob Kaplan-Moss and Travis Swicegood for catch + "
+"patch."
 
 #: ../../changelog.rst:811
 msgid ""
@@ -480,27 +662,39 @@ msgid ""
 "print the Git SHA1 hash of the current checkout, if the user is working off "
 "of a Git clone of the Fabric source code repository."
 msgstr ""
+"Prerelease versions of Fabric (starting with the 1.0 prereleases) will now "
+"print the Git SHA1 hash of the current checkout, if the user is working off "
+"of a Git clone of the Fabric source code repository."
 
 #: ../../changelog.rst:814
 msgid ""
 "Added `~fabric.context_managers.path` context manager for modifying "
 "commands' effective ``$PATH``."
 msgstr ""
+"Added `~fabric.context_managers.path` context manager for modifying "
+"commands' effective ``$PATH``."
 
 #: ../../changelog.rst:816
 msgid ""
-"Added convenience ``.succeeded`` attribute to the return values of "
-"`~fabric.operations.run`/`~fabric.operations.sudo`/`~fabric.operations.local`"
-" which is simply the opposite of the ``.failed`` attribute. (This addition "
-"has also been backported to Fabric's 0.9 series.)"
+"Added convenience ``.succeeded`` attribute to the return values of `~fabric."
+"operations.run`/`~fabric.operations.sudo`/`~fabric.operations.local` which "
+"is simply the opposite of the ``.failed`` attribute. (This addition has also "
+"been backported to Fabric's 0.9 series.)"
 msgstr ""
+"Added convenience ``.succeeded`` attribute to the return values of `~fabric."
+"operations.run`/`~fabric.operations.sudo`/`~fabric.operations.local` which "
+"is simply the opposite of the ``.failed`` attribute. (This addition has also "
+"been backported to Fabric's 0.9 series.)"
 
 #: ../../changelog.rst:820
 msgid ""
-"Refactored SSH disconnection code out of the main ``fab`` loop into "
-"`~fabric.network.disconnect_all`, allowing library users to avoid problems "
-"with non-fabfile Python scripts hanging after execution finishes."
+"Refactored SSH disconnection code out of the main ``fab`` loop into `~fabric."
+"network.disconnect_all`, allowing library users to avoid problems with non-"
+"fabfile Python scripts hanging after execution finishes."
 msgstr ""
+"Refactored SSH disconnection code out of the main ``fab`` loop into `~fabric."
+"network.disconnect_all`, allowing library users to avoid problems with non-"
+"fabfile Python scripts hanging after execution finishes."
 
 #: ../../changelog.rst:823
 msgid ""
@@ -508,25 +702,35 @@ msgid ""
 "uploading of files to privileged locations. Thanks to Erich Heine and IRC "
 "user ``npmap`` for suggestions and patches."
 msgstr ""
+":issue:`2`: Added ``use_sudo`` kwarg to `~fabric.operations.put` to allow "
+"uploading of files to privileged locations. Thanks to Erich Heine and IRC "
+"user ``npmap`` for suggestions and patches."
 
 #: ../../changelog.rst:826
 msgid ""
 ":issue:`23`: Added `~fabric.context_managers.prefix` context manager for "
 "easier management of persistent state across commands."
 msgstr ""
+":issue:`23`: Added `~fabric.context_managers.prefix` context manager for "
+"easier management of persistent state across commands."
 
 #: ../../changelog.rst:828
 msgid ""
 ":issue:`27`: Added environment variable (:ref:`always-use-pty`) and command-"
-"line flag (:option:`--no-pty`) for global control over the "
-"`~fabric.operations.run`/`~fabric.operations.sudo` ``pty`` argument."
+"line flag (:option:`--no-pty`) for global control over the `~fabric."
+"operations.run`/`~fabric.operations.sudo` ``pty`` argument."
 msgstr ""
+":issue:`27`: Added environment variable (:ref:`always-use-pty`) and command-"
+"line flag (:option:`--no-pty`) for global control over the `~fabric."
+"operations.run`/`~fabric.operations.sudo` ``pty`` argument."
 
 #: ../../changelog.rst:831
 msgid ""
 ":issue:`28`: Allow shell-style globbing in `~fabric.operations.get`. Thanks "
 "to Erich Heine and Max Arnold."
 msgstr ""
+":issue:`28`: Allow shell-style globbing in `~fabric.operations.get`. Thanks "
+"to Erich Heine and Max Arnold."
 
 #: ../../changelog.rst:833
 msgid ""
@@ -534,36 +738,51 @@ msgid ""
 "`~fabric.operations.local` now provide access to their standard error "
 "(stderr) as an attribute on the return value, alongside e.g. ``.failed``."
 msgstr ""
+":issue:`55`: `~fabric.operations.run`, `~fabric.operations.sudo` and "
+"`~fabric.operations.local` now provide access to their standard error "
+"(stderr) as an attribute on the return value, alongside e.g. ``.failed``."
 
 #: ../../changelog.rst:836
 msgid ""
 ":issue:`148`: `~fabric.operations.local` now returns the same \"rich\" "
 "string object as `~fabric.operations.run`/`~fabric.operations.sudo` do, so "
-"that it is a string containing the command's stdout (if ``capture=True``) or"
-" the empty string (if ``capture=False``) which exposes the ``.failed`` and "
-"``.return_code`` attributes, and so forth."
+"that it is a string containing the command's stdout (if ``capture=True``) or "
+"the empty string (if ``capture=False``) which exposes the ``.failed`` and ``."
+"return_code`` attributes, and so forth."
 msgstr ""
+":issue:`148`: `~fabric.operations.local` now returns the same \"rich\" "
+"string object as `~fabric.operations.run`/`~fabric.operations.sudo` do, so "
+"that it is a string containing the command's stdout (if ``capture=True``) or "
+"the empty string (if ``capture=False``) which exposes the ``.failed`` and ``."
+"return_code`` attributes, and so forth."
 
 #: ../../changelog.rst:841 ../../changelog.rst:1029
 msgid ""
 ":issue:`151`: Added a `~fabric.utils.puts` utility function, which allows "
 "greater control over fabfile-generated (as opposed to Fabric-generated) "
-"output. Also added `~fabric.utils.fastprint`, an alias to "
-"`~fabric.utils.puts` allowing for convenient unbuffered, non-newline-"
-"terminated printing."
+"output. Also added `~fabric.utils.fastprint`, an alias to `~fabric.utils."
+"puts` allowing for convenient unbuffered, non-newline-terminated printing."
 msgstr ""
+":issue:`151`: Added a `~fabric.utils.puts` utility function, which allows "
+"greater control over fabfile-generated (as opposed to Fabric-generated) "
+"output. Also added `~fabric.utils.fastprint`, an alias to `~fabric.utils."
+"puts` allowing for convenient unbuffered, non-newline-terminated printing."
 
 #: ../../changelog.rst:846
 msgid ""
 ":issue:`192`: Added per-user/host password cache to assist in multi-"
 "connection scenarios."
 msgstr ""
+":issue:`192`: Added per-user/host password cache to assist in multi-"
+"connection scenarios."
 
 #: ../../changelog.rst:848
 msgid ""
 ":issue:`193`: When requesting a remote pseudo-terminal, use the invoking "
 "terminal's dimensions instead of going with the default."
 msgstr ""
+":issue:`193`: When requesting a remote pseudo-terminal, use the invoking "
+"terminal's dimensions instead of going with the default."
 
 #: ../../changelog.rst:850
 msgid ""
@@ -571,6 +790,9 @@ msgid ""
 "file-like objects as well as local file paths for their ``local_path`` "
 "arguments."
 msgstr ""
+":issue:`217`: `~fabric.operations.get`/`~fabric.operations.put` now accept "
+"file-like objects as well as local file paths for their ``local_path`` "
+"arguments."
 
 #: ../../changelog.rst:853
 msgid ""
@@ -579,6 +801,10 @@ msgid ""
 "`~fabric.operations.put`/`~fabric.operations.get`'s local working "
 "directories."
 msgstr ""
+":issue:`245`: Added the `~fabric.context_managers.lcd` context manager for "
+"controlling `~fabric.operations.local`'s current working directory and "
+"`~fabric.operations.put`/`~fabric.operations.get`'s local working "
+"directories."
 
 #: ../../changelog.rst:857
 msgid ""
@@ -586,34 +812,45 @@ msgid ""
 "return values which may be iterated over to access the paths of files "
 "uploaded remotely or downloaded locally, respectively. These return values "
 "also allow access to ``.failed`` and ``.succeeded`` attributes, just like "
-"`~fabric.operations.run` and friends. (In this case, ``.failed`` is actually"
-" a list itself containing any paths which failed to transfer, which "
-"naturally acts as a boolean as well.)"
+"`~fabric.operations.run` and friends. (In this case, ``.failed`` is actually "
+"a list itself containing any paths which failed to transfer, which naturally "
+"acts as a boolean as well.)"
 msgstr ""
+":issue:`274`: `~fabric.operations.put`/`~fabric.operations.get` now have "
+"return values which may be iterated over to access the paths of files "
+"uploaded remotely or downloaded locally, respectively. These return values "
+"also allow access to ``.failed`` and ``.succeeded`` attributes, just like "
+"`~fabric.operations.run` and friends. (In this case, ``.failed`` is actually "
+"a list itself containing any paths which failed to transfer, which naturally "
+"acts as a boolean as well.)"
 
 #: ../../changelog.rst:869
 msgid "API, tutorial and usage docs updated with the above new features."
-msgstr ""
+msgstr "API, tutorial and usage docs updated with the above new features."
 
 #: ../../changelog.rst:870
 msgid ""
 "README now makes the Python 2.5+ requirement up front and explicit; some "
 "folks were still assuming it would run on Python 2.4."
 msgstr ""
+"README now makes the Python 2.5+ requirement up front and explicit; some "
+"folks were still assuming it would run on Python 2.4."
 
 #: ../../changelog.rst:872
 msgid ""
-"Added a link to Python's documentation for string interpolation in "
-"`~fabric.contrib.files.upload_template`'s docstring."
+"Added a link to Python's documentation for string interpolation in `~fabric."
+"contrib.files.upload_template`'s docstring."
 msgstr ""
+"Added a link to Python's documentation for string interpolation in `~fabric."
+"contrib.files.upload_template`'s docstring."
 
 #: ../../changelog.rst:877
 msgid "Changes in version 0.9.7 (2011-06-23)"
-msgstr ""
+msgstr "Changes in version 0.9.7 (2011-06-23)"
 
 #: ../../changelog.rst:879
 msgid "The following changes were implemented in Fabric 0.9.7:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.7:"
 
 #: ../../changelog.rst:884
 msgid ""
@@ -621,14 +858,17 @@ msgid ""
 "post-reboot (resulting in a traceback) if ``env.host_string`` was not fully-"
 "formed (did not contain user and port specifiers.) This has been fixed."
 msgstr ""
+":issue:`329`: `~fabric.operations.reboot` would have problems reconnecting "
+"post-reboot (resulting in a traceback) if ``env.host_string`` was not fully-"
+"formed (did not contain user and port specifiers.) This has been fixed."
 
 #: ../../changelog.rst:888
 msgid "Changes in version 0.9.6 (2011-04-29)"
-msgstr ""
+msgstr "Changes in version 0.9.6 (2011-04-29)"
 
 #: ../../changelog.rst:890
 msgid "The following changes were implemented in Fabric 0.9.6:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.6:"
 
 #: ../../changelog.rst:895
 msgid ""
@@ -636,33 +876,43 @@ msgid ""
 "instead of ``types.StringTypes``, causing it to split up Unicode strings as "
 "if they were one character per line. This has been fixed."
 msgstr ""
+":issue:`347`: `~fabric.contrib.files.append` incorrectly tested for ``str`` "
+"instead of ``types.StringTypes``, causing it to split up Unicode strings as "
+"if they were one character per line. This has been fixed."
 
 #: ../../changelog.rst:901
 msgid "Changes in version 0.9.5 (2011-03-21)"
-msgstr ""
+msgstr "Changes in version 0.9.5 (2011-03-21)"
 
 #: ../../changelog.rst:903
 msgid "The following changes were implemented in Fabric 0.9.5:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.5:"
 
 #: ../../changelog.rst:908
 msgid ""
 ":issue:`37`: Internal refactoring of a Paramiko call from ``_transport`` to "
 "``get_transport()``."
 msgstr ""
+":issue:`37`: Internal refactoring of a Paramiko call from ``_transport`` to "
+"``get_transport()``."
 
 #: ../../changelog.rst:910
 msgid ""
-":issue:`258`: Modify subprocess call on Windows platforms to avoid "
-"space/quote problems in `~fabric.operations.local`. Thanks to Henrik "
-"Heimbuerger and Raymond Cote for catch + suggested fixes."
+":issue:`258`: Modify subprocess call on Windows platforms to avoid space/"
+"quote problems in `~fabric.operations.local`. Thanks to Henrik Heimbuerger "
+"and Raymond Cote for catch + suggested fixes."
 msgstr ""
+":issue:`258`: Modify subprocess call on Windows platforms to avoid space/"
+"quote problems in `~fabric.operations.local`. Thanks to Henrik Heimbuerger "
+"and Raymond Cote for catch + suggested fixes."
 
 #: ../../changelog.rst:913
 msgid ""
 ":issue:`261`: Fix bug in `~fabric.contrib.files.comment` which truncated "
 "regexen ending with ``$``. Thanks to Antti Kaihola for the catch."
 msgstr ""
+":issue:`261`: Fix bug in `~fabric.contrib.files.comment` which truncated "
+"regexen ending with ``$``. Thanks to Antti Kaihola for the catch."
 
 #: ../../changelog.rst:915
 msgid ""
@@ -670,14 +920,21 @@ msgid ""
 "clearing connection cache. Thanks to Jason Gerry for the report & "
 "troubleshooting."
 msgstr ""
+":issue:`264`: Fix edge case in `~fabric.operations.reboot` by gracefully "
+"clearing connection cache. Thanks to Jason Gerry for the report & "
+"troubleshooting."
 
 #: ../../changelog.rst:918
 msgid ""
 ":issue:`268`: Allow for ``@`` symbols in usernames, which is valid on some "
-"systems. Fabric's host-string parser now splits username and hostname at the"
-" last ``@`` found instead of the first. Thanks to Thadeus Burgess for the "
+"systems. Fabric's host-string parser now splits username and hostname at the "
+"last ``@`` found instead of the first. Thanks to Thadeus Burgess for the "
 "report."
 msgstr ""
+":issue:`268`: Allow for ``@`` symbols in usernames, which is valid on some "
+"systems. Fabric's host-string parser now splits username and hostname at the "
+"last ``@`` found instead of the first. Thanks to Thadeus Burgess for the "
+"report."
 
 #: ../../changelog.rst:922
 msgid ""
@@ -685,6 +942,9 @@ msgid ""
 "Thanks to Antti Kaihola for the catch and Rick Harding for testing the "
 "proposed solution."
 msgstr ""
+":issue:`287`: Fix bug in password prompt causing occasional tracebacks. "
+"Thanks to Antti Kaihola for the catch and Rick Harding for testing the "
+"proposed solution."
 
 #: ../../changelog.rst:925
 msgid ""
@@ -692,70 +952,89 @@ msgid ""
 "in OpenBSD and NetBSD `~fabric.contrib.files.sed`. Thanks to Morgan Lefieux "
 "for catch + patches."
 msgstr ""
+":issue:`288`: Use temporary files to work around the lack of a ``-i`` flag "
+"in OpenBSD and NetBSD `~fabric.contrib.files.sed`. Thanks to Morgan Lefieux "
+"for catch + patches."
 
 #: ../../changelog.rst:928
 msgid ""
 ":issue:`305`: Strip whitespace from hostnames to help prevent user error. "
 "Thanks to Michael Bravo for the report and Rick Harding for the patch."
 msgstr ""
+":issue:`305`: Strip whitespace from hostnames to help prevent user error. "
+"Thanks to Michael Bravo for the report and Rick Harding for the patch."
 
 #: ../../changelog.rst:930
 msgid ""
 ":issue:`316`: Use of `~fabric.context_managers.settings` with key names not "
-"previously set in ``env`` no longer raises KeyErrors. Whoops. Thanks to Adam"
-" Ernst for the catch."
+"previously set in ``env`` no longer raises KeyErrors. Whoops. Thanks to Adam "
+"Ernst for the catch."
 msgstr ""
+":issue:`316`: Use of `~fabric.context_managers.settings` with key names not "
+"previously set in ``env`` no longer raises KeyErrors. Whoops. Thanks to Adam "
+"Ernst for the catch."
 
 #: ../../changelog.rst:937
 msgid ""
 ":issue:`228`: Added description of the PyCrypto + pip + Python 2.5 problem "
 "to the documentation and removed the Python 2.5 check from ``setup.py``."
 msgstr ""
+":issue:`228`: Added description of the PyCrypto + pip + Python 2.5 problem "
+"to the documentation and removed the Python 2.5 check from ``setup.py``."
 
 #: ../../changelog.rst:939
 msgid ""
 ":issue:`291`: Updated the PyPM-related install docs re: recent changes in "
 "PyPM and its download URLs. Thanks to Sridhar Ratnakumar for the patch."
 msgstr ""
+":issue:`291`: Updated the PyPM-related install docs re: recent changes in "
+"PyPM and its download URLs. Thanks to Sridhar Ratnakumar for the patch."
 
 #: ../../changelog.rst:944
 msgid "Changes in version 0.9.4 (2011-02-18)"
-msgstr ""
+msgstr "Changes in version 0.9.4 (2011-02-18)"
 
 #: ../../changelog.rst:946
 msgid "The following changes were implemented in Fabric 0.9.4:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.4:"
 
 #: ../../changelog.rst:951
 msgid ""
 "Added :doc:`documentation </usage/library>` for using Fabric as a library."
 msgstr ""
+"Added :doc:`documentation </usage/library>` for using Fabric as a library."
 
 #: ../../changelog.rst:952
 msgid ""
 "Mentioned our `Twitter account <https://twitter.com/pyfabric>`_ on the main "
 "docs page."
 msgstr ""
+"Mentioned our `Twitter account <https://twitter.com/pyfabric>`_ on the main "
+"docs page."
 
 #: ../../changelog.rst:954
 msgid ""
 ":issue:`290`: Added ``escape`` kwarg to `~fabric.contrib.files.append` to "
 "allow control over previously automatic single-quote escaping."
 msgstr ""
+":issue:`290`: Added ``escape`` kwarg to `~fabric.contrib.files.append` to "
+"allow control over previously automatic single-quote escaping."
 
 #: ../../changelog.rst:959
 msgid "Changes in version 0.9.3 (2010-11-12)"
-msgstr ""
+msgstr "Changes in version 0.9.3 (2010-11-12)"
 
 #: ../../changelog.rst:961
 msgid "The following changes were implemented in Fabric 0.9.3:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.3:"
 
 #: ../../changelog.rst:966
 msgid ""
-":issue:`255`: Added ``stderr`` and ``succeeded`` attributes to "
-"`~fabric.operations.local`."
+":issue:`255`: Added ``stderr`` and ``succeeded`` attributes to `~fabric."
+"operations.local`."
 msgstr ""
+":issue:`255`: Added ``stderr`` and ``succeeded`` attributes to `~fabric."
+"operations.local`."
 
 #: ../../changelog.rst:968
 msgid ""
@@ -763,53 +1042,71 @@ msgid ""
 "`~fabric.operations.run`/`~fabric.operations.sudo` return values, from the "
 "Git master/pre-1.0 branch. Please see those functions' API docs for details."
 msgstr ""
+":issue:`254`: Backported the ``.stderr`` and ``.succeeded`` attributes on "
+"`~fabric.operations.run`/`~fabric.operations.sudo` return values, from the "
+"Git master/pre-1.0 branch. Please see those functions' API docs for details."
 
 #: ../../changelog.rst:976
 msgid ""
-":issue:`228`: We discovered that the pip + PyCrypto installation problem was"
-" limited to Python 2.5 only, and have updated our ``setup.py`` accordingly."
+":issue:`228`: We discovered that the pip + PyCrypto installation problem was "
+"limited to Python 2.5 only, and have updated our ``setup.py`` accordingly."
 msgstr ""
+":issue:`228`: We discovered that the pip + PyCrypto installation problem was "
+"limited to Python 2.5 only, and have updated our ``setup.py`` accordingly."
 
 #: ../../changelog.rst:978
 msgid ""
 ":issue:`230`: Arbitrary or remainder commands (``fab <opts> -- <run command "
-"here>``) will no longer blow up when invoked with no fabfile present. Thanks"
-" to IRC user ``orkaa`` for the report."
+"here>``) will no longer blow up when invoked with no fabfile present. Thanks "
+"to IRC user ``orkaa`` for the report."
 msgstr ""
+":issue:`230`: Arbitrary or remainder commands (``fab <opts> -- <run command "
+"here>``) will no longer blow up when invoked with no fabfile present. Thanks "
+"to IRC user ``orkaa`` for the report."
 
 #: ../../changelog.rst:981
 msgid ""
 ":issue:`242`: Empty string values in task CLI args now parse correctly. "
 "Thanks to Aaron Levy for the catch + patch."
 msgstr ""
+":issue:`242`: Empty string values in task CLI args now parse correctly. "
+"Thanks to Aaron Levy for the catch + patch."
 
 #: ../../changelog.rst:988
 msgid ""
 ":issue:`239`: Fixed typo in execution usage docs. Thanks to Pradeep Gowda "
 "and Turicas for the catch."
 msgstr ""
+":issue:`239`: Fixed typo in execution usage docs. Thanks to Pradeep Gowda "
+"and Turicas for the catch."
 
 #: ../../changelog.rst:993
 msgid "Changes in version 0.9.2 (2010-09-06)"
-msgstr ""
+msgstr "Changes in version 0.9.2 (2010-09-06)"
 
 #: ../../changelog.rst:995
 msgid "The following changes were implemented in Fabric 0.9.2:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.2:"
 
 #: ../../changelog.rst:1000
 msgid ""
 "The `~fabric.operations.reboot` operation has been added, providing a way "
-"for Fabric to issue a reboot command and then reconnect after the system has"
-" restarted."
+"for Fabric to issue a reboot command and then reconnect after the system has "
+"restarted."
 msgstr ""
+"The `~fabric.operations.reboot` operation has been added, providing a way "
+"for Fabric to issue a reboot command and then reconnect after the system has "
+"restarted."
 
 #: ../../changelog.rst:1003
 msgid ""
-"``python setup.py test`` now runs Fabric's test suite (provided you have all"
-" the prerequisites from the ``requirements.txt`` installed). Thanks to Eric "
+"``python setup.py test`` now runs Fabric's test suite (provided you have all "
+"the prerequisites from the ``requirements.txt`` installed). Thanks to Eric "
 "Holscher for the patch."
 msgstr ""
+"``python setup.py test`` now runs Fabric's test suite (provided you have all "
+"the prerequisites from the ``requirements.txt`` installed). Thanks to Eric "
+"Holscher for the patch."
 
 #: ../../changelog.rst:1006
 msgid ""
@@ -817,24 +1114,31 @@ msgid ""
 "(directories) instead of just modules (single files.) See :ref:`fabfile-"
 "discovery`."
 msgstr ""
+"Added functionality for loading fabfiles which are Python packages "
+"(directories) instead of just modules (single files.) See :ref:`fabfile-"
+"discovery`."
 
 #: ../../changelog.rst:1009
 msgid ""
-"Added output lines informing the user of which tasks are being executed "
-"(e.g. ``[myserver] Executing task 'foo'``.)"
+"Added output lines informing the user of which tasks are being executed (e."
+"g. ``[myserver] Executing task 'foo'``.)"
 msgstr ""
+"Added output lines informing the user of which tasks are being executed (e."
+"g. ``[myserver] Executing task 'foo'``.)"
 
 #: ../../changelog.rst:1011
 msgid ""
-"Added support for lazy (callable) role definition values in "
-"``env.roledefs``."
+"Added support for lazy (callable) role definition values in ``env.roledefs``."
 msgstr ""
+"Added support for lazy (callable) role definition values in ``env.roledefs``."
 
 #: ../../changelog.rst:1012
 msgid ""
 "Added `contrib.django <fabric.contrib.django>` module with basic Django "
 "integration."
 msgstr ""
+"Added `contrib.django <fabric.contrib.django>` module with basic Django "
+"integration."
 
 #: ../../changelog.rst:1014
 msgid ""
@@ -842,31 +1146,43 @@ msgid ""
 "access to the local system username, even if an alternate remote username "
 "has been specified."
 msgstr ""
+":ref:`env.local_user <local-user>` was added, providing easy and permanent "
+"access to the local system username, even if an alternate remote username "
+"has been specified."
 
 #: ../../changelog.rst:1017
 msgid ""
-":issue:`29`: Added support for arbitrary command-line-driven anonymous tasks"
-" via ``fab [options] -- [shell command]``. See :ref:`arbitrary-commands`."
+":issue:`29`: Added support for arbitrary command-line-driven anonymous tasks "
+"via ``fab [options] -- [shell command]``. See :ref:`arbitrary-commands`."
 msgstr ""
+":issue:`29`: Added support for arbitrary command-line-driven anonymous tasks "
+"via ``fab [options] -- [shell command]``. See :ref:`arbitrary-commands`."
 
 #: ../../changelog.rst:1019
 msgid ""
-":issue:`52`: Full tracebacks during aborts are now displayed if the user has"
-" opted to see debug-level output."
+":issue:`52`: Full tracebacks during aborts are now displayed if the user has "
+"opted to see debug-level output."
 msgstr ""
+":issue:`52`: Full tracebacks during aborts are now displayed if the user has "
+"opted to see debug-level output."
 
 #: ../../changelog.rst:1021
 msgid ""
-":issue:`101`: Added `~fabric.colors` module with basic color output support."
-" (:issue:`101` is still open: we plan to leverage the new module in Fabric's"
-" own output in the future.)"
+":issue:`101`: Added `~fabric.colors` module with basic color output support. "
+"(:issue:`101` is still open: we plan to leverage the new module in Fabric's "
+"own output in the future.)"
 msgstr ""
+":issue:`101`: Added `~fabric.colors` module with basic color output support. "
+"(:issue:`101` is still open: we plan to leverage the new module in Fabric's "
+"own output in the future.)"
 
 #: ../../changelog.rst:1024
 msgid ""
 ":issue:`137`: Commas used to separate per-task arguments may now be escaped "
 "with a backslash. Thanks to Erich Heine for the patch."
 msgstr ""
+":issue:`137`: Commas used to separate per-task arguments may now be escaped "
+"with a backslash. Thanks to Erich Heine for the patch."
 
 #: ../../changelog.rst:1026
 msgid ""
@@ -874,14 +1190,21 @@ msgid ""
 "will now expand a single, iterable argument instead of requiring one to use "
 "e.g.  ``@hosts(*iterable)``."
 msgstr ""
+":issue:`144`: `~fabric.decorators.hosts` (and `~fabric.decorators.roles`) "
+"will now expand a single, iterable argument instead of requiring one to use "
+"e.g.  ``@hosts(*iterable)``."
 
 #: ../../changelog.rst:1034
 msgid ""
-":issue:`208`: Users rolling their own shell completion or who otherwise find"
-" themselves performing text manipulation on the output of :option:`--list "
-"<-l>` may now use :option:`--shortlist` to get a plain, newline-separated "
-"list of task names."
+":issue:`208`: Users rolling their own shell completion or who otherwise find "
+"themselves performing text manipulation on the output of :option:`--list <-"
+"l>` may now use :option:`--shortlist` to get a plain, newline-separated list "
+"of task names."
 msgstr ""
+":issue:`208`: Users rolling their own shell completion or who otherwise find "
+"themselves performing text manipulation on the output of :option:`--list <-"
+"l>` may now use :option:`--shortlist` to get a plain, newline-separated list "
+"of task names."
 
 #: ../../changelog.rst:1043
 msgid ""
@@ -889,19 +1212,27 @@ msgid ""
 "the appropriate environment variables (hostname, username, port) based on "
 "user input."
 msgstr ""
+"The interactive \"what host to connect to?\" prompt now correctly updates "
+"the appropriate environment variables (hostname, username, port) based on "
+"user input."
 
 #: ../../changelog.rst:1046
 msgid ""
 "Fixed a bug where Fabric's own internal fabfile would pre-empt the user's "
-"fabfile due to a PYTHONPATH order issue. User fabfiles are now always loaded"
-" at the front of the PYTHONPATH during import."
+"fabfile due to a PYTHONPATH order issue. User fabfiles are now always loaded "
+"at the front of the PYTHONPATH during import."
 msgstr ""
+"Fixed a bug where Fabric's own internal fabfile would pre-empt the user's "
+"fabfile due to a PYTHONPATH order issue. User fabfiles are now always loaded "
+"at the front of the PYTHONPATH during import."
 
 #: ../../changelog.rst:1049
 msgid ""
 "Disabled some DeprecationWarnings thrown by Paramiko when that library is "
 "imported into Fabric under Python 2.6."
 msgstr ""
+"Disabled some DeprecationWarnings thrown by Paramiko when that library is "
+"imported into Fabric under Python 2.6."
 
 #: ../../changelog.rst:1051
 msgid ""
@@ -909,6 +1240,9 @@ msgid ""
 "to honor the SSH port and identity file settings. Thanks to Mitch Matuson "
 "and Morgan Goose."
 msgstr ""
+":issue:`44`, :issue:`63`: Modified `~fabric.contrib.project.rsync_project` "
+"to honor the SSH port and identity file settings. Thanks to Mitch Matuson "
+"and Morgan Goose."
 
 #: ../../changelog.rst:1054
 msgid ""
@@ -916,32 +1250,41 @@ msgid ""
 "Python installs whose ``sys.platform`` says ``'win32'`` will use Windows-"
 "only code paths (e.g. importing of ``pywin32``)."
 msgstr ""
+":issue:`123`: Removed Cygwin from the \"are we on Windows\" test; now, only "
+"Python installs whose ``sys.platform`` says ``'win32'`` will use Windows-"
+"only code paths (e.g. importing of ``pywin32``)."
 
 #: ../../changelog.rst:1062
 msgid "Added a few new items to the :doc:`FAQ </faq>`."
-msgstr ""
+msgstr "Added a few new items to the :doc:`FAQ </faq>`."
 
 #: ../../changelog.rst:1063
 msgid ""
 ":issue:`173`: Simple but rather embarrassing typo fix in README. Thanks to "
 "Ted Nyman for the catch."
 msgstr ""
+":issue:`173`: Simple but rather embarrassing typo fix in README. Thanks to "
+"Ted Nyman for the catch."
 
 #: ../../changelog.rst:1065
 msgid ""
 ":issue:`194`: Added a note to :doc:`the install docs </installation>` about "
 "a possible edge case some Windows 64-bit Python users may encounter."
 msgstr ""
+":issue:`194`: Added a note to :doc:`the install docs </installation>` about "
+"a possible edge case some Windows 64-bit Python users may encounter."
 
 #: ../../changelog.rst:1067
 msgid ""
 ":issue:`216`: Overhauled the :ref:`process backgrounding FAQ <faq-"
 "daemonize>` to include additional techniques and be more holistic."
 msgstr ""
+":issue:`216`: Overhauled the :ref:`process backgrounding FAQ <faq-"
+"daemonize>` to include additional techniques and be more holistic."
 
 #: ../../changelog.rst:1072
 msgid "Packaging updates"
-msgstr ""
+msgstr "Packaging updates"
 
 #: ../../changelog.rst:1074
 msgid ""
@@ -950,63 +1293,88 @@ msgid ""
 "buggy Paramiko 1.7.5 while getting some much needed bugfixes in Paramiko "
 "1.7.6."
 msgstr ""
+":issue:`86`, :issue:`158`: Removed the bundled Paramiko 1.7.4 and updated "
+"the ``setup.py`` to require Paramiko >=1.7.6. This lets us skip the known-"
+"buggy Paramiko 1.7.5 while getting some much needed bugfixes in Paramiko "
+"1.7.6."
 
 #: ../../changelog.rst:1080
 msgid "Changes in version 0.9.1 (2010-05-28)"
-msgstr ""
+msgstr "Changes in version 0.9.1 (2010-05-28)"
 
 #: ../../changelog.rst:1082
 msgid "The following changes were implemented in Fabric 0.9.1:"
-msgstr ""
+msgstr "The following changes were implemented in Fabric 0.9.1:"
 
 #: ../../changelog.rst:1087
 msgid ""
 ":issue:`82`: `~fabric.contrib.files.append` now offers a ``partial`` kwarg "
-"allowing control over whether the \"don't append if given text already "
-"exists\" test looks for exact matches or not. Thanks to Jonas Nockert for "
-"the catch and discussion."
+"allowing control over whether the \"don't append if given text already exists"
+"\" test looks for exact matches or not. Thanks to Jonas Nockert for the "
+"catch and discussion."
 msgstr ""
+":issue:`82`: `~fabric.contrib.files.append` now offers a ``partial`` kwarg "
+"allowing control over whether the \"don't append if given text already exists"
+"\" test looks for exact matches or not. Thanks to Jonas Nockert for the "
+"catch and discussion."
 
 #: ../../changelog.rst:1091
 msgid ""
 ":issue:`112`: ``fab --list`` now prints out the fabfile's module-level "
 "docstring as a header, if there is one."
 msgstr ""
+":issue:`112`: ``fab --list`` now prints out the fabfile's module-level "
+"docstring as a header, if there is one."
 
 #: ../../changelog.rst:1093
 msgid ""
 ":issue:`141`: Added some more CLI args/env vars to allow user configuration "
-"of the Paramiko ``connect`` call -- specifically :ref:`no_agent` and "
-":ref:`no_keys`."
+"of the Paramiko ``connect`` call -- specifically :ref:`no_agent` and :ref:"
+"`no_keys`."
 msgstr ""
+":issue:`141`: Added some more CLI args/env vars to allow user configuration "
+"of the Paramiko ``connect`` call -- specifically :ref:`no_agent` and :ref:"
+"`no_keys`."
 
 #: ../../changelog.rst:1101
 msgid ""
-":issue:`75`: ``fab``, when called with no arguments or (useful) options, now"
-" prints help, even when no fabfile can be found. Previously, calling ``fab``"
-" in a location with no fabfile would complain about the lack of fabfile "
+":issue:`75`: ``fab``, when called with no arguments or (useful) options, now "
+"prints help, even when no fabfile can be found. Previously, calling ``fab`` "
+"in a location with no fabfile would complain about the lack of fabfile "
 "instead of displaying help."
 msgstr ""
+":issue:`75`: ``fab``, when called with no arguments or (useful) options, now "
+"prints help, even when no fabfile can be found. Previously, calling ``fab`` "
+"in a location with no fabfile would complain about the lack of fabfile "
+"instead of displaying help."
 
 #: ../../changelog.rst:1105
 msgid ""
 ":issue:`130`: Context managers now correctly clean up ``env`` if they "
 "encounter an exception. Thanks to Carl Meyer for catch + patch."
 msgstr ""
+":issue:`130`: Context managers now correctly clean up ``env`` if they "
+"encounter an exception. Thanks to Carl Meyer for catch + patch."
 
 #: ../../changelog.rst:1107
 msgid ""
 ":issue:`132`: `~fabric.operations.local` now calls ``strip`` on its stdout, "
-"matching the behavior of `~fabric.operations.run`/`~fabric.operations.sudo`."
-" Thanks to Carl Meyer again on this one."
+"matching the behavior of `~fabric.operations.run`/`~fabric.operations.sudo`. "
+"Thanks to Carl Meyer again on this one."
 msgstr ""
+":issue:`132`: `~fabric.operations.local` now calls ``strip`` on its stdout, "
+"matching the behavior of `~fabric.operations.run`/`~fabric.operations.sudo`. "
+"Thanks to Carl Meyer again on this one."
 
 #: ../../changelog.rst:1110
 msgid ""
-":issue:`166`: `~fabric.context_managers.cd` now correctly overwrites "
-"``env.cwd`` when given an absolute path, instead of naively appending its "
-"argument to ``env.cwd``'s previous value."
+":issue:`166`: `~fabric.context_managers.cd` now correctly overwrites ``env."
+"cwd`` when given an absolute path, instead of naively appending its argument "
+"to ``env.cwd``'s previous value."
 msgstr ""
+":issue:`166`: `~fabric.context_managers.cd` now correctly overwrites ``env."
+"cwd`` when given an absolute path, instead of naively appending its argument "
+"to ``env.cwd``'s previous value."
 
 #: ../../changelog.rst:1118
 msgid ""
@@ -1015,12 +1383,18 @@ msgid ""
 "FAQ <../faq>` to the Sphinx documentation instead of storing it as a source-"
 "only text file. (Said FAQ was also slightly expanded with new FAQs.)"
 msgstr ""
+"A number of small to medium documentation tweaks were made which had no "
+"specific Redmine ticket. The largest of these is the addition of :doc:`the "
+"FAQ <../faq>` to the Sphinx documentation instead of storing it as a source-"
+"only text file. (Said FAQ was also slightly expanded with new FAQs.)"
 
 #: ../../changelog.rst:1122
 msgid ""
 ":issue:`17`: Added :ref:`note to FAQ <faq-daemonize>` re: use of ``dtach`` "
 "as alternative to ``screen``. Thanks to Erich Heine for the tip."
 msgstr ""
+":issue:`17`: Added :ref:`note to FAQ <faq-daemonize>` re: use of ``dtach`` "
+"as alternative to ``screen``. Thanks to Erich Heine for the tip."
 
 #: ../../changelog.rst:1124
 msgid ""
@@ -1028,58 +1402,77 @@ msgid ""
 "package maintainers should be downloading tarballs from. Thanks to James "
 "Pearson for providing the necessary perspective."
 msgstr ""
+":issue:`64`: Updated :ref:`installation docs <downloads>` to clarify where "
+"package maintainers should be downloading tarballs from. Thanks to James "
+"Pearson for providing the necessary perspective."
 
 #: ../../changelog.rst:1127
 msgid ""
 ":issue:`95`: Added a link to a given version's changelog on the PyPI page "
 "(technically, to the ``setup.py`` ``long_description`` field)."
 msgstr ""
+":issue:`95`: Added a link to a given version's changelog on the PyPI page "
+"(technically, to the ``setup.py`` ``long_description`` field)."
 
 #: ../../changelog.rst:1129
 msgid ""
-":issue:`110`: Alphabetized :ref:`the CLI argument command reference "
-"<command-line-options>`. Thanks to Erich Heine."
+":issue:`110`: Alphabetized :ref:`the CLI argument command reference <command-"
+"line-options>`. Thanks to Erich Heine."
 msgstr ""
+":issue:`110`: Alphabetized :ref:`the CLI argument command reference <command-"
+"line-options>`. Thanks to Erich Heine."
 
 #: ../../changelog.rst:1131
 msgid ""
 ":issue:`120`: Tweaked documentation, help strings to make it more obvious "
 "that fabfiles are simply Python modules."
 msgstr ""
+":issue:`120`: Tweaked documentation, help strings to make it more obvious "
+"that fabfiles are simply Python modules."
 
 #: ../../changelog.rst:1133
 msgid ""
 ":issue:`127`: Added :ref:`note to install docs <pypm>` re: ActiveState's "
 "PyPM. Thanks to Sridhar Ratnakumar for the tip."
 msgstr ""
+":issue:`127`: Added :ref:`note to install docs <pypm>` re: ActiveState's "
+"PyPM. Thanks to Sridhar Ratnakumar for the tip."
 
 #: ../../changelog.rst:1138
 msgid "Changes in version 0.9 (2009-11-08)"
-msgstr ""
+msgstr "Changes in version 0.9 (2009-11-08)"
 
 #: ../../changelog.rst:1140
 msgid ""
-"This document details the various backwards-incompatible changes made during"
-" Fabric's rewrite between versions 0.1 and 0.9. The codebase has been almost"
-" completely rewritten and reorganized and an attempt has been made to remove"
-" \"magical\" behavior and make things more simple and Pythonic; the ``fab`` "
+"This document details the various backwards-incompatible changes made during "
+"Fabric's rewrite between versions 0.1 and 0.9. The codebase has been almost "
+"completely rewritten and reorganized and an attempt has been made to remove "
+"\"magical\" behavior and make things more simple and Pythonic; the ``fab`` "
 "command-line component has also been redone to behave more like a typical "
 "Unix program."
 msgstr ""
+"This document details the various backwards-incompatible changes made during "
+"Fabric's rewrite between versions 0.1 and 0.9. The codebase has been almost "
+"completely rewritten and reorganized and an attempt has been made to remove "
+"\"magical\" behavior and make things more simple and Pythonic; the ``fab`` "
+"command-line component has also been redone to behave more like a typical "
+"Unix program."
 
 #: ../../changelog.rst:1149
 msgid "Major changes"
-msgstr ""
+msgstr "﻿主な変更点"
 
 #: ../../changelog.rst:1151
 msgid ""
 "You'll want to at least skim the entire document, but the primary changes "
 "that will need to be made to one's fabfiles are as follows:"
 msgstr ""
+"You'll want to at least skim the entire document, but the primary changes "
+"that will need to be made to one's fabfiles are as follows:"
 
 #: ../../changelog.rst:1155
 msgid "Imports"
-msgstr ""
+msgstr "インポート"
 
 #: ../../changelog.rst:1157
 msgid ""
@@ -1087,33 +1480,45 @@ msgid ""
 "used**, at the top of your fabfile; they are no longer magically available. "
 "Here's a sample fabfile that worked with 0.1 and earlier::"
 msgstr ""
+"You will need to **explicitly import any and all methods or decorators "
+"used**, at the top of your fabfile; they are no longer magically available. "
+"Here's a sample fabfile that worked with 0.1 and earlier::"
 
 #: ../../changelog.rst:1166
 msgid ""
 "The above fabfile uses `hosts`, `run` and `sudo`, and so in Fabric 0.9 one "
-"simply needs to import those objects from the new API module "
-"``fabric.api``::"
+"simply needs to import those objects from the new API module ``fabric.api``::"
 msgstr ""
+"The above fabfile uses `hosts`, `run` and `sudo`, and so in Fabric 0.9 one "
+"simply needs to import those objects from the new API module ``fabric.api``::"
 
 #: ../../changelog.rst:1176
 msgid ""
 "You may, if you wish, use ``from fabric.api import *``, though this is "
 "technically not Python best practices; or you may import directly from the "
-"Fabric submodules (e.g. ``from fabric.decorators import hosts``.) See "
-":doc:`../usage/fabfiles` for more information."
+"Fabric submodules (e.g. ``from fabric.decorators import hosts``.) See :doc:"
+"`../usage/fabfiles` for more information."
 msgstr ""
+"You may, if you wish, use ``from fabric.api import *``, though this is "
+"technically not Python best practices; or you may import directly from the "
+"Fabric submodules (e.g. ``from fabric.decorators import hosts``.) See :doc:"
+"`../usage/fabfiles` for more information."
 
 #: ../../changelog.rst:1182
 msgid "Python version"
-msgstr ""
+msgstr "﻿Pythonのバージョン"
 
 #: ../../changelog.rst:1184
 msgid ""
-"Fabric started out Python 2.5-only, but became largely 2.4 compatible at one"
-" point during its lifetime. Fabric is once again **only compatible with "
+"Fabric started out Python 2.5-only, but became largely 2.4 compatible at one "
+"point during its lifetime. Fabric is once again **only compatible with "
 "Python 2.5 or newer**, in order to take advantage of the various new "
 "features and functions available in that version."
 msgstr ""
+"Fabric started out Python 2.5-only, but became largely 2.4 compatible at one "
+"point during its lifetime. Fabric is once again **only compatible with "
+"Python 2.5 or newer**, in order to take advantage of the various new "
+"features and functions available in that version."
 
 #: ../../changelog.rst:1189
 msgid ""
@@ -1121,46 +1526,65 @@ msgid ""
 "recent stable releases of the Python 2.x line, which at time of writing is "
 "2.5 and 2.6. We feel this is a decent compromise between new features and "
 "the reality of operating system packaging concerns. Given that most users "
-"use Fabric from their workstations, which are typically more up-to-date than"
-" servers, we're hoping this doesn't cut out too many folks."
+"use Fabric from their workstations, which are typically more up-to-date than "
+"servers, we're hoping this doesn't cut out too many folks."
 msgstr ""
+"With this change we're setting an official policy to support the two most "
+"recent stable releases of the Python 2.x line, which at time of writing is "
+"2.5 and 2.6. We feel this is a decent compromise between new features and "
+"the reality of operating system packaging concerns. Given that most users "
+"use Fabric from their workstations, which are typically more up-to-date than "
+"servers, we're hoping this doesn't cut out too many folks."
 
 #: ../../changelog.rst:1196
 msgid ""
 "Finally, note that while we will not officially support a 2.4-compatible "
 "version or fork, we may provide a link to such a project if one arises."
 msgstr ""
+"Finally, note that while we will not officially support a 2.4-compatible "
+"version or fork, we may provide a link to such a project if one arises."
 
 #: ../../changelog.rst:1200
 msgid "Environment/config variables"
-msgstr ""
+msgstr "﻿環境/設定変数"
 
 #: ../../changelog.rst:1202
 msgid ""
 "The ``config`` object previously used to access and set internal state "
 "(including Fabric config options) **has been renamed** to :data:`env`, but "
 "otherwise remains mostly the same (it allows both dictionary and object-"
-"attribute style access to its data.) :data:`env` resides in the :mod:`state`"
-" submodule and is importable via ``fabric.api``, so where before one might "
+"attribute style access to its data.) :data:`env` resides in the :mod:`state` "
+"submodule and is importable via ``fabric.api``, so where before one might "
 "have seen fabfiles like this::"
 msgstr ""
+"The ``config`` object previously used to access and set internal state "
+"(including Fabric config options) **has been renamed** to :data:`env`, but "
+"otherwise remains mostly the same (it allows both dictionary and object-"
+"attribute style access to its data.) :data:`env` resides in the :mod:`state` "
+"submodule and is importable via ``fabric.api``, so where before one might "
+"have seen fabfiles like this::"
 
 #: ../../changelog.rst:1212
 msgid "one will now be explicitly importing the object like so::"
-msgstr ""
+msgstr "one will now be explicitly importing the object like so::"
 
 #: ../../changelog.rst:1220
 msgid "Execution mode"
-msgstr ""
+msgstr "Execution mode"
 
 #: ../../changelog.rst:1222
 msgid ""
 "Fabric's default mode of use, in prior versions, was what we called \"broad "
 "mode\": your tasks, as Python code, ran only once, and any calls to "
-"functions that made connections (such as `run` or `sudo`) would run once per"
-" host in the current host list. We also offered \"deep mode\", in which your"
-" entire task function would run once per host."
+"functions that made connections (such as `run` or `sudo`) would run once per "
+"host in the current host list. We also offered \"deep mode\", in which your "
+"entire task function would run once per host."
 msgstr ""
+"Fabric's default mode of use, in prior versions, was what we called \"broad "
+"mode\": your tasks, as Python code, ran only once, and any calls to "
+"functions that made connections (such as `run` or `sudo`) would run once per "
+"host in the current host list. We also offered \"deep mode\", in which your "
+"entire task function would run once per host."
 
 #: ../../changelog.rst:1228
 msgid ""
@@ -1170,36 +1594,51 @@ msgid ""
 "``if`` statements and so forth, and allows operations like `run` to "
 "unambiguously return the output from the server."
 msgstr ""
+"In Fabric 0.9, this dichotomy has been removed, and **\"deep mode\" is the "
+"method Fabric uses to perform all operations**. This allows you to treat "
+"your Fabfiles much more like regular Python code, including the use of "
+"``if`` statements and so forth, and allows operations like `run` to "
+"unambiguously return the output from the server."
 
 #: ../../changelog.rst:1234
 msgid ""
 "Other modes of execution such as the old \"broad mode\" may return as "
-"Fabric's internals are refactored and expanded, but for now we've simplified"
-" things, and deep mode made the most sense as the primary mode of use."
+"Fabric's internals are refactored and expanded, but for now we've simplified "
+"things, and deep mode made the most sense as the primary mode of use."
 msgstr ""
+"Other modes of execution such as the old \"broad mode\" may return as "
+"Fabric's internals are refactored and expanded, but for now we've simplified "
+"things, and deep mode made the most sense as the primary mode of use."
 
 #: ../../changelog.rst:1239
 msgid "\"Lazy\" string interpolation"
-msgstr ""
+msgstr "\"Lazy\" string interpolation"
 
 #: ../../changelog.rst:1241
 msgid ""
-"Because of how Fabric used to run in \"broad mode\" (see previous section) a"
-" special string formatting technique -- the use of a bash-like dollar sign "
+"Because of how Fabric used to run in \"broad mode\" (see previous section) a "
+"special string formatting technique -- the use of a bash-like dollar sign "
 "notation, e.g. ``\"hostname: $(fab_host)\"`` -- had to be used to allow the "
 "current state of execution to be represented in one's operations. **This is "
 "no longer necessary and has been removed**. Because your tasks are executed "
-"once per host, you may build strings normally (e.g. with the ``%`` operator)"
-" and refer to ``env.host_string``, ``env.user`` and so forth."
+"once per host, you may build strings normally (e.g. with the ``%`` operator) "
+"and refer to ``env.host_string``, ``env.user`` and so forth."
 msgstr ""
+"Because of how Fabric used to run in \"broad mode\" (see previous section) a "
+"special string formatting technique -- the use of a bash-like dollar sign "
+"notation, e.g. ``\"hostname: $(fab_host)\"`` -- had to be used to allow the "
+"current state of execution to be represented in one's operations. **This is "
+"no longer necessary and has been removed**. Because your tasks are executed "
+"once per host, you may build strings normally (e.g. with the ``%`` operator) "
+"and refer to ``env.host_string``, ``env.user`` and so forth."
 
 #: ../../changelog.rst:1249
 msgid "For example, Fabric 0.1 had to insert the current username like so::"
-msgstr ""
+msgstr "For example, Fabric 0.1 had to insert the current username like so::"
 
 #: ../../changelog.rst:1253
 msgid "Fabric 0.9 and up simply reference ``env`` variables as normal::"
-msgstr ""
+msgstr "Fabric 0.9 and up simply reference ``env`` variables as normal::"
 
 #: ../../changelog.rst:1257
 msgid ""
@@ -1207,20 +1646,25 @@ msgid ""
 "method that automatically makes use of ``env`` values may find its way back "
 "into Fabric at some point if a need becomes apparent."
 msgstr ""
+"As with the execution modes, a special string interpolation function or "
+"method that automatically makes use of ``env`` values may find its way back "
+"into Fabric at some point if a need becomes apparent."
 
 #: ../../changelog.rst:1263
 msgid "Other backwards-incompatible changes"
-msgstr ""
+msgstr "Other backwards-incompatible changes"
 
 #: ../../changelog.rst:1265
 msgid "In no particular order:"
-msgstr ""
+msgstr "In no particular order:"
 
 #: ../../changelog.rst:1267
 msgid ""
 "The Fabric config file location used to be ``~/.fabric``; in the interests "
 "of honoring Unix filename conventions, it's now ``~/.fabricrc``."
 msgstr ""
+"The Fabric config file location used to be ``~/.fabric``; in the interests "
+"of honoring Unix filename conventions, it's now ``~/.fabricrc``."
 
 #: ../../changelog.rst:1270
 msgid ""
@@ -1229,6 +1673,10 @@ msgid ""
 "to the first valid key. This method still exists but has been renamed to "
 "`first`."
 msgstr ""
+"The old ``config`` object (now :data:`env`) had a ``getAny`` method which "
+"took one or more key strings as arguments, and returned the value attached "
+"to the first valid key. This method still exists but has been renamed to "
+"`first`."
 
 #: ../../changelog.rst:1275
 msgid ""
@@ -1238,25 +1686,37 @@ msgid ""
 "variables, but the same holds true for e.g. Python's builtin methods and "
 "types already, so we felt it was worth the tradeoff."
 msgstr ""
+"Environment variables such as ``fab_host`` have been renamed to simply e.g. "
+"``host``. This looks cleaner and feels more natural, and requires less "
+"typing. Users will naturally need to be careful not to override these "
+"variables, but the same holds true for e.g. Python's builtin methods and "
+"types already, so we felt it was worth the tradeoff."
 
 #: ../../changelog.rst:1281
 msgid ""
 "Fabric's version header is no longer printed every time the program runs; "
-"you should now use the standard ``--version``/``-V`` command-line options to"
-" print version and exit."
+"you should now use the standard ``--version``/``-V`` command-line options to "
+"print version and exit."
 msgstr ""
+"Fabric's version header is no longer printed every time the program runs; "
+"you should now use the standard ``--version``/``-V`` command-line options to "
+"print version and exit."
 
 #: ../../changelog.rst:1285
 msgid ""
 "The old ``about`` command has been removed; other Unix programs don't "
-"typically offer this. Users can always view the license and warranty info in"
-" their respective text files distributed with the software."
+"typically offer this. Users can always view the license and warranty info in "
+"their respective text files distributed with the software."
 msgstr ""
+"The old ``about`` command has been removed; other Unix programs don't "
+"typically offer this. Users can always view the license and warranty info in "
+"their respective text files distributed with the software."
 
 #: ../../changelog.rst:1289
 msgid ""
 "The old ``help`` command is now the typical Unix options ``-h``/``--help``."
 msgstr ""
+"The old ``help`` command is now the typical Unix options ``-h``/``--help``."
 
 #: ../../changelog.rst:1291
 msgid ""
@@ -1265,111 +1725,160 @@ msgid ""
 "not fab users (even though the former is a subset of the latter) and should "
 "stay in the documentation only."
 msgstr ""
+"Furthermore, there is no longer a listing of Fabric's programming API "
+"available through the command line -- those topics impact fabfile authors, "
+"not fab users (even though the former is a subset of the latter) and should "
+"stay in the documentation only."
 
 #: ../../changelog.rst:1296
 msgid ""
-"`prompt`'s primary function is now to return a value to the caller, although"
-" it may still optionally store the entered value in `env` as well."
+"`prompt`'s primary function is now to return a value to the caller, although "
+"it may still optionally store the entered value in `env` as well."
 msgstr ""
+"`prompt`'s primary function is now to return a value to the caller, although "
+"it may still optionally store the entered value in `env` as well."
 
 #: ../../changelog.rst:1299
 msgid ""
-"`prompt` now considers the empty string to be valid input; this allows other"
-" functions to wrap `prompt` and handle \"empty\" input on their own terms."
+"`prompt` now considers the empty string to be valid input; this allows other "
+"functions to wrap `prompt` and handle \"empty\" input on their own terms."
 msgstr ""
+"`prompt` now considers the empty string to be valid input; this allows other "
+"functions to wrap `prompt` and handle \"empty\" input on their own terms."
 
 #: ../../changelog.rst:1302
 msgid ""
 "In addition to the above changes, `prompt` has been updated to behave more "
 "obviously, as its previous behavior was confusing in a few ways:"
 msgstr ""
+"In addition to the above changes, `prompt` has been updated to behave more "
+"obviously, as its previous behavior was confusing in a few ways:"
 
 #: ../../changelog.rst:1305
 msgid ""
 "It will now overwrite pre-existing values in the environment dict, but will "
 "print a warning to the user if it does so."
 msgstr ""
+"It will now overwrite pre-existing values in the environment dict, but will "
+"print a warning to the user if it does so."
 
 #: ../../changelog.rst:1308
 msgid ""
 "Additionally, (and this appeared to be undocumented) the ``default`` "
-"argument could take a callable as well as a string, and would simply set the"
-" default message to the return value if a callable was given. This seemed to"
-" add unnecessary complexity (given that users may call e.g. ``prompt(blah, "
+"argument could take a callable as well as a string, and would simply set the "
+"default message to the return value if a callable was given. This seemed to "
+"add unnecessary complexity (given that users may call e.g. ``prompt(blah, "
 "msg, default=my_callable()``) so it has been removed."
 msgstr ""
+"Additionally, (and this appeared to be undocumented) the ``default`` "
+"argument could take a callable as well as a string, and would simply set the "
+"default message to the return value if a callable was given. This seemed to "
+"add unnecessary complexity (given that users may call e.g. ``prompt(blah, "
+"msg, default=my_callable()``) so it has been removed."
 
 #: ../../changelog.rst:1314
 msgid ""
 "When connecting, Fabric used to use the undocumented ``fab_pkey`` env "
 "variable as a method of passing in a Paramiko ``PKey`` object to the SSH "
-"client's ``connect`` method. This has been removed in favor of an "
-"``ssh``-like ``-i`` option, which allows one to specify a private key file "
-"to use; that should generally be enough for most users."
+"client's ``connect`` method. This has been removed in favor of an ``ssh``-"
+"like ``-i`` option, which allows one to specify a private key file to use; "
+"that should generally be enough for most users."
 msgstr ""
+"When connecting, Fabric used to use the undocumented ``fab_pkey`` env "
+"variable as a method of passing in a Paramiko ``PKey`` object to the SSH "
+"client's ``connect`` method. This has been removed in favor of an ``ssh``-"
+"like ``-i`` option, which allows one to specify a private key file to use; "
+"that should generally be enough for most users."
 
 #: ../../changelog.rst:1320
 msgid ""
-"``download`` is now `get` in order to match up with `put` (the name mismatch"
-" was due to `get` being the old method of getting env vars.)"
+"``download`` is now `get` in order to match up with `put` (the name mismatch "
+"was due to `get` being the old method of getting env vars.)"
 msgstr ""
+"``download`` is now `get` in order to match up with `put` (the name mismatch "
+"was due to `get` being the old method of getting env vars.)"
 
 #: ../../changelog.rst:1323
 msgid ""
 "The ``noshell`` argument to `sudo` (added late in its life to previous "
 "Fabric versions) has been renamed to ``shell`` (defaults to True, so the "
-"effective behavior remains the same) and has also been extended to the `run`"
-" operation."
+"effective behavior remains the same) and has also been extended to the `run` "
+"operation."
 msgstr ""
+"The ``noshell`` argument to `sudo` (added late in its life to previous "
+"Fabric versions) has been renamed to ``shell`` (defaults to True, so the "
+"effective behavior remains the same) and has also been extended to the `run` "
+"operation."
 
 #: ../../changelog.rst:1328
 msgid ""
 "Additionally, the global ``sudo_noshell`` option has been renamed to "
 "``use_shell`` and also applies to both `run` and `sudo`."
 msgstr ""
+"Additionally, the global ``sudo_noshell`` option has been renamed to "
+"``use_shell`` and also applies to both `run` and `sudo`."
 
 #: ../../changelog.rst:1331
 msgid ""
 "``local_per_host`` has been removed, as it only applied to the now-removed "
 "\"broad mode\"."
 msgstr ""
+"``local_per_host`` has been removed, as it only applied to the now-removed "
+"\"broad mode\"."
 
 #: ../../changelog.rst:1334
 msgid ""
 "``load`` has been removed; Fabric is now \"just Python\", so use Python's "
 "import mechanisms in order to stitch multiple fabfiles together."
 msgstr ""
+"``load`` has been removed; Fabric is now \"just Python\", so use Python's "
+"import mechanisms in order to stitch multiple fabfiles together."
 
 #: ../../changelog.rst:1337
 msgid ""
-"``abort`` is no longer an \"operation\" *per se* and has been moved to "
-":mod:`fabric.utils`. It is otherwise the same as before, taking a single "
-"string message, printing it to the user and then calling ``sys.exit(1)``."
+"``abort`` is no longer an \"operation\" *per se* and has been moved to :mod:"
+"`fabric.utils`. It is otherwise the same as before, taking a single string "
+"message, printing it to the user and then calling ``sys.exit(1)``."
 msgstr ""
+"``abort`` is no longer an \"operation\" *per se* and has been moved to :mod:"
+"`fabric.utils`. It is otherwise the same as before, taking a single string "
+"message, printing it to the user and then calling ``sys.exit(1)``."
 
 #: ../../changelog.rst:1341
 msgid ""
-"``rsyncproject`` and ``upload_project`` have been moved into "
-":mod:`fabric.contrib` (specifically, :mod:`fabric.contrib.project`), which "
-"is intended to be a new tree of submodules for housing \"extra\" code which "
-"may build on top of the core Fabric operations."
+"``rsyncproject`` and ``upload_project`` have been moved into :mod:`fabric."
+"contrib` (specifically, :mod:`fabric.contrib.project`), which is intended to "
+"be a new tree of submodules for housing \"extra\" code which may build on "
+"top of the core Fabric operations."
 msgstr ""
+"``rsyncproject`` and ``upload_project`` have been moved into :mod:`fabric."
+"contrib` (specifically, :mod:`fabric.contrib.project`), which is intended to "
+"be a new tree of submodules for housing \"extra\" code which may build on "
+"top of the core Fabric operations."
 
 #: ../../changelog.rst:1346
 msgid ""
-"``invoke`` has been turned on its head, and is now the `runs_once` decorator"
-" (living in :mod:`fabric.decorators`). When used to decorate a function, "
-"that function will only execute one time during the lifetime of a ``fab`` "
-"run. Thus, where you might have used ``invoke`` multiple times to ensure a "
-"given command only runs once, you may now use `runs_once` to decorate the "
-"function and then call it multiple times in a normal fashion."
+"``invoke`` has been turned on its head, and is now the `runs_once` decorator "
+"(living in :mod:`fabric.decorators`). When used to decorate a function, that "
+"function will only execute one time during the lifetime of a ``fab`` run. "
+"Thus, where you might have used ``invoke`` multiple times to ensure a given "
+"command only runs once, you may now use `runs_once` to decorate the function "
+"and then call it multiple times in a normal fashion."
 msgstr ""
+"``invoke`` has been turned on its head, and is now the `runs_once` decorator "
+"(living in :mod:`fabric.decorators`). When used to decorate a function, that "
+"function will only execute one time during the lifetime of a ``fab`` run. "
+"Thus, where you might have used ``invoke`` multiple times to ensure a given "
+"command only runs once, you may now use `runs_once` to decorate the function "
+"and then call it multiple times in a normal fashion."
 
 #: ../../changelog.rst:1353
 msgid ""
 "It looks like the regex behavior of the ``validate`` argument to `prompt` "
 "was never actually implemented. It now works as advertised."
 msgstr ""
+"It looks like the regex behavior of the ``validate`` argument to `prompt` "
+"was never actually implemented. It now works as advertised."
 
 #: ../../changelog.rst:1356
 msgid ""
@@ -1377,6 +1886,9 @@ msgid ""
 "function, and the function is more versatile in terms of where it may be "
 "used, so the decorator has been removed."
 msgstr ""
+"Couldn't think of a good reason for `require` to be a decorator *and* a "
+"function, and the function is more versatile in terms of where it may be "
+"used, so the decorator has been removed."
 
 #: ../../changelog.rst:1360
 msgid ""
@@ -1385,12 +1897,18 @@ msgid ""
 "make \"meta\" commands that just call whatever chain of \"real\" commands "
 "you need performed for a given overarching task."
 msgstr ""
+"As things currently stand with the execution model, the ``depends`` "
+"decorator doesn't make a lot of sense: instead, it's safest/best to simply "
+"make \"meta\" commands that just call whatever chain of \"real\" commands "
+"you need performed for a given overarching task."
 
 #: ../../changelog.rst:1365
 msgid ""
 "For example, instead of having command A say that it \"depends on\" command "
 "B, create a command C which calls A and B in the right order, e.g.::"
 msgstr ""
+"For example, instead of having command A say that it \"depends on\" command "
+"B, create a command C which calls A and B in the right order, e.g.::"
 
 #: ../../changelog.rst:1386
 msgid ""
@@ -1398,148 +1916,181 @@ msgid ""
 "don't hesitate to email the list or the developers if you have a use case "
 "that needs something Fabric doesn't provide right now!"
 msgstr ""
+"The execution model is still subject to change as Fabric evolves. Please "
+"don't hesitate to email the list or the developers if you have a use case "
+"that needs something Fabric doesn't provide right now!"
 
 #: ../../changelog.rst:1390
 msgid ""
-"Removed the old ``fab shell`` functionality, since the move to \"just "
-"Python\" should make vanilla ``python``/``ipython`` usage of Fabric much "
-"easier."
+"Removed the old ``fab shell`` functionality, since the move to \"just Python"
+"\" should make vanilla ``python``/``ipython`` usage of Fabric much easier."
 msgstr ""
+"Removed the old ``fab shell`` functionality, since the move to \"just Python"
+"\" should make vanilla ``python``/``ipython`` usage of Fabric much easier."
 
 #: ../../changelog.rst:1393
 msgid ""
 "We may add it back in later as a convenient shortcut to what basically "
-"amounts to running ``ipython`` and performing a handful of ``from fabric.foo"
-" import bar`` calls."
+"amounts to running ``ipython`` and performing a handful of ``from fabric.foo "
+"import bar`` calls."
 msgstr ""
+"We may add it back in later as a convenient shortcut to what basically "
+"amounts to running ``ipython`` and performing a handful of ``from fabric.foo "
+"import bar`` calls."
 
 #: ../../changelog.rst:1397
 msgid ""
 "The undocumented `fab_quiet` option has been replaced by a much more "
-"granular set of output controls. For more info, see "
-":doc:`../usage/output_controls`."
+"granular set of output controls. For more info, see :doc:`../usage/"
+"output_controls`."
 msgstr ""
+"The undocumented `fab_quiet` option has been replaced by a much more "
+"granular set of output controls. For more info, see :doc:`../usage/"
+"output_controls`."
 
 #: ../../changelog.rst:1402
 msgid "Changes from alpha 1 to alpha 2"
-msgstr ""
+msgstr "Changes from alpha 1 to alpha 2"
 
 #: ../../changelog.rst:1404
 msgid ""
 "The below list was generated by running ``git shortlog 0.9a1..0.9a2`` and "
 "then manually sifting through and editing the resulting commit messages. "
 "This will probably occur for the rest of the alphas and betas; we hope to "
-"use Sphinx-specific methods of documenting changes once the final release is"
-" out the door."
+"use Sphinx-specific methods of documenting changes once the final release is "
+"out the door."
 msgstr ""
+"The below list was generated by running ``git shortlog 0.9a1..0.9a2`` and "
+"then manually sifting through and editing the resulting commit messages. "
+"This will probably occur for the rest of the alphas and betas; we hope to "
+"use Sphinx-specific methods of documenting changes once the final release is "
+"out the door."
 
 #: ../../changelog.rst:1410
 msgid ""
-"Various minor tweaks to the (still in-progress) documentation, including one"
-" thanks to Curt Micol."
+"Various minor tweaks to the (still in-progress) documentation, including one "
+"thanks to Curt Micol."
 msgstr ""
+"Various minor tweaks to the (still in-progress) documentation, including one "
+"thanks to Curt Micol."
 
 #: ../../changelog.rst:1413
 msgid "Added a number of TODO items based on user feedback (thanks!)"
-msgstr ""
+msgstr "Added a number of TODO items based on user feedback (thanks!)"
 
 #: ../../changelog.rst:1415
 msgid ""
 "Host information now available in granular form (user, host, port) in the "
 "env dict, alongside the full ``user@host:port`` host string."
 msgstr ""
+"Host information now available in granular form (user, host, port) in the "
+"env dict, alongside the full ``user@host:port`` host string."
 
 #: ../../changelog.rst:1418
 msgid ""
-"Parsing of host strings is now more lenient when examining the username "
-"(e.g. hyphens.)"
+"Parsing of host strings is now more lenient when examining the username (e."
+"g. hyphens.)"
 msgstr ""
+"Parsing of host strings is now more lenient when examining the username (e."
+"g. hyphens.)"
 
 #: ../../changelog.rst:1421
 msgid "User/host info no longer cleared out between commands."
-msgstr ""
+msgstr "User/host info no longer cleared out between commands."
 
 #: ../../changelog.rst:1423
 msgid ""
 "Tweaked ``setup.py`` to use ``find_packages``. Thanks to Pat McNerthney."
 msgstr ""
+"Tweaked ``setup.py`` to use ``find_packages``. Thanks to Pat McNerthney."
 
 #: ../../changelog.rst:1425
 msgid ""
 "Added 'capture' argument to `~fabric.operations.local` to allow local "
 "interactive tasks."
 msgstr ""
+"Added 'capture' argument to `~fabric.operations.local` to allow local "
+"interactive tasks."
 
 #: ../../changelog.rst:1428
 msgid ""
 "Reversed default value of `~fabric.operations.local`'s ``show_stderr`` "
-"kwarg; local stderr now prints by default instead of being hidden by "
-"default."
+"kwarg; local stderr now prints by default instead of being hidden by default."
 msgstr ""
+"Reversed default value of `~fabric.operations.local`'s ``show_stderr`` "
+"kwarg; local stderr now prints by default instead of being hidden by default."
 
 #: ../../changelog.rst:1432
 msgid "Various internal fabfile tweaks."
-msgstr ""
+msgstr "Various internal fabfile tweaks."
 
 #: ../../changelog.rst:1436
 msgid "Changes from alpha 2 to alpha 3"
-msgstr ""
+msgstr "Changes from alpha 2 to alpha 3"
 
 #: ../../changelog.rst:1438
 msgid "Lots of updates to the documentation and TODO"
-msgstr ""
+msgstr "Lots of updates to the documentation and TODO"
 
 #: ../../changelog.rst:1440
 msgid "Added contrib.files with a handful of file-centric subroutines"
-msgstr ""
+msgstr "Added contrib.files with a handful of file-centric subroutines"
 
 #: ../../changelog.rst:1442
 msgid "Added contrib.console for console UI stuff (so far, just `confirm`)"
-msgstr ""
+msgstr "Added contrib.console for console UI stuff (so far, just `confirm`)"
 
 #: ../../changelog.rst:1444
 msgid "Reworked config file mechanisms a bit, added CLI flag for setting it."
-msgstr ""
+msgstr "Reworked config file mechanisms a bit, added CLI flag for setting it."
 
 #: ../../changelog.rst:1446
 msgid "Output controls (including CLI args, documentation) have been added"
-msgstr ""
+msgstr "Output controls (including CLI args, documentation) have been added"
 
 #: ../../changelog.rst:1448
 msgid ""
 "Test coverage tweaked and grown a small amount (thanks in part to Peter "
 "Ellis)"
 msgstr ""
+"Test coverage tweaked and grown a small amount (thanks in part to Peter "
+"Ellis)"
 
 #: ../../changelog.rst:1451
 msgid "Roles overhauled/fixed (more like hosts now)"
-msgstr ""
+msgstr "Roles overhauled/fixed (more like hosts now)"
 
 #: ../../changelog.rst:1453
 msgid "Changed ``--list`` linewrap behavior to truncate instead."
-msgstr ""
+msgstr "Changed ``--list`` linewrap behavior to truncate instead."
 
 #: ../../changelog.rst:1455
 msgid "Make private key passphrase prompting more obvious to users."
-msgstr ""
+msgstr "Make private key passphrase prompting more obvious to users."
 
 #: ../../changelog.rst:1457
 msgid ""
 "Add ``pty`` option to `sudo`. Thanks to José Muanis for the tip-off re: "
 "get_pty()"
 msgstr ""
+"Add ``pty`` option to `sudo`. Thanks to José Muanis for the tip-off re: "
+"get_pty()"
 
 #: ../../changelog.rst:1459
 msgid ""
 "Add CLI argument for setting the shell used in commands (thanks to Steve "
 "Steiner)"
 msgstr ""
+"Add CLI argument for setting the shell used in commands (thanks to Steve "
+"Steiner)"
 
 #: ../../changelog.rst:1461
 msgid ""
 "Only load host keys when ``env.reject_unknown_keys`` is True. Thanks to Pat "
 "McNerthney."
 msgstr ""
+"Only load host keys when ``env.reject_unknown_keys`` is True. Thanks to Pat "
+"McNerthney."
 
 #: ../../changelog.rst:1464
 msgid ""
@@ -1547,114 +2098,129 @@ msgid ""
 "cluttering up this list! Thanks as always to everyone who contributed "
 "bugfixes, feedback and/or patches."
 msgstr ""
+"And many, many additional bugfixes and behavioral tweaks too small to merit "
+"cluttering up this list! Thanks as always to everyone who contributed "
+"bugfixes, feedback and/or patches."
 
 #: ../../changelog.rst:1470
 msgid "Changes from alpha 3 to beta 1"
-msgstr ""
+msgstr "Changes from alpha 3 to beta 1"
 
 #: ../../changelog.rst:1472
 msgid ""
 "This is closer to being a straight dump of the Git changelog than the "
 "previous sections; apologies for the overall change in tense."
 msgstr ""
+"This is closer to being a straight dump of the Git changelog than the "
+"previous sections; apologies for the overall change in tense."
 
 #: ../../changelog.rst:1475
 msgid "Add autodocs for fabric.contrib.console."
-msgstr ""
+msgstr "Add autodocs for fabric.contrib.console."
 
 #: ../../changelog.rst:1477
 msgid "Minor cleanup to package init and setup.py."
-msgstr ""
+msgstr "Minor cleanup to package init and setup.py."
 
 #: ../../changelog.rst:1479
 msgid ""
 "Handle exceptions with strerror attributes that are None instead of strings."
 msgstr ""
+"Handle exceptions with strerror attributes that are None instead of strings."
 
 #: ../../changelog.rst:1481
 msgid "contrib.files.append may now take a list of strings if desired."
-msgstr ""
+msgstr "contrib.files.append may now take a list of strings if desired."
 
 #: ../../changelog.rst:1483
 msgid "Straighten out how prompt() deals with trailing whitespace"
-msgstr ""
+msgstr "Straighten out how prompt() deals with trailing whitespace"
 
 #: ../../changelog.rst:1485
 msgid "Add 'cd' context manager."
-msgstr ""
+msgstr "Add 'cd' context manager."
 
 #: ../../changelog.rst:1487
 msgid ""
 "Update upload_template to correctly handle backing up target directories."
 msgstr ""
+"Update upload_template to correctly handle backing up target directories."
 
 #: ../../changelog.rst:1489
 msgid ""
 "upload_template() can now use Jinja2 if it's installed and user asks for it."
 msgstr ""
+"upload_template() can now use Jinja2 if it's installed and user asks for it."
 
 #: ../../changelog.rst:1491
 msgid "Handle case where remote host SSH key doesn't match known_hosts."
-msgstr ""
+msgstr "Handle case where remote host SSH key doesn't match known_hosts."
 
 #: ../../changelog.rst:1493
 msgid "Fix race condition in run/sudo."
-msgstr ""
+msgstr "Fix race condition in run/sudo."
 
 #: ../../changelog.rst:1495
 msgid "Start fledgling FAQ; extended pty option to run(); related doc tweaks."
-msgstr ""
+msgstr "Start fledgling FAQ; extended pty option to run(); related doc tweaks."
 
 #: ../../changelog.rst:1497
 msgid "Bring local() in line with run()/sudo() in terms of .failed attribute."
-msgstr ""
+msgstr "Bring local() in line with run()/sudo() in terms of .failed attribute."
 
 #: ../../changelog.rst:1499
 msgid "Add dollar-sign backslash escaping to run/sudo."
-msgstr ""
+msgstr "Add dollar-sign backslash escaping to run/sudo."
 
 #: ../../changelog.rst:1501
 msgid "Add FAQ question re: backgrounding processes."
-msgstr ""
+msgstr "Add FAQ question re: backgrounding processes."
 
 #: ../../changelog.rst:1503
 msgid ""
 "Extend some of put()'s niceties to get(), plus docstring/comment updates"
 msgstr ""
+"Extend some of put()'s niceties to get(), plus docstring/comment updates"
 
 #: ../../changelog.rst:1505
 msgid ""
 "Add debug output of chosen fabfile for troubleshooting fabfile discovery."
 msgstr ""
+"Add debug output of chosen fabfile for troubleshooting fabfile discovery."
 
 #: ../../changelog.rst:1507
 msgid ""
 "Fix Python path bug which sometimes caused Fabric's internal fabfile to pre-"
 "empt user's fabfile during load phase."
 msgstr ""
+"Fix Python path bug which sometimes caused Fabric's internal fabfile to pre-"
+"empt user's fabfile during load phase."
 
 #: ../../changelog.rst:1510
 msgid "Gracefully handle \"display\" for tasks with no docstring."
-msgstr ""
+msgstr "Gracefully handle \"display\" for tasks with no docstring."
 
 #: ../../changelog.rst:1512
 msgid "Fix edge case that comes up during some auth/prompt situations."
-msgstr ""
+msgstr "Fix edge case that comes up during some auth/prompt situations."
 
 #: ../../changelog.rst:1514
 msgid ""
 "Handle carriage returns in output_thread correctly. Thanks to Brian Rosner."
 msgstr ""
+"Handle carriage returns in output_thread correctly. Thanks to Brian Rosner."
 
 #: ../../changelog.rst:1518
 msgid "Changes from beta 1 to release candidate 1"
-msgstr ""
+msgstr "Changes from beta 1 to release candidate 1"
 
 #: ../../changelog.rst:1520
 msgid ""
 "As with the previous changelog, this is also mostly a dump of the Git log. "
 "We promise that future changelogs will be more verbose :)"
 msgstr ""
+"As with the previous changelog, this is also mostly a dump of the Git log. "
+"We promise that future changelogs will be more verbose :)"
 
 #: ../../changelog.rst:1523
 msgid ""
@@ -1662,91 +2228,102 @@ msgid ""
 "Other mentions of documentation in this list are items deserving their own "
 "mention, e.g. FAQ updates."
 msgstr ""
+"Near-total overhaul and expansion of documentation (this is the big one!) "
+"Other mentions of documentation in this list are items deserving their own "
+"mention, e.g. FAQ updates."
 
 #: ../../changelog.rst:1526
 msgid "Add FAQ question re: passphrase/password prompt"
-msgstr ""
+msgstr "Add FAQ question re: passphrase/password prompt"
 
 #: ../../changelog.rst:1527
 msgid ""
-"Vendorized Paramiko: it is now included in our distribution and is no longer"
-" an external dependency, at least until upstream fixes a nasty 1.7.5 bug."
+"Vendorized Paramiko: it is now included in our distribution and is no longer "
+"an external dependency, at least until upstream fixes a nasty 1.7.5 bug."
 msgstr ""
+"Vendorized Paramiko: it is now included in our distribution and is no longer "
+"an external dependency, at least until upstream fixes a nasty 1.7.5 bug."
 
 #: ../../changelog.rst:1529
 msgid ""
 "Fix #34: switch upload_template to use mkstemp (also removes Python 2.5.2+ "
 "dependency -- now works on 2.5.0 and up)"
 msgstr ""
+"Fix #34: switch upload_template to use mkstemp (also removes Python 2.5.2+ "
+"dependency -- now works on 2.5.0 and up)"
 
 #: ../../changelog.rst:1531
 msgid "Fix #62 by escaping backticks."
-msgstr ""
+msgstr "Fix #62 by escaping backticks."
 
 #: ../../changelog.rst:1532
 msgid "Replace \"ls\" with \"test\" in exists()"
-msgstr ""
+msgstr "Replace \"ls\" with \"test\" in exists()"
 
 #: ../../changelog.rst:1533
 msgid "Fixes #50. Thanks to Alex Koshelev for the patch."
-msgstr ""
+msgstr "Fixes #50. Thanks to Alex Koshelev for the patch."
 
 #: ../../changelog.rst:1534
 msgid "``local``'s return value now exhibits ``.return_code``."
-msgstr ""
+msgstr "``local``'s return value now exhibits ``.return_code``."
 
 #: ../../changelog.rst:1535
 msgid "Abort on bad role names instead of blowing up."
-msgstr ""
+msgstr "Abort on bad role names instead of blowing up."
 
 #: ../../changelog.rst:1536
 msgid "Turn off DeprecationWarning when importing paramiko."
-msgstr ""
+msgstr "Turn off DeprecationWarning when importing paramiko."
 
 #: ../../changelog.rst:1537
 msgid "Attempted fix re #32 (dropped output)"
-msgstr ""
+msgstr "Attempted fix re #32 (dropped output)"
 
 #: ../../changelog.rst:1538
 msgid "Update role/host initialization logic (was missing some edge cases)"
-msgstr ""
+msgstr "Update role/host initialization logic (was missing some edge cases)"
 
 #: ../../changelog.rst:1539
 msgid "Add note to install docs re: PyCrypto on win32."
-msgstr ""
+msgstr "Add note to install docs re: PyCrypto on win32."
 
 #: ../../changelog.rst:1540
 msgid "Add FAQ item re: changing env.shell."
-msgstr ""
+msgstr "Add FAQ item re: changing env.shell."
 
 #: ../../changelog.rst:1541
 msgid "Rest of TODO migrated to tickets."
-msgstr ""
+msgstr "Rest of TODO migrated to tickets."
 
 #: ../../changelog.rst:1542
 msgid "``fab test`` (when in source tree) now uses doctests."
-msgstr ""
+msgstr "``fab test`` (when in source tree) now uses doctests."
 
 #: ../../changelog.rst:1543
 msgid "Add note to compatibility page re: fab_quiet."
-msgstr ""
+msgstr "Add note to compatibility page re: fab_quiet."
 
 #: ../../changelog.rst:1544
 msgid "Update local() to honor context_managers.cd()"
-msgstr ""
+msgstr "Update local() to honor context_managers.cd()"
 
 #: ../../changelog.rst:1547
 msgid "Changes from release candidate 1 to final release"
-msgstr ""
+msgstr "Changes from release candidate 1 to final release"
 
 #: ../../changelog.rst:1549
 msgid ""
 "Fixed the `~fabric.contrib.files.sed` docstring to accurately reflect which "
 "``sed`` options it uses."
 msgstr ""
+"Fixed the `~fabric.contrib.files.sed` docstring to accurately reflect which "
+"``sed`` options it uses."
 
 #: ../../changelog.rst:1551
 msgid ""
 "Various changes to internal fabfile, version mechanisms, and other non-user-"
 "facing things."
 msgstr ""
+"Various changes to internal fabfile, version mechanisms, and other non-user-"
+"facing things."

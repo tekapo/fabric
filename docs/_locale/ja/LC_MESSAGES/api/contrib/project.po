@@ -1,38 +1,47 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-31 09:56+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../../api/contrib/project.rst:3
 msgid "Project Tools"
-msgstr ""
+msgstr "プロジェクトツール"
 
 #: ../../../fabric/contrib/project.pydocstring of fabric.contrib.project:1
 msgid ""
 "Useful non-core functionality, e.g. functions composing multiple operations."
-msgstr ""
+msgstr "コア以外の便利な機能。例えば複数オペレーションを構成する機能。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:1
 msgid ""
 "Synchronize a remote directory with the current project directory via rsync."
 msgstr ""
+"rsync 経由でリモートディレクトリとカレントのプロジェクトディレクトリを同期し"
+"ます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:3
 msgid ""
-"Where ``upload_project()`` makes use of ``scp`` to copy one's entire project"
-" every time it is invoked, ``rsync_project()`` uses the ``rsync`` command-"
-"line utility, which only transfers files newer than those on the remote end."
+"Where ``upload_project()`` makes use of ``scp`` to copy one's entire "
+"project every time it is invoked, ``rsync_project()`` uses the ``rsync`` "
+"command-line utility, which only transfers files newer than those on the "
+"remote end."
 msgstr ""
+"``upload_project()`` は実行されるたびに ``scp`` を利用してプロジェクト全体を"
+"コピーしますが、``rsync_project()`` は ``rsync`` を利用し、リモート側のファ"
+"イルよりも新しいファイルのみを転送します。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:8
@@ -42,19 +51,26 @@ msgid ""
 "on both your local and remote systems in order for this operation to work "
 "correctly."
 msgstr ""
+"``rsync_project()`` は ``rsync`` の単純なラッパーです。 ``rsync`` の動作に関"
+"する詳細はそのmanページをご覧ください。この操作が正しく動作するためにはロー"
+"カルとリモートシステムの両方に ``rsync`` がインストールされている必要があり"
+"ます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:13
 msgid ""
 "This function makes use of Fabric's ``local()`` operation, and returns the "
-"output of that function call; thus it will return the stdout, if any, of the"
-" resultant ``rsync`` call."
+"output of that function call; thus it will return the stdout, if any, of "
+"the resultant ``rsync`` call."
 msgstr ""
+"この機能はFabricの ``local()`` オペレーションを利用し、その関数呼び出しの出"
+"力を返します。つまり、(もしあれば) ``rsync`` の呼び出し結果の標準出力が返っ"
+"てきます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:17
 msgid "``rsync_project()`` takes the following parameters:"
-msgstr ""
+msgstr "``rsync_project()`` は次のパラメータを取ります:"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:19
@@ -63,15 +79,22 @@ msgid ""
 "directory on the remote server. Due to how ``rsync`` is implemented, the "
 "exact behavior depends on the value of ``local_dir``:"
 msgstr ""
+"``remote_dir``: 唯一の必須のパラメータで、リモートサーバー上のディレクトリへ"
+"のパスです。 ``rsync`` がそのように実装されているため、その挙動は "
+"``local_dir`` の値に依存します:"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:23
 msgid ""
 "If ``local_dir`` ends with a trailing slash, the files will be dropped "
 "inside of ``remote_dir``. E.g. ``rsync_project(\"/home/username/project\", "
-"\"foldername/\")`` will drop the contents of ``foldername`` inside of "
-"``/home/username/project``."
+"\"foldername/\")`` will drop the contents of ``foldername`` inside of ``/"
+"home/username/project``."
 msgstr ""
+"``local_dir`` が末尾のスラッシュで終わっている場合、ファイルは "
+"``remote_dir`` 内にアップロードされます。例えば、 ``rsync_project(\"/home/"
+"username/project/\", \"foldername/\")`` は ``/home/username/project`` 内の "
+"``foldername`` のコンテンツとなります。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:27
@@ -79,11 +102,16 @@ msgid ""
 "If ``local_dir`` does **not** end with a trailing slash (and this includes "
 "the default scenario, when ``local_dir`` is not specified), ``remote_dir`` "
 "is effectively the \"parent\" directory, and a new directory named after "
-"``local_dir`` will be created inside of it. So "
-"``rsync_project(\"/home/username\", \"foldername\")`` would create a new "
-"directory ``/home/username/foldername`` (if needed) and place the files "
-"there."
+"``local_dir`` will be created inside of it. So ``rsync_project(\"/home/"
+"username\", \"foldername\")`` would create a new directory ``/home/username/"
+"foldername`` (if needed) and place the files there."
 msgstr ""
+"``local_dir`` が **スラッシュで終わっていない** 場合(これにはデフォルトのシ"
+"ナリオの ``local_dir`` が指定されていない場合も含まれます)、``remote_dir`` "
+"は実質的に \"親\" ディレクトリとなり、その中に ``local_dir`` の名称の新しい"
+"ディレクトリが作成されます。したがって、 ``rsync_project(\"/home/username"
+"\", \"foldername\")`` は(必要であれば)新しいディレクトリ ``/home/username/"
+"foldername`` を作り、ファイルをそこにコピーします。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:35
@@ -91,9 +119,15 @@ msgid ""
 "``local_dir``: by default, ``rsync_project`` uses your current working "
 "directory as the source directory. This may be overridden by specifying "
 "``local_dir``, which is a string passed verbatim to ``rsync``, and thus may "
-"be a single directory (``\"my_directory\"``) or multiple directories "
-"(``\"dir1 dir2\"``). See the ``rsync`` documentation for details."
+"be a single directory (``\"my_directory\"``) or multiple directories (``"
+"\"dir1 dir2\"``). See the ``rsync`` documentation for details."
 msgstr ""
+"``local_dir``: デフォルトでは、``rsync_project`` はカレントのワーキングディ"
+"レクトリをソースディレクトリとして利用します。これは ``local_dir`` を指定す"
+"ることでオーバーライドすることができます。 ``local_dir`` は  ``rsync`` にそ"
+"のまま渡される文字列で、単一のディレクトリ (``\"my_directory\"``) もしくは複"
+"数のディレクトリ (``\"dir1 dir2\"``) とすることが可能です。詳細は ``rsync`` "
+"のドキュメントをご覧ください。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:40
@@ -101,14 +135,21 @@ msgid ""
 "``exclude``: optional, may be a single string, or an iterable of strings, "
 "and is used to pass one or more ``--exclude`` options to ``rsync``."
 msgstr ""
+"``exclude``: これはオプションで、単一の文字列、もしくは文字列の繰り返し可能"
+"オブジェクトとすることが可能で、単一もしくは複数の ``--exclude`` オプション"
+"として ``rsync`` に渡されるために利用されます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:42
 msgid ""
-"``delete``: a boolean controlling whether ``rsync``'s ``--delete`` option is"
-" used. If True, instructs ``rsync`` to remove remote files that no longer "
+"``delete``: a boolean controlling whether ``rsync``'s ``--delete`` option "
+"is used. If True, instructs ``rsync`` to remove remote files that no longer "
 "exist locally. Defaults to False."
 msgstr ""
+"``delete``: ``rsync`` の ``--delete`` オプションを使用するかどうかをコント"
+"ロールする真偽値です。True なら、 ``rsync`` に指示してローカルには存在しなく"
+"なったファイルをリモート側でも削除します。デフォルトでは False になっていま"
+"す。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:45
@@ -116,6 +157,8 @@ msgid ""
 "``extra_opts``: an optional, arbitrary string which you may use to pass "
 "custom arguments or options to ``rsync``."
 msgstr ""
+"``extra_opts``: オプションで、カスタムな引き数やオプションを ``rsync`` に渡"
+"すための任意の文字列です。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:47
@@ -123,12 +166,15 @@ msgid ""
 "``ssh_opts``: Like ``extra_opts`` but specifically for the SSH options "
 "string (rsync's ``--rsh`` flag.)"
 msgstr ""
+"``ssh_opts``: ``extra_opts`` と似ていますが、SSH のオプション文字列 (rsync "
+"の ``--rsh`` フラグ) 用です。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:49
 msgid ""
 "``capture``: Sent directly into an inner `~fabric.operations.local` call."
 msgstr ""
+"``capture``: `~fabric.operations.local` 呼び出しの内部に直接送られます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:50
@@ -136,13 +182,17 @@ msgid ""
 "``upload``: a boolean controlling whether file synchronization is performed "
 "up or downstream. Upstream by default."
 msgstr ""
+"``upload``: ファイル同期の実行をアップストリームで行うのかダウンストリームで"
+"行うのかをコントロールする真偽値です。デフォルトはアップストリームです。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:52
 msgid ""
-"``default_opts``: the default rsync options ``-pthrvz``, override if desired"
-" (e.g. to remove verbosity, etc)."
+"``default_opts``: the default rsync options ``-pthrvz``, override if "
+"desired (e.g. to remove verbosity, etc)."
 msgstr ""
+"``default_opts``: デフォルトの rsync のオプションの ``-pthrvz`` で、必要に応"
+"じてオーバライドします(詳細表示(verbosity)をとりのぞくなど)。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:55
@@ -152,6 +202,10 @@ msgid ""
 "nonstandard port, or when ``env.key_filename`` is non-empty, will use the "
 "specified port and/or SSH key filename(s)."
 msgstr ""
+"さらに、この関数はFabricのポートとSSHキー設定を透過的に優先します。カレント"
+"ホストの文字列に非標準のポートが含まれている場合や ``env.key_filename`` が空"
+"ではない場合にこの関数を呼び出すと、その指定したポート及び/もしくはSSH鍵ファ"
+"イル名(複数可)を使用します。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:60
@@ -159,26 +213,30 @@ msgid ""
 "For reference, the approximate ``rsync`` command-line call that is "
 "constructed by this function is the following::"
 msgstr ""
+"参考までに、この関数によって構成される ``rsync`` コマンドラインの概要は次の"
+"ようになっています::"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:66
 msgid "The ``ssh_opts`` keyword argument."
-msgstr ""
+msgstr "``ssh_opts`` キーワード引き数。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:68
 msgid "The ``capture`` keyword argument."
-msgstr ""
+msgstr "``capture`` キーワード引き数。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.rsync_project:70
 msgid "The ``default_opts`` keyword argument."
-msgstr ""
+msgstr "``default_opts`` キーワード引き数。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:1
 msgid "Upload the current project to a remote system via ``tar``/``gzip``."
 msgstr ""
+"カレントのプロジェクトを ``tar``/``gzip`` 経由でリモートシステムにアップロー"
+"ドします。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:3
@@ -186,14 +244,19 @@ msgid ""
 "``local_dir`` specifies the local project directory to upload, and defaults "
 "to the current working directory."
 msgstr ""
+"``local_dir`` はアップロードするローカルのプロジェクトディレクトリを指定しま"
+"す。デフォルトはカレントのワーキングディレクトリです。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:6
 msgid ""
-"``remote_dir`` specifies the target directory to upload into (meaning that a"
-" copy of ``local_dir`` will appear as a subdirectory of ``remote_dir``) and "
-"defaults to the remote user's home directory."
+"``remote_dir`` specifies the target directory to upload into (meaning that "
+"a copy of ``local_dir`` will appear as a subdirectory of ``remote_dir``) "
+"and defaults to the remote user's home directory."
 msgstr ""
+"``remote_dir`` アップロード先のターゲットディレクトリを指定します(つまり、"
+"``remote_dir`` のサブディレクトリとして ``local_dir`` のコピーができます)。"
+"デフォルトはリモートユーザーのホームディレクトリです。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:10
@@ -202,22 +265,29 @@ msgid ""
 "remotely. ``sudo`` will be used if use_sudo is True, otherwise ``run`` will "
 "be used."
 msgstr ""
+"``use_sudo`` はリモートでコマンドを実行するさいの使用するメソッドを指定しま"
+"す。use_sudo が True のときは ``sudo`` が使用され、その他は ``run`` が使用さ"
+"れます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:14
 msgid ""
-"This function makes use of the ``tar`` and ``gzip`` programs/libraries, thus"
-" it will not work too well on Win32 systems unless one is using Cygwin or "
-"something similar. It will attempt to clean up the local and remote tarfiles"
-" when it finishes executing, even in the event of a failure."
+"This function makes use of the ``tar`` and ``gzip`` programs/libraries, "
+"thus it will not work too well on Win32 systems unless one is using Cygwin "
+"or something similar. It will attempt to clean up the local and remote "
+"tarfiles when it finishes executing, even in the event of a failure."
 msgstr ""
+"この関数は ``tar`` と ``gzip`` のプログラム/ライブラリを利用します。そのた"
+"め、Win32 システムでは Cygwin もしくは類似のものを使用しない限りうまく動作し"
+"ないでしょう。実行後、たとえ失敗に終わっても、ローカルとリモートのtarファイ"
+"ルの削除を試みます。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:19
 msgid "Added the ``local_dir`` and ``remote_dir`` kwargs."
-msgstr ""
+msgstr "``local_dir`` と ``remote_dir`` キーワード引き数を追加しました。"
 
 #: ../../../fabric/contrib/project.pydocstring of
 #: fabric.contrib.project.upload_project:22
 msgid "Added the ``use_sudo`` kwarg."
-msgstr ""
+msgstr "``use_sudo`` キーワード引き数を追加しました。"

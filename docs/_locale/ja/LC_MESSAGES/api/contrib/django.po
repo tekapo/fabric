@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-12-14 14:50+0900\n"
+"PO-Revision-Date: 2014-12-30 16:15+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -62,6 +62,10 @@ msgid ""
 "executing a remote (non-Fabric) command. This would allow you some degree "
 "of freedom even if Fabric is only installed locally::"
 msgstr ""
+"別の例として、ローカルとリモートのセッティングが似ている場合、これを利用し"
+"て、例えばデータベースのセッティングを取得し、それをリモート(非Fabricの)コマ"
+"ンド実行時に利用することも可能です。こうすれば、Fabricがローカルにしかインス"
+"トールされていなくてもある程度の自由を得ることができます。"
 
 #: ../../../fabric/contrib/django.pydocstring of fabric.contrib.django:52
 msgid ""
@@ -69,6 +73,9 @@ msgid ""
 "again provided your local ``settings.py`` mirrors your remote one in terms "
 "of database connection info."
 msgstr ""
+"上のスニペットは、ローカルの開発環境からの起動で動作し、データベースの接続情"
+"報に関して提供されたローカルの ``settings.py`` がリモートの設定を反映しま"
+"す。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.project:1
@@ -82,6 +89,8 @@ msgid ""
 "using the Django default naming convention for their settings file and "
 "location."
 msgstr ""
+"この機能は、設定ファイルやその場所にDjangoのデフォルト命名規約を利用している"
+"場合に、よくあるケースの便利なショートカットを提供します。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.project:7
@@ -107,6 +116,10 @@ msgid ""
 "correctly set (see `the Django settings docs <http://docs.djangoproject.com/"
 "en/dev/topics/settings/>`_.)"
 msgstr ""
+"シェル環境変数 ``DJANGO_SETTINGS_MODULE`` を正しく設定しない限り、Djangoの仕"
+"組みにより、DjangoもしくはDjangoプロジェクトからのインポートは、失敗します"
+"(`the Django settings docs <http://docs.djangoproject.com/en/dev/topics/"
+"settings/>`_ を参照してください)。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:8
@@ -115,6 +128,9 @@ msgid ""
 "your fabfile or Fabric-using code, after which point any Django imports "
 "should work correctly."
 msgstr ""
+"この関数はそのようにするショートカットを提供します。fabfileもしくはFabricを"
+"利用しているコードの一番うえのほうで呼び出すと、それ以降のどこでもDjangoのイ"
+"ンポートは正しく動作します。"
 
 #: ../../../fabric/contrib/django.pydocstring of
 #: fabric.contrib.django.settings_module:14

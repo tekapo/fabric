@@ -1,33 +1,41 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2014-12-30 15:40+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../../api/contrib/files.rst:3
 msgid "File and Directory Management"
-msgstr ""
+msgstr "フィアルとディレクトリ管理"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files:1
 msgid "Module providing easy API for working with remote files and folders."
 msgstr ""
+"リモートのファイルとフォルダーを扱うための簡単なAPIを提供するモジュールで"
+"す。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:1
 msgid "Append string (or list of strings) ``text`` to ``filename``."
 msgstr ""
+"文字列(もしくは文字列のリスト)の ``text`` を ``filename`` に付加します。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:3
 msgid ""
 "When a list is given, each string inside is handled independently (but in "
 "the order given.)"
 msgstr ""
+"リストが与えられた場合、その中の各文字列は(与えられた順に)独立して扱われま"
+"す。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:6
 msgid ""
@@ -35,94 +43,114 @@ msgid ""
 "None is returned immediately. Otherwise, the given text is appended to the "
 "end of the given ``filename`` via e.g. ``echo '$text' >> $filename``."
 msgstr ""
+"``filename`` 内に ``text`` が見つかれば、付加は実行されず、すぐにはなにも返"
+"りません。代わりに与えられた ``filename`` の後ろに与えられたテキストが付加さ"
+"れます。例えば ``echo '$text' >> $filename`` 経由です。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:10
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.append:10
 msgid ""
 "The test for whether ``text`` already exists defaults to a full line match, "
 "e.g. ``^<text>$``, as this seems to be the most sensible approach for the "
-"\"append lines to a file\" use case. You may override this and force partial"
-" searching (e.g. ``^<text>``) by specifying ``partial=True``."
+"\"append lines to a file\" use case. You may override this and force "
+"partial searching (e.g. ``^<text>``) by specifying ``partial=True``."
 msgstr ""
+"全行マッチのデフォルトのテキストがあるかどうかのテストで、例えば、 ``^<text>"
+"$`` では \"ファイルに行を付加する\" ユースケースのもっとも理にかなったアプ"
+"ローチでしょう。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:15
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.append:15
 msgid ""
 "Because ``text`` is single-quoted, single quotes will be transparently "
 "backslash-escaped. This can be disabled with ``escape=False``."
 msgstr ""
+"``text`` がシングルクォートで囲まれているので、シングルクォートは透過的に"
+"バックスラッシュでエスケープされます。これは ``escape=False`` で無効にするこ"
+"とができます。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:18
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.contains:12 ../../../fabric/contrib/files.pydocstring
-#: of fabric.contrib.files.exists:3 ../../../fabric/contrib/files.pydocstring
-#: of fabric.contrib.files.sed:12
+#: fabric.contrib.files.append:18 fabric.contrib.files.contains:12
+#: fabric.contrib.files.exists:3 fabric.contrib.files.sed:12
 msgid "If ``use_sudo`` is True, will use `sudo` instead of `run`."
-msgstr ""
+msgstr "``use_sudo`` が True なら、`run` の代わりに `sudo` を利用します。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:20
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.contains:18
+#: fabric.contrib.files.append:20 fabric.contrib.files.contains:18
 msgid ""
 "The ``shell`` argument will be eventually passed to ``run/sudo``. See "
 "description of the same argumnet in ``~fabric.contrib.sed`` for details."
 msgstr ""
+"``shell`` 引き数は最終的には ``run/sudo`` に渡されます。詳細は ``~fabric."
+"contrib.sed`` の同じ引き数の説明をご覧ください。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:23
-msgid "Added the ``partial`` keyword argument."
-msgstr ""
-
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:25
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.contains:21
+#: fabric.contrib.files.append:23
+msgid "Added the ``partial`` keyword argument."
+msgstr "``partial`` キーワード引き数を追加しました。"
+
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.append:25 fabric.contrib.files.contains:21
 msgid ""
 "Swapped the order of the ``filename`` and ``text`` arguments to be "
 "consistent with other functions in this module."
 msgstr ""
+"このモジュールの他の関数と一致させるため ``filename`` と ``text`` の順番を入"
+"れ替え。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:28
-msgid "Changed default value of ``partial`` kwarg to be ``False``."
-msgstr ""
-
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:30
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.contains:24
+#: fabric.contrib.files.append:28
+msgid "Changed default value of ``partial`` kwarg to be ``False``."
+msgstr "``partial`` のデフォルト値を ``False`` に変更しました。"
+
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.append:30 fabric.contrib.files.contains:24
 msgid ""
 "Updated the regular expression related escaping to try and solve various "
 "corner cases."
 msgstr ""
+"さまざまな細かいケースの試行と解決のためのエスケープに関する正規表現のアップ"
+"デート。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.append:33
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.comment:30 ../../../fabric/contrib/files.pydocstring
-#: of fabric.contrib.files.contains:29
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:28
-#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.append:33 fabric.contrib.files.comment:30
+#: fabric.contrib.files.contains:29 fabric.contrib.files.sed:28
 #: fabric.contrib.files.uncomment:15
 msgid "Added the ``shell`` keyword argument."
-msgstr ""
+msgstr "``shell`` キーワード引き数を追加しました。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.comment:1
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.comment:1
 msgid "Attempt to comment out all lines in ``filename`` matching ``regex``."
 msgstr ""
+"``regex`` にマッチする ``filename`` 内のすべての行をコメントアウトします。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.comment:3
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.comment:3
 msgid ""
 "The default commenting character is `#` and may be overridden by the "
 "``char`` argument."
 msgstr ""
+"デフォルトのコメント文字は `#` で、これは ``char`` 引き数によって上書き可能"
+"です。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.comment:6
 #: ../../../fabric/contrib/files.pydocstring of
-#: fabric.contrib.files.uncomment:6
+#: fabric.contrib.files.comment:6 fabric.contrib.files.uncomment:6
 msgid ""
 "This function uses the `sed` function, and will accept the same "
 "``use_sudo``, ``shell`` and ``backup`` keyword arguments that `sed` does."
 msgstr ""
+"この機能は `sed` の機能を利用していて、 `sed` と同じく ``use_sudo``、"
+"``shell``、``backup`` のキーワード引き数を取ります。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.comment:9
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.comment:9
 msgid ""
 "`comment` will prepend the comment character to the beginning of the line, "
 "so that lines end up looking like so::"
 msgstr ""
+"`comment` は行のはじめにコメント文字を追加します。その結果は次のようになりま"
+"す:"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.comment:16
@@ -131,39 +159,56 @@ msgid ""
 "sometimes do when inserted by hand. Neither will they have a trailing space "
 "unless you specify e.g. ``char='# '``."
 msgstr ""
+"言い換えると、コメント文字は手動で挿入するとしばしばインデントの次に置かれて"
+"しまいますが、これはインデントには追随しません。それに続くスペースも、例え"
+"ば ``char='# '`` のように明示しない限り付加されません。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.comment:22
 msgid ""
 "In order to preserve the line being commented out, this function will wrap "
-"your ``regex`` argument in parentheses, so you don't need to. It will ensure"
-" that any preceding/trailing ``^`` or ``$`` characters are correctly moved "
-"outside the parentheses. For example, calling ``comment(filename, "
+"your ``regex`` argument in parentheses, so you don't need to. It will "
+"ensure that any preceding/trailing ``^`` or ``$`` characters are correctly "
+"moved outside the parentheses. For example, calling ``comment(filename, "
 "r'^foo$')`` will result in a `sed` call with the \"before\" regex of "
 "``r'^(foo)$'`` (and the \"after\" regex, naturally, of ``r'#\\1'``.)"
 msgstr ""
+"コメントアウトされた行を保護するため、この機能はパラメータ内の ``regex`` 引"
+"き数をラップするので、自分でそれをする必要はありません。先頭/末尾のすべての "
+"``^`` もしくは ``$`` 文字は丸括弧の外に確実に正しく移動されます。例えば、 "
+"``comment(filename, r'^foo$')`` は ``r'^(foo)$'`` の正規表現 \"前\" の "
+"`sed` の呼び出しとなります(そして当然、その正規表現の  \"後\" は ``r'#"
+"\\1'`` となります)。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.contains:1
 msgid "Return True if ``filename`` contains ``text`` (which may be a regex.)"
 msgstr ""
+"``filename`` が ``text`` (正規表現も可能)を含んでいれば True となります。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.contains:3
 msgid ""
 "By default, this function will consider a partial line match (i.e. where "
 "``text`` only makes up part of the line it's on). Specify ``exact=True`` to "
-"change this behavior so that only a line containing exactly ``text`` results"
-" in a True return value."
+"change this behavior so that only a line containing exactly ``text`` "
+"results in a True return value."
 msgstr ""
+"デフォルトでは、この関数は部分的な行マッチとして振る舞います(例えば、 "
+"``text`` がその行の一部でしかない場合)。 ``exact=True`` を指定するとこの挙動"
+"を変更することができ、 ``text`` とまったく同じものを含んでいる行だけが返り値"
+"として True を返します。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.contains:8
 msgid ""
 "This function leverages ``egrep`` on the remote end (so it may not follow "
-"Python regular expression syntax perfectly), and skips ``env.shell`` wrapper"
-" by default."
+"Python regular expression syntax perfectly), and skips ``env.shell`` "
+"wrapper by default."
 msgstr ""
+"この関数はリモート側の ``egrep`` を活用し(したがってPythonの正規表現シンタッ"
+"クスには完全にはそっていないかもしれません)、デフォルトの ``env.shell`` ラッ"
+"パーをスキップします。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.contains:14
@@ -172,15 +217,19 @@ msgid ""
 "performed (this includes overriding ``exact`` so that no ``^``/``$`` is "
 "added.)"
 msgstr ""
+"``escape`` が False の場合、エスケープ関連の追加の正規表現は実行されません"
+"(これは ``exact`` のオーバーライドも含んでいるので ``^``/``$`` は追加されま"
+"せん)。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.contains:27
 msgid "Added ``escape`` keyword argument."
-msgstr ""
+msgstr "``escape`` キーワード引き数を追加しました。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.exists:1
 msgid "Return True if given path exists on the current remote host."
 msgstr ""
+"カレントのリモートホストに与えられたパスが存在すれば True を返します。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.exists:5
 msgid ""
@@ -189,6 +238,9 @@ msgid ""
 "avoid cluttering output. You may specify ``verbose=True`` to change this "
 "behavior."
 msgstr ""
+"`exists` は、出力の乱雑さを避けるため、デフォルトではすべての出力(run行、標"
+"準出力、標準エラー出力を含むファイルが存在しないことによるすべての警告)を隠"
+"します。この挙動は ``verbose=True`` を指定することで変更することができます。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.first:1
 msgid ""
@@ -196,39 +248,55 @@ msgid ""
 "exist. May specify ``use_sudo`` and ``verbose`` which are passed to "
 "`exists`."
 msgstr ""
+"一つもしくは複数のパスが渡され、最初に見つかったものを返します。なにも存在し"
+"なければ None を返します。`exists` に渡される ``use_sudo`` と ``verbose`` を"
+"指定することも可能です。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.is_link:1
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.is_link:1
 msgid "Return True if the given path is a symlink on the current remote host."
 msgstr ""
+"与えられたパスがカレントのリモートホストのシムリンクなら True を返します。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.is_link:3
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.is_link:3
 msgid "If ``use_sudo`` is True, will use `.sudo` instead of `.run`."
-msgstr ""
+msgstr "``use_sudo`` が True なら、`.run` の代わりに `.sudo` を利用します。"
 
-#: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.is_link:5
+#: ../../../fabric/contrib/files.pydocstring of
+#: fabric.contrib.files.is_link:5
 msgid ""
 "`.is_link` will, by default, hide all output. Give ``verbose=True`` to "
 "change this."
 msgstr ""
+"デフォルトでは、`.is_link` はすべての出力を隠します。これを変更するには "
+"``verbose=True`` を与えてください。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:1
 msgid "Run a search-and-replace on ``filename`` with given regex patterns."
-msgstr ""
+msgstr "与えられた正規表現パターンで ``filename`` への置換を実行します。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:3
 msgid ""
-"Equivalent to ``sed -i<backup> -r -e \"/<limit>/ "
-"s/<before>/<after>/<flags>g\" <filename>``. Setting ``backup`` to an empty "
-"string will, disable backup file creation."
+"Equivalent to ``sed -i<backup> -r -e \"/<limit>/ s/<before>/<after>/<flags>g"
+"\" <filename>``. Setting ``backup`` to an empty string will, disable backup "
+"file creation."
 msgstr ""
+"``sed -i<backup> -r -e \"/<limit>/ s/<before>/<after>/<flags>g\" "
+"<filename>`` と同等です。``backup`` に空文字列をセットするとバックアップファ"
+"イルの生成が無効になります。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:7
 msgid ""
 "For convenience, ``before`` and ``after`` will automatically escape forward "
-"slashes, single quotes and parentheses for you, so you don't need to specify"
-" e.g.  ``http:\\/\\/foo\\.com``, instead just using ``http://foo\\.com`` is "
-"fine."
+"slashes, single quotes and parentheses for you, so you don't need to "
+"specify e.g.  ``http:\\/\\/foo\\.com``, instead just using ``http://foo\\."
+"com`` is fine."
 msgstr ""
+"利便性のため、``before`` と ``after`` ではフォワードスラッシュ、シングル"
+"クォート、丸括弧は自動的にエスケープされます。つまり、例えば ``http:\\/\\/"
+"foo\\.com`` のように指定する必要はなく、代わりに ``http://foo\\.com`` でかま"
+"わないということです。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:14
 msgid ""
@@ -239,23 +307,34 @@ msgid ""
 "(``cd`` by it's nature is a shell built-in, not a standalone command, so it "
 "should be called within a shell.)"
 msgstr ""
+"この ``shell`` 引き数は最終的には `run`/`sudo` に渡されます。引用符とバック"
+"スラッシュでたくさんネストされるという問題を避けるため、デフォルトではこれ"
+"は False になっています。しかし、これを True にセットすれば、明確に、もしく"
+"は暗黙的に ``sudo`` 呼び出しをラップするための``~fabric.operations.cd`` の利"
+"用に役立つでしょう(``cd`` はもともとシェルにビルトインされているもので独立し"
+"たコマンドではありません。したがってこれはシェル内で呼び出されるべきです)。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:21
 msgid ""
 "Other options may be specified with sed-compatible regex flags -- for "
-"example, to make the search and replace case insensitive, specify "
-"``flags=\"i\"``. The ``g`` flag is always specified regardless, so you do "
-"not need to remember to include it when overriding this parameter."
+"example, to make the search and replace case insensitive, specify ``flags="
+"\"i\"``. The ``g`` flag is always specified regardless, so you do not need "
+"to remember to include it when overriding this parameter."
 msgstr ""
+"他のオプションは sed 互換の正規表現フラグとともに指定することが可能です。例"
+"えば、大文字と小文字を区別しない置換を行うには ``flags=\"i\"`` を指定しま"
+"す。``g`` フラグは常に指定されているため、このパラメータをオーバーライドする"
+"ときにこれを含めることを思い出す必要はありません。"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files.sed:26
 msgid "The ``flags`` parameter."
-msgstr ""
+msgstr "``flags`` パラメータ。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.uncomment:1
 msgid "Attempt to uncomment all lines in ``filename`` matching ``regex``."
 msgstr ""
+"``regex`` にマッチする ``filename`` 内のすべての行を非コメント化します。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.uncomment:3
@@ -263,6 +342,8 @@ msgid ""
 "The default comment delimiter is `#` and may be overridden by the ``char`` "
 "argument."
 msgstr ""
+"デフォルトのコメントデリミタは `#` で、これは ``char`` 引き数によって上書き"
+"可能です。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.uncomment:9
@@ -273,11 +354,17 @@ msgid ""
 "``    # foo`` would become ``    foo`` (the single space is still stripped, "
 "but the preceding 4 spaces are not.)"
 msgstr ""
+"`uncomment` はコメント文字に続く単一の空白文字があればそれを取り除きますが、"
+"その前の空白文字は保持します。例えば、``# foo`` は ``foo`` (単一の空白文字が"
+"取り除かれています)になりますが、 ``    # foo`` は ``    foo`` となります(単"
+"一の空白文字は取り除かれていますが先頭の4個の空白文字はそのままです)。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:1
 msgid "Render and upload a template text file to a remote host."
 msgstr ""
+"テンプレートテキストファイルをレンダリングしてリモートホストにアップロードし"
+"ます。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:3
@@ -285,15 +372,21 @@ msgid ""
 "Returns the result of the inner call to `~fabric.operations.put` -- see its "
 "documentation for details."
 msgstr ""
+"`~fabric.operations.put` への内部呼び出しの結果を返します。詳細はこのドキュ"
+"メントをご覧ください。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:6
 msgid ""
 "``filename`` should be the path to a text file, which may contain `Python "
-"string interpolation formatting "
-"<http://docs.python.org/library/stdtypes.html#string-formatting>`_ and will "
-"be rendered with the given context dictionary ``context`` (if given.)"
+"string interpolation formatting <http://docs.python.org/library/stdtypes."
+"html#string-formatting>`_ and will be rendered with the given context "
+"dictionary ``context`` (if given.)"
 msgstr ""
+"``filename`` はテキストファイルへのパスでなくてはなりません。`Pythonの文字列"
+"補完フォーマット <http://docs.python.org/library/stdtypes.html#string-"
+"formatting>`_ を含むことができ、(もしあれば) 与えられたコンテキストディク"
+"ショナリ ``context`` とともにレンダリングされます。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:11
@@ -303,14 +396,22 @@ msgid ""
 "instead. Templates will be loaded from the invoking user's current working "
 "directory by default, or from ``template_dir`` if given."
 msgstr ""
+"または、``use_jinja`` が True にセットされていて Jinja2 テンプレートライブラ"
+"リが利用可能であれば、その代わりに Jinja テンプレートのレンダリングに利用さ"
+"れます。テンプレートは、デフォルトでは実行ユーザーのカレントワーキングディレ"
+"クトリから、もしくは ``template_dir`` が与えられればそこから読み込まれます。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:16
 msgid ""
 "The resulting rendered file will be uploaded to the remote file path "
-"``destination``.  If the destination file already exists, it will be renamed"
-" with a ``.bak`` extension unless ``backup=False`` is specified."
+"``destination``.  If the destination file already exists, it will be "
+"renamed with a ``.bak`` extension unless ``backup=False`` is specified."
 msgstr ""
+"結果的にレンダリングされたファイルはリモートの ``destination`` ファイルパス"
+"にアップロードされます。目的場所のファイルがすでに存在する場合は、 "
+"``backup=False`` が指定されていなければ ``.bak`` 拡張子が付加されてリネーム"
+"されます。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:20
@@ -318,6 +419,9 @@ msgid ""
 "By default, the file will be copied to ``destination`` as the logged-in "
 "user; specify ``use_sudo=True`` to use `sudo` instead."
 msgstr ""
+"デフォルトではログインしているユーザーとしてそのファイルが ``destination`` "
+"にコピーされます。 `sudo` を利用するには ``use_sudo=True`` を指定してくださ"
+"い。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:23
@@ -326,8 +430,12 @@ msgid ""
 "internal `~fabric.operations.put` call; please see its documentation for "
 "details on these two options."
 msgstr ""
+"``mirror_local_mode`` と ``mode`` のキーワード引き数は内部の `~fabric."
+"operations.put` に直接渡されます。詳細はそれぞれのドキュメントをご覧くださ"
+"い。"
 
 #: ../../../fabric/contrib/files.pydocstring of
 #: fabric.contrib.files.upload_template:27
 msgid "Added the ``backup``, ``mirror_local_mode`` and ``mode`` kwargs."
 msgstr ""
+"``backup``、 ``mirror_local_mode``、 ``mode`` のキーワード引き数を追加。"
