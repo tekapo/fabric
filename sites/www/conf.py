@@ -26,3 +26,6 @@ intersphinx_mapping = {
 html_theme_options['extra_nav_links'] = {
     "API Docs": 'http://docs.fabfile.org',
 }
+
+locale_dirs = ['_locale/']
+gettext_compact = False

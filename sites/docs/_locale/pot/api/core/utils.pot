@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/utils.rst:3
+# b285329bb7f842b9b0bfc89027b86ae1
+msgid "Utils"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils:1
+# a5861c6240764329a357ef05bca7c2ed
+msgid "Internal subroutines for e.g. aborting execution with an error message, or performing indenting on multiline output."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.abort:1
+# 1a335daa988a44a2a339c751be8dc7f6
+msgid "Abort execution, print ``msg`` to stderr and exit with error status (1.)"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.abort:3
+# a34275cc7c374e2495b6e188c6ad0f23
+msgid "This function currently makes use of `sys.exit`_, which raises `SystemExit`_. Therefore, it's possible to detect and recover from inner calls to `abort` by using ``except SystemExit`` or similar."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.error:1
+# 86fa347a3d3445aebc2c1255c364df7c
+msgid "Call ``func`` with given error ``message``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.error:3
+# 9f88fa82c47a42daa6b6402f49c1ad1e
+msgid "If ``func`` is None (the default), the value of ``env.warn_only`` determines whether to call ``abort`` or ``warn``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.error:6
+# 13c78ea256a44f9bb77195f86241262a
+msgid "If ``exception`` is given, it is inspected to get a string message, which is printed alongside the user-generated ``message``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.error:9
+# 39b9ea7e7f684d1aa3b7cbb1220d9239
+msgid "If ``stdout`` and/or ``stderr`` are given, they are assumed to be strings to be printed."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.fastprint:1
+# c795ce8d273647ceb6b00b8413768e11
+msgid "Print ``text`` immediately, without any prefix or line ending."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.fastprint:3
+# a8ebf1990a624b5ca0b1e4cb5bc9190e
+msgid "This function is simply an alias of `~fabric.utils.puts` with different default argument values, such that the ``text`` is printed without any embellishment and immediately flushed."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.fastprint:7
+# 0f03b8b13b3640c8b25947dc93b4ff6c
+msgid "It is useful for any situation where you wish to print text which might otherwise get buffered by Python's output buffering (such as within a processor intensive ``for`` loop). Since such use cases typically also require a lack of line endings (such as printing a series of dots to signify progress) it also omits the traditional newline by default."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.fastprint:15
+# bbbf973e18ef44ca8564f0a3c142e55b
+msgid "Since `~fabric.utils.fastprint` calls `~fabric.utils.puts`, it is likewise subject to the ``user`` :doc:`output level </usage/output_controls>`."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.fastprint:20
+# af2a532cb2b345588788744275fe594c
+msgid "`~fabric.utils.puts`"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.indent:1
+# 2c439fc4002348a49100b161a4f19c78
+msgid "Return ``text`` indented by the given number of spaces."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.indent:3
+# e891329ca86e4c2eb40fd9cedcf15148
+msgid "If text is not a string, it is assumed to be a list of lines and will be joined by ``\\n`` prior to indenting."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.indent:6
+# 023b26465bc045c28631b4a7d4819405
+msgid "When ``strip`` is ``True``, a minimum amount of whitespace is removed from the left-hand side of the given string (so that relative indents are preserved, but otherwise things are left-stripped). This allows you to effectively \"normalize\" any previous indentation for some inputs."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:1
+# 002d0f35f47b465cbcfeb0800d5e0027
+msgid "An alias for ``print`` whose output is managed by Fabric's output controls."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:3
+# 136c7288e2584ca69199026bc7164363
+msgid "In other words, this function simply prints to ``sys.stdout``, but will hide its output if the ``user`` :doc:`output level </usage/output_controls>` is set to ``False``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:7
+# f4055cacb6254e5493d81616a13d6298
+msgid "If ``show_prefix=False``, `puts` will omit the leading ``[hostname]`` which it tacks on by default. (It will also omit this prefix if ``env.host_string`` is empty.)"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:11
+# cbc6de940b114b0b836d14bbf97aa5ed
+msgid "Newlines may be disabled by setting ``end`` to the empty string (``''``). (This intentionally mirrors Python 3's ``print`` syntax.)"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:14
+# 49630d8e0dc146228866080a297d679c
+msgid "You may force output flushing (e.g. to bypass output buffering) by setting ``flush=True``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.puts:18
+# 4f9b73127bae4810826121b163fbede9
+msgid "`~fabric.utils.fastprint`"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.warn:1
+# c8fd622682c64725976edb0c7d6a432a
+msgid "Print warning message, but do not abort execution."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/utils.py:docstring of fabric.utils.warn:3
+# a3fab9a03a344f88a2c5289c66fd44d5
+msgid "This function honors Fabric's :doc:`output controls <../../usage/output_controls>` and will print the given ``msg`` to stderr, provided that the ``warnings`` output level (which is active by default) is turned on."
+msgstr ""
+

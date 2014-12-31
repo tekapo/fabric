@@ -1,0 +1,513 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/tasks.rst:3
+# cc1a663f5294434382b49d0c35d7de18
+msgid "Defining tasks"
+msgstr ""
+
+#: ../../usage/tasks.rst:5
+# c9eca5f55fa34267b9c5bf905d0ef9bb
+msgid "As of Fabric 1.1, there are two distinct methods you may use in order to define which objects in your fabfile show up as tasks:"
+msgstr ""
+
+#: ../../usage/tasks.rst:8
+# dbdf96c7281b4f569b1d2a4d41a91e70
+msgid "The \"new\" method starting in 1.1 considers instances of `~fabric.tasks.Task` or its subclasses, and also descends into imported modules to allow building nested namespaces."
+msgstr ""
+
+#: ../../usage/tasks.rst:11
+# 00fff1cf1a834f8587a933b4408c3bb6
+msgid "The \"classic\" method from 1.0 and earlier considers all public callable objects (functions, classes etc) and only considers the objects in the fabfile itself with no recursing into imported module."
+msgstr ""
+
+#: ../../usage/tasks.rst:16
+# 9189778191df494983f4b7e0b3d0fab0
+msgid "These two methods are **mutually exclusive**: if Fabric finds *any* new-style task objects in your fabfile or in modules it imports, it will assume you've committed to this method of task declaration and won't consider any non-`~fabric.tasks.Task` callables. If *no* new-style tasks are found, it reverts to the classic behavior."
+msgstr ""
+
+#: ../../usage/tasks.rst:22
+# 14f24a948fd64788848b790c2fcdab17
+msgid "The rest of this document explores these two methods in detail."
+msgstr ""
+
+#: ../../usage/tasks.rst:26
+# 539f41bb392949e4a40be96949e682d8
+msgid "To see exactly what tasks in your fabfile may be executed via ``fab``, use :option:`fab --list <-l>`."
+msgstr ""
+
+#: ../../usage/tasks.rst:32
+# 034acfb8fb9a4cd39634b5e9cf9bf4e5
+msgid "New-style tasks"
+msgstr ""
+
+#: ../../usage/tasks.rst:34
+# 5b6139a8a0324ca6a4b2f2ea5689fd55
+msgid "Fabric 1.1 introduced the `~fabric.tasks.Task` class to facilitate new features and enable some programming best practices, specifically:"
+msgstr ""
+
+#: ../../usage/tasks.rst:37
+# d1b9ccec440c493f8837b6ccb1bbad03
+msgid "**Object-oriented tasks**. Inheritance and all that comes with it can make for much more sensible code reuse than passing around simple function objects.  The classic style of task declaration didn't entirely rule this out, but it also didn't make it terribly easy."
+msgstr ""
+
+#: ../../usage/tasks.rst:41
+# 4fae357577d84e999f963bbe87af5022
+msgid "**Namespaces**. Having an explicit method of declaring tasks makes it easier to set up recursive namespaces without e.g. polluting your task list with the contents of Python's ``os`` module (which would show up as valid \"tasks\" under the classic methodology.)"
+msgstr ""
+
+#: ../../usage/tasks.rst:46
+# bdbbbdc41a9247d59c14617f48ecfef6
+msgid "With the introduction of `~fabric.tasks.Task`, there are two ways to set up new tasks:"
+msgstr ""
+
+#: ../../usage/tasks.rst:49
+# 27d64783321e4b7bab6d492bf117c8f1
+msgid "Decorate a regular module level function with `@task <fabric.decorators.task>`, which transparently wraps the function in a `~fabric.tasks.Task` subclass.  The function name will be used as the task name when invoking."
+msgstr ""
+
+#: ../../usage/tasks.rst:53
+# 8e1ce09fc9314efcbe3618de133c6cb0
+msgid "Subclass `~fabric.tasks.Task` (`~fabric.tasks.Task` itself is intended to be abstract), define a ``run`` method, and instantiate your subclass at module level. Instances' ``name`` attributes are used as the task name; if omitted the instance's variable name will be used instead."
+msgstr ""
+
+#: ../../usage/tasks.rst:58
+# e093c2b96b57432fbeea05ea84f5a29e
+msgid "Use of new-style tasks also allows you to set up :ref:`namespaces <namespaces>`."
+msgstr ""
+
+#: ../../usage/tasks.rst:65
+# c87bab656210426fa5832c0b813bf2f8
+msgid "The ``@task`` decorator"
+msgstr ""
+
+#: ../../usage/tasks.rst:67
+# ced8857acc3f4e50827ece1f3db38d09
+msgid "The quickest way to make use of new-style task features is to wrap basic task functions with `@task <fabric.decorators.task>`::"
+msgstr ""
+
+#: ../../usage/tasks.rst:76
+# 6ed2c33473e04a87b2cc51c1ec942749
+msgid "When this decorator is used, it signals to Fabric that *only* functions wrapped in the decorator are to be loaded up as valid tasks. (When not present, :ref:`classic-style task <classic-tasks>` behavior kicks in.)"
+msgstr ""
+
+#: ../../usage/tasks.rst:81
+# 43adbf5428c9489abf082d8813021efe
+msgid "Arguments"
+msgstr ""
+
+#: ../../usage/tasks.rst:83
+# 9566af1016a54f1aa273902019ba8cd0
+msgid "`@task <fabric.decorators.task>` may also be called with arguments to customize its behavior. Any arguments not documented below are passed into the constructor of the ``task_class`` being used, with the function itself as the first argument (see :ref:`task-decorator-and-classes` for details.)"
+msgstr ""
+
+#: ../../usage/tasks.rst:88
+# d3bded2914704f13a04c0c42cfe81f5e
+msgid "``task_class``: The `~fabric.tasks.Task` subclass used to wrap the decorated function. Defaults to `~fabric.tasks.WrappedCallableTask`."
+msgstr ""
+
+#: ../../usage/tasks.rst:90
+# 85289545153e47539931d4e4b7434650
+msgid "``aliases``: An iterable of string names which will be used as aliases for the wrapped function. See :ref:`task-aliases` for details."
+msgstr ""
+
+#: ../../usage/tasks.rst:92
+# 8f3f606144894540947eb44442a33735
+msgid "``alias``: Like ``aliases`` but taking a single string argument instead of an iterable. If both ``alias`` and ``aliases`` are specified, ``aliases`` will take precedence."
+msgstr ""
+
+#: ../../usage/tasks.rst:95
+# d2c26e37828d417492db7699171d8705
+msgid "``default``: A boolean value determining whether the decorated task also stands in for its containing module as a task name. See :ref:`default-tasks`."
+msgstr ""
+
+#: ../../usage/tasks.rst:97
+# f9df9997fc264d339fbc70212d122385
+msgid "``name``: A string setting the name this task appears as to the command-line interface. Useful for task names that would otherwise shadow Python builtins (which is technically legal but frowned upon and bug-prone.)"
+msgstr ""
+
+#: ../../usage/tasks.rst:104
+# 15192ce0444b42a998cf7e3344ddfe5b
+msgid "Aliases"
+msgstr ""
+
+#: ../../usage/tasks.rst:106
+# 6542524b208e43869b7226e7f8c42a88
+msgid "Here's a quick example of using the ``alias`` keyword argument to facilitate use of both a longer human-readable task name, and a shorter name which is quicker to type::"
+msgstr ""
+
+#: ../../usage/tasks.rst:116
+# 46a290cddc6d49409bbf9a5d855e9f6e
+msgid "Calling :option:`--list <-l>` on this fabfile would show both the original ``deploy_with_migrations`` and its alias ``dwm``::"
+msgstr ""
+
+#: ../../usage/tasks.rst:125
+# c41629637e054420b783bfd69e50f842
+msgid "When more than one alias for the same function is needed, simply swap in the ``aliases`` kwarg, which takes an iterable of strings instead of a single string."
+msgstr ""
+
+#: ../../usage/tasks.rst:132
+# 906c0177fc394acfb5254ad9fcece0e5
+msgid "Default tasks"
+msgstr ""
+
+#: ../../usage/tasks.rst:134
+# f19187ee6f294affa8f924791931ad7b
+msgid "In a similar manner to :ref:`aliases <task-aliases>`, it's sometimes useful to designate a given task within a module as the \"default\" task, which may be called by referencing *just* the module name. This can save typing and/or allow for neater organization when there's a single \"main\" task and a number of related tasks or subroutines."
+msgstr ""
+
+#: ../../usage/tasks.rst:140
+# 63ffbf4923604e84bd71d83221701e64
+msgid "For example, a ``deploy`` submodule might contain tasks for provisioning new servers, pushing code, migrating databases, and so forth -- but it'd be very convenient to highlight a task as the default \"just deploy\" action. Such a ``deploy.py`` module might look like this::"
+msgstr ""
+
+#: ../../usage/tasks.rst:166
+# 2bec65c9fdbb4570bc8239294c54666f
+msgid "With the following task list (assuming a simple top level ``fabfile.py`` that just imports ``deploy``)::"
+msgstr ""
+
+#: ../../usage/tasks.rst:176
+# 617a5415da9f418ea133deac8d8dd63a
+msgid "Calling ``deploy.full_deploy`` on every deploy could get kind of old, or somebody new to the team might not be sure if that's really the right task to run."
+msgstr ""
+
+#: ../../usage/tasks.rst:178
+# dbf65fd3a9d8426e872a2cd3738f5b8d
+msgid "Using the ``default`` kwarg to `@task <fabric.decorators.task>`, we can tag e.g. ``full_deploy`` as the default task::"
+msgstr ""
+
+#: ../../usage/tasks.rst:185
+# dcb9fce3dee54a39acea0b476ebe9a1d
+msgid "Doing so updates the task list like so::"
+msgstr ""
+
+#: ../../usage/tasks.rst:196
+# dfbd8129b4114fa4915f14e9c4fb0a4a
+msgid "Note that ``full_deploy`` still exists as its own explicit task -- but now ``deploy`` shows up as a sort of top level alias for ``full_deploy``."
+msgstr ""
+
+#: ../../usage/tasks.rst:199
+# 470ad704c6f24c9992c28c023d223caf
+msgid "If multiple tasks within a module have ``default=True`` set, the last one to be loaded (typically the one lowest down in the file) will take precedence."
+msgstr ""
+
+#: ../../usage/tasks.rst:203
+# 983b26ac56f54e178b31198cd6fb231b
+msgid "Top-level default tasks"
+msgstr ""
+
+#: ../../usage/tasks.rst:205
+# d3b5ca09a81349b3b5a8a9b988bcf1ec
+msgid "Using ``@task(default=True)`` in the top level fabfile will cause the denoted task to execute when a user invokes ``fab`` without any task names (similar to e.g. ``make``.) When using this shortcut, it is not possible to specify arguments to the task itself -- use a regular invocation of the task if this is necessary."
+msgstr ""
+
+#: ../../usage/tasks.rst:214
+# e4faa46f074c425e8a69bb33ea946f1c
+msgid "``Task`` subclasses"
+msgstr ""
+
+#: ../../usage/tasks.rst:216
+# 34df8acf690e41799a25e395feffd7fa
+msgid "If you're used to :ref:`classic-style tasks <classic-tasks>`, an easy way to think about `~fabric.tasks.Task` subclasses is that their ``run`` method is directly equivalent to a classic task; its arguments are the task arguments (other than ``self``) and its body is what gets executed."
+msgstr ""
+
+#: ../../usage/tasks.rst:221
+# b9eb0540c7f74bb8ae231ece241baffe
+msgid "For example, this new-style task::"
+msgstr ""
+
+#: ../../usage/tasks.rst:231
+# 8023c72e5c754a9c8efdbd395bbe42ff
+msgid "is exactly equivalent to this function-based task::"
+msgstr ""
+
+#: ../../usage/tasks.rst:238
+# 7d129dbfde084a03b85fe00f174b17f2
+msgid "Note how we had to instantiate an instance of our class; that's simply normal Python object-oriented programming at work. While it's a small bit of boilerplate right now -- for example, Fabric doesn't care about the name you give the instantiation, only the instance's ``name`` attribute -- it's well worth the benefit of having the power of classes available."
+msgstr ""
+
+#: ../../usage/tasks.rst:244
+# 3737bbd4da21466aa504bbf100e486a0
+msgid "We plan to extend the API in the future to make this experience a bit smoother."
+msgstr ""
+
+#: ../../usage/tasks.rst:249
+# 03825d3dbdcf4931ab9da7c383a17d06
+msgid "Using custom subclasses with ``@task``"
+msgstr ""
+
+#: ../../usage/tasks.rst:251
+# 4ae913c7742e4b0f8f317fcde9fbb6e8
+msgid "It's possible to marry custom `~fabric.tasks.Task` subclasses with `@task <fabric.decorators.task>`. This may be useful in cases where your core execution logic doesn't do anything class/object-specific, but you want to take advantage of class metaprogramming or similar techniques."
+msgstr ""
+
+#: ../../usage/tasks.rst:256
+# 2948bebc55b944168584e494a220e332
+msgid "Specifically, any `~fabric.tasks.Task` subclass which is designed to take in a callable as its first constructor argument (as the built-in `~fabric.tasks.WrappedCallableTask` does) may be specified as the ``task_class`` argument to `@task <fabric.decorators.task>`."
+msgstr ""
+
+#: ../../usage/tasks.rst:261
+# 732b46268c5940c0a7b7b4e0f322caa1
+msgid "Fabric will automatically instantiate a copy of the given class, passing in the wrapped function as the first argument. All other args/kwargs given to the decorator (besides the \"special\" arguments documented in :ref:`task-decorator-arguments`) are added afterwards."
+msgstr ""
+
+#: ../../usage/tasks.rst:266
+# 9e14ddcf2eb0442f974424b160c11296
+msgid "Here's a brief and somewhat contrived example to make this obvious::"
+msgstr ""
+
+#: ../../usage/tasks.rst:284
+# 27b32a0e545548dcb92bee6fc655fd52
+msgid "When this fabfile is loaded, a copy of ``CustomTask`` is instantiated, effectively calling::"
+msgstr ""
+
+#: ../../usage/tasks.rst:288
+# 0f033b3b42144fb7bbe211bf145aea68
+msgid "Note how the ``alias`` kwarg is stripped out by the decorator itself and never reaches the class instantiation; this is identical in function to how :ref:`command-line task arguments <task-arguments>` work."
+msgstr ""
+
+#: ../../usage/tasks.rst:295
+# b04e014671244dd2b3f94128a299f7aa
+msgid "Namespaces"
+msgstr ""
+
+#: ../../usage/tasks.rst:297
+# 0ea72c8b8ab44e168b357c8d4a729d4d
+msgid "With :ref:`classic tasks <classic-tasks>`, fabfiles were limited to a single, flat set of task names with no real way to organize them.  In Fabric 1.1 and newer, if you declare tasks the new way (via `@task <fabric.decorators.task>` or your own `~fabric.tasks.Task` subclass instances) you may take advantage of **namespacing**:"
+msgstr ""
+
+#: ../../usage/tasks.rst:303
+# 777536b453e6404fb6ad0cb8aa683290
+msgid "Any module objects imported into your fabfile will be recursed into, looking for additional task objects."
+msgstr ""
+
+#: ../../usage/tasks.rst:305
+# f5863eeaca8941f0a2e89309412a6a47
+msgid "Within submodules, you may control which objects are \"exported\" by using the standard Python ``__all__`` module-level variable name (thought they should still be valid new-style task objects.)"
+msgstr ""
+
+#: ../../usage/tasks.rst:308
+# 681d4902a48444b5be5257c7fa3b1258
+msgid "These tasks will be given new dotted-notation names based on the modules they came from, similar to Python's own import syntax."
+msgstr ""
+
+#: ../../usage/tasks.rst:311
+# 51f4574cef924ab68cdf55981fc8bcb7
+msgid "Let's build up a fabfile package from simple to complex and see how this works."
+msgstr ""
+
+#: ../../usage/tasks.rst:314
+# 3103325807624c3c90214ca359fa527c
+msgid "Basic"
+msgstr ""
+
+#: ../../usage/tasks.rst:316
+# 3c4dbb1c9adc479984e6d2185c0a4280
+msgid "We start with a single `__init__.py` containing a few tasks (the Fabric API import omitted for brevity)::"
+msgstr ""
+
+#: ../../usage/tasks.rst:327
+# 6a435f7c3ae64570978e6f044ebd6e37
+msgid "The output of ``fab --list`` would look something like this::"
+msgstr ""
+
+#: ../../usage/tasks.rst:332
+# f041aca647ca452f9c1ba938952784f8
+msgid "There's just one namespace here: the \"root\" or global namespace. Looks simple now, but in a real-world fabfile with dozens of tasks, it can get difficult to manage."
+msgstr ""
+
+#: ../../usage/tasks.rst:337
+# ea14623a328a4054bb50d7d2c92a7716
+msgid "Importing a submodule"
+msgstr ""
+
+#: ../../usage/tasks.rst:339
+# ffb780887d8c439d9386cebbe56b162c
+msgid "As mentioned above, Fabric will examine any imported module objects for tasks, regardless of where that module exists on your Python import path.  For now we just want to include our own, \"nearby\" tasks, so we'll make a new submodule in our package for dealing with, say, load balancers -- ``lb.py``::"
+msgstr ""
+
+#: ../../usage/tasks.rst:348
+# 2e711aea292e45dd8348b464befe0a23
+msgid "And we'll add this to the top of ``__init__.py``::"
+msgstr ""
+
+#: ../../usage/tasks.rst:352
+# 8f43782e828445198eecd7db912fe7f7
+msgid "Now ``fab --list`` shows us::"
+msgstr ""
+
+#: ../../usage/tasks.rst:358
+# bd01c79dbf6842cf851f84ca27c53c28
+msgid "Again, with only one task in its own submodule, it looks kind of silly, but the benefits should be pretty obvious."
+msgstr ""
+
+#: ../../usage/tasks.rst:362
+# a8c95869b9c243e6af62698ec6b32eb9
+msgid "Going deeper"
+msgstr ""
+
+#: ../../usage/tasks.rst:364
+# f92d56cffc3343aba5aa81757a45253f
+msgid "Namespacing isn't limited to just one level. Let's say we had a larger setup and wanted a namespace for database related tasks, with additional differentiation inside that. We make a sub-package named ``db/`` and inside it, a ``migrations.py`` module::"
+msgstr ""
+
+#: ../../usage/tasks.rst:377
+# a686851cea7842b7aae5986da4515bce
+msgid "We need to make sure that this module is visible to anybody importing ``db``, so we add it to the sub-package's ``__init__.py``::"
+msgstr ""
+
+#: ../../usage/tasks.rst:382
+# 4674a211b6a04bd2a81a046000859ad3
+msgid "As a final step, we import the sub-package into our root-level ``__init__.py``, so now its first few lines look like this::"
+msgstr ""
+
+#: ../../usage/tasks.rst:388
+# 3f00e9b055874bfb94e2e4168da3f43f
+msgid "After all that, our file tree looks like this::"
+msgstr ""
+
+#: ../../usage/tasks.rst:397
+# 3e3c078f654148039fe82b4149838872
+msgid "and ``fab --list`` shows::"
+msgstr ""
+
+#: ../../usage/tasks.rst:405
+# 3b03b4cb3d24456fb5d6b181f5462d27
+msgid "We could also have specified (or imported) tasks directly into ``db/__init__.py``, and they would show up as ``db.<whatever>`` as you might expect."
+msgstr ""
+
+#: ../../usage/tasks.rst:410
+# e4d7c3e027f14bcab5c39bdb38793d63
+msgid "Limiting with ``__all__``"
+msgstr ""
+
+#: ../../usage/tasks.rst:412
+# a6ba29663ba749ecb09611670c6d74cd
+msgid "You may limit what Fabric \"sees\" when it examines imported modules, by using the Python convention of a module level ``__all__`` variable (a list of variable names.) If we didn't want the ``db.migrations.run`` task to show up by default for some reason, we could add this to the top of ``db/migrations.py``::"
+msgstr ""
+
+#: ../../usage/tasks.rst:419
+# ecd50543e0dc48bf8f541359c8feacbb
+msgid "Note the lack of ``'run'`` there. You could, if needed, import ``run`` directly into some other part of the hierarchy, but otherwise it'll remain hidden."
+msgstr ""
+
+#: ../../usage/tasks.rst:423
+# a7d466c6937942c88106132125cd75df
+msgid "Switching it up"
+msgstr ""
+
+#: ../../usage/tasks.rst:425
+# bbd0a24ab106430ba821c5d8231c62fe
+msgid "We've been keeping our fabfile package neatly organized and importing it in a straightforward manner, but the filesystem layout doesn't actually matter here. All Fabric's loader cares about is the names the modules are given when they're imported."
+msgstr ""
+
+#: ../../usage/tasks.rst:430
+# ca3add03472f460aa0ce653cb9c0ef4f
+msgid "For example, if we changed the top of our root ``__init__.py`` to look like this::"
+msgstr ""
+
+#: ../../usage/tasks.rst:435
+# d14679e9e59949a8a6d85c7735facd8b
+msgid "Our task list would change thusly::"
+msgstr ""
+
+#: ../../usage/tasks.rst:443
+# c1d1fe8ee0c14b76bbf56da4d555cfd3
+msgid "This applies to any other import -- you could import third party modules into your own task hierarchy, or grab a deeply nested module and make it appear near the top level."
+msgstr ""
+
+#: ../../usage/tasks.rst:448
+# 9b49f95c3caf4df98b2502b019776a35
+msgid "Nested list output"
+msgstr ""
+
+#: ../../usage/tasks.rst:450
+# 67cd3d3b0edb42b2a2ddc07eb34e228e
+msgid "As a final note, we've been using the default Fabric :option:`--list <-l>` output during this section -- it makes it more obvious what the actual task names are. However, you can get a more nested or tree-like view by passing ``nested`` to the :option:`--list-format <-F>` option::"
+msgstr ""
+
+#: ../../usage/tasks.rst:467
+# 7dbc91ba02cf4369ac86b2e19e3b9841
+msgid "While it slightly obfuscates the \"real\" task names, this view provides a handy way of noting the organization of tasks in large namespaces."
+msgstr ""
+
+#: ../../usage/tasks.rst:474
+# dabb1de02d68494aa9957da5a7492a73
+msgid "Classic tasks"
+msgstr ""
+
+#: ../../usage/tasks.rst:476
+# 59fdf7074f1241e89a71d18cf868c315
+msgid "When no new-style `~fabric.tasks.Task`-based tasks are found, Fabric will consider any callable object found in your fabfile, **except** the following:"
+msgstr ""
+
+#: ../../usage/tasks.rst:479
+# bec007e405cc499dac3bb3b9be1494b5
+msgid "Callables whose name starts with an underscore (``_``). In other words, Python's usual \"private\" convention holds true here."
+msgstr ""
+
+#: ../../usage/tasks.rst:481
+# d850bf1e32d44892bac9002c464181ca
+msgid "Callables defined within Fabric itself. Fabric's own functions such as `~fabric.operations.run` and `~fabric.operations.sudo`  will not show up in your task list."
+msgstr ""
+
+#: ../../usage/tasks.rst:487
+# 42575094e6a94577bec28110a3a34557
+msgid "Imports"
+msgstr ""
+
+#: ../../usage/tasks.rst:489
+# 8cb99ea519e8452a90b91dc9c4fdacae
+msgid "Python's ``import`` statement effectively includes the imported objects in your module's namespace. Since Fabric's fabfiles are just Python modules, this means that imports are also considered as possible classic-style tasks, alongside anything defined in the fabfile itself."
+msgstr ""
+
+#: ../../usage/tasks.rst:495
+# 0d7782513baa4305b09b7798c763c47e
+msgid "This only applies to imported *callable objects* -- not modules. Imported modules only come into play if they contain :ref:`new-style tasks <new-style-tasks>`, at which point this section no longer applies."
+msgstr ""
+
+#: ../../usage/tasks.rst:500
+# e87021fded2540d7b59729769307477b
+msgid "Because of this, we strongly recommend that you use the ``import module`` form of importing, followed by ``module.callable()``, which will result in a cleaner fabfile API than doing ``from module import callable``."
+msgstr ""
+
+#: ../../usage/tasks.rst:504
+# 494dc9a4805d443e99ca2bfa61dddbcd
+msgid "For example, here's a sample fabfile which uses ``urllib.urlopen`` to get some data out of a webservice::"
+msgstr ""
+
+#: ../../usage/tasks.rst:515
+# ea9b54da4a924a8fbb5f9e6df2e329fa
+msgid "This looks simple enough, and will run without error. However, look what happens if we run :option:`fab --list <-l>` on this fabfile::"
+msgstr ""
+
+#: ../../usage/tasks.rst:524
+# c68ce448111940b4a8ea58f7deb360f4
+msgid "Our fabfile of only one task is showing two \"tasks\", which is bad enough, and an unsuspecting user might accidentally try to call ``fab urlopen``, which probably won't work very well. Imagine any real-world fabfile, which is likely to be much more complex, and hopefully you can see how this could get messy fast."
+msgstr ""
+
+#: ../../usage/tasks.rst:530
+# e22e466ed1eb4ec8b497dfbbc2e37f18
+msgid "For reference, here's the recommended way to do it::"
+msgstr ""
+
+#: ../../usage/tasks.rst:540
+# baae7d7b1f4f4e2aa3d835d8b619596a
+msgid "It's a simple change, but it'll make anyone using your fabfile a bit happier."
+msgstr ""
+

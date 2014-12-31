@@ -1,0 +1,180 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:24+0900\n"
+"PO-Revision-Date: 2014-10-05 13:11+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.9\n"
+
+#: ../../api/core/tasks.rst:3
+msgid "Tasks"
+msgstr "タスク"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.Task:1
+msgid ""
+"Abstract base class for objects wishing to be picked up as Fabric tasks."
+msgstr ""
+"Fabricのタスクとしてピックアップされることを要求するオブジェクトのための抽象"
+"基底クラスです。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.Task:3
+msgid ""
+"Instances of subclasses will be treated as valid tasks when present in "
+"fabfiles loaded by the :doc:`fab </usage/fab>` tool."
+msgstr ""
+":doc:`fab </usage/fab>` ツールによって読み込まれるfabfile内にサブクラスのイン"
+"スタンスが存在するときに有効なタスクとして扱われます。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.Task:6
+msgid ""
+"For details on how to implement and use `~fabric.tasks.Task` subclasses, "
+"please see the usage documentation on :ref:`new-style tasks <new-style-"
+"tasks>`."
+msgstr ""
+"`~fabric.tasks.Task` サブクラスの実装と利用の方法の詳細は :ref:`new-style "
+"tasks <new-style-tasks>` の利用方法のドキュメントをご覧ください。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.Task.get_hosts:1
+msgid "Return the host list the given task should be using."
+msgstr "与えられたタスクが利用するホストリストを返します。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.Task.get_hosts:3
+msgid ""
+"See :ref:`host-lists` for detailed documentation on how host lists are set."
+msgstr ""
+"ホストリストがどのようにセットされるのかについての詳細はドキュメントの :ref:"
+"`host-lists` をご覧ください。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.WrappedCallableTask:1
+msgid "Wraps a given callable transparently, while marking it as a valid Task."
+msgstr ""
+"与えられた呼び出し可能オブジェクトを透過的にラップし、有効なタスクであると"
+"マークします。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.WrappedCallableTask:3
+msgid "Generally used via `~fabric.decorators.task` and not directly."
+msgstr "通常は直接ではなく `~fabric.decorators.task` 経由で利用されます。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.WrappedCallableTask:7
+msgid "`~fabric.docs.unwrap_tasks`, `~fabric.decorators.task`"
+msgstr "`~fabric.docs.unwrap_tasks`、 `~fabric.decorators.task`"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:1
+msgid ""
+"Execute ``task`` (callable or name), honoring host/role decorators, etc."
+msgstr ""
+"ホスト/ロールデコレーターなどを履行し、 ``task`` (呼び出し可能なオブジェクト"
+"もしくはタスク名) を実行します。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:3
+msgid ""
+"``task`` may be an actual callable object, or it may be a registered task "
+"name, which is used to look up a callable just as if the name had been given "
+"on the command line (including :ref:`namespaced tasks <namespaces>`, e.g. ``"
+"\"deploy.migrate\"``."
+msgstr ""
+"``task`` は実際の呼び出し可能なオブジェクトもしくは登録されたタスク名で、まる"
+"でその名称が (:ref:`namespaced tasks <namespaces>` も含み、例えば ``\"deploy."
+"migrate\"`` など) コマンドラインに与えられたかのように呼び出し可能なオブジェ"
+"クトを調べるために利用されます。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:8
+msgid ""
+"The task will then be executed once per host in its host list, which is "
+"(again) assembled in the same manner as CLI-specified tasks: drawing from :"
+"option:`-H`, :ref:`env.hosts <hosts>`, the `~fabric.decorators.hosts` or "
+"`~fabric.decorators.roles` decorators, and so forth."
+msgstr ""
+"このタスクはホストリストにもとづき各ホストに対して一度ずつ実行されます。ホス"
+"トリストは、CLIで指定されたタスクと同じように(再び)生成されたもので、 :"
+"option:`-H`、 :ref:`env.hosts <hosts>`、 `~fabric.decorators.hosts` もしくは "
+"`~fabric.decorators.roles` デコレーターなどから取り出されます。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:13
+msgid ""
+"``host``, ``hosts``, ``role``, ``roles`` and ``exclude_hosts`` kwargs will "
+"be stripped out of the final call, and used to set the task's host list, as "
+"if they had been specified on the command line like e.g. ``fab taskname:"
+"host=hostname``."
+msgstr ""
+"``host``、 ``hosts``、 ``role``、 ``roles``、 ``exclude_hosts`` キーワード引"
+"き数は最終的な呼び出しでは取り除かれ、例えば ``fab taskname:host=hostname`` "
+"のようにまるでコマンドラインで指定されたかのように、そのタスクのホストリスト"
+"のセットに利用されます。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:18
+msgid ""
+"Any other arguments or keyword arguments will be passed verbatim into "
+"``task`` (the function itself -- not the ``@task`` decorator wrapping your "
+"function!) when it is called, so ``execute(mytask, 'arg1', kwarg1='value')`` "
+"will (once per host) invoke ``mytask('arg1', kwarg1='value')``."
+msgstr ""
+"その他のすべての引き数やキーワード引き数は呼び出されたときにそれぞれ "
+"``task`` (関数自身で、関数をラップする ``@task`` デコレーターではありませ"
+"ん!) に渡されます。そして ``execute(mytask, 'arg1', kwarg1='value')`` が(各ホ"
+"ストごとに) ``mytask('arg1', kwarg1='value')`` を実行します。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:24
+msgid ""
+"a dictionary mapping host strings to the given task's return value for that "
+"host's execution run. For example, ``execute(foo, hosts=['a', 'b'])`` might "
+"return ``{'a': None, 'b': 'bar'}`` if ``foo`` returned nothing on host `a` "
+"but returned ``'bar'`` on host `b`.  In situations where a task execution "
+"fails for a given host but overall progress does not abort (such as when :"
+"ref:`env.skip_bad_hosts <skip-bad-hosts>` is True) the return value for that "
+"host will be the error object or message."
+msgstr ""
+"そのホストに対して実行した与えられたタスクの返り値にホスト文字列をマッピング"
+"した辞書です。例えば ``execute(foo, hosts=['a', 'b'])`` は、 ``foo`` がホス"
+"ト `a` に対して何も返していなくてホスト `b` に対しては ``'bar'`` を返している"
+"時、 ``{'a': None, 'b': 'bar'}`` を返します。もし全体的な進行は中止されないけ"
+"れども与えれれたホストに対してタスク実行に失敗した場合 ( :ref:`env."
+"skip_bad_hosts <skip-bad-hosts>` がTrueのときなど)、そのホストのための返り値"
+"はエラーオブジェクトかエラーメッセージになります。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:25
+msgid ""
+"a dictionary mapping host strings to the given task's return value for that "
+"host's execution run. For example, ``execute(foo, hosts=['a', 'b'])`` might "
+"return ``{'a': None, 'b': 'bar'}`` if ``foo`` returned nothing on host `a` "
+"but returned ``'bar'`` on host `b`."
+msgstr ""
+"そのホストに対して実行した与えられたタスクの返り値にホスト文字列をマッピング"
+"した辞書です。例えば ``execute(foo, hosts=['a', 'b'])`` は、 ``foo`` がホス"
+"ト `a` に対して何も返していなくてホスト `b` に対しては ``'bar'`` を返している"
+"時、 ``{'a': None, 'b': 'bar'}`` を返します。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:30
+msgid ""
+"In situations where a task execution fails for a given host but overall "
+"progress does not abort (such as when :ref:`env.skip_bad_hosts <skip-bad-"
+"hosts>` is True) the return value for that host will be the error object or "
+"message."
+msgstr ""
+"もし全体的な進行は中止されないけれども与えれれたホストに対してタスク実行に失"
+"敗した場合 ( :ref:`env.skip_bad_hosts <skip-bad-hosts>` がTrueのときなど)、そ"
+"のホストのための返り値はエラーオブジェクトかエラーメッセージになります。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:36
+msgid ""
+":ref:`The execute usage docs <execute>`, for an expanded explanation and "
+"some examples."
+msgstr ""
+"詳しい説明とさらなる例は :ref:`The execute usage docs <execute>` を参照してく"
+"ださい。"
+
+#: ../../../fabric/tasks.pydocstring of fabric.tasks.execute:40
+msgid ""
+"Added the return value mapping; previously this function had no defined "
+"return value."
+msgstr ""
+"返り値のマッピングを追加。以前はこの関数は定義された返り値は持っていませんで"
+"した。"

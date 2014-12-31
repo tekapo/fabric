@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/output_controls.rst:3
+# 084ffd599fea4347815b0409a8b86382
+msgid "Managing output"
+msgstr ""
+
+#: ../../usage/output_controls.rst:5
+# 30da397fdd234a2c96a08a82790c4ac6
+msgid "The ``fab`` tool is very verbose by default and prints out almost everything it can, including the remote end's stderr and stdout streams, the command strings being executed, and so forth. While this is necessary in many cases in order to know just what's going on, any nontrivial Fabric task will quickly become difficult to follow as it runs."
+msgstr ""
+
+#: ../../usage/output_controls.rst:13
+# e8a6d4f33e264da0b9bc390a65a12cbc
+msgid "Output levels"
+msgstr ""
+
+#: ../../usage/output_controls.rst:15
+# c80c02cdcab74537af850c2073e14fe9
+msgid "To aid in organizing task output, Fabric output is grouped into a number of non-overlapping levels or groups, each of which may be turned on or off independently. This provides flexible control over what is displayed to the user."
+msgstr ""
+
+#: ../../usage/output_controls.rst:22
+# ccb4de2e308442f480ce343cded37506
+msgid "All levels, save for ``debug``, are on by default."
+msgstr ""
+
+#: ../../usage/output_controls.rst:25
+# 443e3093225743a2aa6c4ecff650067a
+msgid "Standard output levels"
+msgstr ""
+
+#: ../../usage/output_controls.rst:27
+# f72cbebc17b54846aa09b34b0a71bd11
+msgid "The standard, atomic output levels/groups are as follows:"
+msgstr ""
+
+#: ../../usage/output_controls.rst:29
+# c45f99e715c745b1932907babb53033d
+msgid "**status**: Status messages, i.e. noting when Fabric is done running, if the user used a keyboard interrupt, or when servers are disconnected from. These messages are almost always relevant and rarely verbose."
+msgstr ""
+
+#: ../../usage/output_controls.rst:33
+# b07107e11e834a12b9511d44b5994500
+msgid "**aborts**: Abort messages. Like status messages, these should really only be turned off when using Fabric as a library, and possibly not even then. Note that even if this output group is turned off, aborts will still occur -- there just won't be any output about why Fabric aborted!"
+msgstr ""
+
+#: ../../usage/output_controls.rst:38
+# a1f362c443f9432ab10b2b5a719c326b
+msgid "**warnings**: Warning messages. These are often turned off when one expects a given operation to fail, such as when using ``grep`` to test existence of text in a file. If paired with setting ``env.warn_only`` to True, this can result in fully silent warnings when remote programs fail. As with ``aborts``, this setting does not control actual warning behavior, only whether warning messages are printed or hidden."
+msgstr ""
+
+#: ../../usage/output_controls.rst:45
+# 06dc0d2570bf46abb1eb56d8023f0ae2
+msgid "**running**: Printouts of commands being executed or files transferred, e.g. ``[myserver] run: ls /var/www``. Also controls printing of tasks being run, e.g. ``[myserver] Executing task 'foo'``."
+msgstr ""
+
+#: ../../usage/output_controls.rst:49
+# ebdd1f3b951146c698e39c294566c679
+msgid "**stdout**: Local, or remote, stdout, i.e. non-error output from commands."
+msgstr ""
+
+#: ../../usage/output_controls.rst:51
+# 096c8717b480421aa1b43123b8912921
+msgid "**stderr**: Local, or remote, stderr, i.e. error-related output from commands."
+msgstr ""
+
+#: ../../usage/output_controls.rst:53
+# 234f66bd16a94f40bc795d4d6274d6a8
+msgid "**user**: User-generated output, i.e. local output printed by fabfile code via use of the `~fabric.utils.fastprint` or `~fabric.utils.puts` functions."
+msgstr ""
+
+#: ../../usage/output_controls.rst:56
+# 3e9932c7abee48129ad6a3ccb3dd9b4f
+msgid "Added \"Executing task\" lines to the ``running`` output level."
+msgstr ""
+
+#: ../../usage/output_controls.rst:59
+# abde2001771b47b68c26dbc72be4b920
+msgid "Added the ``user`` output level."
+msgstr ""
+
+#: ../../usage/output_controls.rst:63
+# c30c78951d9e41ea837f51109445300d
+msgid "Debug output"
+msgstr ""
+
+#: ../../usage/output_controls.rst:65
+# db95dfd0e369463d92c8c59ed1a32595
+msgid "There is a final atomic output level, ``debug``, which behaves slightly differently from the rest:"
+msgstr ""
+
+#: ../../usage/output_controls.rst:68
+# ee807788d7b849d2abf3945e1e3c451d
+msgid "**debug**: Turn on debugging (which is off by default.) Currently, this is largely used to view the \"full\" commands being run; take for example this `~fabric.operations.run` call::"
+msgstr ""
+
+#: ../../usage/output_controls.rst:74
+# 00a731137286469b8adc450ae4b94ed4
+msgid "Normally, the ``running`` line will show exactly what is passed into `~fabric.operations.run`, like so::"
+msgstr ""
+
+#: ../../usage/output_controls.rst:79
+# 70f6855d7b444dd5a30796f4ef265670
+msgid "With ``debug`` on, and assuming you've left :ref:`shell` set to ``True``, you will see the literal, full string as passed to the remote server::"
+msgstr ""
+
+#: ../../usage/output_controls.rst:84
+# 447812056f1541d9a0e34e8661758c0f
+msgid "Enabling ``debug`` output will also display full Python tracebacks during aborts."
+msgstr ""
+
+#: ../../usage/output_controls.rst:89
+# 3b6a54d9bb7f4941a016bfa021289d4f
+msgid "Where modifying other pieces of output (such as in the above example where it modifies the 'running' line to show the shell and any escape characters), this setting takes precedence over the others; so if ``running`` is False but ``debug`` is True, you will still be shown the 'running' line in its debugging form."
+msgstr ""
+
+#: ../../usage/output_controls.rst:95
+# 41f343b84b3a4ac58d83633f9cce5bbd
+msgid "Debug output now includes full Python tracebacks during aborts."
+msgstr ""
+
+#: ../../usage/output_controls.rst:101
+# 81ccac113db64d01a6be1bb9fbf06e6f
+msgid "Output level aliases"
+msgstr ""
+
+#: ../../usage/output_controls.rst:103
+# 8273f68a07d449339c0e4885df6746db
+msgid "In addition to the atomic/standalone levels above, Fabric also provides a couple of convenience aliases which map to multiple other levels. These may be referenced anywhere the other levels are referenced, and will effectively toggle all of the levels they are mapped to."
+msgstr ""
+
+#: ../../usage/output_controls.rst:108
+# 9a5e8b82a25845788b90585679ff2597
+msgid "**output**: Maps to both ``stdout`` and ``stderr``. Useful for when you only care to see the 'running' lines and your own print statements (and warnings)."
+msgstr ""
+
+#: ../../usage/output_controls.rst:111
+# 72f3f0cddfe44f8dba074f24ea806dd3
+msgid "**everything**: Includes ``warnings``, ``running``, ``user`` and ``output`` (see above.) Thus, when turning off ``everything``, you will only see a bare minimum of output (just ``status`` and ``debug`` if it's on), along with your own print statements."
+msgstr ""
+
+#: ../../usage/output_controls.rst:116
+# 2b967ad57b3a4a3bb5766b4a5aece99b
+msgid "**commands**: Includes ``stdout`` and ``running``. Good for hiding non-erroring commands entirely, while still displaying any stderr output."
+msgstr ""
+
+#: ../../usage/output_controls.rst:119
+# fbcfd586919149e68d131cdcf5c3f2a7
+msgid "Added the ``commands`` output alias."
+msgstr ""
+
+#: ../../usage/output_controls.rst:124
+# 2c97bcc6319743c5855a8d9dd405f389
+msgid "Hiding and/or showing output levels"
+msgstr ""
+
+#: ../../usage/output_controls.rst:126
+# 4904b9cbf4ee42a98c7fe9efd5952a3e
+msgid "You may toggle any of Fabric's output levels in a number of ways; for examples, please see the API docs linked in each bullet point:"
+msgstr ""
+
+#: ../../usage/output_controls.rst:129
+# a5ffc29b3c6441b5b0f5161b56d9b0b3
+msgid "**Direct modification of fabric.state.output**: `fabric.state.output` is a dictionary subclass (similar to :doc:`env <env>`) whose keys are the output level names, and whose values are either True (show that particular type of output) or False (hide it.)"
+msgstr ""
+
+#: ../../usage/output_controls.rst:134
+# dbde6e28f29c4fbc91e2f570edde000f
+msgid "`fabric.state.output` is the lowest-level implementation of output levels and is what Fabric's internals reference when deciding whether or not to print their output."
+msgstr ""
+
+#: ../../usage/output_controls.rst:138
+# 5096e167e18249b29cc1b88e336a75cc
+msgid "**Context managers**: `~fabric.context_managers.hide` and `~fabric.context_managers.show` are twin context managers that take one or more output level names as strings, and either hide or show them within the wrapped block. As with Fabric's other context managers, the prior values are restored when the block exits."
+msgstr ""
+
+#: ../../usage/output_controls.rst:146
+# 0430d9e4643b417cb6b84e2a8a02e672
+msgid "`~fabric.context_managers.settings`, which can nest calls to `~fabric.context_managers.hide` and/or `~fabric.context_managers.show` inside itself."
+msgstr ""
+
+#: ../../usage/output_controls.rst:150
+# aa50206bef0845b2bcfe8b4cd177346d
+msgid "**Command-line arguments**: You may use the :option:`--hide` and/or :option:`--show` arguments to :doc:`fab`, which behave exactly like the context managers of the same names (but are, naturally, globally applied) and take comma-separated strings as input."
+msgstr ""
+

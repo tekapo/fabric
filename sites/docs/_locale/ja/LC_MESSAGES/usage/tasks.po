@@ -1,0 +1,824 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:24+0900\n"
+"PO-Revision-Date: 2014-06-22 19:55+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: ja <tekapo@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: ../../usage/tasks.rst:3
+msgid "Defining tasks"
+msgstr "タスクの定義"
+
+#: ../../usage/tasks.rst:5
+msgid ""
+"As of Fabric 1.1, there are two distinct methods you may use in order to "
+"define which objects in your fabfile show up as tasks:"
+msgstr ""
+"Fabric 1.1からは、fabfileの中でどのオブジェクトをタスクとして示すかを定義する"
+"ために利用できる、2つのはっきりと異なった方法があります:"
+
+#: ../../usage/tasks.rst:8
+msgid ""
+"The \"new\" method starting in 1.1 considers instances of `~fabric.tasks."
+"Task` or its subclasses, and also descends into imported modules to allow "
+"building nested namespaces."
+msgstr ""
+"1.1からスタートした \"新しい\" 方法は `~fabric.tasks.Task` もしくはそのサブク"
+"ラスのインスタンスを考慮し、また、ネストされた名前空間を構築できるようにする"
+"ためにインポートされたモジュールに落とし込まれています。"
+
+#: ../../usage/tasks.rst:11
+msgid ""
+"The \"classic\" method from 1.0 and earlier considers all public callable "
+"objects (functions, classes etc) and only considers the objects in the "
+"fabfile itself with no recursing into imported module."
+msgstr ""
+"\"クラシックな\" 方法は1.0以前からのもので、すべてのパブリックな呼び出し可能"
+"なオブジェクト(関数やクラスなど)を考慮し、インポートされたモジュールへの再帰"
+"的には処理せず、そのfabfileのオブジェクトのみ考慮します。"
+
+#: ../../usage/tasks.rst:16
+msgid ""
+"These two methods are **mutually exclusive**: if Fabric finds *any* new-"
+"style task objects in your fabfile or in modules it imports, it will assume "
+"you've committed to this method of task declaration and won't consider any "
+"non-`~fabric.tasks.Task` callables. If *no* new-style tasks are found, it "
+"reverts to the classic behavior."
+msgstr ""
+"これらの2つの方法は **相互に排他的です** : もしFabricがfabfile内やインポート"
+"したモジュール内に **どんな** 新しいスタイルのタスクオブジェクトでも見つけれ"
+"ば、タスク宣言のこのメッソドをコミットしたとしてみなされ、`~fabric.tasks."
+"Task` 以外の呼び出しは考慮されません。新しいスタイルのタスクが *なければ* ク"
+"ラシックな挙動に戻ります。"
+
+#: ../../usage/tasks.rst:22
+msgid "The rest of this document explores these two methods in detail."
+msgstr "このドキュメントではこの2つのメソッドを詳細に説明します。"
+
+#: ../../usage/tasks.rst:26
+msgid ""
+"To see exactly what tasks in your fabfile may be executed via ``fab``, use :"
+"option:`fab --list <-l>`."
+msgstr ""
+"fabfileでどのタスクが ``fab`` 経由で実行されうるかを厳密に確認するには :"
+"option:`fab --list <-l>` を使います。"
+
+#: ../../usage/tasks.rst:32
+msgid "New-style tasks"
+msgstr "新しいスタイルのタスク"
+
+#: ../../usage/tasks.rst:34
+msgid ""
+"Fabric 1.1 introduced the `~fabric.tasks.Task` class to facilitate new "
+"features and enable some programming best practices, specifically:"
+msgstr ""
+"Fabric 1.1では新しい機能を促進し、プログラミングのベストプラクティスを可能に"
+"するために `~fabric.tasks.Task` クラスを導入しました。特に:"
+
+#: ../../usage/tasks.rst:37
+msgid ""
+"**Object-oriented tasks**. Inheritance and all that comes with it can make "
+"for much more sensible code reuse than passing around simple function "
+"objects.  The classic style of task declaration didn't entirely rule this "
+"out, but it also didn't make it terribly easy."
+msgstr ""
+"**オブジェクト指向のタスク**。継承とそれに伴うすべては、単純に関数オブジェク"
+"トを渡し回るより、より実用的なコードの最利用を可能のします。タスク宣言のクラ"
+"シックなスタイルは完全に排除されているわけではありませんでしたが、ことをとて"
+"も簡単にするわけでもありませんでした。"
+
+#: ../../usage/tasks.rst:41
+msgid ""
+"**Namespaces**. Having an explicit method of declaring tasks makes it easier "
+"to set up recursive namespaces without e.g. polluting your task list with "
+"the contents of Python's ``os`` module (which would show up as valid \"tasks"
+"\" under the classic methodology.)"
+msgstr ""
+"**名前空間**。タスクの宣言を明確なメソッドにすることによって、例えば、(クラ"
+"シックな手順のもとで有効な \"タスク\" として表示される)Python ``os`` モジュー"
+"ルのコンテンツでタスクリストを汚すことなく、再帰的な名前空間のセットアップが"
+"容易になります。"
+
+#: ../../usage/tasks.rst:46
+msgid ""
+"With the introduction of `~fabric.tasks.Task`, there are two ways to set up "
+"new tasks:"
+msgstr ""
+"`~fabric.tasks.Task` の前置きとして、新しいタスクをセットアップするには2つの"
+"方法があります:"
+
+#: ../../usage/tasks.rst:49
+msgid ""
+"Decorate a regular module level function with `@task <fabric.decorators."
+"task>`, which transparently wraps the function in a `~fabric.tasks.Task` "
+"subclass.  The function name will be used as the task name when invoking."
+msgstr ""
+"`@task <fabric.decorators.task>` で通常のモジュールレベルの関数をデコレートし"
+"ます。これは `~fabric.tasks.Task` サブクラス内の関数を透過的にラップします。"
+"実行時には関数名がタスク名として使われます。"
+
+#: ../../usage/tasks.rst:53
+msgid ""
+"Subclass `~fabric.tasks.Task` (`~fabric.tasks.Task` itself is intended to be "
+"abstract), define a ``run`` method, and instantiate your subclass at module "
+"level. Instances' ``name`` attributes are used as the task name; if omitted "
+"the instance's variable name will be used instead."
+msgstr ""
+"`~fabric.tasks.Task` サブクラス(`~fabric.tasks.Task` 自身は抽象的であることを"
+"意図されています)は ``run`` メソッドを定義し、モジュールレベルであなたのサブ"
+"クラスをインスタンス化します。インスタンスの ``name`` 属性がタスク名として使"
+"われます。省略した場合には、その代わりにインスタンスの変数名が使われます。"
+
+#: ../../usage/tasks.rst:58
+msgid ""
+"Use of new-style tasks also allows you to set up :ref:`namespaces "
+"<namespaces>`."
+msgstr ""
+"新しいスタイルのタスクの利用はまた、 :ref:`名前空間 <namespaces>` のセット"
+"アップも可能にします。"
+
+#: ../../usage/tasks.rst:65
+msgid "The ``@task`` decorator"
+msgstr "``@task`` デコレータ"
+
+#: ../../usage/tasks.rst:67
+msgid ""
+"The quickest way to make use of new-style task features is to wrap basic "
+"task functions with `@task <fabric.decorators.task>`::"
+msgstr ""
+"新しいスタイルのタスク機能を利用するもっとも簡単な方法は基本のタスク関数を "
+"`@task <fabric.decorators.task>`: で囲ってしまう方法です:"
+
+#: ../../usage/tasks.rst:76
+msgid ""
+"When this decorator is used, it signals to Fabric that *only* functions "
+"wrapped in the decorator are to be loaded up as valid tasks. (When not "
+"present, :ref:`classic-style task <classic-tasks>` behavior kicks in.)"
+msgstr ""
+"このデコレータが使われると、このデコレータで囲われた関数 *のみ* が有効なタス"
+"クとして読み込まれることをFabricに伝えます。(表示されない場合は、 :ref:`クラ"
+"シックスタイルの <classic-tasks>` 挙動で動作しています)"
+
+#: ../../usage/tasks.rst:81
+msgid "Arguments"
+msgstr "引数"
+
+#: ../../usage/tasks.rst:83
+msgid ""
+"`@task <fabric.decorators.task>` may also be called with arguments to "
+"customize its behavior. Any arguments not documented below are passed into "
+"the constructor of the ``task_class`` being used, with the function itself "
+"as the first argument (see :ref:`task-decorator-and-classes` for details.)"
+msgstr ""
+"`@task <fabric.decorators.task>` はまた、引数とともに呼び出してその挙動をカス"
+"タマイズすることもできます。以下に記述されていない引数は利用中の "
+"``task_class`` のコンストラクタにその最初の関数自身を最初の引数として渡されま"
+"す。(詳細は :ref:`task-decorator-and-classes` をご覧ください)"
+
+#: ../../usage/tasks.rst:88
+msgid ""
+"``task_class``: The `~fabric.tasks.Task` subclass used to wrap the decorated "
+"function. Defaults to `~fabric.tasks.WrappedCallableTask`."
+msgstr ""
+"``task_class``: `~fabric.tasks.Task` のサブクラスで、デコレートされた関数を"
+"ラップするために使用されます。デフォルトは `~fabric.tasks."
+"WrappedCallableTask` です。"
+
+#: ../../usage/tasks.rst:90
+msgid ""
+"``aliases``: An iterable of string names which will be used as aliases for "
+"the wrapped function. See :ref:`task-aliases` for details."
+msgstr ""
+"``aliases``: ラップされた関数用のエイリアスとして繰り返し使える文字列名。詳細"
+"は :ref:`task-aliases` をご覧ください。"
+
+#: ../../usage/tasks.rst:92
+msgid ""
+"``alias``: Like ``aliases`` but taking a single string argument instead of "
+"an iterable. If both ``alias`` and ``aliases`` are specified, ``aliases`` "
+"will take precedence."
+msgstr ""
+"``alias``: ``aliases`` と似ていますが、繰り返しできない単一の文字列引数を取り"
+"ます。もし ``alias`` と ``aliases`` の両方が設定されている場合、 ``aliases`` "
+"の方が優先されます。"
+
+#: ../../usage/tasks.rst:95
+msgid ""
+"``default``: A boolean value determining whether the decorated task also "
+"stands in for its containing module as a task name. See :ref:`default-tasks`."
+msgstr ""
+"``default``: デコレートされたタスクが、タスク名としてそれが含むモジュールの代"
+"役を務めるかどうかを決めるための真偽値。:ref:`default-tasks` を参照してくださ"
+"い。"
+
+#: ../../usage/tasks.rst:97
+msgid ""
+"``name``: A string setting the name this task appears as to the command-line "
+"interface. Useful for task names that would otherwise shadow Python builtins "
+"(which is technically legal but frowned upon and bug-prone.)"
+msgstr ""
+"``name``: そのタスクがコマンドラインインターフェースに表示されるときの名称を"
+"設定する文字列です。Pythonのビルトインを別の方法でシャドーイングするタスク名"
+"で便利です(これは技術的には可能ですが、好まれませんし、バグの温床にもなりま"
+"す)。"
+
+#: ../../usage/tasks.rst:104
+msgid "Aliases"
+msgstr "エイリアス"
+
+#: ../../usage/tasks.rst:106
+msgid ""
+"Here's a quick example of using the ``alias`` keyword argument to facilitate "
+"use of both a longer human-readable task name, and a shorter name which is "
+"quicker to type::"
+msgstr ""
+"以下は、人間が読める長めのタスク名とすばやくタイプするための短めのタスク名の"
+"両方の利用を手助けするための ``alias`` キーワード引数の簡単な利用例です: "
+
+#: ../../usage/tasks.rst:116
+msgid ""
+"Calling :option:`--list <-l>` on this fabfile would show both the original "
+"``deploy_with_migrations`` and its alias ``dwm``::"
+msgstr ""
+"このfabfileで :option:`--list <-l>` を呼び出すとオリジナルの"
+"``deploy_with_migrations`` とエイリアスの ``dwm``: を表示します:"
+
+#: ../../usage/tasks.rst:125
+msgid ""
+"When more than one alias for the same function is needed, simply swap in the "
+"``aliases`` kwarg, which takes an iterable of strings instead of a single "
+"string."
+msgstr ""
+"同じ関数に複数のエイリアスが必要な場合は、単に ``aliases`` キーワード引数をス"
+"ワップします。これにより、単一の文字列の代わりに繰り返し利用可能な文字列が取"
+"られます。"
+
+#: ../../usage/tasks.rst:132
+msgid "Default tasks"
+msgstr "デフォルトのタスク"
+
+#: ../../usage/tasks.rst:134
+msgid ""
+"In a similar manner to :ref:`aliases <task-aliases>`, it's sometimes useful "
+"to designate a given task within a module as the \"default\" task, which may "
+"be called by referencing *just* the module name. This can save typing and/or "
+"allow for neater organization when there's a single \"main\" task and a "
+"number of related tasks or subroutines."
+msgstr ""
+":ref:`aliases <task-aliases>` と同じような方法で、モジュール内の与えられたタ"
+"スクを \"default\" タスクとして指定するときに便利な場合があり、そのモジュール"
+"名を *単に* 言及することで呼び出すこともできます。これによりタイピングが省略"
+"できたり、一つの \"メイン\" タスクとたくさんの関連タスクもしくはサブモジュー"
+"ルがある場合のより整理された構成が可能になります。"
+
+#: ../../usage/tasks.rst:140
+msgid ""
+"For example, a ``deploy`` submodule might contain tasks for provisioning new "
+"servers, pushing code, migrating databases, and so forth -- but it'd be very "
+"convenient to highlight a task as the default \"just deploy\" action. Such a "
+"``deploy.py`` module might look like this::"
+msgstr ""
+"例えば、 ``deploy`` サブモジュールが新しいサーバのプロビジョニング、コードの"
+"プッシュ、データベースの移行などのタスクを含んでいるとして、デフォルトの "
+"\"just deploy\" アクションとしてタスクを強調できるととても便利でしょう。そう"
+"した ``deploy.py`` モジュールは次のようになります::"
+
+#: ../../usage/tasks.rst:166
+msgid ""
+"With the following task list (assuming a simple top level ``fabfile.py`` "
+"that just imports ``deploy``)::"
+msgstr ""
+"タスクリストは以下のようになります (単に ``deploy`` を読み込んでいるだけの簡"
+"単なトップレベルの ``fabfile.py`` であると仮定します)::"
+
+#: ../../usage/tasks.rst:176
+msgid ""
+"Calling ``deploy.full_deploy`` on every deploy could get kind of old, or "
+"somebody new to the team might not be sure if that's really the right task "
+"to run."
+msgstr ""
+"デプロイのたびに ``deploy.full_deploy`` を呼び出すのはちょっと古めかしいです"
+"し、チームに加わった新らしい方にとってはこれが実行する正しいタスクなのか迷う"
+"ことでしょう。"
+
+#: ../../usage/tasks.rst:178
+msgid ""
+"Using the ``default`` kwarg to `@task <fabric.decorators.task>`, we can tag "
+"e.g. ``full_deploy`` as the default task::"
+msgstr ""
+"`@task <fabric.decorators.task>` への ``default`` キーワード引数を利用するこ"
+"とにより、例えば、デフォルトのタスクとして ``full_deploy`` をタグ付けすること"
+"ができます::"
+
+#: ../../usage/tasks.rst:185
+msgid "Doing so updates the task list like so::"
+msgstr "このようにアップデートするとタスクリストは以下のようになります::"
+
+#: ../../usage/tasks.rst:196
+msgid ""
+"Note that ``full_deploy`` still exists as its own explicit task -- but now "
+"``deploy`` shows up as a sort of top level alias for ``full_deploy``."
+msgstr ""
+"``full_deploy`` は明示的なタスクとしてそのままあることに留意してください。そ"
+"して、 ``full_deploy`` のある種トップレベルのエイリアスとして ``deploy`` が表"
+"示されます。"
+
+#: ../../usage/tasks.rst:199
+msgid ""
+"If multiple tasks within a module have ``default=True`` set, the last one to "
+"be loaded (typically the one lowest down in the file) will take precedence."
+msgstr ""
+"もし一つのモジュール内に複数の ``default=True`` がセットされている場合は、最"
+"後に読み込まれたもの(通常はファイルの最も下にあるもの)が優先されます。"
+
+#: ../../usage/tasks.rst:203
+msgid "Top-level default tasks"
+msgstr "トップレベルのデフォルトタスク"
+
+#: ../../usage/tasks.rst:205
+msgid ""
+"Using ``@task(default=True)`` in the top level fabfile will cause the "
+"denoted task to execute when a user invokes ``fab`` without any task names "
+"(similar to e.g. ``make``.) When using this shortcut, it is not possible to "
+"specify arguments to the task itself -- use a regular invocation of the task "
+"if this is necessary."
+msgstr ""
+"トップレベルのfabfileで ``@task(default=True)`` を使用すると、ユーザーがタス"
+"ク名なしで ``fab`` を呼び出した際にそのタスクを実行します(例えば、 ``make`` "
+"に似ています)。このショートカットの使用時にはタスク自身に引数を指定することは"
+"できません。引数が必要な場合は通常のタスク呼び出しを実行してください。"
+
+#: ../../usage/tasks.rst:214
+msgid "``Task`` subclasses"
+msgstr "``Task`` サブクラス"
+
+#: ../../usage/tasks.rst:216
+msgid ""
+"If you're used to :ref:`classic-style tasks <classic-tasks>`, an easy way to "
+"think about `~fabric.tasks.Task` subclasses is that their ``run`` method is "
+"directly equivalent to a classic task; its arguments are the task arguments "
+"(other than ``self``) and its body is what gets executed."
+msgstr ""
+":ref:`クラシックスタイルのタスク <classic-tasks>` に慣れている場合は、 "
+"`~fabric.tasks.Task` はその ``run`` メソッドがクラシックなタスクとそのまま同"
+"等であると考えると分かりやすいでしょう。その引数が(``self`` 以外の)タスクの引"
+"数で、そのボディが実行される内容となります。"
+
+#: ../../usage/tasks.rst:221
+msgid "For example, this new-style task::"
+msgstr "例えば、この新しいスタイルのタスクは::"
+
+#: ../../usage/tasks.rst:231
+msgid "is exactly equivalent to this function-based task::"
+msgstr "この関数ベースのタスクとまったく同等です::"
+
+#: ../../usage/tasks.rst:238
+msgid ""
+"Note how we had to instantiate an instance of our class; that's simply "
+"normal Python object-oriented programming at work. While it's a small bit of "
+"boilerplate right now -- for example, Fabric doesn't care about the name you "
+"give the instantiation, only the instance's ``name`` attribute -- it's well "
+"worth the benefit of having the power of classes available."
+msgstr ""
+"クラスのインスタンスをどのように作成しているかに留意してくだだい。これは実際"
+"に動作する単純な通常のPythonオブジェクト指向プログラミングです。この時点では"
+"小さなひな形に過ぎませんが、例えば、Fabricはインスタンス作成時に与える名前は"
+"気にせず、そのインスタンスの ``名前`` 属性のみを気にします。クラスの力(ちか"
+"ら)を利用可能にすることの恩恵は検討に値するでしょう。"
+
+#: ../../usage/tasks.rst:244
+msgid ""
+"We plan to extend the API in the future to make this experience a bit "
+"smoother."
+msgstr ""
+"将来的にはこのAPIを拡張して、このエクスペリエンスをより洗練させていく予定で"
+"す。"
+
+#: ../../usage/tasks.rst:249
+msgid "Using custom subclasses with ``@task``"
+msgstr "``@task`` とのカスタムサブクラスの使用"
+
+#: ../../usage/tasks.rst:251
+msgid ""
+"It's possible to marry custom `~fabric.tasks.Task` subclasses with `@task "
+"<fabric.decorators.task>`. This may be useful in cases where your core "
+"execution logic doesn't do anything class/object-specific, but you want to "
+"take advantage of class metaprogramming or similar techniques."
+msgstr ""
+"カスタムな `~fabric.tasks.Task` サブクラスと `@task <fabric.decorators."
+"task>` を結合させることも可能です。これはコアの実行ロジックがクラス/オブジェ"
+"クト指向ではないけれどもクラスのメタプログラミングやそれと似たテクニックを活"
+"用したい場合に有用です。"
+
+#: ../../usage/tasks.rst:256
+msgid ""
+"Specifically, any `~fabric.tasks.Task` subclass which is designed to take in "
+"a callable as its first constructor argument (as the built-in `~fabric.tasks."
+"WrappedCallableTask` does) may be specified as the ``task_class`` argument "
+"to `@task <fabric.decorators.task>`."
+msgstr ""
+"特に、呼び出し可能なものとして最初のコンストラクタ引数を取るように設計されて"
+"いるすべての `~fabric.tasks.Task` サブクラスは(ビルトインの `~fabric.tasks."
+"WrappedCallableTask` と同様に)、 `@task <fabric.decorators.task>` への "
+"``task_class`` 引数として指定することができます。"
+
+#: ../../usage/tasks.rst:261
+msgid ""
+"Fabric will automatically instantiate a copy of the given class, passing in "
+"the wrapped function as the first argument. All other args/kwargs given to "
+"the decorator (besides the \"special\" arguments documented in :ref:`task-"
+"decorator-arguments`) are added afterwards."
+msgstr ""
+"Fabricは与えられたクラスのコピーを自動的にインスタンス化し、最初の引数として"
+"ラップされた関数に渡されます。デコレーターに渡されるすべての他の引数/キーワー"
+"ド引数( :ref:`task-decorator-arguments` に記述されている \"特別な\" 引数以外)"
+"はその後に追加されます。"
+
+#: ../../usage/tasks.rst:266
+msgid "Here's a brief and somewhat contrived example to make this obvious::"
+msgstr "これを明確にするための簡単でいくらか工夫されている例をお見せします::"
+
+#: ../../usage/tasks.rst:284
+msgid ""
+"When this fabfile is loaded, a copy of ``CustomTask`` is instantiated, "
+"effectively calling::"
+msgstr ""
+"このfabfileが読み込まれた時、``CustomTask`` のコピーがインスタンス化され、事"
+"実上は以下を呼び出しています::"
+
+#: ../../usage/tasks.rst:288
+msgid ""
+"Note how the ``alias`` kwarg is stripped out by the decorator itself and "
+"never reaches the class instantiation; this is identical in function to how :"
+"ref:`command-line task arguments <task-arguments>` work."
+msgstr ""
+"``alias`` キーワード引数がデコレーター自身によってどのように取り除かれるか、"
+"そしてクラスのインスタンス化には到達しないことに留意してください。これは :"
+"ref:`コマンドラインタスクの引数 <task-arguments>` の動作と機能的に同一です。"
+
+#: ../../usage/tasks.rst:295
+msgid "Namespaces"
+msgstr "名前空間"
+
+#: ../../usage/tasks.rst:297
+msgid ""
+"With :ref:`classic tasks <classic-tasks>`, fabfiles were limited to a "
+"single, flat set of task names with no real way to organize them.  In Fabric "
+"1.1 and newer, if you declare tasks the new way (via `@task <fabric."
+"decorators.task>` or your own `~fabric.tasks.Task` subclass instances) you "
+"may take advantage of **namespacing**:"
+msgstr ""
+":ref:`クラシックなタスク <classic-tasks>` では、複数のfabfileは単一でフラット"
+"なタスク名のセットに制限され、それらを体系化する本格的な方法はありません。"
+"Fabric 1.1以降では、タスクを新しいやり方(`@task <fabric.decorators.task>` も"
+"しくは ご自分の `~fabric.tasks.Task` サブクラスのインスタンス経由)で宣言すれ"
+"ば **名前空間** を活用することができます:"
+
+#: ../../usage/tasks.rst:303
+msgid ""
+"Any module objects imported into your fabfile will be recursed into, looking "
+"for additional task objects."
+msgstr ""
+"fabfileにインポートされたどのモジュールオブジェクトも再帰的に処理され、追加の"
+"タスクオブジェクトを探します。"
+
+#: ../../usage/tasks.rst:305
+msgid ""
+"Within submodules, you may control which objects are \"exported\" by using "
+"the standard Python ``__all__`` module-level variable name (thought they "
+"should still be valid new-style task objects.)"
+msgstr ""
+"サブモジュール内では、Python標準の ``__all__`` モジュールレベル変数名を使って"
+"どのオブジェクトが \"exported\" されるかをコントロールすることができます(有効"
+"な新しいタスクオブジェクトでなければなりませんが)。"
+
+#: ../../usage/tasks.rst:308
+msgid ""
+"These tasks will be given new dotted-notation names based on the modules "
+"they came from, similar to Python's own import syntax."
+msgstr ""
+"これらのタスクは、Python自身のインポートシンタックスと似た、それを含んだモ"
+"ジュールをベースにした新しいドットノーテーション名が与えられます。"
+
+#: ../../usage/tasks.rst:311
+msgid ""
+"Let's build up a fabfile package from simple to complex and see how this "
+"works."
+msgstr ""
+"単純な複雑なものまでfabfileのパッケージを組み立てて、どのように動作するか見て"
+"みましょう。"
+
+#: ../../usage/tasks.rst:314
+msgid "Basic"
+msgstr "基本"
+
+#: ../../usage/tasks.rst:316
+msgid ""
+"We start with a single `__init__.py` containing a few tasks (the Fabric API "
+"import omitted for brevity)::"
+msgstr ""
+"まずはいくつかのタスクを含む一つの `__init__.py` (簡潔性のためFabricのAPIは省"
+"略します)から始めてみましょう::"
+
+#: ../../usage/tasks.rst:327
+msgid "The output of ``fab --list`` would look something like this::"
+msgstr "``fab --list`` の出力は次のようになるでしょう::"
+
+#: ../../usage/tasks.rst:332
+msgid ""
+"There's just one namespace here: the \"root\" or global namespace. Looks "
+"simple now, but in a real-world fabfile with dozens of tasks, it can get "
+"difficult to manage."
+msgstr ""
+"ここでは名前空間は一つだけで、 \"root\" もしくはグローバルな名前空間です。今"
+"は単純に見えますが、実世界のfabfileではたくさんのタスクがあり、管理が難しくな"
+"り得ます。"
+
+#: ../../usage/tasks.rst:337
+msgid "Importing a submodule"
+msgstr "サブモジュールのインポート"
+
+#: ../../usage/tasks.rst:339
+msgid ""
+"As mentioned above, Fabric will examine any imported module objects for "
+"tasks, regardless of where that module exists on your Python import path.  "
+"For now we just want to include our own, \"nearby\" tasks, so we'll make a "
+"new submodule in our package for dealing with, say, load balancers -- ``lb."
+"py``::"
+msgstr ""
+"前述のとおり、モジュールがPythonのインポートパス上のどこにあるかには関係な"
+"く、Fabricはインポートされたモジュールオブジェクトのタスクを調べます。今のと"
+"ころは、とりあえず \"手近にある\" 自前のタスクを含めたいと思いますので、そう"
+"ですね、ロードバランサを扱うためのパッケージに新しいサブモジュール ``lb.py`` "
+"を作ってみましょう::"
+
+#: ../../usage/tasks.rst:348
+msgid "And we'll add this to the top of ``__init__.py``::"
+msgstr "そして ``__init__.py`` の一番上にこれを追加します::"
+
+#: ../../usage/tasks.rst:352
+msgid "Now ``fab --list`` shows us::"
+msgstr "さて、これで ``fab --list`` は次のようになります::"
+
+#: ../../usage/tasks.rst:358
+msgid ""
+"Again, with only one task in its own submodule, it looks kind of silly, but "
+"the benefits should be pretty obvious."
+msgstr ""
+"モジュールに一つだけのタスクではある種他愛のないもののように見えますが、その"
+"恩恵はかなり明白だと思います。"
+
+#: ../../usage/tasks.rst:362
+msgid "Going deeper"
+msgstr "さらに奥深くへ"
+
+#: ../../usage/tasks.rst:364
+msgid ""
+"Namespacing isn't limited to just one level. Let's say we had a larger setup "
+"and wanted a namespace for database related tasks, with additional "
+"differentiation inside that. We make a sub-package named ``db/`` and inside "
+"it, a ``migrations.py`` module::"
+msgstr ""
+"名前空間化は単にひとつのレベルに制限されることはありません。より大きなセット"
+"アップを持ち、データベース関連のタスクのための名前空間が必要になっていて、そ"
+"の中に追加の別のタスクがあるとしましょう。 ``db/`` と名前を付けられたサブパッ"
+"ケージを作り、その中に ``migrations.py`` モジュールを起きます::"
+
+#: ../../usage/tasks.rst:377
+msgid ""
+"We need to make sure that this module is visible to anybody importing "
+"``db``, so we add it to the sub-package's ``__init__.py``::"
+msgstr ""
+"このモジュールは ``db`` をインポートしているすべてから見えるようにする必要が"
+"あるので、このサブパッケージの ``__init__.py`` に以下を追加します::"
+
+#: ../../usage/tasks.rst:382
+msgid ""
+"As a final step, we import the sub-package into our root-level ``__init__."
+"py``, so now its first few lines look like this::"
+msgstr ""
+"最後のステップとして、ルートレベルの ``__init__.py`` にサブパッケージをイン"
+"ポートします。これで最初の何行かは以下のようになります::"
+
+#: ../../usage/tasks.rst:388
+msgid "After all that, our file tree looks like this::"
+msgstr "そして、ファイルツリーは以下のようになります::"
+
+#: ../../usage/tasks.rst:397
+msgid "and ``fab --list`` shows::"
+msgstr "``fab --list`` は次のようになります::"
+
+#: ../../usage/tasks.rst:405
+msgid ""
+"We could also have specified (or imported) tasks directly into ``db/__init__."
+"py``, and they would show up as ``db.<whatever>`` as you might expect."
+msgstr ""
+"また、タスクを ``db/__init__.py`` 内に直接設定(もしくはインポート)することも"
+"可能で、ご想像どおり ``db.<なんちゃら>`` として表示されます。"
+
+#: ../../usage/tasks.rst:410
+msgid "Limiting with ``__all__``"
+msgstr "``__all__`` での制限"
+
+#: ../../usage/tasks.rst:412
+msgid ""
+"You may limit what Fabric \"sees\" when it examines imported modules, by "
+"using the Python convention of a module level ``__all__`` variable (a list "
+"of variable names.) If we didn't want the ``db.migrations.run`` task to show "
+"up by default for some reason, we could add this to the top of ``db/"
+"migrations.py``::"
+msgstr ""
+"インポートされたモジュールをFabricが分析するときに、モジュールレベル "
+"``__all__`` 変数(変数名のリスト)のPythonの決まり事を利用することによって、"
+"Fabricが \"見る\" ものを制限することができます。もし何かの理由によりデフォル"
+"トでは ``db.migrations.run`` タスクを表示させたくない場合、 ``db/migrations."
+"py`` の一番上に以下を追加することができます::"
+
+#: ../../usage/tasks.rst:419
+msgid ""
+"Note the lack of ``'run'`` there. You could, if needed, import ``run`` "
+"directly into some other part of the hierarchy, but otherwise it'll remain "
+"hidden."
+msgstr ""
+"ここには ``'run'`` がないことに留意してください。もし必要なら ``run`` をこの"
+"階層のどこかに直接インポートすることも可能ですが、そうでなければ、隠れれたま"
+"まになります。"
+
+#: ../../usage/tasks.rst:423
+msgid "Switching it up"
+msgstr "ひとつ上へ"
+
+#: ../../usage/tasks.rst:425
+msgid ""
+"We've been keeping our fabfile package neatly organized and importing it in "
+"a straightforward manner, but the filesystem layout doesn't actually matter "
+"here. All Fabric's loader cares about is the names the modules are given "
+"when they're imported."
+msgstr ""
+"これまで、fabfileパッケージを片付いた状態に維持し、直接的な方法でインポートし"
+"てきましたが、ファイルシステムのレイアウトはここでは実際には考慮していませ"
+"ん。Fabricのすべてのローダーが気にするのは、インポートされた時のモジュールに"
+"与えられた名称です。"
+
+#: ../../usage/tasks.rst:430
+msgid ""
+"For example, if we changed the top of our root ``__init__.py`` to look like "
+"this::"
+msgstr "例えば、ルートの ``__init__.py`` の市場うえを次のように変更すると::"
+
+#: ../../usage/tasks.rst:435
+msgid "Our task list would change thusly::"
+msgstr "タスクリストは次のように変わります::"
+
+#: ../../usage/tasks.rst:443
+msgid ""
+"This applies to any other import -- you could import third party modules "
+"into your own task hierarchy, or grab a deeply nested module and make it "
+"appear near the top level."
+msgstr ""
+"これは他のどのインポートにも適用されます。サードパーティのモジュールを自分の"
+"タスク階層にインポートしたり、深くネストされたモジュールを取ってきてトップレ"
+"ベル近くに置くことも可能です。"
+
+#: ../../usage/tasks.rst:448
+msgid "Nested list output"
+msgstr "ネストされたリスト出力"
+
+#: ../../usage/tasks.rst:450
+msgid ""
+"As a final note, we've been using the default Fabric :option:`--list <-l>` "
+"output during this section -- it makes it more obvious what the actual task "
+"names are. However, you can get a more nested or tree-like view by passing "
+"``nested`` to the :option:`--list-format <-F>` option::"
+msgstr ""
+"最後に、このセクションではデフォルトのFabric :option:`--list <-l>` 出力を使用"
+"してきました。これにより実際のタスク名は何なのかがより明確になります。とは言"
+"え、:option:`--list-format <-F>` オプションに ``nested`` を渡すと、よりネスト"
+"されていたりツリーライクな表示を得られます::"
+
+#: ../../usage/tasks.rst:467
+msgid ""
+"While it slightly obfuscates the \"real\" task names, this view provides a "
+"handy way of noting the organization of tasks in large namespaces."
+msgstr ""
+"\"実際の\" タスク名が少し分かりにくくなりますが、この表示は大規模な名前空間で"
+"のタスク構成を把握する簡単な方法を提供します。"
+
+#: ../../usage/tasks.rst:474
+msgid "Classic tasks"
+msgstr "クラシックなタスク"
+
+#: ../../usage/tasks.rst:476
+msgid ""
+"When no new-style `~fabric.tasks.Task`-based tasks are found, Fabric will "
+"consider any callable object found in your fabfile, **except** the following:"
+msgstr ""
+"新しいスタイルの `~fabric.tasks.Task` ベースのタスクが見つからない場合、"
+"Fabricはfabfile内の呼び出し可能などんなオブジェクトでも検討します。 **ただ"
+"し、** 次を除きます:"
+
+#: ../../usage/tasks.rst:479
+msgid ""
+"Callables whose name starts with an underscore (``_``). In other words, "
+"Python's usual \"private\" convention holds true here."
+msgstr ""
+"アンダースコア(``_``)で始まる名称の呼び出し可能なオブジェクト。言い換えると、"
+"ここではPythonの通常の \"プライベート\" 規則が適用されます。"
+
+#: ../../usage/tasks.rst:481
+msgid ""
+"Callables defined within Fabric itself. Fabric's own functions such as "
+"`~fabric.operations.run` and `~fabric.operations.sudo`  will not show up in "
+"your task list."
+msgstr ""
+"Fabric自身内で定義されている呼び出し可能なオブジェクト。 `~fabric.operations."
+"run` と `~fabric.operations.sudo` などのFabric自身の関数はタスクリストには表"
+"示されません。"
+
+#: ../../usage/tasks.rst:487
+msgid "Imports"
+msgstr "インポート"
+
+#: ../../usage/tasks.rst:489
+msgid ""
+"Python's ``import`` statement effectively includes the imported objects in "
+"your module's namespace. Since Fabric's fabfiles are just Python modules, "
+"this means that imports are also considered as possible classic-style tasks, "
+"alongside anything defined in the fabfile itself."
+msgstr ""
+"Pythonの ``import`` ステートメントは事実上、あなたのモジュール名前空間にある"
+"インポートされたオブジェクトを含みます。Fabricのfabfileは単なるPythonモジュー"
+"ルなので、インポートもまた、fabfile自身に定義されているすべてと一緒に出来る限"
+"りクラシックスタイルのタスクとみなされます。"
+
+#: ../../usage/tasks.rst:495
+msgid ""
+"This only applies to imported *callable objects* -- not modules. Imported "
+"modules only come into play if they contain :ref:`new-style tasks <new-style-"
+"tasks>`, at which point this section no longer applies."
+msgstr ""
+"これはインポートされた *呼び出し可能なオブジェクト* のみに適用され、モジュー"
+"ルには適用されません。インポートされたモジュールは :ref:`新しいスタイルのタス"
+"ク <new-style-tasks>` を含む場合のみ実行され、その時点でこのセクションは適用"
+"されません。"
+
+#: ../../usage/tasks.rst:500
+msgid ""
+"Because of this, we strongly recommend that you use the ``import module`` "
+"form of importing, followed by ``module.callable()``, which will result in a "
+"cleaner fabfile API than doing ``from module import callable``."
+msgstr ""
+"このため、私達としては後ろに ``module.callable()`` が続くインポートの "
+"``import module`` 形式を利用するよう強くおすすめします。これにより、結果とし"
+"て ``from module import callable`` を行うよりもよりきれいなfabfile APIになり"
+"ます。"
+
+#: ../../usage/tasks.rst:504
+msgid ""
+"For example, here's a sample fabfile which uses ``urllib.urlopen`` to get "
+"some data out of a webservice::"
+msgstr ""
+"ウェブサービスから何らかのデータを取り出すために ``urllib.urlopen`` を使用し"
+"ているサンプルのfabfileを例に上げましょう::"
+
+#: ../../usage/tasks.rst:515
+msgid ""
+"This looks simple enough, and will run without error. However, look what "
+"happens if we run :option:`fab --list <-l>` on this fabfile::"
+msgstr ""
+"これはかなり単純でエラー無しで実行できます。しかし、このfabfileで :option:"
+"`fab --list <-l>` を実行するとどうなるか見てみましょう::"
+
+#: ../../usage/tasks.rst:524
+msgid ""
+"Our fabfile of only one task is showing two \"tasks\", which is bad enough, "
+"and an unsuspecting user might accidentally try to call ``fab urlopen``, "
+"which probably won't work very well. Imagine any real-world fabfile, which "
+"is likely to be much more complex, and hopefully you can see how this could "
+"get messy fast."
+msgstr ""
+"1つのタスクしかないfabfileで2つの \"タスク\" が表示されています。これはよくあ"
+"りませんし、疑うことを知らないユーザーがうっかりと ``fab urlopen`` を呼びだそ"
+"うとするかもしれませんし、たぶんまともには動作しないでしょう。実世界のfabfile"
+"を想像してみてください。かなり複雑になることが多いでしょうし、すぐに乱雑に"
+"なってしまうことがわかってもらえると思います。"
+
+#: ../../usage/tasks.rst:530
+msgid "For reference, here's the recommended way to do it::"
+msgstr "参考のため、以下がおすすめの方法になります::"
+
+#: ../../usage/tasks.rst:540
+msgid ""
+"It's a simple change, but it'll make anyone using your fabfile a bit happier."
+msgstr ""
+"簡単な変更ですが、このfabfileを使う方は誰でもこれにより少しは幸せになるでしょ"
+"う。"

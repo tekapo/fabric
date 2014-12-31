@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:07+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../development.rst:3
+# 9c4f7793ed414e7f9b26013b48d0e2ae
+msgid "Development"
+msgstr ""
+
+#: ../../development.rst:5
+# 683aa4c2388c4551a2c366d810da8fbb
+msgid "The Fabric development team is headed by `Jeff Forcier <http://bitprophet.org>`_, aka ``bitprophet``.  However, dozens of other developers pitch in by submitting patches and ideas via `GitHub issues and pull requests <https://github.com/fabric/fabric>`_, :ref:`IRC <irc>` or the `mailing list <http://lists.nongnu.org/mailman/listinfo/fab-user>`_."
+msgstr ""
+
+#: ../../development.rst:12
+# 0d5f791fae064bb890244d6b1e7724dd
+msgid "Get the code"
+msgstr ""
+
+#: ../../development.rst:14
+# 1efb110410904d3ea198b0adb6be3a33
+msgid "Please see the :ref:`source-code-checkouts` section of the :doc:`installing` page for details on how to obtain Fabric's source code."
+msgstr ""
+
+#: ../../development.rst:18
+# 18526d6dcbd544608dae14a97f89a864
+msgid "Contributing"
+msgstr ""
+
+#: ../../development.rst:20
+# 59b61c7bd7d34fe59f0f248b3d7565a5
+msgid "There are a number of ways to get involved with Fabric:"
+msgstr ""
+
+#: ../../development.rst:22
+# 287b5c7ec41441d4ae79df55cfb3f2d9
+msgid "**Use Fabric and send us feedback!** This is both the easiest and arguably the most important way to improve the project -- let us know how you currently use Fabric and how you want to use it. (Please do try to search the `ticket tracker`_ first, though, when submitting feature ideas.)"
+msgstr ""
+
+#: ../../development.rst:27
+# edec7b5d01584fe8a481517b0c9109dc
+msgid "**Report bugs or submit feature requests.** We follow `contribution-guide.org`_'s guidelines, so please check them out before visiting the `ticket tracker`_."
+msgstr ""
+
+#: ../../development.rst:29
+# c90aac824a974609ab66b18f6d82488e
+msgid "**Fix bugs or implement features!** Again, follow `contribution-guide.org`_ for details on this process. Regarding the changelog step, our changelog is stored in ``sites/www/changelog.rst``."
+msgstr ""
+
+#: ../../development.rst:36
+# c640090ee4cc41dc803455a023756f80
+msgid "While we may not always reply promptly, we do try to make time eventually to inspect all contributions and either incorporate them or explain why we don't feel the change is a good fit."
+msgstr ""
+
+#: ../../development.rst:42
+# 43072998b1d743a387d3a6067b8fe5b2
+msgid "Support of older releases"
+msgstr ""
+
+#: ../../development.rst:44
+# 6caff558bd9c4e19a04f2d66ac5f64f7
+msgid "Major and minor releases do not mark the end of the previous line or lines of development:"
+msgstr ""
+
+#: ../../development.rst:47
+# 5c25645dbfa342219af1e1c2a6fbbfc5
+msgid "The two most recent minor release branches will continue to receive critical bugfixes. For example, if 1.1 were the latest minor release, it and 1.0 would get bugfixes, but not 0.9 or earlier; and once 1.2 came out, this window would then only extend back to 1.1."
+msgstr ""
+
+#: ../../development.rst:51
+# 64b8233980614effbc6fc81a6b31f902
+msgid "Depending on the nature of bugs found and the difficulty in backporting them, older release lines may also continue to get bugfixes -- but there's no longer a guarantee of any kind. Thus, if a bug were found in 1.1 that affected 0.9 and could be easily applied, a new 0.9.x version *might* be released."
+msgstr ""
+
+#: ../../development.rst:56
+# ca425cb9f1b34028995a682584ad2f42
+msgid "This policy may change in the future to accommodate more branches, depending on development speed."
+msgstr ""
+
+#: ../../development.rst:59
+# 1ef8141027fc4cd8b24d165e2b148042
+msgid "We hope that this policy will allow us to have a rapid minor release cycle (and thus keep new features coming out frequently) without causing users to feel too much pressure to upgrade right away. At the same time, the backwards compatibility guarantee means that users should still feel comfortable upgrading to the next minor release in order to stay within this sliding support window."
+msgstr ""
+

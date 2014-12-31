@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: fabric docs 1_8_2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:41+0900\n"
+"PO-Revision-Date: 2014-05-20 09:26+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.5\n"
+
+# 32e06c691c9c4b7fa6578fa31f2feee2
+#: ../../usage/output_controls.rst:3
+msgid "Managing output"
+msgstr "出力の管理"
+
+# d8afdc715d5f481aa5b8fe4e6dd5f39b
+#: ../../usage/output_controls.rst:5
+msgid ""
+"The ``fab`` tool is very verbose by default and prints out almost everything "
+"it can, including the remote end's stderr and stdout streams, the command "
+"strings being executed, and so forth. While this is necessary in many cases "
+"in order to know just what's going on, any nontrivial Fabric task will "
+"quickly become difficult to follow as it runs."
+msgstr ""
+"``fab`` ツールはデフォルトで非常に冗長です。リモート側の標準出力、標準エラー"
+"出力、実行されたコマンドなど可能な限りほぼすべてを出力します。 何が起こったか"
+"知るために多くの場合これが必要になりますが実行中のFabricのタスクを追いかける"
+"のは難しくなります。"
+
+# 40f8a880e615424eabe114ea5eaa7a26
+#: ../../usage/output_controls.rst:13
+msgid "Output levels"
+msgstr "出力レベル"
+
+# 4df75b159ba6431fb24af73be7083324
+#: ../../usage/output_controls.rst:15
+msgid ""
+"To aid in organizing task output, Fabric output is grouped into a number of "
+"non-overlapping levels or groups, each of which may be turned on or off "
+"independently. This provides flexible control over what is displayed to the "
+"user."
+msgstr ""
+"タスクの出力を整理するためにFabricの出力はいくつかの重複しないレベルやグルー"
+"プに分けられます。そしてそれぞれ独立してオン、オフできます。これでユーザーに"
+"表示される内容を柔軟にコントロールします。"
+
+# 3badd1a4bd5a4cc7b01d60b95f7bddd2
+#: ../../usage/output_controls.rst:22
+msgid "All levels, save for ``debug``, are on by default."
+msgstr "``debug``を除いてすべてのレベルでデフォルトはオンです。"
+
+# 07fe576a996747cbaa55bc732eb2246d
+#: ../../usage/output_controls.rst:25
+msgid "Standard output levels"
+msgstr "標準出力レベル"
+
+# bf7ec0aca49a493c857b697d035756a3
+#: ../../usage/output_controls.rst:27
+msgid "The standard, atomic output levels/groups are as follows:"
+msgstr "標準のアトミック出力レベル/グループは次の通りです:"
+
+# 89832f0a7680459cb0e15e1459fd1162
+#: ../../usage/output_controls.rst:29
+msgid ""
+"**status**: Status messages, i.e. noting when Fabric is done running, if the "
+"user used a keyboard interrupt, or when servers are disconnected from. These "
+"messages are almost always relevant and rarely verbose."
+msgstr ""
+"**status**: 状況メッセージ、例えば Fabricの実行後にはなし、ユーザーがキーボー"
+"ドインターラプトを使ったか、サーバーが切断されたか、などです。これらのメッ"
+"セージはほぼ適切でめったに冗長でありません。"
+
+# 1e87a35986b44d80bfac556d7b5e2180
+#: ../../usage/output_controls.rst:33
+msgid ""
+"**aborts**: Abort messages. Like status messages, these should really only "
+"be turned off when using Fabric as a library, and possibly not even then. "
+"Note that even if this output group is turned off, aborts will still occur "
+"-- there just won't be any output about why Fabric aborted!"
+msgstr ""
+"**aborts**: アボート(中止)メッセージ。状況メッセージのようにFabricをライブラ"
+"リとして使用するときのみオフにすべきです。本当はすべきでありませんが。注意："
+"この出力グループをオフにしてアボートが発生したら -- なぜ Fabric がアボートし"
+"たか、どんな出力もありません!"
+
+# a595346d8e204e6e8e2b612afec7ed63
+#: ../../usage/output_controls.rst:38
+msgid ""
+"**warnings**: Warning messages. These are often turned off when one expects "
+"a given operation to fail, such as when using ``grep`` to test existence of "
+"text in a file. If paired with setting ``env.warn_only`` to True, this can "
+"result in fully silent warnings when remote programs fail. As with "
+"``aborts``, this setting does not control actual warning behavior, only "
+"whether warning messages are printed or hidden."
+msgstr ""
+"**warnings**: 警告メッセージ。ファイルの中のテキストを ``grep`` するときのよ"
+"うな失敗が予想される動作ではしばしばオフにされます。 ``env.warn_only`` の設定"
+"を True で一緒に使えばリモートプログラムが失敗した時の警告が完全に沈黙しま"
+"す。 ``aborts`` と同様にこの設定は実際の警告の動作をコントロールするわけでは"
+"ありません。ただ警告を表示するかしないかだけです。"
+
+# b1d80e641ade4a298bc9a0cf61cbd338
+#: ../../usage/output_controls.rst:45
+msgid ""
+"**running**: Printouts of commands being executed or files transferred, e.g. "
+"``[myserver] run: ls /var/www``. Also controls printing of tasks being run, "
+"e.g. ``[myserver] Executing task 'foo'``."
+msgstr ""
+"**running**: 実行したコマンドや転送したファイルの出力。例えば ``[myserver] "
+"run: ls /var/www``。実行したタスクの出力もコントロールします。例えば "
+"``[myserver] Executing task 'foo'``。"
+
+# 5a1eda85ad35448caba469009a4c5332
+#: ../../usage/output_controls.rst:49
+msgid ""
+"**stdout**: Local, or remote, stdout, i.e. non-error output from commands."
+msgstr ""
+"**stdout**: ローカルやリモートの標準出力、例えばコマンドからのエラーでない出"
+"力。"
+
+# 986a271e2e7c472f9fbc46aec2c26735
+#: ../../usage/output_controls.rst:51
+msgid ""
+"**stderr**: Local, or remote, stderr, i.e. error-related output from "
+"commands."
+msgstr ""
+"**stderr**: ローカルやリモートのエラー出力、例えばコマンドからのエラーに関す"
+"る出力。"
+
+# d7e753401315497f99cfb00586b6b241
+#: ../../usage/output_controls.rst:53
+msgid ""
+"**user**: User-generated output, i.e. local output printed by fabfile code "
+"via use of the `~fabric.utils.fastprint` or `~fabric.utils.puts` functions."
+msgstr ""
+"**user**: ユーザーが生成する出力、例えば `~fabric.utils.fastprint` や "
+"`~fabric.utils.puts` 関数を使ったfabricコードで出力されるローカル出力。"
+
+# 10da57f31dea4960ad4b4ef047259926
+#: ../../usage/output_controls.rst:56
+msgid "Added \"Executing task\" lines to the ``running`` output level."
+msgstr "\"Executing task\"を ``running`` 出力レベルの追加。"
+
+# 2b64915079e345a1aceb14dafcf85cb1
+#: ../../usage/output_controls.rst:59
+msgid "Added the ``user`` output level."
+msgstr "``user``出力レベルを追加。"
+
+# 65ba9b5e32874a9c9acd8f3938449b11
+#: ../../usage/output_controls.rst:63
+msgid "Debug output"
+msgstr "デバッグ出力"
+
+# 96162965bb054bf3817df5801a850b4f
+#: ../../usage/output_controls.rst:65
+msgid ""
+"There is a final atomic output level, ``debug``, which behaves slightly "
+"differently from the rest:"
+msgstr ""
+"最後のアトミック出力レベル、 ``debug`` これは他とはやや異なる動作をします:"
+
+# 811ebc0c8f39467789a137484ba73826
+#: ../../usage/output_controls.rst:68
+msgid ""
+"**debug**: Turn on debugging (which is off by default.) Currently, this is "
+"largely used to view the \"full\" commands being run; take for example this "
+"`~fabric.operations.run` call::"
+msgstr ""
+"**debug**: 現在デバッグをオンは(デフォルトでオフ)主に実行中の \"完全な\" コマ"
+"ンドを調べるのに使います。例えばこの `~fabric.operations.run` 呼び出し::"
+
+# 14e002947b584942924e4566054f660c
+#: ../../usage/output_controls.rst:74
+msgid ""
+"Normally, the ``running`` line will show exactly what is passed into "
+"`~fabric.operations.run`, like so::"
+msgstr ""
+"通常 ``running`` 行は `~fabric.operations.run` に何が渡されるか正確に表示しま"
+"す。このようにlike so::"
+
+# 82eb23f5385e4e359a67321b25d029e8
+#: ../../usage/output_controls.rst:79
+msgid ""
+"With ``debug`` on, and assuming you've left :ref:`shell` set to ``True``, "
+"you will see the literal, full string as passed to the remote server::"
+msgstr ""
+" ``debug`` がオンで :ref:`shell` が ``True`` ならリモートサーバーに渡される文"
+"字通りすべての文字列が表示されます::"
+
+# 6f17af90f14549069fb6634ff4a9abf9
+#: ../../usage/output_controls.rst:84
+msgid ""
+"Enabling ``debug`` output will also display full Python tracebacks during "
+"aborts."
+msgstr ""
+"``debug`` 出力が有効ならアボート中のすべての Python トレースバックを表示しま"
+"す。"
+
+# a3e4d01a8f104674bcbf26c011977cc6
+#: ../../usage/output_controls.rst:89
+msgid ""
+"Where modifying other pieces of output (such as in the above example where "
+"it modifies the 'running' line to show the shell and any escape characters), "
+"this setting takes precedence over the others; so if ``running`` is False "
+"but ``debug`` is True, you will still be shown the 'running' line in its "
+"debugging form."
+msgstr ""
+"出力の部分的変更(上の例では 'running' 行にシェルとエスケープ文字を表示する変"
+"更)は他の設定に優先します。もし ``running`` が False で ``debug`` が True な"
+"らデバッグフォームで 'running' 行が表示されます。"
+
+# 1b4635e1d5c04342bbc476731c32ca4b
+#: ../../usage/output_controls.rst:95
+msgid "Debug output now includes full Python tracebacks during aborts."
+msgstr ""
+"現在のデバッグ出力は、アボート中の完全なPhythonトレースバックを含みます。"
+
+# 365c20d860e342c180e3fbc0bfc7efce
+#: ../../usage/output_controls.rst:101
+msgid "Output level aliases"
+msgstr "出力レベルのエイリアス"
+
+# f38a45b8a74b46eaacd472f5cac42ae3
+#: ../../usage/output_controls.rst:103
+msgid ""
+"In addition to the atomic/standalone levels above, Fabric also provides a "
+"couple of convenience aliases which map to multiple other levels. These may "
+"be referenced anywhere the other levels are referenced, and will effectively "
+"toggle all of the levels they are mapped to."
+msgstr ""
+"上記の アトミック/スタンドアロン レベルに加えて Fabric は複数のレベルを組み合"
+"わせたいくつかの便利なエイリアスを提供します。組み合わされているすべてのレベ"
+"ルを効果的に切り替えることができます。"
+
+# aedd9dfe4cfd49558d4397ae8c003a03
+#: ../../usage/output_controls.rst:108
+msgid ""
+"**output**: Maps to both ``stdout`` and ``stderr``. Useful for when you only "
+"care to see the 'running' lines and your own print statements (and warnings)."
+msgstr ""
+"**output**: ``stdout`` と ``stderr``の両方。これは 'running' 行と出力状況に注"
+"目するときに便利です(それと警告)。"
+
+# a7926494ac8e4b188b3114462a39f430
+#: ../../usage/output_controls.rst:111
+msgid ""
+"**everything**: Includes ``warnings``, ``running``, ``user`` and ``output`` "
+"(see above.) Thus, when turning off ``everything``, you will only see a bare "
+"minimum of output (just ``status`` and ``debug`` if it's on), along with "
+"your own print statements."
+msgstr ""
+"**everything**: ``warnings``, ``running``, ``user`` そして ``output`` を含む"
+"(上記)。``everything`` をオフにすると自分自身の出力と最小の出力(もしオンなら "
+"``status`` と ``debug`` )になります。"
+
+# 049db4c7441a4cca9d387dcf7aa0f78d
+#: ../../usage/output_controls.rst:116
+msgid ""
+"**commands**: Includes ``stdout`` and ``running``. Good for hiding non-"
+"erroring commands entirely, while still displaying any stderr output."
+msgstr ""
+"**commands**: ``stdout`` と ``running`` を含む。標準エラー出力を表示してエ"
+"ラーでない出力全体を隠すのに便利です。"
+
+# 064c1d161e2f4268b8c93f18ef846aee
+#: ../../usage/output_controls.rst:119
+msgid "Added the ``commands`` output alias."
+msgstr "``commands`` 出力エイリアスを追加。"
+
+# 1f37fe6454d541e9a38a6285c3224197
+#: ../../usage/output_controls.rst:124
+msgid "Hiding and/or showing output levels"
+msgstr "出力レベルの表示/非表示"
+
+# 7315491a7d7f4140ad2d71d8a185097f
+#: ../../usage/output_controls.rst:126
+msgid ""
+"You may toggle any of Fabric's output levels in a number of ways; for "
+"examples, please see the API docs linked in each bullet point:"
+msgstr ""
+"Fabricの出力レベルの切り替え方法はいくつかあります; それぞれの箇条書きのAPIド"
+"キュメントへのリンクを参照してください:"
+
+# fbd1c1b841de45df8f683e03f8885b4d
+#: ../../usage/output_controls.rst:129
+msgid ""
+"**Direct modification of fabric.state.output**: `fabric.state.output` is a "
+"dictionary subclass (similar to :doc:`env <env>`) whose keys are the output "
+"level names, and whose values are either True (show that particular type of "
+"output) or False (hide it.)"
+msgstr ""
+"**直接 fabric.state.output を編集する**: `fabric.state.output` はディクショナ"
+"リーサブクラスで (:doc:`env <env>` のような) key は出力レベル名、そして "
+"value は True (指定したタイプの出力を表示) か False (隠す) のどちらかです。"
+
+# 3c9c446e5b064df981473f916c15f319
+#: ../../usage/output_controls.rst:134
+msgid ""
+"`fabric.state.output` is the lowest-level implementation of output levels "
+"and is what Fabric's internals reference when deciding whether or not to "
+"print their output."
+msgstr ""
+"`fabric.state.output` これは出力レベルの最も低いレベルの実装でFabricが出力を"
+"表示するかどうかの内部参照です。"
+
+# c0d8cce8d1564204ab649a51a8c61d1d
+#: ../../usage/output_controls.rst:138
+msgid ""
+"**Context managers**: `~fabric.context_managers.hide` and `~fabric."
+"context_managers.show` are twin context managers that take one or more "
+"output level names as strings, and either hide or show them within the "
+"wrapped block. As with Fabric's other context managers, the prior values are "
+"restored when the block exits."
+msgstr ""
+"**コンテキストマネージャー**: `~fabric.context_managers.hide` と `~fabric."
+"context_managers.show` は文字列としてひとつ以上の出力レベル名を持つコンテキス"
+"トマネージャーです。 hide か show どちらかのラップしたブロックがあります。"
+"Fabricの他のコンテキストマネージャーのように、ブロックが存在すれば以前の値が"
+"保持されています。"
+
+# 4a1abb2331d94bfea8f3b7712601d53a
+#: ../../usage/output_controls.rst:146
+msgid ""
+"`~fabric.context_managers.settings`, which can nest calls to `~fabric."
+"context_managers.hide` and/or `~fabric.context_managers.show` inside itself."
+msgstr ""
+"`~fabric.context_managers.settings`, これは`~fabric.context_managers.hide` "
+"や `~fabric.context_managers.show` を内部でネストコールします。"
+
+# 3ce7d2e0615d4d12a139884b419a20e3
+#: ../../usage/output_controls.rst:150
+msgid ""
+"**Command-line arguments**: You may use the :option:`--hide` and/or :option:"
+"`--show` arguments to :doc:`fab`, which behave exactly like the context "
+"managers of the same names (but are, naturally, globally applied) and take "
+"comma-separated strings as input."
+msgstr ""
+"**コマンドライン引数**: :option:`--hide` と :option:`--show` が使えます。 :"
+"doc:`fab` これは同じ名前のコンテキストマネージャー(しかし当然グローバルに適用"
+"されます)と同じ動作で入力にコンマで区切られた文字列を使います。"

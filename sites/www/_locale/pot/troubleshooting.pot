@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:07+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../troubleshooting.rst:3
+# 9b64647f69de4d359ee79835caf4f626
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../troubleshooting.rst:5
+# 67f20557f9df4d708cb3b12ab427ed6d
+msgid "Stuck? Having a problem? Here are the steps to try before you submit a bug report."
+msgstr ""
+
+#: ../../troubleshooting.rst:8
+# 0468a38b42c94c0eba7e6a07da57bdeb
+msgid "**Make sure you're on the latest version.** If you're not on the most recent version, your problem may have been solved already! Upgrading is always the best first step."
+msgstr ""
+
+#: ../../troubleshooting.rst:11
+# 0d2506e5c4d24674b40642e7c066e837
+msgid "**Try older versions.** If you're already *on* the latest Fabric, try rolling back a few minor versions (e.g. if on 1.7, try Fabric 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log."
+msgstr ""
+
+#: ../../troubleshooting.rst:15
+# 49391fd19c944f16886c3beb185d03a2
+msgid "**Try switching up your Paramiko.** Fabric relies heavily on the Paramiko library for its SSH functionality, so try applying the above two steps to your Paramiko install as well."
+msgstr ""
+
+#: ../../troubleshooting.rst:20
+# b386d148d3cf44ed8b4e7fc6eada6432
+msgid "Fabric versions sometimes have different Paramiko dependencies - so to try older Paramikos you may need to downgrade Fabric as well."
+msgstr ""
+
+#: ../../troubleshooting.rst:23
+# d5829c1dbd014a7c9b5a15e0af8b8c88
+msgid "**Make sure Fabric is really the problem.** If your problem is in the behavior or output of a remote command, try recreating it without Fabric involved:"
+msgstr ""
+
+#: ../../troubleshooting.rst:27
+# 9e55d20e76604772a93b4f42a392128f
+msgid "Run Fabric with ``--show=debug`` and look for the ``run:`` or ``sudo:`` line about the command in question. Try running that exact command, including any ``/bin/bash`` wrapper, remotely and see what happens. This may find problems related to the bash or sudo wrappers."
+msgstr ""
+
+#: ../../troubleshooting.rst:31
+# c965ab733fdb4362a8360a365487d68d
+msgid "Execute the command (both the normal version, and the 'unwrapped' version seen via ``--show=debug``) from your local workstation using ``ssh``, e.g.::"
+msgstr ""
+
+#: ../../troubleshooting.rst:37
+# ed70a82c00bc409cbe6c2f6248007d3a
+msgid "The ``-t`` flag matches Fabric's default behavior of enabling a PTY remotely. This helps identify apps that behave poorly when run in a non-shell-spawned PTY."
+msgstr ""
+
+#: ../../troubleshooting.rst:41
+# 4d6589784760409ca55a4a0dee887899
+msgid "**Enable Paramiko-level debug logging.** If your issue is in the lower level Paramiko library, it can help us to see the debug output Paramiko prints. At top level in your fabfile, add the following::"
+msgstr ""
+
+#: ../../troubleshooting.rst:48
+# 0dbe5d9081174b8db6e8111aa525cb6c
+msgid "This should start printing Paramiko's debug statements to your standard error stream. (Feel free to add more logging kwargs to ``basicConfig()`` such as ``filename='/path/to/a/file'`` if you like.)"
+msgstr ""
+
+#: ../../troubleshooting.rst:52
+# 5ba6f9a78e2d4f4a84acadee68aa971b
+msgid "Then submit this info to anybody helping you on IRC or in your bug report."
+msgstr ""
+

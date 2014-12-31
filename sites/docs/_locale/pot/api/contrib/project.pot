@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/contrib/project.rst:3
+# 7b97cfc46e684503b51c4c028f77df7e
+msgid "Project Tools"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project:1
+# c134d5b2f7c744fa8ce3e0cad7138566
+msgid "Useful non-core functionality, e.g. functions composing multiple operations."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:1
+# ee524a1c5fc643459ca84d82820f304f
+msgid "Synchronize a remote directory with the current project directory via rsync."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:3
+# 3d652104296740f1809af928567f772a
+msgid "Where ``upload_project()`` makes use of ``scp`` to copy one's entire project every time it is invoked, ``rsync_project()`` uses the ``rsync`` command-line utility, which only transfers files newer than those on the remote end."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:8
+# 58026dfba74f4a0eb68df6f8ddebd6ea
+msgid "``rsync_project()`` is thus a simple wrapper around ``rsync``; for details on how ``rsync`` works, please see its manpage. ``rsync`` must be installed on both your local and remote systems in order for this operation to work correctly."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:13
+# 3b51e81af5124a65ae79b7c0ad0d0400
+msgid "This function makes use of Fabric's ``local()`` operation, and returns the output of that function call; thus it will return the stdout, if any, of the resultant ``rsync`` call."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:17
+# 9effb0a2f26f4fe480ef3f674fe4da30
+msgid "``rsync_project()`` takes the following parameters:"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:19
+# 3179a89ddda54eee94b9f7ed74930678
+msgid "``remote_dir``: the only required parameter, this is the path to the directory on the remote server. Due to how ``rsync`` is implemented, the exact behavior depends on the value of ``local_dir``:"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:23
+# 66adabbaa7854275aed194b32f652a7d
+msgid "If ``local_dir`` ends with a trailing slash, the files will be dropped inside of ``remote_dir``. E.g. ``rsync_project(\"/home/username/project\", \"foldername/\")`` will drop the contents of ``foldername`` inside of ``/home/username/project``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:27
+# 72d602c1e4554774a0602691d169d8af
+msgid "If ``local_dir`` does **not** end with a trailing slash (and this includes the default scenario, when ``local_dir`` is not specified), ``remote_dir`` is effectively the \"parent\" directory, and a new directory named after ``local_dir`` will be created inside of it. So ``rsync_project(\"/home/username\", \"foldername\")`` would create a new directory ``/home/username/foldername`` (if needed) and place the files there."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:35
+# 7fa31652d6dd4cf68064c347cc7aaa7a
+msgid "``local_dir``: by default, ``rsync_project`` uses your current working directory as the source directory. This may be overridden by specifying ``local_dir``, which is a string passed verbatim to ``rsync``, and thus may be a single directory (``\"my_directory\"``) or multiple directories (``\"dir1 dir2\"``). See the ``rsync`` documentation for details."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:40
+# 63415ea6564e463c969496040cb4349b
+msgid "``exclude``: optional, may be a single string, or an iterable of strings, and is used to pass one or more ``--exclude`` options to ``rsync``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:42
+# 43de96a5c6fa407ea84727c2e440572b
+msgid "``delete``: a boolean controlling whether ``rsync``'s ``--delete`` option is used. If True, instructs ``rsync`` to remove remote files that no longer exist locally. Defaults to False."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:45
+# 24186141bbad4e38a708b18dece8f5d0
+msgid "``extra_opts``: an optional, arbitrary string which you may use to pass custom arguments or options to ``rsync``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:47
+# f5ca0c1011174d9b89abee5196aea8fe
+msgid "``ssh_opts``: Like ``extra_opts`` but specifically for the SSH options string (rsync's ``--rsh`` flag.)"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:49
+# de4e11e83bbd42709e1711aa1f8bf953
+msgid "``capture``: Sent directly into an inner `~fabric.operations.local` call."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:50
+# fd591a2ae5ba48fcbcfbf2e02dd973e9
+msgid "``upload``: a boolean controlling whether file synchronization is performed up or downstream. Upstream by default."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:52
+# f04d49c23304418fa2759e240c22f8fc
+msgid "``default_opts``: the default rsync options ``-pthrvz``, override if desired (e.g. to remove verbosity, etc)."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:55
+# 9050c83aa14442ff938970a73ecda678
+msgid "Furthermore, this function transparently honors Fabric's port and SSH key settings. Calling this function when the current host string contains a nonstandard port, or when ``env.key_filename`` is non-empty, will use the specified port and/or SSH key filename(s)."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:60
+# 0dabcdccec3d4b968be2c9147e810c05
+msgid "For reference, the approximate ``rsync`` command-line call that is constructed by this function is the following::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:66
+# d32d5acefe7646038154bc9563d9193a
+msgid "The ``ssh_opts`` keyword argument."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:68
+# f4468a46a67f42e1b8541f6beafc8e3a
+msgid "The ``capture`` keyword argument."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.rsync_project:70
+# da037bf8aa1c4b68a6a7a8a50372f2d6
+msgid "The ``default_opts`` keyword argument."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:1
+# 187ea1a5170b4783be5266189c39b0bb
+msgid "Upload the current project to a remote system via ``tar``/``gzip``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:3
+# 8f59ce7dd44b47e3beb7e654811aeb84
+msgid "``local_dir`` specifies the local project directory to upload, and defaults to the current working directory."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:6
+# 17d47ff842444cc38878cde5e55ae384
+msgid "``remote_dir`` specifies the target directory to upload into (meaning that a copy of ``local_dir`` will appear as a subdirectory of ``remote_dir``) and defaults to the remote user's home directory."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:10
+# 6f097d43d49c4dce955138515a804662
+msgid "``use_sudo`` specifies which method should be used when executing commands remotely. ``sudo`` will be used if use_sudo is True, otherwise ``run`` will be used."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:14
+# 8095e95509394731b02dd71a7d0f99ec
+msgid "This function makes use of the ``tar`` and ``gzip`` programs/libraries, thus it will not work too well on Win32 systems unless one is using Cygwin or something similar. It will attempt to clean up the local and remote tarfiles when it finishes executing, even in the event of a failure."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:19
+# 587ae2a8ab6f4c46855652b1496f3061
+msgid "Added the ``local_dir`` and ``remote_dir`` kwargs."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/project.py:docstring of fabric.contrib.project.upload_project:22
+# a3c2bf32734e4e2b8ea9cca723a10855
+msgid "Added the ``use_sudo`` kwarg."
+msgstr ""
+

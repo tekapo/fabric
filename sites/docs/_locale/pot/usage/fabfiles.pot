@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/fabfiles.rst:3
+# d79e13bb6d92472780d7168d711d8082
+msgid "Fabfile construction and use"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:5
+# bf58993ac19f496fa8837ef8c4697547
+msgid "This document contains miscellaneous sections about fabfiles, both how to best write them, and how to use them once written."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:11
+# 11d193fbd6ff4451bac67e44ff9fdf95
+msgid "Fabfile discovery"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:13
+# ee62b7c51d9b457baabe59e1a905903e
+msgid "Fabric is capable of loading Python modules (e.g. ``fabfile.py``) or packages (e.g. a ``fabfile/`` directory containing an ``__init__.py``). By default, it looks for something named (to Python's import machinery) ``fabfile`` - so either ``fabfile/`` or ``fabfile.py``."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:18
+# 8ef63ecb20e54e07abdca304cfd45c7a
+msgid "The fabfile discovery algorithm searches in the invoking user's current working directory or any parent directories. Thus, it is oriented around \"project\" use, where one keeps e.g. a ``fabfile.py`` at the root of a source code tree. Such a fabfile will then be discovered no matter where in the tree the user invokes ``fab``."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:24
+# e8c933b36f3c4248bdc820e323e2fea4
+msgid "The specific name to be searched for may be overridden on the command-line with the :option:`-f` option, or by adding a :ref:`fabricrc <fabricrc>` line which sets the value of ``fabfile``. For example, if you wanted to name your fabfile ``fab_tasks.py``, you could create such a file and then call ``fab -f fab_tasks.py <task name>``, or add ``fabfile = fab_tasks.py`` to ``~/.fabricrc``."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:31
+# f9930be6717846eaba922385d026e0f4
+msgid "If the given fabfile name contains path elements other than a filename (e.g. ``../fabfile.py`` or ``/dir1/dir2/custom_fabfile``) it will be treated as a file path and directly checked for existence without any sort of searching. When in this mode, tilde-expansion will be applied, so one may refer to e.g. ``~/personal_fabfile.py``."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:39
+# 01f6ae9506d348f19a797b42ecae250c
+msgid "Fabric does a normal ``import`` (actually an ``__import__``) of your fabfile in order to access its contents -- it does not do any ``eval``-ing or similar. In order for this to work, Fabric temporarily adds the found fabfile's containing folder to the Python load path (and removes it immediately afterwards.)"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:45
+# 9151911443c549d39b102474981a5d66
+msgid "The ability to load package fabfiles."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:52
+# d7f2de83351c4026b0fedba8b2f4ba64
+msgid "Importing Fabric"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:54
+# 2608f59d5c694e6c896d739b24bac85d
+msgid "Because Fabric is just Python, you *can* import its components any way you want. However, for the purposes of encapsulation and convenience (and to make life easier for Fabric's packaging script) Fabric's public API is maintained in the ``fabric.api`` module."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:59
+# 80d1bd776e934c588543174f6100725f
+msgid "All of Fabric's :doc:`../api/core/operations`, :doc:`../api/core/context_managers`, :doc:`../api/core/decorators` and :doc:`../api/core/utils` are included in this module as a single, flat namespace. This enables a very simple and consistent interface to Fabric within your fabfiles::"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:69
+# e0c4eb98931047f4bb47e196e3f4b7e6
+msgid "This is not technically best practices (for `a number of reasons`_) and if you're only using a couple of Fab API calls, it *is* probably a good idea to explicitly ``from fabric.api import env, run`` or similar. However, in most nontrivial fabfiles, you'll be using all or most of the API, and the star import::"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:77
+# 109bd75d12414e38ae57d702d53d0e28
+msgid "will be a lot easier to write and read than::"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:82
+# 127bacb187d7478384a11fc216298f33
+msgid "so in this case we feel pragmatism overrides best practices."
+msgstr ""
+
+#: ../../usage/fabfiles.rst:88
+# fcaff86f5c0a42c2a2ae91e33caf1fc8
+msgid "Defining tasks and importing callables"
+msgstr ""
+
+#: ../../usage/fabfiles.rst:90
+# 41cf72055abd4765801e58c1a1ddab6c
+msgid "For important information on what exactly Fabric will consider as a task when it loads your fabfile, as well as notes on how best to import other code, please see :doc:`/usage/tasks` in the :doc:`execution` documentation."
+msgstr ""
+

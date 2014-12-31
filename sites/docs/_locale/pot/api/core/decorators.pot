@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/decorators.rst:3
+# 087d62f5f6b04b999d69fbfc23daad13
+msgid "Decorators"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators:1
+# 014972f752b34fbaac22a95f8be88520
+msgid "Convenience decorators for use in fabfiles."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.hosts:1
+# 0d00884a45274b0a9681bddcb03c2001
+msgid "Decorator defining which host or hosts to execute the wrapped function on."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.hosts:3
+# 2e1dd98fada64fe2a716c76328360220
+msgid "For example, the following will ensure that, barring an override on the command line, ``my_func`` will be run on ``host1``, ``host2`` and ``host3``, and with specific users on ``host1`` and ``host3``::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.hosts:11
+# 326496937f0a4eb685930eb4585acbee
+msgid "`~fabric.decorators.hosts` may be invoked with either an argument list (``@hosts('host1')``, ``@hosts('host1', 'host2')``) or a single, iterable argument (``@hosts(['host1', 'host2'])``)."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.hosts:15
+# 5a9a228c08f7483b989d7748d434b57d
+msgid "Note that this decorator actually just sets the function's ``.hosts`` attribute, which is then read prior to executing the function."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.hosts:18
+# 7d8a7cc5320b49869bf19b6558fabc84
+msgid "Allow a single, iterable argument (``@hosts(iterable)``) to be used instead of requiring ``@hosts(*iterable)``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.parallel:1
+# 61927629fb434b8d9bca3cff8a650c84
+msgid "Forces the wrapped function to run in parallel, instead of sequentially."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.parallel:3
+# 44603e00a8ba434b971a272d22dd4493
+msgid "This decorator takes precedence over the global value of :ref:`env.parallel <env-parallel>`. It also takes precedence over `~fabric.decorators.serial` if a task is decorated with both."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.roles:1
+# 37f1c1a29d1c418e8ca27d41f26d64c3
+msgid "Decorator defining a list of role names, used to look up host lists."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.roles:3
+# 15ac07cf4f284d7baf8d3aba9472172b
+msgid "A role is simply defined as a key in `env` whose value is a list of one or more host connection strings. For example, the following will ensure that, barring an override on the command line, ``my_func`` will be executed against the hosts listed in the ``webserver`` and ``dbserver`` roles::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.roles:17
+# 858d289b3eb34c658c99ea020d706cb5
+msgid "As with `~fabric.decorators.hosts`, `~fabric.decorators.roles` may be invoked with either an argument list or a single, iterable argument. Similarly, this decorator uses the same mechanism as `~fabric.decorators.hosts` and simply sets ``<function>.roles``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.roles:22
+# 392a2ceb099845febcb0851ba24471aa
+msgid "Allow a single, iterable argument to be used (same as `~fabric.decorators.hosts`)."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.runs_once:1
+# f177d0b5019e43b991a8931d52f613ce
+msgid "Decorator preventing wrapped function from running more than once."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.runs_once:3
+# d9cd054f77ce48b3bf2bf037bc76b37b
+msgid "By keeping internal state, this decorator allows you to mark a function such that it will only run once per Python interpreter session, which in typical use means \"once per invocation of the ``fab`` program\"."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.runs_once:7
+# 390c25eaf98a41bcb34c27ebc53fb402
+msgid "Any function wrapped with this decorator will silently fail to execute the 2nd, 3rd, ..., Nth time it is called, and will return the value of the original run."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.runs_once:11
+# c1ba25c3f21042a396c49a0b3ba9aa12
+msgid "``runs_once`` does not work with parallel task execution."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.serial:1
+# fbd81d7ec0b548b387c96ee161cbff77
+msgid "Forces the wrapped function to always run sequentially, never in parallel."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.serial:3
+# 294278be4ba347f2a0e64406e375d135
+msgid "This decorator takes precedence over the global value of :ref:`env.parallel <env-parallel>`. However, if a task is decorated with both `~fabric.decorators.serial` *and* `~fabric.decorators.parallel`, `~fabric.decorators.parallel` wins."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:1
+# 3867a769a60f49e98e4c66d962457188
+msgid "Decorator declaring the wrapped function to be a new-style task."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:3
+# 5344969ef7fa485f9e87f5a29fcf9ce6
+msgid "May be invoked as a simple, argument-less decorator (i.e. ``@task``) or with arguments customizing its behavior (e.g. ``@task(alias='myalias')``)."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:6
+# b9f996eed7ac4a5f88733c7b54ccaffe
+msgid "Please see the :ref:`new-style task <task-decorator>` documentation for details on how to use this decorator."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:9
+# 817e7a979015472c952d1e90baf2f922
+msgid "Added the ``alias``, ``aliases``, ``task_class`` and ``default`` keyword arguments. See :ref:`task-decorator-arguments` for details."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:12
+# 8809fda0003a4a919f17a7b93118f89e
+msgid "Added the ``name`` keyword argument."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.task:15
+# a06fc0a65aa841a0a302df4b035c1374
+msgid "`~fabric.docs.unwrap_tasks`, `~fabric.tasks.WrappedCallableTask`"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.with_settings:1
+# 81f40c1575f445628186a04284f9b9d6
+msgid "Decorator equivalent of ``fabric.context_managers.settings``."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.with_settings:3
+# be0ba1b9b0544a0c9f4fb4dc3f0bfa88
+msgid "Allows you to wrap an entire function as if it was called inside a block with the ``settings`` context manager. This may be useful if you know you want a given setting applied to an entire function body, or wish to retrofit old code without indenting everything."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.with_settings:8
+# 09d1c3b9c94746e49193f4e90865259b
+msgid "For example, to turn aborts into warnings for an entire task function::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/decorators.py:docstring of fabric.decorators.with_settings:14
+# ac4773eb4221475eb592b295d6374cd1
+msgid "`~fabric.context_managers.settings`"
+msgstr ""
+

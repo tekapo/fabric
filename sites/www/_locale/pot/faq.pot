@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:07+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../faq.rst:3
+# f2369185ac184c81afa5d46a54898140
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: ../../faq.rst:5
+# de283b736bb54d5fa829390aafa31c43
+msgid "These are some of the most commonly encountered problems or frequently asked questions which we receive from users. They aren't intended as a substitute for reading the rest of the documentation, especially the :ref:`usage docs <usage-docs>`, so please make sure you check those out if your question is not answered here."
+msgstr ""
+
+#: ../../faq.rst:13
+# 9e7afb4c20b94a7bb297e2ddd8dcd0ef
+msgid "Fabric installs but doesn't run!"
+msgstr ""
+
+#: ../../faq.rst:15
+# 153d319cd44046ffac480f9f5dbb1f01
+msgid "On systems with old versions of ``setuptools`` (notably OS X Mavericks [10.9] as well as older Linux distribution versions) users frequently have problems running Fabric's binary scripts; this is because these ``setuptools`` are too old to deal with the modern distribution formats Fabric and some of its dependencies may use."
+msgstr ""
+
+#: ../../faq.rst:21
+# ba874c0737784b4c864985a12d4be13e
+msgid "One method we've used to recreate this error:"
+msgstr ""
+
+#: ../../faq.rst:23
+# 642d2a44072c4a40bc3d7fd354ceb604
+msgid "OS X 10.9 using system Python"
+msgstr ""
+
+#: ../../faq.rst:24
+# 4b587149ff2d4122bf6030bd532cbd80
+msgid "Pip obtained via e.g. ``sudo easy_install pip`` or ``sudo python get-pip.py``"
+msgstr ""
+
+#: ../../faq.rst:25
+# b42a2028bc79403fb1f41dd2e9d89382
+msgid "``pip install fabric``"
+msgstr ""
+
+#: ../../faq.rst:26
+# 6a6eb6eb7c8e4e629a53c90ad2415af6
+msgid "``fab [args]`` then results in the following traceback::"
+msgstr ""
+
+#: ../../faq.rst:39
+# 9a249f828ffd4fd0b3ae4a13de598454
+msgid "The best solution is to obtain a newer ``setuptools`` (which fixes this bug among many others) like so::"
+msgstr ""
+
+#: ../../faq.rst:44
+# 3d344e89291c4bd5b92eaa249d44759e
+msgid "Uninstalling, then reinstalling Fabric after doing so should fix the issue."
+msgstr ""
+
+#: ../../faq.rst:46
+# 23b28569f5224b3381a529a0011795a9
+msgid "Another approach is to tell ``pip`` not to use the ``wheel`` format (make sure you've already uninstalled Fabric and Paramiko beforehand)::"
+msgstr ""
+
+#: ../../faq.rst:51
+# 8d634b0eade94b63aec3ec786ae5daf4
+msgid "Finally, you may also find success by using a different Python interpreter/ecosystem, such as that provided by `Homebrew <http://brew.sh>`_ (`specific Python doc page <https://github.com/Homebrew/homebrew/wiki/Homebrew-and-Python>`_)."
+msgstr ""
+
+#: ../../faq.rst:58
+# 1a13e3bf189846de85e6e1e9169f5b7e
+msgid "How do I dynamically set host lists?"
+msgstr ""
+
+#: ../../faq.rst:60
+# 071fbaa3c8e545ea879ffa92fe8a3a61
+msgid "See :ref:`dynamic-hosts`."
+msgstr ""
+
+#: ../../faq.rst:64
+# afffd49d6a2848f489545a66b6638844
+msgid "How can I run something after my task is done on all hosts?"
+msgstr ""
+
+#: ../../faq.rst:66
+# f34916c468d549d8aa2df841b797d4db
+msgid "See :ref:`leveraging-execute-return-value`."
+msgstr ""
+
+#: ../../faq.rst:72
+# f7bd1626e3074ee3b65543078dae8cd8
+msgid "Init scripts don't work!"
+msgstr ""
+
+#: ../../faq.rst:74
+# e0a325752b8e4c6687ba6aef7b48d376
+msgid "Init-style start/stop/restart scripts (e.g. ``/etc/init.d/apache2 start``) sometimes don't like Fabric's allocation of a pseudo-tty, which is active by default. In almost all cases, explicitly calling the command in question with ``pty=False`` works correctly::"
+msgstr ""
+
+#: ../../faq.rst:81
+# 21274bb1e5c146ff9d74b8942f3734b1
+msgid "If you have no need for interactive behavior and run into this problem frequently, you may want to deactivate pty allocation globally by setting :ref:`env.always_use_pty <always-use-pty>` to ``False``."
+msgstr ""
+
+#: ../../faq.rst:88
+# 7883fb78f6ca4ae295c13f363eaa3464
+msgid "My (``cd``/``workon``/``export``/etc) calls don't seem to work!"
+msgstr ""
+
+#: ../../faq.rst:90
+# 05f4440a506c45468cf195e1d4422f8f
+msgid "While Fabric can be used for many shell-script-like tasks, there's a slightly unintuitive catch: each `~fabric.operations.run` or `~fabric.operations.sudo` call has its own distinct shell session. This is required in order for Fabric to reliably figure out, after your command has run, what its standard out/error and return codes were."
+msgstr ""
+
+#: ../../faq.rst:96
+# 6357d1854ada455ebe10e4ad34bced07
+msgid "Unfortunately, it means that code like the following doesn't behave as you might assume::"
+msgstr ""
+
+#: ../../faq.rst:103
+# 3d4534613f0946f5a6acdaf80fc2b24a
+msgid "If that were a shell script, the second `~fabric.operations.run` call would have executed with a current working directory of ``/path/to/application/`` -- but because both commands are run in their own distinct session over SSH, it actually tries to execute ``$HOME/update.sh`` instead (since your remote home directory is the default working directory)."
+msgstr ""
+
+#: ../../faq.rst:109
+# ee3e432762b74485954c02e278e62006
+msgid "A simple workaround is to make use of shell logic operations such as ``&&``, which link multiple expressions together (provided the left hand side executed without error) like so::"
+msgstr ""
+
+#: ../../faq.rst:116
+# 5eef28bb38e64482984a790213146b97
+msgid "Fabric provides a convenient shortcut for this specific use case, in fact: `~fabric.context_managers.cd`. There is also `~fabric.context_managers.prefix` for arbitrary prefix commands."
+msgstr ""
+
+#: ../../faq.rst:121
+# 44965955e21845ec92b022b49fcdcc55
+msgid "You might also get away with an absolute path and skip directory changing altogether::"
+msgstr ""
+
+#: ../../faq.rst:127
+# 71075dda4c2748b48bd2d31ac78a68d1
+msgid "However, this requires that the command in question makes no assumptions about your current working directory!"
+msgstr ""
+
+#: ../../faq.rst:132
+# de73aff9c72a4c15b5937b8a65b45563
+msgid "How do I use ``su`` to run commands as another user?"
+msgstr ""
+
+#: ../../faq.rst:134
+# 41a5a10fb1b34c5fa90bc417196d033b
+msgid "This is a special case of :ref:`one-shell-per-command`. As that FAQ explains, commands like ``su`` which are 'stateful' do not work well in Fabric, so workarounds must be used."
+msgstr ""
+
+#: ../../faq.rst:138
+# 1eb105d87eab4c4ba0dccf01dc691d1a
+msgid "In the case of running commands as a user distinct from the login user, you have two options:"
+msgstr ""
+
+#: ../../faq.rst:141
+# df63621cc6f746a5aa50984d01f3934f
+msgid "Use `~fabric.operations.sudo` with its ``user=`` kwarg, e.g. ``sudo(\"command\", user=\"otheruser\")``. If you want to factor the ``user`` part out of a bunch of commands, use `~fabric.context_managers.settings` to set ``env.sudo_user``::"
+msgstr ""
+
+#: ../../faq.rst:151
+# 7f7303ef5ef34190b4e27701e77acb00
+msgid "If your target system cannot use ``sudo`` for some reason, you can still use ``su``, but you need to invoke it in a non-interactive fashion by telling it to run a specific command instead of opening a shell. Typically this is the ``-c`` flag, e.g. ``su otheruser -c \"command\"``."
+msgstr ""
+
+#: ../../faq.rst:156
+# 81c06dc3776c44cf99b87ddf30996945
+msgid "To run multiple commands in the same ``su -c`` \"wrapper\", you could e.g. write a wrapper function around `~fabric.operations.run`::"
+msgstr ""
+
+#: ../../faq.rst:164
+# dd6be015822a481bbda101c974c303ea
+msgid "Why do I sometimes see ``err: stdin: is not a tty``?"
+msgstr ""
+
+#: ../../faq.rst:166
+# a5c42e71d15b430f863bfae5bad103c1
+msgid "This message is typically generated by programs such as ``biff`` or ``mesg`` lurking within your remote user's ``.profile`` or ``.bashrc`` files (or any other such files, including system-wide ones.) Fabric's default mode of operation involves executing the Bash shell in \"login mode\", which causes these files to be executed."
+msgstr ""
+
+#: ../../faq.rst:172
+# de80d2e915094cd484a51009eb6e12a3
+msgid "Because Fabric also doesn't bother asking the remote end for a tty by default (as it's not usually necessary) programs fired within your startup files, which expect a tty to be present, will complain -- and thus, stderr output about \"stdin is not a tty\" or similar."
+msgstr ""
+
+#: ../../faq.rst:177
+# 9a0882a8b80a4e13b83b3e997eb76c3d
+msgid "There are multiple ways to deal with this problem:"
+msgstr ""
+
+#: ../../faq.rst:179
+# 6367709771234f64af11eb5241473071
+msgid "Find and remove or comment out the offending program call. If the program was not added by you on purpose and is simply a legacy of the operating system, this may be safe to do, and is the simplest approach."
+msgstr ""
+
+#: ../../faq.rst:182
+# b42dcb80329f46699c31c20e0b3d7514
+msgid "Override ``env.shell`` to remove the ``-l`` flag. This should tell Bash not to load your startup files. If you don't depend on the contents of your startup files (such as aliases or whatnot) this may be a good solution."
+msgstr ""
+
+#: ../../faq.rst:185
+# cd02d723ef2e43d3bad32586ceed5b1a
+msgid "Pass ``pty=True`` to `run` or `sudo`, which will force allocation of a pseudo-tty on the remote end, and hopefully cause the offending program to be less cranky."
+msgstr ""
+
+#: ../../faq.rst:193
+# 044802998e924e4ca12148b6f289d1ec
+msgid "Why can't I run programs in the background with ``&``? It makes Fabric hang."
+msgstr ""
+
+#: ../../faq.rst:195
+# 744c37fb70a34c269e19acf81cf57a36
+msgid "Because Fabric executes a shell on the remote end for each invocation of ``run`` or ``sudo`` (:ref:`see also <one-shell-per-command>`), backgrounding a process via the shell will not work as expected. Backgrounded processes may still prevent the calling shell from exiting until they stop running, and this in turn prevents Fabric from continuing on with its own execution."
+msgstr ""
+
+#: ../../faq.rst:201
+# de21dfdf6bba415f8b9a6a939d5f2845
+msgid "The key to fixing this is to ensure that your process' standard pipes are all disassociated from the calling shell, which may be done in a number of ways (listed in order of robustness):"
+msgstr ""
+
+#: ../../faq.rst:205
+# c450cbaca4c24dce85bd03bb736be17a
+msgid "Use a pre-existing daemonization technique if one exists for the program at hand -- for example, calling an init script instead of directly invoking a server binary."
+msgstr ""
+
+#: ../../faq.rst:209
+# 8d43f5aba9604ebeac6e8223b419146a
+msgid "Or leverage a process manager such as ``supervisord``, ``upstart`` or ``systemd`` - such tools let you define what it means to \"run\" one of your background processes, then issue init-script-like start/stop/restart/status commands. They offer many advantages over classic init scripts as well."
+msgstr ""
+
+#: ../../faq.rst:215
+# 0690dc88fd63496ba140be82f7a36945
+msgid "Use ``tmux``, ``screen`` or ``dtach`` to fully detach the process from the running shell; these tools have the benefit of allowing you to reattach to the process later on if needed (though they are more ad-hoc than ``supervisord``-like tools)."
+msgstr ""
+
+#: ../../faq.rst:219
+# 7da1adc572be4afa9fef3a3a63e3d507
+msgid "You *may* be able to the program under ``nohup`` or similar \"in-shell\" tools - however we strongly recommend the prior approaches because ``nohup`` has only worked well for a minority of our users."
+msgstr ""
+
+#: ../../faq.rst:227
+# 806b42df3dcd4452b3ed8aab2945f19f
+msgid "My remote system doesn't have ``bash`` installed by default, do I need to install ``bash``?"
+msgstr ""
+
+#: ../../faq.rst:229
+# de07093e19254ad4b7cfd749e9552bc2
+msgid "While Fabric is written with ``bash`` in mind, it's not an absolute requirement.  Simply change :ref:`env.shell <shell>` to call your desired shell, and include an argument similar to ``bash``'s ``-c`` argument, which allows us to build shell commands of the form::"
+msgstr ""
+
+#: ../../faq.rst:236
+# d585c78de03d4393bb8d3473eb8862d2
+msgid "where ``/bin/bash -l -c`` is the default value of :ref:`env.shell <shell>`."
+msgstr ""
+
+#: ../../faq.rst:240
+# 54d9b6a1aa8242e5930f7108cc0bd1ca
+msgid "The ``-l`` argument specifies a login shell and is not absolutely required, merely convenient in many situations. Some shells lack the option entirely and it may be safely omitted in such cases."
+msgstr ""
+
+#: ../../faq.rst:244
+# 2095fd5b075e4428b0ec004cb934cf41
+msgid "A relatively safe baseline is to call ``/bin/sh``, which may call the original ``sh`` binary, or (on some systems) ``csh``, and give it the ``-c`` argument, like so::"
+msgstr ""
+
+#: ../../faq.rst:252
+# 329425f17fee4e6c92652294d7359e8a
+msgid "This has been shown to work on FreeBSD and may work on other systems as well."
+msgstr ""
+
+#: ../../faq.rst:256
+# a0a23f6ea1b6473995c7e2e69faebc40
+msgid "I'm sometimes incorrectly asked for a passphrase instead of a password."
+msgstr ""
+
+#: ../../faq.rst:258
+# 4c711a02c3674f4ca98b65fca6bf0981
+msgid "Due to a bug of sorts in our SSH layer, it's not currently possible for Fabric to always accurately detect the type of authentication needed. We have to try and guess whether we're being asked for a private key passphrase or a remote server password, and in some cases our guess ends up being wrong."
+msgstr ""
+
+#: ../../faq.rst:263
+# c33a0663033c4ea0914d41bd75b8282f
+msgid "The most common such situation is where you, the local user, appear to have an SSH keychain agent running, but the remote server is not able to honor your SSH key, e.g. you haven't yet transferred the public key over or are using an incorrect username. In this situation, Fabric will prompt you with \"Please enter passphrase for private key\", but the text you enter is actually being sent to the remote end's password authentication."
+msgstr ""
+
+#: ../../faq.rst:270
+# 66e3506f839c40128c6bcbbc64147dbd
+msgid "We hope to address this in future releases by modifying a fork of the aforementioned SSH library."
+msgstr ""
+
+#: ../../faq.rst:275
+# 695ec649e4fa449ea925e6b43fd13722
+msgid "Is Fabric thread-safe?"
+msgstr ""
+
+#: ../../faq.rst:277
+# 13b1d6533faa4711acb4b08528a79c01
+msgid "Currently, no, it's not -- the present version of Fabric relies heavily on shared state in order to keep the codebase simple. However, there are definite plans to update its internals so that Fabric may be either threaded or otherwise parallelized so your tasks can run on multiple servers concurrently."
+msgstr ""
+

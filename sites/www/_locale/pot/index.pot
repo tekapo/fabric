@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:07+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../index.rst:2
+# a58ca3c85aa744b6b44d7767e5af16aa
+msgid "Welcome to Fabric!"
+msgstr ""
+
+#: ../../../../README.rst:1
+# 2bbbec582b5f45288da7b04c3e04327d
+msgid "Fabric is a Python (2.5-2.7) library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks."
+msgstr ""
+
+#: ../../../../README.rst:5
+# f5d4c09e1daa415690680a18fbd8655a
+msgid "It provides a basic suite of operations for executing local or remote shell commands (normally or via ``sudo``) and uploading/downloading files, as well as auxiliary functionality such as prompting the running user for input, or aborting execution."
+msgstr ""
+
+#: ../../../../README.rst:10
+# 6a75082149044bf2bc2e80a10bb2c0e3
+msgid "Typical use involves creating a Python module containing one or more functions, then executing them via the ``fab`` command-line tool. Below is a small but complete \"fabfile\" containing a single task:"
+msgstr ""
+
+#: ../../../../README.rst:21
+# 751850ee48864999b5ac3622dbfba363
+msgid "Once a task is defined, it may be run on one or more servers, like so::"
+msgstr ""
+
+#: ../../../../README.rst:33
+# ab79a868c43e4822bfa2d5419c91055d
+msgid "In addition to use via the ``fab`` tool, Fabric's components may be imported into other Python code, providing a Pythonic interface to the SSH protocol suite at a higher level than that provided by e.g. the ``Paramiko`` library (which Fabric itself uses.)"
+msgstr ""
+
+#: ../../index.rst:8
+# 72306a5477ca4cd9aaed516faf55862d
+msgid "This website covers project information for Fabric such as the changelog, contribution guidelines, development roadmap, news/blog, and so forth. Detailed usage and API documentation can be found at our code documentation site, `docs.fabfile.org <http://docs.fabfile.org>`_."
+msgstr ""
+
+#: ../../index.rst:13
+# 112d5f68d9cb4369b61bfd564675ff6e
+msgid "Please see the navigation sidebar to the left to begin."
+msgstr ""
+

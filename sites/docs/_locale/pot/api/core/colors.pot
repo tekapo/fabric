@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../api/core/colors.rst:3
+# 49f10fd6dca34ee0b35a7913e8f3b4bd
+msgid "Color output functions"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/colors.py:docstring of fabric.colors:3
+# 5e6caa5ff4e4488182be4d2258964bcf
+msgid "Functions for wrapping strings in ANSI color codes."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/colors.py:docstring of fabric.colors:5
+# abb2f8de136e48cab792825925cc75a3
+msgid "Each function within this module returns the input string ``text``, wrapped with ANSI color codes for the appropriate color."
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/colors.py:docstring of fabric.colors:8
+# d98082098c5045dba4ea54bc0fc75dd4
+msgid "For example, to print some text as green on supporting terminals::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/colors.py:docstring of fabric.colors:14
+# 9971da7a1610470685f0dc0fbd6c0e5f
+msgid "Because these functions simply return modified strings, you can nest them::"
+msgstr ""
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/colors.py:docstring of fabric.colors:20
+# 35d2a6a9bae1417fa4ecb04080b8142f
+msgid "If ``bold`` is set to ``True``, the ANSI flag for bolding will be flipped on for that particular invocation, which usually shows up as a bold or brighter version of the original color on most terminals."
+msgstr ""
+

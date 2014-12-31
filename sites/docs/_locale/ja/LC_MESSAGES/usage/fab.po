@@ -1,0 +1,854 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: fabric docs 1_8_2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:41+0900\n"
+"PO-Revision-Date: 2014-04-13 13:18+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.4\n"
+
+# e88f55069afd409a95d0313fbf404ad2
+#: ../../usage/fab.rst:3
+msgid "``fab`` options and arguments"
+msgstr "``fab`` オプションと引数"
+
+# d7578c30f8524edf9c525c3fcbd6b07e
+#: ../../usage/fab.rst:5
+msgid ""
+"The most common method for utilizing Fabric is via its command-line tool, "
+"``fab``, which should have been placed on your shell's executable path when "
+"Fabric was installed. ``fab`` tries hard to be a good Unix citizen, using a "
+"standard style of command-line switches, help output, and so forth."
+msgstr ""
+"Fabric の最も普通の使い方はコマンドライン・ツールとしてです。``fab`` はFabric"
+"がインストールされた時にシェルの実行パスに置かれているはずです。 ``fab`` は"
+"Unixの良い住民になろうと努力しています。標準のコマンドライン・スイッチやヘル"
+"プ出力など。"
+
+# faa695c600f44aaca4697407fd8849f4
+#: ../../usage/fab.rst:12
+msgid "Basic use"
+msgstr "基本的な使い方"
+
+# f066b9c1e76244e1b0b111126c63e582
+#: ../../usage/fab.rst:14
+msgid ""
+"In its most simple form, ``fab`` may be called with no options at all, and "
+"with one or more arguments, which should be task names, e.g.::"
+msgstr ""
+"最もシンプルなものでは ``fab`` は全くオプションなしで、あるいは1つか2つのタス"
+"ク名を引数として呼ばれます。例えば::"
+
+# 66f8d25c48fe487c9637bd346ae2db02
+#: ../../usage/fab.rst:19
+msgid ""
+"As detailed in :doc:`../tutorial` and :doc:`execution`, this will run "
+"``task1`` followed by ``task2``, assuming that Fabric was able to find a "
+"fabfile nearby containing Python functions with those names."
+msgstr ""
+" :doc:`../tutorial` と :doc:`execution` で詳しく説明されていますが、これは "
+"``task1`` に続き ``task2`` を実行します。ただし Fabricがこれらの名前のPython"
+"関数を含んだfabfileを見つけられればですが。"
+
+# e6cf1655fba94fad83ee9a1c4734dc31
+#: ../../usage/fab.rst:23
+msgid ""
+"However, it's possible to expand this simple usage into something more "
+"flexible, by using the provided options and/or passing arguments to "
+"individual tasks."
+msgstr ""
+"しかしオプションやそれぞれのタスクに渡される引数を使ってさらにフレキシブルに"
+"拡張することができます。"
+
+# 1f91ca5c2c9943cb849c1bc3006dffd5
+#: ../../usage/fab.rst:31
+msgid "Arbitrary remote shell commands"
+msgstr "任意のリモートシェル・コマンド"
+
+# f5f050ff16d74c91b8c699e92496af39
+#: ../../usage/fab.rst:35
+msgid ""
+"Fabric leverages a lesser-known command line convention and may be called in "
+"the following manner::"
+msgstr ""
+"Fabric はあまり知られていないコマンドラインの記述で次のように呼ぶこともできま"
+"す::"
+
+# 81dae707591a49edbefa1471ec3893ac
+#: ../../usage/fab.rst:40
+msgid ""
+"where everything after the ``--`` is turned into a temporary `~fabric."
+"operations.run` call, and is not parsed for ``fab`` options. If you've "
+"defined a host list at the module level or on the command line, this usage "
+"will act like a one-line anonymous task."
+msgstr ""
+" ``--`` の後はすべて一時的な `~fabric.operations.run` コールとなり ``fab`` オ"
+"プションとは解釈しません。モジュールレベルやコマンドラインでホストリストを定"
+"義すれば、これは一行の anonymous タスクのように使えます。"
+
+# 3918acfdaea74de3bab731b72dbe929c
+#: ../../usage/fab.rst:45
+msgid ""
+"For example, let's say you just wanted to get the kernel info for a bunch of "
+"systems; you could do this::"
+msgstr "例えばシステムのカーネル情報をまとめて取得するにはこの様にします::"
+
+# ae4bcd48be584e12a53c8880cd6aea5d
+#: ../../usage/fab.rst:50
+msgid "which would be literally equivalent to the following fabfile::"
+msgstr "これは以下の fabfile と同じです::"
+
+# a2a5b53d0e9a4cc786058d9861da31d7
+#: ../../usage/fab.rst:57
+msgid "as if it were executed thusly::"
+msgstr "まるでこれが実行されたように::"
+
+# 8e1acab2225b4aabba309cec3fa482d0
+#: ../../usage/fab.rst:61
+msgid ""
+"Most of the time you will want to just write out the task in your fabfile "
+"(anything you use once, you're likely to use again) but this feature "
+"provides a handy, fast way to quickly dash off an SSH-borne command while "
+"leveraging your fabfile's connection settings."
+msgstr ""
+"ほとんどの場合タスクは fabfile に書くことになるでしょう。(一度使ったものは、"
+"もう一度使うことになるでしょうから) しかしこの機能は fabfile の接続設定を利用"
+"している時に手軽ですばやく SSH-borne コマンドを実行できます。"
+
+# eb4e00f0334242e2a2d7dbdf7a47050c
+#: ../../usage/fab.rst:70
+msgid "Command-line options"
+msgstr "コマンドライン・オプション"
+
+# 22ca4727c5e245d791efecc52533a74d
+#: ../../usage/fab.rst:72
+msgid ""
+"A quick overview of all possible command line options can be found via ``fab "
+"--help``. If you're looking for details on a specific option, we go into "
+"detail below."
+msgstr ""
+"利用可能なコマンドライン・オプションの概要は ``fab --help`` で表示できます。"
+"オプションの詳細は以下です。"
+
+# cd0523763b094e63bf1822c04ef99a22
+#: ../../usage/fab.rst:78
+msgid ""
+"``fab`` uses Python's `optparse`_ library, meaning that it honors typical "
+"Linux or GNU style short and long options, as well as freely mixing options "
+"and arguments. E.g. ``fab task1 -H hostname task2 -i path/to/keyfile`` is "
+"just as valid as the more straightforward ``fab -H hostname -i path/to/"
+"keyfile task1 task2``."
+msgstr ""
+"``fab`` は Python の `optparse`_ ライブラリを使います。これは Linux や GNU ス"
+"タイルのショートやロングオプションが使えるということです。また自由にオプショ"
+"ンと引数を使えます。例えば ``fab task1 -H hostname task2 -i path/to/"
+"keyfile`` はもっとわかりやすく ``fab -H hostname -i path/to/keyfile task1 "
+"task2`` と書けます。"
+
+# e4a23fb60ba242289d2d591aa51253e7
+#: ../../usage/fab.rst:88
+msgid ""
+"Sets :ref:`env.no_agent <no_agent>` to ``True``, forcing our SSH layer not "
+"to talk to the SSH agent when trying to unlock private key files."
+msgstr ""
+":ref:`env.no_agent <no_agent>` を ``True`` にセット。SSH レイヤーにプライベー"
+"トキーをアンロックするときに SSH エージェントと接続しないように強制します。"
+
+# f78737a258414e50b2b2f63601a7045f
+#: ../../usage/fab.rst:95
+msgid ""
+"Sets :ref:`env.forward_agent <forward-agent>` to ``True``, enabling agent "
+"forwarding."
+msgstr ""
+":ref:`env.forward_agent <forward-agent>` を ``True`` にセット。エージェントの"
+"フォワードを有効にします。"
+
+# 14d93176d5874654bac5fdf8143f3881
+#: ../../usage/fab.rst:102
+msgid ""
+"Sets :ref:`env.abort_on_prompts <abort-on-prompts>` to ``True``, forcing "
+"Fabric to abort whenever it would prompt for input."
+msgstr ""
+":ref:`env.abort_on_prompts <abort-on-prompts>` を ``True`` にセット。入力を要"
+"求されたら Fabric を中断するよう強制します。"
+
+# 6d204c18770047e29c566ffcef3be217
+#: ../../usage/fab.rst:109
+msgid ""
+"Sets :ref:`env.rcfile <rcfile>` to the given file path, which Fabric will "
+"try to load on startup and use to update environment variables."
+msgstr ""
+":ref:`env.rcfile <rcfile>` を指定のファイルにセット。Fabric はこれを起動時に"
+"読み込み環境変数を更新します。"
+
+# 8f7a61eb141248cdb0d8afdd034b3593
+#: ../../usage/fab.rst:114
+msgid ""
+"Prints the entire docstring for the given task, if there is one. Does not "
+"currently print out the task's function signature, so descriptive docstrings "
+"are a good idea. (They're *always* a good idea, of course -- just moreso "
+"here.)"
+msgstr ""
+"指定したタスクのドキュメント文字列をすべて表示します。タスクの関数のシグネ"
+"チャーは表示しません。 ドキュメント文字列を説明に使うのは良いアイデアです。"
+"(They're *always* a good idea, of course -- just moreso here.)"
+
+# 89ae4ff93b514491ac6551cfa55fc8a9
+#: ../../usage/fab.rst:121
+msgid ""
+"Set number of times to attempt connections. Sets :ref:`env."
+"connection_attempts <connection-attempts>`."
+msgstr ""
+"接続を試みる回数を指定。:ref:`env.connection_attempts <connection-attempts>` "
+"をセットします。"
+
+# 29a67f1d97fa4499b103df6caad54dc5
+#: ../../usage/fab.rst:125
+msgid ""
+":ref:`env.connection_attempts <connection-attempts>`, :ref:`env.timeout "
+"<timeout>`"
+msgstr ""
+":ref:`env.connection_attempts <connection-attempts>`, :ref:`env.timeout "
+"<timeout>`"
+
+# 90fb38b4688b4e0495177959de608d6f
+#: ../../usage/fab.rst:131
+msgid ""
+"Sets :ref:`env.disable_known_hosts <disable-known-hosts>` to ``True``, "
+"preventing Fabric from loading the user's SSH :file:`known_hosts` file."
+msgstr ""
+":ref:`env.disable_known_hosts <disable-known-hosts>` を ``True`` にセット。"
+"Fabric はユーザーの SSH :file:`known_hosts` をロードしません。"
+
+# 3e17fc19a159417692709e39447fbfdc
+#: ../../usage/fab.rst:136
+msgid ""
+"The fabfile name pattern to search for (defaults to ``fabfile.py``), or "
+"alternately an explicit file path to load as the fabfile (e.g. ``/path/to/my/"
+"fabfile.py``.)"
+msgstr ""
+"fabfile を検索するパターン(デフォルトは ``fabfile.py``)、あるいは fabfile と"
+"してロードする任意のファイルパス(例えば ``/path/to/my/fabfile.py``)"
+
+# 4f8557ac53284516a0e7d2d3fbc7d2f0
+#: ../../usage/fab.rst:140
+msgid ":doc:`fabfiles`"
+msgstr ":doc:`fabfiles`"
+
+# 946db44ab18c4d018f5266e0c9367b43
+#: ../../usage/fab.rst:144
+msgid ""
+"Allows control over the output format of :option:`--list <-l>`. ``short`` is "
+"equivalent to :option:`--shortlist`, ``normal`` is the same as simply "
+"omitting this option entirely (i.e. the default), and ``nested`` prints out "
+"a nested namespace tree."
+msgstr ""
+":option:`--list <-l>` の出力フォーマットを制御します。. ``short`` は :option:"
+"`--shortlist` と同じ、 ``normal`` は単にこのオプションの省略と同じです(すなわ"
+"ちデフォルト)、そして ``nested`` はネストされた名前空間のツリーを出力します。"
+
+# a9d2ff448c1042d8906831527d8a9fbe
+#: ../../usage/fab.rst:150
+msgid ":option:`--shortlist`, :option:`--list <-l>`"
+msgstr ":option:`--shortlist`, :option:`--list <-l>`"
+
+# 52f4ddf5fbca42bc85e5d06739e2a18a
+#: ../../usage/fab.rst:154
+msgid "Sets :ref:`env.gateway <gateway>` to ``HOST`` host string."
+msgstr ":ref:`env.gateway <gateway>` を ``HOST`` ホスト文字列にセット。"
+
+# 007aa3c92e1f440785a1d7af810bae0c
+#: ../../usage/fab.rst:160
+msgid ""
+"Displays a standard help message, with all possible options and a brief "
+"overview of what they do, then exits."
+msgstr ""
+"すべてのオプションと簡単な説明があるヘルプメッセージを表示して終了します。"
+
+# c1100f2e32af4758b49e7a5804507cd6
+#: ../../usage/fab.rst:165
+msgid ""
+"A comma-separated list of :doc:`output levels <output_controls>` to hide by "
+"default."
+msgstr ""
+"デフォルトで隠すコンマで区切った :doc:`output levels <output_controls>` のリ"
+"スト。"
+
+# de7b4d3b79d24882af3ac4277afce6e9
+#: ../../usage/fab.rst:171
+msgid ""
+"Sets :ref:`env.hosts <hosts>` to the given comma-delimited list of host "
+"strings."
+msgstr ""
+":ref:`env.hosts <hosts>` をコンマで区切ったホスト文字列のリストにセット。"
+
+# 00dc1b4ed1a14dc5838b80a7f0f95fd3
+#: ../../usage/fab.rst:176
+msgid ""
+"Sets :ref:`env.exclude_hosts <exclude-hosts>` to the given comma-delimited "
+"list of host strings to then keep out of the final host list."
+msgstr ""
+"最終ホストリストの他に :ref:`env.exclude_hosts <exclude-hosts>` に与えられた"
+"コンまで区切ったホスト文字列のリストをセットします。"
+
+# f99bd951ee35476d8e62a90ed11ca7e6
+#: ../../usage/fab.rst:183
+msgid ""
+"When set to a file path, will load the given file as an SSH identity file "
+"(usually a private key.) This option may be repeated multiple times. Sets "
+"(or appends to) :ref:`env.key_filename <key-filename>`."
+msgstr ""
+"ファイルのパスをセットすると SSH認証ファイルとしてロードします。(通常はプライ"
+"ベート鍵) このオプションは何度も繰り返されるかもしれません。:ref:`env."
+"key_filename <key-filename>` にセット(あるいは追加)します。"
+
+# e0e78dbcf79a40acba1ce55f8b4acb22
+#: ../../usage/fab.rst:189
+msgid ""
+"Forces a password prompt at the start of the session (after fabfile load and "
+"option parsing, but before executing any tasks) in order to pre-fill :ref:"
+"`env.password <password>`."
+msgstr ""
+"pre-fill :ref:`env.password <password>` のためにセッション開始時にパスワード"
+"を要求するように強制します。(fabfile をロードしてオプションを解析してタスクを"
+"実行する直前)。"
+
+# 124b2220dc5145da9566595bbc6c3999
+#: ../../usage/fab.rst:193
+msgid ""
+"This is useful for fire-and-forget runs (especially parallel sessions, in "
+"which runtime input is not possible) when setting the password via :option:"
+"`--password <-p>` or by setting :ref:`env.password <password>` in your "
+"fabfile, is undesirable."
+msgstr ""
+"これはパスワードを :option:`--password <-p>` や fabfileの :ref:`env.password "
+"<password>` で設定したくない時に(特に実行時に入力が不可能な並行セッションで)"
+"走らせて放置(fire-and-forget)できるので便利です。"
+
+# 1d19a61df3b64caf80834be81ce20882
+#: ../../usage/fab.rst:198
+msgid ""
+"The value entered into this prompt will *overwrite* anything supplied via :"
+"ref:`env.password <password>` at module level, or via :option:`--password <-"
+"p>`."
+msgstr ""
+"ここでの入力はモジュールレベルの :ref:`env.password <password>` や :option:"
+"`--password <-p>` を *上書き* します。"
+
+# 9c4912c7d5bd4995b856f7235bbaf458
+#: ../../usage/fab.rst:202
+msgid ":ref:`password-management`"
+msgstr ":ref:`password-management`"
+
+# 36d1f823fa5142f3b58192f6d2e8783b
+#: ../../usage/fab.rst:206
+msgid ""
+"Sets :ref:`env.no_keys <no_keys>` to ``True``, forcing the SSH layer to not "
+"look for SSH private key files in one's home directory."
+msgstr ""
+":ref:`env.no_keys <no_keys>` を ``True`` にセット。SSH レイヤーはホームのプラ"
+"イベート・キーファイルを探しません。"
+
+# 902103453b7d4873ace2d06306b83caf
+#: ../../usage/fab.rst:213
+msgid ""
+"Sets :ref:`env.keepalive <keepalive>` to the given (integer) value, "
+"specifying an SSH keepalive interval."
+msgstr ""
+":ref:`env.keepalive <keepalive>` を指定した整数にセット。SSH キープアライブの"
+"間隔を指定します。"
+
+# 8128ee16e2d74df5868104ef8bce7de7
+#: ../../usage/fab.rst:219
+msgid ""
+"Forces output to be buffered line-by-line instead of byte-by-byte. Often "
+"useful or required for :ref:`parallel execution <linewise-output>`."
+msgstr ""
+"出力バッファをバイトごとでなく行ごとに強制します。:ref:`parallel execution "
+"<linewise-output>` に有効でありまた必要になります。"
+
+# a708b610032d4f8fa27e48cc614cfba8
+#: ../../usage/fab.rst:225
+msgid ""
+"Imports a fabfile as normal, but then prints a list of all discovered tasks "
+"and exits. Will also print the first line of each task's docstring, if it "
+"has one, next to it (truncating if necessary.)"
+msgstr ""
+"通常通り fabfile をインポートして見つかったタスクのリストを表示して終了しま"
+"す。またタスクのドキュメント文字列の最初の行を表示します。必要なら切り詰めま"
+"す。"
+
+# 29863bcb0178493cb475502338573515
+#: ../../usage/fab.rst:229
+msgid "Added docstring to output."
+msgstr "出力にドキュメンテーション文字列(docstring)を追加。"
+
+# e482023577e84048a36afae2db0bcfe6
+#: ../../usage/fab.rst:231
+msgid ":option:`--shortlist`, :option:`--list-format <-F>`"
+msgstr ":option:`--shortlist`, :option:`--list-format <-F>`"
+
+# 07a1d0972d9949c3996d6a1ca84412a2
+#: ../../usage/fab.rst:235
+msgid ""
+"Sets :ref:`env.password <password>` to the given string; it will then be "
+"used as the default password when making SSH connections or calling the "
+"``sudo`` program."
+msgstr ""
+":ref:`env.password <password>` を指定した文字列にセット。SSH接続や ``sudo`` "
+"プログラムで使うデフォルトのパスワードです。"
+
+# 76aad1fee655442c9cdc3e524e18c76e
+#: ../../usage/fab.rst:239
+msgid ":option:`--initial-password-prompt <-I>`"
+msgstr ":option:`--initial-password-prompt <-I>`"
+
+# 260aac29a9bd47e3b46664a58f34cf0a
+#: ../../usage/fab.rst:243
+msgid ""
+"Sets :ref:`env.parallel <env-parallel>` to ``True``, causing tasks to run in "
+"parallel."
+msgstr ""
+":ref:`env.parallel <env-parallel>` を ``True`` にセット。タスクを並行処理しま"
+"す。"
+
+# e01ab4644e6b47378be88e532fdd3fd4
+# 6c1a6f42f0294c7089f06faa64101132
+#: ../../usage/fab.rst:247 ../../usage/fab.rst:362
+msgid ":doc:`/usage/parallel`"
+msgstr ":doc:`/usage/parallel`"
+
+# 42b806ebefc24369bb5d1744adf1975e
+#: ../../usage/fab.rst:251
+msgid ""
+"Sets :ref:`env.always_use_pty <always-use-pty>` to ``False``, causing all "
+"`~fabric.operations.run`/`~fabric.operations.sudo` calls to behave as if one "
+"had specified ``pty=False``."
+msgstr ""
+":ref:`env.always_use_pty <always-use-pty>` を ``False`` にセット。すべての "
+"`~fabric.operations.run`/`~fabric.operations.sudo` の呼び出しは "
+"``pty=False`` の指定と同じになります。"
+
+# 87f0a928066a4fe3ac31c89e0c4ea1fc
+#: ../../usage/fab.rst:259
+msgid ""
+"Sets :ref:`env.reject_unknown_hosts <reject-unknown-hosts>` to ``True``, "
+"causing Fabric to abort when connecting to hosts not found in the user's "
+"SSH :file:`known_hosts` file."
+msgstr ""
+":ref:`env.reject_unknown_hosts <reject-unknown-hosts>` を ``True`` にセット。"
+"Fabric はユーザーの SSH :file:`known_hosts` で見つからないホストへの接続を中"
+"止します。"
+
+# 95a55de53bbd4dad8d62e92ab95afba3
+#: ../../usage/fab.rst:265
+msgid ""
+"Sets :ref:`env.roles <roles>` to the given comma-separated list of role "
+"names."
+msgstr ""
+":ref:`env.roles <roles>` をコンマで区切られた role名のリストにセット。 "
+
+# a5c42608619448fe84f26e4b78c06881
+#: ../../usage/fab.rst:270
+msgid ""
+"Allows you to set default values for arbitrary Fabric env vars. Values set "
+"this way have a low precedence -- they will not override more specific env "
+"vars which are also specified on the command line. E.g.::"
+msgstr ""
+"デフォルトのy Fabric の env の値を任意の値にセット。しかしこの方法の優先度は"
+"低くなります。 -- コマンドラインで指定された env の値を上書きできません。例え"
+"ば::"
+
+# 11e85961fb43477991ae9aaec6c19a3d
+#: ../../usage/fab.rst:276
+msgid "will result in ``env.password = 'bar'``, not ``'foo'``"
+msgstr "これは ``env.password = 'bar'`` となります。"
+
+# b0c1e31b04aa47399ffb3c12279bc5b1
+#: ../../usage/fab.rst:278
+msgid ""
+"Multiple ``KEY=VALUE`` pairs may be comma-separated, e.g. ``fab --set "
+"var1=val1,var2=val2``."
+msgstr ""
+"複数の ``KEY=VALUE`` はカンマで区切ります。例えば ``fab --set var1=val1,"
+"var2=val2`` のように。"
+
+# 310ea841689845888a2aebbfaf01ef70
+#: ../../usage/fab.rst:281
+msgid ""
+"Other than basic string values, you may also set env vars to True by "
+"omitting the ``=VALUE`` (e.g. ``fab --set KEY``), and you may set values to "
+"the empty string (and thus a False-equivalent value) by keeping the equals "
+"sign, but omitting ``VALUE`` (e.g. ``fab --set KEY=``.)"
+msgstr ""
+"基本的な文字列の他に ``=VALUE`` を省略することで env は True になります。(例"
+"えば ``fab --set KEY``), and you may set values to また イコールは使って"
+"``VALUE`` を省略することで空の文字列(そして False と等価)にセットできます。"
+"(例えば ``fab --set KEY=``)"
+
+# dc891227b40142d1a78924576f3b9b33
+#: ../../usage/fab.rst:290
+msgid ""
+"Sets :ref:`env.shell <shell>` to the given string, overriding the default "
+"shell wrapper used to execute remote commands."
+msgstr ""
+":ref:`env.shell <shell>` を指定した文字列にセット。リモートコマンドの実行に使"
+"用するデフォルト・シェルを変更します。"
+
+# c2eb5f2bdefc4236981034ff8c44bb39
+#: ../../usage/fab.rst:295
+msgid ""
+"Similar to :option:`--list <-l>`, but without any embellishment, just task "
+"names separated by newlines with no indentation or docstrings."
+msgstr ""
+":option:`--list <-l>` に似ているがどんな修飾もなくインデンテーションやドキュ"
+"メント文字列もない改行で区切られたタスク名。"
+
+# f5cee55a6940421188ffb968981f2fc0
+#: ../../usage/fab.rst:299
+msgid ":option:`--list <-l>`"
+msgstr ":option:`--list <-l>`"
+
+# 876f48bd132448b18d23c9f463c1bc3c
+#: ../../usage/fab.rst:303
+msgid ""
+"A comma-separated list of :doc:`output levels <output_controls>` to be added "
+"to those that are shown by default."
+msgstr ""
+"デフォルトで表示されるコンマで区切られた :doc:`output levels "
+"<output_controls>` のリスト。"
+
+# e2010c7c016c4acc93e8843797c51813
+#: ../../usage/fab.rst:307
+msgid "`~fabric.operations.run`, `~fabric.operations.sudo`"
+msgstr "`~fabric.operations.run`, `~fabric.operations.sudo`"
+
+# 0bf58bdedde240a281f77c9e694be1c9
+#: ../../usage/fab.rst:311
+msgid "Sets :ref:`env.ssh_config_path <ssh-config-path>`."
+msgstr ":ref:`env.ssh_config_path <ssh-config-path>` をセット。"
+
+# 3f9458ecedb7448daf8b9b072e5345eb
+#: ../../usage/fab.rst:314
+msgid ":ref:`ssh-config`"
+msgstr ":ref:`ssh-config`"
+
+# fd01ed5c6fdb45c692d84cb3932cb98d
+#: ../../usage/fab.rst:318
+msgid ""
+"Sets :ref:`env.skip_bad_hosts <skip-bad-hosts>`, causing Fabric to skip "
+"unavailable hosts."
+msgstr ""
+":ref:`env.skip_bad_hosts <skip-bad-hosts>` をセット。Fabric は利用できないホ"
+"ストをスキップします。"
+
+# 2ace0372b881472eb5b204abc428c8e8
+#: ../../usage/fab.rst:325
+msgid "Set connection timeout in seconds. Sets :ref:`env.timeout <timeout>`."
+msgstr ""
+"接続のタイムアウトを秒で指定します。 :ref:`env.timeout <timeout>` をセット。"
+
+# 2c628cedf6a94a319572b31f84b1c9af
+#: ../../usage/fab.rst:328
+msgid ""
+":ref:`env.timeout <timeout>`, :ref:`env.connection_attempts <connection-"
+"attempts>`"
+msgstr ""
+":ref:`env.timeout <timeout>`, :ref:`env.connection_attempts <connection-"
+"attempts>`"
+
+# e3f317f36a6b4c2fafd9ed96d9fa3f1d
+#: ../../usage/fab.rst:334
+msgid ""
+"Set remote command timeout in seconds. Sets :ref:`env.command_timeout "
+"<command-timeout>`."
+msgstr ""
+"リモートコマンドのタイムアウトを秒で指定します。:ref:`env.command_timeout "
+"<command-timeout>` "
+
+# 064314ac03c942b8b7597c38b47505b4
+#: ../../usage/fab.rst:338
+msgid ":ref:`env.command_timeout <command-timeout>`,"
+msgstr ":ref:`env.command_timeout <command-timeout>`,"
+
+# aba6372eb890428490295b74deacea96
+#: ../../usage/fab.rst:344
+msgid ""
+"Sets :ref:`env.user <user>` to the given string; it will then be used as the "
+"default username when making SSH connections."
+msgstr ""
+":ref:`env.user <user>` を指定の文字列にセット。SSH 接続を行なうときにデフォル"
+"トのユーザー名として使われます。"
+
+# 8aebe0d5843b4dee8b8889c315aff893
+#: ../../usage/fab.rst:349
+msgid "Displays Fabric's version number, then exits."
+msgstr "Fabric のバージョンを表示して終了します。"
+
+# eb24a38882c0499894cf8470d64b6ced
+#: ../../usage/fab.rst:353
+msgid ""
+"Sets :ref:`env.warn_only <warn_only>` to ``True``, causing Fabric to "
+"continue execution even when commands encounter error conditions."
+msgstr ""
+":ref:`env.warn_only <warn_only>` を ``True`` にセット。Fabric はコマンドがエ"
+"ラーを起こしても実行を続けます。"
+
+# 00a30193da6f4be7860343e86e3df9bb
+#: ../../usage/fab.rst:358
+msgid ""
+"Sets :ref:`env.pool_size <pool-size>`, which specifies how many processes to "
+"run concurrently during parallel execution."
+msgstr ""
+":ref:`env.pool_size <pool-size>` をセット。並行処理で同時に実行するプロセスの"
+"数を指定します。"
+
+# 88e820a63d74459ea6cd21cf6f52ae55
+#: ../../usage/fab.rst:368
+msgid "Per-task arguments"
+msgstr "Per-task 引数"
+
+# 8de4800171f0423291d96a2eca211188
+#: ../../usage/fab.rst:370
+msgid ""
+"The options given in :ref:`command-line-options` apply to the invocation of "
+"``fab`` as a whole; even if the order is mixed around, options still apply "
+"to all given tasks equally. Additionally, since tasks are just Python "
+"functions, it's often desirable to pass in arguments to them at runtime."
+msgstr ""
+":ref:`command-line-options` で与えられたオプションは ``fab`` 呼び出しの全体に"
+"適用されます。順番によらずオプションは等しくタスクに与えられます。加えてタス"
+"クは Python関数なので引数は実行時に渡されるのが望ましいでしょう。"
+
+# 572bed8495c641bca878d045e7fdf156
+#: ../../usage/fab.rst:375
+msgid ""
+"Answering both these needs is the concept of \"per-task arguments\", which "
+"is a special syntax you can tack onto the end of any task name:"
+msgstr ""
+"この両方のニーズに答えるのが \"per-task 引数\" のコンセプトです。これはタスク"
+"名に添える特殊な構文です:"
+
+# 7c7d97ae9e834a33b128d3dfdc95cb44
+#: ../../usage/fab.rst:378
+msgid "Use a colon (``:``) to separate the task name from its arguments;"
+msgstr "引数とタスク名を区別するにはコロン (``:``) を使います;"
+
+# 8bff705eaae048708d0983d8b0136ef6
+#: ../../usage/fab.rst:379
+msgid ""
+"Use commas (``,``) to separate arguments from one another (may be escaped by "
+"using a backslash, i.e. ``\\,``);"
+msgstr ""
+"コンマ (``,``) を引数を区別するために使います。(バックスラッシュでエスケープ"
+"します。例えば ``\\,``);"
+
+# 954a31700cbf409ca241486b9e4af5e3
+#: ../../usage/fab.rst:381
+msgid ""
+"Use equals signs (``=``) for keyword arguments, or omit them for positional "
+"arguments. May also be escaped with backslashes."
+msgstr ""
+"イコール (``=``) はキーワード引数、あるいは位置パラメーターの省略に使います。"
+"バックスラッシュでエスケープします。"
+
+# 41ae0f779d4446c98de3691ee8849829
+#: ../../usage/fab.rst:384
+msgid ""
+"Additionally, since this process involves string parsing, all values will "
+"end up as Python strings, so plan accordingly. (We hope to improve upon this "
+"in future versions of Fabric, provided an intuitive syntax can be found.)"
+msgstr ""
+"このプロセスは文字列解析を呼び出します。すべての値は Python 文字列になりま"
+"す。(直感的な構文が見つかれば将来のバージョンの Fabric で改良します。)"
+
+# 166dd49c0b4548bba2be1b4314626165
+#: ../../usage/fab.rst:388
+msgid ""
+"For example, a \"create a new user\" task might be defined like so (omitting "
+"most of the actual logic for brevity)::"
+msgstr ""
+"例えば、 \"create a new user\" タスクはこの様に定義できます。(簡単にするため"
+"に実際のロジックは省略)::"
+
+# 0b0b85277a3949ea8a0db287bbe8c18b
+#: ../../usage/fab.rst:395
+msgid "You can specify just the username::"
+msgstr "ユーザー名だけを指定できます::"
+
+# 28447cef5d324889bdcea5386d865cc7
+#: ../../usage/fab.rst:399
+msgid "Or treat it as an explicit keyword argument::"
+msgstr "あるいは任意のキーワード引数として扱います。"
+
+# bd0e4f54c6374191a807981cfa993880
+#: ../../usage/fab.rst:403
+msgid "If both args are given, you can again give them as positional args::"
+msgstr "もし両方が与えられたら、再び位置パラメーターとして::"
+
+# efe476be32a4463b89adc5f4215afcae
+#: ../../usage/fab.rst:407
+msgid "Or mix and match, just like in Python::"
+msgstr "あるいは Python のように mix and matchで::"
+
+# 10c18a91421a468d90e1d9101d547218
+#: ../../usage/fab.rst:411
+msgid ""
+"The ``log_action`` call above is useful for illustrating escaped commas, "
+"like so::"
+msgstr ""
+"上記の ``log_action`` の呼び出しはコンマのエスケープの説明に有効です。このよ"
+"うに::"
+
+# a3eeb94f41684637822d85c57a3fb62d
+#: ../../usage/fab.rst:417
+msgid ""
+"Quoting the backslash-escaped comma is required, as not doing so will cause "
+"shell syntax errors. Quotes are also needed whenever an argument involves "
+"other shell-related characters such as spaces."
+msgstr ""
+"コンマはバックスラッシュでエスケープします。そうしないとシンタックスエラーに"
+"なります。クォートもまた引数にスペースのようなシェルの特殊文字を含むときには"
+"必要になります。"
+
+# b1ad6aeea27448d2be38764033005c8f
+#: ../../usage/fab.rst:421
+msgid ""
+"All of the above are translated into the expected Python function calls. For "
+"example, the last call above would become::"
+msgstr ""
+"上記のすべては期待される Python関数の呼び出しに変換されます。例えば最後の呼び"
+"出しはこのように::(訳注:adminの値がおかしい)"
+
+# d158277d496d4d5290745490b070fcfe
+#: ../../usage/fab.rst:427
+msgid "Roles and hosts"
+msgstr "Roles と hosts"
+
+# 47b840eb0d8a44dca10773bb4b3bc9aa
+#: ../../usage/fab.rst:429
+msgid ""
+"As mentioned in :ref:`the section on task execution <hosts-per-task-cli>`, "
+"there are a handful of per-task keyword arguments (``host``, ``hosts``, "
+"``role`` and ``roles``) which do not actually map to the task functions "
+"themselves, but are used for setting per-task host and/or role lists."
+msgstr ""
+":ref:`the section on task execution <hosts-per-task-cli>` で言及したようにい"
+"くつかの per-task キーワード引数があります。(``host``, ``hosts``, ``role`` ,"
+"``roles``) これは実際にはタスク関数にマッピされませんが per-task host や role"
+"リストの設定に使われます。"
+
+# 590e233227a14e19b93ef947b4d17ff7
+#: ../../usage/fab.rst:434
+msgid ""
+"These special kwargs are **removed** from the args/kwargs sent to the task "
+"function itself; this is so that you don't run into TypeErrors if your task "
+"doesn't define the kwargs in question. (It also means that if you **do** "
+"define arguments with these names, you won't be able to specify them in this "
+"manner -- a regrettable but necessary sacrifice.)"
+msgstr ""
+"これらの特殊な kwargs は args/kwargs から **取り除かれて** タスク関数に送られ"
+"ます。これはタスクが問題の kwargs を定義していないなら TypeErrors になりませ"
+"ん。doesn't define the kwargs in question. (これはまたこれらの名前の引数を定"
+"義して **いた** らこの方法で指定することはできません -- 残念なことに必要な犠"
+"牲。)"
+
+# 2a30b7af8b5e440a903505de74927b63
+#: ../../usage/fab.rst:442
+msgid ""
+"If both the plural and singular forms of these kwargs are given, the value "
+"of the plural will win out and the singular will be discarded."
+msgstr ""
+"kwargs に plural と singular の両方が与えられたら、plural の値が優先され "
+"singular は棄てられます。"
+
+# 584fab3dbdb94b1ab3702eba3c2666b2
+#: ../../usage/fab.rst:445
+msgid ""
+"When using the plural form of these arguments, one must use semicolons (``;"
+"``) since commas are already being used to separate arguments from one "
+"another. Furthermore, since your shell is likely to consider semicolons a "
+"special character, you'll want to quote the host list string to prevent "
+"shell interpretation, e.g.::"
+msgstr ""
+"これらの引数に plural を使うときセミコロン(``;``)を使います。コンマは引数で使"
+"います。さらにシェルがセミコロンを特殊文字として扱わないようにホストリストに"
+"はクォートを使うほうがよいでしょう。例えば::"
+
+# 3ca01df3d07f43c78633f6002ce6e5cf
+#: ../../usage/fab.rst:453
+msgid ""
+"Again, since the ``hosts`` kwarg is removed from the argument list sent to "
+"the ``new_user`` task function, the actual Python invocation would be "
+"``new_user('myusername')``, and the function would be executed on a host "
+"list of ``['host1', 'host2']``."
+msgstr ""
+" ``new_user`` タスク関数に送られるとき ``hosts`` kwarg は引数リストから除かれ"
+"ます。実際、Python の呼び出しは ``new_user('myusername')`` で, ``['host1', "
+"'host2']`` のホストリストで関数が実行されます。"
+
+# 7162baecb14542a18b440b0e74b66259
+#: ../../usage/fab.rst:461
+msgid "Settings files"
+msgstr "設定ファイル"
+
+# 52bd2121a2644ea2aee38718035690ea
+#: ../../usage/fab.rst:463
+msgid ""
+"Fabric currently honors a simple user settings file, or ``fabricrc`` (think "
+"``bashrc`` but for ``fab``) which should contain one or more key-value "
+"pairs, one per line. These lines will be subject to ``string.split('=')``, "
+"and thus can currently only be used to specify string settings. Any such key-"
+"value pairs will be used to update :doc:`env <env>` when ``fab`` runs, and "
+"is loaded prior to the loading of any fabfile."
+msgstr ""
+"Fabric は現在シンプルなユーザー設定ファイル、``fabricrc`` (``fab`` のための "
+"``bashrc`` のような)を使います。これには一つ以上の キー/値 のペアの行がありま"
+"す。書式は ``string.split('=')`` に従います。現在は特定の文字列の設定に使われ"
+"ます。このようなキー/値のペアは ``fab`` が実行されるときに :doc:`env <env>` "
+"の更新に使われます。これは fabfile が読み込まれる前にロードされます。"
+
+# 65ed067d23b448cab3ab2069a23f64c0
+#: ../../usage/fab.rst:470
+msgid ""
+"By default, Fabric looks for ``~/.fabricrc``, and this may be overridden by "
+"specifying the :option:`-c` flag to ``fab``."
+msgstr ""
+"デフォルトで Fabric は ``~/.fabricrc`` 探しますが、これは ``fab`` のオプショ"
+"ン :option:`-c` で変更できます。"
+
+# 64f41e26318d415b818acb84dced6e63
+#: ../../usage/fab.rst:473
+msgid ""
+"For example, if your typical SSH login username differs from your "
+"workstation username, and you don't want to modify ``env.user`` in a "
+"project's fabfile (possibly because you expect others to use it as well) you "
+"could write a ``fabricrc`` file like so::"
+msgstr ""
+"例えばワークステーションのユーザー名と SSH ログインのユーザー名が違うときにプ"
+"ロジェクトで使う fabfile の ``env.user`` を変更したくはないでしょう。(恐らく"
+"他の人も使うでしょうから) ``fabricrc`` ファイルをこの様にします::"
+
+# 8a51d3184ae941339ec8361dca059771
+#: ../../usage/fab.rst:480
+msgid ""
+"Then, when running ``fab``, your fabfile would load up with ``env.user`` set "
+"to ``'ssh_user_name'``. Other users of that fabfile could do the same, "
+"allowing the fabfile itself to be cleanly agnostic regarding the default "
+"username."
+msgstr ""
+"これで ``fab`` を実行するときに fabfile の ``env.user`` は "
+"``'ssh_user_name'`` になります。他のユーザーの fabfile も同様にすると "
+"fabfile でデフォルトのユーザー名を気にしなくて済みます。"

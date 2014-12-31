@@ -1,0 +1,515 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/fab.rst:3
+# bb6fbe3954354bda9a9bfd46b70e47c3
+msgid "``fab`` options and arguments"
+msgstr ""
+
+#: ../../usage/fab.rst:5
+# 2868500b2c1c4204bf3a90ee7c20927e
+msgid "The most common method for utilizing Fabric is via its command-line tool, ``fab``, which should have been placed on your shell's executable path when Fabric was installed. ``fab`` tries hard to be a good Unix citizen, using a standard style of command-line switches, help output, and so forth."
+msgstr ""
+
+#: ../../usage/fab.rst:12
+# e5435e2c0a4f4ac3b2aa279b534af4b8
+msgid "Basic use"
+msgstr ""
+
+#: ../../usage/fab.rst:14
+# ec4c5c9479f84c75b661eb87f3a9e4a6
+msgid "In its most simple form, ``fab`` may be called with no options at all, and with one or more arguments, which should be task names, e.g.::"
+msgstr ""
+
+#: ../../usage/fab.rst:19
+# bc98c70fe6e04e4ebfed46381e6247c1
+msgid "As detailed in :doc:`../tutorial` and :doc:`execution`, this will run ``task1`` followed by ``task2``, assuming that Fabric was able to find a fabfile nearby containing Python functions with those names."
+msgstr ""
+
+#: ../../usage/fab.rst:23
+# 89e1a87d0e0244c18d4bc23e369ce32a
+msgid "However, it's possible to expand this simple usage into something more flexible, by using the provided options and/or passing arguments to individual tasks."
+msgstr ""
+
+#: ../../usage/fab.rst:31
+# ba5e2865c93e48138ac0b13c942f69d2
+msgid "Arbitrary remote shell commands"
+msgstr ""
+
+#: ../../usage/fab.rst:35
+# 78c5389a9ae242049f2959614501364b
+msgid "Fabric leverages a lesser-known command line convention and may be called in the following manner::"
+msgstr ""
+
+#: ../../usage/fab.rst:40
+# bddfc4f453904790b681b52d791d5dd4
+msgid "where everything after the ``--`` is turned into a temporary `~fabric.operations.run` call, and is not parsed for ``fab`` options. If you've defined a host list at the module level or on the command line, this usage will act like a one-line anonymous task."
+msgstr ""
+
+#: ../../usage/fab.rst:45
+# 678f1b4171ee42f4bf19caaaf9a89956
+msgid "For example, let's say you just wanted to get the kernel info for a bunch of systems; you could do this::"
+msgstr ""
+
+#: ../../usage/fab.rst:50
+# bf0d9e505d5a41f083928a4e938f43ff
+msgid "which would be literally equivalent to the following fabfile::"
+msgstr ""
+
+#: ../../usage/fab.rst:57
+# a53ed3f3feae4b28aa687796822f1ef6
+msgid "as if it were executed thusly::"
+msgstr ""
+
+#: ../../usage/fab.rst:61
+# b4e05bfb5f3a4033a3c8857b95bed4bf
+msgid "Most of the time you will want to just write out the task in your fabfile (anything you use once, you're likely to use again) but this feature provides a handy, fast way to quickly dash off an SSH-borne command while leveraging your fabfile's connection settings."
+msgstr ""
+
+#: ../../usage/fab.rst:70
+# 85e1e9ffc74543bbbff374f0ea875fbc
+msgid "Command-line options"
+msgstr ""
+
+#: ../../usage/fab.rst:72
+# 82fdd020a87e446abb53ec250b588329
+msgid "A quick overview of all possible command line options can be found via ``fab --help``. If you're looking for details on a specific option, we go into detail below."
+msgstr ""
+
+#: ../../usage/fab.rst:78
+# a9a4261f8f374299bfbbf7538171ec5e
+msgid "``fab`` uses Python's `optparse`_ library, meaning that it honors typical Linux or GNU style short and long options, as well as freely mixing options and arguments. E.g. ``fab task1 -H hostname task2 -i path/to/keyfile`` is just as valid as the more straightforward ``fab -H hostname -i path/to/keyfile task1 task2``."
+msgstr ""
+
+#: ../../usage/fab.rst:88
+# f0cee2caf04d4390a68f461c962104cf
+msgid "Sets :ref:`env.no_agent <no_agent>` to ``True``, forcing our SSH layer not to talk to the SSH agent when trying to unlock private key files."
+msgstr ""
+
+#: ../../usage/fab.rst:95
+# 01009280f91c4fb6ab9d892cc0ccad40
+msgid "Sets :ref:`env.forward_agent <forward-agent>` to ``True``, enabling agent forwarding."
+msgstr ""
+
+#: ../../usage/fab.rst:102
+# 06f3150b050547ceb39e861a03cd4696
+msgid "Sets :ref:`env.abort_on_prompts <abort-on-prompts>` to ``True``, forcing Fabric to abort whenever it would prompt for input."
+msgstr ""
+
+#: ../../usage/fab.rst:109
+# 84d72c6c77e94c8985f0a96ef47bb85d
+msgid "Sets :ref:`env.rcfile <rcfile>` to the given file path, which Fabric will try to load on startup and use to update environment variables."
+msgstr ""
+
+#: ../../usage/fab.rst:114
+# e8cba42073484195853f160ff5c861f0
+msgid "Prints the entire docstring for the given task, if there is one. Does not currently print out the task's function signature, so descriptive docstrings are a good idea. (They're *always* a good idea, of course -- just moreso here.)"
+msgstr ""
+
+#: ../../usage/fab.rst:121
+# 72ee7f31ff4147508c1bfaa3051f0efd
+msgid "Set number of times to attempt connections. Sets :ref:`env.connection_attempts <connection-attempts>`."
+msgstr ""
+
+#: ../../usage/fab.rst:125
+# 097ec52484e24118906e2a9e7864d147
+msgid ":ref:`env.connection_attempts <connection-attempts>`, :ref:`env.timeout <timeout>`"
+msgstr ""
+
+#: ../../usage/fab.rst:131
+# 16e2cc681877448abfc9badbe71b8212
+msgid "Sets :ref:`env.disable_known_hosts <disable-known-hosts>` to ``True``, preventing Fabric from loading the user's SSH :file:`known_hosts` file."
+msgstr ""
+
+#: ../../usage/fab.rst:136
+# 6f117e161a224bfe82864300e3dedf93
+msgid "The fabfile name pattern to search for (defaults to ``fabfile.py``), or alternately an explicit file path to load as the fabfile (e.g. ``/path/to/my/fabfile.py``.)"
+msgstr ""
+
+#: ../../usage/fab.rst:140
+# ed02a75558a44240a7de93ab0ebfc9c5
+msgid ":doc:`fabfiles`"
+msgstr ""
+
+#: ../../usage/fab.rst:144
+# a7c284b1d5d74acd9aeb917067701c73
+msgid "Allows control over the output format of :option:`--list <-l>`. ``short`` is equivalent to :option:`--shortlist`, ``normal`` is the same as simply omitting this option entirely (i.e. the default), and ``nested`` prints out a nested namespace tree."
+msgstr ""
+
+#: ../../usage/fab.rst:150
+# ac62b15f0a70443282c69e67b923a3f6
+msgid ":option:`--shortlist`, :option:`--list <-l>`"
+msgstr ""
+
+#: ../../usage/fab.rst:154
+# 75ffc05a301847d59938335546c47011
+msgid "Sets :ref:`env.gateway <gateway>` to ``HOST`` host string."
+msgstr ""
+
+#: ../../usage/fab.rst:160
+# 5d51404f9cf1444bae6c67cc5af30975
+msgid "Displays a standard help message, with all possible options and a brief overview of what they do, then exits."
+msgstr ""
+
+#: ../../usage/fab.rst:165
+# 08e7f927b8074917b48ba3c9084fd88b
+msgid "A comma-separated list of :doc:`output levels <output_controls>` to hide by default."
+msgstr ""
+
+#: ../../usage/fab.rst:171
+# b7c5120311954d0586f96e6ef906b93a
+msgid "Sets :ref:`env.hosts <hosts>` to the given comma-delimited list of host strings."
+msgstr ""
+
+#: ../../usage/fab.rst:176
+# a65b545d7d91478ab36f8951b5d1bf22
+msgid "Sets :ref:`env.exclude_hosts <exclude-hosts>` to the given comma-delimited list of host strings to then keep out of the final host list."
+msgstr ""
+
+#: ../../usage/fab.rst:183
+# 0f882d7252bd41e6a77c4028cb95a394
+msgid "When set to a file path, will load the given file as an SSH identity file (usually a private key.) This option may be repeated multiple times. Sets (or appends to) :ref:`env.key_filename <key-filename>`."
+msgstr ""
+
+#: ../../usage/fab.rst:189
+# 622845ec403945b9988e07bbb7540007
+msgid "Forces a password prompt at the start of the session (after fabfile load and option parsing, but before executing any tasks) in order to pre-fill :ref:`env.password <password>`."
+msgstr ""
+
+#: ../../usage/fab.rst:193
+# d6aa2a3e356547c3ac1b9101b4d980a2
+msgid "This is useful for fire-and-forget runs (especially parallel sessions, in which runtime input is not possible) when setting the password via :option:`--password <-p>` or by setting :ref:`env.password <password>` in your fabfile, is undesirable."
+msgstr ""
+
+#: ../../usage/fab.rst:198
+# 4d1116a35a20422eac3c90190dec3d2e
+msgid "The value entered into this prompt will *overwrite* anything supplied via :ref:`env.password <password>` at module level, or via :option:`--password <-p>`."
+msgstr ""
+
+#: ../../usage/fab.rst:202
+# bd71765a272b40939f3b366c88338491
+msgid ":ref:`password-management`"
+msgstr ""
+
+#: ../../usage/fab.rst:206
+# 7d91b51ffab84c089b894c04e8701de5
+msgid "Sets :ref:`env.no_keys <no_keys>` to ``True``, forcing the SSH layer to not look for SSH private key files in one's home directory."
+msgstr ""
+
+#: ../../usage/fab.rst:213
+# f67486e3b19b48f28912b9ea8aa914b7
+msgid "Sets :ref:`env.keepalive <keepalive>` to the given (integer) value, specifying an SSH keepalive interval."
+msgstr ""
+
+#: ../../usage/fab.rst:219
+# 8cb58180c508413886426275f9c4accc
+msgid "Forces output to be buffered line-by-line instead of byte-by-byte. Often useful or required for :ref:`parallel execution <linewise-output>`."
+msgstr ""
+
+#: ../../usage/fab.rst:225
+# 25d672d041404430948bbbe1fa547fd1
+msgid "Imports a fabfile as normal, but then prints a list of all discovered tasks and exits. Will also print the first line of each task's docstring, if it has one, next to it (truncating if necessary.)"
+msgstr ""
+
+#: ../../usage/fab.rst:229
+# bb47351dbc354181bf873448868695fb
+msgid "Added docstring to output."
+msgstr ""
+
+#: ../../usage/fab.rst:231
+# 87ebb1d56d8549a482683bf53bed9aac
+msgid ":option:`--shortlist`, :option:`--list-format <-F>`"
+msgstr ""
+
+#: ../../usage/fab.rst:235
+# f8ffc68370d64ca48e006d9f3787efc3
+msgid "Sets :ref:`env.password <password>` to the given string; it will then be used as the default password when making SSH connections or calling the ``sudo`` program."
+msgstr ""
+
+#: ../../usage/fab.rst:239
+# 222e980dd89e41a0833427b2f7406884
+msgid ":option:`--initial-password-prompt <-I>`"
+msgstr ""
+
+#: ../../usage/fab.rst:243
+# c1396d43f31248d6ba9585289f42f335
+msgid "Sets :ref:`env.parallel <env-parallel>` to ``True``, causing tasks to run in parallel."
+msgstr ""
+
+#: ../../usage/fab.rst:247
+#: ../../usage/fab.rst:370
+# e87b8eb9c593431dab77cd6bf15a018b
+# 61a76721fee340ab8353a7f5bc24ec62
+msgid ":doc:`/usage/parallel`"
+msgstr ""
+
+#: ../../usage/fab.rst:251
+# 83cb2eb7daae4d88bf62795aca3a3cf9
+msgid "Sets :ref:`env.always_use_pty <always-use-pty>` to ``False``, causing all `~fabric.operations.run`/`~fabric.operations.sudo` calls to behave as if one had specified ``pty=False``."
+msgstr ""
+
+#: ../../usage/fab.rst:259
+# 9f9a661900214e43843522efc1a9a888
+msgid "Sets :ref:`env.reject_unknown_hosts <reject-unknown-hosts>` to ``True``, causing Fabric to abort when connecting to hosts not found in the user's SSH :file:`known_hosts` file."
+msgstr ""
+
+#: ../../usage/fab.rst:265
+# 26cd745ac43244e18b132a6a963abc2b
+msgid "Sets :ref:`env.roles <roles>` to the given comma-separated list of role names."
+msgstr ""
+
+#: ../../usage/fab.rst:270
+# ecd44f5abddc4e5c85c56172a2784436
+msgid "Allows you to set default values for arbitrary Fabric env vars. Values set this way have a low precedence -- they will not override more specific env vars which are also specified on the command line. E.g.::"
+msgstr ""
+
+#: ../../usage/fab.rst:276
+# 7b4bbf211bd6441aacdd5e88d55b8885
+msgid "will result in ``env.password = 'bar'``, not ``'foo'``"
+msgstr ""
+
+#: ../../usage/fab.rst:278
+# b5af437a2eba42d98bc6c8b05aa6dd17
+msgid "Multiple ``KEY=VALUE`` pairs may be comma-separated, e.g. ``fab --set var1=val1,var2=val2``."
+msgstr ""
+
+#: ../../usage/fab.rst:281
+# 64167624fa9040ec951695814909fc87
+msgid "Other than basic string values, you may also set env vars to True by omitting the ``=VALUE`` (e.g. ``fab --set KEY``), and you may set values to the empty string (and thus a False-equivalent value) by keeping the equals sign, but omitting ``VALUE`` (e.g. ``fab --set KEY=``.)"
+msgstr ""
+
+#: ../../usage/fab.rst:290
+# c70a01b41b814bafba90a7e401312fa9
+msgid "Sets :ref:`env.shell <shell>` to the given string, overriding the default shell wrapper used to execute remote commands."
+msgstr ""
+
+#: ../../usage/fab.rst:295
+# 4dd8de53575a4b33b79f70f413008a49
+msgid "Similar to :option:`--list <-l>`, but without any embellishment, just task names separated by newlines with no indentation or docstrings."
+msgstr ""
+
+#: ../../usage/fab.rst:299
+# ddfb266b87b84ed0a2de5270d14a8269
+msgid ":option:`--list <-l>`"
+msgstr ""
+
+#: ../../usage/fab.rst:303
+# 475f16104c364e78a95a271ec8507c46
+msgid "A comma-separated list of :doc:`output levels <output_controls>` to be added to those that are shown by default."
+msgstr ""
+
+#: ../../usage/fab.rst:307
+# 28c411801f074618a303b2a17522d369
+msgid "`~fabric.operations.run`, `~fabric.operations.sudo`"
+msgstr ""
+
+#: ../../usage/fab.rst:311
+# dacaf729d155461d85e50f4902bc2b87
+msgid "Sets :ref:`env.ssh_config_path <ssh-config-path>`."
+msgstr ""
+
+#: ../../usage/fab.rst:314
+# 07c4fa90d84c410ca8bf9c88ced456e4
+msgid ":ref:`ssh-config`"
+msgstr ""
+
+#: ../../usage/fab.rst:318
+# 9738a2ea1c494378bd7299072f4d1005
+msgid "Sets :ref:`env.skip_bad_hosts <skip-bad-hosts>`, causing Fabric to skip unavailable hosts."
+msgstr ""
+
+#: ../../usage/fab.rst:325
+# 10c351f23c814ee085813107e406a53e
+msgid "Sets :ref:`env.skip_unknown_tasks <skip-unknown-tasks>`, causing Fabric to skip unknown tasks."
+msgstr ""
+
+#: ../../usage/fab.rst:329
+# cc6af1a1b130405bbd5798b9ee70c731
+msgid ":ref:`env.skip_unknown_tasks <skip-unknown-tasks>`"
+msgstr ""
+
+#: ../../usage/fab.rst:333
+# e713afdd59df420e90f067ccac77ef24
+msgid "Set connection timeout in seconds. Sets :ref:`env.timeout <timeout>`."
+msgstr ""
+
+#: ../../usage/fab.rst:336
+# e22c1c619a1047078780e1d64eb4a598
+msgid ":ref:`env.timeout <timeout>`, :ref:`env.connection_attempts <connection-attempts>`"
+msgstr ""
+
+#: ../../usage/fab.rst:342
+# aa77274b6f2b41508b891f5f37e82b91
+msgid "Set remote command timeout in seconds. Sets :ref:`env.command_timeout <command-timeout>`."
+msgstr ""
+
+#: ../../usage/fab.rst:346
+# eb766e7b58204b079fee494b96f59150
+msgid ":ref:`env.command_timeout <command-timeout>`,"
+msgstr ""
+
+#: ../../usage/fab.rst:352
+# 43bfd09fba0743dcab93c2235020fc1c
+msgid "Sets :ref:`env.user <user>` to the given string; it will then be used as the default username when making SSH connections."
+msgstr ""
+
+#: ../../usage/fab.rst:357
+# 1d40ff8d82f24115b9cef5ed1f41b418
+msgid "Displays Fabric's version number, then exits."
+msgstr ""
+
+#: ../../usage/fab.rst:361
+# 1d066862319f44859b805b50b12053fb
+msgid "Sets :ref:`env.warn_only <warn_only>` to ``True``, causing Fabric to continue execution even when commands encounter error conditions."
+msgstr ""
+
+#: ../../usage/fab.rst:366
+# 75506c9f412f4bf0abd4d24f623eaf1f
+msgid "Sets :ref:`env.pool_size <pool-size>`, which specifies how many processes to run concurrently during parallel execution."
+msgstr ""
+
+#: ../../usage/fab.rst:376
+# be7cbc956f2d453a89e17bb18cd2c75a
+msgid "Per-task arguments"
+msgstr ""
+
+#: ../../usage/fab.rst:378
+# 7c9fbbf9ddcf474fadaf6b8f6aa6d2b6
+msgid "The options given in :ref:`command-line-options` apply to the invocation of ``fab`` as a whole; even if the order is mixed around, options still apply to all given tasks equally. Additionally, since tasks are just Python functions, it's often desirable to pass in arguments to them at runtime."
+msgstr ""
+
+#: ../../usage/fab.rst:383
+# 8db67b85274747a1a819c61c330f0e5c
+msgid "Answering both these needs is the concept of \"per-task arguments\", which is a special syntax you can tack onto the end of any task name:"
+msgstr ""
+
+#: ../../usage/fab.rst:386
+# 49459505ad0a4578bfa5c5b90cb30b20
+msgid "Use a colon (``:``) to separate the task name from its arguments;"
+msgstr ""
+
+#: ../../usage/fab.rst:387
+# d7ac8d8fc65f46f6ad88ac495a100a4d
+msgid "Use commas (``,``) to separate arguments from one another (may be escaped by using a backslash, i.e. ``\\,``);"
+msgstr ""
+
+#: ../../usage/fab.rst:389
+# b4d48d4fddb1499dab72e9129a272261
+msgid "Use equals signs (``=``) for keyword arguments, or omit them for positional arguments. May also be escaped with backslashes."
+msgstr ""
+
+#: ../../usage/fab.rst:392
+# cfc9c98fd7c641e3b328ec48747c7716
+msgid "Additionally, since this process involves string parsing, all values will end up as Python strings, so plan accordingly. (We hope to improve upon this in future versions of Fabric, provided an intuitive syntax can be found.)"
+msgstr ""
+
+#: ../../usage/fab.rst:396
+# 06cf09c600fb42faa98f55e1216ee486
+msgid "For example, a \"create a new user\" task might be defined like so (omitting most of the actual logic for brevity)::"
+msgstr ""
+
+#: ../../usage/fab.rst:403
+# 6241e4f475af43aeba17060d3c01448a
+msgid "You can specify just the username::"
+msgstr ""
+
+#: ../../usage/fab.rst:407
+# 7e7d756720b646c2a757d8656af180ec
+msgid "Or treat it as an explicit keyword argument::"
+msgstr ""
+
+#: ../../usage/fab.rst:411
+# a14399b417d448fcaf38f162da5508f5
+msgid "If both args are given, you can again give them as positional args::"
+msgstr ""
+
+#: ../../usage/fab.rst:415
+# 1b4933acfdce40e99218956b5b9212a4
+msgid "Or mix and match, just like in Python::"
+msgstr ""
+
+#: ../../usage/fab.rst:419
+# 7cf4127a7c8f4962bcfd09aa5bccdcb4
+msgid "The ``print`` call above is useful for illustrating escaped commas, like so::"
+msgstr ""
+
+#: ../../usage/fab.rst:425
+# 4c295438d2b14f6d8062ac9b31375c31
+msgid "Quoting the backslash-escaped comma is required, as not doing so will cause shell syntax errors. Quotes are also needed whenever an argument involves other shell-related characters such as spaces."
+msgstr ""
+
+#: ../../usage/fab.rst:429
+# 8f757107016348e6821518ea915a8476
+msgid "All of the above are translated into the expected Python function calls. For example, the last call above would become::"
+msgstr ""
+
+#: ../../usage/fab.rst:435
+# 21f21efba3b64bf380fcd2e1a9f79aea
+msgid "Roles and hosts"
+msgstr ""
+
+#: ../../usage/fab.rst:437
+# 5552be726d604dea8dd3be17acc97422
+msgid "As mentioned in :ref:`the section on task execution <hosts-per-task-cli>`, there are a handful of per-task keyword arguments (``host``, ``hosts``, ``role`` and ``roles``) which do not actually map to the task functions themselves, but are used for setting per-task host and/or role lists."
+msgstr ""
+
+#: ../../usage/fab.rst:442
+# bd8ae84f77034029818f6687479505b9
+msgid "These special kwargs are **removed** from the args/kwargs sent to the task function itself; this is so that you don't run into TypeErrors if your task doesn't define the kwargs in question. (It also means that if you **do** define arguments with these names, you won't be able to specify them in this manner -- a regrettable but necessary sacrifice.)"
+msgstr ""
+
+#: ../../usage/fab.rst:450
+# 52e0aa66ba224e9da1bf0a3ca849efdf
+msgid "If both the plural and singular forms of these kwargs are given, the value of the plural will win out and the singular will be discarded."
+msgstr ""
+
+#: ../../usage/fab.rst:453
+# 00b37f9b4b024469b52c853bd2fc07fe
+msgid "When using the plural form of these arguments, one must use semicolons (``;``) since commas are already being used to separate arguments from one another. Furthermore, since your shell is likely to consider semicolons a special character, you'll want to quote the host list string to prevent shell interpretation, e.g.::"
+msgstr ""
+
+#: ../../usage/fab.rst:461
+# 1c51901ede684d00ac943aaab289061c
+msgid "Again, since the ``hosts`` kwarg is removed from the argument list sent to the ``new_user`` task function, the actual Python invocation would be ``new_user('myusername')``, and the function would be executed on a host list of ``['host1', 'host2']``."
+msgstr ""
+
+#: ../../usage/fab.rst:469
+# 5bdcd0c9e8a24026bc1a285ea6ef04f0
+msgid "Settings files"
+msgstr ""
+
+#: ../../usage/fab.rst:471
+# ff653dc78ac14cd6b4c810efb9a14be6
+msgid "Fabric currently honors a simple user settings file, or ``fabricrc`` (think ``bashrc`` but for ``fab``) which should contain one or more key-value pairs, one per line. These lines will be subject to ``string.split('=')``, and thus can currently only be used to specify string settings. Any such key-value pairs will be used to update :doc:`env <env>` when ``fab`` runs, and is loaded prior to the loading of any fabfile."
+msgstr ""
+
+#: ../../usage/fab.rst:478
+# bf2462430c3a4b15ac87ae7f2a5c73e5
+msgid "By default, Fabric looks for ``~/.fabricrc``, and this may be overridden by specifying the :option:`-c` flag to ``fab``."
+msgstr ""
+
+#: ../../usage/fab.rst:481
+# 0e19b84a835c4d6786f6b8ec814b1423
+msgid "For example, if your typical SSH login username differs from your workstation username, and you don't want to modify ``env.user`` in a project's fabfile (possibly because you expect others to use it as well) you could write a ``fabricrc`` file like so::"
+msgstr ""
+
+#: ../../usage/fab.rst:488
+# 7735e6d710fb488cb3b438efaee9e9aa
+msgid "Then, when running ``fab``, your fabfile would load up with ``env.user`` set to ``'ssh_user_name'``. Other users of that fabfile could do the same, allowing the fabfile itself to be cleanly agnostic regarding the default username."
+msgstr ""
+

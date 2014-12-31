@@ -1,0 +1,488 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014, Christian Vest Hansen and Jeffrey E. Forcier
+# This file is distributed under the same license as the Fabric package.
+#
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: fabric docs 1_8_2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:41+0900\n"
+"PO-Revision-Date: 2014-06-27 22:24+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
+"docs-1_8_2/language/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.6.5\n"
+
+# 12a58b5a4ee34968bbd69be68e5afa80
+#: ../../faq.rst:3
+msgid "Frequently Asked Questions (FAQ)"
+msgstr "よくある質問 (FAQ)"
+
+# ab0e1e85bc2349089b41f6c3502dc373
+#: ../../faq.rst:5
+msgid ""
+"These are some of the most commonly encountered problems or frequently asked "
+"questions which we receive from users. They aren't intended as a substitute "
+"for reading the rest of the documentation, especially the :ref:`usage docs "
+"<usage-docs>`, so please make sure you check those out if your question is "
+"not answered here."
+msgstr ""
+"ここには最もよく遭遇するいくつかの問題とユーザーから我々に繰り返し寄せられる"
+"質問があります。これは他のドキュメントの替わりになるものではありません。特"
+"に :ref:`usage docs <usage-docs>`, そこでここに無い質問はまずドキュメントを調"
+"べてください。"
+
+# bb9d2c89f2ff4d76b2ea1d11da1be4a0
+#: ../../faq.rst:13
+msgid "How do I dynamically set host lists?"
+msgstr "動的ホストリストを使うには?"
+
+# f8e64230a1804434842dbf282bd21b43
+#: ../../faq.rst:15
+msgid "See :ref:`dynamic-hosts`."
+msgstr "`dynamic-hosts` を参照してください。"
+
+# 964a86062adc4e508ac32f594b694305
+#: ../../faq.rst:19
+msgid "How can I run something after my task is done on all hosts?"
+msgstr "すべてのホストでタスクを実行した後に何かを実行するには?"
+
+# b1c4006be35344ed82f9da029dfee386
+#: ../../faq.rst:21
+msgid "See :ref:`leveraging-execute-return-value`."
+msgstr "`leveraging-execute-return-value` を参照してください。"
+
+# 8aa8ec3f50f44b598467844b0db4004b
+#: ../../faq.rst:27
+msgid "Init scripts don't work!"
+msgstr "Initスクリプトが動きません!"
+
+# d234a3d949e848e8a14c33c1e5b3a216
+#: ../../faq.rst:29
+msgid ""
+"Init-style start/stop/restart scripts (e.g. ``/etc/init.d/apache2 start``) "
+"sometimes don't like Fabric's allocation of a pseudo-tty, which is active by "
+"default. In almost all cases, explicitly calling the command in question "
+"with ``pty=False`` works correctly::"
+msgstr ""
+"Init形式の start/stop/restart スクリプト(例えば ``/etc/init.d/apache2 "
+"start``)が Fabric の pseudo-tty の割り当てでうまく動かないことがあります。こ"
+"れはデフォルトで active です。ほとんどの場合、特にこのようなコマンドの呼び出"
+"しでは ``pty=False`` で正しく動作します::"
+
+# 01a7a961d17b45bd82743d1b5812454f
+#: ../../faq.rst:36
+msgid ""
+"If you have no need for interactive behavior and run into this problem "
+"frequently, you may want to deactivate pty allocation globally by setting :"
+"ref:`env.always_use_pty <always-use-pty>` to ``False``."
+msgstr ""
+"対話式の操作も必要なくこの問題が度々起こるならグローバル設定を :ref:`env."
+"always_use_pty <always-use-pty>` から ``False`` に変えて pty の割り当てを無効"
+"にしてもよいでしょう。"
+
+# 374c3f092dd94e2a9edba7f7234b83b6
+#: ../../faq.rst:43
+msgid "My (``cd``/``workon``/``export``/etc) calls don't seem to work!"
+msgstr "(``cd``/``workon``/``export``/etc) が動きません!"
+
+# 7de27f0e070d49ddb6a80d4a55696df2
+#: ../../faq.rst:45
+msgid ""
+"While Fabric can be used for many shell-script-like tasks, there's a "
+"slightly unintuitive catch: each `~fabric.operations.run` or `~fabric."
+"operations.sudo` call has its own distinct shell session. This is required "
+"in order for Fabric to reliably figure out, after your command has run, what "
+"its standard out/error and return codes were."
+msgstr ""
+"Fabric は多くのシェルスクリプトのようなタスクを使いますが、そこにはわかりにく"
+"い落とし穴があります: それぞれの `~fabric.operations.run` や `~fabric."
+"operations.sudo` の呼び出しは別のシェルセッションで行います。これはコマンドが"
+"実行された後に Fabric がその標準入出力とリターンコードを確実に理解するために"
+"必要です。"
+
+# 694a479f29414ab398dff2e84444ce6f
+#: ../../faq.rst:51
+msgid ""
+"Unfortunately, it means that code like the following doesn't behave as you "
+"might assume::"
+msgstr ""
+"残念ですが以下のようなコードはあなたの期待通りの動作をしないことを意味しま"
+"す::"
+
+# 45c562cd497f4496a8c16d5ee25c407d
+#: ../../faq.rst:58
+msgid ""
+"If that were a shell script, the second `~fabric.operations.run` call would "
+"have executed with a current working directory of ``/path/to/application/`` "
+"-- but because both commands are run in their own distinct session over SSH, "
+"it actually tries to execute ``$HOME/update.sh`` instead (since your remote "
+"home directory is the default working directory)."
+msgstr ""
+"もしこれがシェルスクリプトなら二番目の `~fabric.operations.run` は ``/path/"
+"to/application/`` を作業ディレクトリとして実行されるでしょう。-- しかし両方の"
+"コマンドは SSH を通して別のセッションで実行されます。 ``$HOME/update.sh`` を"
+"実行しようとします。(リモートのホームディレクトリーがデフォルトの作業ディレク"
+"トリーです)"
+
+# 37f5ffad106c4f97b1a3ea2adef1fe24
+#: ../../faq.rst:64
+msgid ""
+"A simple workaround is to make use of shell logic operations such as ``&&``, "
+"which link multiple expressions together (provided the left hand side "
+"executed without error) like so::"
+msgstr ""
+"簡単なワークアラウンドは ``&&`` のような制御演算子を使うことです。複数の命令"
+"を一度に書けます。(エラーがなければ左から順に) このように::"
+
+# fdd88a17f79042d6b17288fda0198dc4
+#: ../../faq.rst:71
+msgid ""
+"Fabric provides a convenient shortcut for this specific use case, in fact: "
+"`~fabric.context_managers.cd`. There is also `~fabric.context_managers."
+"prefix` for arbitrary prefix commands."
+msgstr ""
+"Fabric にはこの特別なケースに便利なショートカットがあります: `~fabric."
+"context_managers.cd`. `~fabric.context_managers.prefix` も使うことができま"
+"す。"
+
+# 35a2365632484936bbd1e04cff92748a
+#: ../../faq.rst:76
+msgid ""
+"You might also get away with an absolute path and skip directory changing "
+"altogether::"
+msgstr "絶対パスを使うことでディレクトリー移動をスキップすることもできます::"
+
+# 35bc97191dd14074850fcc3cbc2ebc42
+#: ../../faq.rst:82
+msgid ""
+"However, this requires that the command in question makes no assumptions "
+"about your current working directory!"
+msgstr "しかしこの方法ではコマンドが現在の作業ディレクトリで実行されます!"
+
+# 08920a409df64673ada7701a56dd69d5
+#: ../../faq.rst:87
+msgid "How do I use ``su`` to run commands as another user?"
+msgstr "別のユーザーでコマンドを実行する ``su`` の使い方は?"
+
+# e8e50850af2345a6983e6970f84d772e
+#: ../../faq.rst:89
+msgid ""
+"This is a special case of :ref:`one-shell-per-command`. As that FAQ "
+"explains, commands like ``su`` which are 'stateful' do not work well in "
+"Fabric, so workarounds must be used."
+msgstr ""
+"これは :ref:`one-shell-per-command` の特殊なケースです。FAQで説明したように "
+"``su`` のようなコマンドは 'stateful' です。Fabric でうまく動きません。そこで"
+"ワークアラウンド(回避策)を使います。"
+
+# 866c6f3f8b3d4f8dbe51a4c65c0d5207
+#: ../../faq.rst:93
+msgid ""
+"In the case of running commands as a user distinct from the login user, you "
+"have two options:"
+msgstr ""
+"ログインユーザーと別のユーサーでコマンドを実行するには2つの選択肢があります:"
+
+# 0e9bb08cf43249d5aa9b1f31a6fabca4
+#: ../../faq.rst:96
+msgid ""
+"Use `~fabric.operations.sudo` with its ``user=`` kwarg, e.g. ``sudo(\"command"
+"\", user=\"otheruser\")``. If you want to factor the ``user`` part out of a "
+"bunch of commands, use `~fabric.context_managers.settings` to set ``env."
+"sudo_user``::"
+msgstr ""
+"`~fabric.operations.sudo` を kwarg ``user=`` で使う。例えば、``sudo(\"command"
+"\", user=\"otheruser\")``。もし ``user`` 部分をコマンドと別にしたいのなら "
+"`~fabric.context_managers.settings` で ``env.sudo_user`` を設定します::"
+
+# 3398b2f8e1e04e4c8e9a3eb21399806e
+#: ../../faq.rst:106
+msgid ""
+"If your target system cannot use ``sudo`` for some reason, you can still use "
+"``su``, but you need to invoke it in a non-interactive fashion by telling it "
+"to run a specific command instead of opening a shell. Typically this is the "
+"``-c`` flag, e.g. ``su otheruser -c \"command\"``."
+msgstr ""
+"もし何らかの理由でターゲットシステムで ``sudo`` が使えないのなら ``su`` を使"
+"う方法があります。それにはシェルを開かずに特定のコマンドを実行するように非対"
+"話形式で呼び出す必要があります。一般的に ``-c`` フラグを使います。例えば "
+"``su otheruser -c \"command\"``"
+
+# 1a3304d8819743bcac878d0135f8ecfd
+#: ../../faq.rst:111
+msgid ""
+"To run multiple commands in the same ``su -c`` \"wrapper\", you could e.g. "
+"write a wrapper function around `~fabric.operations.run`::"
+msgstr ""
+"``su -c`` \"ラッパー\" で様々なコマンドを実行するには `~fabric.operations."
+"run` のラッパー関数を書きます::"
+
+# b0f9a065622e4374b0bf320c0775fa5b
+#: ../../faq.rst:119
+msgid "Why do I sometimes see ``err: stdin: is not a tty``?"
+msgstr "なぜ時々 ``err: stdin: is not a tty`` が表示されるのですか?"
+
+# 21a0fc16abe14e19b42ed6bb72dbd784
+#: ../../faq.rst:121
+msgid ""
+"This message is typically generated by programs such as ``biff`` or ``mesg`` "
+"lurking within your remote user's ``.profile`` or ``.bashrc`` files (or any "
+"other such files, including system-wide ones.) Fabric's default mode of "
+"operation involves executing the Bash shell in \"login mode\", which causes "
+"these files to be executed."
+msgstr ""
+"これらのメッセージは通常リモートユーザーの ``.profile`` や ``.bashrc`` ファイ"
+"ル(あるいはシステム全体を含むそのようなファイル) に潜んでいる ``biff`` や "
+"``mesg`` で出されます。 Fabric のデフォルトでは Bashシェルをこれらのファイル"
+"を実行する \"ログインモード\" で起動します。"
+
+# 2ed43433d58f48949551ce081f364feb
+#: ../../faq.rst:127
+msgid ""
+"Because Fabric also doesn't bother asking the remote end for a tty by "
+"default (as it's not usually necessary) programs fired within your startup "
+"files, which expect a tty to be present, will complain -- and thus, stderr "
+"output about \"stdin is not a tty\" or similar."
+msgstr ""
+"Fabric はデフォルトではリモート側の tty を持ちません。(通常は必要ないため)ス"
+"タートアップファイルにあるプログラムは tty があるものだと期待しているため実行"
+"されると文句を言います -- このようにして \"stdin is not a tty\" のような標準"
+"エラー出力が現れます。"
+
+# d69475cf24d940f6adf53f3574d5efa8
+#: ../../faq.rst:132
+msgid "There are multiple ways to deal with this problem:"
+msgstr "この問題に対処するには様々な方法があります:"
+
+# 3a6a24d277c54312b1fc2d15f80517f1
+#: ../../faq.rst:134
+msgid ""
+"Find and remove or comment out the offending program call. If the program "
+"was not added by you on purpose and is simply a legacy of the operating "
+"system, this may be safe to do, and is the simplest approach."
+msgstr ""
+"余計なプログラムの呼び出しを見つけて削除あるいはコメントアウトする。そのプロ"
+"グラムがあなたが意図的に追加したものではなく単にオペレーティングシステムの遺"
+"産だとするとこの方法でうまくいきます。最もシンプルなアプローチです。"
+
+# 21c63d5ab493459496a6a34c5b9939f4
+#: ../../faq.rst:137
+msgid ""
+"Override ``env.shell`` to remove the ``-l`` flag. This should tell Bash not "
+"to load your startup files. If you don't depend on the contents of your "
+"startup files (such as aliases or whatnot) this may be a good solution."
+msgstr ""
+"``env.shell`` から ``-l`` を取り去る。これで Bash がスタートアップファイル(エ"
+"イリアスなど)をロードしません。これも良い方法でしょう。"
+
+# c7e817dffeab42c89a3728695e19dae8
+#: ../../faq.rst:140
+msgid ""
+"Pass ``pty=True`` to `run` or `sudo`, which will force allocation of a "
+"pseudo-tty on the remote end, and hopefully cause the offending program to "
+"be less cranky."
+msgstr ""
+"``pty=True`` を `run` や `sudo` に渡す。これでリモート側に pseudo-tty の割り"
+"当てを強制します。うまくいけば問題のあるプログラムの機嫌が直ります。"
+
+# 95e27a346ce14163901c793073455e79
+#: ../../faq.rst:148
+msgid ""
+"Why can't I run programs in the background with ``&``? It makes Fabric hang."
+msgstr ""
+"``&`` でプログラムをバックグラウンドで実行できません。Fabric がハングします。"
+
+# 67da04ef55db40f8ab5d32a614bf86ad
+#: ../../faq.rst:150
+msgid ""
+"Because Fabric executes a shell on the remote end for each invocation of "
+"``run`` or ``sudo`` (:ref:`see also <one-shell-per-command>`), backgrounding "
+"a process via the shell will not work as expected. Backgrounded processes "
+"may still prevent the calling shell from exiting until they stop running, "
+"and this in turn prevents Fabric from continuing on with its own execution."
+msgstr ""
+"Fabric はリモート側で ``run`` や ``sudo`` (:ref:`see also <one-shell-per-"
+"command>`) の呼び出しでそれぞれシェルを起動します。``run`` or ``sudo`` (:ref:"
+"`see also <one-shell-per-command>`)。シェルを通してのバックグランドプロセスは"
+"期待通りに動きません。バックグランドプロセスが終了するまで呼び出されたシェル"
+"から抜けられないかもしれません。これでは Fabric が順番に実行することができま"
+"せん。"
+
+# b61047e1d21f42d597e865f13ea62407
+#: ../../faq.rst:156
+msgid ""
+"The key to fixing this is to ensure that your process' standard pipes are "
+"all disassociated from the calling shell, which may be done in a number of "
+"ways (listed in order of robustness):"
+msgstr ""
+"これを解決する鍵は呼び出したシェルからすべてのプロセスの標準パイプが分離され"
+"ていることを確実にすることです。方法はいくつかあります。(確実(robustness)な順"
+"にリスト):"
+
+# 4c1b64d170f64f1f8747b91f422e5aa8
+#: ../../faq.rst:160
+msgid ""
+"Use a pre-existing daemonization technique if one exists for the program at "
+"hand -- for example, calling an init script instead of directly invoking a "
+"server binary."
+msgstr ""
+"既存のデーモン化するテクニックを使う。  -- 例えば直接サーバーのバイナリーを呼"
+"ばずに init スクリプトを呼びます。"
+
+# 3a056a01b39d4643bdcbaef046969656
+#: ../../faq.rst:164
+msgid ""
+"Or leverage a process manager such as ``supervisord``, ``upstart`` or "
+"``systemd`` - such tools let you define what it means to \"run\" one of your "
+"background processes, then issue init-script-like start/stop/restart/status "
+"commands. They offer many advantages over classic init scripts as well."
+msgstr ""
+"``supervisord`` や ``systemd`` のようなプロセスマネージャーを使う。 - such "
+"tools let you define what it means to \"run\" one of your background "
+"processes, then issue init-script-like start/stop/restart/status commands. こ"
+"れは古典的な init スクリプトより多くの利点があります。"
+
+# 94399a17be8348bfbd235d1b33ae0212
+#: ../../faq.rst:170
+msgid ""
+"Use ``tmux``, ``screen`` or ``dtach`` to fully detach the process from the "
+"running shell; these tools have the benefit of allowing you to reattach to "
+"the process later on if needed (though they are more ad-hoc than "
+"``supervisord``-like tools)."
+msgstr ""
+"走っているシェルから完全にプロセスを分けるには ``tmux`` や ``screen`` や "
+"``dtach`` を使う; これらのツールは必要なら後でプロセスをリアタッチできるので"
+"便利です。(しかし ``supervisord`` のようなツールに比べてさらに場当たり的(ad-"
+"hoc)です)。"
+
+# 3c9a7a2d85c6439c9259e9d822e0ec1d
+#: ../../faq.rst:174
+msgid ""
+"Run the program under ``nohup`` or similar \"in-shell\" tools - note that "
+"this approach has seen limited success for most users."
+msgstr ""
+"プログラムを ``nohup``で走らせたり似たような \"in-shell\" ツールを使う - 注"
+"意 これが有効なユーザーは少ないようです。"
+
+# 79c2f3e2a3a54adfa67cd10d1a2b8439
+#: ../../faq.rst:181
+msgid ""
+"My remote system doesn't have ``bash`` installed by default, do I need to "
+"install ``bash``?"
+msgstr ""
+"リモートシステムにデフォルトで ``bash`` がありません。``bash`` をインストール"
+"すべきですか?"
+
+# c63b96a5041546b39173e9273a47e973
+#: ../../faq.rst:183
+msgid ""
+"While Fabric is written with ``bash`` in mind, it's not an absolute "
+"requirement.  Simply change :ref:`env.shell <shell>` to call your desired "
+"shell, and include an argument similar to ``bash``'s ``-c`` argument, which "
+"allows us to build shell commands of the form::"
+msgstr ""
+"Fabric は ``bash`` を念頭に書かれていますが、絶対必要ではありません。単に :"
+"ref:`env.shell <shell>` を好きなシェルに変えます。そして ``bash`` の ``-c`` "
+"引数のようなシェルコマンドを構築できる引数を使います::"
+
+# 3e0c74cc600c4dfdac39e2ad62e94c32
+#: ../../faq.rst:190
+msgid ""
+"where ``/bin/bash -l -c`` is the default value of :ref:`env.shell <shell>`."
+msgstr " ``/bin/bash -l -c`` は :ref:`env.shell <shell>` のデフォルト値です。"
+
+# 9ff67b8d4bfe4b54ab4c6aeed07312c6
+#: ../../faq.rst:194
+msgid ""
+"The ``-l`` argument specifies a login shell and is not absolutely required, "
+"merely convenient in many situations. Some shells lack the option entirely "
+"and it may be safely omitted in such cases."
+msgstr ""
+"``-l`` はログインシェルを指定しています。多くの状況で便利ですが必ずしも必要で"
+"はありません。いくつかのシェルにはこのオプションがありませんが、その場合は無"
+"視されるでしょう。"
+
+# 0db07912d4c14f9bb86479b32a1fac56
+#: ../../faq.rst:198
+msgid ""
+"A relatively safe baseline is to call ``/bin/sh``, which may call the "
+"original ``sh`` binary, or (on some systems) ``csh``, and give it the ``-c`` "
+"argument, like so::"
+msgstr ""
+"比較的安全な方法は、オリジナルの ``sh`` バイナリーや(いくつかのシステムでは) "
+"``csh`` を呼ぶ  ``/bin/sh`` を使うことです。そして ``-c`` オプションを使いま"
+"す。このように::"
+
+# 7ab6e6f1926c4583badd8b7edcece0ac
+#: ../../faq.rst:206
+msgid ""
+"This has been shown to work on FreeBSD and may work on other systems as well."
+msgstr "これは FreeBSD で動作します。同様に他のシステムでも動くでしょう。"
+
+# 33902b00eb924c1ba59d854170992a7d
+#: ../../faq.rst:210
+msgid "I'm sometimes incorrectly asked for a passphrase instead of a password."
+msgstr "時々間違ってパスワードの代わりにパスフレーズを聞かれます。"
+
+# 927de99f04d8429587988a491f9bce26
+#: ../../faq.rst:212
+msgid ""
+"Due to a bug of sorts in our SSH layer, it's not currently possible for "
+"Fabric to always accurately detect the type of authentication needed. We "
+"have to try and guess whether we're being asked for a private key passphrase "
+"or a remote server password, and in some cases our guess ends up being wrong."
+msgstr ""
+"SSH レイヤーのバグのため今現在 Fabric は常に必要な認証のタイプを正確に検出で"
+"きません。プライベートキーのパスフレーズかリモートサーバーのパスワードのどち"
+"らが必要か推測しなければなりません。そしていくつかのケースではその推測が間"
+"違っています。"
+
+# bcdd0deb03fa4d919aa821663daa923c
+#: ../../faq.rst:217
+msgid ""
+"The most common such situation is where you, the local user, appear to have "
+"an SSH keychain agent running, but the remote server is not able to honor "
+"your SSH key, e.g. you haven't yet transferred the public key over or are "
+"using an incorrect username. In this situation, Fabric will prompt you with "
+"\"Please enter passphrase for private key\", but the text you enter is "
+"actually being sent to the remote end's password authentication."
+msgstr ""
+"最もよくある状況は、あなたはローカルユーザーとして確かに SSH キーチェインエー"
+"ジェントを実行している、しかしリモートサーバーはあなたの SSH キーを受け取って"
+"いない。例えばパブリックキーを送っていないとか間違ったユーザー名を使ってい"
+"る。 Fabric は \"Please enter passphrase for private key\" と表示しますが実際"
+"には入力をリモート側にパスワードをして送ります。"
+
+# 9fc6c3f44ee64f9d94153fab17fdee45
+#: ../../faq.rst:224
+msgid ""
+"We hope to address this in future releases by modifying a fork of the "
+"aforementioned SSH library."
+msgstr ""
+"将来のリリースで前述の SSHライブラリの fork を変更して対処するつもりです。"
+
+# eafecd3b01024bf4bad7ff0b60b92143
+#: ../../faq.rst:229
+msgid "Is Fabric thread-safe?"
+msgstr "Fabricはスレッドセーフ?"
+
+# 192ba6b52eb54fcfb331e90be4504b82
+#: ../../faq.rst:231
+msgid ""
+"Currently, no, it's not -- the present version of Fabric relies heavily on "
+"shared state in order to keep the codebase simple. However, there are "
+"definite plans to update its internals so that Fabric may be either threaded "
+"or otherwise parallelized so your tasks can run on multiple servers "
+"concurrently."
+msgstr ""
+"現時点では No、-- 現在のバージョンの Fabric はコードベースをシンプルにするた"
+"めに激しく共有状態(shared state)に依存しています。しかし同時に複数のサーバー"
+"でタスクを実行するために Fabric をスレッド化、あるいは並行処理する明確な計画"
+"があります。"

@@ -1,0 +1,195 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric 1.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-02-15 23:24+0900\n"
+"PO-Revision-Date: 2014-12-10 13:10+0900\n"
+"Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+
+#: ../../api/core/utils.rst:3
+msgid "Utils"
+msgstr "ユーティリティ"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils:1
+msgid ""
+"Internal subroutines for e.g. aborting execution with an error message, or "
+"performing indenting on multiline output."
+msgstr ""
+"内部のサブルーチンで、例えば、エラーメッセージをともなった実行の中止や複数行"
+"でのインデントの実施などです。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.abort:1
+msgid ""
+"Abort execution, print ``msg`` to stderr and exit with error status (1.)"
+msgstr ""
+"実行の中止で、標準エラー出力に ``msg`` をプリントしエラーステータス (1) で終"
+"了します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.abort:3
+msgid ""
+"This function currently makes use of `sys.exit`_, which raises "
+"`SystemExit`_. Therefore, it's possible to detect and recover from inner "
+"calls to `abort` by using ``except SystemExit`` or similar."
+msgstr ""
+"この機能はいまのところ `sys.exit`_ を利用していて、これにより `SystemExit`_ "
+"を発生させます。したがって、 ``except SystemExit`` もしくは類似のものを利用し"
+"て `abort` への内部の呼び出しから検知、回復することが可能です。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.error:1
+msgid "Call ``func`` with given error ``message``."
+msgstr "与えられたエラー ``message`` とともに ``func`` を呼び出します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.error:3
+msgid ""
+"If ``func`` is None (the default), the value of ``env.warn_only`` determines "
+"whether to call ``abort`` or ``warn``."
+msgstr ""
+"``func`` が None (デフォルト) のとき、``env.warn_only`` の値が ``abort`` もし"
+"くは ``warn`` のどちらを呼び出すかを決定します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.error:6
+msgid ""
+"If ``exception`` is given, it is inspected to get a string message, which is "
+"printed alongside the user-generated ``message``."
+msgstr ""
+"``exception`` が与えられた場合、文字列メッセージを得るために点検され、ユー"
+"ザーが生成した ``message`` とともに表示されます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.error:9
+msgid ""
+"If ``stdout`` and/or ``stderr`` are given, they are assumed to be strings to "
+"be printed."
+msgstr ""
+"``stdout`` および/もしくは ``stderr`` が与えられた場合、それらは表示するため"
+"の文字列であるとみなされます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.fastprint:1
+msgid "Print ``text`` immediately, without any prefix or line ending."
+msgstr "``text`` を直ちに、どのようなプリフィックスや行末もなしで表示します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.fastprint:3
+msgid ""
+"This function is simply an alias of `~fabric.utils.puts` with different "
+"default argument values, such that the ``text`` is printed without any "
+"embellishment and immediately flushed."
+msgstr ""
+"この機能は異なるデフォルト値を持つ `~fabric.utils.puts` の単純なエイリアス"
+"で、例えば ``text`` は一切の装飾なしで表示され、直ちにフラッシュされます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.fastprint:7
+msgid ""
+"It is useful for any situation where you wish to print text which might "
+"otherwise get buffered by Python's output buffering (such as within a "
+"processor intensive ``for`` loop). Since such use cases typically also "
+"require a lack of line endings (such as printing a series of dots to signify "
+"progress) it also omits the traditional newline by default."
+msgstr ""
+"表示するときにPythonの出力バッファリングによってバッファされてしまうかもしれ"
+"ないテキストを表示させたいときに役に立ちます(プロセッサに集中する ``for`` "
+"ループなど)。そのようなユースケースではたいていは行末なしを要求されるので(進"
+"捗を示すドットの連なりなど)、デフォルトでは伝統的な改行を含めません。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.fastprint:15
+msgid ""
+"Since `~fabric.utils.fastprint` calls `~fabric.utils.puts`, it is likewise "
+"subject to the ``user`` :doc:`output level </usage/output_controls>`."
+msgstr ""
+"`~fabric.utils.fastprint` は `~fabric.utils.puts` を呼び出すので、同様に "
+"``user`` :doc:`output level </usage/output_controls>` に依存します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.fastprint:20
+msgid "`~fabric.utils.puts`"
+msgstr "`~fabric.utils.puts`"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.indent:1
+msgid "Return ``text`` indented by the given number of spaces."
+msgstr "与えられたスペースの数でインデントされた ``text`` を返します。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.indent:3
+msgid ""
+"If text is not a string, it is assumed to be a list of lines and will be "
+"joined by ``\\n`` prior to indenting."
+msgstr ""
+"テキストが文字列ではない場合、行のリストとしてみなされ、インデントの前に ``"
+"\\n`` によって結合されます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.indent:6
+msgid ""
+"When ``strip`` is ``True``, a minimum amount of whitespace is removed from "
+"the left-hand side of the given string (so that relative indents are "
+"preserved, but otherwise things are left-stripped). This allows you to "
+"effectively \"normalize\" any previous indentation for some inputs."
+msgstr ""
+"``strip`` が ``True`` の時、与えられた文字列の左側から最小限の空白スペースが"
+"取り除かれます(そのため、相対的なインデントは維持されますが、その他は左側が取"
+"り除かれます)。これにより、入力によっては、それまでのインデントを実質的にすべ"
+"て \"正規化\" されます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:1
+msgid ""
+"An alias for ``print`` whose output is managed by Fabric's output controls."
+msgstr ""
+"``print`` のエイリアスで、その出力はFabricの出力コントロールによって管理され"
+"ます。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:3
+msgid ""
+"In other words, this function simply prints to ``sys.stdout``, but will hide "
+"its output if the ``user`` :doc:`output level </usage/output_controls>` is "
+"set to ``False``."
+msgstr ""
+"﻿つまり、この関数は単に `` sys.stdout`` に出力しますが、その `` user`` の :"
+"doc:`output level </usage/output_controls>` が ``False`` に設定されている場"
+"合、その出力を非表示にします。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:7
+msgid ""
+"If ``show_prefix=False``, `puts` will omit the leading ``[hostname]`` which "
+"it tacks on by default. (It will also omit this prefix if ``env."
+"host_string`` is empty.)"
+msgstr ""
+"﻿``s​​how_prefix = False`` の場合、 `puts` はデフォルトで付加される先頭の "
+"``[hostname]`` を省略します。(``env.host_string`` が空の場合にもこの接頭を省"
+"略します)"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:11
+msgid ""
+"Newlines may be disabled by setting ``end`` to the empty string (``''``). "
+"(This intentionally mirrors Python 3's ``print`` syntax.)"
+msgstr ""
+"﻿改行は ``end`` に空の文字列 (``''``) をセットすることで無効にすることができま"
+"す。(これは意図的にPythonの3の ``print`` 構文を反映させてものです)"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:14
+msgid ""
+"You may force output flushing (e.g. to bypass output buffering) by setting "
+"``flush=True``."
+msgstr ""
+"``flush=True`` をセットすることで強制的に出力をフラッシュすることができます"
+"(例えば出力のバッファリングをバイパスするため)。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.puts:18
+msgid "`~fabric.utils.fastprint`"
+msgstr "`~fabric.utils.fastprint`"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.warn:1
+msgid "Print warning message, but do not abort execution."
+msgstr "警告メッセージを出力しますが、実行は中止されません。"
+
+#: ../../../fabric/utils.pydocstring of fabric.utils.warn:3
+msgid ""
+"This function honors Fabric's :doc:`output controls <../../usage/"
+"output_controls>` and will print the given ``msg`` to stderr, provided that "
+"the ``warnings`` output level (which is active by default) is turned on."
+msgstr ""
+"この機能はFabricの :doc:`output controls <../../usage/output_controls>` を優"
+"先し、与えられた ``msg`` を標準エラー出力に出力され、 ``warnings`` 出力レベル"
+"(デフォルトで有効)がオンで提供されます、"

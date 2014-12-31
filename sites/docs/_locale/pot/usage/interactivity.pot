@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2014 Jeff Forcier
+# This file is distributed under the same license as the Fabric package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Fabric \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../usage/interactivity.rst:3
+# 9fe5b819622a4d1196b3add0bc27d197
+msgid "Interaction with remote programs"
+msgstr ""
+
+#: ../../usage/interactivity.rst:5
+# 28027283aedc4109b46acb67db883cb3
+msgid "Fabric's primary operations, `~fabric.operations.run` and `~fabric.operations.sudo`, are capable of sending local input to the remote end, in a manner nearly identical to the ``ssh`` program. For example, programs which display password prompts (e.g. a database dump utility, or changing a user's password) will behave just as if you were interacting with them directly."
+msgstr ""
+
+#: ../../usage/interactivity.rst:12
+# 38e6c388e9124e14926922804794bde3
+msgid "However, as with ``ssh`` itself, Fabric's implementation of this feature is subject to a handful of limitations which are not always intuitive. This document discusses such issues in detail."
+msgstr ""
+
+#: ../../usage/interactivity.rst:17
+# cee2caed50534b96b79cca8c6fd68692
+msgid "Readers unfamiliar with the basics of Unix stdout and stderr pipes, and/or terminal devices, may wish to visit the Wikipedia pages for `Unix pipelines <http://en.wikipedia.org/wiki/Pipe_(Unix)>`_ and `Pseudo terminals <http://en.wikipedia.org/wiki/Pseudo_terminal>`_ respectively."
+msgstr ""
+
+#: ../../usage/interactivity.rst:26
+# 1c7dc02ecfcc4c148690e326ef0e3da5
+msgid "Combining stdout and stderr"
+msgstr ""
+
+#: ../../usage/interactivity.rst:28
+# 151dedacd68e495ba56bd43c62ce28f8
+msgid "The first issue to be aware of is that of the stdout and stderr streams, and why they are separated or combined as needed."
+msgstr ""
+
+#: ../../usage/interactivity.rst:32
+# 58b40a76f01d4637a1c7a5e83239ae73
+msgid "Buffering"
+msgstr ""
+
+#: ../../usage/interactivity.rst:34
+# 9e1ce88580aa490cba2aeade16a59aee
+msgid "Fabric 0.9.x and earlier, and Python itself, buffer output on a line-by-line basis: text is not printed to the user until a newline character is found. This works fine in most situations but becomes problematic when one needs to deal with partial-line output such as prompts."
+msgstr ""
+
+#: ../../usage/interactivity.rst:40
+# ea03ce611cf34e28bf9bee4a538134ef
+msgid "Line-buffered output can make programs appear to halt or freeze for no reason, as prompts print out text without a newline, waiting for the user to enter their input and press Return."
+msgstr ""
+
+#: ../../usage/interactivity.rst:44
+# cfd623282031427f9107ee52a5f15951
+msgid "Newer Fabric versions buffer both input and output on a character-by-character basis in order to make interaction with prompts possible. This has the convenient side effect of enabling interaction with complex programs utilizing the \"curses\" libraries or which otherwise redraw the screen (think ``top``)."
+msgstr ""
+
+#: ../../usage/interactivity.rst:50
+# 9ee06908976840ab95754e4dcd114235
+msgid "Crossing the streams"
+msgstr ""
+
+#: ../../usage/interactivity.rst:52
+# a8db3bd37ba344ea81547cf20fba867f
+msgid "Unfortunately, printing to stderr and stdout simultaneously (as many programs do) means that when the two streams are printed independently one byte at a time, they can become garbled or meshed together. While this can sometimes be mitigated by line-buffering one of the streams and not the other, it's still a serious issue."
+msgstr ""
+
+#: ../../usage/interactivity.rst:58
+# ea3250be69f04be5ae9c6d05c2132ec2
+msgid "To solve this problem, Fabric uses a setting in our SSH layer which merges the two streams at a low level and causes output to appear more naturally. This setting is represented in Fabric as the :ref:`combine-stderr` env var and keyword argument, and is ``True`` by default."
+msgstr ""
+
+#: ../../usage/interactivity.rst:63
+# 7af4a0553ea74cb59dd5dc82057798a0
+msgid "Due to this default setting, output will appear correctly, but at the cost of an empty ``.stderr`` attribute on the return values of `~fabric.operations.run`/`~fabric.operations.sudo`, as all output will appear to be stdout."
+msgstr ""
+
+#: ../../usage/interactivity.rst:68
+# 701f11ffa8e24c2ba87c8912ce9013d1
+msgid "Conversely, users requiring a distinct stderr stream at the Python level and who aren't bothered by garbled user-facing output (or who are hiding stdout and stderr from the command in question) may opt to set this to ``False`` as needed."
+msgstr ""
+
+#: ../../usage/interactivity.rst:77
+# 6193f7bb678c4ffd80756b04c86dbf9b
+msgid "Pseudo-terminals"
+msgstr ""
+
+#: ../../usage/interactivity.rst:79
+# 47a236518fc1441e955c816b16bc6ef1
+msgid "The other main issue to consider when presenting interactive prompts to users is that of echoing the user's own input."
+msgstr ""
+
+#: ../../usage/interactivity.rst:83
+# ea4a9c8836e4463f998cbc0a3df45b14
+msgid "Echoes"
+msgstr ""
+
+#: ../../usage/interactivity.rst:85
+# d64eb986ebc94ed88bd790986d43c2a6
+msgid "Typical terminal applications or bona fide text terminals (e.g. when using a Unix system without a running GUI) present programs with a terminal device called a tty or pty (for pseudo-terminal). These automatically echo all text typed into them back out to the user (via stdout), as interaction without seeing what you had just typed would be difficult. Terminal devices are also able to conditionally turn off echoing, allowing secure password prompts."
+msgstr ""
+
+#: ../../usage/interactivity.rst:92
+# ae05c7f31eb34c008f9a9483d9439573
+msgid "However, it's possible for programs to be run without a tty or pty present at all (consider cron jobs, for example) and in this situation, any stdin data being fed to the program won't be echoed. This is desirable for programs being run without any humans around, and it's also Fabric's old default mode of operation."
+msgstr ""
+
+#: ../../usage/interactivity.rst:99
+# 59dd39c8de5a40efb1a287f5785a52f7
+msgid "Fabric's approach"
+msgstr ""
+
+#: ../../usage/interactivity.rst:101
+# e6a347de24834c948367d48217a1139d
+msgid "Unfortunately, in the context of executing commands via Fabric, when no pty is present to echo a user's stdin, Fabric must echo it for them. This is sufficient for many applications, but it presents problems for password prompts, which become insecure."
+msgstr ""
+
+#: ../../usage/interactivity.rst:106
+# fea70807866c4e4e83327f6534aa6b42
+msgid "In the interests of security and meeting the principle of least surprise (insofar as users are typically expecting things to behave as they would when run in a terminal emulator), Fabric 1.0 and greater force a pty by default. With a pty enabled, Fabric simply allows the remote end to handle echoing or hiding of stdin and does not echo anything itself."
+msgstr ""
+
+#: ../../usage/interactivity.rst:113
+# b7e052ae56bc4a179c9ed9c92a61690e
+msgid "In addition to allowing normal echo behavior, a pty also means programs that behave differently when attached to a terminal device will then do so. For example, programs that colorize output on terminals but not when run in the background will print colored output. Be wary of this if you inspect the return value of `~fabric.operations.run` or `~fabric.operations.sudo`!"
+msgstr ""
+
+#: ../../usage/interactivity.rst:119
+# 0b87dc418f484bb9b45014034f8c6a7e
+msgid "For situations requiring the pty behavior turned off, the :option:`--no-pty` command-line argument and :ref:`always-use-pty` env var may be used."
+msgstr ""
+
+#: ../../usage/interactivity.rst:124
+# 96216b314b624bb883fa21365eaa3e1a
+msgid "Combining the two"
+msgstr ""
+
+#: ../../usage/interactivity.rst:126
+# 3917f2ccb06940b284911b999ba0f5ac
+msgid "As a final note, keep in mind that use of pseudo-terminals effectively implies combining stdout and stderr -- in much the same way as the :ref:`combine_stderr <combine_streams>` setting does. This is because a terminal device naturally sends both stdout and stderr to the same place -- the user's display -- thus making it impossible to differentiate between them."
+msgstr ""
+
+#: ../../usage/interactivity.rst:132
+# 78527cf3361d45368ff59029515b6a54
+msgid "However, at the Fabric level, the two groups of settings are distinct from one another and may be combined in various ways. The default is for both to be set to ``True``; the other combinations are as follows:"
+msgstr ""
+
+#: ../../usage/interactivity.rst:136
+# 65ca9ee2cf8644d8ad4ba503d9306233
+msgid "``run(\"cmd\", pty=False, combine_stderr=True)``: will cause Fabric to echo all stdin itself, including passwords, as well as potentially altering ``cmd``'s behavior. Useful if ``cmd`` behaves undesirably when run under a pty and you're not concerned about password prompts."
+msgstr ""
+
+#: ../../usage/interactivity.rst:140
+# 3202431697874e5c85860ca7936cedaa
+msgid "``run(\"cmd\", pty=False, combine_stderr=False)``: with both settings ``False``, Fabric will echo stdin and won't issue a pty -- and this is highly likely to result in undesired behavior for all but the simplest commands. However, it is also the only way to access a distinct stderr stream, which is occasionally useful."
+msgstr ""
+
+#: ../../usage/interactivity.rst:145
+# 19ee51994e2f497e9c27ee7ff586084f
+msgid "``run(\"cmd\", pty=True, combine_stderr=False)``: valid, but won't really make much of a difference, as ``pty=True`` will still result in merged streams. May be useful for avoiding any edge case problems in ``combine_stderr`` (none are presently known)."
+msgstr ""
+
