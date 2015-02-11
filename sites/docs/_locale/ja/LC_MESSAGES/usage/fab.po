@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-04-13 13:18+0900\n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: 2015-01-04 09:11+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.1\n"
 
 # e88f55069afd409a95d0313fbf404ad2
 #: ../../usage/fab.rst:3
@@ -58,7 +58,7 @@ msgid ""
 "``task1`` followed by ``task2``, assuming that Fabric was able to find a "
 "fabfile nearby containing Python functions with those names."
 msgstr ""
-" :doc:`../tutorial` と :doc:`execution` で詳しく説明されていますが、これは "
+":doc:`../tutorial` と :doc:`execution` で詳しく説明されていますが、これは "
 "``task1`` に続き ``task2`` を実行します。ただし Fabricがこれらの名前のPython"
 "関数を含んだfabfileを見つけられればですが。"
 
@@ -94,7 +94,7 @@ msgid ""
 "defined a host list at the module level or on the command line, this usage "
 "will act like a one-line anonymous task."
 msgstr ""
-" ``--`` の後はすべて一時的な `~fabric.operations.run` コールとなり ``fab`` オ"
+"``--`` の後はすべて一時的な `~fabric.operations.run` コールとなり ``fab`` オ"
 "プションとは解釈しません。モジュールレベルやコマンドラインでホストリストを定"
 "義すれば、これは一行の anonymous タスクのように使えます。"
 
@@ -376,8 +376,8 @@ msgid ""
 "Forces output to be buffered line-by-line instead of byte-by-byte. Often "
 "useful or required for :ref:`parallel execution <linewise-output>`."
 msgstr ""
-"出力バッファをバイトごとでなく行ごとに強制します。:ref:`parallel execution "
-"<linewise-output>` に有効でありまた必要になります。"
+"強制的に出力バッファをバイトごとでなく行ごとにします。:ref:`parallel "
+"execution <linewise-output>` に有効でありまた必要になります。"
 
 # a708b610032d4f8fa27e48cc614cfba8
 #: ../../usage/fab.rst:225
@@ -426,7 +426,7 @@ msgstr ""
 
 # e01ab4644e6b47378be88e532fdd3fd4
 # 6c1a6f42f0294c7089f06faa64101132
-#: ../../usage/fab.rst:247 ../../usage/fab.rst:362
+#: ../../usage/fab.rst:247 ../../usage/fab.rst:370
 msgid ":doc:`/usage/parallel`"
 msgstr ":doc:`/usage/parallel`"
 
@@ -554,14 +554,28 @@ msgstr ""
 ":ref:`env.skip_bad_hosts <skip-bad-hosts>` をセット。Fabric は利用できないホ"
 "ストをスキップします。"
 
-# 2ace0372b881472eb5b204abc428c8e8
+# fd01ed5c6fdb45c692d84cb3932cb98d
 #: ../../usage/fab.rst:325
+msgid ""
+"Sets :ref:`env.skip_unknown_tasks <skip-unknown-tasks>`, causing Fabric to "
+"skip unknown tasks."
+msgstr ""
+":ref:`env.skip_unknown_tasks <skip-unknown-tasks>` をセットすると、見つからな"
+"いタスクをFabricがスキップします。"
+
+# cc6af1a1b130405bbd5798b9ee70c731
+#: ../../usage/fab.rst:329
+msgid ":ref:`env.skip_unknown_tasks <skip-unknown-tasks>`"
+msgstr ":ref:`env.skip_unknown_tasks <skip-unknown-tasks>`"
+
+# 2ace0372b881472eb5b204abc428c8e8
+#: ../../usage/fab.rst:333
 msgid "Set connection timeout in seconds. Sets :ref:`env.timeout <timeout>`."
 msgstr ""
 "接続のタイムアウトを秒で指定します。 :ref:`env.timeout <timeout>` をセット。"
 
 # 2c628cedf6a94a319572b31f84b1c9af
-#: ../../usage/fab.rst:328
+#: ../../usage/fab.rst:336
 msgid ""
 ":ref:`env.timeout <timeout>`, :ref:`env.connection_attempts <connection-"
 "attempts>`"
@@ -570,7 +584,7 @@ msgstr ""
 "attempts>`"
 
 # e3f317f36a6b4c2fafd9ed96d9fa3f1d
-#: ../../usage/fab.rst:334
+#: ../../usage/fab.rst:342
 msgid ""
 "Set remote command timeout in seconds. Sets :ref:`env.command_timeout "
 "<command-timeout>`."
@@ -579,12 +593,12 @@ msgstr ""
 "<command-timeout>` "
 
 # 064314ac03c942b8b7597c38b47505b4
-#: ../../usage/fab.rst:338
+#: ../../usage/fab.rst:346
 msgid ":ref:`env.command_timeout <command-timeout>`,"
 msgstr ":ref:`env.command_timeout <command-timeout>`,"
 
 # aba6372eb890428490295b74deacea96
-#: ../../usage/fab.rst:344
+#: ../../usage/fab.rst:352
 msgid ""
 "Sets :ref:`env.user <user>` to the given string; it will then be used as the "
 "default username when making SSH connections."
@@ -593,12 +607,12 @@ msgstr ""
 "トのユーザー名として使われます。"
 
 # 8aebe0d5843b4dee8b8889c315aff893
-#: ../../usage/fab.rst:349
+#: ../../usage/fab.rst:357
 msgid "Displays Fabric's version number, then exits."
 msgstr "Fabric のバージョンを表示して終了します。"
 
 # eb24a38882c0499894cf8470d64b6ced
-#: ../../usage/fab.rst:353
+#: ../../usage/fab.rst:361
 msgid ""
 "Sets :ref:`env.warn_only <warn_only>` to ``True``, causing Fabric to "
 "continue execution even when commands encounter error conditions."
@@ -607,7 +621,7 @@ msgstr ""
 "ラーを起こしても実行を続けます。"
 
 # 00a30193da6f4be7860343e86e3df9bb
-#: ../../usage/fab.rst:358
+#: ../../usage/fab.rst:366
 msgid ""
 "Sets :ref:`env.pool_size <pool-size>`, which specifies how many processes to "
 "run concurrently during parallel execution."
@@ -616,12 +630,12 @@ msgstr ""
 "数を指定します。"
 
 # 88e820a63d74459ea6cd21cf6f52ae55
-#: ../../usage/fab.rst:368
+#: ../../usage/fab.rst:376
 msgid "Per-task arguments"
 msgstr "Per-task 引数"
 
 # 8de4800171f0423291d96a2eca211188
-#: ../../usage/fab.rst:370
+#: ../../usage/fab.rst:378
 msgid ""
 "The options given in :ref:`command-line-options` apply to the invocation of "
 "``fab`` as a whole; even if the order is mixed around, options still apply "
@@ -633,7 +647,7 @@ msgstr ""
 "クは Python関数なので引数は実行時に渡されるのが望ましいでしょう。"
 
 # 572bed8495c641bca878d045e7fdf156
-#: ../../usage/fab.rst:375
+#: ../../usage/fab.rst:383
 msgid ""
 "Answering both these needs is the concept of \"per-task arguments\", which "
 "is a special syntax you can tack onto the end of any task name:"
@@ -642,12 +656,12 @@ msgstr ""
 "名に添える特殊な構文です:"
 
 # 7c7d97ae9e834a33b128d3dfdc95cb44
-#: ../../usage/fab.rst:378
+#: ../../usage/fab.rst:386
 msgid "Use a colon (``:``) to separate the task name from its arguments;"
 msgstr "引数とタスク名を区別するにはコロン (``:``) を使います;"
 
 # 8bff705eaae048708d0983d8b0136ef6
-#: ../../usage/fab.rst:379
+#: ../../usage/fab.rst:387
 msgid ""
 "Use commas (``,``) to separate arguments from one another (may be escaped by "
 "using a backslash, i.e. ``\\,``);"
@@ -656,7 +670,7 @@ msgstr ""
 "します。例えば ``\\,``);"
 
 # 954a31700cbf409ca241486b9e4af5e3
-#: ../../usage/fab.rst:381
+#: ../../usage/fab.rst:389
 msgid ""
 "Use equals signs (``=``) for keyword arguments, or omit them for positional "
 "arguments. May also be escaped with backslashes."
@@ -665,7 +679,7 @@ msgstr ""
 "バックスラッシュでエスケープします。"
 
 # 41ae0f779d4446c98de3691ee8849829
-#: ../../usage/fab.rst:384
+#: ../../usage/fab.rst:392
 msgid ""
 "Additionally, since this process involves string parsing, all values will "
 "end up as Python strings, so plan accordingly. (We hope to improve upon this "
@@ -675,7 +689,7 @@ msgstr ""
 "す。(直感的な構文が見つかれば将来のバージョンの Fabric で改良します。)"
 
 # 166dd49c0b4548bba2be1b4314626165
-#: ../../usage/fab.rst:388
+#: ../../usage/fab.rst:396
 msgid ""
 "For example, a \"create a new user\" task might be defined like so (omitting "
 "most of the actual logic for brevity)::"
@@ -684,36 +698,34 @@ msgstr ""
 "に実際のロジックは省略)::"
 
 # 0b0b85277a3949ea8a0db287bbe8c18b
-#: ../../usage/fab.rst:395
+#: ../../usage/fab.rst:403
 msgid "You can specify just the username::"
 msgstr "ユーザー名だけを指定できます::"
 
 # 28447cef5d324889bdcea5386d865cc7
-#: ../../usage/fab.rst:399
+#: ../../usage/fab.rst:407
 msgid "Or treat it as an explicit keyword argument::"
 msgstr "あるいは任意のキーワード引数として扱います。"
 
 # bd0e4f54c6374191a807981cfa993880
-#: ../../usage/fab.rst:403
+#: ../../usage/fab.rst:411
 msgid "If both args are given, you can again give them as positional args::"
 msgstr "もし両方が与えられたら、再び位置パラメーターとして::"
 
 # efe476be32a4463b89adc5f4215afcae
-#: ../../usage/fab.rst:407
+#: ../../usage/fab.rst:415
 msgid "Or mix and match, just like in Python::"
 msgstr "あるいは Python のように mix and matchで::"
 
 # 10c18a91421a468d90e1d9101d547218
-#: ../../usage/fab.rst:411
+#: ../../usage/fab.rst:419
 msgid ""
-"The ``log_action`` call above is useful for illustrating escaped commas, "
-"like so::"
+"The ``print`` call above is useful for illustrating escaped commas, like so::"
 msgstr ""
-"上記の ``log_action`` の呼び出しはコンマのエスケープの説明に有効です。このよ"
-"うに::"
+"上記の ``print`` の呼び出しはコンマのエスケープの説明に有効です。このように::"
 
 # a3eeb94f41684637822d85c57a3fb62d
-#: ../../usage/fab.rst:417
+#: ../../usage/fab.rst:425
 msgid ""
 "Quoting the backslash-escaped comma is required, as not doing so will cause "
 "shell syntax errors. Quotes are also needed whenever an argument involves "
@@ -724,7 +736,7 @@ msgstr ""
 "必要になります。"
 
 # b1ad6aeea27448d2be38764033005c8f
-#: ../../usage/fab.rst:421
+#: ../../usage/fab.rst:429
 msgid ""
 "All of the above are translated into the expected Python function calls. For "
 "example, the last call above would become::"
@@ -733,12 +745,12 @@ msgstr ""
 "出しはこのように::(訳注:adminの値がおかしい)"
 
 # d158277d496d4d5290745490b070fcfe
-#: ../../usage/fab.rst:427
+#: ../../usage/fab.rst:435
 msgid "Roles and hosts"
 msgstr "Roles と hosts"
 
 # 47b840eb0d8a44dca10773bb4b3bc9aa
-#: ../../usage/fab.rst:429
+#: ../../usage/fab.rst:437
 msgid ""
 "As mentioned in :ref:`the section on task execution <hosts-per-task-cli>`, "
 "there are a handful of per-task keyword arguments (``host``, ``hosts``, "
@@ -751,7 +763,7 @@ msgstr ""
 "リストの設定に使われます。"
 
 # 590e233227a14e19b93ef947b4d17ff7
-#: ../../usage/fab.rst:434
+#: ../../usage/fab.rst:442
 msgid ""
 "These special kwargs are **removed** from the args/kwargs sent to the task "
 "function itself; this is so that you don't run into TypeErrors if your task "
@@ -766,7 +778,7 @@ msgstr ""
 "牲。)"
 
 # 2a30b7af8b5e440a903505de74927b63
-#: ../../usage/fab.rst:442
+#: ../../usage/fab.rst:450
 msgid ""
 "If both the plural and singular forms of these kwargs are given, the value "
 "of the plural will win out and the singular will be discarded."
@@ -775,7 +787,7 @@ msgstr ""
 "singular は棄てられます。"
 
 # 584fab3dbdb94b1ab3702eba3c2666b2
-#: ../../usage/fab.rst:445
+#: ../../usage/fab.rst:453
 msgid ""
 "When using the plural form of these arguments, one must use semicolons (``;"
 "``) since commas are already being used to separate arguments from one "
@@ -788,24 +800,24 @@ msgstr ""
 "はクォートを使うほうがよいでしょう。例えば::"
 
 # 3ca01df3d07f43c78633f6002ce6e5cf
-#: ../../usage/fab.rst:453
+#: ../../usage/fab.rst:461
 msgid ""
 "Again, since the ``hosts`` kwarg is removed from the argument list sent to "
 "the ``new_user`` task function, the actual Python invocation would be "
 "``new_user('myusername')``, and the function would be executed on a host "
 "list of ``['host1', 'host2']``."
 msgstr ""
-" ``new_user`` タスク関数に送られるとき ``hosts`` kwarg は引数リストから除かれ"
+"``new_user`` タスク関数に送られるとき ``hosts`` kwarg は引数リストから除かれ"
 "ます。実際、Python の呼び出しは ``new_user('myusername')`` で, ``['host1', "
 "'host2']`` のホストリストで関数が実行されます。"
 
 # 7162baecb14542a18b440b0e74b66259
-#: ../../usage/fab.rst:461
+#: ../../usage/fab.rst:469
 msgid "Settings files"
 msgstr "設定ファイル"
 
 # 52bd2121a2644ea2aee38718035690ea
-#: ../../usage/fab.rst:463
+#: ../../usage/fab.rst:471
 msgid ""
 "Fabric currently honors a simple user settings file, or ``fabricrc`` (think "
 "``bashrc`` but for ``fab``) which should contain one or more key-value "
@@ -821,7 +833,7 @@ msgstr ""
 "の更新に使われます。これは fabfile が読み込まれる前にロードされます。"
 
 # 65ed067d23b448cab3ab2069a23f64c0
-#: ../../usage/fab.rst:470
+#: ../../usage/fab.rst:478
 msgid ""
 "By default, Fabric looks for ``~/.fabricrc``, and this may be overridden by "
 "specifying the :option:`-c` flag to ``fab``."
@@ -830,7 +842,7 @@ msgstr ""
 "ン :option:`-c` で変更できます。"
 
 # 64f41e26318d415b818acb84dced6e63
-#: ../../usage/fab.rst:473
+#: ../../usage/fab.rst:481
 msgid ""
 "For example, if your typical SSH login username differs from your "
 "workstation username, and you don't want to modify ``env.user`` in a "
@@ -842,7 +854,7 @@ msgstr ""
 "他の人も使うでしょうから) ``fabricrc`` ファイルをこの様にします::"
 
 # 8a51d3184ae941339ec8361dca059771
-#: ../../usage/fab.rst:480
+#: ../../usage/fab.rst:488
 msgid ""
 "Then, when running ``fab``, your fabfile would load up with ``env.user`` set "
 "to ``'ssh_user_name'``. Other users of that fabfile could do the same, "

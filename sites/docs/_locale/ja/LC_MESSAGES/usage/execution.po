@@ -3,16 +3,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-03-21 20:07+0900\n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: 2015-01-03 11:25+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Fabric ja <tekapo@gmail.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: ja\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #: ../../usage/execution.rst:3
 msgid "Execution model"
@@ -253,18 +253,34 @@ msgstr ""
 "く再割当てすることができます(もちろんこれを指定している他のfabfileを読み込ま"
 "なければ)::"
 
+# 46668425604e4a69ad895f7947ee5d42
 #: ../../usage/execution.rst:136
 msgid ""
-"In addition to list/iterable object types, the values in ``env.roledefs`` "
-"may be callables, and will thus be called when looked up when tasks are run "
-"instead of at module load time. (For example, you could connect to remote "
-"servers to obtain role definitions, and not worry about causing delays at "
-"fabfile load time when calling e.g. ``fab --list``.)"
+"Role definitions are not necessary configuration of hosts only, but could "
+"hold other role specific settings of your choice. This is achieved by "
+"defining the roles as dicts and host strings under a ``hosts`` key::"
 msgstr ""
-"リスト/反復可能なオブジェクトタイプに加えて、 ``env.roledefs`` の値は呼び出し"
-"可能で、"
+"ロール定義にはホストのみの設定が必要というわけではなく、任意のロール固有の設"
+"定を持たせることも可能です。これはディクショナリとしてのロールと ``hosts`` "
+"キー配下のホストストリングで設定することができます。"
 
-#: ../../usage/execution.rst:142
+#: ../../usage/execution.rst:153
+msgid ""
+"In addition to list/iterable object types, the values in ``env.roledefs`` "
+"(or value of ``hosts`` key in dict style definition) may be callables, and "
+"will thus be called when looked up when tasks are run instead of at module "
+"load time. (For example, you could connect to remote servers to obtain role "
+"definitions, and not worry about causing delays at fabfile load time when "
+"calling e.g. ``fab --list``.)"
+msgstr ""
+"リスト/反復可能なオブジェクトタイプに加えて、 ``env.roledefs`` の値(もしくは"
+"辞書スタイル定義内の ``hosts`` キーの値)は呼び出し可能で、そのため、モジュー"
+"ルの読み込み時の代わりにタスク実行時にルックアップされたときに呼び出されま"
+"す。(例えば、ロール定義を得るためにリモートサーバに接続することが可能で、"
+"``fab --list`` などの呼び出し時にfabfileの読み込み時間の遅れの発生を心配する"
+"必要はありません)"
+
+#: ../../usage/execution.rst:160
 msgid ""
 "Use of roles is not required in any way -- it's simply a convenience in "
 "situations where you have common groupings of servers."
@@ -272,15 +288,15 @@ msgstr ""
 "ロールの使用は必須ではありません。サーバーの一般的なグループ化をするときに便"
 "利なようにしているだけです。"
 
-#: ../../usage/execution.rst:145
+#: ../../usage/execution.rst:163
 msgid "Added ability to use callables as ``roledefs`` values."
 msgstr "``roledefs`` の値として呼び出し可能な機能を追加。"
 
-#: ../../usage/execution.rst:151
+#: ../../usage/execution.rst:169
 msgid "How host lists are constructed"
 msgstr "ホストリストがどのように作られるか"
 
-#: ../../usage/execution.rst:153
+#: ../../usage/execution.rst:171
 msgid ""
 "There are a number of ways to specify host lists, either globally or per-"
 "task, and generally these methods override one another instead of merging "
@@ -292,11 +308,11 @@ msgstr ""
 "バーライドできます(将来のリリースでは変更されるかもしれませんが)。これらの各"
 "方法は主に2つの部分、ホスト用とロール用に分けられます。"
 
-#: ../../usage/execution.rst:159
+#: ../../usage/execution.rst:177
 msgid "Globally, via ``env``"
 msgstr "``env`` 経由でグローバルに"
 
-#: ../../usage/execution.rst:161
+#: ../../usage/execution.rst:179
 msgid ""
 "The most common method of setting hosts or roles is by modifying two key-"
 "value pairs in the environment dictionary, :doc:`env <env>`: ``hosts`` and "
@@ -307,7 +323,7 @@ msgstr ""
 "<env>`: ``hosts`` と ``roles`` に2つのキーバリューペアを設定する方法です。こ"
 "れらの変数の値は起動時、各タスクのホストリスト作成中にチェックされます。"
 
-#: ../../usage/execution.rst:166
+#: ../../usage/execution.rst:184
 msgid ""
 "Thus, they may be set at module level, which will take effect when the "
 "fabfile is imported::"
@@ -315,7 +331,7 @@ msgstr ""
 "したがって、これらの値はモジュールレベルで設定され、fabfileのインポート時に有"
 "効になります::"
 
-#: ../../usage/execution.rst:176
+#: ../../usage/execution.rst:194
 msgid ""
 "Such a fabfile, run simply as ``fab mytask``, will run ``mytask`` on "
 "``host1`` followed by ``host2``."
@@ -323,7 +339,7 @@ msgstr ""
 "単に ``fab mytask`` として動作させるこのようなfabfileの場合、 ``mytask`` が "
 "``host1`` に対して、続いて ``host2`` に対して実行されます。"
 
-#: ../../usage/execution.rst:179
+#: ../../usage/execution.rst:197
 msgid ""
 "Since the env vars are checked for *each* task, this means that if you have "
 "the need, you can actually modify ``env`` in one task and it will affect all "
@@ -332,7 +348,7 @@ msgstr ""
 "env変数は **各タスク** でチェックされるので、必要に応じてタスク内で ``env`` "
 "を変更することができ、その変更はその後に続くタスクにも反映されます。"
 
-#: ../../usage/execution.rst:191
+#: ../../usage/execution.rst:209
 msgid ""
 "When run as ``fab set_hosts mytask``, ``set_hosts`` is a \"local\" task -- "
 "its own host list is empty -- but ``mytask`` will again run on the two hosts "
@@ -342,7 +358,7 @@ msgstr ""
 "らのため \"local\" タスクとなりますが、 ``mytask`` は与えられた2つのホストに"
 "対して再び実行されます。"
 
-#: ../../usage/execution.rst:196
+#: ../../usage/execution.rst:214
 msgid ""
 "This technique used to be a common way of creating fake \"roles\", but is "
 "less necessary now that roles are fully implemented. It may still be useful "
@@ -352,7 +368,7 @@ msgstr ""
 "ル機能が完全に実装されたので今は必要性が少なくなりました。とは言え、場合に"
 "よっては今でも便利な方法です。"
 
-#: ../../usage/execution.rst:200
+#: ../../usage/execution.rst:218
 msgid ""
 "Alongside ``env.hosts`` is ``env.roles`` (not to be confused with ``env."
 "roledefs``!) which, if given, will be taken as a list of role names to look "
@@ -362,11 +378,11 @@ msgstr ""
 "に!)が与えられると、``env.roledefs`` 内を探すためにロール名のリストとして扱わ"
 "れます。"
 
-#: ../../usage/execution.rst:205
+#: ../../usage/execution.rst:223
 msgid "Globally, via the command line"
 msgstr "コマンドライン経由でグローバルに"
 
-#: ../../usage/execution.rst:207
+#: ../../usage/execution.rst:225
 msgid ""
 "In addition to modifying ``env.hosts``, ``env.roles``, and ``env."
 "exclude_hosts`` at the module level, you may define them by passing comma-"
@@ -378,7 +394,7 @@ msgstr ""
 "hosts/-H <-H>` と :option:`--roles/-R <-R>` に渡すことでもこれらの設定が可能"
 "です。::"
 
-#: ../../usage/execution.rst:214
+#: ../../usage/execution.rst:232
 msgid ""
 "Such an invocation is directly equivalent to ``env.hosts = ['host1', "
 "'host2']`` -- the argument parser knows to look for these arguments and will "
@@ -387,7 +403,7 @@ msgstr ""
 "こうした実行は ``env.hosts = ['host1', 'host2']`` と同等で、引数パーサーはこ"
 "れらの引数を探し、パース時に ``env`` を設定します。"
 
-#: ../../usage/execution.rst:220
+#: ../../usage/execution.rst:238
 msgid ""
 "It's possible, and in fact common, to use these switches to set only a "
 "single host or role. Fabric simply calls ``string.split(',')`` on the given "
@@ -398,7 +414,7 @@ msgstr ""
 "split(',')`` を単に呼び出しているだけで、コンマがない文字列は単一のアイテムリ"
 "ストとして扱われます。"
 
-#: ../../usage/execution.rst:224
+#: ../../usage/execution.rst:242
 msgid ""
 "It is important to know that these command-line switches are interpreted "
 "**before** your fabfile is loaded: any reassignment to ``env.hosts`` or "
@@ -409,7 +425,7 @@ msgstr ""
 "hosts`` もしくは ``env.roles`` で再割当てされた値がこれらのスイッチを上書きす"
 "るのです。"
 
-#: ../../usage/execution.rst:228
+#: ../../usage/execution.rst:246
 msgid ""
 "If you wish to nondestructively merge the command-line hosts with your "
 "fabfile-defined ones, make sure your fabfile uses ``env.hosts.extend()`` "
@@ -418,7 +434,7 @@ msgstr ""
 "コマンドラインのホストとfabfileで指定されたホストの非破壊的なマージをしたい場"
 "合は、fabfileで ``env.hosts.extend()`` を使うようにしてください::"
 
-#: ../../usage/execution.rst:239
+#: ../../usage/execution.rst:257
 msgid ""
 "When this fabfile is run as ``fab -H host1,host2 mytask``, ``env.hosts`` "
 "will then contain ``['host1', 'host2', 'host3', 'host4']`` at the time that "
@@ -428,7 +444,7 @@ msgstr ""
 "実行時に ``['host1', 'host2', 'host3', 'host4']`` が ``env.hosts`` に含まれま"
 "す。"
 
-#: ../../usage/execution.rst:245
+#: ../../usage/execution.rst:263
 msgid ""
 "``env.hosts`` is simply a Python list object -- so you may use ``env.hosts."
 "append()`` or any other such method you wish."
@@ -436,11 +452,11 @@ msgstr ""
 "``env.hosts`` は単なるPythonのリストオブジェクトなので ``env.hosts."
 "append()`` やその他のメソッドも使うことができます。"
 
-#: ../../usage/execution.rst:251
+#: ../../usage/execution.rst:269
 msgid "Per-task, via the command line"
 msgstr "コマンドライン経由でタスクごとに"
 
-#: ../../usage/execution.rst:253
+#: ../../usage/execution.rst:271
 msgid ""
 "Globally setting host lists only works if you want all your tasks to run on "
 "the same host list all the time. This isn't always true, so Fabric provides "
@@ -453,7 +469,7 @@ msgstr ""
 "ストリストを指定することができます。最初の方法はタスク引数を利用する方法で"
 "す。"
 
-#: ../../usage/execution.rst:258
+#: ../../usage/execution.rst:276
 msgid ""
 "As outlined in :doc:`fab`, it's possible to specify per-task arguments via a "
 "special command-line syntax. In addition to naming actual arguments to your "
@@ -467,7 +483,7 @@ msgstr ""
 "す。これはホストリストの組み立て時にFabricによって解釈されます(そして、タスク"
 "に渡された引数から取り除かれます)。"
 
-#: ../../usage/execution.rst:266
+#: ../../usage/execution.rst:284
 msgid ""
 "Since commas are already used to separate task arguments from one another, "
 "semicolons must be used in the ``hosts`` or ``roles`` arguments to delineate "
@@ -479,7 +495,7 @@ msgstr ""
 "あります。さらに、シェルがセミコロンを解釈しないように引数はクォートされてい"
 "なければなりません。"
 
-#: ../../usage/execution.rst:271
+#: ../../usage/execution.rst:289
 msgid ""
 "Take the below fabfile, which is the same one we've been using, but which "
 "doesn't define any host info at all::"
@@ -487,12 +503,12 @@ msgstr ""
 "以下のfabfileを見てみると、これまで使っていたものと同じですが、ホストの情報は"
 "まったく設定されていません::"
 
-#: ../../usage/execution.rst:279
+#: ../../usage/execution.rst:297
 msgid "To specify per-task hosts for ``mytask``, execute it like so::"
 msgstr ""
 "``mytast`` 用のタスクごとのホストを指定するには、以下のように実行します::"
 
-#: ../../usage/execution.rst:283
+#: ../../usage/execution.rst:301
 msgid ""
 "This will override any other host list and ensure ``mytask`` always runs on "
 "just those two hosts."
@@ -500,11 +516,11 @@ msgstr ""
 "これはどんなホストリストも上書きし、``mytask`` は常にこの2つのホストに対して"
 "実行されます。"
 
-#: ../../usage/execution.rst:287
+#: ../../usage/execution.rst:305
 msgid "Per-task, via decorators"
 msgstr "デコレーター経由でタスクごとに"
 
-#: ../../usage/execution.rst:289
+#: ../../usage/execution.rst:307
 msgid ""
 "If a given task should always run on a predetermined host list, you may wish "
 "to specify this in your fabfile itself. This can be done by decorating a "
@@ -516,11 +532,11 @@ msgstr ""
 "hosts` もしくは `~fabric.decorators.roles` デコレータでタスク関数をデコレート"
 "することで可能です。これらのデコレータは変数引数リストをとります。例えば::"
 
-#: ../../usage/execution.rst:300
+#: ../../usage/execution.rst:318
 msgid "They will also take an single iterable argument, e.g.::"
 msgstr "これは、繰り返し可能な単一の引数を取ることもできます。例えば::"
 
-#: ../../usage/execution.rst:307
+#: ../../usage/execution.rst:325
 msgid ""
 "When used, these decorators override any checks of ``env`` for that "
 "particular task's host list (though ``env`` is not modified in any way -- it "
@@ -534,7 +550,7 @@ msgstr ""
 "いたり :doc:`fab <fab>` が :option:`--hosts/-H <-H>` を使っていても "
 "``mytask`` は ``['host1', 'host2']`` のホストリストに対して実行されます。"
 
-#: ../../usage/execution.rst:313
+#: ../../usage/execution.rst:331
 msgid ""
 "However, decorator host lists do **not** override per-task command-line "
 "arguments, as given in the previous section."
@@ -542,11 +558,11 @@ msgstr ""
 "とは言え、デコレータのホストリストは、上のセクションで説明したタスクごとのコ"
 "マンドラインを **上書きすることはありません**。"
 
-#: ../../usage/execution.rst:317
+#: ../../usage/execution.rst:335
 msgid "Order of precedence"
 msgstr "優先順位"
 
-#: ../../usage/execution.rst:319
+#: ../../usage/execution.rst:337
 msgid ""
 "We've been pointing out which methods of setting host lists trump the "
 "others, as we've gone along. However, to make things clearer, here's a quick "
@@ -555,7 +571,7 @@ msgstr ""
 "ここまで、ホストリスト設定のどの方法が他の方法よりも優先するかについて説明し"
 "てきました。もっと明確にするため、以下に簡単にまとめます:"
 
-#: ../../usage/execution.rst:322
+#: ../../usage/execution.rst:340
 msgid ""
 "Per-task, command-line host lists (``fab mytask:host=host1``) override "
 "absolutely everything else."
@@ -563,7 +579,7 @@ msgstr ""
 "タスクごとのコマンドラインホストリスト(``fab mytask:host=host1``)は他のすべて"
 "を完全にオーバーライドする。"
 
-#: ../../usage/execution.rst:324
+#: ../../usage/execution.rst:342
 msgid ""
 "Per-task, decorator-specified host lists (``@hosts('host1')``) override the "
 "``env`` variables."
@@ -571,7 +587,7 @@ msgstr ""
 "タスクごとのデコレータで指定されたホストリスト(``@hosts('host1')``)は "
 "``env`` 変数をオーバーライドする。"
 
-#: ../../usage/execution.rst:326
+#: ../../usage/execution.rst:344
 msgid ""
 "Globally specified host lists set in the fabfile (``env.hosts = ['host1']``) "
 "*can* override such lists set on the command-line, but only if you're not "
@@ -581,7 +597,7 @@ msgstr ""
 "ンドラインでのホストリストをオーバーライド *できる* が、それは自分が注意して"
 "いない場合(もしくは意図的に行った場合)のみ。"
 
-#: ../../usage/execution.rst:329
+#: ../../usage/execution.rst:347
 msgid ""
 "Globally specified host lists set on the command-line (``--hosts=host1``) "
 "will initialize the ``env`` variables, but that's it."
@@ -589,7 +605,7 @@ msgstr ""
 "コマンドラインでグローバルに設定されたホストリストは(``--hosts=host1``) "
 "``env`` 変数を初期化するが、それだけしかしない。"
 
-#: ../../usage/execution.rst:332
+#: ../../usage/execution.rst:350
 msgid ""
 "This logic may change slightly in the future to be more consistent (e.g. "
 "having :option:`--hosts <-H>` somehow take precedence over ``env.hosts`` in "
@@ -601,11 +617,11 @@ msgstr ""
 "と同じように :option:`--hosts <-H>` が ``env.hosts`` より優先される)が、それ"
 "は後方互換性リリースの時だけです。"
 
-#: ../../usage/execution.rst:340
+#: ../../usage/execution.rst:358
 msgid "Combining host lists"
 msgstr "ホストリストの結合"
 
-#: ../../usage/execution.rst:342
+#: ../../usage/execution.rst:360
 msgid ""
 "There is no \"unionizing\" of hosts between the various sources mentioned "
 "in :ref:`host-lists`. If ``env.hosts`` is set to ``['host1', 'host2', "
@@ -621,7 +637,7 @@ msgstr ""
 "**実行されません** 。タスクごとのデコレータホストリストがの方が優先されるから"
 "です。"
 
-#: ../../usage/execution.rst:348
+#: ../../usage/execution.rst:366
 msgid ""
 "However, for each given source, if both roles **and** hosts are specified, "
 "they will be merged together into a single host list. Take, for example, "
@@ -631,7 +647,7 @@ msgstr ""
 "場合、両方ともひとつのホストリストにマージされます。例えば、以下のように両方"
 "のデコレータが使われているfabfileを見てみましょう::"
 
-#: ../../usage/execution.rst:361
+#: ../../usage/execution.rst:379
 msgid ""
 "Assuming no command-line hosts or roles are given when ``mytask`` is "
 "executed, this fabfile will call ``mytask`` on a host list of ``['a', 'b', "
@@ -642,11 +658,11 @@ msgstr ""
 "と、このfabfileは ``role1`` と `~fabric.decorators.hosts` 呼び出しの中身の結"
 "合されたホストリスト ``['a', 'b', 'c']`` に対して ``mytask`` を実行します。"
 
-#: ../../usage/execution.rst:369
+#: ../../usage/execution.rst:387
 msgid "Host list deduplication"
 msgstr "ホストリストの重複"
 
-#: ../../usage/execution.rst:371
+#: ../../usage/execution.rst:389
 msgid ""
 "By default, to support :ref:`combining-host-lists`, Fabric deduplicates the "
 "final host list so any given host string is only present once. However, this "
@@ -658,7 +674,7 @@ msgstr ""
 "か対象になりません。とは言え、これでは有益なこともある同じターゲットホストに"
 "対して明示的/意図的な複数回タスクの実行ができません。"
 
-#: ../../usage/execution.rst:376
+#: ../../usage/execution.rst:394
 msgid ""
 "To turn off deduplication, set :ref:`env.dedupe_hosts <dedupe_hosts>` to "
 "``False``."
@@ -666,11 +682,11 @@ msgstr ""
 "重複除去の機能を無効にするには :ref:`env.dedupe_hosts <dedupe_hosts>` を "
 "``False`` にします。"
 
-#: ../../usage/execution.rst:383
+#: ../../usage/execution.rst:401
 msgid "Excluding specific hosts"
 msgstr "特定のホストの除外"
 
-#: ../../usage/execution.rst:385
+#: ../../usage/execution.rst:403
 msgid ""
 "At times, it is useful to exclude one or more specific hosts, e.g. to "
 "override a few bad or otherwise undesirable hosts which are pulled in from a "
@@ -680,7 +696,7 @@ msgstr ""
 "ば、あるロールや自動的に生成されたホストリストから引き出されるいくつかの必要"
 "のないホストをオーバーライドする場合などです。"
 
-#: ../../usage/execution.rst:390
+#: ../../usage/execution.rst:408
 msgid ""
 "As of Fabric 1.4, you may wish to use :ref:`skip-bad-hosts` instead, which "
 "automatically skips over any unreachable hosts."
@@ -688,14 +704,14 @@ msgstr ""
 "Fabric 1.4 からは接続できなかったホストをスキップする :ref:`skip-bad-hosts` "
 "を使うこともできます。"
 
-#: ../../usage/execution.rst:393
+#: ../../usage/execution.rst:411
 msgid ""
 "Host exclusion may be accomplished globally with :option:`--exclude-hosts/-x "
 "<-x>`::"
 msgstr ""
 "グローバルでは :option:`--exclude-hosts/-x <-x>` でホストの除外ができます::"
 
-#: ../../usage/execution.rst:398
+#: ../../usage/execution.rst:416
 msgid ""
 "If ``myrole`` was defined as ``['host1', 'host2', ..., 'host15']``, the "
 "above invocation would run with an effective host list of ``['host1', "
@@ -705,7 +721,7 @@ msgstr ""
 "合、上のように実行すると、有効なホストリスト ``['host1', 'host3', 'host4', "
 "'host6', ..., 'host15']`` となります。"
 
-#: ../../usage/execution.rst:403
+#: ../../usage/execution.rst:421
 msgid ""
 "Using this option does not modify ``env.hosts`` -- it only causes the main "
 "execution loop to skip the requested hosts."
@@ -713,7 +729,7 @@ msgstr ""
 "このオプションを利用しても ``env.hosts`` は修正されません。メインの実行ループ"
 "がリクエストされたホストをスキップするだけです。"
 
-#: ../../usage/execution.rst:406
+#: ../../usage/execution.rst:424
 msgid ""
 "Exclusions may be specified per-task by using an extra ``exclude_hosts`` "
 "kwarg, which is implemented similarly to the abovementioned ``hosts`` and "
@@ -726,7 +742,7 @@ msgstr ""
 "と同じように実装されていて、実際のタスク実行にストリップされます。以下の例で"
 "は、上記のグローバル除外と同じ結果になります::"
 
-#: ../../usage/execution.rst:413
+#: ../../usage/execution.rst:431
 msgid ""
 "Note that the host list is semicolon-separated, just as with the ``hosts`` "
 "per-task argument."
@@ -734,11 +750,11 @@ msgstr ""
 "ホストリストはタスクごと引数の ``hosts`` と同じようにセミコロンで分けられま"
 "す。"
 
-#: ../../usage/execution.rst:417
+#: ../../usage/execution.rst:435
 msgid "Combining exclusions"
 msgstr "除外の結合"
 
-#: ../../usage/execution.rst:419
+#: ../../usage/execution.rst:437
 msgid ""
 "Host exclusion lists, like host lists themselves, are not merged together "
 "across the different \"levels\" they can be declared in. For example, a "
@@ -752,7 +768,7 @@ msgstr ""
 "ません。また、タスクごとの ``exclude_hosts`` キーワード引数もグローバルな ``-"
 "H`` リストに影響しません。"
 
-#: ../../usage/execution.rst:425
+#: ../../usage/execution.rst:443
 msgid ""
 "There is one minor exception to this rule, namely that CLI-level keyword "
 "arguments (``mytask:exclude_hosts=x,y``) **will** be taken into account when "
@@ -767,7 +783,7 @@ msgstr ""
 "exclude_hosts=host2`` として実行されると、 ``host1`` だけに対してのみ実行され"
 "ます。"
 
-#: ../../usage/execution.rst:431
+#: ../../usage/execution.rst:449
 msgid ""
 "As with the host list merging, this functionality is currently limited "
 "(partly to keep the implementation simple) and may be expanded in future "
@@ -776,11 +792,11 @@ msgstr ""
 "ホストリストのマージに関しては、現行では機能は限定的(実装をシンプルに保つため"
 "でもあります)で、将来のリリースでは拡張されるかもしれません。"
 
-#: ../../usage/execution.rst:438
+#: ../../usage/execution.rst:456
 msgid "Intelligently executing tasks with ``execute``"
 msgstr "``execute`` での賢いタスクの実行"
 
-#: ../../usage/execution.rst:442
+#: ../../usage/execution.rst:460
 msgid ""
 "Most of the information here involves \"top level\" tasks executed via :doc:"
 "`fab <fab>`, such as the first example where we called ``fab taskA taskB``. "
@@ -792,7 +808,7 @@ msgstr ""
 "言え、以下の \"meta\" タスクのような複数タスクの実行をまとめたものも便利な時"
 "があります。"
 
-#: ../../usage/execution.rst:447
+#: ../../usage/execution.rst:465
 msgid ""
 "Prior to Fabric 1.3, this had to be done by hand, as outlined in :doc:`/"
 "usage/library`. Fabric's design eschews magical behavior, so simply "
@@ -804,7 +820,7 @@ msgstr ""
 "び出しても* `~fabric.decorators.roles` のようなデコレータは考慮 **しません"
 "** 。"
 
-#: ../../usage/execution.rst:452
+#: ../../usage/execution.rst:470
 msgid ""
 "New in Fabric 1.3 is the `~fabric.tasks.execute` helper function, which "
 "takes a task object or name as its first argument. Using it is effectively "
@@ -822,7 +838,7 @@ msgstr ""
 "ロール設定方法をオーバーライドする :ref:`CLIのタスクごとの引数 <hosts-per-"
 "task-cli>` に類似しています)"
 
-#: ../../usage/execution.rst:460
+#: ../../usage/execution.rst:478
 msgid ""
 "As an example, here's a fabfile defining two stand-alone tasks for deploying "
 "a Web application::"
@@ -830,7 +846,7 @@ msgstr ""
 "例として、ウェブアプリケーションをデプロイする2つの別個に定義されたfabfileを"
 "あげます。"
 
-#: ../../usage/execution.rst:480
+#: ../../usage/execution.rst:498
 msgid ""
 "In Fabric <=1.2, the only way to ensure that ``migrate`` runs on the DB "
 "servers and that ``update`` runs on the Web servers (short of manual ``env."
@@ -840,7 +856,7 @@ msgstr ""
 "Webサーバに対して確実に実行する唯一の方法( ``env.host_string`` 操作の短いマ"
 "ニュアル)は両方をトップレベルのタスクとして呼び出す方法しかありませんでした::"
 
-#: ../../usage/execution.rst:486
+#: ../../usage/execution.rst:504
 msgid ""
 "Fabric >=1.3 can use `~fabric.tasks.execute` to set up a meta-task. Update "
 "the ``import`` line like so::"
@@ -848,11 +864,11 @@ msgstr ""
 "Fabric >=1.3ではメタタスクのセットアップに `~fabric.tasks.execute` が使えま"
 "す。 ``import`` の行を以下のようにします::"
 
-#: ../../usage/execution.rst:491
+#: ../../usage/execution.rst:509
 msgid "and append this to the bottom of the file::"
 msgstr "そして、ファイルの最後に次を追加します::"
 
-#: ../../usage/execution.rst:497
+#: ../../usage/execution.rst:515
 msgid ""
 "That's all there is to it; the `~fabric.decorators.roles` decorators will be "
 "honored as expected, resulting in the following execution sequence:"
@@ -860,27 +876,27 @@ msgstr ""
 "これだけです; `~fabric.decorators.roles` デコレータが期待通りに履行し、以下の"
 "実行シーケンスの結果になります:"
 
-#: ../../usage/execution.rst:499
+#: ../../usage/execution.rst:517
 msgid "`migrate` on `db1`"
 msgstr "`db1` に対して `migrate`"
 
-#: ../../usage/execution.rst:500
+#: ../../usage/execution.rst:518
 msgid "`migrate` on `db2`"
 msgstr "`db2` に対して `migrate`"
 
-#: ../../usage/execution.rst:501
+#: ../../usage/execution.rst:519
 msgid "`update` on `web1`"
 msgstr "`web1` に対して `update`"
 
-#: ../../usage/execution.rst:502
+#: ../../usage/execution.rst:520
 msgid "`update` on `web2`"
 msgstr "`web2` に対して `update`"
 
-#: ../../usage/execution.rst:503
+#: ../../usage/execution.rst:521
 msgid "`update` on `web3`"
 msgstr "`web3` に対して `update`"
 
-#: ../../usage/execution.rst:506
+#: ../../usage/execution.rst:524
 msgid ""
 "This technique works because tasks that themselves have no host list (this "
 "includes the global host list settings) only run one time. If used inside a "
@@ -894,7 +910,7 @@ msgstr ""
 "execute` への呼び出しは複数回実行され、結果としてサブタスク呼び出しの倍数分実"
 "行されるので、お気をつけて!"
 
-#: ../../usage/execution.rst:512
+#: ../../usage/execution.rst:530
 msgid ""
 "If you would like your `execute` calls to only be called once, you may use "
 "the `~fabric.decorators.runs_once` decorator."
@@ -902,15 +918,15 @@ msgstr ""
 "自分の `execute` 呼び出しを1度だけの呼び出しにするには `~fabric.decorators."
 "runs_once` デコレータを使います。"
 
-#: ../../usage/execution.rst:515
+#: ../../usage/execution.rst:533
 msgid "`~fabric.tasks.execute`, `~fabric.decorators.runs_once`"
 msgstr "`~fabric.tasks.execute`, `~fabric.decorators.runs_once`"
 
-#: ../../usage/execution.rst:521
+#: ../../usage/execution.rst:539
 msgid "Leveraging ``execute`` to access multi-host results"
 msgstr "マルチホストの結果へのアクセスに ``execute`` を活用する"
 
-#: ../../usage/execution.rst:523
+#: ../../usage/execution.rst:541
 msgid ""
 "In nontrivial Fabric runs, especially parallel ones, you may want to gather "
 "up a bunch of per-host result values at the end - e.g. to present a summary "
@@ -920,7 +936,7 @@ msgstr ""
 "ごとの結果の値を、例えばテーブルサマリーの表示や計算の実行をするためなど、ひ"
 "とまとめにしたいことがあると思います。"
 
-#: ../../usage/execution.rst:527
+#: ../../usage/execution.rst:545
 msgid ""
 "It's not possible to do this in Fabric's default \"naive\" mode (one where "
 "you rely on Fabric looping over host lists on your behalf), but with `."
@@ -934,7 +950,7 @@ msgstr ""
 "しから `.execute` との実行をコントロールする \"meta\" タスクの呼び出しにス"
 "イッチします。"
 
-#: ../../usage/execution.rst:544
+#: ../../usage/execution.rst:562
 msgid ""
 "In the above, ``workhorse`` can do any Fabric stuff at all -- it's literally "
 "your old \"naive\" task -- except that it needs to return something useful."
@@ -942,7 +958,7 @@ msgstr ""
 "上の例では、 ``workhorse`` はFabricで可能なこと、文字通り古い \"naive\" なタ"
 "スクはすべて可能です。なにか有益なことを返す必要がある時を除いてですが。"
 
-#: ../../usage/execution.rst:547
+#: ../../usage/execution.rst:565
 msgid ""
 "``go`` is your new entry point (to be invoked as ``fab go``, or whatnot) and "
 "its job is to take the ``results`` dictionary from the `.execute` call and "
@@ -954,11 +970,11 @@ msgstr ""
 "ことをなんでもすることです。返り値の構造についての詳細はAPIドキュメントをご覧"
 "ください。"
 
-#: ../../usage/execution.rst:556
+#: ../../usage/execution.rst:574
 msgid "Using ``execute`` with dynamically-set host lists"
 msgstr "ホストリストの動的セットとの ``execute`` の利用"
 
-#: ../../usage/execution.rst:558
+#: ../../usage/execution.rst:576
 msgid ""
 "A common intermediate-to-advanced use case for Fabric is to parameterize "
 "lookup of one's target host list at runtime (when use of :ref:`execution-"
@@ -969,7 +985,7 @@ msgstr ""
 "くあるユースケースです( :ref:`execution-roles` の利用では十分ではない場合)。 "
 "``execute`` は以下のようにこれをとても簡単に実現できます::"
 
-#: ../../usage/execution.rst:583
+#: ../../usage/execution.rst:601
 msgid ""
 "For example, if ``external_datastore`` was a simplistic \"look up hosts by "
 "tag in a database\" service, and you wanted to run a task on all hosts "
@@ -981,7 +997,7 @@ msgstr ""
 "タグが付けられたすべてのホストに対してタスクを実行するのなら、上記を以下のよ"
 "うに呼び出すことができます::"
 
-#: ../../usage/execution.rst:589
+#: ../../usage/execution.rst:607
 msgid ""
 "But wait! A data migration has gone awry on the DB servers. Let's fix up our "
 "migration code in our source repo, and deploy just the DB boxes again::"
@@ -990,7 +1006,7 @@ msgstr ""
 "した。ソースリポジトリのマイグレーション用のコードを修正して、DBボックスだけ"
 "に再度どプロイしてみましょう::"
 
-#: ../../usage/execution.rst:594
+#: ../../usage/execution.rst:612
 msgid ""
 "This use case looks similar to Fabric's roles, but has much more potential, "
 "and is by no means limited to a single argument. Define the task however you "
@@ -1002,11 +1018,11 @@ msgstr ""
 "じてどのようにも外部のデータストアにクエリーを行うことができます。結局のとこ"
 "ろ、ただのPythonなのです。"
 
-#: ../../usage/execution.rst:599
+#: ../../usage/execution.rst:617
 msgid "The alternate approach"
 msgstr "別のアプローチ"
 
-#: ../../usage/execution.rst:601
+#: ../../usage/execution.rst:619
 msgid ""
 "Similar to the above, but using ``fab``'s ability to call multiple tasks in "
 "succession instead of an explicit ``execute`` call, is to mutate :ref:`env."
@@ -1017,11 +1033,11 @@ msgstr ""
 "を利用して連続で複数タスクを呼び出すには、ホストリストの参照タスクでの :ref:"
 "`env.hosts <hosts>` を変化させ、同じセッションで ``do_work`` を呼び出します::"
 
-#: ../../usage/execution.rst:621
+#: ../../usage/execution.rst:639
 msgid "Then invoke like so::"
 msgstr "そして次のように実行されます::"
 
-#: ../../usage/execution.rst:625
+#: ../../usage/execution.rst:643
 msgid ""
 "One benefit of this approach over the previous one is that you can replace "
 "``do_work`` with any other \"workhorse\" task::"
@@ -1029,11 +1045,11 @@ msgstr ""
 "その前のアプローチと比べた時のこちらのアプローチの利点は ``do_work`` をどん"
 "な \"workhorse\" タスクとも入れ替え可能ということです::"
 
-#: ../../usage/execution.rst:636
+#: ../../usage/execution.rst:654
 msgid "Failure handling"
 msgstr "失敗の扱い"
 
-#: ../../usage/execution.rst:638
+#: ../../usage/execution.rst:656
 msgid ""
 "Once the task list has been constructed, Fabric will start executing them as "
 "outlined in :ref:`execution-strategy`, until all tasks have been run on the "
@@ -1048,7 +1064,7 @@ msgstr ""
 "て、もし何かが失敗した場合、例えばリモートプログラムがノンゼロ返り値を返した"
 "り、自分のfabfileのPythonコードが例外に遭遇したりした場合、すぐに停止します。"
 
-#: ../../usage/execution.rst:645
+#: ../../usage/execution.rst:663
 msgid ""
 "This is typically the desired behavior, but there are many exceptions to the "
 "rule, so Fabric provides ``env.warn_only``, a Boolean setting. It defaults "
@@ -1064,11 +1080,11 @@ msgstr ""
 "トマネージャーなどで -- ``env.warn_only`` が ``True`` に設定されていると、"
 "Fabricは警告メッセージを発しますがプログラムの実行は継続します。"
 
-#: ../../usage/execution.rst:656
+#: ../../usage/execution.rst:674
 msgid "Connections"
 msgstr "接続"
 
-#: ../../usage/execution.rst:658
+#: ../../usage/execution.rst:676
 msgid ""
 "``fab`` itself doesn't actually make any connections to remote hosts. "
 "Instead, it simply ensures that for each distinct run of a task on one of "
@@ -1084,7 +1100,7 @@ msgstr ""
 "り同じような動作を達成することができます(とは言え、Fabric 1.3では `~fabric."
 "tasks.execute` の利用をのほうが好ましく、より強力です)。"
 
-#: ../../usage/execution.rst:665
+#: ../../usage/execution.rst:683
 msgid ""
 "``env.host_string`` is (as the name implies) the \"current\" host string, "
 "and is what Fabric uses to determine what connections to make (or re-use) "
@@ -1099,7 +1115,7 @@ msgstr ""
 "文字列をSSH接続オブジェクトにマップしている共有辞書内の参照キーとして ``env."
 "host_string`` を利用します。"
 
-#: ../../usage/execution.rst:673
+#: ../../usage/execution.rst:691
 msgid ""
 "The connections dictionary (currently located at ``fabric.state."
 "connections``) acts as a cache, opting to return previously created "
@@ -1110,11 +1126,11 @@ msgstr ""
 "シュとして振る舞い、オーバーヘッドを減らすために可能なら前回作成された接続を"
 "返そうとし、そうした接続がなければ新たに作成します。"
 
-#: ../../usage/execution.rst:679
+#: ../../usage/execution.rst:697
 msgid "Lazy connections"
 msgstr "レイジーな接続"
 
-#: ../../usage/execution.rst:681
+#: ../../usage/execution.rst:699
 msgid ""
 "Because connections are driven by the individual operations, Fabric will not "
 "actually make connections until they're necessary. Take for example this "
@@ -1125,12 +1141,12 @@ msgstr ""
 "続を行いません。以下の例を見てください。このタスクはリモートサーバとのやりと"
 "りの前にローカルでハウスキーピング処理を行います::"
 
-#: ../../usage/execution.rst:696
+#: ../../usage/execution.rst:714
 msgid "What happens, connection-wise, is as follows:"
 msgstr ""
 "接続という観点からどのようなことが起こっているのか順に見て行きましょう:"
 
-#: ../../usage/execution.rst:698
+#: ../../usage/execution.rst:716
 msgid ""
 "The two `~fabric.operations.local` calls will run without making any network "
 "connections whatsoever;"
@@ -1138,7 +1154,7 @@ msgstr ""
 "2つの `~fabric.operations.local` 呼び出しがどんなものであれ接続をまったく行わ"
 "ないで実行されます"
 
-#: ../../usage/execution.rst:700
+#: ../../usage/execution.rst:718
 msgid ""
 "`~fabric.operations.put` asks the connection cache for a connection to "
 "``host1``;"
@@ -1146,7 +1162,7 @@ msgstr ""
 "`~fabric.operations.put` が ``host1`` へ接続するための接続キャッシュを要求し"
 "ます"
 
-#: ../../usage/execution.rst:702
+#: ../../usage/execution.rst:720
 msgid ""
 "The connection cache fails to find an existing connection for that host "
 "string, and so creates a new SSH connection, returning it to `~fabric."
@@ -1155,12 +1171,12 @@ msgstr ""
 "接続キャッシュは該当のホスト文字列用の既存の接続を見つけられなかったので、新"
 "しいSSH接続を作成し、その接続を `~fabric.operations.put` に返します"
 
-#: ../../usage/execution.rst:705
+#: ../../usage/execution.rst:723
 msgid "`~fabric.operations.put` uploads the file through that connection;"
 msgstr ""
 "`~fabric.operations.put` がこの接続を通じてファイルをアップロードします"
 
-#: ../../usage/execution.rst:706
+#: ../../usage/execution.rst:724
 msgid ""
 "Finally, the `~fabric.operations.run` call asks the cache for a connection "
 "to that same host string, and is given the existing, cached connection for "
@@ -1169,7 +1185,7 @@ msgstr ""
 "最後に、 `~fabric.operations.run` 呼び出しが同じホスト文字列への接続のための"
 "キャッシュを要求し、既存のキャッシュされた接続を自身の利用のために与えます"
 
-#: ../../usage/execution.rst:710
+#: ../../usage/execution.rst:728
 msgid ""
 "Extrapolating from this, you can also see that tasks which don't use any "
 "network-borne operations will never actually initiate any connections "
@@ -1180,11 +1196,11 @@ msgstr ""
 "な接続も始めないことがお分かりになるでしょう(ただし、もしあればですが、ホスト"
 "リスト内の各ホストに一度実行されます)。"
 
-#: ../../usage/execution.rst:715
+#: ../../usage/execution.rst:733
 msgid "Closing connections"
 msgstr "接続の解除"
 
-#: ../../usage/execution.rst:717
+#: ../../usage/execution.rst:735
 msgid ""
 "Fabric's connection cache never closes connections itself -- it leaves this "
 "up to whatever is using it. The :doc:`fab <fab>` tool does this bookkeeping "
@@ -1196,7 +1212,7 @@ msgstr ""
 "べての開いている接続に対して繰り返し処理を行い、プログラムから抜け出る直前に"
 "(タスクの成功、不成功に関わらず)それらの接続を閉じます。"
 
-#: ../../usage/execution.rst:722
+#: ../../usage/execution.rst:740
 msgid ""
 "Library users will need to ensure they explicitly close all open connections "
 "before their program exits. This can be accomplished by calling `~fabric."
@@ -1206,7 +1222,7 @@ msgstr ""
 "続を確実に閉じるようにする必要が有ります。これは、自分のスクリプトの最後で "
 "`~fabric.network.disconnect_all` を呼び出すことによって実施可能です。"
 
-#: ../../usage/execution.rst:727
+#: ../../usage/execution.rst:745
 msgid ""
 "`~fabric.network.disconnect_all` may be moved to a more public location in "
 "the future; we're still working on making the library aspects of Fabric more "
@@ -1216,11 +1232,11 @@ msgstr ""
 "かもしれません。わたしたちは、Fabricのライブラリとしての側面をより堅固に、よ"
 "り整理されたものへしようと作業をしています。"
 
-#: ../../usage/execution.rst:732
+#: ../../usage/execution.rst:750
 msgid "Multiple connection attempts and skipping bad hosts"
 msgstr "複数回接続の試みとうまくいかないホストのスキップ"
 
-#: ../../usage/execution.rst:734
+#: ../../usage/execution.rst:752
 msgid ""
 "As of Fabric 1.4, multiple attempts may be made to connect to remote servers "
 "before aborting with an error: Fabric will try connecting :ref:`env."
@@ -1236,7 +1252,7 @@ msgstr ""
 "に合わせるためデフォルトで1回と10秒になっていますが、必要に応じて安全に変更か"
 "のうです)。"
 
-#: ../../usage/execution.rst:741
+#: ../../usage/execution.rst:759
 msgid ""
 "Furthermore, even total failure to connect to a server is no longer an "
 "absolute hard stop: set :ref:`env.skip_bad_hosts <skip-bad-hosts>` to "
@@ -1248,11 +1264,11 @@ msgstr ""
 "(通常は初期接続)でFabricは中止をする代わりに単に警告を発し、タスクの実行を続"
 "けます。"
 
-#: ../../usage/execution.rst:751
+#: ../../usage/execution.rst:769
 msgid "Password management"
 msgstr "パスワード管理"
 
-#: ../../usage/execution.rst:753
+#: ../../usage/execution.rst:771
 msgid ""
 "Fabric maintains an in-memory, two-tier password cache to help remember your "
 "login and sudo passwords in certain situations; this helps avoid tedious re-"
@@ -1264,7 +1280,7 @@ msgstr ""
 "有しているとき [#]_ やリモートシステムの ``sudo`` 設定が自身のパスワードを"
 "キャッシュしない時に退屈な再入力を避けるのに役立ちます。"
 
-#: ../../usage/execution.rst:758
+#: ../../usage/execution.rst:776
 msgid ""
 "The first layer is a simple default or fallback password cache, :ref:`env."
 "password <password>` (which may also be set at the command line via :option:"
@@ -1280,25 +1296,29 @@ msgstr ""
 "ントの :ref:`ホスト文字列 <host_string>` 用のエントリを持っていない時に試され"
 "る一つのパスワードを保持します。"
 
-#: ../../usage/execution.rst:765
+#: ../../usage/execution.rst:783
 msgid ""
 ":ref:`env.passwords <passwords>` (plural!) serves as a per-user/per-host "
 "cache, storing the most recently entered password for every unique user/host/"
-"port combination.  Due to this cache, connections to multiple different "
-"users and/or hosts in the same session will only require a single password "
-"entry for each. (Previous versions of Fabric used only the single, default "
-"password cache and thus required password re-entry every time the previously "
-"entered password became invalid.)"
+"port combination (**note** that you must include **all three values** if "
+"modifying the structure by hand - see the above link for details). Due to "
+"this cache, connections to multiple different users and/or hosts in the same "
+"session will only require a single password entry for each. (Previous "
+"versions of Fabric used only the single, default password cache and thus "
+"required password re-entry every time the previously entered password became "
+"invalid.)"
 msgstr ""
 ":ref:`env.passwords <passwords>` (複数形!) はユーザーごと/ホストごとのキャッ"
 "シュとして利用され、ユーザー/ホスト/ポートの各組み合わせごとにもっとも最近入"
-"力されたパスワードを保持します。このキャッシュのおかげで同一セッションでの複"
-"数の異なるユーザーおよび/またはホストへの接続で、それぞれ一度のパスワード入力"
-"だけで済ますことができます。(Fabricの以前のバージョンでは単一のデフォルトパス"
-"ワードのキャッシュのみしか利用できなかったため、その前に入力されたパスワード"
-"は毎回無効になり、パスワードの再入力が必要になっていました)"
+"力されたパスワードを保持します (もしこの構造を手動で修正する場合は **この3つ"
+"すべての値** を必ず含める必要があるということに **留意** してください)。この"
+"キャッシュのおかげで同一セッションでの複数の異なるユーザーおよび/またはホスト"
+"への接続で、それぞれ一度のパスワード入力だけで済ますことができます。(Fabricの"
+"以前のバージョンでは単一のデフォルトパスワードのキャッシュのみしか利用できな"
+"かったため、その前に入力されたパスワードは毎回無効になり、パスワードの再入力"
+"が必要になっていました)"
 
-#: ../../usage/execution.rst:773
+#: ../../usage/execution.rst:792
 msgid ""
 "Depending on your configuration and the number of hosts your session will "
 "connect to, you may find setting either or both of these env vars to be "
@@ -1309,7 +1329,7 @@ msgstr ""
 "くは両方を設定すると便利でしょう。とは言え、Fabricは必要に応じて追加の設定な"
 "しでも自動的にこれらを入力します。"
 
-#: ../../usage/execution.rst:778
+#: ../../usage/execution.rst:797
 msgid ""
 "Specifically, each time a password prompt is presented to the user, the "
 "value entered is used to update both the single default password cache, and "
@@ -1319,7 +1339,7 @@ msgstr ""
 "デフォルトパスワードキャッシュと ``env.host_string`` のカレントの値のための"
 "キャッシュの値の両方のアップデートに使われます。"
 
-#: ../../usage/execution.rst:782
+#: ../../usage/execution.rst:801
 msgid ""
 "We highly recommend the use of SSH `key-based access <http://en.wikipedia."
 "org/wiki/Public_key>`_ instead of relying on homogeneous password setups, as "
@@ -1329,11 +1349,11 @@ msgstr ""
 "wikipedia.org/wiki/%E5%85%AC%E9%96%8B%E9%8D%B5%E6%9A%97%E5%8F%B7>`_ の利用を"
 "強くおすすめします。こちらのほうがかなり安全です。"
 
-#: ../../usage/execution.rst:790
+#: ../../usage/execution.rst:809
 msgid "Leveraging native SSH config files"
 msgstr "ネイティブのSSH configファイルの活用"
 
-#: ../../usage/execution.rst:792
+#: ../../usage/execution.rst:811
 msgid ""
 "Command-line SSH clients (such as the one provided by `OpenSSH <http://"
 "openssh.org>`_) make use of a specific configuration format typically known "
@@ -1353,7 +1373,7 @@ msgstr ""
 "替え( :ref:`エージェントフォワーディング <forward-agent>` を利用するか否かな"
 "ど)など、さまざまなSSHオプションの設定を可能にします。"
 
-#: ../../usage/execution.rst:801
+#: ../../usage/execution.rst:820
 msgid ""
 "Fabric's SSH implementation allows loading a subset of these options from "
 "one's actual SSH config file, should it exist. This behavior is not enabled "
@@ -1367,7 +1387,7 @@ msgstr ""
 "use_ssh_config <use-ssh-config>` を ``True`` にすることによって有効にすること"
 "ができます。"
 
-#: ../../usage/execution.rst:807
+#: ../../usage/execution.rst:826
 msgid ""
 "If enabled, the following SSH config directives will be loaded and honored "
 "by Fabric:"
@@ -1375,7 +1395,7 @@ msgstr ""
 "これを有効にすると、次のSSH config指示が読み込まれ、Fabricによって履行されま"
 "す:"
 
-#: ../../usage/execution.rst:809
+#: ../../usage/execution.rst:828
 msgid ""
 "``User`` and ``Port`` will be used to fill in the appropriate connection "
 "parameters when not otherwise specified, in the following fashion:"
@@ -1383,7 +1403,7 @@ msgstr ""
 "``User`` と ``Port`` は、次の方法で他に指定されない限り、適切な接続パラメータ"
 "に利用されます:"
 
-#: ../../usage/execution.rst:812
+#: ../../usage/execution.rst:831
 msgid ""
 "Globally specified ``User``/``Port`` will be used in place of the current "
 "defaults (local username and 22, respectively) if the appropriate env vars "
@@ -1393,7 +1413,7 @@ msgstr ""
 "ければ、カレントの初期値(それぞれローカルのユーザー名と22)の代わりに利用され"
 "ます。"
 
-#: ../../usage/execution.rst:815
+#: ../../usage/execution.rst:834
 msgid ""
 "However, if :ref:`env.user <user>`/:ref:`env.port <port>` *are* set, they "
 "override global ``User``/``Port`` values."
@@ -1401,7 +1421,7 @@ msgstr ""
 "しかし、 :ref:`env.user <user>`/:ref:`env.port <port>` が *セットされていれば"
 "* 、グローバルの ``User``/``Port`` の値をオーバーライドします。"
 
-#: ../../usage/execution.rst:817
+#: ../../usage/execution.rst:836
 msgid ""
 "User/port values in the host string itself (e.g. ``hostname:222``) will "
 "override everything, including any ``ssh_config`` values."
@@ -1409,7 +1429,7 @@ msgstr ""
 "ホスト文字列自身の User/port の値(例えば``hostname:222``)は ``ssh_config`` の"
 "値を含むすべてをオーバーライドします。"
 
-#: ../../usage/execution.rst:819
+#: ../../usage/execution.rst:838
 msgid ""
 "``HostName`` can be used to replace the given hostname, just like with "
 "regular ``ssh``. So a ``Host foo`` entry specifying ``HostName example.com`` "
@@ -1421,7 +1441,7 @@ msgstr ""
 "Fabricにホスト名 ``'foo'`` を与えることができ、接続時に ``'example.com'`` に"
 "展開されます。"
 
-#: ../../usage/execution.rst:823
+#: ../../usage/execution.rst:842
 msgid ""
 "``IdentityFile`` will extend (not replace) :ref:`env.key_filename <key-"
 "filename>`."
@@ -1429,7 +1449,7 @@ msgstr ""
 "``IdentityFile`` は :ref:`env.key_filename <key-filename>` を(置き換えるので"
 "はなく)拡張します。"
 
-#: ../../usage/execution.rst:825
+#: ../../usage/execution.rst:844
 msgid ""
 "``ForwardAgent`` will augment :ref:`env.forward_agent <forward-agent>` in an "
 "\"OR\" manner: if either is set to a positive value, agent forwarding will "
@@ -1439,7 +1459,7 @@ msgstr ""
 "agent>` を補完します。どちらかが真の値にセットされていれば、エージェントフォ"
 "ワーディングは有効になります。"
 
-#: ../../usage/execution.rst:828
+#: ../../usage/execution.rst:847
 msgid ""
 "``ProxyCommand`` will trigger use of a proxy command for host connections, "
 "just as with regular ``ssh``."
@@ -1447,7 +1467,7 @@ msgstr ""
 "``ProxyCommand`` は通常の ``ssh`` と同じようにホスト接続でのプロキシコマンド"
 "を動作させます。"
 
-#: ../../usage/execution.rst:832
+#: ../../usage/execution.rst:851
 msgid ""
 "If all you want to do is bounce SSH traffic off a gateway, you may find :ref:"
 "`env.gateway <gateway>` to be a more efficient connection method (which will "
@@ -1458,7 +1478,7 @@ msgstr ""
 "``ProxyCommand`` を使う通常の ``ssh gatewayhost nc %h %p`` 方式よりも :ref:"
 "`env.gateway <gateway>` の方がより効率的な接続方法です。"
 
-#: ../../usage/execution.rst:838
+#: ../../usage/execution.rst:857
 msgid ""
 "If your SSH config file contains ``ProxyCommand`` directives *and* you have "
 "set :ref:`env.gateway <gateway>` to a non-``None`` value, ``env.gateway`` "
@@ -1468,7 +1488,7 @@ msgstr ""
 "gateway <gateway>` が ``None`` 以外の値にセットされている場合、``env."
 "gateway`` が優先され ``ProxyCommand`` は無視されます。"
 
-#: ../../usage/execution.rst:842
+#: ../../usage/execution.rst:861
 msgid ""
 "If one has a pre-created SSH config file, rationale states it will be easier "
 "for you to modify ``env.gateway`` (e.g. via `~fabric.context_managers."

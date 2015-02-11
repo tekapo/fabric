@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-04-18 17:35+0900\n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: 2015-01-04 09:25+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.7.1\n"
 
 # 5eef8008994d470c9ef4cc9cb907530e
 #: ../../usage/parallel.rst:3
@@ -26,7 +26,7 @@ msgid "Parallel execution"
 msgstr "並列実行"
 
 # 2f6a62970be24fa58add3f0e3340230f
-#: ../../usage/parallel.rst:7
+#: ../../usage/parallel.rst:9
 msgid ""
 "By default, Fabric executes all specified tasks **serially** (see :ref:"
 "`execution-strategy` for details.) This document describes Fabric's options "
@@ -39,12 +39,12 @@ msgstr ""
 "ションを説明します。"
 
 # 476cfa9bc07747e6ac2ce212198052c5
-#: ../../usage/parallel.rst:14
+#: ../../usage/parallel.rst:16
 msgid "What it does"
 msgstr "どうなるか"
 
 # 1d4d8b2b97c1414d80d99758b830be0d
-#: ../../usage/parallel.rst:16
+#: ../../usage/parallel.rst:18
 msgid ""
 "Because Fabric 1.x is not fully threadsafe (and because in general use, task "
 "functions do not typically interact with one another) this functionality is "
@@ -60,7 +60,7 @@ msgstr ""
 "スが走るのを避けるために任意(設定可能)のスライディングウィンドウを使います。"
 
 # 6631f3b7963342f9af7a49ff877a517d
-#: ../../usage/parallel.rst:24
+#: ../../usage/parallel.rst:26
 msgid ""
 "For example, imagine a scenario where you want to update Web application "
 "code on a number of Web servers, and then reload the servers once the code "
@@ -72,12 +72,12 @@ msgstr ""
 "リロードする状況を想像してください。次のFabfileで実行できます::"
 
 # fab85c3596f24005a12e3d4e9da1d218
-#: ../../usage/parallel.rst:38
+#: ../../usage/parallel.rst:40
 msgid "and execute it on a set of 3 servers, in serial, like so::"
 msgstr "そして3つのサーバーで連続して実行するには::"
 
 # 469cfb29b63b4ed6847e8020d9922a1d
-#: ../../usage/parallel.rst:42
+#: ../../usage/parallel.rst:44
 msgid ""
 "Normally, without any parallel execution options activated, Fabric would run "
 "in order:"
@@ -85,54 +85,54 @@ msgstr ""
 "並列実行のオプションを有効にしなければ通常Fabricはこのように実行します:"
 
 # 3f1b12ffe39f4c06b134faca775d7ed0
-#: ../../usage/parallel.rst:45
+#: ../../usage/parallel.rst:47
 msgid "``update`` on ``web1``"
 msgstr "``update`` on ``web1``"
 
 # 15a63dd9c920477599bdb73405cbfcc0
-#: ../../usage/parallel.rst:46
+#: ../../usage/parallel.rst:48
 msgid "``update`` on ``web2``"
 msgstr "``update`` on ``web2``"
 
 # f4dda919bfb9496f83c5f84a72876fd9
-#: ../../usage/parallel.rst:47
+#: ../../usage/parallel.rst:49
 msgid "``update`` on ``web3``"
 msgstr "``update`` on ``web3``"
 
 # e3c868f740d249f1a16e69f5c90d54ea
-#: ../../usage/parallel.rst:48
+#: ../../usage/parallel.rst:50
 msgid "``reload`` on ``web1``"
 msgstr "``reload`` on ``web1``"
 
 # 3007d1fedfff49119c697b0b6931416d
-#: ../../usage/parallel.rst:49
+#: ../../usage/parallel.rst:51
 msgid "``reload`` on ``web2``"
 msgstr "``reload`` on ``web2``"
 
 # ee430a3829674ab8b341de5d84ead25f
-#: ../../usage/parallel.rst:50
+#: ../../usage/parallel.rst:52
 msgid "``reload`` on ``web3``"
 msgstr "``reload`` on ``web3``"
 
 # 0705b451bba1425f8cad635f9e6f1c1e
-#: ../../usage/parallel.rst:52
+#: ../../usage/parallel.rst:54
 msgid ""
 "With parallel execution activated (via :option:`-P` -- see below for "
 "details), this turns into:"
 msgstr "並列実行を有効(:option:`-P` -- 下記参照)にした場合はこのように:"
 
 # 756ff3bab99149cda1f4ac5d8e817c8d
-#: ../../usage/parallel.rst:55
+#: ../../usage/parallel.rst:57
 msgid "``update`` on ``web1``, ``web2``, and ``web3``"
 msgstr "``update`` on ``web1``, ``web2``, and ``web3``"
 
 # c060203786c44cf0b98791079705b6cb
-#: ../../usage/parallel.rst:56
+#: ../../usage/parallel.rst:58
 msgid "``reload`` on ``web1``, ``web2``, and ``web3``"
 msgstr "``reload`` on ``web1``, ``web2``, and ``web3``"
 
 # 19add83468b84ce39f5a5820b53352cd
-#: ../../usage/parallel.rst:58
+#: ../../usage/parallel.rst:60
 msgid ""
 "Hopefully the benefits of this are obvious -- if ``update`` took 5 seconds "
 "to run and ``reload`` took 2 seconds, serial execution takes (5+2)*3 = 21 "
@@ -144,17 +144,17 @@ msgstr ""
 "均で (5+2) = 7 秒。"
 
 # 13ea316a3fa8455f8af616729dca2e58
-#: ../../usage/parallel.rst:65
+#: ../../usage/parallel.rst:67
 msgid "How to use it"
 msgstr "使い方"
 
 # 8c520cda42184da0bfa78ff4181765f9
-#: ../../usage/parallel.rst:68
+#: ../../usage/parallel.rst:70
 msgid "Decorators"
 msgstr "デコレーター"
 
 # 1b2507fc7797460fb6636d54fa6c2216
-#: ../../usage/parallel.rst:70
+#: ../../usage/parallel.rst:72
 msgid ""
 "Since the minimum \"unit\" that parallel execution affects is a task, the "
 "functionality may be enabled or disabled on a task-by-task basis using the "
@@ -166,42 +166,42 @@ msgstr ""
 "レーターを使います。例えばこの fabfile::"
 
 # 1606b319e8fc41e5b02a09b97a326f27
-#: ../../usage/parallel.rst:84
+#: ../../usage/parallel.rst:86
 msgid "when run in this manner::"
 msgstr "この方法で実行すると::"
 
 # c622e0461f2742888df3b3d2affea1b8
-#: ../../usage/parallel.rst:88
+#: ../../usage/parallel.rst:90
 msgid "will result in the following execution sequence:"
 msgstr "次のシーケンスで実行します:"
 
 # 5c48073a70e34db5b7867b745da8e488
-#: ../../usage/parallel.rst:90
+#: ../../usage/parallel.rst:92
 msgid "``runs_in_parallel`` on ``host1``, ``host2``, and ``host3``"
 msgstr "``runs_in_parallel`` on ``host1``, ``host2``, and ``host3``"
 
 # 3341712dfb5f4575bd5cd4bceec19f68
-#: ../../usage/parallel.rst:91
+#: ../../usage/parallel.rst:93
 msgid "``runs_serially`` on ``host1``"
 msgstr "``runs_serially`` on ``host1``"
 
 # e06dc9754725484cbb1a60aebf1a8ab7
-#: ../../usage/parallel.rst:92
+#: ../../usage/parallel.rst:94
 msgid "``runs_serially`` on ``host2``"
 msgstr "``runs_serially`` on ``host2``"
 
 # 659e1e09e11a4788afbfd7821fa0a34e
-#: ../../usage/parallel.rst:93
+#: ../../usage/parallel.rst:95
 msgid "``runs_serially`` on ``host3``"
 msgstr "``runs_serially`` on ``host3``"
 
 # 75e7de53fb2a443495bfe8c8884c9036
-#: ../../usage/parallel.rst:96
+#: ../../usage/parallel.rst:98
 msgid "Command-line flags"
 msgstr "コマンドライン・フラグ"
 
 # 1fc9a76d492a47ceb5d5d35afeb2fcee
-#: ../../usage/parallel.rst:98
+#: ../../usage/parallel.rst:100
 msgid ""
 "One may also force all tasks to run in parallel by using the command-line "
 "flag :option:`-P` or the env variable :ref:`env.parallel <env-parallel>`.  "
@@ -214,19 +214,19 @@ msgstr ""
 "で実行します。"
 
 # 4290899d31fb4c38a16d168dab9dd6a8
-#: ../../usage/parallel.rst:103
+#: ../../usage/parallel.rst:105
 msgid ""
 "For example, the following fabfile will result in the same execution "
 "sequence as the one above::"
 msgstr "例えば、次の fabfile は上記の実行シーケンスと同じです::"
 
 # 6358cabdaeb249afa9951141df8fef4d
-#: ../../usage/parallel.rst:115
+#: ../../usage/parallel.rst:117
 msgid "when invoked like so::"
 msgstr "このようにすると::"
 
 # e19c9f89744147d4ad19ecdb0548e28d
-#: ../../usage/parallel.rst:119
+#: ../../usage/parallel.rst:121
 msgid ""
 "As before, ``runs_in_parallel`` will run in parallel, and ``runs_serially`` "
 "in sequence."
@@ -235,12 +235,12 @@ msgstr ""
 "で実行されます。"
 
 # 694623499bfc48c4b320f7d52e2b0b39
-#: ../../usage/parallel.rst:124
+#: ../../usage/parallel.rst:126
 msgid "Bubble size"
 msgstr "バブルサイズ"
 
 # 5cb3988032004b0db03c52d05d1f1ae2
-#: ../../usage/parallel.rst:126
+#: ../../usage/parallel.rst:128
 msgid ""
 "With large host lists, a user's local machine can get overwhelmed by running "
 "too many concurrent Fabric processes. Because of this, you may opt to use a "
@@ -252,7 +252,7 @@ msgstr ""
 "の数を制限するムービング・バブルアプローチを選ぶこともできます。"
 
 # 972e1cadb68e4c3a9cdc22a81b3eee1e
-#: ../../usage/parallel.rst:131
+#: ../../usage/parallel.rst:133
 msgid ""
 "By default, no bubble is used and all hosts are run in one concurrent pool. "
 "You can override this on a per-task level by specifying the ``pool_size`` "
@@ -265,22 +265,22 @@ msgstr ""
 "す。"
 
 # 8aecb873ec2a4923a50825016300069d
-#: ../../usage/parallel.rst:135
+#: ../../usage/parallel.rst:137
 msgid "For example, to run on 5 hosts at a time::"
 msgstr "例えば、同時に5つのホストで走らせるには::"
 
 # 646926a6da604a608f9574f8d0b56d45
-#: ../../usage/parallel.rst:143
+#: ../../usage/parallel.rst:145
 msgid "Or skip the ``pool_size`` kwarg and instead::"
 msgstr "あるいは  kwarg ``pool_size`` をスキップして::"
 
 # 63d7f80129ac4c86a230bac1ae2b11e4
-#: ../../usage/parallel.rst:150
+#: ../../usage/parallel.rst:152
 msgid "Linewise vs bytewise output"
 msgstr "出力 行単位 対 バイト単位 (Linewise vs bytewise)"
 
 # 83334d85eb4c4bd8b12c771b34bb9d33
-#: ../../usage/parallel.rst:152
+#: ../../usage/parallel.rst:154
 msgid ""
 "Fabric's default mode of printing to the terminal is byte-by-byte, in order "
 "to support :doc:`/usage/interactivity`. This often gives poor results when "
@@ -292,7 +292,7 @@ msgstr ""
 "ます。複数のプロセスが端末の標準出力に同時に書き込むかもしれません。"
 
 # 9b0fe2fe76c24e77bcaab62bfe50498f
-#: ../../usage/parallel.rst:157
+#: ../../usage/parallel.rst:159
 msgid ""
 "To help offset this problem, Fabric's option for linewise output is "
 "automatically enabled whenever parallelism is active. This will cause you to "
@@ -306,7 +306,7 @@ msgstr ""
 "配置できません。一般的にはフェアな取引きです。"
 
 # afd099786dc24e5295da7f292e53f66f
-#: ../../usage/parallel.rst:163
+#: ../../usage/parallel.rst:165
 msgid ""
 "There's no way to avoid the multiple processes mixing up on a line-by-line "
 "basis, but you will at least be able to tell them apart by the host-string "
@@ -316,7 +316,7 @@ msgstr ""
 "フィックス the host-string で少なくとも見分けることができます。"
 
 # 01ebc2e20e18413c885cecf1dc9fcfc1
-#: ../../usage/parallel.rst:168
+#: ../../usage/parallel.rst:170
 msgid ""
 "Future versions will add improved logging support to make troubleshooting "
 "parallel runs easier."

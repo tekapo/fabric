@@ -1,16 +1,16 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 23:24+0900\n"
-"PO-Revision-Date: 2014-12-25 12:37+0900\n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: 2015-01-18 10:00+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Fabric ja <tekapo@gmail.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.7.1\n"
 
@@ -18,876 +18,731 @@ msgstr ""
 msgid "Operations"
 msgstr "オペレーション"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations:1
-msgid ""
-"Functions to be used in fabfiles and other non-core code, such as "
-"run()/sudo()."
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations:1
+msgid "Functions to be used in fabfiles and other non-core code, such as run()/sudo()."
 msgstr "fabfile内とその他のコア以外のコードで使われるrun()/sudo()などの関数です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:1
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:1
 msgid "Download one or more files from a remote host."
 msgstr "リモートホストから一つもしくは複数のファイルをダウンロードします。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:3
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:3
 msgid ""
-"`~fabric.operations.get` returns an iterable containing the absolute paths "
-"to all local files downloaded, which will be empty if ``local_path`` was a "
-"StringIO object (see below for more on using StringIO). This object will "
-"also exhibit a ``.failed`` attribute containing any remote file paths which "
-"failed to download, and a ``.succeeded`` attribute equivalent to ``not "
-".failed``."
+"`~fabric.operations.get` returns an iterable containing the absolute paths to all local files downloaded, which will be empty if ``local_path`` was a StringIO object (see below for "
+"more on using StringIO). This object will also exhibit a ``.failed`` attribute containing any remote file paths which failed to download, and a ``.succeeded`` attribute equivalent "
+"to ``not .failed``."
 msgstr ""
-"`~fabric.operations.get` はダウンロードしたすべてのローカルファイルへの絶対パスを含む反復可能オブジェクトを返します。これはもし"
-" ``local_path`` "
-"がStringIOオブジェクトの場合には空になります(StringIOオブジェクト利用時についての詳細は下の方を参照してください)。このオブジェクトはまた、ダウンロードに失敗したすべてのリモートファイルのパスを含む"
-" ``.failed`` 属性と ``not .failed`` と同等の ``.succeeded`` 属性を提示します。"
+"`~fabric.operations.get` はダウンロードしたすべてのローカルファイルへの絶対パスを含む反復可能オブジェクトを返します。これはもし ``local_path`` がStringIOオブジェクトの場合には空にな"
+"ります(StringIOオブジェクト利用時についての詳細は下の方を参照してください)。このオブジェクトはまた、ダウンロードに失敗したすべてのリモートファイルのパスを含む ``.failed`` 属性と "
+"``not .failed`` と同等の ``.succeeded`` 属性を提示します。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:10
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:10
 msgid ""
-"``remote_path`` is the remote file or directory path to download, which may "
-"contain shell glob syntax, e.g. ``\"/var/log/apache2/*.log\"``, and will "
-"have tildes replaced by the remote home directory. Relative paths will be "
-"considered relative to the remote user's home directory, or the current "
-"remote working directory as manipulated by `~fabric.context_managers.cd`. If"
-" the remote path points to a directory, that directory will be downloaded "
-"recursively."
+"``remote_path`` is the remote file or directory path to download, which may contain shell glob syntax, e.g. ``\"/var/log/apache2/*.log\"``, and will have tildes replaced by the "
+"remote home directory. Relative paths will be considered relative to the remote user's home directory, or the current remote working directory as manipulated by `~fabric."
+"context_managers.cd`. If the remote path points to a directory, that directory will be downloaded recursively."
 msgstr ""
-"``remote_path`` はダウンロードするリモートファイルもしくはリモートディレクトリのパスで、例えば "
-"``\"/var/log/apache2/*.log\"`` "
-"などのシェルglogシンタックスを含むことができ、チルダはリモートのホームディレクトリに置き換えます。相対パスはリモートのユーザーのホームディレクトリからの相対位置として、もしくは"
-" `~fabric.context_managers.cd` "
-"によってコントロールされたリモートのカレントワーキングディレクトリからの相対位置として扱われます。もしリモートパスにディレクトリが指定されている時、そのディレクトリが再帰的にダウンロードされます。"
+"``remote_path`` はダウンロードするリモートファイルもしくはリモートディレクトリのパスで、例えば ``\"/var/log/apache2/*.log\"`` などのシェルglogシンタックスを含むことができ、チルダは"
+"リモートのホームディレクトリに置き換えます。相対パスはリモートのユーザーのホームディレクトリからの相対位置として、もしくは `~fabric.context_managers.cd` によってコントロールされたリ"
+"モートのカレントワーキングディレクトリからの相対位置として扱われます。もしリモートパスにディレクトリが指定されている時、そのディレクトリが再帰的にダウンロードされます。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:18
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:18
 msgid ""
-"``local_path`` is the local file path where the downloaded file or files "
-"will be stored. If relative, it will honor the local current working "
-"directory as manipulated by `~fabric.context_managers.lcd`. It may be "
-"interpolated, using standard Python dict-based interpolation, with the "
-"following variables:"
+"``local_path`` is the local file path where the downloaded file or files will be stored. If relative, it will honor the local current working directory as manipulated by `~fabric."
+"context_managers.lcd`. It may be interpolated, using standard Python dict-based interpolation, with the following variables:"
 msgstr ""
-"``local_path`` "
-"はダウンロードしたリモートファイルもしくはファイルが保存される場所へのパスです。もし相対パスの場合、`~fabric.context_managers.lcd`"
-" "
-"によってコントロールされるローカルのワーキングディレクトリを受け取ります。これはPython標準の辞書ベースの挿入によって、次の変数を伴って挿入されうことがあります:"
+"``local_path`` はダウンロードしたリモートファイルもしくはファイルが保存される場所へのパスです。もし相対パスの場合、`~fabric.context_managers.lcd` によってコントロールされるローカル"
+"のワーキングディレクトリを受け取ります。これはPython標準の辞書ベースの挿入によって、次の変数を伴って挿入されうことがあります:"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:24
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:24
 msgid ""
-"``host``: The value of ``env.host_string``, eg ``myhostname`` or "
-"``user@myhostname-222`` (the colon between hostname and port is turned into "
-"a dash to maximize filesystem compatibility)"
+"``host``: The value of ``env.host_string``, eg ``myhostname`` or ``user@myhostname-222`` (the colon between hostname and port is turned into a dash to maximize filesystem "
+"compatibility)"
 msgstr ""
-"``host``: ``env.host_string`` の値で、 ``myhostname`` もしくは "
-"``user@myhostname-222`` などです "
-"(ホスト名とポートの間のコロンはファイルシステムの互換性を最大限にするためダッシュに置き換えられます)。"
+"``host``: ``env.host_string`` の値で、 ``myhostname`` もしくは ``user@myhostname-222`` などです (ホスト名とポートの間のコロンはファイルシステムの互換性を最大限にするためダッシュに置"
+"き換えられます)。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:27
-msgid ""
-"``dirname``: The directory part of the remote file path, e.g. the "
-"``src/projectname`` in ``src/projectname/utils.py``."
-msgstr ""
-"``dirname``: ``src/projectname/utils.py`` の ``src/projectname`` "
-"などのリモートファイルパスのディレクトリ部分です。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:27
+msgid "``dirname``: The directory part of the remote file path, e.g. the ``src/projectname`` in ``src/projectname/utils.py``."
+msgstr "``dirname``: ``src/projectname/utils.py`` の ``src/projectname`` などのリモートファイルパスのディレクトリ部分です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:29
-msgid ""
-"``basename``: The filename part of the remote file path, e.g. the "
-"``utils.py`` in ``src/projectname/utils.py``"
-msgstr ""
-"``basename``: ``src/projectname/utils.py`` の ``utils.py`` "
-"などのリモートファイルパスのファイル名部分です。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:29
+msgid "``basename``: The filename part of the remote file path, e.g. the ``utils.py`` in ``src/projectname/utils.py``"
+msgstr "``basename``: ``src/projectname/utils.py`` の ``utils.py`` などのリモートファイルパスのファイル名部分です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:31
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:31
 msgid "``path``: The full remote path, e.g. ``src/projectname/utils.py``."
 msgstr "``path``: ``src/projectname/utils.py`` などのリモートのフルパスです。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:34
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:33
 msgid ""
-"When ``remote_path`` is an absolute directory path, only the inner "
-"directories will be recreated locally and passed into the above variables. "
-"So for example, ``get('/var/log', '%(path)s')`` would start writing out "
-"files like ``apache2/access.log``, ``postgresql/8.4/postgresql.log``, etc, "
-"in the local working directory. It would **not** write out e.g.  "
+"While the SFTP protocol (which `get` uses) has no direct ability to download files from locations not owned by the connecting user, you may specify ``use_sudo=True`` to work around "
+"this. When set, this setting allows `get` to copy (using sudo) the remote files to a temporary location on the remote end (defaults to remote user's ``$HOME``; this may be "
+"overridden via ``temp_dir``), and then download them to ``local_path``."
+msgstr ""
+"SFTPプロトコル(`get` が利用します)には接続ユーザーによって所有されていない場所からファイルをダウンロードする直接的な方法はありませんが、``use_sudo=True`` と指定することによりこれが"
+"可能になります。これがセットされたとき、この設定により `get` は(sudoを使って)リモートファイルをリモート側の一時フィアル保管場所(デフォルトではリモートユーザーの ``$HOME`` ですが、 "
+"``temp_dir`` によって上書き可能です)にコピーし、それからそのファイルを ``local_path`` ダウンロードします。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:41
+msgid ""
+"When ``remote_path`` is an absolute directory path, only the inner directories will be recreated locally and passed into the above variables. So for example, ``get('/var/log', "
+"'%(path)s')`` would start writing out files like ``apache2/access.log``, ``postgresql/8.4/postgresql.log``, etc, in the local working directory. It would **not** write out e.g.  "
 "``var/log/apache2/access.log``."
 msgstr ""
-"``remote_path`` "
-"がディレクトリの絶対パスのとき、内部ディレクトリだけがローカルに作られて上記の変数に渡されます。例えば、``get('/var/log', "
-"'%(path)s')`` は、ローカルのワーキングディレクトリで "
-"``apache2/access.log``、``postgresql/8.4/postgresql.log`` "
-"などのように出力されます。``var/log/apache2/access.log`` などのようには **出力されません**。 "
+"``remote_path`` がディレクトリの絶対パスのとき、内部ディレクトリだけがローカルに作られて上記の変数に渡されます。例えば、``get('/var/log', '%(path)s')`` は、ローカルのワーキングディ"
+"レクトリで ``apache2/access.log``、``postgresql/8.4/postgresql.log`` などのように出力されます。``var/log/apache2/access.log`` などのようには **出力されません**。 "
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:41
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:48
 msgid ""
-"Additionally, when downloading a single file, ``%(dirname)s`` and "
-"``%(path)s`` do not make as much sense and will be empty and equivalent to "
-"``%(basename)s``, respectively. Thus a call like "
-"``get('/var/log/apache2/access.log', '%(path)s')`` will save a local file "
-"named ``access.log``, not ``var/log/apache2/access.log``."
+"Additionally, when downloading a single file, ``%(dirname)s`` and ``%(path)s`` do not make as much sense and will be empty and equivalent to ``%(basename)s``, respectively. Thus a "
+"call like ``get('/var/log/apache2/access.log', '%(path)s')`` will save a local file named ``access.log``, not ``var/log/apache2/access.log``."
 msgstr ""
-"さらに、単一のファイルをダウンロードするときは ``%(dirname)s`` と ``%(path)s`` "
-"は当然意味をなしませんので、空となりそれぞれ ``%(basename)s`` と同等になります。したがって "
-"``get('/var/log/apache2/access.log', '%(path)s')`` "
-"のような呼び出しは、``var/log/apache2/access.log`` ではなくローカルのファイル名 ``access.log`` "
-"として保存されます。"
+"さらに、単一のファイルをダウンロードするときは ``%(dirname)s`` と ``%(path)s`` は当然意味をなしませんので、空となりそれぞれ ``%(basename)s`` と同等になります。したがって ``get('/"
+"var/log/apache2/access.log', '%(path)s')`` のような呼び出しは、``var/log/apache2/access.log`` ではなくローカルのファイル名 ``access.log`` として保存されます。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:47
-msgid ""
-"This behavior is intended to be consistent with the command-line ``scp`` "
-"program."
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:54
+msgid "This behavior is intended to be consistent with the command-line ``scp`` program."
 msgstr "この挙動はコマンドラインの ``scp`` と一致するようにするためです。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:50
-msgid ""
-"If left blank, ``local_path`` defaults to ``\"%(host)s/%(path)s\"`` in order"
-" to be safe for multi-host invocations."
-msgstr ""
-"空のままの場合、複数ホスト実行での安全性のため ``local_path`` はデフォルトの  ``\"%(host)s/%(path)s\"`` "
-"になります。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:57
+msgid "If left blank, ``local_path`` defaults to ``\"%(host)s/%(path)s\"`` in order to be safe for multi-host invocations."
+msgstr "空のままの場合、複数ホスト実行での安全性のため ``local_path`` はデフォルトの  ``\"%(host)s/%(path)s\"`` になります。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:54
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:61
 msgid ""
-"If your ``local_path`` argument does not contain ``%(host)s`` and your "
-"`~fabric.operations.get` call runs against multiple hosts, your local files "
-"will be overwritten on each successive run!"
+"If your ``local_path`` argument does not contain ``%(host)s`` and your `~fabric.operations.get` call runs against multiple hosts, your local files will be overwritten on each "
+"successive run!"
 msgstr ""
-"``local_path`` 引き数が ``%(host)s`` を含んでいなくて `~fabric.operations.get` "
-"の呼び出しが複数のホストに対して実行される場合、ローカルのファイルはそれぞれ実行が成功したもので上書きされます!"
+"``local_path`` 引き数が ``%(host)s`` を含んでいなくて `~fabric.operations.get` の呼び出しが複数のホストに対して実行される場合、ローカルのファイルはそれぞれ実行が成功したもので上書き"
+"されます!"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:58
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:65
 msgid ""
-"If ``local_path`` does not make use of the above variables (i.e. if it is a "
-"simple, explicit file path) it will act similar to ``scp`` or ``cp``, "
-"overwriting pre-existing files if necessary, downloading into a directory if"
-" given (e.g. ``get('/path/to/remote_file.txt', 'local_directory')`` will "
-"create ``local_directory/remote_file.txt``) and so forth."
+"If ``local_path`` does not make use of the above variables (i.e. if it is a simple, explicit file path) it will act similar to ``scp`` or ``cp``, overwriting pre-existing files if "
+"necessary, downloading into a directory if given (e.g. ``get('/path/to/remote_file.txt', 'local_directory')`` will create ``local_directory/remote_file.txt``) and so forth."
 msgstr ""
-"``local_path`` が上記の変数(例えば、単純な場合では指定されたファイルパス)を使用していない場合、 ``scp`` や ``cp`` "
-"と似た動作をします。必要に応じて既存のファイルを上書きし、ディレクトリが与えられた場合はそのディレクトリへのダウンロードされます(例えば、``get('/path/to/remote_file.txt',"
-" 'local_directory')`` は ``local_directory/remote_file.txt`` を作成します)。"
+"``local_path`` が上記の変数(例えば、単純な場合では指定されたファイルパス)を使用していない場合、 ``scp`` や ``cp`` と似た動作をします。必要に応じて既存のファイルを上書きし、ディレク"
+"トリが与えられた場合はそのディレクトリへのダウンロードされます(例えば、``get('/path/to/remote_file.txt', 'local_directory')`` は ``local_directory/remote_file.txt`` を作成します)。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:64
-msgid ""
-"``local_path`` may alternately be a file-like object, such as the result of "
-"``open('path', 'w')`` or a ``StringIO`` instance."
-msgstr ""
-"もしくは ``local_path`` は、 ``open('path', 'w')`` の結果や ``StringIO`` "
-"のインスタンスなど、ファイルライクなオブジェクトであることも可能です。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:71
+msgid "``local_path`` may alternately be a file-like object, such as the result of ``open('path', 'w')`` or a ``StringIO`` instance."
+msgstr "もしくは ``local_path`` は、 ``open('path', 'w')`` の結果や ``StringIO`` のインスタンスなど、ファイルライクなオブジェクトであることも可能です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:68
-msgid ""
-"Attempting to `get` a directory into a file-like object is not valid and "
-"will result in an error."
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:75
+msgid "Attempting to `get` a directory into a file-like object is not valid and will result in an error."
 msgstr "ディレクトリをファイルライクなオブジェクトに `get` して入れようとするのは無効で、エラーになります。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:72
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:79
 msgid ""
-"This function will use ``seek`` and ``tell`` to overwrite the entire "
-"contents of the file-like object, in order to be consistent with the "
-"behavior of `~fabric.operations.put` (which also considers the entire file)."
-" However, unlike `~fabric.operations.put`, the file pointer will not be "
-"restored to its previous location, as that doesn't make as much sense here "
-"and/or may not even be possible."
+"This function will use ``seek`` and ``tell`` to overwrite the entire contents of the file-like object, in order to be consistent with the behavior of `~fabric.operations.put` "
+"(which also considers the entire file). However, unlike `~fabric.operations.put`, the file pointer will not be restored to its previous location, as that doesn't make as much sense "
+"here and/or may not even be possible."
 msgstr ""
-"この関数は ``seek`` と ``tell`` を使ってファイルライクなオブジェクトのコンテンツ全体を上書きします。これは "
-"`~fabric.operations.put` (ファイル全体も考慮します)の挙動と一致させるためです。とはいえ、 "
-"`~fabric.operations.put` "
-"とは違い、このファイルポインターは前のロケーションには戻されません。これは意味を成さないですし、不可能でもあります。"
+"この関数は ``seek`` と ``tell`` を使ってファイルライクなオブジェクトのコンテンツ全体を上書きします。これは `~fabric.operations.put` (ファイル全体も考慮します)の挙動と一致させるため"
+"です。とはいえ、 `~fabric.operations.put` とは違い、このファイルポインターは前のロケーションには戻されません。これは意味を成さないですし、不可能でもあります。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:80
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:63
-msgid ""
-"If a file-like object such as StringIO has a ``name`` attribute, that will "
-"be used in Fabric's printed output instead of the default ``<file obj>``"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:87 fabric.operations.put:63
+msgid "If a file-like object such as StringIO has a ``name`` attribute, that will be used in Fabric's printed output instead of the default ``<file obj>``"
+msgstr "StringIO が ``name`` 属性を持つ場合、デフォルトの ``<file obj>`` の代わりにそれがFabricの出力に使われます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:91 fabric.operations.put:66
+msgid "Now honors the remote working directory as manipulated by `~fabric.context_managers.cd`, and the local working directory as manipulated by `~fabric.context_managers.lcd`."
 msgstr ""
-"StringIO が ``name`` 属性を持つ場合、デフォルトの ``<file obj>`` の代わりにそれがFabricの出力に使われます。"
+"リモートのワーキングディレクトリを `~fabric.context_managers.cd` で操作されたものとしてみなし、ローカルのワーキングディレクトリを `~fabric.context_managers.lcd` で操作されたものとし"
+"てみなします。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:84
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:66
-msgid ""
-"Now honors the remote working directory as manipulated by "
-"`~fabric.context_managers.cd`, and the local working directory as "
-"manipulated by `~fabric.context_managers.lcd`."
-msgstr ""
-"リモートのワーキングディレクトリを `~fabric.context_managers.cd` "
-"で操作されたものとしてみなし、ローカルのワーキングディレクトリを `~fabric.context_managers.lcd` "
-"で操作されたものとしてみなします。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:88
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:70
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:95 fabric.operations.put:70
 msgid "Now allows file-like objects in the ``local_path`` argument."
 msgstr "``local_path`` 引き数にファイルライクなオブジェクトが使えます。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:90
-msgid ""
-"``local_path`` may now contain interpolated path- and host-related "
-"variables."
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:97
+msgid "``local_path`` may now contain interpolated path- and host-related variables."
 msgstr "``local_path`` はパスとホスト関連変数が挿入されたものを含むことができます。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:93
-msgid ""
-"Directories may be specified in the ``remote_path`` argument and will "
-"trigger recursive downloads."
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:100
+msgid "Directories may be specified in the ``remote_path`` argument and will trigger recursive downloads."
 msgstr "ディレクトリは ``remote_path`` 引き数で明示することができ、再帰的なダウンロードを実行すます。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:96
-msgid ""
-"Return value is now an iterable of downloaded local file paths, which also "
-"exhibits the ``.failed`` and ``.succeeded`` attributes."
-msgstr ""
-"返り値はダウンロードされたローカルファイルのパスの反復可能オブジェクトで、 ``.failed`` と ``.succeeded`` 属性を提示します。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:103
+msgid "Return value is now an iterable of downloaded local file paths, which also exhibits the ``.failed`` and ``.succeeded`` attributes."
+msgstr "返り値はダウンロードされたローカルファイルのパスの反復可能オブジェクトで、 ``.failed`` と ``.succeeded`` 属性を提示します。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.get:99
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:78
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.get:106 fabric.operations.put:78
 msgid "Allow a ``name`` attribute on file-like objects for log output"
 msgstr "ログ出力にファイルライクなオブジェクトへの ``name`` 属性を許可するようになりました。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:1
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:1
 msgid "Run a command on the local system."
 msgstr "ローカルシステム上でコマンドを実行します。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:3
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:3
 msgid ""
-"`local` is simply a convenience wrapper around the use of the builtin Python"
-" ``subprocess`` module with ``shell=True`` activated. If you need to do "
-"anything special, consider using the ``subprocess`` module directly."
+"`local` is simply a convenience wrapper around the use of the builtin Python ``subprocess`` module with ``shell=True`` activated. If you need to do anything special, consider using "
+"the ``subprocess`` module directly."
 msgstr ""
-"`local` は ``shell=True`` が有効化されているPythonビルトインの ``subprocess`` "
-"モジュールの便利なラッパーです。なにか特別なことをする必要がある場合は ``subprocess`` モジュールを直接使うことを検討してください。"
+"`local` は ``shell=True`` が有効化されているPythonビルトインの ``subprocess`` モジュールの便利なラッパーです。なにか特別なことをする必要がある場合は ``subprocess`` モジュールを直接"
+"使うことを検討してください。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:7
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:7
 msgid ""
-"``shell`` is passed directly to `subprocess.Popen "
-"<http://docs.python.org/library/subprocess.html#subprocess.Popen>`_'s "
-"``execute`` argument (which determines the local shell to use.)  As per the "
-"linked documentation, on Unix the default behavior is to use ``/bin/sh``, so"
-" this option is useful for setting that value to e.g.  ``/bin/bash``."
+"``shell`` is passed directly to `subprocess.Popen <http://docs.python.org/library/subprocess.html#subprocess.Popen>`_'s ``execute`` argument (which determines the local shell to "
+"use.)  As per the linked documentation, on Unix the default behavior is to use ``/bin/sh``, so this option is useful for setting that value to e.g.  ``/bin/bash``."
 msgstr ""
-"``shell`` はダイレクトに `subprocess.Popen "
-"<http://docs.python.org/library/subprocess.html#subprocess.Popen>`_ の  "
-"``execute`` 引き数(これが利用するローカルのシェルを決めます)に渡されます。リンク先のドキュメントにあるように、Unixではデフォルトでは "
-"``/bin/sh`` を使います。したがって、例えばこの値を ``/bin/bash`` などに設定したい場合に便利です。"
+"``shell`` はダイレクトに `subprocess.Popen <http://docs.python.org/library/subprocess.html#subprocess.Popen>`_ の  ``execute`` 引き数(これが利用するローカルのシェルを決めます)に渡さ"
+"れます。リンク先のドキュメントにあるように、Unixではデフォルトでは ``/bin/sh`` を使います。したがって、例えばこの値を ``/bin/bash`` などに設定したい場合に便利です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:13
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:13
 msgid ""
-"`local` is not currently capable of simultaneously printing and capturing "
-"output, as `~fabric.operations.run`/`~fabric.operations.sudo` do. The "
-"``capture`` kwarg allows you to switch between printing and capturing as "
-"necessary, and defaults to ``False``."
+"`local` is not currently capable of simultaneously printing and capturing output, as `~fabric.operations.run`/`~fabric.operations.sudo` do. The ``capture`` kwarg allows you to "
+"switch between printing and capturing as necessary, and defaults to ``False``."
 msgstr ""
-"`local` はいまのところ `~fabric.operations.run`/`~fabric.operations.sudo` "
-"のように出力を同時にプリントしたりキャプチャしたりすることはできません。 ``capture`` "
-"キーワード引き数によって、必要に応じてプリントとキャプチャを切り替えることができ、デフォルトは ``False`` になっています。"
+"`local` はいまのところ `~fabric.operations.run`/`~fabric.operations.sudo` のように出力を同時にプリントしたりキャプチャしたりすることはできません。 ``capture`` キーワード引き数によっ"
+"て、必要に応じてプリントとキャプチャを切り替えることができ、デフォルトは ``False`` になっています。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:18
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:18
 msgid ""
-"When ``capture=False``, the local subprocess' stdout and stderr streams are "
-"hooked up directly to your terminal, though you may use the global "
-":doc:`output controls </usage/output_controls>` ``output.stdout`` and "
-"``output.stderr`` to hide one or both if desired. In this mode, the return "
-"value's stdout/stderr values are always empty."
+"When ``capture=False``, the local subprocess' stdout and stderr streams are hooked up directly to your terminal, though you may use the global :doc:`output controls </usage/"
+"output_controls>` ``output.stdout`` and ``output.stderr`` to hide one or both if desired. In this mode, the return value's stdout/stderr values are always empty."
 msgstr ""
-"``capture=False`` の時、ローカルのサブプロセスの標準出力と標準エラー出力のストリームはターミナルに直接繋がれます。これはグローバルの "
-":doc:`output controls </usage/output_controls>` ``output.stdout`` と "
-"``output.stderr`` "
-"を使って片方もしくは両方を必要に応じて隠すことができます。このモードでは返り値の標準出力/標準エラー出力は常に空になります。"
+"``capture=False`` の時、ローカルのサブプロセスの標準出力と標準エラー出力のストリームはターミナルに直接繋がれます。これはグローバルの :doc:`output controls </usage/output_controls>` "
+"``output.stdout`` と ``output.stderr`` を使って片方もしくは両方を必要に応じて隠すことができます。このモードでは返り値の標準出力/標準エラー出力は常に空になります。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:24
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:24
+msgid "When ``capture=True``, you will not see any output from the subprocess in your terminal, but the return value will contain the captured stdout/stderr."
+msgstr "``capture=True`` の時には、ターミナルにはサブプロセスからのどんな出力も表示されませんが、返り値にはキャプチャされた標準出力/標準エラー出力が含まれます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:28
 msgid ""
-"When ``capture=True``, you will not see any output from the subprocess in "
-"your terminal, but the return value will contain the captured stdout/stderr."
+"In either case, as with `~fabric.operations.run` and `~fabric.operations.sudo`, this return value exhibits the ``return_code``, ``stderr``, ``failed``, ``succeeded``, ``command`` "
+"and ``real_command`` attributes. See `run` for details."
 msgstr ""
-"``capture=True`` "
-"の時には、ターミナルにはサブプロセスからのどんな出力も表示されませんが、返り値にはキャプチャされた標準出力/標準エラー出力が含まれます。"
+"どちらにせよ、 `~fabric.operations.run` と `~fabric.operations.sudo` と同様にこの返り値は ``return_code``、 ``stderr``、 ``failed``、 ``succeeded``、 ``command``、 ``real_command`` "
+"属性を提示します。詳細は `run` をご覧ください。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:28
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:33
 msgid ""
-"In either case, as with `~fabric.operations.run` and "
-"`~fabric.operations.sudo`, this return value exhibits the ``return_code``, "
-"``stderr``, ``failed`` and ``succeeded`` attributes. See `run` for details."
+"`~fabric.operations.local` will honor the `~fabric.context_managers.lcd` context manager, allowing you to control its current working directory independently of the remote end "
+"(which honors `~fabric.context_managers.cd`)."
 msgstr ""
-"どちらにせよ、 `~fabric.operations.run` と `~fabric.operations.sudo` と同様にこの返り値は "
-"``return_code``、 ``stderr``、 ``failed``、 ``succeeded`` 属性を提示します。詳細は `run` "
-"をご覧ください。"
+"`~fabric.operations.local` は `~fabric.context_managers.lcd` コンテキストマネージャーを優先し、これによりリモート側とは切り離して(これは `~fabric.context_managers.cd` を優先)カレン"
+"トのワーキングディレクトリをコントロールできるようにします。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:32
-msgid ""
-"`~fabric.operations.local` will honor the `~fabric.context_managers.lcd` "
-"context manager, allowing you to control its current working directory "
-"independently of the remote end (which honors "
-"`~fabric.context_managers.cd`)."
-msgstr ""
-"`~fabric.operations.local` は `~fabric.context_managers.lcd` "
-"コンテキストマネージャーを優先し、これによりリモート側とは切り離して(これは `~fabric.context_managers.cd` "
-"を優先)カレントのワーキングディレクトリをコントロールできるようにします。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:37
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:38
 msgid "Added the ``succeeded`` and ``stderr`` attributes."
 msgstr "``succeeded`` と ``stderr`` 属性を追加しました。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:39
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:40
 msgid "Now honors the `~fabric.context_managers.lcd` context manager."
 msgstr "`~fabric.context_managers.lcd` コンテキストマネージャーを優先するようになりました。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.local:41
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:42
 msgid "Changed the default value of ``capture`` from ``True`` to ``False``."
 msgstr "``capture`` のデフォルト値を ``True`` から ``False`` に変更しました。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:1
-msgid "Invoke a fully interactive shell on the remote end."
-msgstr "リモート側で完全な対話式シェルを起動します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:3
-msgid ""
-"If ``command`` is given, it will be sent down the pipe before handing "
-"control over to the invoking user."
-msgstr "``command`` が与えられると、起動ユーザーにコントロールが渡される前にそれがパイプに送り込まれます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:6
-msgid ""
-"This function is most useful for when you need to interact with a heavily "
-"shell-based command or series of commands, such as when debugging or when "
-"fully interactive recovery is required upon remote program failure."
-msgstr ""
-"この機能は、大量のシェルベースのコマンドや、デバッギング時やリモート側プログラムの障害に要する完全にインタラクティブなリカバリー作業時などの一連のコマンドとのやりとりが必要なときにとても役に立ちます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:10
-msgid ""
-"It should be considered an easy way to work an interactive shell session "
-"into the middle of a Fabric script and is *not* a drop-in replacement for "
-"`~fabric.operations.run`, which is also capable of interacting with the "
-"remote end (albeit only while its given command is executing) and has much "
-"stronger programmatic abilities such as error handling and stdout/stderr "
-"capture."
-msgstr ""
-"Fabricスクリプトの途中にインタラクティブなシェルセッションを組み入れるのは簡単な方法とみなすべきで、`~fabric.operations.run`"
-" "
-"のドロップインの代替ではありません。また、リモート側とのやりとりが可能で(与えられたコマンドが実行されているときだけですが)、エラー処理や標準出力/標準エラー出力のキャプチャのようなとても強いプログラム能力を持ちます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:17
-msgid ""
-"Specifically, `~fabric.operations.open_shell` provides a better interactive "
-"experience than `~fabric.operations.run`, but use of a full remote shell "
-"prevents Fabric from determining whether programs run within the shell have "
-"failed, and pollutes the stdout/stderr stream with shell output such as "
-"login banners, prompts and echoed stdin."
-msgstr ""
-"厳密には、`~fabric.operations.open_shell` は `~fabric.operations.run` "
-"よりも良いインタラクティブな体験をもたらします。しかし完全なリモートシェルの利用は、シェル内でのプログラムの起動に失敗したのかどうかをFabricが判別するのを妨げ、ログインバナー、プロンプト、エコーされた標準入力などのシェルの出力で標準出力/標準エラー出力が判別しにくくなります。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.open_shell:23
-msgid ""
-"Thus, this function does not have a return value and will not trigger "
-"Fabric's failure handling if any remote programs result in errors."
-msgstr "そのため、この関数は返り値を持たず、どんなリモートプログラムがエラーで終わってもFabricの失敗ハンドリングを引き起こしません。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:1
-msgid "Prompt user with ``text`` and return the input (like ``raw_input``)."
-msgstr "``text`` でユーザーに入力を促し、(``raw_input`` のように)その入力を返します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:3
-msgid ""
-"A single space character will be appended for convenience, but nothing else."
-" Thus, you may want to end your prompt text with a question mark or a colon,"
-" e.g. ``prompt(\"What hostname?\")``."
-msgstr ""
-"利便性のため空白文字が一つだけ付加されます。したがって、プロンプトテキストはクエスチョンマークやコロンで終えるようにするといいでしょう(例えば "
-"``prompt(\"What hostname?\")``)。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:7
-msgid ""
-"If ``key`` is given, the user's input will be stored as ``env.<key>`` in "
-"addition to being returned by `prompt`. If the key already existed in "
-"``env``, its value will be overwritten and a warning printed to the user."
-msgstr ""
-"``key`` が与えられた場合、そのユーザーの入力は `prompt` によって返されるものに加えて ``env.<key>`` "
-"として保存されます。``env`` にそのキーがすでに存在する場合はその値が上書きされ、そのユーザーには警告が表示されます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:11
-msgid ""
-"If ``default`` is given, it is displayed in square brackets and used if the "
-"user enters nothing (i.e. presses Enter without entering any text). "
-"``default`` defaults to the empty string. If non-empty, a space will be "
-"appended, so that a call such as ``prompt(\"What hostname?\", "
-"default=\"foo\")`` would result in a prompt of ``What hostname? [foo]`` "
-"(with a trailing space after the ``[foo]``.)"
-msgstr ""
-"``default`` "
-"が与えられた場合、それが角かっこ内に表示され、ユーザーが何も(つまり何もテキストを入力せずEnterを押下)を入力しなかった場合にそれが使用されます。``default``"
-" のデフォルトは空の文字列です。空の文字列以外ならスペースが一つ追加されます。したがって、 ``prompt(\"What hostname?\", "
-"default=\"foo\")`` のような呼び出しは (``[foo]`` の後ろにスペースをともなった) ``What hostname? "
-"[foo]`` のプロンプトとして表示されます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:18
-msgid ""
-"The optional keyword argument ``validate`` may be a callable or a string:"
-msgstr "オプションのキーワード引き数 ``validate`` は呼び出し可能なもの、もしくは文字列です:"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:20
-msgid ""
-"If a callable, it is called with the user's input, and should return the "
-"value to be stored on success. On failure, it should raise an exception with"
-" an exception message, which will be printed to the user."
-msgstr ""
-"呼び出し可能なものの場合、ユーザーの入力とともに呼び出され、成功時に格納される値を返します。失敗時には例外メッセージとともに例外を発生させ、ユーザーに表示されます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:23
-msgid ""
-"If a string, the value passed to ``validate`` is used as a regular "
-"expression. It is thus recommended to use raw strings in this case. Note "
-"that the regular expression, if it is not fully matching (bounded by ``^`` "
-"and ``$``) it will be made so. In other words, the input must fully match "
-"the regex."
-msgstr ""
-"文字列の場合、``validate`` "
-"に渡される値は正規表現として使用されます。そのため、この場合は生の文字列を使用することをおすすめします。正規表現に関する注意点ですが、(``^`` と "
-"``$`` で区切られた)完全マッチではない場合は、そうなるようにします。つまり、入力は正規表現に完全にマッチさせます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:29
-msgid ""
-"Either way, `prompt` will re-prompt until validation passes (or the user "
-"hits ``Ctrl-C``)."
-msgstr "どちらにせよ、バリデーションに通るまで(もしくはユーザーが ``Ctrl-C`` を押すまで) `prompt` は再度入力を待ちます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:33
-msgid ""
-"`~fabric.operations.prompt` honors :ref:`env.abort_on_prompts <abort-on-"
-"prompts>` and will call `~fabric.utils.abort` instead of prompting if that "
-"flag is set to ``True``. If you want to block on user input regardless, try "
-"wrapping with `~fabric.context_managers.settings`."
-msgstr ""
-"`~fabric.operations.prompt` は :ref:`env.abort_on_prompts <abort-on-prompts>`"
-" を優先し、このフラグが  ``True`` にセットされている場合はプロンプトを表示する代わりに `~fabric.utils.abort` "
-"を呼び出します。もそこれにかかわらずユーザーの入力をブロックしたい場合は、 `~fabric.context_managers.settings` "
-"で囲ってみてください。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.prompt:39
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:56
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:59
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:18
-msgid "Examples::"
-msgstr "例::"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:1
-msgid "Upload one or more files to a remote host."
-msgstr "リモートホストへ一つもしくは複数のファイルをアップロードします。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:3
-msgid ""
-"`~fabric.operations.put` returns an iterable containing the absolute file "
-"paths of all remote files uploaded. This iterable also exhibits a "
-"``.failed`` attribute containing any local file paths which failed to upload"
-" (and may thus be used as a boolean test.) You may also check ``.succeeded``"
-" which is equivalent to ``not .failed``."
-msgstr ""
-"`~fabric.operations.put` "
-"はアップロードしたすべてのリモートファイルの完全パスを含む反復可能オブジェクトを返します。この反復可能オブジェクトはまた、アップロードに失敗したすべてのローカルファイル(そしておそらく真偽テストとして使われたもの)のパスを含む"
-" ``.failed`` 属性を提示します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:9
-msgid ""
-"``local_path`` may be a relative or absolute local file or directory path, "
-"and may contain shell-style wildcards, as understood by the Python ``glob`` "
-"module (give ``use_glob=False`` to disable this behavior).  Tilde expansion "
-"(as implemented by ``os.path.expanduser``) is also performed."
-msgstr ""
-"``local_path`` はローカルのファイルもしくはディレクトリの相対もしくは絶対パスで、Pythonの ``glob`` "
-"モジュールによって理解されるよう(この挙動を無効にしたい場合は ``use_glob=False`` "
-"としてください)、シェルスタイルのワイルドカードを含むことがあります。(``os.path.expanduser`` "
-"によって実装されている)チルダの展開も実行されます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:14
-msgid ""
-"``local_path`` may alternately be a file-like object, such as the result of "
-"``open('path')`` or a ``StringIO`` instance."
-msgstr ""
-"``local_path`` は、 ``open('path')`` の結果や ``StringIO`` "
-"のインスタンスなど、ファイルライクなオブジェクトであることも可能です。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:18
-msgid ""
-"In this case, `~fabric.operations.put` will attempt to read the entire "
-"contents of the file-like object by rewinding it using ``seek`` (and will "
-"use ``tell`` afterwards to preserve the previous file position)."
-msgstr ""
-"この場合、`~fabric.operations.put` は ``seek`` "
-"を使ってリワインドすることによりファイル形式オブジェクトのコンテンツ全体を読み取ろうとします(そして前回のファイル位置を保存するためにその後に "
-"``tell`` を使います)。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:22
-msgid ""
-"``remote_path`` may also be a relative or absolute location, but applied to "
-"the remote host. Relative paths are relative to the remote user's home "
-"directory, but tilde expansion (e.g. ``~/.ssh/``) will also be performed if "
-"necessary."
-msgstr ""
-"``remote_path`` "
-"は相対的もしくは絶対的な場所で、リモートホストに適用されるものです。相対パスはリモートユーザーのホームディレクトリに対する相対で、必要に応じてチルダ展開(例えば"
-" ``~/.ssh/``)が実施されます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:27
-msgid ""
-"An empty string, in either path argument, will be replaced by the "
-"appropriate end's current working directory."
-msgstr "どちらのパス引き数も空の文字列の場合、適切な側のカレントワーキングディレクトリによって置き換えられます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:30
-msgid ""
-"While the SFTP protocol (which `put` uses) has no direct ability to upload "
-"files to locations not owned by the connecting user, you may specify "
-"``use_sudo=True`` to work around this. When set, this setting causes `put` "
-"to upload the local files to a temporary location on the remote end "
-"(defaults to remote user's ``$HOME``; this may be overridden via "
-"``temp_dir``), and then use `sudo` to move them to ``remote_path``."
-msgstr ""
-"SFTPプロトコル(`put` "
-"が利用します)には接続ユーザーによって所有されていない場所へファイルをアップロードする直接的な方法はありませんが、``use_sudo=True`` "
-"と指定することによりこれが可能になります。これがセットされたとき、この設定により `put` "
-"はローカルファイルをリモート側の一時フィアル保管場所(デフォルトではリモートユーザーの ``$HOME`` ですが、 ``temp_dir`` "
-"によって上書き可能です)にアップロードし、それから `sudo` を利用してそれらのファイルを ``remote_path`` に移動します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:37
-msgid ""
-"In some use cases, it is desirable to force a newly uploaded file to match "
-"the mode of its local counterpart (such as when uploading executable "
-"scripts). To do this, specify ``mirror_local_mode=True``."
-msgstr ""
-"場合によっては、新しくアップロードしたファイルのモードを強制的にローカル側のものと一致させたほうが望ましいこともあります(実行可能ファイルをアップロードした時など)。これを行うには"
-" ``mirror_local_mode=True`` を指定します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:41
-msgid ""
-"Alternately, you may use the ``mode`` kwarg to specify an exact mode, in the"
-" same vein as ``os.chmod`` or the Unix ``chmod`` command."
-msgstr ""
-"代わりに、``os.chmod`` もしくはUnixの ``chmod`` コマンドと同様に ``mode`` "
-"キーワード引き数を使って同じモードを指定することもできます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:44
-msgid ""
-"`~fabric.operations.put` will honor `~fabric.context_managers.cd`, so "
-"relative values in ``remote_path`` will be prepended by the current remote "
-"working directory, if applicable. Thus, for example, the below snippet would"
-" attempt to upload to ``/tmp/files/test.txt`` instead of "
-"``~/files/test.txt``::"
-msgstr ""
-"`~fabric.operations.put` は `~fabric.context_managers.cd` を優先するので、もしあれば、 "
-"``remote_path`` の相対値がリモートのカレントワーキングディレクトリによって追加されます。したがって、以下の例では "
-"``~/files/test.txt`` ではなく ``/tmp/files/test.txt`` にアップロードしようとします::"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:53
-msgid ""
-"Use of `~fabric.context_managers.lcd` will affect ``local_path`` in the same"
-" manner."
-msgstr "同じように `~fabric.context_managers.lcd` の利用は ``local_path`` に影響を与えます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:72
-msgid ""
-"Directories may be specified in the ``local_path`` argument and will trigger"
-" recursive uploads."
-msgstr "ディレクトリは ``local_path`` 引き数で明示することができ、再帰的なアップロードを実行します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:75
-msgid ""
-"Return value is now an iterable of uploaded remote file paths which also "
-"exhibits the ``.failed`` and ``.succeeded`` attributes."
-msgstr ""
-"返り値はアップロードされたローカルファイルのパスの反復可能オブジェクトで、 ``.failed`` と ``.succeeded`` 属性を提示します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.put:80
-msgid "Added ``use_glob`` option to allow disabling of globbing."
-msgstr "globを無効にできるように ``use_glob`` オプションを追加。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.reboot:1
-msgid "Reboot the remote system."
-msgstr "リモートシステムを再起動します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.reboot:3
-msgid ""
-"Will temporarily tweak Fabric's reconnection settings (:ref:`timeout` and "
-":ref:`connection-attempts`) to ensure that reconnection does not give up for"
-" at least ``wait`` seconds."
-msgstr ""
-"これは一時的にFabricの再接続設定 (:ref:`timeout` と :ref:`connection-attempts`) を調整し、少なくとも"
-" ``wait`` 秒は再接続を止めないようにします。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.reboot:8
-msgid ""
-"As of Fabric 1.4, the ability to reconnect partway through a session no "
-"longer requires use of internal APIs.  While we are not officially "
-"deprecating this function, adding more features to it will not be a "
-"priority."
-msgstr ""
-"Fabric "
-"1.4以降では一つのセッション途中での再接続の機能は内部APIの利用を必要とはしません。この機能を公式には非推奨とはしませんが、これにさらに機能を追加することは優先度としては低いです。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.reboot:13
-msgid ""
-"Users who want greater control are encouraged to check out this function's "
-"(6 lines long, well commented) source code and write their own adaptation "
-"using different timeout/attempt values or additional logic."
-msgstr ""
-"﻿より細かく制御したいユーザーは、この関数のソースコード(6行で、よくコメントしてあります)をチェックし、異なるタイムアウト/試行値または追加のロジックを使用して独自の変更を書くことを奨励します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.reboot:19
-msgid ""
-"Changed the ``wait`` kwarg to be optional, and refactored to leverage the "
-"new reconnection functionality; it may not actually have to wait for "
-"``wait`` seconds before reconnecting."
-msgstr ""
-"``wait`` キーワード引き数を任意に変更し、新しい再接続機能を活用するようにリファクタリング。実際には、再接続前に ``wait`` "
-"秒待つ必要はないかもしれない。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:1
-msgid ""
-"Check for given keys in the shared environment dict and abort if not found."
-msgstr "共有環境辞書に与えられているキーをチェックし、なければ中止します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:3
-msgid ""
-"Positional arguments should be strings signifying what env vars should be "
-"checked for. If any of the given arguments do not exist, Fabric will abort "
-"execution and print the names of the missing keys."
-msgstr ""
-"位置指定引数は文字列で、どの環境変数をチェックするのかを指定します。与えられた引き数がどれでも存在しない場合は、Fabricは実行を中止し、見つからなかったキーの名称を出力します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:7
-msgid ""
-"The optional keyword argument ``used_for`` may be a string, which will be "
-"printed in the error output to inform users why this requirement is in "
-"place. ``used_for`` is printed as part of a string similar to::"
-msgstr ""
-"位置指定引数の ``used_for`` は文字列であることも可能で、その場所でそれがなぜ必須なのかをユーザーに知らせるためのエラーに出力されます。 "
-"``used_for`` は次の文字列に似た文字列の一部として出力されます::"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:13
-msgid "so format it appropriately."
-msgstr "そしてこれを適切にフォーマットします。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:15
-msgid ""
-"The optional keyword argument ``provided_by`` may be a list of functions or "
-"function names or a single function or function name which the user should "
-"be able to execute in order to set the key or keys; it will be included in "
-"the error output if requirements are not met."
-msgstr ""
-"位置指定引数の ``provided_by`` "
-"は、単一もしくは複数のキーをセットするためにユーザーが実行することのできる複数の関数または複数の関数名、あるいはひとつの関数またはひとつの関数名のリストとして渡すことができます。もし必須事項を満たしていなければ、エラーメッセージの中にそれが含められます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:20
-msgid ""
-"Note: it is assumed that the keyword arguments apply to all given keys as a "
-"group. If you feel the need to specify more than one ``used_for``, for "
-"example, you should break your logic into multiple calls to ``require()``."
-msgstr ""
-"キーワード引き数はグループとしてすべての与えられたキーに適用されるとうことを前提としていることに留意してください。 ``used_for`` "
-"を複数指定する必要を感じた場合、例えば、ロジックを ``require()`` への複数の呼び出しに分割するといいでしょう。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.require:24
-msgid "Allow iterable ``provided_by`` values instead of just single values."
-msgstr "単一の値ではなく、反復可能オブジェクト ``provided_by`` の値を可能にしました。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:1
-msgid "Run a shell command on a remote host."
-msgstr "リモートホストに対してシェルコマンドを実行します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:3
-msgid ""
-"If ``shell`` is True (the default), `run` will execute the given command "
-"string via a shell interpreter, the value of which may be controlled by "
-"setting ``env.shell`` (defaulting to something similar to ``/bin/bash -l -c "
-"\"<command>\"``.) Any double-quote (``\"``) or dollar-sign (``$``) "
-"characters in ``command`` will be automatically escaped when ``shell`` is "
-"True."
-msgstr ""
-"``shell`` が True (デフォルト)の場合、 `run` はシェルインタープリター経由で渡されるコマンドを実行します。この値は "
-"``env.shell`` (デフォルトは ``/bin/bash -l -c \"<command>\"`` "
-"と同様なものです)の設定によって制御可能です。``shell`` が True のとき、コマンド内の二重引用符 (``\"``) またはドルマーク "
-"(``$``) 文字は自動的にエスケープされます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:9
-msgid ""
-"`run` will return the result of the remote program's stdout as a single "
-"(likely multiline) string. This string will exhibit ``failed`` and "
-"``succeeded`` boolean attributes specifying whether the command failed or "
-"succeeded, and will also include the return code as the ``return_code`` "
-"attribute. Furthermore, it includes a copy of the requested & actual command"
-" strings executed, as ``.command`` and ``.real_command``, respectively."
-msgstr ""
-"`run` "
-"は単一の文字列(おそらくは複数行)としてリモートプログラムの標準出力の結果を返します。この文字列はそのコマンドが成功したか失敗したかを明記するため "
-"``failed`` と ``succeeded`` の真偽値属性を提示し、 ``return_code`` "
-"属性としてのリターンコードも含みます。さらに、それぞれ ``.command`` と ``.real_command`` "
-"として、リクエストされ、実際に実行されたコマンド文字列のコピーも含んでいます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:17
-msgid ""
-"Any text entered in your local terminal will be forwarded to the remote "
-"program as it runs, thus allowing you to interact with password or other "
-"prompts naturally. For more on how this works, see "
-":doc:`/usage/interactivity`."
-msgstr ""
-"ローカルのターミナルに入力したすべてのテキストは、それが実行されるたびにリモートに送られます。つまり、パスワードやその他のプロンプトと自然な感じでやりとりできるようにします。この挙動の詳細は"
-" :doc:`/usage/interactivity` をご覧ください。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:22
-msgid ""
-"You may pass ``pty=False`` to forego creation of a pseudo-terminal on the "
-"remote end in case the presence of one causes problems for the command in "
-"question. However, this will force Fabric itself to echo any  and all input "
-"you type while the command is running, including sensitive passwords. (With "
-"``pty=True``, the remote pseudo-terminal will echo for you, and will "
-"intelligently handle password-style prompts.) See :ref:`pseudottys` for "
-"details."
-msgstr ""
-"該当のコマンドにとってその存在が問題になる場合は、リモート側の擬似ターミナルの生成に先立って ``pty=False`` "
-"を渡すこともできます。とは言え、そうするとそのコマンドの実行中はタイプした入力をパスワードも含めてすべてエコーするようFabricに強制します。( "
-"``pty=True`` であれば、リモートの擬似ターミナルはエコーするものの、パスワードスタイルのプロンプトは賢く扱います) 詳細は "
-":ref:`pseudottys` をご覧ください。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:30
-msgid ""
-"Similarly, if you need to programmatically examine the stderr stream of the "
-"remote program (exhibited as the ``stderr`` attribute on this function's "
-"return value), you may set ``combine_stderr=False``. Doing so has a high "
-"chance of causing garbled output to appear on your terminal (though the "
-"resulting strings returned by `~fabric.operations.run` will be properly "
-"separated). For more info, please read :ref:`combine_streams`."
-msgstr ""
-"同じように、リモートプログラムの標準エラー出力ストリーム(この関数の返り値に ``stderr`` "
-"として明示されます)をプログラム的に調べる必要がある場合は、 ``combine_stderr=False`` "
-"をセットすることができます。これを設定すると高い確率で自分のターミナルでの出力を文字化けさせてしまいます( "
-"`~fabric.operations.run` によって返される結果文字列は適切に分離されていますが)詳細は "
-":ref:`combine_streams` をご覧ください。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:37
-msgid ""
-"To ignore non-zero return codes, specify ``warn_only=True``. To both ignore "
-"non-zero return codes *and* force a command to run silently, specify "
-"``quiet=True``."
-msgstr ""
-"ゼロ以外のリターンコードを無視するには ``warn_only=True`` "
-"を指定します。ゼロ以外のコードの無視とコマンドのサイレント実行の強制の両方を行うには ``quiet=True`` を指定します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:41
-msgid ""
-"To override which local streams are used to display remote stdout and/or "
-"stderr, specify ``stdout`` or ``stderr``. (By default, the regular "
-"``sys.stdout`` and ``sys.stderr`` Python stream objects are used.)"
-msgstr ""
-"リモート側の標準出力および/もしくは標準エラー出力の表示にどのローカルのストリームを使用するかをオーバーライドするには ``stdout`` もしくは "
-"``stderr`` を指定します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:45
-msgid ""
-"For example, ``run(\"command\", stderr=sys.stdout)`` would print the remote "
-"standard error to the local standard out, while preserving it as its own "
-"distinct attribute on the return value (as per above.) Alternately, you "
-"could even provide your own stream objects or loggers, e.g. ``myout = "
-"StringIO(); run(\"command\", stdout=myout)``."
-msgstr ""
-"例えば、 ``run(\"command\", stderr=sys.stdout)`` "
-"はリモートの標準エラー出力をローカルの標準出力に表示しますが、返り値の自身の識別属性は保持されます(上述の通り)。あるいは、例えば ``myout = "
-"StringIO(); run(\"command\", stdout=myout)`` "
-"のように、独自のストリームオブジェクトもしくはロガーを提供することも可能です。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:51
-msgid ""
-"If you want an exception raised when the remote program takes too long to "
-"run, specify ``timeout=N`` where ``N`` is an integer number of seconds, "
-"after which to time out. This will cause ``run`` to raise a "
-"`~fabric.exceptions.CommandTimeout` exception."
-msgstr ""
-"リモートプログラムの実行に時間がかかりすぎているときに例外を発生させたい場合は ``timeout=N`` を指定します。 ``N`` "
-"は秒の整数値で、これより時間がかかるとタイムアウトさせます。これは ``run`` に "
-"`~fabric.exceptions.CommandTimeout` の例外を発生させます。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:56
-msgid ""
-"If you want to disable Fabric's automatic attempts at escaping quotes, "
-"dollar signs etc., specify ``shell_escape=False``."
-msgstr ""
-"引用符やドルマークなどに対するFabricの自動エスケープを無効にしたい場合は ``shell_escape=False`` を指定します。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:66
-msgid ""
-"The ``succeeded`` and ``stderr`` return value attributes, the "
-"``combine_stderr`` kwarg, and interactive behavior."
-msgstr ""
-"``succeeded`` と ``stderr`` の返り値の属性、``combine_stderr`` キーワード引き数、インタラクティブな挙動。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:70
-msgid "The default value of ``pty`` is now ``True``."
-msgstr "``pty`` のデフォルト値を ``True`` に変更しました。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:73
-msgid ""
-"The default value of ``combine_stderr`` is now ``None`` instead of ``True``."
-" However, the default *behavior* is unchanged, as the global setting is "
-"still ``True``."
-msgstr ""
-"``combine_stderr`` のデフォルト値が ``True`` ではなく ``None`` になりました。しかし、デフォルトの *挙動* "
-"に変更はなく、グローバルなセッティングは ``True`` のままです。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:78
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:33
-msgid "The ``quiet``, ``warn_only``, ``stdout`` and ``stderr`` kwargs."
-msgstr "``quiet``、``warn_only``、``stdout``、``stderr`` キーワード引き数。"
-
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:81
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:36
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.local:44 fabric.operations.run:81 fabric.operations.sudo:36
 msgid "The return value attributes ``.command`` and ``.real_command``."
 msgstr "返り値属性の ``.command`` と ``.real_command``。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:84
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:1
+msgid "Invoke a fully interactive shell on the remote end."
+msgstr "リモート側で完全な対話式シェルを起動します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:3
+msgid "If ``command`` is given, it will be sent down the pipe before handing control over to the invoking user."
+msgstr "``command`` が与えられると、起動ユーザーにコントロールが渡される前にそれがパイプに送り込まれます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:6
+msgid ""
+"This function is most useful for when you need to interact with a heavily shell-based command or series of commands, such as when debugging or when fully interactive recovery is "
+"required upon remote program failure."
+msgstr ""
+"この機能は、大量のシェルベースのコマンドや、デバッギング時やリモート側プログラムの障害に要する完全にインタラクティブなリカバリー作業時などの一連のコマンドとのやりとりが必要なときに"
+"とても役に立ちます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:10
+msgid ""
+"It should be considered an easy way to work an interactive shell session into the middle of a Fabric script and is *not* a drop-in replacement for `~fabric.operations.run`, which "
+"is also capable of interacting with the remote end (albeit only while its given command is executing) and has much stronger programmatic abilities such as error handling and stdout/"
+"stderr capture."
+msgstr ""
+"Fabricスクリプトの途中にインタラクティブなシェルセッションを組み入れるのは簡単な方法とみなすべきで、`~fabric.operations.run` のドロップインの代替ではありません。また、リモート側との"
+"やりとりが可能で(与えられたコマンドが実行されているときだけですが)、エラー処理や標準出力/標準エラー出力のキャプチャのようなとても強いプログラム能力を持ちます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:17
+msgid ""
+"Specifically, `~fabric.operations.open_shell` provides a better interactive experience than `~fabric.operations.run`, but use of a full remote shell prevents Fabric from "
+"determining whether programs run within the shell have failed, and pollutes the stdout/stderr stream with shell output such as login banners, prompts and echoed stdin."
+msgstr ""
+"厳密には、`~fabric.operations.open_shell` は `~fabric.operations.run` よりも良いインタラクティブな体験をもたらします。しかし完全なリモートシェルの利用は、シェル内でのプログラムの起"
+"動に失敗したのかどうかをFabricが判別するのを妨げ、ログインバナー、プロンプト、エコーされた標準入力などのシェルの出力で標準出力/標準エラー出力が判別しにくくなります。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.open_shell:23
+msgid "Thus, this function does not have a return value and will not trigger Fabric's failure handling if any remote programs result in errors."
+msgstr "そのため、この関数は返り値を持たず、どんなリモートプログラムがエラーで終わってもFabricの失敗ハンドリングを引き起こしません。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:1
+msgid "Prompt user with ``text`` and return the input (like ``raw_input``)."
+msgstr "``text`` でユーザーに入力を促し、(``raw_input`` のように)その入力を返します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:3
+msgid ""
+"A single space character will be appended for convenience, but nothing else. Thus, you may want to end your prompt text with a question mark or a colon, e.g. ``prompt(\"What "
+"hostname?\")``."
+msgstr ""
+"利便性のため空白文字が一つだけ付加されます。したがって、プロンプトテキストはクエスチョンマークやコロンで終えるようにするといいでしょう(例えば ``prompt(\"What hostname?\")``)。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:7
+msgid ""
+"If ``key`` is given, the user's input will be stored as ``env.<key>`` in addition to being returned by `prompt`. If the key already existed in ``env``, its value will be "
+"overwritten and a warning printed to the user."
+msgstr ""
+"``key`` が与えられた場合、そのユーザーの入力は `prompt` によって返されるものに加えて ``env.<key>`` として保存されます。``env`` にそのキーがすでに存在する場合はその値が上書きされ、そ"
+"のユーザーには警告が表示されます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:11
+msgid ""
+"If ``default`` is given, it is displayed in square brackets and used if the user enters nothing (i.e. presses Enter without entering any text). ``default`` defaults to the empty "
+"string. If non-empty, a space will be appended, so that a call such as ``prompt(\"What hostname?\", default=\"foo\")`` would result in a prompt of ``What hostname? [foo]`` (with a "
+"trailing space after the ``[foo]``.)"
+msgstr ""
+"``default`` が与えられた場合、それが角かっこ内に表示され、ユーザーが何も(つまり何もテキストを入力せずEnterを押下)を入力しなかった場合にそれが使用されます。``default`` のデフォルトは"
+"空の文字列です。空の文字列以外ならスペースが一つ追加されます。したがって、 ``prompt(\"What hostname?\", default=\"foo\")`` のような呼び出しは (``[foo]`` の後ろにスペースをともなっ"
+"た) ``What hostname? [foo]`` のプロンプトとして表示されます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:18
+msgid "The optional keyword argument ``validate`` may be a callable or a string:"
+msgstr "オプションのキーワード引き数 ``validate`` は呼び出し可能なもの、もしくは文字列です:"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:20
+msgid ""
+"If a callable, it is called with the user's input, and should return the value to be stored on success. On failure, it should raise an exception with an exception message, which "
+"will be printed to the user."
+msgstr "呼び出し可能なものの場合、ユーザーの入力とともに呼び出され、成功時に格納される値を返します。失敗時には例外メッセージとともに例外を発生させ、ユーザーに表示されます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:23
+msgid ""
+"If a string, the value passed to ``validate`` is used as a regular expression. It is thus recommended to use raw strings in this case. Note that the regular expression, if it is "
+"not fully matching (bounded by ``^`` and ``$``) it will be made so. In other words, the input must fully match the regex."
+msgstr ""
+"文字列の場合、``validate`` に渡される値は正規表現として使用されます。そのため、この場合は生の文字列を使用することをおすすめします。正規表現に関する注意点ですが、(``^`` と ``$`` で区"
+"切られた)完全マッチではない場合は、そうなるようにします。つまり、入力は正規表現に完全にマッチさせます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:29
+msgid "Either way, `prompt` will re-prompt until validation passes (or the user hits ``Ctrl-C``)."
+msgstr "どちらにせよ、バリデーションに通るまで(もしくはユーザーが ``Ctrl-C`` を押すまで) `prompt` は再度入力を待ちます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:33
+msgid ""
+"`~fabric.operations.prompt` honors :ref:`env.abort_on_prompts <abort-on-prompts>` and will call `~fabric.utils.abort` instead of prompting if that flag is set to ``True``. If you "
+"want to block on user input regardless, try wrapping with `~fabric.context_managers.settings`."
+msgstr ""
+"`~fabric.operations.prompt` は :ref:`env.abort_on_prompts <abort-on-prompts>` を優先し、このフラグが  ``True`` にセットされている場合はプロンプトを表示する代わりに `~fabric.utils."
+"abort` を呼び出します。もそこれにかかわらずユーザーの入力をブロックしたい場合は、 `~fabric.context_managers.settings` で囲ってみてください。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.prompt:39 fabric.operations.put:56 fabric.operations.run:59 fabric.operations.sudo:18
+msgid "Examples::"
+msgstr "例::"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:1
+msgid "Upload one or more files to a remote host."
+msgstr "リモートホストへ一つもしくは複数のファイルをアップロードします。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:3
+msgid ""
+"`~fabric.operations.put` returns an iterable containing the absolute file paths of all remote files uploaded. This iterable also exhibits a ``.failed`` attribute containing any "
+"local file paths which failed to upload (and may thus be used as a boolean test.) You may also check ``.succeeded`` which is equivalent to ``not .failed``."
+msgstr ""
+"`~fabric.operations.put` はアップロードしたすべてのリモートファイルの完全パスを含む反復可能オブジェクトを返します。この反復可能オブジェクトはまた、アップロードに失敗したすべてのロー"
+"カルファイル(そしておそらく真偽テストとして使われたもの)のパスを含む ``.failed`` 属性を提示します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:9
+msgid ""
+"``local_path`` may be a relative or absolute local file or directory path, and may contain shell-style wildcards, as understood by the Python ``glob`` module (give "
+"``use_glob=False`` to disable this behavior).  Tilde expansion (as implemented by ``os.path.expanduser``) is also performed."
+msgstr ""
+"``local_path`` はローカルのファイルもしくはディレクトリの相対もしくは絶対パスで、Pythonの ``glob`` モジュールによって理解されるよう(この挙動を無効にしたい場合は ``use_glob=False`` "
+"としてください)、シェルスタイルのワイルドカードを含むことがあります。(``os.path.expanduser`` によって実装されている)チルダの展開も実行されます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:14
+msgid "``local_path`` may alternately be a file-like object, such as the result of ``open('path')`` or a ``StringIO`` instance."
+msgstr "``local_path`` は、 ``open('path')`` の結果や ``StringIO`` のインスタンスなど、ファイルライクなオブジェクトであることも可能です。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:18
+msgid ""
+"In this case, `~fabric.operations.put` will attempt to read the entire contents of the file-like object by rewinding it using ``seek`` (and will use ``tell`` afterwards to preserve "
+"the previous file position)."
+msgstr ""
+"この場合、`~fabric.operations.put` は ``seek`` を使ってリワインドすることによりファイル形式オブジェクトのコンテンツ全体を読み取ろうとします(そして前回のファイル位置を保存するために"
+"その後に ``tell`` を使います)。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:22
+msgid ""
+"``remote_path`` may also be a relative or absolute location, but applied to the remote host. Relative paths are relative to the remote user's home directory, but tilde expansion (e."
+"g. ``~/.ssh/``) will also be performed if necessary."
+msgstr ""
+"``remote_path`` は相対的もしくは絶対的な場所で、リモートホストに適用されるものです。相対パスはリモートユーザーのホームディレクトリに対する相対で、必要に応じてチルダ展開(例えば ``~/."
+"ssh/``)が実施されます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:27
+msgid "An empty string, in either path argument, will be replaced by the appropriate end's current working directory."
+msgstr "どちらのパス引き数も空の文字列の場合、適切な側のカレントワーキングディレクトリによって置き換えられます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:30
+msgid ""
+"While the SFTP protocol (which `put` uses) has no direct ability to upload files to locations not owned by the connecting user, you may specify ``use_sudo=True`` to work around "
+"this. When set, this setting causes `put` to upload the local files to a temporary location on the remote end (defaults to remote user's ``$HOME``; this may be overridden via "
+"``temp_dir``), and then use `sudo` to move them to ``remote_path``."
+msgstr ""
+"SFTPプロトコル(`put` が利用します)には接続ユーザーによって所有されていない場所へファイルをアップロードする直接的な方法はありませんが、``use_sudo=True`` と指定することによりこれが可"
+"能になります。これがセットされたとき、この設定により `put` はローカルファイルをリモート側の一時フィアル保管場所(デフォルトではリモートユーザーの ``$HOME`` ですが、 ``temp_dir`` に"
+"よって上書き可能です)にアップロードし、それから `sudo` を利用してそれらのファイルを ``remote_path`` に移動します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:37
+msgid ""
+"In some use cases, it is desirable to force a newly uploaded file to match the mode of its local counterpart (such as when uploading executable scripts). To do this, specify "
+"``mirror_local_mode=True``."
+msgstr ""
+"場合によっては、新しくアップロードしたファイルのモードを強制的にローカル側のものと一致させたほうが望ましいこともあります(実行可能ファイルをアップロードした時など)。これを行うには "
+"``mirror_local_mode=True`` を指定します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:41
+msgid "Alternately, you may use the ``mode`` kwarg to specify an exact mode, in the same vein as ``os.chmod`` or the Unix ``chmod`` command."
+msgstr "代わりに、``os.chmod`` もしくはUnixの ``chmod`` コマンドと同様に ``mode`` キーワード引き数を使って同じモードを指定することもできます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:44
+msgid ""
+"`~fabric.operations.put` will honor `~fabric.context_managers.cd`, so relative values in ``remote_path`` will be prepended by the current remote working directory, if applicable. "
+"Thus, for example, the below snippet would attempt to upload to ``/tmp/files/test.txt`` instead of ``~/files/test.txt``::"
+msgstr ""
+"`~fabric.operations.put` は `~fabric.context_managers.cd` を優先するので、もしあれば、 ``remote_path`` の相対値がリモートのカレントワーキングディレクトリによって追加されます。した"
+"がって、以下の例では ``~/files/test.txt`` ではなく ``/tmp/files/test.txt`` にアップロードしようとします::"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:53
+msgid "Use of `~fabric.context_managers.lcd` will affect ``local_path`` in the same manner."
+msgstr "同じように `~fabric.context_managers.lcd` の利用は ``local_path`` に影響を与えます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:72
+msgid "Directories may be specified in the ``local_path`` argument and will trigger recursive uploads."
+msgstr "ディレクトリは ``local_path`` 引き数で明示することができ、再帰的なアップロードを実行します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:75
+msgid "Return value is now an iterable of uploaded remote file paths which also exhibits the ``.failed`` and ``.succeeded`` attributes."
+msgstr "返り値はアップロードされたローカルファイルのパスの反復可能オブジェクトで、 ``.failed`` と ``.succeeded`` 属性を提示します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.put:80
+msgid "Added ``use_glob`` option to allow disabling of globbing."
+msgstr "globを無効にできるように ``use_glob`` オプションを追加。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.reboot:1
+msgid "Reboot the remote system."
+msgstr "リモートシステムを再起動します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.reboot:3
+msgid ""
+"Will temporarily tweak Fabric's reconnection settings (:ref:`timeout` and :ref:`connection-attempts`) to ensure that reconnection does not give up for at least ``wait`` seconds."
+msgstr "これは一時的にFabricの再接続設定 (:ref:`timeout` と :ref:`connection-attempts`) を調整し、少なくとも ``wait`` 秒は再接続を止めないようにします。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.reboot:8
+msgid ""
+"As of Fabric 1.4, the ability to reconnect partway through a session no longer requires use of internal APIs.  While we are not officially deprecating this function, adding more "
+"features to it will not be a priority."
+msgstr ""
+"Fabric 1.4以降では一つのセッション途中での再接続の機能は内部APIの利用を必要とはしません。この機能を公式には非推奨とはしませんが、これにさらに機能を追加することは優先度としては低いで"
+"す。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.reboot:13
+msgid ""
+"Users who want greater control are encouraged to check out this function's (6 lines long, well commented) source code and write their own adaptation using different timeout/attempt "
+"values or additional logic."
+msgstr ""
+"﻿より細かく制御したいユーザーは、この関数のソースコード(6行で、よくコメントしてあります)をチェックし、異なるタイムアウト/試行値または追加のロジックを使用して独自の変更を書くことを奨"
+"励します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.reboot:19
+msgid ""
+"Changed the ``wait`` kwarg to be optional, and refactored to leverage the new reconnection functionality; it may not actually have to wait for ``wait`` seconds before reconnecting."
+msgstr "``wait`` キーワード引き数を任意に変更し、新しい再接続機能を活用するようにリファクタリング。実際には、再接続前に ``wait`` 秒待つ必要はないかもしれない。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:1
+msgid "Check for given keys in the shared environment dict and abort if not found."
+msgstr "共有環境辞書に与えられているキーをチェックし、なければ中止します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:3
+msgid ""
+"Positional arguments should be strings signifying what env vars should be checked for. If any of the given arguments do not exist, Fabric will abort execution and print the names "
+"of the missing keys."
+msgstr "位置指定引数は文字列で、どの環境変数をチェックするのかを指定します。与えられた引き数がどれでも存在しない場合は、Fabricは実行を中止し、見つからなかったキーの名称を出力します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:7
+msgid ""
+"The optional keyword argument ``used_for`` may be a string, which will be printed in the error output to inform users why this requirement is in place. ``used_for`` is printed as "
+"part of a string similar to::"
+msgstr ""
+"位置指定引数の ``used_for`` は文字列であることも可能で、その場所でそれがなぜ必須なのかをユーザーに知らせるためのエラーに出力されます。 ``used_for`` は次の文字列に似た文字列の一部と"
+"して出力されます::"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:13
+msgid "so format it appropriately."
+msgstr "そしてこれを適切にフォーマットします。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:15
+msgid ""
+"The optional keyword argument ``provided_by`` may be a list of functions or function names or a single function or function name which the user should be able to execute in order "
+"to set the key or keys; it will be included in the error output if requirements are not met."
+msgstr ""
+"位置指定引数の ``provided_by`` は、単一もしくは複数のキーをセットするためにユーザーが実行することのできる複数の関数または複数の関数名、あるいはひとつの関数またはひとつの関数名のリス"
+"トとして渡すことができます。もし必須事項を満たしていなければ、エラーメッセージの中にそれが含められます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:20
+msgid ""
+"Note: it is assumed that the keyword arguments apply to all given keys as a group. If you feel the need to specify more than one ``used_for``, for example, you should break your "
+"logic into multiple calls to ``require()``."
+msgstr ""
+"キーワード引き数はグループとしてすべての与えられたキーに適用されるとうことを前提としていることに留意してください。 ``used_for`` を複数指定する必要を感じた場合、例えば、ロジックを "
+"``require()`` への複数の呼び出しに分割するといいでしょう。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.require:24
+msgid "Allow iterable ``provided_by`` values instead of just single values."
+msgstr "単一の値ではなく、反復可能オブジェクト ``provided_by`` の値を可能にしました。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:1
+msgid "Run a shell command on a remote host."
+msgstr "リモートホストに対してシェルコマンドを実行します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:3
+msgid ""
+"If ``shell`` is True (the default), `run` will execute the given command string via a shell interpreter, the value of which may be controlled by setting ``env.shell`` (defaulting "
+"to something similar to ``/bin/bash -l -c \"<command>\"``.) Any double-quote (``\"``) or dollar-sign (``$``) characters in ``command`` will be automatically escaped when ``shell`` "
+"is True."
+msgstr ""
+"``shell`` が True (デフォルト)の場合、 `run` はシェルインタープリター経由で渡されるコマンドを実行します。この値は ``env.shell`` (デフォルトは ``/bin/bash -l -c \"<command>\"`` と同"
+"様なものです)の設定によって制御可能です。``shell`` が True のとき、コマンド内の二重引用符 (``\"``) またはドルマーク (``$``) 文字は自動的にエスケープされます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:9
+msgid ""
+"`run` will return the result of the remote program's stdout as a single (likely multiline) string. This string will exhibit ``failed`` and ``succeeded`` boolean attributes "
+"specifying whether the command failed or succeeded, and will also include the return code as the ``return_code`` attribute. Furthermore, it includes a copy of the requested & "
+"actual command strings executed, as ``.command`` and ``.real_command``, respectively."
+msgstr ""
+"`run` は単一の文字列(おそらくは複数行)としてリモートプログラムの標準出力の結果を返します。この文字列はそのコマンドが成功したか失敗したかを明記するため ``failed`` と ``succeeded`` の"
+"真偽値属性を提示し、 ``return_code`` 属性としてのリターンコードも含みます。さらに、それぞれ ``.command`` と ``.real_command`` として、リクエストされ、実際に実行されたコマンド文字列"
+"のコピーも含んでいます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:17
+msgid ""
+"Any text entered in your local terminal will be forwarded to the remote program as it runs, thus allowing you to interact with password or other prompts naturally. For more on how "
+"this works, see :doc:`/usage/interactivity`."
+msgstr ""
+"ローカルのターミナルに入力したすべてのテキストは、それが実行されるたびにリモートに送られます。つまり、パスワードやその他のプロンプトと自然な感じでやりとりできるようにします。この挙"
+"動の詳細は :doc:`/usage/interactivity` をご覧ください。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:22
+msgid ""
+"You may pass ``pty=False`` to forego creation of a pseudo-terminal on the remote end in case the presence of one causes problems for the command in question. However, this will "
+"force Fabric itself to echo any  and all input you type while the command is running, including sensitive passwords. (With ``pty=True``, the remote pseudo-terminal will echo for "
+"you, and will intelligently handle password-style prompts.) See :ref:`pseudottys` for details."
+msgstr ""
+"該当のコマンドにとってその存在が問題になる場合は、リモート側の擬似ターミナルの生成に先立って ``pty=False`` を渡すこともできます。とは言え、そうするとそのコマンドの実行中はタイプした"
+"入力をパスワードも含めてすべてエコーするようFabricに強制します。( ``pty=True`` であれば、リモートの擬似ターミナルはエコーするものの、パスワードスタイルのプロンプトは賢く扱います) 詳"
+"細は :ref:`pseudottys` をご覧ください。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:30
+msgid ""
+"Similarly, if you need to programmatically examine the stderr stream of the remote program (exhibited as the ``stderr`` attribute on this function's return value), you may set "
+"``combine_stderr=False``. Doing so has a high chance of causing garbled output to appear on your terminal (though the resulting strings returned by `~fabric.operations.run` will be "
+"properly separated). For more info, please read :ref:`combine_streams`."
+msgstr ""
+"同じように、リモートプログラムの標準エラー出力ストリーム(この関数の返り値に ``stderr`` として明示されます)をプログラム的に調べる必要がある場合は、 ``combine_stderr=False`` をセット"
+"することができます。これを設定すると高い確率で自分のターミナルでの出力を文字化けさせてしまいます( `~fabric.operations.run` によって返される結果文字列は適切に分離されていますが)詳細"
+"は :ref:`combine_streams` をご覧ください。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:37
+msgid "To ignore non-zero return codes, specify ``warn_only=True``. To both ignore non-zero return codes *and* force a command to run silently, specify ``quiet=True``."
+msgstr "ゼロ以外のリターンコードを無視するには ``warn_only=True`` を指定します。ゼロ以外のコードの無視とコマンドのサイレント実行の強制の両方を行うには ``quiet=True`` を指定します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:41
+msgid ""
+"To override which local streams are used to display remote stdout and/or stderr, specify ``stdout`` or ``stderr``. (By default, the regular ``sys.stdout`` and ``sys.stderr`` Python "
+"stream objects are used.)"
+msgstr "リモート側の標準出力および/もしくは標準エラー出力の表示にどのローカルのストリームを使用するかをオーバーライドするには ``stdout`` もしくは ``stderr`` を指定します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:45
+msgid ""
+"For example, ``run(\"command\", stderr=sys.stdout)`` would print the remote standard error to the local standard out, while preserving it as its own distinct attribute on the "
+"return value (as per above.) Alternately, you could even provide your own stream objects or loggers, e.g. ``myout = StringIO(); run(\"command\", stdout=myout)``."
+msgstr ""
+"例えば、 ``run(\"command\", stderr=sys.stdout)`` はリモートの標準エラー出力をローカルの標準出力に表示しますが、返り値の自身の識別属性は保持されます(上述の通り)。あるいは、例えば "
+"``myout = StringIO(); run(\"command\", stdout=myout)`` のように、独自のストリームオブジェクトもしくはロガーを提供することも可能です。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:51
+msgid ""
+"If you want an exception raised when the remote program takes too long to run, specify ``timeout=N`` where ``N`` is an integer number of seconds, after which to time out. This will "
+"cause ``run`` to raise a `~fabric.exceptions.CommandTimeout` exception."
+msgstr ""
+"リモートプログラムの実行に時間がかかりすぎているときに例外を発生させたい場合は ``timeout=N`` を指定します。 ``N`` は秒の整数値で、これより時間がかかるとタイムアウトさせます。これは "
+"``run`` に `~fabric.exceptions.CommandTimeout` の例外を発生させます。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:56
+msgid "If you want to disable Fabric's automatic attempts at escaping quotes, dollar signs etc., specify ``shell_escape=False``."
+msgstr "引用符やドルマークなどに対するFabricの自動エスケープを無効にしたい場合は ``shell_escape=False`` を指定します。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:66
+msgid "The ``succeeded`` and ``stderr`` return value attributes, the ``combine_stderr`` kwarg, and interactive behavior."
+msgstr "``succeeded`` と ``stderr`` の返り値の属性、``combine_stderr`` キーワード引き数、インタラクティブな挙動。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:70
+msgid "The default value of ``pty`` is now ``True``."
+msgstr "``pty`` のデフォルト値を ``True`` に変更しました。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:73
+msgid "The default value of ``combine_stderr`` is now ``None`` instead of ``True``. However, the default *behavior* is unchanged, as the global setting is still ``True``."
+msgstr "``combine_stderr`` のデフォルト値が ``True`` ではなく ``None`` になりました。しかし、デフォルトの *挙動* に変更はなく、グローバルなセッティングは ``True`` のままです。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:78 fabric.operations.sudo:33
+msgid "The ``quiet``, ``warn_only``, ``stdout`` and ``stderr`` kwargs."
+msgstr "``quiet``、``warn_only``、``stdout``、``stderr`` キーワード引き数。"
+
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:84
 msgid "The ``timeout`` argument."
 msgstr "``timeout`` 引き数。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.run:87
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:39
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.run:87 fabric.operations.sudo:39
 msgid "The ``shell_escape`` argument."
 msgstr "``shell_escape`` 引き数。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:1
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:1
 msgid "Run a shell command on a remote host, with superuser privileges."
 msgstr "リモートホストに対してスーパーユーザー権限でシェルコマンドを実行します。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:3
-msgid ""
-"`sudo` is identical in every way to `run`, except that it will always wrap "
-"the given ``command`` in a call to the ``sudo`` program to provide superuser"
-" privileges."
-msgstr ""
-"`sudo` はスーパーユーザー権限を提供するために与えられた ``command`` を ``sudo`` "
-"プログラムへの呼び出し内にラップする以外は、あらゆる点で `run` と同一です。"
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:3
+msgid "`sudo` is identical in every way to `run`, except that it will always wrap the given ``command`` in a call to the ``sudo`` program to provide superuser privileges."
+msgstr "`sudo` はスーパーユーザー権限を提供するために与えられた ``command`` を ``sudo`` プログラムへの呼び出し内にラップする以外は、あらゆる点で `run` と同一です。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:7
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:7
 msgid ""
-"`sudo` accepts additional ``user`` and ``group`` arguments, which are passed"
-" to ``sudo`` and allow you to run as some user and/or group other than root."
-"  On most systems, the ``sudo`` program can take a string username/group or "
-"an integer userid/groupid (uid/gid); ``user`` and ``group`` may likewise be "
-"strings or integers."
+"`sudo` accepts additional ``user`` and ``group`` arguments, which are passed to ``sudo`` and allow you to run as some user and/or group other than root.  On most systems, the "
+"``sudo`` program can take a string username/group or an integer userid/groupid (uid/gid); ``user`` and ``group`` may likewise be strings or integers."
 msgstr ""
-"`sudo` は追加で ``user`` と ``group`` の引き数を取ります。これは ``sudo`` "
-"に渡され、root以外のuserやgroupとして実行できるようにします。たいていのシステムでは、``sudo`` "
-"プログラムはusername/groupの文字列もしくはuserid/groupid (uid/gid) の整数値をとることができます。``user``"
-" と ``group`` は同じように文字列もしくは整数値となります。"
+"`sudo` は追加で ``user`` と ``group`` の引き数を取ります。これは ``sudo`` に渡され、root以外のuserやgroupとして実行できるようにします。たいていのシステムでは、``sudo`` プログラムは"
+"username/groupの文字列もしくはuserid/groupid (uid/gid) の整数値をとることができます。``user`` と ``group`` は同じように文字列もしくは整数値となります。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:13
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:13
 msgid ""
-"You may set :ref:`env.sudo_user <sudo_user>` at module level or via "
-"`~fabric.context_managers.settings` if you want multiple ``sudo`` calls to "
-"have the same ``user`` value. An explicit ``user`` argument will, of course,"
-" override this global setting."
+"You may set :ref:`env.sudo_user <sudo_user>` at module level or via `~fabric.context_managers.settings` if you want multiple ``sudo`` calls to have the same ``user`` value. An "
+"explicit ``user`` argument will, of course, override this global setting."
 msgstr ""
-"モジュールレベル、もしくは同じ ``user`` の値を持つ複数の ``sudo`` 呼び出しを行う場合は "
-"`~fabric.context_managers.settings` 経由で :ref:`env.sudo_user <sudo_user>` "
-"をセットすることが可能です。もちろん、明示的な ``user`` 引き数はこのグローバル設定をオーバーライドします。"
+"モジュールレベル、もしくは同じ ``user`` の値を持つ複数の ``sudo`` 呼び出しを行う場合は `~fabric.context_managers.settings` 経由で :ref:`env.sudo_user <sudo_user>` をセットすることが"
+"可能です。もちろん、明示的な ``user`` 引き数はこのグローバル設定をオーバーライドします。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:27
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:27
 msgid "See the changed and added notes for `~fabric.operations.run`."
 msgstr "`~fabric.operations.run` の変更および追加点をご覧ください。"
 
-#: ../../../fabric/operations.pydocstring of fabric.operations.sudo:30
+#: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/operations.py:docstring
+#: of fabric.operations.sudo:30
 msgid "Now honors :ref:`env.sudo_user <sudo_user>`."
 msgstr ":ref:`env.sudo_user <sudo_user>` を優先するようになりました。"

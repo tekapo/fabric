@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-31 11:07+0900\n"
-"PO-Revision-Date: 2014-12-31 11:35+0900\n"
+"PO-Revision-Date: 2014-12-31 14:21+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
@@ -46,14 +46,12 @@ msgstr "コードの取得"
 
 # 2879b954394642db9eb597dcf7137b90
 #: ../../development.rst:14
-#, fuzzy
 msgid ""
 "Please see the :ref:`source-code-checkouts` section of the :doc:`installing` "
 "page for details on how to obtain Fabric's source code."
 msgstr ""
-"Fabricのソースコードの取得に関しての詳細は :doc:`インストール "
-"<installation>` ページの :ref:`source-code-checkouts` セクションをご覧くださ"
-"い。"
+"Fabricのソースコードの取得に関しての詳細は :doc:`installing` ページの :ref:"
+"`source-code-checkouts` セクションをご覧ください。"
 
 # 0a7df670ed984c6fb7f27199ae56b3d4
 #: ../../development.rst:18
@@ -67,7 +65,6 @@ msgstr "Fabricに参加協力する方法はたくさんあります:"
 
 # 907c2883be6140e48aaa652d560d421d
 #: ../../development.rst:22
-#, fuzzy
 msgid ""
 "**Use Fabric and send us feedback!** This is both the easiest and arguably "
 "the most important way to improve the project -- let us know how you "
@@ -75,10 +72,10 @@ msgid ""
 "the `ticket tracker`_ first, though, when submitting feature ideas.)"
 msgstr ""
 "**Fabricを使ってフィードバックを送ってください!** これがこのプロジェクトを改"
-"善するためのもっとも簡単でもっとも間違いが少なく、もっとも重要な方法です。ど"
-"のようにFabricを使っていて、どのようにFabricを使いたいのかをお知らせくださ"
-"い。(とは言え、アイディアを送るときには、まず `チケットトラッカー <https://"
-"github.com/fabric/fabric/issues>`_ で検索するようにしてください)"
+"善するためのもっとも簡単でほぼ間違いなくもっとも重要な方法です。どのように"
+"Fabricを使っていて、どのようにFabricを使いたいのかをお知らせください。(とは言"
+"え、アイディアを送るときには、まず `チケットトラッカー <https://github.com/"
+"fabric/fabric/issues>`_ で検索するようにしてください)"
 
 # edec7b5d01584fe8a481517b0c9109dc
 #: ../../development.rst:27
@@ -97,6 +94,9 @@ msgid ""
 "for details on this process. Regarding the changelog step, our changelog is "
 "stored in ``sites/www/changelog.rst``."
 msgstr ""
+"﻿**バグの修正や機能の実装!** 再度、この手順に関する詳細は `contribution-guide."
+"org`_ に従ってください。変更履歴のステップに関しては ``sites/www/changelog."
+"rst`` の変更履歴に保存されています。"
 
 # e0d84fb0b606472bb42615048ef96974
 #: ../../development.rst:36

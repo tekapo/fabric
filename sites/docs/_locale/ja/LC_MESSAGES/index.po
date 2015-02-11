@@ -3,187 +3,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fabric 1.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-29 17:11+0900\n"
-"PO-Revision-Date: 2014-09-27 08:43+0900\n"
+"POT-Creation-Date: 2015-02-11 15:09+0900\n"
+"PO-Revision-Date: 2015-02-11 15:11+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Fabric ja <tekapo@gmail.com>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.3\n"
 
+# 14348e0870984571a97bb091591409d3
 #: ../../index.rst:3
-msgid "Fabric"
-msgstr "Fabric"
+msgid "Welcome to Fabric's documentation!"
+msgstr "Fabricのドキュメントへようこそ !"
 
-#: ../../index.rst:6
-msgid "About"
-msgstr "Fabricとは"
-
-#: ../../../README.rst:4
+# a3b6094b1db742e28876560a936bbe77
+#: ../../index.rst:5
 msgid ""
-"Fabric is a Python (2.5 or higher) library and command-line tool for "
-"streamlining the use of SSH for application deployment or systems "
-"administration tasks."
+"This site covers Fabric's usage & API documentation. For basic info on what "
+"Fabric is, including its public changelog & how the project is maintained, "
+"please see `the main project website <http://fabfile.org>`_."
 msgstr ""
-"FabricはPython (2.5以上) のライブラリで、アプリケーションのデプロイメントやシ"
-"ステム管理タスクのための SSH の利用を効率化するためのコマンドラインツールで"
-"す。"
+"このサイトではFabricの利用法とAPIのドキュメントをカバーしています。公開されて"
+"いる変更履歴とこのプロジェクトがどのようにメンテされているかを含んだ、Fabric"
+"とは何かとうことに関する基本的な情報は `メインのプロジェクトウェブサイト "
+"<http://fabfile.org>`_ をご覧ください。"
 
-#: ../../../README.rst:8
-msgid ""
-"It provides a basic suite of operations for executing local or remote shell "
-"commands (normally or via ``sudo``) and uploading/downloading files, as well "
-"as auxiliary functionality such as prompting the running user for input, or "
-"aborting execution."
-msgstr ""
-"ローカルもしくはリモートのシェルコマンド (通常は ``sudo`` 経由) の実行、ファ"
-"イルのアップロード/ダウンロード、さらにまた利用中ユーザーに入力を促したり、実"
-"行を中止したりするための基本的な一連の操作を提供します。"
-
-#: ../../../README.rst:13
-msgid ""
-"Typical use involves creating a Python module containing one or more "
-"functions, then executing them via the ``fab`` command-line tool. Below is a "
-"small but complete \"fabfile\" containing a single task::"
-msgstr ""
-"標準的な使い方は、1つ以上の関数を含んだPythonモジュールを作成し、 ``fab`` コ"
-"マンドラインツール経由でそれらを実行します。以下は小さいですがひとつのタスク"
-"を含んだ完全な \" fabfile\" です::"
-
-#: ../../../README.rst:22
-msgid "Once a task is defined, it may be run on one or more servers, like so::"
-msgstr "タスクが定義されると、1つ以上のサーバーで実行できます。例えば::"
-
-#: ../../../README.rst:34
-msgid ""
-"In addition to use via the ``fab`` tool, Fabric's components may be imported "
-"into other Python code, providing a Pythonic interface to the SSH protocol "
-"suite at a higher level than that provided by e.g. the ``Paramiko`` library "
-"(which Fabric itself uses.)"
-msgstr ""
-"``fab`` ツール経由での利用に加えて、Fabricのコンポーネントは他のPythonコード"
-"にインポートすることもできます。例えば ``Paramiko`` ライブラリ (Fabricでも利"
-"用しています) よりも高位のレベルでPython的なインターフェースを一連のSSHプロト"
-"コルに提供しています。"
-
-#: ../../index.rst:12
-msgid "Installation"
-msgstr "インストール"
-
-#: ../../index.rst:19
-msgid ""
-"We recommend using the latest stable version of Fabric; releases are made "
-"often to prevent any large gaps in functionality between the latest stable "
-"release and the development version."
-msgstr ""
-"私たちとしてはFabricの最新安定版の使用をおすすめします。最新安定版と開発版の"
-"間に機能的な大きなギャップが生まれないようにリリースは頻繁に出されます。"
-
-#: ../../index.rst:23
-msgid ""
-"However, if you want to live on the edge, you can pull down the source code "
-"from our Git repository, or fork us on Github. The :doc:`installation` page "
-"has details for how to access the source code."
-msgstr ""
-"とは言え、危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソースコード"
-"を落とすこともできますし、GitHub上でフォークすることもできます。ソースコード"
-"へのアクセスは :doc:`インストール <installation>` ページで詳細をご覧くださ"
-"い。"
-
-#: ../../index.rst:29
-msgid ""
-"If you install Fabric from Git, you will need to install its dependency "
-"Paramiko from Git as well. See :doc:`the installation docs <installation>` "
-"for details."
-msgstr ""
-"GitからFabricをインストールする場合は依存するParamikoもGitからインストールす"
-"る必要があります。詳細は :doc:`インストール <installation>` をご覧ください。"
-
-#: ../../index.rst:35
-msgid "Development"
-msgstr "開発"
-
-#: ../../index.rst:37
-msgid ""
-"Any hackers interested in improving Fabric (or even users interested in how "
-"Fabric is put together or released) please see the :doc:`development` page. "
-"It contains comprehensive info on contributing, repository layout, our "
-"release strategy, and more."
-msgstr ""
-"Fabricの改善に興味のあるハッカー(もしくはFabricがどのように組み立てられてリ"
-"リースされるかに興味のある方)はこの :doc:`開発<development>` ページを参照して"
-"ください。このページには貢献する方法、リポジトリのレイアウト、私たちにリリー"
-"ス方針に関する包括的な情報が含まれています。"
-
-#: ../../index.rst:46
-msgid "Documentation"
-msgstr "ドキュメント"
-
-#: ../../index.rst:48
-msgid ""
-"Please note that all documentation is currently written with Python 2.5 "
-"users in mind, but with an eye for eventual Python 3.x compatibility. This "
-"leads to the following patterns that may throw off readers used to Python "
-"2.4 or who have already upgraded to Python 2.6/2.7:"
-msgstr ""
-"このすべてのドキュメンテーションはPython 2.5のユーザを念頭に今は書かれていま"
-"すが、最終的にはPython 3.x 互換性への配慮もしています。このため次のパターンは"
-"Python 2.4に慣れた方やPython2.6/2.7にアップグレードした方には戸惑うかもしれま"
-"せん:"
-
-#: ../../index.rst:53
-msgid ""
-"``from __future__ import with_statement``: a \"future import\" required to "
-"use the ``with`` statement in Python 2.5 -- a feature you'll be using "
-"frequently. Python 2.6+ users don't need to do this."
-msgstr ""
-"``from __future__ import with_statement``: \" future import\" はPython 2.5で"
-"withステートメント(頻繁に使用します)を使用する場合に必要です。Python 2.6以上"
-"のユーザは必要ありません。"
-
-#: ../../index.rst:56
-msgid ""
-"``<true_value> if <expression> else <false_value>``: Python's relatively new "
-"ternary statement, available in 2.5 and newer. Python 2.4 and older used to "
-"fake this with ``<expression> and <true_value> or <false_value>`` (which "
-"isn't quite the same thing and has some logical loopholes.)"
-msgstr ""
-"``<true_value> if <expression> else <false_value>``: Pythonの比較的新しい3項"
-"文で、2.5以上で利用できます。Python 2.4以前では ``<expression> and "
-"<true_value> or <false_value>`` をフェイクとして使用していました。(同じもので"
-"はなく、論理的な穴がいくつかありました)"
-
-#: ../../index.rst:60
-msgid ""
-"``print(<expression>)`` instead of ``print <expression>``: We use the "
-"``print`` statement's optional parentheses where possible, in order to be "
-"more compatible with Python 3.x (in which ``print`` becomes a function.)"
-msgstr ""
-"``print <expression>`` ではなく ``print(<expression>)``: ``print`` 文のオプ"
-"ション扱いの丸括弧を可能な場合は使用します。Python 3.xとより互換性を持たせる"
-"ためです。(Python 3.xでは ``print`` は関数になりました)"
-
-#: ../../index.rst:75
+#: ../../index.rst:11
 msgid "Tutorial"
 msgstr "チュートリアル"
 
-#: ../../index.rst:77
+#: ../../index.rst:13
 msgid ""
 "For new users, and/or for an overview of Fabric's basic functionality, "
 "please see the :doc:`tutorial`. The rest of the documentation will assume "
 "you're at least passingly familiar with the material contained within."
 msgstr ""
-"新しいユーザーやFabricの基本的な機能の概要を知りたい方は :doc:`チュートリア"
+"新しいユーザーや  Fabricの基本的な機能の概要を知りたい方は :doc:`チュートリア"
 "ル <tutorial>` を参照してください。このドキュメントの残りの部分では、内容に関"
 "して少なくとも一時的にはよく知っていることと仮定します。"
 
-#: ../../index.rst:84
+#: ../../index.rst:26
 msgid "Usage documentation"
 msgstr "使い方のドキュメント"
 
-#: ../../index.rst:86
+#: ../../index.rst:28
 msgid ""
 "The following list contains all major sections of Fabric's prose (non-API) "
 "documentation, which expands upon the concepts outlined in the :doc:"
@@ -193,35 +58,11 @@ msgstr ""
 "doc:`チュートリアル <tutorial>` のコンセプト概要から発展させて、上級者向けの"
 "トピックもカバーしています。"
 
-#: ../../index.rst:99
-msgid "FAQ"
-msgstr "FAQ"
-
-#: ../../index.rst:101
-msgid ""
-"Some frequently encountered questions, coupled with answers/solutions/"
-"excuses, may be found on the :doc:`faq` page."
-msgstr ""
-"よくある質問とそれに対する答え、解決法、言い訳は :doc:`faq` のページで見つか"
-"るかもしれません。"
-
-#: ../../index.rst:105
-msgid "Troubleshooting"
-msgstr "トラブルシューティング"
-
-#: ../../index.rst:107
-msgid ""
-"Before asking for help or filing a bug, make sure you've read our :doc:"
-"`document on troubleshooting <troubleshooting>`."
-msgstr ""
-"助けを求めたりバグを登録する前に、 :doc:`トラブルシューティングに関するドキュ"
-"メント <troubleshooting>` を必ず読んでください。"
-
-#: ../../index.rst:113
+#: ../../index.rst:42
 msgid "API documentation"
 msgstr "APIドキュメント"
 
-#: ../../index.rst:115
+#: ../../index.rst:44
 msgid ""
 "Fabric maintains two sets of API documentation, autogenerated from the "
 "source code's docstrings (which are typically very thorough.)"
@@ -229,11 +70,11 @@ msgstr ""
 "Fabricは2つのAPIドキュメントをメンテナンスしています。これはソースコードの"
 "docstringsから自動生成されるもので、通常はとても詳細なものです。"
 
-#: ../../index.rst:121
+#: ../../index.rst:50
 msgid "Core API"
 msgstr "コアAPI"
 
-#: ../../index.rst:123
+#: ../../index.rst:52
 msgid ""
 "The **core** API is loosely defined as those functions, classes and methods "
 "which form the basic building blocks of Fabric (such as `~fabric.operations."
@@ -245,11 +86,11 @@ msgstr ""
 "に定義されています。そしてこの上に他のすべて(以下の \"contrib\" セクションや"
 "ユーザーのfabfile)が作られています。"
 
-#: ../../index.rst:137
+#: ../../index.rst:66
 msgid "Contrib API"
 msgstr "Contrib API"
 
-#: ../../index.rst:139
+#: ../../index.rst:68
 msgid ""
 "Fabric's **contrib** package contains commonly useful tools (often merged in "
 "from user fabfiles) for tasks such as user I/O, modifying remote files, and "
@@ -263,109 +104,253 @@ msgstr ""
 "わたって変更されないのに対し、このcontribセクションはユーザーケースが解決され"
 "て追加されるごとに成長し、(後方互換性は保つようにしてはいますが)進化します。"
 
-#: ../../index.rst:153
-msgid "Changelog"
-msgstr "変更履歴"
+#~ msgid "Fabric"
+#~ msgstr "Fabric"
 
-#: ../../index.rst:155
-msgid "Please see :doc:`the changelog </changelog>`."
-msgstr ":doc:`変更履歴 </changelog>` をご覧ください。"
+#~ msgid "About"
+#~ msgstr "Fabricとは"
 
-#: ../../index.rst:159
-msgid "Roadmap"
-msgstr "ロードマップ"
+#~ msgid ""
+#~ "Fabric is a Python (2.5 or higher) library and command-line tool for "
+#~ "streamlining the use of SSH for application deployment or systems "
+#~ "administration tasks."
+#~ msgstr ""
+#~ "FabricはPython (2.5以上) のライブラリで、アプリケーションのデプロイメント"
+#~ "やシステム管理タスクのための SSH の利用を効率化するためのコマンドライン"
+#~ "ツールです。"
 
-#: ../../index.rst:161
-msgid "Please see :doc:`the roadmap </roadmap>`."
-msgstr ":doc:`ロードマップ </roadmap>` をご覧ください。"
+#~ msgid ""
+#~ "It provides a basic suite of operations for executing local or remote "
+#~ "shell commands (normally or via ``sudo``) and uploading/downloading "
+#~ "files, as well as auxiliary functionality such as prompting the running "
+#~ "user for input, or aborting execution."
+#~ msgstr ""
+#~ "ローカルもしくはリモートのシェルコマンド (通常は ``sudo`` 経由) の実行、"
+#~ "ファイルのアップロード/ダウンロード、さらにまた利用中ユーザーに入力を促し"
+#~ "たり、実行を中止したりするための基本的な一連の操作を提供します。"
 
-#: ../../index.rst:165
-msgid "Getting help"
-msgstr "助けを得るには"
+#~ msgid ""
+#~ "Typical use involves creating a Python module containing one or more "
+#~ "functions, then executing them via the ``fab`` command-line tool. Below "
+#~ "is a small but complete \"fabfile\" containing a single task::"
+#~ msgstr ""
+#~ "標準的な使い方は、1つ以上の関数を含んだPythonモジュールを作成し、 ``fab`` "
+#~ "コマンドラインツール経由でそれらを実行します。以下は小さいですがひとつのタ"
+#~ "スクを含んだ完全な \" fabfile\" です::"
 
-#: ../../index.rst:167
-msgid ""
-"If you've scoured the :ref:`prose <usage-docs>` and :ref:`API <api_docs>` "
-"documentation and still can't find an answer to your question, below are "
-"various support resources that should help. We do request that you do at "
-"least skim the documentation before posting tickets or mailing list "
-"questions, however!"
-msgstr ""
-"もし :ref:`使い方<usage-docs>` や :ref:`API <api_docs>` ドキュメントを探し"
-"回っても答えが見つからない場合は、以下の様々なリソースが助けになるはずです。"
-"ただし、チケットを投稿したり質問をメーリングリストに投げかける前に、最低でも"
-"ドキュメントにはざっと目を通すようにお願いします。"
+#~ msgid ""
+#~ "Once a task is defined, it may be run on one or more servers, like so::"
+#~ msgstr "タスクが定義されると、1つ以上のサーバーで実行できます。例えば::"
 
-#: ../../index.rst:174
-msgid "Mailing list"
-msgstr "メーリングリスト"
+#~ msgid ""
+#~ "In addition to use via the ``fab`` tool, Fabric's components may be "
+#~ "imported into other Python code, providing a Pythonic interface to the "
+#~ "SSH protocol suite at a higher level than that provided by e.g. the "
+#~ "``Paramiko`` library (which Fabric itself uses.)"
+#~ msgstr ""
+#~ "``fab`` ツール経由での利用に加えて、Fabricのコンポーネントは他のPythonコー"
+#~ "ドにインポートすることもできます。例えば ``Paramiko`` ライブラリ (Fabricで"
+#~ "も利用しています) よりも高位のレベルでPython的なインターフェースを一連の"
+#~ "SSHプロトコルに提供しています。"
 
-#: ../../index.rst:176
-msgid ""
-"The best way to get help with using Fabric is via the `fab-user mailing list "
-"<http://lists.nongnu.org/mailman/listinfo/fab-user>`_ (currently hosted at "
-"``nongnu.org``.) The Fabric developers do their best to reply promptly, and "
-"the list contains an active community of other Fabric users and contributors "
-"as well."
-msgstr ""
-"Fabricの使用に関して助けを求める一番いい場所は `fab-user メーリングリスト "
-"<http://lists.nongnu.org/mailman/listinfo/fab-user>`_ (いまは ``nongnu.org`` "
-"でホストされています)でしょう。Fabricの開発者はすぐに返信するようにしています"
-"し、このリストには他のFabricユーザーや貢献者の活発なコミュニティも参加してい"
-"ます。"
+#~ msgid "Installation"
+#~ msgstr "インストール"
 
-#: ../../index.rst:183
-msgid "Twitter"
-msgstr "Twitter"
+#~ msgid ""
+#~ "We recommend using the latest stable version of Fabric; releases are made "
+#~ "often to prevent any large gaps in functionality between the latest "
+#~ "stable release and the development version."
+#~ msgstr ""
+#~ "私たちとしてはFabricの最新安定版の使用をおすすめします。最新安定版と開発版"
+#~ "の間に機能的な大きなギャップが生まれないようにリリースは頻繁に出されます。"
 
-#: ../../index.rst:185
-msgid ""
-"Fabric has an official Twitter account, `@pyfabric <http://twitter.com/"
-"pyfabric>`_, which is used for announcements and occasional related news "
-"tidbits (e.g. \"Hey, check out this neat article on Fabric!\")."
-msgstr ""
-"Fabricには公式のTwitterアカウント `@pyfabric <http://twitter.com/pyfabric>`_ "
-"があります。これはアナウンスに使用されたり、たまに関連するニュースや情報 (例"
-"えば「Fabricに関するいい投稿記事があるよ!」) を流したりします。"
+#~ msgid ""
+#~ "However, if you want to live on the edge, you can pull down the source "
+#~ "code from our Git repository, or fork us on Github. The :doc:"
+#~ "`installation` page has details for how to access the source code."
+#~ msgstr ""
+#~ "とは言え、危険と隣り合わせの生き方を好むのなら、Gitリポジトリからソース"
+#~ "コードを落とすこともできますし、GitHub上でフォークすることもできます。ソー"
+#~ "スコードへのアクセスは :doc:`インストール <installation>` ページで詳細をご"
+#~ "覧ください。"
 
-#: ../../index.rst:192
-msgid "Bugs/ticket tracker"
-msgstr "バグ/チケットトラッカー"
+#~ msgid ""
+#~ "If you install Fabric from Git, you will need to install its dependency "
+#~ "Paramiko from Git as well. See :doc:`the installation docs "
+#~ "<installation>` for details."
+#~ msgstr ""
+#~ "GitからFabricをインストールする場合は依存するParamikoもGitからインストール"
+#~ "する必要があります。詳細は :doc:`インストール <installation>` をご覧くださ"
+#~ "い。"
 
-#: ../../index.rst:194
-msgid ""
-"To file new bugs or search existing ones, you may visit Fabric's `Github "
-"Issues <https://github.com/fabric/fabric/issues>`_ page. This does require a "
-"(free, easy to set up) Github account."
-msgstr ""
-"新しいバグの報告や既存のバグの検索は `Github Issues <https://github.com/"
-"fabric/fabric/issues>`_ ページで行えます。これには(無料で簡単に登録でき"
-"る)GitHubのアカウントが必要です。"
+#~ msgid "Development"
+#~ msgstr "開発"
 
-#: ../../index.rst:200
-msgid "IRC"
-msgstr "IRC"
+#~ msgid ""
+#~ "Any hackers interested in improving Fabric (or even users interested in "
+#~ "how Fabric is put together or released) please see the :doc:`development` "
+#~ "page. It contains comprehensive info on contributing, repository layout, "
+#~ "our release strategy, and more."
+#~ msgstr ""
+#~ "Fabricの改善に興味のあるハッカー(もしくはFabricがどのように組み立てられて"
+#~ "リリースされるかに興味のある方)はこの :doc:`開発<development>` ページを参"
+#~ "照してください。このページには貢献する方法、リポジトリのレイアウト、私たち"
+#~ "にリリース方針に関する包括的な情報が含まれています。"
 
-#: ../../index.rst:202
-msgid ""
-"We maintain a semi-official IRC channel at ``#fabric`` on Freenode (``irc://"
-"irc.freenode.net``) where the developers and other users may be found. As "
-"always with IRC, we can't promise immediate responses, but some folks keep "
-"logs of the channel and will try to get back to you when they can."
-msgstr ""
-"わたしたちは準公式のIRCチャンネルをFreenodeの ``#fabric`` (``irc://irc."
-"freenode.net``) で維持管理していて、ここで開発者や他のユーザーを見つけること"
-"ができます。IRCの常で、必ずしもすぐには返信できないかもしれませんが、このチャ"
-"ンネルのログを取っている方がいるので可能なときには返信するようにしています。"
+#~ msgid "Documentation"
+#~ msgstr "ドキュメント"
 
-#: ../../index.rst:14
-msgid ""
-"Stable releases of Fabric are best installed via ``pip`` or "
-"``easy_install``; or you may download TGZ or ZIP source archives from a "
-"couple of official locations. Detailed instructions and links may be found "
-"on the :doc:`installation` page."
-msgstr ""
-"Fabricの安定版は ``pip`` もしくは ``easy_install`` 経由でインストールするのが"
-"もっとも良いです。もしくは、いくつかの公式の場所からTGZかZIPソースのアーカイ"
-"ブをダウンロードすることも可能です。詳細な説明とリンクは :doc:`インストール "
-"<installation>` ページを参照してください。"
+#~ msgid ""
+#~ "Please note that all documentation is currently written with Python 2.5 "
+#~ "users in mind, but with an eye for eventual Python 3.x compatibility. "
+#~ "This leads to the following patterns that may throw off readers used to "
+#~ "Python 2.4 or who have already upgraded to Python 2.6/2.7:"
+#~ msgstr ""
+#~ "このすべてのドキュメンテーションはPython 2.5のユーザを念頭に今は書かれてい"
+#~ "ますが、最終的にはPython 3.x 互換性への配慮もしています。このため次のパ"
+#~ "ターンはPython 2.4に慣れた方やPython2.6/2.7にアップグレードした方には戸惑"
+#~ "うかもしれません:"
+
+#~ msgid ""
+#~ "``from __future__ import with_statement``: a \"future import\" required "
+#~ "to use the ``with`` statement in Python 2.5 -- a feature you'll be using "
+#~ "frequently. Python 2.6+ users don't need to do this."
+#~ msgstr ""
+#~ "``from __future__ import with_statement``: \" future import\" はPython 2.5"
+#~ "でwithステートメント(頻繁に使用します)を使用する場合に必要です。Python 2.6"
+#~ "以上のユーザは必要ありません。"
+
+#~ msgid ""
+#~ "``<true_value> if <expression> else <false_value>``: Python's relatively "
+#~ "new ternary statement, available in 2.5 and newer. Python 2.4 and older "
+#~ "used to fake this with ``<expression> and <true_value> or <false_value>`` "
+#~ "(which isn't quite the same thing and has some logical loopholes.)"
+#~ msgstr ""
+#~ "``<true_value> if <expression> else <false_value>``: Pythonの比較的新しい3"
+#~ "項文で、2.5以上で利用できます。Python 2.4以前では ``<expression> and "
+#~ "<true_value> or <false_value>`` をフェイクとして使用していました。(同じも"
+#~ "のではなく、論理的な穴がいくつかありました)"
+
+#~ msgid ""
+#~ "``print(<expression>)`` instead of ``print <expression>``: We use the "
+#~ "``print`` statement's optional parentheses where possible, in order to be "
+#~ "more compatible with Python 3.x (in which ``print`` becomes a function.)"
+#~ msgstr ""
+#~ "``print <expression>`` ではなく ``print(<expression>)``: ``print`` 文のオ"
+#~ "プション扱いの丸括弧を可能な場合は使用します。Python 3.xとより互換性を持た"
+#~ "せるためです。(Python 3.xでは ``print`` は関数になりました)"
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
+
+#~ msgid ""
+#~ "Some frequently encountered questions, coupled with answers/solutions/"
+#~ "excuses, may be found on the :doc:`faq` page."
+#~ msgstr ""
+#~ "よくある質問とそれに対する答え、解決法、言い訳は :doc:`faq` のページで見つ"
+#~ "かるかもしれません。"
+
+#~ msgid "Troubleshooting"
+#~ msgstr "トラブルシューティング"
+
+#~ msgid ""
+#~ "Before asking for help or filing a bug, make sure you've read our :doc:"
+#~ "`document on troubleshooting <troubleshooting>`."
+#~ msgstr ""
+#~ "助けを求めたりバグを登録する前に、 :doc:`トラブルシューティングに関するド"
+#~ "キュメント <troubleshooting>` を必ず読んでください。"
+
+#~ msgid "Changelog"
+#~ msgstr "変更履歴"
+
+#~ msgid "Please see :doc:`the changelog </changelog>`."
+#~ msgstr ":doc:`変更履歴 </changelog>` をご覧ください。"
+
+#~ msgid "Roadmap"
+#~ msgstr "ロードマップ"
+
+#~ msgid "Please see :doc:`the roadmap </roadmap>`."
+#~ msgstr ":doc:`ロードマップ </roadmap>` をご覧ください。"
+
+#~ msgid "Getting help"
+#~ msgstr "助けを得るには"
+
+#~ msgid ""
+#~ "If you've scoured the :ref:`prose <usage-docs>` and :ref:`API <api_docs>` "
+#~ "documentation and still can't find an answer to your question, below are "
+#~ "various support resources that should help. We do request that you do at "
+#~ "least skim the documentation before posting tickets or mailing list "
+#~ "questions, however!"
+#~ msgstr ""
+#~ "もし :ref:`使い方<usage-docs>` や :ref:`API <api_docs>` ドキュメントを探し"
+#~ "回っても答えが見つからない場合は、以下の様々なリソースが助けになるはずで"
+#~ "す。ただし、チケットを投稿したり質問をメーリングリストに投げかける前に、最"
+#~ "低でもドキュメントにはざっと目を通すようにお願いします。"
+
+#~ msgid "Mailing list"
+#~ msgstr "メーリングリスト"
+
+#~ msgid ""
+#~ "The best way to get help with using Fabric is via the `fab-user mailing "
+#~ "list <http://lists.nongnu.org/mailman/listinfo/fab-user>`_ (currently "
+#~ "hosted at ``nongnu.org``.) The Fabric developers do their best to reply "
+#~ "promptly, and the list contains an active community of other Fabric users "
+#~ "and contributors as well."
+#~ msgstr ""
+#~ "Fabricの使用に関して助けを求める一番いい場所は `fab-user メーリングリスト "
+#~ "<http://lists.nongnu.org/mailman/listinfo/fab-user>`_ (いまは ``nongnu."
+#~ "org`` でホストされています)でしょう。Fabricの開発者はすぐに返信するように"
+#~ "していますし、このリストには他のFabricユーザーや貢献者の活発なコミュニティ"
+#~ "も参加しています。"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid ""
+#~ "Fabric has an official Twitter account, `@pyfabric <http://twitter.com/"
+#~ "pyfabric>`_, which is used for announcements and occasional related news "
+#~ "tidbits (e.g. \"Hey, check out this neat article on Fabric!\")."
+#~ msgstr ""
+#~ "Fabricには公式のTwitterアカウント `@pyfabric <http://twitter.com/"
+#~ "pyfabric>`_ があります。これはアナウンスに使用されたり、たまに関連する"
+#~ "ニュースや情報 (例えば「Fabricに関するいい投稿記事があるよ!」) を流したり"
+#~ "します。"
+
+#~ msgid "Bugs/ticket tracker"
+#~ msgstr "バグ/チケットトラッカー"
+
+#~ msgid ""
+#~ "To file new bugs or search existing ones, you may visit Fabric's `Github "
+#~ "Issues <https://github.com/fabric/fabric/issues>`_ page. This does "
+#~ "require a (free, easy to set up) Github account."
+#~ msgstr ""
+#~ "新しいバグの報告や既存のバグの検索は `Github Issues <https://github.com/"
+#~ "fabric/fabric/issues>`_ ページで行えます。これには(無料で簡単に登録でき"
+#~ "る)GitHubのアカウントが必要です。"
+
+#~ msgid "IRC"
+#~ msgstr "IRC"
+
+#~ msgid ""
+#~ "We maintain a semi-official IRC channel at ``#fabric`` on Freenode "
+#~ "(``irc://irc.freenode.net``) where the developers and other users may be "
+#~ "found. As always with IRC, we can't promise immediate responses, but some "
+#~ "folks keep logs of the channel and will try to get back to you when they "
+#~ "can."
+#~ msgstr ""
+#~ "わたしたちは準公式のIRCチャンネルをFreenodeの ``#fabric`` (``irc://irc."
+#~ "freenode.net``) で維持管理していて、ここで開発者や他のユーザーを見つけるこ"
+#~ "とができます。IRCの常で、必ずしもすぐには返信できないかもしれませんが、こ"
+#~ "のチャンネルのログを取っている方がいるので可能なときには返信するようにして"
+#~ "います。"
+
+#~ msgid ""
+#~ "Stable releases of Fabric are best installed via ``pip`` or "
+#~ "``easy_install``; or you may download TGZ or ZIP source archives from a "
+#~ "couple of official locations. Detailed instructions and links may be "
+#~ "found on the :doc:`installation` page."
+#~ msgstr ""
+#~ "Fabricの安定版は ``pip`` もしくは ``easy_install`` 経由でインストールする"
+#~ "のがもっとも良いです。もしくは、いくつかの公式の場所からTGZかZIPソースの"
+#~ "アーカイブをダウンロードすることも可能です。詳細な説明とリンクは :doc:`イ"
+#~ "ンストール <installation>` ページを参照してください。"

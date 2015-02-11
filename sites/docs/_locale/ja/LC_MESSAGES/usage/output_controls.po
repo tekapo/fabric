@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fabric docs 1_8_2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-15 23:41+0900\n"
-"PO-Revision-Date: 2014-05-20 09:26+0900\n"
+"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"PO-Revision-Date: 2015-01-04 09:24+0900\n"
 "Last-Translator: JOTAKI, Taisuke <tekapo@gmail.com>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/fabric-"
 "docs-1_8_2/language/ja/)\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.1\n"
 
 # 32e06c691c9c4b7fa6578fa31f2feee2
 #: ../../usage/output_controls.rst:3
@@ -58,7 +58,7 @@ msgstr ""
 # 3badd1a4bd5a4cc7b01d60b95f7bddd2
 #: ../../usage/output_controls.rst:22
 msgid "All levels, save for ``debug``, are on by default."
-msgstr "``debug``を除いてすべてのレベルでデフォルトはオンです。"
+msgstr "``debug`` を除いてすべてのレベルでデフォルトはオンです。"
 
 # 07fe576a996747cbaa55bc732eb2246d
 #: ../../usage/output_controls.rst:25
@@ -155,7 +155,7 @@ msgstr "\"Executing task\"を ``running`` 出力レベルの追加。"
 # 2b64915079e345a1aceb14dafcf85cb1
 #: ../../usage/output_controls.rst:59
 msgid "Added the ``user`` output level."
-msgstr "``user``出力レベルを追加。"
+msgstr "``user`` 出力レベルを追加。"
 
 # 65ba9b5e32874a9c9acd8f3938449b11
 #: ../../usage/output_controls.rst:63
@@ -195,7 +195,7 @@ msgid ""
 "With ``debug`` on, and assuming you've left :ref:`shell` set to ``True``, "
 "you will see the literal, full string as passed to the remote server::"
 msgstr ""
-" ``debug`` がオンで :ref:`shell` が ``True`` ならリモートサーバーに渡される文"
+"``debug`` がオンで :ref:`shell` が ``True`` ならリモートサーバーに渡される文"
 "字通りすべての文字列が表示されます::"
 
 # 6f17af90f14549069fb6634ff4a9abf9
@@ -249,8 +249,8 @@ msgid ""
 "**output**: Maps to both ``stdout`` and ``stderr``. Useful for when you only "
 "care to see the 'running' lines and your own print statements (and warnings)."
 msgstr ""
-"**output**: ``stdout`` と ``stderr``の両方。これは 'running' 行と出力状況に注"
-"目するときに便利です(それと警告)。"
+"**output**: ``stdout`` と ``stderr`` の両方。これは 'running' 行と出力状況に"
+"注目するときに便利です(それと警告)。"
 
 # a7926494ac8e4b188b3114462a39f430
 #: ../../usage/output_controls.rst:111
@@ -335,8 +335,9 @@ msgid ""
 "`~fabric.context_managers.settings`, which can nest calls to `~fabric."
 "context_managers.hide` and/or `~fabric.context_managers.show` inside itself."
 msgstr ""
-"`~fabric.context_managers.settings`, これは`~fabric.context_managers.hide` "
-"や `~fabric.context_managers.show` を内部でネストコールします。"
+"`~fabric.context_managers.settings` は内部で `~fabric.context_managers.hide` "
+"および/もしくは `~fabric.context_managers.show` への呼び出しをネストできま"
+"す。"
 
 # 3ce7d2e0615d4d12a139884b419a20e3
 #: ../../usage/output_controls.rst:150
