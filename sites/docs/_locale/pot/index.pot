@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2014 Jeff Forcier
+# Copyright (C) 2015 Jeff Forcier
 # This file is distributed under the same license as the Fabric package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Fabric \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 11:06+0900\n"
+"POT-Creation-Date: 2015-02-11 15:34+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,3 +75,4 @@ msgstr ""
 # d02cea0af13e4dfbb4f7eb21d28dbf5a
 msgid "Fabric's **contrib** package contains commonly useful tools (often merged in from user fabfiles) for tasks such as user I/O, modifying remote files, and so forth. While the core API is likely to remain small and relatively unchanged over time, this contrib section will grow and evolve (while trying to remain backwards-compatible) as more use-cases are solved and added."
 msgstr ""
+
