@@ -16,7 +16,7 @@ msgstr ""
 
 #: ../../api/contrib/files.rst:3
 msgid "File and Directory Management"
-msgstr "フィアルとディレクトリ管理"
+msgstr "ファイルとディレクトリ管理"
 
 #: ../../../fabric/contrib/files.pydocstring of fabric.contrib.files:1
 msgid "Module providing easy API for working with remote files and folders."
