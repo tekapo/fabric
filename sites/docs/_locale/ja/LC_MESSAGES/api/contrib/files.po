@@ -16,7 +16,7 @@ msgstr ""
 
 #: ../../api/contrib/files.rst:3
 msgid "File and Directory Management"
-msgstr "フィアルとディレクトリ管理"
+msgstr "ファイルとディレクトリ管理"
 
 #: ../../../../../../../../../usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/Fabric-1.10.0-py2.7.egg/fabric/contrib/files.py:docstring
 #: of fabric.contrib.files:1
