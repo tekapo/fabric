@@ -1,0 +1,29 @@
+{%- extends "!layout.html" %}
+{%- block extrahead %}
+{{ super() }}
+<style type="text/css">
+    .deplecated_doc_msg {
+        border: 5px dotted black;
+        margin: 0 0 30px 0;
+        padding: 30px;
+        width: 940px;
+        margin: 30px auto 0 auto;
+    }
+    .deplecated_doc_msg h1 {
+        font-size: 1.5rem;
+    }
+</style>
+{% endblock %}
+{%- block header %}
+{{ super() }}
+<div class="deplecated_doc_msg">
+<h1>
+    注意!!!!
+</h1>
+<p>
+    このドキュメントは<span class="bold_text">Fabricバージョン1.10.1</span>の日本語訳で、古いものです。
+</p>
+<p>
+    最新のFabric2.xのドキュメントはオリジナルの英語ドキュメント<a href="http://www.fabfile.org/">http://www.fabfile.org/</a>を参照してください。
+</div>
+{% endblock %}
